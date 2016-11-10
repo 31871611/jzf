@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"抽奖"
+})
+<link rel="stylesheet" href="css/coupon.css"/>
+<!--<script src="http://wx.artjzf.com/static/js/jquery-1.8.3.min.js"></script>-->
+<!--<script src="http://192.168.1.180:8082/lottery/files/jQueryRotate.2.2.js"></script>-->
+<!--<script src="http://192.168.1.180:8082/lottery/files/jquery.easing.min.js"></script>-->
+<body id="app">
+
+
+<div class="coupon">
+    <header @click="showExplain">
+        <!--<div class="text">-->
+            <!--<p>版权所有：集珍坊（福建）网络科技有限公司</p>-->
+            <!--<p>闽B2-20160070   闽ICP备08009118号-5</p>-->
+        <!--</div>-->
+    </header>
+
+    <div class="main">
+
+        <div class="turntableBg">
+            <div class="lamp"></div>
+            <div class="turntable"></div>
+            <div class="turntableBtn"></div>
+        </div>
+
+
+        <div class="winningList">
+            <h2>中奖名单</h2>
+            <div class="scroll">
+                <ul id="scrollList">
+                    <li><span>恭喜131****0019</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜135****1908</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜135****6354</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜139****1106</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜137****0901</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜138****1050</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜180****5501</span>获得<b>30元优惠券</b></li>
+                    <li><span>恭喜137****5042</span>获得<b>30元优惠券</b></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <a href="" class="shareBtn">点击马上分享</a>
+    </div>
+
+    <footer>
+        <!--<h2>活动时间：9月11日至9月19日</h2>-->
+
+        <!--<ul>-->
+            <!--<li><b>田黄挂件</b><strong class="step">价值：6666元</strong><b>大漆手串</b><strong>价值：588元</strong></li>-->
+            <!--<li><b>翡翠胸牌</b><strong class="step">价值：3888元</strong><b>大漆手镯</b><strong>价值：520元</strong></li>-->
+            <!--<li><b>大漆花瓶</b><strong class="step">价值：1888元</strong><b>名家建盏</b><strong>价值：399元</strong></li>-->
+            <!--<li><b>大漆碗</b><strong class="step">价值：1200元</strong></li>-->
+        <!--</ul>-->
+
+    </footer>
+</div>
+
+<div class="opacity hide"></div>
+
+<div class="couponAlert" v-if="isExplain">
+    <div class="box">
+        <header>
+            <div>
+                <h2>活动规则</h2>
+            </div>
+        </header>
+
+        <div class="main">
+            <p>1、活动时间：2016年9月11日-2016年9月19日</p>
+            <p>2、活动内容：活动期间集珍坊新老用户每天均可获得1次抽奖机会。</p>
+            <p>3、中得实物大奖后请及时提交相关兑奖信息，以便奖品发放。</p>
+            <p>4、活动过程中，如出现违规行为，集珍坊（福建）网络科技有限公司有权取消您的中奖资格，必要时追究法律责任。</p>
+            <p>5、本次活动最终解释权归集珍坊（福建）网络科技有限公司所有，若有疑问，请拨打客服热线：</p>
+            <p>0591-88212636，咨询工作人员。</p>
+        </div>
+
+        <footer>
+            <a href="javascript:;" @click="hideExplain">我知道了</a>
+        </footer>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="box">
+        <header class="title2">
+            <div>
+                <h2>抽奖次数已用完</h2>
+            </div>
+        </header>
+
+        <div class="text">
+            <p>请明天再来试试运气吧</p>
+        </div>
+
+        <footer>
+            <a href="">我知道了</a>
+        </footer>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="box">
+        <header class="title2">
+            <div>
+                <h3>恭喜您</h3>
+                <h3>获得 50元 优惠劵</h3>
+            </div>
+        </header>
+
+        <div class="text">
+            <p>您可至个人中心-我的优惠券中查看</p>
+        </div>
+
+        <footer>
+            <a href="" class="">登录领取</a>
+            <a href="" class="whiteBg">继续抽奖</a>
+        </footer>
+    </div>
+
+</div>
+
+
+</body>
+
+<script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            isExplain:false,         //活动规则
+
+        },
+        ready:function(){
+            //滚动中奖列表
+            scrollWinningList();
+        },
+        methods: {
+            //显示活动规则
+            showExplain:function(){
+                this.isExplain=true;
+            },
+            //关闭活动规则
+            hideExplain:function(){
+                this.isExplain=false;
+            }
+        }
+    });
+
+    $(function() {
+
+        $(".turntableBtn").on("click",function(){
+            lottery();
+        })
+
+    });
+    function lottery() {
+        $.ajax({
+            type : 'POST',
+            url : 'AwardServlet',
+            dataType : 'json',
+            cache : false,
+            error : function() {
+                alert('出错了！');
+                return false;
+            },
+
+            success : function(json) {
+                $(".turntableBtn").off('click');
+                var angle = parseInt(json.angle); //角度
+                var msg = json.msg;             //提示信息
+                $(".turntable").rotate({ //inner内部指针转动，outer外部转盘转动
+                    duration : 5000, //转动时间
+                    angle : 0, //开始角度
+                    animateTo : 3600 + angle, //转动角度
+                    //easing : $.easing.easeOutSine, //动画扩展
+                    callback : function() {
+                        var con = confirm(msg + '\n还要再来一次吗？');
+                        if (con) {
+                            lottery();
+                        } else {
+                            return false;
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+
+    //滚动中奖列表
+    function scrollWinningList(){
+        var obj=$("#scrollList");
+        var height=obj.children().outerHeight();
+        obj.animate({"top":"-"+height+"px"},1000,function(){
+            obj.css("top","0").find("li:first").appendTo(obj);
+        });
+        t=setTimeout("scrollWinningList()",3000);
+    }
+
+</script>
+
+</html>

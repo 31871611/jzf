@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  双11
+*/
+
+.header{
+  .icon11logo{
+    display: block;
+    margin:pxTorem(22px) auto 0;
+    width: pxTorem(177px);
+    height: pxTorem(48px);
+    @extend %ico_rem;
+    background-image: url("../images/11/11logo.png");
+  }
+}
+
+
+.double11{
+  a{
+    display: block;
+  }
+  img{
+    vertical-align: middle;
+    width: 100%;
+  }
+  .title{
+    margin-bottom: pxTorem(10px);
+  }
+  .ad{
+    margin-bottom: pxTorem(20px);
+  }
+  ul{
+    @extend %clearfix;
+    padding:0 pxTorem(40px) pxTorem(10px) pxTorem(30px);
+    li{
+      float: left;
+      margin-bottom: pxTorem(10px);
+      width: 50%;
+    }
+    a{
+      padding-left:pxTorem(10px);
+    }
+  }
+}

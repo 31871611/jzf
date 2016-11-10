@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//搜索
+.searchInfoList{
+  h2,ul a{
+    border-bottom: 1px solid #999999;
+    margin:0 pxTorem(30px);
+    height:pxTorem(80px);
+    line-height:pxTorem(80px);
+  }
+  h2{
+    color:#999999;
+
+  }
+  ul{
+    li{
+
+    }
+    a{
+      display: block;
+      color:#333333;
+    }
+  }
+  .btn{
+    margin-top:pxTorem(40px);
+    a{
+      display: block;
+      margin:0 auto;
+      text-align:center;
+      width:pxTorem(200px);
+      height:pxTorem(48px);
+      line-height:pxTorem(48px);
+      border:1px solid $red-base;
+      color:$red-base;
+      @include font-dpr(26px);
+      @include border-radius(1px);
+    }
+  }
+}

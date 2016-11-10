@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"结算中心"
+})
+<body id="app">
+
+
+<div class="wrap">
+
+    <header>
+        @@include('include/title.html',{
+            "title":"结算中心"
+        })
+    </header>
+    <article class="main">
+
+        <div class="clearingpay">
+
+            <h2>配送方式</h2>
+            <div class="clearingTab">
+                <b class="select">快递配送</b>
+                <b>自己提货</b>
+            </div>
+
+            <!--快递配送时-->
+            <h2>藏品物流保价</h2>
+            <div class="clearingInfo">
+                <strong class="clearingEms">藏品物流报价费：<b class="red">35元</b></strong>
+                <p>物流保价是为了您的商品安全，若您不愿意支付物流保价费可以选择配送方式中的“自己提货”;保价费为商品总金额的0.5％收取（两万至十万收取保价费100元）<a class="url" href="help/help_delivery.html#support">为什么要保价？</a></p>
+            </div>
+
+            <!--没有收货地址-->
+            <h2>配送地址</h2>
+            <div class="address">
+                <a href="" class="add">请添加收货地址</a>
+            </div>
+
+            <!--有收货地址-->
+            <h2>配送地址</h2>
+            <div class="myaddress">
+                <a href="myaddress.html" class="replace url">更改地址</a>
+                <strong>名字</strong>
+                <b>13950088866</b>
+                <p>福建省福州市鼓楼区杨桥东路衣锦华庭218号#2栋201室</p>
+                <i class="arrowR"></i>
+            </div>
+
+            <h2>商品信息</h2>
+            <ul class="goodsListRow">
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img src="picture/index6.jpg" alt="">
+                            <i class="out"></i>
+                            <!--<i class="booked"></i>-->
+                        </a>
+                        <div class="info">
+                            <h3>郭懋介</h3>
+                            <h3>残荷听雨系列套件章</h3>
+                            <span class="size">尺寸：11.5X4.2X3.9cm</span>
+                            <strong>￥18,500</strong>
+                            <span class="num">x1</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img src="picture/index6.jpg" alt="">
+                            <i class="out"></i>
+                            <!--<i class="booked"></i>-->
+                        </a>
+                        <div class="info">
+                            <h3>郭懋介</h3>
+                            <h3>残荷听雨系列套件章</h3>
+                            <span class="size">尺寸：11.5X4.2X3.9cm</span>
+                            <strong>￥18,500</strong>
+                            <span class="num">x1</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="orderDetails">
+                <ul>
+                    <li><span class="left">商品金额：</span><span class="right">￥12000</span></li>
+                    <li><span class="left">运费：</span><span class="right">￥20</span></li>
+                    <li><span class="left">保价费：</span><span class="right red">￥50</span></li>
+                    <li><span class="left">优惠券：</span><span class="right">-￥50</span></li>
+                    <li><span class="left">应付总额：</span><span class="right">￥12100</span></li>
+                </ul>
+            </div>
+
+
+            <h2>预定方式</h2>
+            <div class="clearingTab">
+                <b class="select">全额支付</b>
+                <b>支付预定金</b>
+            </div>
+
+            <h2>藏品物流保价</h2>
+            <div class="clearingInfo">
+                <p>商品定金按商品销售价10%计收，您成功支付预定金后请在开售当天9点前完成剩余尾款的支付， 即可获得藏品。如您选择全额支付，那么全额款的10%也视为预定金。请您慎重下单！<a href="help/help_delivery.html#support" class="url">为什么要保价？</a></p>
+            </div>
+
+
+            <h2>预定信息</h2>
+            <div class="reserveInfo">
+                <strong>预定金：<b>100元</b></strong>
+                <p>预定金为购买藏品的预付款，您成功支付预定金后请在两天内完成剩余尾款的支付，即可获得藏品，若您未在两天内完成支付剩余尾款，我们将不会退回您的预定金，请您慎重下单！</p>
+                <div class="contract">
+                    <i class=""></i><a href="help/help_contract.html">已阅读《集珍坊商品预定条款》</a>
+                </div>
+                <span class="percent">预定金为藏品价格的10%</span>
+            </div>
+
+            <!--自己提货-->
+            <h2>自提地址</h2>
+            <div class="address">
+                <a class="map" href="">福建福州市鼓楼区杨桥东路19号衣锦华庭雅道巷水流湾院落（福建省集珍文化艺术馆正对面）</a>
+                <div class="time">
+                    <label for="">快递配送</label><input type="text" value="2015年01月01日" readonly="readonly" placeholder="年/月/日" />
+                    <i class="arrowB"></i>
+                </div>
+            </div>
+
+            <h2>身份信息</h2>
+            <div class="idInfo">
+                <div class="time"><label for="">联系号码</label><input type="tel" class="text" name="" /></div>
+                <div class="time"><label for="">姓名</label><input type="text" class="text" name="" /></div>
+                <div class="time"><label for="">身份证</label><input type="text" class="text" name="" /></div>
+                <p>提示：支付成功后集珍坊会向您发送自提码，请及时查收。<a href="help/help_logistics.html#pickup" class="url">查看自提流程</a></p>
+            </div>
+
+            <!--优惠卷-->
+            <div class="orderCoupons">
+                <em>优惠券</em>
+                <b>减免￥50</b>
+                <a href="mycoupons.html">
+                    <span>选择其他优惠券</span>
+                    <i class="arrowR"></i>
+                </a>
+                <!--<span class="wu">您目前暂无符合该订单的优惠卷</span>-->
+            </div>
+
+            <div class="isService">
+                <label for="wayLook">
+                    <input type="checkbox" id="wayLook"/>
+                    已阅读
+                    <a href="help/help_service.html">《售后条款》</a>
+                </label>
+            </div>
+
+            <div class="btn">
+                <a href="" class="balance">
+                    余额支付
+                    <em>(可用余额¥1000）</em>
+                    <input type="radio" />
+                </a>
+            </div>
+            <div class="btn">
+                <a href="" class="balance select">
+                    余额支付
+                    <em>(可用余额¥1000）</em>
+                    <input type="radio" />
+                </a>
+            </div>
+
+            <div class="btn">
+                <a href="" class="alipay">
+                    支付宝支付
+                    <input type="radio" />
+                </a>
+            </div>
+
+            <div class="btn">
+                <a href="" class="wx">
+                    微信支付
+                    <input type="radio" />
+                </a>
+            </div>
+            <div class="btn">
+                <a href="javascript:;" class="bank" @click="bank">
+                    银行卡在线支付
+                    <input type="radio" />
+                </a>
+
+            </div>
+            <div class="btn">
+                <a href="" class="giro">
+                    银行转账
+                    <em>(9点-21点支持该支付方式）</em>
+                    <input type="radio" />
+                </a>
+            </div>
+
+            <div class="morepay">
+                <a href="">查看支付限额</a>
+            </div>
+        </div>
+
+    </article>
+
+    <footer>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavReg">注册有礼</a>
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <a href="" class="appNavUser">个人</a>
+        </nav>
+    </footer>
+
+</div>
+
+
+<div class="loadmore waitingfor" style="display: none;"><span class="loading"></span>加载中..</div>
+
+<input class="abandonInput" id="abc" type="tel" name="password" @blur="blurKeyboard" />
+<!--付款详情-->
+<div class="alertPayInfo" :class="{'hide':isAlertBank}">
+    <div class="opacity"></div>
+    <div class="box" :class="{'select':isKeyboard}">
+        <div class="alertTitle">
+            <h2>付款详情</h2>
+            <a href="" class="exit"></a>
+        </div>
+        <div class="alertContent">
+            <ul class="orderList">
+                <li><span>订单号：</span><b>JZ201603300836660001</b></li>
+                <li><span>支付总额：</span><b>¥5000</b></li>
+            </ul>
+            <div class="payTotal">
+                钱包支付:<b class="red">¥5000</b>
+            </div>
+            <div class="payTotal">
+                微信支付:<b class="red">¥5000</b>
+            </div>
+            <div class="payTotal">
+                合计:<b class="red">¥5000</b>
+            </div>
+            <h2>请输入您的支付密码</h2>
+
+            <!--<input type="tel" id="abc" name="password" />-->
+            <div class="password6" @click="showKeyboard">
+                <span class="select"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="" class="forget">忘记密码?</a>
+        </div>
+    </div>
+</div>
+
+
+<!--银行汇款转账-->
+<div class="alertPayInfo giroAlert hide">
+    <div class="opacity"></div>
+    <div class="box" :style="{select:aaa}">
+        <p class="pl0">下单后请在<span class="red">1</span>个小时内将应付金额转入指定账户中，转账完成后请拨打客服电话<span class="red">0591-88212636</span>通知客服人员，并提供转账凭证
+        </p>
+        <h3>银行卡信息</h3>
+        <p><label>账户名称：</label>集珍坊（福建）网络科技有限公司</p>
+        <p><label>账号：</label>11014832697005</p>
+        <p><label>开户行：</label>平安银行福州分行</p>
+        <div class="btn">
+            <a href="javascript:;">取消</a>
+            <a href="javascript:;" class="select">确认</a>
+        </div>
+    </div>
+</div>
+
+<!--修改自提时间弹窗-->
+<div class="return_alert hide">
+    <div class="mw">
+        <div class="title">
+            <a href="javascript:;" class="exit">取消</a>
+            <h2>您正在修改自提时间</h2>
+            <a href="javascript:;" class="ok">确定</a>
+        </div>
+        <div class="exit_ororder">
+            <span id="sp">2015年8月20日</span><i class="arrowB"></i>
+            <ul style="display: none;">
+                <li><b>2015年8月21日</b><i class="select"></i></li>
+                <li><b>2015年8月22日</b><i></i></li>
+                <li><b>2015年8月23日</b><i></i></li>
+            </ul>
+            <p class="red">注：自提时间可在最后期限基础上延长3天，点击“确定”完成修改，仅限修改一次</p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            isAlertBank:true,
+            aaa:"",
+            isKeyboard:false
+        },
+        ready:function(){
+
+        },
+        methods:{
+            bank:function(){
+                this.isAlertBank=false;
+
+                //setTimeout(function(){
+                    document.getElementById("abc").focus();
+                    this.isKeyboard=true;
+                //},1000);
+
+            },
+            //获得焦点
+            showKeyboard:function(){
+                document.getElementById("abc").focus();
+                this.isKeyboard=true;
+            },
+            //失去焦点
+            blurKeyboard:function(){
+                this.isKeyboard=false;
+            }
+        }
+    });
+
+</script>
+</html>

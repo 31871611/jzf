@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"私洽"
+})
+<body id="app">
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"私洽"
+        })
+    </header>
+
+    <article class="main scrollHide">
+        <div class="negotiationBox" :style="{transform:'translate3d(-'+slider.num+'px,0,0)'}">
+            <div class="negotiation" v-for="item in list" :class="{negotiationSelect:slider.index==$index}" :style="{width:sliderWidth*0.8+'px',marginLeft:sliderWidth*0.05+'px',height:slider.height+'px'}">
+
+                <!--<div>-->
+                    <div class="item negotList" :style="{height:slider.height+'px'}" id="item{{$index}}" v-if="items[$index]" @scroll="slideScroll($event)" @touchstart="start($event,$index)" @touchmove="move($event,$index)" @touchend="end($event,$index,item.artist)">
+                        <h4>{{item.commodityName}}</h4>
+                        <div class="imgList" :style="{height:sliderWidth*0.8+'px'}">
+                            <div class="img" @click="showImgList(item.docList)" :style="{height:sliderWidth*0.8+'px'}">
+                                <img v-bind:src="item.docList[0].docDir" alt="" />
+                            </div>
+                            <!-- 360提示按钮 -->
+                            <div class="detailDegree360Btn">
+                                <a href=""></a>
+                            </div>
+                        </div>
+                        <strong>估价：<span class="red">60000~97000</span></strong>
+                        <ul class="clearfix">
+                            <li>数量：{{item.stockCount}}</li>
+                            <li>作者：{{item.author_name}}</li>
+                            <li>形式：{{item.commodityFormName}}</li>
+                            <li>品类：{{item.categoryName}}</li>
+                            <li>尺寸：{{item.specHeight}}x{{item.specLength}}x{{item.specWidth}}5.2x5.2x5.2cm</li>
+                            <li>材质：{{item.materialName}}</li>
+                            <li class="remark">{{{item.remark}}}</li>
+                        </ul>
+                        <a href="tel:0591-88212636" class="btn my">我要私洽</a>
+                        <!--<a href="#" class="btn">该藏品处于洽购中</a>-->
+                        <!--<a href="#" class="btn">洽购成功</a>-->
+                        <!--<a href="#" class="btn">洽购结束</a>-->
+                        <div class="more" v-if="item.artist">
+                            <span>向上拖动，查看作品赏析</span>
+                        </div>
+                        <div style="height: 30px"></div>
+                    </div>
+                    <!-- 作者详情 -->
+                    <div :style="{height:slider.height+'px'}" class="item thumbnail" id="item{{$index}}" v-if="item.artist && !items[$index]" @scroll="slideScroll($event)" @touchstart="start($event,$index)" @touchmove="move($event,$index)" @touchend="end($event,$index,item.artist)">
+                        <img :src="item.artist.artistPhoto" alt="" />
+                        <h3>{{item.artist.artistName}}</h3>
+                        <h4>职业：{{item.artist.classifyName}}</h4>
+                        <h4>祖籍：{{item.artist.province}} {{item.artist.city}} {{item.artist.county}}</h4>
+                        <p>{{{item.artist.artistDetail}}}</p>
+                        <div style="height: 50px"></div>
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="negotiationBtn" v-if="false">
+            <a href="tel:0591-88212636">我要私洽</a>
+        </div>
+    </footer>
+</div>
+
+<div class="sendinfoImgShow" :class="{hide:imgSlider.isImgList}" @touchstart="imgSliderStart($event)" @touchmove="imgSliderMove($event)" @touchend="imgSliderEnd($event)">
+
+    <div class="opacity" @click="showImgList"></div>
+    <ul @click="showImgList" :style="{transform:'translate3d('+imgSlider.num+'px,0px, 0px)',transitionDuration:imgSlider.speed+'ms'}">
+        <li v-for="list in imgSlider.list"><div><img :src="list.docDir" alt="" /></div></li>
+    </ul>
+    <div class="tab">
+        <span v-for="i in imgSlider.list" :class="{select:$index == imgSlider.index}"></span>
+    </div>
+
+</div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script src="/html/js/vue-resource.min.js"></script>
+<script>
+
+/**
+ *
+
+    1.width*0.8
+    2.width*0.8+width*0.8+ml*0.05*index1
+    3.width*0.8+width*0.8+ml*0.05*index2
+    4.width*0.8+width*0.8+ml*0.05*index3
+
+ */
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            list: [],
+            url:'',
+            sliderWidth:"",         //屏幕宽度
+            //mainHeight:"",
+            /***********/
+            slider:{
+                height:"",          //计算主体高度
+                flag:true,          //等待时间
+                scrollTop:0,        //滚动值
+                scrollHeight:0,     //页面高度
+                mainHeight:0,       //窗口可视高度
+                len:"",             //私洽列表长度
+                num:0,              //保存滚动数值
+                index:0,            //++--
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            },
+            items:[],               //作者列详情表是否显示
+            /***********************/
+            imgSlider:{
+                isImgList:true,     //是否显示全屏滑动图片
+                list:[],            //滑动图片列表
+                num:0,
+                time:0,
+                index:0,
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0,
+                speed:500           //滑动速度500ms
+            }
+        },
+        ready:function(){
+
+            /***
+             *
+             * :style="{width:sliderWidth*0.8+'px',
+             * 第一次:375*0.8=300
+             * 第二次:300+319
+             * 319|左边间距+内容宽度
+             *
+             */
+
+            //屏幕宽度
+            this.sliderWidth=document.body.clientWidth;
+            //主体高度
+            this.slider.height=document.querySelector(".main").clientHeight-document.querySelector(".main").clientHeight*0.03;
+            //alert(document.querySelector(".main").clientHeight);
+
+            this.$http.get("/negotiateData.do",{version:'0'}).then(function (response) {
+                    //console.log(response.data.lists[0].docList);
+                    //this.$set('list', response.data.resultObj.list);
+
+                    var len=response.data.lists.length;
+                    this.slider.len=len;
+                    this.$set('list', response.data.lists);
+                    for(var i=0;i<len;i++){
+                        this.items[i]=true;
+                    }
+
+                    //console.log(this.tiems);
+                    //this.$set('url', response.data.resultObj.headUrl);
+                }
+            );
+
+        },
+        methods:{
+            back: function() {
+                window.history.go(-1);
+            },
+            /*********************************************************/
+            slideScroll:function(event){
+                //滚动值
+                this.slider.scrollTop=event.target.scrollTop;
+                //页面高度
+                this.slider.scrollHeight=event.target.scrollHeight;
+                //窗口可视高度
+                this.slider.mainHeight=event.target.clientHeight;
+            },
+            start:function(event,id){
+                var touch=event.changedTouches[0];
+                this.slider.startX = touch.clientX;
+                this.slider.startY = touch.clientY;
+                //触摸时获取滚动相关值
+                var self=document.querySelector("#item"+id);
+                //滚动值
+                this.slider.scrollTop=self.scrollTop;
+                //页面高度
+                this.slider.scrollHeight=self.scrollHeight;
+                //窗口可视高度
+                this.slider.mainHeight=self.clientHeight;
+            },
+            move:function(event,index){
+                var touch=event.changedTouches[0];
+                this.slider.moveX = touch.clientX - this.slider.startX;
+                this.slider.moveY = touch.clientY - this.slider.startY;
+                //左右划
+                if(Math.abs(this.slider.moveX) > Math.abs(this.slider.moveY) ){
+                    event.preventDefault();
+                }
+                //上下划
+                if(Math.abs(this.slider.moveX) < Math.abs(this.slider.moveY)){
+                    //第一屏显示
+                    if(this.items[index]){
+                        //console.log("第一屏"+this.items[index]);   //true时第一屏
+                        //到顶、向上划
+                        if(this.slider.moveY > 0) {
+                            if (this.slider.scrollTop >= 0) event.preventDefault();
+                        }
+                    }else{
+                        //console.log("第二屏"+this.items[index]);
+                        //需要增加空间来防止拖动到ios的刷新
+                        if(this.slider.moveY > 0) {
+                            if (this.slider.scrollTop == 0) event.preventDefault();
+                        }
+                        //到底、向下划
+                        if(this.slider.moveY < 0) {
+                            if (this.slider.scrollTop + this.slider.mainHeight >= this.slider.scrollHeight) event.preventDefault();
+                        }
+                    }
+                }
+            },
+            end:function(event,index,artist){
+                var touch=event.changedTouches[0];
+                this.slider.endX = touch.clientX - this.slider.startX;
+                this.slider.endY = touch.clientY - this.slider.startY;
+                var _self=this;
+                //左右划
+                if(Math.abs(this.slider.endX) > Math.abs(this.slider.endY) && this.slider.flag){
+                    this.slider.flag=false;
+                    var num=document.body.clientWidth*0.8+document.body.clientWidth*0.05;
+                    if(this.slider.endX > 0){
+                        //console.log("右");
+                        if(this.slider.index == 1){
+                            this.slider.num=0;
+                        }else if(this.slider.index == 0){
+                            this.slider.num=document.body.clientWidth*0.8+num*(this.slider.len-2);
+                        }else{
+                            this.slider.num=this.slider.num-num;
+                        }
+                        this.slider.index--;
+                        if(this.slider.index < 0 ){
+                            this.slider.num=0;
+                            this.slider.index=0;
+                        }
+                    }else{
+                        //console.log("左");
+                        if(this.slider.index == 0){
+                            this.slider.num=document.body.clientWidth*0.8;
+                        }else{
+                            this.slider.num=this.slider.num+num;
+                        }
+                        this.slider.index++;
+                        if(this.slider.index == this.slider.len){
+                            this.slider.num=document.body.clientWidth*0.8+num*(this.slider.len-2);
+                            this.slider.index=this.slider.len-1;
+                        }
+                    }
+                }
+                //上下划|有作品赏析
+                if(Math.abs(this.slider.endX) < Math.abs(this.slider.endY) && this.slider.flag && artist){
+                    this.slider.flag=false;
+                    ///////////////////////////////////////////////////***************************************/
+                    if(this.items[index]){
+                        console.log("第一屏");
+                        if(this.slider.endY < 0){
+                            //console.log(this.slider.scrollTop + this.slider.mainHeight +"|"+ this.slider.scrollHeight);
+                            //是否到底
+                            if (this.slider.scrollTop + this.slider.mainHeight >= this.slider.scrollHeight){
+                                this.items.$set(index,false);
+                            }
+                        }
+                    }else{
+                        console.log("第二屏");
+                        if(this.slider.endY > 0){
+                            if (this.slider.scrollTop <= 0){
+                                this.items.$set(index,true);
+                            }
+                        }
+                    }
+                }
+                //等待时间
+                setTimeout(function(){
+                    _self.slider.flag=true;
+                },250);
+            },
+            /*********************************************************/
+            //图片放大
+            showImgList:function(list){
+                if(this.imgSlider.isImgList){
+                    //填充数据
+                    this.imgSlider.list=list;
+                    //长度.//在次点击的时候没有长度
+                    this.imgSlider.list.length=list.length;
+                    //打开全屏图片切换
+                    this.imgSlider.isImgList=false;
+                }else{
+                    //关闭时如果是本项保存值，使在次点击不会从第一张开始
+
+                    //关闭
+                    this.imgSlider.isImgList=true;
+                    //清空数据
+                    //this.imgList.length=0;
+                    //清空长度
+                    this.imgSlider.index = 0;
+                    //清空移动距离
+                    this.imgSlider.num=0;
+                }
+            },
+            //图片滑动
+            imgSliderStart:function(event){
+                var touch=event.changedTouches[0];
+                this.imgSlider.startX = touch.clientX;
+                this.imgSlider.startY = touch.clientY;
+                this.imgSlider.time = new Date();
+            },
+            //图片滑动
+            imgSliderMove:function(event){
+                var touch=event.changedTouches[0];
+                this.imgSlider.moveX = touch.clientX - this.imgSlider.startX;
+                this.imgSlider.moveY = touch.clientY - this.imgSlider.startY;
+                //时间250=true
+                //拖动距离20=true
+                if(Math.abs(this.imgSlider.moveX) > Math.abs(this.imgSlider.moveY) ){
+                    //左右划
+                    event.preventDefault();
+                    //过渡延续时间清空为0
+                    this.imgSlider.speed=0;
+                    //左右拖动值
+                    this.imgSlider.num=this.imgSlider.moveX-this.imgSlider.index*this.sliderWidth;
+                }
+            },
+            //图片滑动
+            imgSliderEnd:function(event){
+                var touch=event.changedTouches[0];
+                this.imgSlider.endX=touch.clientX - this.imgSlider.startX;
+                var time=new Date();
+                //过渡延续时间
+                this.imgSlider.speed=500;
+
+                //time-this.imgSlider.time < 250
+                if(this.imgSlider.endX > 20){
+                    //console.log("右");
+                    this.imgSlider.index--;
+                    if(this.imgSlider.index < 0){
+                        this.imgSlider.index = 0;
+                    }
+                }else if(this.imgSlider.endX < -20){
+                    //console.log("左");
+                    this.imgSlider.index++;
+                    //长度
+                    if(this.imgSlider.index == this.imgSlider.list.length){
+                        this.imgSlider.index = this.imgSlider.list.length-1;
+                    }
+                }
+                this.imgSlider.num="-"+this.sliderWidth*this.imgSlider.index;
+            }
+        }
+    });
+
+</script>
+</html>

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  物流信息页面
+
+*/
+
+.logisticsInfo{
+  height:pxTorem(180px - 40);
+  padding-top:pxTorem(40px);
+  color:#333333;
+  background: #fff;
+  border-bottom:1px solid #cccccc;
+  margin:0 pxTorem(30px);
+  font-size:pxTorem(28px);
+  b{
+    color:$red-base;
+    font-weight: normal;
+  }
+}
+
+
+//物流送信信息
+.logisticsPath{
+  background:#fff;
+  overflow:hidden;
+  .con{
+    position: relative;
+    margin:pxTorem(24px) 0;
+  }
+  .line{
+    position: absolute;
+    left:pxTorem(39px);
+    top:4%;
+    width:pxTorem(2px);
+    height:95%;
+    background:#999999;
+  }
+  ul{
+    margin-left:pxTorem(73px);
+    li{
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: pxTorem(10px);
+      position: relative;
+      margin-right:pxTorem(30px);
+      &:before{
+        content: "\20";
+        width:pxTorem(16px);
+        height:pxTorem(16px);
+        position: absolute;
+        left:pxTorem(-41px);
+        top:pxTorem(8px);
+        background:#999999;
+        @include border-radius(50%);
+        border:0;
+      }
+      &.select{
+        color:$red_c;
+        &:before{
+          background: $red_c;
+          width:pxTorem(24px);
+          height:pxTorem(24px);
+          left:pxTorem(-50px);
+          border:pxTorem(4px) solid #f4ccce;
+        }
+      }
+    }
+    p,span{
+      line-height:pxTorem(36px);
+      margin-bottom: pxTorem(10px);
+    }
+    p{
+      @include font-dpr(28px);
+    }
+    span{
+      @include font-dpr(24px);
+      display: block;
+    }
+  }
+}
+
+
+

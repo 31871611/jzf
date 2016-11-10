@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+
+/**
+
+  名家页面
+
+**/
+
+
+.famous{
+  background: #e5e5e5;
+  overflow:hidden;
+  //滑动.滚动区margin-top:-568px;
+  .famousScroll{
+    //transform:translateY(-100px);
+    @include transition(all .5s);
+  }
+  //返回与分享
+  .iconBackTop,.iconShareTop{
+    position: absolute;
+  }
+}
+
+//艺术家信息
+.famousArt{
+  position: relative;
+  h3{
+    @include font-dpr(42px);
+    text-align:center;
+    margin-top:3%;
+    margin-bottom:2.5%;
+  }
+  h4{
+    @include font-dpr(24px);
+    padding-left:34%;
+    &:nth-of-type(1){
+      margin-bottom: 1%;
+    }
+  }
+  p{
+    margin:2% pxTorem(20px) 0;
+    @include font-dpr(28px);
+    line-height:pxTorem(50px);
+    color:#666;
+    text-indent: 2em;
+  }
+}
+
+
+//第一屏.固定高度.基本信息
+.famousInfo{
+  overflow: hidden;
+  position: relative;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
+  @include transition(margin 1ms);
+  //大图
+  .nameImg{
+    //height:pxTorem(870px);
+    img{
+      vertical-align: middle;
+      width:100%;
+      height:auto;
+    }
+  }
+  //名家信息
+  #articleShort{
+    p{
+      display: none;
+      &:nth-of-type(1){
+        display: block;
+        height:pxTorem(50px * 2);
+        overflow: hidden;
+      }
+    }
+  }
+  //名家介绍
+  #articleDetail{
+    //position:absolute;
+    //left:0;
+    //top:0;
+    //right:0;
+    //bottom:0;
+    h3{
+      padding-top:pxTorem(60px);
+    }
+  }
+  //占位
+  //.footprint{
+  //  height:pxTorem(50px);
+  //}
+  //继续拖动
+  .DragBottom{
+    //position: absolute;
+    //left:0;
+    //bottom:pxTorem(20px);
+    width:100%;
+    margin-top:pxTorem(30px);
+
+    text-align:center;
+    height:pxTorem(50px);
+    line-height:pxTorem(50px);
+    color:#999;
+    span{
+      position: relative;
+      &:after,&:before{
+        content: "\20";
+        height:1px;
+        width:pxTorem(50px);
+        background:#999;
+        position: absolute;
+        top:49%;
+      }
+      &:after{
+        left:pxTorem(-60px);
+      }
+      &:before{
+        right:pxTorem(-60px);
+      }
+    }
+  }
+  //返回上一页箭头
+  .topArrow{
+    background-image: url("../images/iconArrowT.png");
+    width:pxTorem(27px);
+    margin-left:pxTorem(-13px);
+    height:pxTorem(15px);
+    @extend %ico_rem;
+    position: absolute;
+    left:50%;
+    top:pxTorem(40px);
+    z-index:2;
+  }
+  //查看作品
+  .bthMore{
+    width:pxTorem(320px);
+    height:pxTorem(80px);
+    line-height:pxTorem(80px);
+    text-align:center;
+    border:1px solid $red-base;
+    display: block;
+    margin: pxTorem(80px) auto pxTorem(40px);
+    @include font-dpr(32px);
+    color:$red-base;
+    @include border-radius(pxTorem(2px));
+    &:active{
+      background-color: $red-base;
+      color:#fff;
+    }
+  }
+  //查看详情
+  .moreDetails{
+    padding:pxTorem(20px) 0;
+    @include font-dpr(28px);
+    color:#999;
+    text-align:center;
+  }
+}
+
+

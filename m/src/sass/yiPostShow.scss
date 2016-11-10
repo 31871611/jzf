@@ -1,0 +1,145 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+
+  一元购
+
+*/
+
+
+
+
+
+
+//发布晒单页面
+.yiPostShow{
+  margin:0 pxTorem(48px) 0 pxTorem(60px);
+  padding-top: pxTorem(30px);
+  padding-bottom: pxTorem(150px);
+  span{
+
+    &.num{
+      display: block;
+      @include font-dpr(24px);
+      margin-bottom: pxTorem(10px);
+    }
+  }
+  h3{
+    margin-bottom: pxTorem(20px);
+  }
+  .text{
+    margin-bottom: pxTorem(30px);
+    textarea{
+      padding:2%;
+      display: block;
+      height:pxTorem(290px);
+      width:96%;
+      border:1px solid #ddd;
+      @include border-radius(pxTorem(4px));
+    }
+  }
+  .uploadPhoto{
+    padding-bottom: pxTorem(50px);
+    @extend %clearfix;
+    $w:154px;
+    .PhotoList,.addPhoto{
+      @include border-radius(pxTorem(12px));
+      position: relative;
+      @extend %fl;
+      margin-right:pxTorem(50px);
+      margin-bottom: pxTorem(30px);
+    }
+    .PhotoList{
+      width:pxTorem($w);
+      height:pxTorem($w);
+      img{
+        @include border-radius(pxTorem(12px));
+        width:pxTorem($w);
+        height:pxTorem($w);
+        vertical-align: middle;
+      }
+      .remove{
+        @include rotate(45deg);
+        width:pxTorem(53px);
+        height:pxTorem(53px);
+        background: $red-yi;
+        position: absolute;
+        top:pxTorem(-20px);
+        right:pxTorem(-20px);
+        @include border-radius(50%);
+        &:after,&:before{
+          content: "\20";
+          position: absolute;
+          background:#fff;
+          left:50%;
+          top:50%;
+        }
+        &:before{
+          margin:pxTorem(-2px) 0 0 pxTorem(-15px);
+          width:pxTorem(30px);
+          height:pxTorem(4px);
+        }
+        &:after{
+          margin:pxTorem(-15px) 0 0 pxTorem(-2px);
+          width:pxTorem(4px);
+          height:pxTorem(30px);
+        }
+      }
+    }
+    .addPhoto{
+      width:pxTorem($w - 3);
+      height:pxTorem($w - 3);
+      border:pxTorem(3px) solid #1f516e;
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        background:#1f516e;
+        left:50%;
+        top:50%;
+      }
+      &:before{
+        margin:-1px 0 0 pxTorem(-33px);
+        width:pxTorem(67px);
+        height:3px;
+      }
+      &:after{
+        margin:pxTorem(-33px) 0 0 -1px;
+        width:3px;
+        height:pxTorem(67px);
+      }
+    }
+  }
+
+  .info{
+    color:#999;
+    text-align: center;
+    a{
+      display: inline-block;
+      color:$link-color;
+      margin-left:pxTorem(10px);
+    }
+  }
+  .btn{
+    margin-top:pxTorem(30px);
+    $h:81px;
+    height: pxTorem($h);
+    a{
+      margin: 0 auto;
+      @include font-dpr(36px);
+      display: block;
+      width:pxTorem(469px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      color:#fff;
+      background: $red-yi;
+      text-align: center;
+      @include border-radius(pxTorem(4px));
+    }
+  }
+}
+

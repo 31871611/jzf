@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*
+
+  一元购.进度条
+
+*/
+
+
+@mixin yiSchedule(){
+  $h:9px;
+  //width: pxTorem(690px);
+  width: 92%;
+  height: pxTorem($h);
+  position: relative;
+  background: #dedede;
+  @include border-radius(4px);
+  .schedule{
+    @include border-radius(4px);
+    width: 0;
+    height: pxTorem($h);
+    @include gradient-horizontal(#fd8d33, #f8431f);
+    @include transition(width 1s);
+  }
+  .total,.surplus{
+    position: absolute;
+    top:pxTorem(18px);
+    color:#999;
+    @include font-dpr(20px);
+  }
+  .total{
+    left:0;
+  }
+  .surplus{
+    right:0;
+    text-align: right;
+  }
+  span{
+    display: block;
+
+    &.red{
+      color:$red-yi;
+    }
+  }
+}

@@ -1,0 +1,244 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+html,body{
+  height:100%;
+  //overflow-x: hidden;
+}
+html {
+  font-size: $browser-default-font-size;
+}
+body{
+  @include font-dpr(24px);
+  //background-color:$bg-color;
+}
+
+.hide{
+  display: none !important;
+}
+
+
+
+
+  抽奖页面
+
+*/
+
+.coupon{
+  width:pxTorem(750px);
+  margin:0 auto;
+  background-color: #fff;
+
+  background-image: url("../images/couponAdBg.jpg");
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  header{
+    position: relative;
+    height:pxTorem(457px);
+    //background-image: url("../images/couponHeader.png");
+    //background-size:contain;
+    //background-repeat: no-repeat;
+    //background-position: 50% 50%;
+    .text{
+      position: absolute;
+      left:0;
+      bottom:pxTorem(95px);
+      width:100%;
+      text-align: center;
+    }
+    p{
+      @include font-dpr(12px);
+      color:$blue-base;
+      //line-height:pxTorem(30px);
+    }
+  }
+
+  .main{
+
+  }
+
+  //转盘背景
+  .turntableBg{
+    position: relative;
+    width:pxTorem(704px - 96px);
+    height:pxTorem(646px - 50px);
+    padding:pxTorem(50px) 0 0 pxTorem(96px + 8px);
+    //margin:0 auto;
+    //margin-left:pxTorem(8px);
+    background-image: url("../images/couponTurntableBg.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  //转盘灯
+  .lamp{
+    position: absolute;
+    left:pxTorem(68px);
+    top:pxTorem(20px);
+    width:pxTorem(610px);
+    height:pxTorem(610px);
+    background-image: url("../images/couponLamp.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @include animation(lamp 500ms infinite);
+  }
+
+  //灯动画
+  @include keyframes(lamp){
+    0%{
+      background-image: url("../images/couponLamp.png");
+    }
+    100%{
+      background-image: url("../images/couponLampTo.png");
+    }
+  }
+
+  //转盘底坐
+  .turntable{
+    overflow: hidden;
+    width:pxTorem(545px);
+    height:pxTorem(546px);
+    background-image: url("../images/couponTurntable.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-backface-visibility: hidden;
+    opacity: 1;
+    //transform: rotate(187deg);
+  }
+  //转盘按钮
+  .turntableBtn{
+    //@include transform(rotate(3.8deg));
+    position: absolute;
+    left:pxTorem(96px + 153px + 9);
+    top:pxTorem(50px + 115px);
+    width:pxTorem(240px);
+    height:pxTorem(279px);
+    background-image: url("../images/couponBtn.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+
+  //中奖列表
+  .winningList{
+    margin-top:pxTorem(60px);
+    h2{
+      color:#fff;
+      text-align: center;
+      margin:0 auto;
+      @include font-dpr(24px);
+      font-weight: bold;
+      margin-bottom: pxTorem(35px);
+      width:pxTorem(259px);
+      height:pxTorem(47px);
+      line-height:pxTorem(47px);
+      background-image: url("../images/couponWinningTitle.png");
+      background-size:contain;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .scroll{
+      height:pxTorem(42px * 2);
+      overflow: hidden;
+      position: relative;
+      width:pxTorem(528px);
+      text-align: center;
+      margin:0 auto;
+    }
+    ul{
+      width: 100%;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    li{
+      color:#999;
+      @include font-dpr(22px);
+      height:pxTorem(40px);
+      line-height:pxTorem(40px);
+      border-bottom: 1px solid #e5e5e5;
+    }
+    span{
+      margin-right: pxTorem(47px);
+    }
+    b{
+      margin-left:7px;
+      font-weight: normal;
+      color:$red-base;
+    }
+  }
+
+  //分享按钮
+  .shareBtn{
+    display: block;
+    width:pxTorem(480px);
+    height:pxTorem(80px);
+    line-height:pxTorem(80px);
+    text-align: center;
+    color:#fff;
+    background: $red-base;
+    @include border-radius(6px);
+    @include font-dpr(30px);
+    margin:pxTorem(58px) auto 0;
+  }
+
+  footer{
+    margin-top:pxTorem(65px);
+    height:pxTorem(313px);
+    //background-image: url("../images/couponFooter.png");
+    //background-size:contain;
+    //background-repeat: no-repeat;
+    //background-position: 50% 50%;
+
+    h2{
+      visibility: hidden;
+      @include font-dpr(20px);
+      color:#d22b3f;
+      font-weight: bold;
+      padding: pxTorem(38px) 0 0 pxTorem(240px);
+      margin-bottom: pxTorem(30px);
+    }
+
+    ul{
+      width:pxTorem(710px);
+      margin:pxTorem(30px) auto 0;
+    }
+    li{
+      color:$red-base;
+      @include font-dpr(22px);
+      height:pxTorem(39px);
+      line-height:pxTorem(39px);
+      //border-bottom: 1px solid #fff;
+      padding-left:pxTorem(10px);
+    }
+    b{
+      display: inline-block;
+      font-weight: normal;
+      width:pxTorem(150px);
+    }
+    //span{
+    //  display: inline-block;
+    //  width:pxTorem(60px);
+    //}
+    strong{
+      display: inline-block;
+      &.step{
+        margin-right:pxTorem(60px);
+      }
+    }
+  }
+}
+
+
+
+
+

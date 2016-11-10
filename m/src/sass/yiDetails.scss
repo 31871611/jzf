@@ -1,0 +1,264 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  一元购
+
+*/
+
+
+
+body{
+  background: #eee;
+}
+
+
+/*
+
+  详情页面
+
+*/
+
+.yiDetails{
+  background: #eee;
+
+  @at-root &Title{
+    background: #fff;
+    padding:pxTorem(25px) pxTorem(30px) pxTorem(35px) pxTorem(30px);
+    border-bottom:1px solid #ddd;
+    margin-bottom: pxTorem(20px);
+    h1{
+      @include font-dpr(28px);
+      margin-bottom: pxTorem(30px);
+    }
+    .num{
+      display: block;
+      color:#999;
+    }
+    //进度
+    .scheduleBox{
+      @import "inc/yiSchedule";
+      @include yiSchedule();
+      margin:pxTorem(30px) auto pxTorem(115px);
+      width:100%;
+      .total,.surplus{
+        @include font-dpr(24px);
+      }
+    }
+    .info{
+      //@include font-dpr(20px);
+      text-align: center;
+      a{
+        display: inline-block;
+        color:#3091db;
+        margin-right: pxTorem(10px);
+      }
+    }
+    .notPartake,.totalPartake{
+      margin-bottom: pxTorem(15px);
+      text-align: center;
+      a{
+        display: inline-block;
+        color:#333;
+      }
+      b{
+        color: $red-yi;
+        padding:0 pxTorem(10px);
+      }
+    }
+    .totalPartake{
+      a{
+        position: relative;
+        //padding-right: pxTorem(23px);
+        &:after{
+          margin-left:pxTorem(10px);
+          content: "\20";
+          display: inline-block;
+          vertical-align: middle;
+          //position: absolute;
+          //right:0;
+          //top:0;
+          width:pxTorem(12px);
+          height:pxTorem(23px);
+          @extend %ico_rem;
+          background-image: url("../images/iconArrowR.png");
+        }
+      }
+    }
+    .titleRed{
+      color:$red-yi;
+      @include font-dpr(28px);
+      text-align: center;
+      margin:0 0 pxTorem(20px);
+    }
+    //幸运号码
+    .lucky{
+      width:91%;
+      margin:0 auto;
+      background: #f2f2f2;
+      position: relative;
+      padding-bottom: pxTorem(20px);
+      $h:50px;
+      .title{
+        height:pxTorem($h);
+        background: $red-yi;
+        color:#fff;
+        margin-bottom: pxTorem(25px);
+      }
+      .text{
+        position: absolute;
+        left:pxTorem(10px);
+        top:0;
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+      }
+      strong{
+        @include font-dpr(36px);
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+      }
+      p{
+        text-align: center;
+        color:#686868;
+        height:pxTorem(32px);
+      }
+    }
+    .date{
+      @import "inc/yiDate";
+      @include yiDate();
+    }
+  }
+
+  &SubTitle{
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    $h:65px;
+    height: pxTorem($h);
+    background: #fff;
+    a{
+      display: block;
+      height: pxTorem($h);
+      padding:0 pxTorem(30px);
+      @include font-dpr(24px);
+      color:#333;
+      @include display-flex();
+      @include align-items();
+    }
+    i{
+      @extend %ico_rem;
+      display: block;
+      //藏品详情icon
+      &.iconYiInfo{
+        width: pxTorem(43px);
+        height: pxTorem(43px);
+        background-image: url("../images/iconYiInfo.png");
+      }
+      //晒单icon
+      &.iconYiPhoto{
+        width: pxTorem(44px);
+        height: pxTorem(41px);
+        background-image: url("../images/iconYiPhoto.png");
+      }
+      //往期中奖icon
+      &.iconYiPast{
+        width: pxTorem(36px);
+        height: pxTorem(41px);
+        background-image: url("../images/iconYiPast.png");
+      }
+      //右箭头
+      .iconArrowR{
+        width: pxTorem(16px);
+        height: pxTorem(30px);
+        background-image: url("../images/iconArrowR.png");
+      }
+    }
+    span{
+      //padding-left:pxTorem(20px);
+      @include flex(1);
+      color:#333;
+      @include font-dpr(28px);
+      display: block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+  }
+
+  .detailInfo{
+    margin-bottom: 0;
+  }
+
+  @at-root &Partake{
+    margin-top:pxTorem(20px);
+    border-top:1px solid #ddd;
+    background: #fff;
+    .title{
+      $h:66px;
+      height: pxTorem($h);
+      padding:0 pxTorem(30px);
+      h3,span{
+        height: pxTorem($h);
+        line-height: pxTorem($h);
+      }
+      h3{
+        @extend %fl;
+        @include font-dpr(28px);
+      }
+      span{
+        @extend %fr;
+        //@include font-dpr(20px);
+      }
+    }
+    ul{
+      li{
+        @extend %clearfix;
+        padding:pxTorem(15px) pxTorem(30px) pxTorem(10px);
+        border-top:1px solid #ddd;
+      }
+      .text{
+        height: pxTorem(35px);
+      }
+      span{
+
+        &.tel{
+          @extend %fl;
+        }
+        &.num{
+          @extend %fr;
+        }
+        &.date{
+          @extend %fr;
+        }
+      }
+      b{
+        color:$red-yi;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &Btn{
+    $h:98px;
+    height: pxTorem($h);
+    margin:0;
+    a{
+      @include font-dpr(36px);
+      display: block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      text-align: center;
+      color:#fff;
+      background: $red-yi;
+    }
+  }
+}
+
+/*****************************************/
+
+

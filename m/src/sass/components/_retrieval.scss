@@ -1,0 +1,607 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//检索
+
+//合并
+.pfFilter{
+  position: fixed;
+  left:0;
+  top:pxTorem(130px);
+  width:100%;
+  z-index:46;
+}
+//合并
+.retrievalJoin{
+  background: #fff;
+  //如果不行就放外面点击时显示
+  //问题就是|全部与新品的参数
+  position: absolute;
+  left:0;
+  //@if $wxTop {
+  //  top:pxTorem(170px - 2);
+  //} @else {
+  //  top:pxTorem(170px + 40 - 2);
+  //}
+  top:0;
+  right:0;
+  bottom:0;
+  z-index:47;
+  .filter{
+    @extend .wrap;
+  }
+  //排序下拉信息
+  .sort_list{
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    @extend .flex;
+    width:100%;
+    @include font-dpr(24px);
+    margin:0 pxTorem(30px) 0 ;
+    a{
+      color:#333333;
+      display: inline-block;
+    }
+  }
+  h2{
+    padding-top:pxTorem(20px);
+    margin:0 0 pxTorem(20px) 0;
+    color:#666666;
+    @include font-dpr(24px);
+  }
+  //横版价格升降
+  .rowPrice{
+    padding:pxTorem(20px) 0 pxTorem(10px);
+    border-bottom: 1px solid #e5e5e5;
+    @extend .display-flex;
+    a{
+      @extend .flex;
+      display: block;
+      position: relative;
+      &.select{
+        color:$blue-base;
+        border:0;
+        font-weight: bold;
+        .up{
+          border-color:transparent transparent $blue-base transparent;
+        }
+        .down{
+          border-color:$blue-base transparent transparent transparent;
+        }
+      }
+    }
+    i{
+      font-style: normal;
+      position: absolute;
+      left:pxTorem(60px);
+      &.up{
+        @include arrow(top,pxTorem(10px),#333333);
+        top:pxTorem(0px);
+      }
+      &.down{
+        @include arrow(bottom,pxTorem(10px),#333333);
+        top:pxTorem(10px);
+      }
+    }
+  }
+  //品类横版对齐列表
+  .category_list{
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: pxTorem(15px);
+    @extend %clearfix;
+    a{
+      float:left;
+      width:33%;
+      @include font-dpr(24px);
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      display: inline-block;
+      color:#333;
+      &:hover,&.select{
+        color:$blue-base;
+        font-weight: bold;
+      }
+    }
+  }
+  .btn{
+    $h:76px;
+    height:pxTorem($h);
+    @extend .display-flex;
+    padding-bottom: pxTorem(10px);
+    a{
+      text-align: center;
+      @extend .flex;
+      display: block;
+      width:100%;
+      @include font-dpr(28px);
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      background:$blue-base;
+      color:#fff;
+      &:nth-child(2){
+        margin-left:pxTorem(10px);
+      }
+    }
+  }
+}
+
+//分开
+.retrievalSplit{
+  background:#fff;
+  position: absolute;
+  left:0;
+  top:0;    //放在main里?
+  //@if $wxTop {
+  //  top:pxTorem(170px);
+  //} @else {
+  //  top:pxTorem(170px + 40);
+  //}
+  right:0;
+  bottom:0;
+  z-index:47;
+  .hot{
+    li{
+      margin-left:pxTorem(30px);
+      margin-right:pxTorem(30px);
+      border-bottom: 1px solid #e5e5e5;
+    }
+    a{
+      color:#333;
+      height:pxTorem(76px);
+      line-height:pxTorem(76px);
+      width:100%;
+      @include font-dpr(24px);
+      position: relative;
+      &.select{
+        color:$blue-base;
+        border:0;
+        font-weight: bold;
+        .up{
+          border-color:transparent transparent $blue-base transparent;
+        }
+        .down{
+          border-color:$blue-base transparent transparent transparent;
+        }
+      }
+    }
+    i{
+      font-style: normal;
+      position: absolute;
+      left:pxTorem(60px);
+      &.up{
+        @include arrow(top,pxTorem(10px),#333333);
+        top:pxTorem(6px);
+      }
+      &.down{
+        @include arrow(bottom,pxTorem(10px),#333333);
+        top:pxTorem(12px);
+      }
+    }
+  }
+  //筛选
+  .filter{
+    @extend .wrap;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    width:100%;
+  }
+  header{
+    margin:0 pxTorem(30px);
+    border-bottom: 1px solid #d2d2d2;
+    a{
+      @include font-dpr(32px);
+      display: inline-block;
+      line-height: pxTorem(90px);
+      color:#333;
+      margin-right:pxTorem(120px);
+      &.select{
+        color:$blue-base;
+        font-weight: bold;
+      }
+    }
+  }
+  h2{
+    padding-top:pxTorem(20px);
+    margin:0 0 pxTorem(20px) 0;
+    color:#666666;
+    @include font-dpr(24px);
+  }
+  .box{
+
+  }
+  .con{
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    @extend .flex;
+    margin:0 pxTorem(30px) 0 ;
+    padding-bottom:pxTorem(86px);
+  }
+  //横版价格升降
+  .rowPrice{
+    padding:pxTorem(20px) 0 pxTorem(10px);
+    border-bottom: 1px solid #e5e5e5;
+    @extend .display-flex;
+    a{
+      color:#333;
+      @extend .flex;
+      display: block;
+      position: relative;
+      &.select{
+        color:$blue-base;
+        border:0;
+        font-weight: bold;
+        .up{
+          border-color:transparent transparent $blue-base transparent;
+        }
+        .down{
+          border-color:$blue-base transparent transparent transparent;
+        }
+      }
+    }
+    i{
+      font-style: normal;
+      position: absolute;
+      left:pxTorem(60px);
+      &.up{
+        @include arrow(top,pxTorem(10px),#333333);
+        top:pxTorem(0px);
+      }
+      &.down{
+        @include arrow(bottom,pxTorem(10px),#333333);
+        top:pxTorem(10px);
+      }
+    }
+  }
+  //品类筛选列表
+  .category_list{
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: pxTorem(15px);
+    @extend %clearfix;
+    a{
+      float:left;
+      width:33%;
+      @include font-dpr(24px);
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      display: inline-block;
+      color:#333;
+      &:hover,&.select{
+        color:$blue-base;
+        font-weight: bold;
+      }
+    }
+  }
+  .btn{
+    position: absolute;
+    left:0;
+    bottom:pxTorem(10px);
+    width:100%;
+    $h:76px;
+    height:pxTorem($h);
+    @extend .display-flex;
+    margin:0;
+    a{
+      text-align: center;
+      @extend .flex;
+      display: block;
+      width:100%;
+      @include font-dpr(28px);
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      background:$blue-base;
+      color:#fff;
+      margin-left:pxTorem(20px);
+      &:nth-child(2){
+        margin-left:pxTorem(10px);
+        margin-right:pxTorem(20px);
+      }
+    }
+  }
+}
+
+
+//筛选
+.goodsFilter{
+  $h:80px;
+  @extend .display-flex;
+  background: #f7f7f7;
+  height:pxTorem($h);
+  .sort{
+    padding-left:pxTorem(75px);
+    width:pxTorem(153px - 75);
+    color:#999999;
+    @include font-dpr(24px);
+    line-height:pxTorem($h);
+    position: relative;
+    .iconFilter,&:after,.arrow{
+      position: absolute;
+    }
+    //ico图标
+    .iconFilter{
+      background-image: url("../images/iconFilterAsh.png");
+      @extend %ico_rem;
+      width:pxTorem(38px);
+      height:pxTorem(38px);
+      left:pxTorem(30px);
+      top:pxTorem(22px);
+    }
+    //右边分隔线
+    &:after{
+      content: "\20";
+      right: 0;
+      top:pxTorem(10px);
+      width:1px;
+      height:pxTorem($h - 20);
+      background:#999;
+    }
+    //小箭头
+    .arrow{
+      content: "\20";
+      @include arrow(top,pxTorem(12px),#fff);
+      left:pxTorem(36px);
+      bottom: 0;
+    }
+    //选中
+    &.select{
+      color: $blue-base;
+      .iconFilter{
+        background-image: url("../images/iconFilterBlue.png");
+      }
+    }
+  }
+  //新品\全部切换
+  .box{
+    @extend .flex;
+    @extend .display-flex;
+    a{
+      @extend .flex;
+      display: block;
+      line-height:pxTorem($h);
+      text-align:center;
+      color:#999999;
+      @include font-dpr(32px);
+      &.select{
+        b{
+          color:$blue-base;
+          line-height:pxTorem($h - 4px);
+          border-bottom: pxTorem(4px) solid $blue-base;
+          font-weight: bold;
+        }
+      }
+    }
+    b{
+      display: inline-block;
+      font-weight: normal;
+      line-height:pxTorem($h);
+    }
+  }
+  //田黄石\荔枝洞石\文玩|分类
+  .tab{
+    overflow-x:auto;
+    width:100%;
+    @extend .flex;
+    a{
+      margin-bottom:0 !important;
+    }
+  }
+  .scrollTab{
+    width:pxTorem(800px);
+    @extend .goodsRowHotTab;
+    margin-right:0 !important;
+    a{
+      margin-right:10px !important;
+    }
+  }
+}
+
+//筛选条件|整合
+//.goodsFilterIf{
+//  //position: absolute;
+//  //top:pxTorem(92px);
+//  //right:0;
+//  //bottom:0;
+//  //left:0;
+//  z-index:48;
+//  //透明遮罩
+//  .opacityT{
+//    @extend .opacity;
+//    position: absolute !important;
+//    z-index: 49 !important;
+//  }
+//  //排序下拉信息
+//  .sort_list{
+//    @extend .wrap;
+//    position: relative;
+//    z-index:50;
+//    font-size:pxTorem(24px);
+//    background: #fff;
+//    a{
+//      color:#333333;
+//      display: inline-block;
+//    }
+//  }
+//  //排序状态
+//  .hot{
+//    //height:100%;
+//    li{
+//      margin-left:pxTorem(30px);
+//      margin-right:pxTorem(30px);
+//      border-bottom: 1px solid #e5e5e5;
+//    }
+//    a{
+//      height:pxTorem(76px);
+//      line-height:pxTorem(76px);
+//      width:100%;
+//      font-size: pxTorem(24px);
+//      position: relative;
+//      &.select{
+//        color:$blue-base;
+//        border:0;
+//        font-weight: bold;
+//        .up{
+//          border-color:transparent transparent $blue-base transparent;
+//        }
+//        .down{
+//          border-color:$blue-base transparent transparent transparent;
+//        }
+//      }
+//    }
+//    i{
+//      font-style: normal;
+//      position: absolute;
+//      left:pxTorem(60px);
+//      &.up{
+//        @include arrow(top,pxTorem(10px),#333333);
+//        top:pxTorem(26px);
+//      }
+//      &.down{
+//        @include arrow(bottom,pxTorem(10px),#333333);
+//        top:pxTorem(36px);
+//      }
+//    }
+//  }
+//  //横版价格升降
+//  .rowPrice{
+//    padding:pxTorem(20px) 0 pxTorem(10px);
+//    border-bottom: 1px solid #e5e5e5;
+//    @extend .display-flex;
+//    a{
+//      @extend .flex;
+//      display: block;
+//      position: relative;
+//      &.select{
+//        color:$blue-base;
+//        border:0;
+//        font-weight: bold;
+//        .up{
+//          border-color:transparent transparent $blue-base transparent;
+//        }
+//        .down{
+//          border-color:$blue-base transparent transparent transparent;
+//        }
+//      }
+//    }
+//    i{
+//      font-style: normal;
+//      position: absolute;
+//      left:pxTorem(60px);
+//      &.up{
+//        @include arrow(top,pxTorem(10px),#333333);
+//        top:pxTorem(0px);
+//      }
+//      &.down{
+//        @include arrow(bottom,pxTorem(10px),#333333);
+//        top:pxTorem(10px);
+//      }
+//    }
+//  }
+//  //价格
+//  .price{
+//    position: relative;
+//    height:pxTorem(60px - 20);
+//    padding-top: pxTorem(20px + 100px);
+//    padding-bottom: pxTorem(30px);
+//    margin:0 pxTorem(30px) 0 pxTorem(30px);
+//    border-bottom: 1px solid #d2d2d2;
+//    .box{
+//      height:pxTorem(18px);
+//      border: 1px solid #d2d2d2;
+//      margin-right:pxTorem(10px);
+//      position: relative;
+//    }
+//    span{
+//      position: absolute;
+//    }
+//    .low,.high{
+//      top:pxTorem(100px - 40);
+//      color:#333;
+//    }
+//    .low{
+//      left:0;
+//    }
+//    .high{
+//      right:0;
+//    }
+//    .left,.right{
+//      width:pxTorem(20px);
+//      height:pxTorem(60px);
+//      margin-top:pxTorem(-30px);
+//      background:$blue-base;
+//      top:50%;
+//    }
+//    .left{
+//      left:0;
+//    }
+//    .right{
+//      left:100%;
+//    }
+//    input[type='range']{
+//      width:100%;
+//      display: block;
+//    }
+//  }
+//  //筛选
+//  .filter{
+//    overflow:scroll;
+//    -webkit-overflow-scrolling: touch;
+//    @extend .flex;
+//    width:100%;
+//    h2{
+//      padding-top:pxTorem(20px);
+//      margin:0 0 pxTorem(20px) 0;
+//      color:#666666;
+//      font-size:pxTorem(24px);
+//    }
+//    .box{
+//      margin:0 pxTorem(30px) 0 ;
+//      padding-bottom:pxTorem(30px);
+//    }
+//  }
+//  //品类筛选列表
+//  .category_list{
+//    border-bottom: 1px solid #d2d2d2;
+//    padding-bottom: pxTorem(15px);
+//    @extend %clearfix;
+//    a{
+//      float:left;
+//      width:33%;
+//      font-size:pxTorem(24px);
+//      height:pxTorem(60px);
+//      line-height:pxTorem(60px);
+//      display: inline-block;
+//      color:#333;
+//      &:hover,&.select{
+//        font-weight: bold;
+//        color:$blue-base;
+//      }
+//    }
+//  }
+//  .btn{
+//    $h:76px;
+//    height:pxTorem($h);
+//    @extend .display-flex;
+//    padding-bottom: pxTorem(10px);
+//    a{
+//      text-align: center;
+//      @extend .flex;
+//      display: block;
+//      width:100%;
+//      font-size:pxTorem(28px);
+//      height:pxTorem($h);
+//      line-height:pxTorem($h);
+//      background:$blue-base;
+//      color:#fff;
+//      &:nth-child(2){
+//        margin-left:pxTorem(10px);
+//      }
+//    }
+//  }
+//  //没有寿山石与珠宝的切换按钮
+//  .notTabBtn{
+//    top:pxTorem(166px);
+//  }
+//}

@@ -1,0 +1,600 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+.eWallet{
+  width: 100%;
+  //公共部分
+  .mt-20{
+    margin-top: pxTorem(-20px);
+  }
+  .mt40{
+    margin-top: pxTorem(40px);
+  }
+  .f24{
+    @include font-dpr(24px);
+  }
+  .mr20{
+    margin-right: pxTorem(20px) !important;
+  }
+  .textRight{
+    text-align: right;
+  }
+  //无边框
+  .noBorder{
+    border: none !important;
+    &:after{
+      border: none !important;
+    }
+  }
+  //有边框
+  .haveBorder{
+    border-bottom: 1px solid $color-ccc !important;
+  }
+  //背景色为灰色
+  .bgGray{
+    background-color: $color-999 !important;
+  }
+
+  //左右两边对齐布局
+  .justifyLayout{
+    @extend .display-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-around;
+    .flex{
+      @extend .flex;
+      &:last-of-type{
+        @extend %tr;
+      }
+    }
+  }
+  //中间内容flex(1)布局
+  .centerFlexLayout{
+    @extend .display-flex;
+    align-items: center;
+    -webkit-align-items:center;
+    .flex{
+      @extend .flex;
+    }
+  }
+  //图标
+  i{
+    &.wayIcon{
+      width: pxTorem(51px);
+      height: pxTorem(51px);
+      @extend %ib;
+      @extend %ico_rem;
+      vertical-align: middle;
+      img{
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+      }
+    }
+    &.iconUserleft{
+      width: pxTorem(16px);
+      height: pxTorem(30px);
+      background-image: url("../images/iconArrowR.png");
+    }
+    &.iconUserBottom{
+      width: pxTorem(16px);
+      height: pxTorem(30px);
+      background-image: url("../images/iconArrowB.png");
+    }
+    &.iconUserChangeTip{
+      width: pxTorem(40px);
+      height: pxTorem(40px);
+      background-color: $red-base;
+      border-radius: 100%;
+      background-image: url("../images/iconUserChangeTip.png");
+      background-size:pxTorem(8px) pxTorem(30px) ;
+    }
+    &.iconPaySuccess{
+      width: pxTorem(140px);
+      height: pxTorem(110px);
+      background-image: url("../images/iconPaySuccess.png");
+    }
+    &.iconPayError{
+      width: pxTorem(109px);
+      height: pxTorem(109px);
+      background-image: url("../images/iconPayError.png");
+    }
+    &.iconBank01{
+      //银行卡图标?
+      //background-image: url("../images/iconBank01.png");
+    }
+  }
+  .wayList{
+    width: 100%;
+    background-color: #fff;
+    li{
+      position: relative;
+      $height:pxTorem(90px);
+      height: $height;
+      line-height: $height;
+      border-bottom: 1px solid $color-ccc;
+      margin-left: pxTorem(30px);
+      margin-right: pxTorem(30px);
+      //padding-left: pxTorem(30px);
+      //padding-right: pxTorem(30px);
+      @include font-dpr(28px);
+      a{
+        color: #333;
+      }
+      //&:active{
+      //  background-color: #eee;
+      //}
+      //&:after{
+      //  position: absolute;
+      //  bottom: 0;
+      //  left: 0;
+      //  width: 100%;
+      //  margin-right: pxTorem(30px);
+      //  margin-left: pxTorem(30px);
+      //  content: '\20';
+      //  @extend %block;
+      //  border-bottom: 1px solid $color-ccc;
+      //}
+      &:first-of-type{
+        border-bottom: 1px solid $color-ccc;
+      }
+      &:last-of-type{
+          border-bottom: none;
+      }
+
+      //交易单号
+      &.numbers{
+        height:auto;
+        line-height:pxTorem(60px);
+        @include display-flex();
+        span{
+          display: block;
+        }
+      }
+    }
+    span{
+      margin-right: pxTorem(15px);
+      &.nums{
+        @include flex(1);
+        white-space:normal;
+        word-break:break-all;
+      }
+    }
+    input{
+      border:none;
+      vertical-align: top;
+      display: block;
+    }
+    input[name='password']{
+      -webkit-text-security: disc;
+    }
+    .num{
+      position: absolute;
+      top: pxTorem(45px);
+      right: pxTorem(20px);
+      font-style: normal;
+    }
+  }
+  //提现
+  .depositList{
+    span{
+      margin-right:0;
+      display: block;
+      width:100%;
+      @include flex(1);
+      text-align:center;
+    }
+  }
+  .w150{
+    @extend %ib;
+    width: pxTorem(150px);
+  }
+  .w170{
+    @extend %ib;
+    width: pxTorem(170px);
+  }
+  .w220{
+    @extend %ib;
+    width: pxTorem(220px);
+  }
+  .fr{
+    float: right !important;
+  }
+  .mr50{
+    margin-right: pxTorem(50px) !important;
+  }
+  //首页总额显示
+  .wayAmount{
+    width: 100%;
+    background-color: #fff;
+    @extend %tc;
+    em{
+      @include font-dpr(24px);
+    }
+    span{
+      @extend %block;
+      margin-bottom: pxTorem(10px);
+    }
+    .amountAll{
+      box-sizing: border-box;
+      margin-right: pxTorem(30px);
+      margin-left: pxTorem(30px);
+      padding-top: pxTorem(90px);
+      height: pxTorem(290px);
+      border-bottom: 1px solid #ccc;
+      span{
+        color: $red-base;
+        @include font-dpr(76px);
+      }
+    }
+    .amountPart{
+      div{
+        @include flex(1);
+        margin-top: pxTorem(10px);
+        margin-bottom: pxTorem(10px);
+        padding-top:pxTorem(15px);
+        padding-bottom: pxTorem(15px);
+        &:first-of-type{
+          border-right: 1px solid #ccc;
+        }
+      }
+      span{
+        @include font-dpr(46px);
+        font-weight: bold;
+      }
+    }
+  }
+  //提示
+  .tip{
+    margin-right: pxTorem(30px);
+    margin-left: pxTorem(30px);
+    @include font-dpr(28px);
+    p{
+      line-height: pxTorem(45px);
+    }
+    i.iconUserChangeTip{
+      width: pxTorem(26px);
+      height: pxTorem(26px);
+      margin-top: pxTorem(-5px);
+      margin-right: pxTorem(10px);
+      background-size: pxTorem(5px) pxTorem(20px);
+    }
+  }
+  //充值成功/失败头部
+  .reChange{
+    padding-top: pxTorem(82px);
+    padding-bottom: pxTorem(70px);
+    @extend %tc;
+    p{
+      color: $red-base;
+      @include font-dpr(32px);
+      margin-top: pxTorem(25px);
+    }
+  }
+  //下拉框
+  .dropDown{
+    background: #fff;
+    position: relative;
+    @extend %tr;
+    padding-right: pxTorem(25px);
+    select{
+      background: #fff;
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+    option{
+      width: 100%;
+      outline: 0;
+      border: none;
+    }
+    option:first-of-type{
+      color: $color-999;
+    }
+    &:after{
+      position: absolute;
+      right: 0;
+      bottom: pxTorem(30px);
+      content: "";
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      border-bottom: 0.14rem solid #003347;
+      border-right: 0.14rem solid transparent;
+      border-left: 0.14rem solid transparent;
+      transform: rotate(135deg);
+      margin-top: pxTorem(15px);
+      //vertical-align: bottom;
+    }
+  }
+  //流水明细列表
+  .waterList{
+    li{
+      height: pxTorem(120px);
+      box-sizing: border-box;
+      line-height: pxTorem(42px);
+      padding-top:pxTorem(25px);
+      padding-bottom: pxTorem(25px);
+    }
+  }
+  //高度自适应列表
+  .waterListHeiAuto{
+    li{
+      height: auto;
+      span{
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+  }
+  //流水详情
+  .waterDetailTitle{
+    box-sizing: border-box;
+    height: pxTorem(200px);
+    padding-left: pxTorem(30px);
+    padding-right: pxTorem(30px);
+    padding-top: pxTorem(40px);
+    background-color: #fff;
+    @include font-dpr(28px);
+    b{
+      @extend %block;
+      margin-top: pxTorem(20px);
+      @include font-dpr(48px);
+      font-weight: normal;
+    }
+  }
+  //设置密码验证码
+  .code{
+    $height:pxTorem(70px);
+    width: pxTorem(180px);
+    height: $height;
+    line-height: $height;
+    background-color: $red-base;
+    margin-top:pxTorem(10px);
+    margin-bottom: pxTorem(10px);
+    @extend %tc;
+    color: #fff;
+  }
+  //银行卡提现选择
+  .depositBankSelect{
+    $height:pxTorem(115px);
+    height: $height;
+    background-color: #fff;
+    padding-left:pxTorem(30px);
+    padding-right: pxTorem(30px);
+    @include font-dpr(28px);
+  }
+  //银行卡管理
+  .bankManage{
+    box-sizing: border-box;
+    //width: pxTorem(690px);
+    height: pxTorem(200px);
+    margin-left: pxTorem(30px);
+    margin-right: pxTorem(30px);
+    padding-left: pxTorem(25px);
+    @include font-dpr(28px);
+    border-radius: pxTorem(10px);
+    color: #fff;
+    .icon{
+      @include display-flex();
+      align-items: center;
+      -webkit-align-items: center;
+      width: pxTorem(60px);
+      height: pxTorem(60px);
+      border-radius: 100%;
+      margin-right: pxTorem(20px);
+      background-color: #fff;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        margin: 0 auto;
+      }
+    }
+    span,em{
+      @extend %block;
+    }
+    span{
+      margin-top: pxTorem(20px);
+    }
+    em{
+      margin-bottom: pxTorem(40px);
+    }
+    &.bgBlue{
+      background-color: #2a76d4;
+    }
+    &.bgRed{
+      background-color: #d64859;
+    }
+  }
+  //银行卡选择
+  .walletBankSelect{
+    img{
+      width: pxTorem(60px);
+      height: pxTorem(60px);
+    }
+  }
+  //按钮
+  a.btn{
+    @extend %block;
+    //width: pxTorem(690px);
+    height: pxTorem(100px);
+    line-height: pxTorem(100px);
+    @extend %tc;
+    margin: pxTorem(40px) pxTorem(30px) 0 pxTorem(30px);
+    color: #fff;
+    @include font-dpr(32px);
+    background-color: $color-999;
+    outline: none;
+    border: none;
+    //背景红色
+    &.bgRed{
+      background-color: $red-base;
+      &:active{
+        background-color: $red-hover-base;
+      }
+    }
+    //蓝框蓝字
+    &.borBlue{
+      background-color: transparent;
+      border: 1px solid $blue-base;
+      color: $blue-base;
+      &:active{
+        background-color: $blue-hover-base;
+        color: #fff;
+      }
+    }
+    //背景蓝色字体白色
+    &.select,&.bgBlue{
+      background-color: $blue-base;
+      &:active{
+        background-color: $blue-hover-base;
+      }
+    }
+  }
+  div.btn{
+    @include display-flex();
+    border: none;
+    @include font-dpr(32px);
+    margin-left: pxTorem(30px);
+    margin-right: pxTorem(30px);
+    margin-top: pxTorem(40px);
+    a{
+      @extend %block;
+      @include flex(1);
+      border: none;
+      height: 100%;
+      //line-height: pxTorem(100px);
+      &.white{
+        background-color: #fff;
+        color: $color-333;
+      }
+      &.blue{
+        background-color: $blue-base;
+        color:#fff;
+        &:active{
+          background-color: $blue-hover-base;
+        }
+      }
+      &.btnRedBg{
+        background-color: $red-base;
+        color: #fff;
+        &:active{
+          background-color: $red-hover-base;
+        }
+      }
+      &:first-of-type{
+        margin-right: pxTorem(10px);
+      }
+    }
+  }
+}
+
+//银行卡弹窗
+.wayBankAlert{
+  z-index: 30;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  @include display-flex();
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  i{
+    @extend %ib;
+    //选中圆圈
+    &.iconCircleSelect{
+      display: none;
+      width:pxTorem(28px);
+      height: pxTorem(28px);
+      background-color: $red-base;
+      border-radius: 100%;
+      background-image: url("../images/iconCircleSelect.png");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: pxTorem(18px) pxTorem(13px);
+    }
+    //未选中圆圈
+    &.iconCircle{
+      width:pxTorem(26px);
+      height: pxTorem(26px);
+      border-radius: 100%;
+      border:1px solid $color-999;
+    }
+    &.iconDeleteRound{
+      width: pxTorem(26px);
+      height: pxTorem(26px);
+      background-image: url("../images/iconDelete.png");
+      @extend %ico_rem;
+    }
+  }
+  .opacity{
+    z-index: 31;
+    overflow: hidden;
+  }
+  .title{
+    position: relative;
+    width: pxTorem(500px);
+    height: pxTorem(88px);
+    @include display-flex();
+    align-items: center;
+    -webkit-align-items: center;
+    background-color: $blue-base;
+    color: #fff;
+    z-index: 32;
+    span{
+      @include flex(1);
+      margin-left: pxTorem(28px);
+    }
+    i{
+      margin-right: pxTorem(28px);
+    }
+  }
+  .box{
+    position: relative;
+    width: pxTorem(500px);
+    height: pxTorem(558px);
+    background-color: #fff;
+    overflow: scroll;
+    z-index: 32;
+    li{
+      @include display-flex();
+      align-items: center;
+      -webkit-align-items: center;
+      height:pxTorem(110px);
+      margin-left: pxTorem(28px);
+      margin-right: pxTorem(28px);
+      border-bottom: 1px solid #ccc;
+      &:last-of-type{
+        border-bottom: none;
+      }
+      &.select{
+        i.iconCircle{
+          display: none;
+        }
+        i.iconCircleSelect{
+          display: block;
+        }
+      }
+      img{
+        width: pxTorem(60px);
+        height: pxTorem(60px);
+        vertical-align: middle;
+        margin-right: pxTorem(15px);
+      }
+      div{
+        @include flex(1);
+        span{
+          @extend %block;
+        }
+      }
+
+    }
+  }
+}

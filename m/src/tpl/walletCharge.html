@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"充值"
+})
+<body>
+
+<!--充值-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"充值"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span>充值账号</span>
+                    <input type="tel" placeholder="请输入充值账号" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span>金额(元)</span>
+                    <input type="tel" placeholder="请输入充值金额" class="flex">
+                </li>
+            </ul>
+            <a href="#" class="btn mt20 bgRed">充值</a>
+            <div class="tip mt40">
+                <p><i class="wayIcon iconUserChangeTip"></i>温馨提示:</p>
+                <p>1. 充值成功后，余额可能存在延迟现象，一般1到5分钟内到账，如有问题，请咨询客服；</p>
+                <p>2. 充值金额输入值必须是不小于10且不大于100万的正整数；</p>
+                <p>3. 您有多种方式进行充值，如遇到任何支付问题可以查看在线支付帮助；</p>
+                <p>4. 充值完成后，您可以进入账户充值记录页面进行查看余额充值状态.</p>
+            </div>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

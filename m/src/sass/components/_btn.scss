@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//行（row）与列（column）
+//btn btn-default bth-red btn-block
+
+//按钮
+.btn{
+  text-align: center;
+  margin-left:pxTorem(20px);
+  margin-right:pxTorem(20px);
+  a{
+    display:block;
+    @include font-dpr(32px);
+    height:pxTorem(76px);
+    line-height:pxTorem(76px);
+  }
+  //黑底白字
+  .exit{
+    background:#333333;
+    color:#fff;
+  }
+  //边红背景白红字
+  .border{
+    border: 1px solid $red_c;
+    background: #fff;
+    color: $red_c;
+    &:active{
+      background-color: $red-hover-base;
+      color: #fff;
+    }
+  }
+  //纯红白字
+  .bg{
+    background:$red_c;
+    border: 1px solid $red_c;
+    color:#fff;
+    &:active{
+      background-color: $red-hover-base;
+    }
+  }
+}
+//一行2个按钮
+.btnRow{
+  @extend .display-flex;
+  @include justify-content();
+  a{
+    @include flex(1);
+    &:nth-child(2){
+      margin-left:pxTorem(20px);
+    }
+  }
+}

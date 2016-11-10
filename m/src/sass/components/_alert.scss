@@ -1,0 +1,1274 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//半透明遮罩
+.opacity,.opacityAlert{
+  z-index:28;
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0,.3);
+}
+
+//关注成功提示
+.mAlert{
+  display: -webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  //@include display-flex();
+  //@include align-items();
+  //@include justify-content(center);
+  position: fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index: 100;
+  span{
+    display: block;
+    padding:pxTorem(25px) pxTorem(50px);
+    text-align:center;
+    background:rgba(51,51,51,.8);
+    @include font-dpr(28px);
+    color:#fff;
+    @include border-radius(pxTorem(8px));
+  }
+}
+
+//结算弹窗确定取消
+.myalert{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  @extend %boxcen;
+  //background: rgba(0,0,0,.3);
+  @include border-radius(pxTorem(4px));
+  z-index:30;
+  .content{
+    position: relative;
+    z-index:29;
+    background:#fff;
+    width:pxTorem(560px);
+    @include border-radius(pxTorem(4px));
+  }
+  .myalert-title{
+    $h:80px;
+    border-bottom: 1px solid #dddddd;
+    background: $red_c;
+    height:pxTorem(80px);
+    h2{
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      float: left;
+      @include font-dpr(32px);
+      padding-left:pxTorem(20px);
+      color:#fff;
+    }
+    .exit{
+      float: right;
+      color:#fff;
+      @include font-dpr(32px);
+      //background-image: url("../images/x2.png");
+      width:pxTorem(30px + 37px * 2);
+      height:pxTorem(80px);
+      background-size:pxTorem(30px) pxTorem(30px);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+  .myalert-box{
+    padding:pxTorem(30px);
+    p{
+      color:#333333;
+      @include font-dpr(32px);
+      line-height:pxTorem(40px);
+      margin-top:pxTorem(10px);
+    }
+    .cen{
+      text-align:center;
+    }
+    .load{
+      height: 20px;
+      width: 20px;
+      border-radius: 100%;
+      display: inline-block;
+      margin: 10px;
+      border: 2px solid #003247;
+      border-bottom-color: transparent;
+      vertical-align: middle;
+      @include animation(rotate 0.75s 0 linear infinite);
+    }
+  }
+  .myalert-btn{
+    @extend .display-flex;
+    border-top:1px solid #dddddd;
+    a{
+      display: block;
+      text-align: center;
+      height:pxTorem(86px);
+      line-height:pxTorem(86px);
+      width:100%;
+      @extend .flex;
+      color:#333333;
+      @include font-dpr(30px);
+      &:nth-child(2){
+        border-left:1px solid #dddddd;
+        margin-left:0;
+      }
+    }
+  }
+}
+
+
+
+//用户中心-修改性别弹窗
+.alertUserSex{
+  z-index:27;
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  .box{
+    background:#fff;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width:100%;
+    z-index:29;
+  }
+  h2{
+    @include font-dpr(32px);
+    margin-left:pxTorem(30px);
+    height:pxTorem(50px);
+    line-height:pxTorem(50px);
+    padding-top:pxTorem(10px);
+  }
+  ul{
+    li{
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      margin:0 pxTorem(30px);
+      @include font-dpr(28px);
+      &:nth-child(1){
+        border-bottom: 1px solid #cccccc;
+      }
+    }
+  }
+  .btn{
+    margin:0;
+    a{
+      height:pxTorem(90px);
+      line-height:pxTorem(90px);
+      border-top: 1px solid #cccccc;
+      color:#999999;
+      @include font-dpr(28px);
+    }
+    text-align:center;
+  }
+}
+
+
+//结算中心-付款输入密码弹窗
+.abandonInput{
+  position: absolute;
+  left:-99em;
+  top:350px;
+  -webkit-text-security: disc;
+}
+.alertPayInfo{
+  z-index:27;
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  //@extend .display-flex;
+  //@include align-items();
+  //@include justify-content(center);
+  .box{
+    //position: relative;
+    /**/
+    position: absolute;
+    top:20%;
+    //top:38%;
+    left:7%;
+
+    background:#fff;
+    width:86%;
+    z-index:29;
+    //margin:pxTorem(160px) auto 0;
+    overflow: hidden;
+  }
+  .select{
+    top:auto;
+    @if $wxTop{
+      bottom:8%;
+    } @else {
+      bottom:20%;     //app
+    }
+  }
+  .alertTitle{
+    height:pxTorem(90px);
+    line-height:pxTorem(90px);
+    background: $blue-base;
+    h2{
+      color:#fff;
+      padding:0 pxTorem(60px) 0 pxTorem(20px);
+      @include font-dpr(32px);
+    }
+    .exit{
+      width:pxTorem(40px);
+      height:pxTorem(40px);
+      border:pxTorem(1px) solid #fff;
+      @include border-radius(50%);
+      position: absolute;
+      right:pxTorem(20px);
+      top:pxTorem(24px);
+      background-image: url("../images/iconDelete.png");
+      @extend %ico_rem;
+      background-size:50% 50% !important;
+    }
+  }
+  .alertContent{
+    padding:pxTorem(30px) pxTorem(20px);
+    /****/
+    //input[type='password'],input[name="password"]{
+    //  position: absolute;
+    //  left:-99em;
+    //  top:250px;
+    //  border:0;
+    //  //height:pxTorem(85px);
+    //  //background:#e5e5e5;
+    //  //display:block;
+    //  //width:98%;
+    //  //padding-left:2%;
+    //  //font-size:pxTorem(32px);
+    //  //margin-top:pxTorem(15px);
+    //  //@include opacity(0);
+    //}
+    //input[name="password"]{
+    //  -webkit-text-security: disc;
+    //}
+    /*******/
+    h2{
+      margin-top:pxTorem(30px);
+    }
+  }
+  //.payTotal{
+  //  @include font-dpr(28px);
+  //  text-align: right;
+  //  margin-top:pxTorem(20px);
+  //  b{
+  //    font-weight: normal;
+  //  }
+  //}
+  //忘记密码
+  .forget{
+    display: block;
+    text-align: right;
+    color:$link-color;
+    margin-top:pxTorem(25px);
+  }
+  //订单详情
+  .orderList{
+    color:#333;
+    @include font-dpr(32px);
+    border-bottom: 1px solid #cccccc;
+    li{
+      height:pxTorem(60px);
+    }
+    span{
+      float:left;
+    }
+    b{
+      float:right;
+      font-weight:normal;
+    }
+  }
+  //取消列表
+  .exitList{
+    margin:0 pxTorem(27px);
+    li{
+      border-bottom: 1px solid #cccccc;
+      height:pxTorem(88px);
+      line-height:pxTorem(88px);
+      @include font-dpr(28px);
+    }
+  }
+  //密码输入栏
+  .password6{
+    background:#fff;
+    margin-top:pxTorem(15px);
+    height: pxTorem(85px);
+    @extend .display-flex;
+    @include justify-content(space-between);
+    span{
+      display: block;
+      width:15.5%;
+      height:pxTorem(85px);
+      background-color: #e5e5e5;
+      &.select{
+        @extend .display-flex;
+        @include align-items();
+        @include justify-content(center);
+        &:after{
+          display: block;
+          content: "\20";
+          width:8px;
+          height:8px;
+          @include border-radius(50%);
+          background: #333;
+        }
+      }
+    }
+  }
+}
+
+//待付款-取消原因
+.alertExitList{
+  .alertContent{
+    padding:0;
+  }
+  //取消列表
+  .exitList{
+    margin:0 pxTorem(27px);
+    li{
+      border-bottom: 1px solid #cccccc;
+      height:pxTorem(88px);
+      line-height:pxTorem(88px);
+      @include font-dpr(28px);
+      //&.select{
+      //  position: relative;
+      //  &:after{
+      //    content: "\20";
+      //    width:pxTorem(24px - 2);
+      //    height:pxTorem(24px - 2);
+      //    border:pxTorem(2px) solid #999999;
+      //    position: absolute;
+      //    right:pxTorem(6px);
+      //    top:pxTorem(32px);
+      //    @include border-radius(50%);
+      //  }
+      //}
+    }
+  }
+}
+
+//银行转账弹窗
+.giroAlert{
+  .box{
+    p{
+      padding-left:pxTorem(140px);
+      position: relative;
+      &:nth-child(1){
+        margin-top:pxTorem(30px);
+      }
+      &.pl0{
+        padding-left:0;
+      }
+    }
+    h3,p{
+      margin:0 pxTorem(20px) 0 pxTorem(20px);
+      line-height: pxTorem(48px);
+      @include font-dpr(28px);
+    }
+    h3{
+      margin-top:pxTorem(35px);
+    }
+    label{
+      position: absolute;
+      left:0;
+      top:0;
+      display: inline-block;
+      text-align:right;
+      width:pxTorem(155px);
+    }
+  }
+  .btn{
+    margin:pxTorem(30px) 0 0 0;
+    @extend .display-flex;
+    a{
+      @extend .flex;
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      background: #e5e5e5;
+      color:#333;
+      &.select{
+        background: $blue-base;
+        color:#fff;
+      }
+    }
+  }
+}
+
+
+//结算中心-退货信息弹窗
+.return_alert{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  z-index: 99;
+  .red{
+    color:$red_c;
+  }
+  .mw{
+    background:#ffffff;
+    width:100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+  }
+  .title{
+    height:pxTorem(88px);
+    position: relative;
+    background:#e5e5e5;
+    a,h2{
+      line-height: pxTorem(88px);
+    }
+    h2{
+      text-align: center;
+    }
+    .exit,.ok{
+      position: absolute;
+      top:0;
+      font-weight: bold;
+      color:#333333;
+      padding:0 pxTorem(20px);
+      @include font-dpr(28px);
+    }
+    .exit{
+      left:0;
+    }
+    .ok{
+      right:0;
+    }
+  }
+  .box{
+    padding-bottom: pxTorem(30px);
+  }
+  h3{
+    margin-left: pxTorem(20px);
+    margin-top: pxTorem(30px);
+    i{
+      margin-right:pxTorem(20px);
+      width:pxTorem(36px);
+      height:pxTorem(36px);
+      background:#e5e5e5;
+      display: inline-block;
+      @include border-radius(50%);
+      //      vertical-align: middle;
+      position: relative;
+      top:pxTorem(8px);
+    }
+    .select{
+      background: $red_c;
+    }
+  }
+  .con{
+    margin-left:pxTorem(75px);
+    margin-right:pxTorem(50px);
+    p{
+      margin-top:pxTorem(10px);
+    }
+    label,select,input.text{
+      display: inline-block;
+    }
+    label{
+      width:pxTorem(180px);
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+    }
+    select,input.text{
+      border:1px solid #333333;
+    }
+    select{
+      width: pxTorem(141px);
+      height: pxTorem(48px);
+      background: #fff;
+    }
+    input.text{
+      width:pxTorem(222px - 5px);
+      height:pxTorem(48px);
+      padding-left:pxTorem(5px);
+    }
+  }
+  .xt{
+    position: relative;
+    overflow: hidden;
+    label,select{
+      @extend %fl;
+    }
+    .arrowB{
+      width:pxTorem(21px);
+      height:pxTorem(12px);
+      background-image: url("../images/iconArrowB.png");
+      @extend %ico_rem;
+      position: absolute;
+      left:pxTorem(292px);
+      top:pxTorem(20px);
+    }
+  }
+  //选择性别
+  .sex{
+    p{
+      height:pxTorem(105px);
+      line-height:pxTorem(105px);
+      border-bottom: 1px solid #cccccc;
+      @include font-dpr(28px);
+      padding-left:pxTorem(20px);
+    }
+  }
+  //取消订单
+  .reason_tiile{
+    @include font-dpr(28px);
+    padding-top:pxTorem(10px);
+    display: block;
+  }
+  .reason_tiile,.reason_info{
+    margin-left:pxTorem(20px);
+  }
+  .exit_ororder{
+    position: relative;
+    margin-left:pxTorem(20px);
+    margin-right:pxTorem(20px);
+    margin-top:pxTorem(20px);
+    margin-bottom:pxTorem(20px);
+    span{
+      background:#fff;
+      border:1px solid #333;
+      padding-left:pxTorem(5px);
+      height:pxTorem(72px);
+      line-height:pxTorem(72px);
+      display: block;
+      color:#333333;
+      @include font-dpr(28px);
+    }
+    .c333{
+      color:#333333;
+    }
+    i.arrowB{
+      position: absolute;
+      right:pxTorem(20px);
+      top:pxTorem(27px);;
+      width:pxTorem(30px);
+      height:pxTorem(18px);
+      background-image: url("../images/iconArrowB.png");
+      @extend %ico_rem;
+    }
+    ul{
+      border:1px solid #d1d0d0;
+      border-top:0;
+      border-bottom:0;
+    }
+    li{
+      height:pxTorem(70px);
+      border-bottom:1px solid #d1d0d0;
+      b{
+        line-height:pxTorem(70px);
+        padding-left:pxTorem(5px);
+        @extend %fl;
+        font-weight: normal;
+      }
+      i{
+        @extend %fr;
+        width:pxTorem(36px);
+        height:pxTorem(36px);
+        background: #e5e5e5;
+        margin:pxTorem(18px) pxTorem(18px) 0 0;
+        @include border-radius(50%);
+      }
+      .select{
+        background:$red_c;
+      }
+    }
+    .red{
+      padding:pxTorem(30px) 0;
+    }
+    span{
+
+    }
+  }
+  //退货（我自己送）
+  .oneself_return{
+    display: -webkit-box;
+    display: box;
+    .exit_ororder{
+      margin:0;
+      width:pxTorem(300px);
+      //      -webkit-box-flex:1;
+      //      box-flex:1;
+    }
+    b{
+      font-weight: normal;
+      display: block;
+      height:pxTorem(37px);
+      line-height:pxTorem(37px);
+    }
+    span{
+      height:pxTorem(35px);
+      line-height:pxTorem(35px);
+    }
+    i.arrowB{
+      top:pxTorem(10px);
+    }
+  }
+  //取消退货
+  .exit_return{
+    h2,a{
+      background: #fff;
+      text-align: center;
+      color:#333333;
+    }
+    h2{
+      height:pxTorem(102px);
+      line-height:pxTorem(102px);
+      border-bottom: pxTorem(4px) solid $red_c;
+      color:$red_c;
+      @include font-dpr(28px);
+    }
+    a{
+      display: block;
+      height:pxTorem(66px);
+      line-height:pxTorem(66px);
+      border-bottom: 1px solid #999999;
+    }
+    a:last-child{
+      border-top:1px solid #999999;
+      margin-top:pxTorem(20px);
+    }
+  }
+}
+
+
+//订单列表-支付按钮弹窗
+.orderPayBth{
+  .box{
+    z-index:29;
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    background: #fff;
+  }
+  .orderList{
+    color:#333;
+    @include font-dpr(32px);
+    border-bottom: 1px solid #ccc;
+    padding-top:pxTorem(25px);
+    li{
+      height:pxTorem(60px);
+      margin: 0 pxTorem(30px);
+    }
+    span{
+      float:left;
+      color:#999999;
+    }
+    b{
+      float:right;
+      font-weight:normal;
+    }
+  }
+  //.btn{
+  //  border:1px solid #ccc;
+  //}
+  .orderPayList{
+    li{
+      border-bottom: 1px solid #cccccc;
+      @include font-dpr(32px);
+      margin:0 pxTorem(30px);
+      &:last-child{
+        border:0;
+      }
+    }
+    a{
+      display: block;
+      position: relative;
+      height:pxTorem(118px);
+      //line-height:pxTorem(118px);
+      color:#333;
+      padding-left:pxTorem(54px);
+      &.balance,&.alipay,&.wx,&.bank,&.giro{
+        &:before {
+          content: "\20";
+          position: absolute;
+          left: 0;
+          top: pxTorem(30px);
+          width: pxTorem(44px);
+          height: pxTorem(35px);
+          @extend %ico_rem;
+        }
+      }
+      //余额支付
+      &.balance{
+        height:pxTorem(99px - 10);
+        padding-top:pxTorem(10px);
+        &:before{
+          background-image: url("../images/iconbalance.png");
+        }
+      }
+      &.select{
+        color:#999999;
+        &:before{
+          background-image: url("../images/iconbalanceC.png");
+        }
+      }
+      //微信
+      &.wx{
+        line-height:pxTorem(118px);
+        &:before{
+          top: pxTorem(42px);
+          background-image: url("../images/iconWeiXin.png");
+        }
+      }
+      //支付宝
+      &.alipay{
+        line-height:pxTorem(118px);
+        &:before{
+          top: pxTorem(38px);
+          background-image: url("../images/iconalipay.png");
+        }
+      }
+      //在线支付
+      &.bank{
+        line-height:pxTorem(118px);
+        &:before {
+          top: pxTorem(38px);
+          background-image: url("../images/iconBank.png");
+        }
+      }
+      //转帐
+      &.giro{
+        height:pxTorem(99px - 10);
+        padding-top:pxTorem(10px);
+        &:before{
+          background-image: url("../images/icongiro.png");
+        }
+      }
+    }
+    em{
+      display: block;
+      font-style: normal;
+      @include font-dpr(20px);
+    }
+  }
+}
+
+
+//分享弹窗
+.wayShare{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  z-index: 99;
+  .box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    //height: pxTorem(470px);
+    background-color: #fff;
+    //animation: SlideBottomToTop 1s;
+    h5{
+      @include font-dpr(32px);
+      padding-top: pxTorem(30px);
+      @extend %tc;
+    }
+  }
+  .shareBox{
+    padding-top: pxTorem(22px);
+    border-bottom: 1px solid #ccc;
+    .icon{
+      width: 20%;
+      @extend %tc;
+      @extend %fl;
+      margin-bottom: pxTorem(27px);
+    }
+    i{
+      @extend %block;
+      width: pxTorem(90px);
+      height: pxTorem(90px);
+      margin: 0 auto pxTorem(12px) auto;
+      @extend %ico_rem;
+      &.weiFriend{
+        background-image: url("../images/iconshare02.png");
+      }
+      &.friend{
+        background-image: url("../images/iconshare05.png");
+      }
+      &.weibo{
+        background-image: url("../images/iconshare04.png");
+      }
+      &.qq{
+        background-image: url("../images/iconshare03.png");
+      }
+      &.qqSpace{
+        background-image: url("../images/iconshare01.png");
+      }
+      &.tengweibo{
+        background-image: url("../images/iconshare08.png");
+      }
+      &.zhifubao{
+        background-image: url("../images/iconshare06.png");
+      }
+      &.douban{
+        background-image: url("../images/iconshare07.png");
+      }
+    }
+  }
+  .btn{
+    width: 100%;
+    height: pxTorem(90px);
+    line-height: pxTorem(90px);
+    @extend %tc;
+    @include font-dpr(32px);
+    margin: 0;
+  }
+}
+
+//分享成功提示
+.wayShareTip{
+  $w:pxTorem(156px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: - $w / 2;
+  margin-left: - $w / 2 ;
+  width: $w;
+  height: $w;
+  //line-height: $w;
+  @extend %tc;
+  color: #fff;
+  border-radius: pxTorem(20px);
+  background:rgba(0,0,0,.5);
+  z-index: 99;
+  i{
+    @extend %block;
+    width: pxTorem(67px);
+    height: pxTorem(49px);
+    margin: pxTorem(30px) auto pxTorem(15px) auto;
+    background-image: url("../images/iconsharesuccess.png");
+    @extend %ico_rem;
+  }
+}
+
+//抽奖弹窗
+.couponAlert{
+  z-index: 100;
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  @include display-flex();
+  @include align-items();
+  @include justify-content(center);
+  .box{
+    @include border-radius(16px);
+    width:pxTorem(560px);
+    background: #fff;
+    @include box-shadow(0 0 10px rgba(199,0,11,.75));
+    position: relative;
+    .exit{
+      width:pxTorem(58px);
+      height:pxTorem(58px);
+      background: rgba(255,255,255,.3);
+      position: absolute;
+      right:pxTorem(20px);
+      top:pxTorem(20px);
+      @include border-radius(50%);
+      &:before,&:after{
+        content: '\20';
+        background: #fff;
+        position: absolute;
+        left:50%;
+        top:50%;
+        @include rotate(45deg);
+      }
+      &:before{
+        width:1px;
+        height: pxTorem(46px);
+        margin-top:pxTorem(-23px);
+        margin-left:-1px;
+      }
+      &:after{
+        width:pxTorem(46px);
+        height: 1px;
+        margin-top:-1px;
+        margin-left:pxTorem(-23px);
+      }
+    }
+  }
+  header{
+    height:pxTorem(170px);
+    background-image: url("../images/couponAlertHeader.png");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @include display-flex();
+    @include align-items();
+    @include justify-content(center);
+    h2,h3{
+      text-align: center;
+      @include font-dpr(42px);
+      color:#fff;
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      //line-height:pxTorem(170px);
+    }
+    //h2{
+    //  height:pxTorem(170px);
+    //  line-height:pxTorem(170px);
+    //}
+    //h3{
+    //  padding-top:pxTorem(20px);
+    //  &:nth-child(1){
+    //    padding-top:pxTorem(100px);
+    //  }
+    //}
+    &.title2{
+      height:pxTorem(270px);
+      background-image: url("../images/couponAlertHeader2.png");
+      //h2{
+      //  height:pxTorem(270px);
+      //  line-height:pxTorem(270px);
+      //}
+    }
+  }
+
+  .main,.text{
+    margin:0 pxTorem(20px);
+    padding-top:pxTorem(10px);
+    p{
+      color:#999;
+      line-height: pxTorem(48px);
+      @include font-dpr(28px);
+      &.bold{
+        font-weight: bold;
+      }
+    }
+  }
+
+  .text{
+    padding:pxTorem(30px) 0 pxTorem(80px) 0;
+    text-align: center;
+  }
+
+  footer{
+    padding-bottom:pxTorem(20px);
+    a{
+      margin:pxTorem(20px) auto 0;
+      display: block;
+      width:pxTorem(480px);
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      text-align: center;
+      @include font-dpr(32px);
+      color:#fff;
+      background: $red-base;
+      @include border-radius(8px);
+
+      &.whiteBg{
+        width:pxTorem(480px - 4);
+        height:pxTorem(80px - 4);
+        line-height:pxTorem(80px - 4);
+        background: #fff;
+        color:#666;
+        border:2px solid #e5e5e5;
+      }
+    }
+  }
+
+}
+
+
+//确认购买弹窗-多品类-漆器
+.alertConfirmBuy{
+  z-index: 100;
+  background:#fff;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  right: 0;
+  //信息
+  ul.goodsListRow{
+    margin-bottom:0;
+    li{
+      height:pxTorem(150px + 20);
+      border-bottom: 0;
+      margin-top:0;
+    }
+    .img{
+      width:pxTorem(150px);
+      height:pxTorem(150px);
+    }
+    h3{
+      margin-right:pxTorem(60px);
+    }
+    strong{
+      //left:pxTorem(150px + 30);
+      @include font-dpr(42px);
+      &:before{
+        content: '\20';
+        display: inline-block;
+        width:pxTorem(22px);
+        height:pxTorem(22px);
+        background-image:url("../images/iconDetailPrice.png");
+        @extend %ico_rem;
+        margin-right: pxTorem(14px);
+      }
+    }
+    .num{
+      @include font-dpr(24px);
+      color:#666;
+      bottom: 0;
+    }
+  }
+  //定高滚动
+  .scrollBox{
+    max-height:pxTorem(600px);
+    overflow:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  h4{
+    color:#666;
+    border-top: 1px solid #ddd;
+    margin:0 pxTorem(30px);
+    height:pxTorem(64px);
+    line-height:pxTorem(64px);
+  }
+  //
+  .type{
+    $h:60px;
+    margin:0 pxTorem(30px);
+    overflow:hidden;
+    li{
+      float:left;
+      height:pxTorem($h);
+      margin:0 pxTorem(20px) pxTorem(20px) 0;
+      a{
+        @include border-radius(pxTorem(6px));
+        display: block;
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+        padding:0 pxTorem(26px);
+        background:#eeeeee;
+        color:#333;
+      }
+      //选中
+      &.select{
+        a{
+          color:#fff;
+          background: $red-base;
+        }
+      }
+      //无货
+      &.no{
+        a{
+          color:#ccc;
+        }
+      }
+    }
+    a{
+      color:#333;
+    }
+  }
+  //数量加减
+  .number{
+    //margin:0 pxTorem(30px);
+    //padding-bottom: pxTorem(45px);
+    $h:60px;
+    height:pxTorem($h + 45);
+    div,input{
+      float:left;
+    }
+    span,input{
+      display: inline-block;
+    }
+    div{
+      width:pxTorem(90px);
+      height:pxTorem($h + 45);
+      &:nth-child(1){
+        text-align:right;
+      }
+      &.select{
+        span{
+          background:#eeeeee;
+          &:after,&:before{
+            background:#fff;
+          }
+        }
+      }
+      &.reduce{
+
+      }
+      &.add{
+        span{
+          &:before{
+            width:pxTorem(4px);
+            height:pxTorem(28px);
+            margin:pxTorem(-28px / 2) 0 0 pxTorem(-4px / 2);
+          }
+        }
+      }
+    }
+    span{
+      height:pxTorem($h);
+      width:pxTorem($h);
+      background:#dddddd;
+      position: relative;
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        left:50%;
+        top:50%;
+        background:#999999;
+      }
+      &:after{
+        width:pxTorem(28px);
+        height:pxTorem(4px);
+        margin:pxTorem(-4px / 2) 0 0 pxTorem(-28px / 2);
+      }
+      &.add{
+
+      }
+    }
+    input{
+      height:pxTorem($h);
+      width:pxTorem($h + 10);
+      border:0;
+      @include font-dpr(36px);
+      text-align:center;
+      background:$gray-base;
+      margin:0 pxTorem(4px);
+    }
+    @extend %numberArrow;
+  }
+  //确定
+  .btn{
+    border-top:1px solid #ddd;
+    padding: pxTorem(10px) 0;
+    margin:0;
+    a{
+      background:$red-base;
+      color:#fff;
+      margin:0 pxTorem(30px);
+      &:active{
+        background:$red-hover-base;
+      }
+    }
+  }
+  //关闭
+  .exit{
+    position: absolute;
+    right:pxTorem(30px);
+    top:pxTorem(14px);
+    border:2px solid #999999;
+    width:pxTorem(42px);
+    height: pxTorem(42px);
+    @include border-radius(50%);
+    @include rotate(45deg);
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      background:#999999;
+      left:50%;
+      top:50%;
+    }
+    &:before{
+      width: pxTorem(28px);
+      height: 2px;
+      margin-left:pxTorem(-14px);
+      margin-top:-1px;
+    }
+    &:after{
+      width: 2px;
+      height: pxTorem(28px);
+      margin-left:-1px;
+      margin-top:pxTorem(-14px);
+    }
+  }
+}
+
+
+//第三方登录安全设置绑定手机|.alertTelSecuritySetting->.alertTelSS
+.alertTelSS{
+  p{
+    background: $blue-base;
+    color: #fff;
+    padding:pxTorem(40px) pxTorem(20px);
+  }
+  ul{
+    $h:89px;
+    background:#fff;
+    li{
+      border-bottom: 1px solid #cccccc;
+      margin:0 pxTorem(20px);
+      @include font-dpr(28px);
+      @include display-flex();
+    }
+    label,.flex,.code,span{
+      height:pxTorem($h);
+    }
+    label{
+      display: block;
+      line-height:pxTorem($h);
+      color:#333;
+      width:pxTorem(185px);
+    }
+    input,select,span{
+      border:none;
+      display: block;
+      background:#fff;
+    }
+    input[type='text'],input[type='tel'],input[type='number'],input[type='password'],select,span{
+      width:100%;
+      height:100%;
+    }
+    span{
+      color:#333;
+      line-height:pxTorem($h);
+    }
+    //验证码
+    .code{
+      background:$red-base;
+      display: block;
+      color:#fff;
+      text-align:center;
+      width:pxTorem(180px);
+      height:pxTorem(70px);
+      line-height:pxTorem(70px);
+      margin-left:auto;
+      margin-top:pxTorem(10px);
+      &.select{
+        color:#fff;
+        background:#ccc;
+      }
+    }
+  }
+
+  .btn{
+    margin-top:pxTorem(60px);
+    a{
+      background: $blue-base;
+      color:#fff;
+      height:pxTorem(90px);
+      line-height:pxTorem(90px);
+      &.select{
+        background:#e5e5e5;
+        color:#999;
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+
+  一元购
+
+*/
+
+
+
+//立即参与弹窗
+.yiPartakeBuyAlert{
+  z-index: 100;
+  background:#fff;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  right: 0;
+  padding-top:pxTorem(34px);
+  .details{
+    $h:148px;
+    height: pxTorem($h);
+    margin:0 pxTorem(30px) pxTorem(25px);
+    padding-bottom: pxTorem(34px);
+    border-bottom: 1px solid #d2d2d2;
+    .Photo,img{
+      width: pxTorem($h);
+      height: pxTorem($h);
+    }
+    .Photo{
+      @extend %fl;
+    }
+    img{
+      vertical-align: middle;
+    }
+    .content{
+      margin-left:pxTorem($h + 38px);
+    }
+    h3{
+      margin-right: pxTorem(80px);
+      height: pxTorem(40px * 2);
+      line-height: pxTorem(40px);
+      margin-bottom: pxTorem(20px);
+      overflow: hidden;
+      @include font-dpr(28px);
+      a{
+        color:#333;
+        //padding-top:pxTorem(20px);
+      }
+    }
+    span{
+
+      &.currentNum{
+
+      }
+    }
+  }
+
+  .info{
+    text-align: center;
+    b{
+      color: $red-yi;
+      font-weight: normal;
+    }
+  }
+  .selectNum{
+    text-align: center;
+    margin:pxTorem(29px) 0 pxTorem(25px);
+    a{
+      @include border-radius(pxTorem(4px));
+      display: inline-block;
+      padding:0 pxTorem(38px);
+      margin-right: pxTorem(25px);
+      height:pxTorem(48px);
+      line-height:pxTorem(48px);
+      border:1px solid #999;
+      color:#333;
+      &.select{
+        border-color: $red-yi;
+      }
+      &.no{
+        border-color: #dcdcdc;
+        color:#dcdcdc;
+      }
+    }
+  }
+  .customNum{
+    $h:80px;
+    @include border-radius(pxTorem(4px));
+    border:1px solid #dfdfdf;
+    margin:0 auto;
+    width:pxTorem(448px);
+    height:pxTorem($h);
+    margin-bottom: pxTorem(35px);
+    //line-height:pxTorem($h);
+    @include display-flex();
+    i{
+      display: block;
+      width:pxTorem($h);
+      height:pxTorem($h);
+      background: #fcfcfc;
+      cursor: pointer;
+      position: relative;
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        left:50%;
+        top:50%;
+        background:#999;
+      }
+      &.reduce,&.add{
+        &:after{
+          width:pxTorem(40px);
+          height:2px;
+          margin:-1px 0 0 pxTorem(-20px);
+        }
+      }
+      &.reduce{
+        border-right:1px solid #dfdfdf;
+      }
+      &.add{
+        border-left:1px solid #dfdfdf;
+        &:before{
+          width:2px;
+          height:pxTorem(40px);
+          //margin:pxTorem(-10px) 0 0 -1px;
+          margin-top:pxTorem(-20px);
+        }
+      }
+      &.no{
+        background: #d2d2d2;
+      }
+    }
+    input[type='number']{
+      border:0;
+      @include flex(1);
+      display: block;
+      width: 100%;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      text-align: center;
+      @include font-dpr(40px);
+    }
+  }
+  .total{
+    text-align: center;
+    @include font-dpr(36px);
+    b{
+      color: $red-yi;
+      font-weight: normal;
+    }
+  }
+  .btn{
+    $h:98px;
+    height: pxTorem($h);
+    margin:pxTorem(26px) 0 0;
+    a{
+      @include font-dpr(36px);
+      display: block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      text-align: center;
+      color:#fff;
+      background: $red-yi;
+    }
+  }
+
+  .exit{
+    position: absolute;
+    right: pxTorem(15px);
+    top:pxTorem(20px);
+    margin-top:pxTorem(12px);
+    @extend %fr;
+    width:pxTorem(42px);
+    height: pxTorem(42px);
+    border:2px solid #a0a0a0;
+    @include border-radius(50%);
+    @include rotate(45deg);
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      background:#a0a0a0;
+      left:50%;
+      top:50%;
+    }
+    &:before{
+      margin:-1px 0 0 pxTorem(-14px);
+      width:pxTorem(28px);
+      height:2px;
+    }
+    &:after{
+      margin:pxTorem(-14px) 0 0 -1px;
+      width:2px;
+      height:pxTorem(28px);
+    }
+  }
+}

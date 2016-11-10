@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"公告"
+})
+<body id="app">
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"公告"
+        })
+    </header>
+
+    <article class="main">
+        <ul class="bulletinList">
+            <!--单选:class="{'select':currentIndex==$index}"-->
+            <li v-for="list in lists" @click="toogle($index)" :class="{'select':currentIndex==$index}">
+                <h3><em>{{list.a}}</em>{{list.title}}</h3>
+                <p>{{list.con}}</p>
+                <span>{{list.time}}</span>
+            </li>
+        </ul>
+        <input type="button" @click="showAlert()" value="显示弹窗" />
+    </article>
+
+    <footer>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavReg">注册有礼</a>
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <a href="" class="appNavUser">个人</a>
+        </nav>
+    </footer>
+</div>
+
+
+<div class="wrap posAlert" v-show="isAlertShow" transition="SlideTopBottom">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" @click="showAlert()" class="close"></a>
+                </div>
+                <h2>安全设置</h2>
+            </div>
+        </div>
+    </header>
+    <article class="main bgWhite">
+        <div class="alertTelSS">
+            <p>您的帐户为第三方合作（微信）登录，为了您的账户信息安全，请先绑定手机号和设置密码</p>
+            <ul>
+                <li>
+                    <label for="">手机号</label>
+                    <div class="flex">
+                        <input type="number" placeholder="请输入手机号码">
+                    </div>
+                    <div class="flex">
+                        <a href="" class="code select">获取验证码</a>
+                    </div>
+                </li>
+                <li>
+                    <label for="">验证码</label>
+                    <div class="flex">
+                        <input type="tel" placeholder="请输入验证码">
+                    </div>
+                </li>
+                <li>
+                    <label for="">密码</label>
+                    <div class="flex">
+                        <input type="password" placeholder="设置密码">
+                    </div>
+                </li>
+            </ul>
+            <div class="btn">
+                <a href="">确定</a>
+            </div>
+        </div>
+
+    </article>
+
+</div>
+
+
+</body>
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            isAlertShow:false,
+            lists:[
+                {
+                    "a":"集珍坊",
+                    "title":"第届4艺交会公告",
+                    "con":"集珍坊第届4艺交会",
+                    "time":"2016-7-27 11:20:08"
+                },
+                {
+                    "a":"集珍坊",
+                    "title":"第届4艺交会公告",
+                    "con":"集珍坊第届4艺交会",
+                    "time":"2016-7-27 11:20:08"
+                },
+                {
+                    "a":"集珍坊",
+                    "title":"第届4艺交会公告",
+                    "con":"集珍坊第届4艺交会",
+                    "time":"2016-7-27 11:20:08"
+                }
+            ],
+//            currentIndex:-1       //单选
+            currentIndex:[]
+        },
+        methods:{
+            toogle:function(index){
+                //单选
+//                this.currentIndex==index ? this.currentIndex=-1 : this.currentIndex=index;
+//                if(this.currentIndex==index){
+//                    this.currentIndex=-1;
+//                }else{
+//                    this.currentIndex=index;
+//                }
+                //数组
+                this.currentIndex.push(index);
+                console.log(this.currentIndex +"+"+index);
+//                console.log(this.currentIndex);
+            },
+            showAlert:function(){
+                this.isAlertShow=!this.isAlertShow;
+            }
+        }
+    });
+
+/*
+    app.$http.get('http://192.168.1.165/jizhenfang-php2/test.php').then(function (response) {
+
+        // get status
+        alert(response.status);
+
+        // get all headers
+        //console.log(response.headers());
+
+        // get 'expires' header
+        //console.log(response.headers('expires'));
+
+        // set data on vm
+//                this.$set('lists', response)
+        console.log(response);
+
+    },{
+//                headers: {'Content-Type': 'Access-Control-Allow-Origin'}
+    }, function (response) {
+
+        // error callback
+    });
+*/
+
+</script>
+</html>

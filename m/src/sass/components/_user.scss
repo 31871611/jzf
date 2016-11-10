@@ -1,0 +1,920 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//字体样式
+.colorBase{
+  color: $color-333 !important;
+}
+.colorGray{
+  color: $color-999 !important;
+}
+.colorRed{
+  color: $red-base !important;
+}
+//绿色
+.colorGreen{
+  color: $green-base;
+}
+//链接蓝色
+.colorLinkBlue{
+  color: #3366cc !important;
+}
+.colorWeight{
+  font-weight: bold !important;
+}
+.pb20{
+  padding-bottom: pxTorem(20px);
+}
+.mt-40{
+  margin-top: pxTorem(-40px);
+}
+.mt40{
+  margin-top: pxTorem(40px);
+}
+
+//用户中心
+.user{
+  //width: 100%;
+  //height: 100%;
+  //overflow: scroll;
+  .pd0{
+    padding: 0 !important;
+  }
+  .mt0{
+    margin-top: 0 !important;
+  }
+  .fr{
+    float: right;
+  }
+  .fl{
+    float: left;
+  }
+  .mr20{
+    margin-right: pxTorem(20px);
+  }
+  .textRight{
+    text-align: right;
+  }
+  //图标
+  i{
+    @extend %ib;
+    width: pxTorem(41px);
+    height: pxTorem(41px);
+    @extend %ico_rem;
+    vertical-align: middle;
+    //待付款.已复制到userHome
+    &.iconUserNoPay{
+      background-image: url("../images/iconUserNoPay.png");
+    }
+    //已付款.已复制到userHome
+    &.iconUserPay{
+      background-image: url("../images/iconUserPay.png");
+    }
+    //消息.已复制到userHome
+    &.iconUserTip{
+      background-image: url("../images/iconUserTip.png");
+    }
+    //待收货.已复制到userHome
+    &.iconUserAccept{
+      background-image: url("../images/iconUserAccept.png");
+    }
+    &.iconUserAcceptGray{
+      background-image: url("../images/iconUserAcceptGray.png");
+    }
+    &.iconUserOrder{
+      background-image: url("../images/iconUserOrder.png");
+    }
+    &.iconUserReturn{
+      background-image: url("../images/iconUserReturn.png");
+    }
+    &.iconUserLike{
+      background-image: url("../images/iconUserLike.png");
+    }
+    &.iconUserHelp{
+      background-image: url("../images/iconUserHelp.png");
+    }
+    //我是商家
+    &.iconUserSeller{
+      background-image: url("../images/iconUserSeller.png");
+    }
+    //一元购
+    &.iconUserYi{
+      background-image: url("../images/iconUserYi.png");
+    }
+    &.iconUserSetting{
+      background-image: url("../images/iconUserSetting.png");
+    }
+    &.iconUserPoup{
+      background-image: url("../images/iconUserPoup.png");
+    }
+    &.iconUserAddress{
+      background-image: url("../images/iconUserAddress.png");
+    }
+    &.iconUserAddressGray{
+      background-image: url("../images/iconUserAddressGray.png");
+    }
+    &.iconUserleft{
+      width: pxTorem(16px);
+      height: pxTorem(30px);
+      background-image: url("../images/iconArrowR.png");
+    }
+    &.iconUserChangeTip{
+      width: pxTorem(40px);
+      height: pxTorem(40px);
+      background-color: $red-base;
+      border-radius: 100%;
+      background-image: url("../images/iconUserChangeTip.png");
+      background-size:pxTorem(8px) pxTorem(30px) ;
+    }
+    &.iconUserGou2{
+      display: none;
+      width: pxTorem(28px);
+      height: pxTorem(21px);
+      margin-top: pxTorem(35px);
+      background-image: url("../images/iconUserGou2.png");
+    }
+    //选中圆圈
+    &.iconCircleSelect{
+      display: none;
+      width:pxTorem(28px);
+      height: pxTorem(28px);
+      background-color: $red-base;
+      border-radius: 100%;
+      background-image: url("../images/iconCircleSelect.png");
+      background-size: pxTorem(18px) pxTorem(13px);
+    }
+    //未选中圆圈
+    &.iconCircle{
+      width:pxTorem(26px);
+      height: pxTorem(26px);
+      border-radius: 100%;
+      border:1px solid $color-999;
+    }
+    //地址编辑
+    &.iconUserAdressEdit{
+      width: pxTorem(26px);
+      height: pxTorem(26px);
+      background-image: url("../images/iconUserAdressEdit.png");
+    }
+    //地址删除
+    &.iconUserAdressDelete{
+      width: pxTorem(28px);
+      height: pxTorem(26px);
+      background-image: url("../images/iconUserAdressDelete.png");
+    }
+    //我的钱包
+    &.iconUserWallet{
+      background-image: url("../images/iconUserWallet.png");
+    }
+  }
+  //地址下拉
+  .selectAddress{
+    @extend .display-flex;
+    div{
+      position: relative;
+      @extend .flex;
+      height:pxTorem(90px);
+      &:after{
+        position: absolute;
+        right:0;
+        bottom:0;
+        content: "\20";
+        @include arrow(bottom,pxTorem(15px),#333);
+        @include rotate(-45deg);
+        display: block;
+      }
+    }
+    select{
+      background: #fff;
+      display: block;
+      width:100%;
+      height:100%;
+      direction: rtl;
+      padding-right:pxTorem(20px);
+      border:0;
+    }
+    option{
+      text-align: right;
+      direction: ltr;
+    }
+  }
+  /** 已复制到userHome **/
+  //个人中心
+  .photo{
+    position: relative;
+    //width: pxTorem(750px);
+    height: pxTorem(300px);
+    background-image: url("../images/iconUserBg.jpg");
+    @extend %ico_rem;
+    background-size:100% 100% !important;
+  }
+  //消息
+  .newTip{
+    position: absolute;
+    top: pxTorem(58px);
+    right: pxTorem(30px);
+    i.iconUserTip{
+      width: pxTorem(37px);
+      height: pxTorem(37px);
+      @extend %block;
+    }
+    span{
+      @include font-dpr(18px);
+    }
+  }
+  //头像
+  .photoImgTel{
+    @include display-flex();
+    -webkit-align-items: center;
+    align-items: center;
+    position: absolute;
+    left:pxTorem(30px);
+    bottom: pxTorem(35px);
+    //img{
+    //  width:pxTorem(100px);
+    //  height: pxTorem(100px);
+    //  @include border-radius(50%);
+    //}
+    i{
+      display: block;
+      width:pxTorem(100px);
+      height: pxTorem(100px);
+      @include border-radius(50%);
+      background-image: url("../images/userhead.png");
+      @extend %ico_rem;
+      background-color: #fff;
+    }
+    span{
+      margin-left: pxTorem(15px);
+      @include font-dpr(32px);
+    }
+  }
+  //订单状态
+  .orderState{
+    @include display-flex();
+    background-color: #fff;
+    li{
+      position: relative;
+      @include flex(1);
+      padding-top: pxTorem(20px);
+      padding-bottom: pxTorem(25px);
+      @extend %tc;
+      a{
+        color: $color-333;
+      }
+      .num{
+        position: absolute;
+        top:pxTorem(16px);
+        left: 52%;
+        padding:0 pxTorem(10px);
+        border-radius: pxTorem(15px);
+        background-color: $red-base;
+        color: #fff;
+      }
+    }
+    i{
+      @extend %block;
+      margin: 0 auto pxTorem(20px) auto;
+    }
+  }
+  /** 已复制到userHome **/
+  //无边框
+  .noBorder{
+      border: none !important;
+    &:after{
+      border: none !important;
+    }
+  }
+  //有边框
+  .haveBorder{
+    &:after{
+      border-bottom: 1px solid $color-ccc !important;
+    }
+  }
+  //虚线边框
+  .dashedBorder{
+    margin-left: pxTorem(30px);
+    margin-right: pxTorem(30px);
+    border-bottom: 1px dashed $color-ccc;
+  }
+  //用户中心列表
+  //.userList,.userAdressList,.userOrderDetail{
+  .userList,.userAdressList{
+    width: 100%;
+    background-color: #fff;
+    li{
+      padding-left: pxTorem(30px);
+      padding-right: pxTorem(30px);
+      //margin-left: pxTorem(30px);
+      //margin-right: pxTorem(30px);
+      @include font-dpr(28px);
+    }
+  }
+  //item列表
+  .userList{
+    li{
+      $height:pxTorem(90px);
+      height: $height;
+      line-height: $height;
+      //border-bottom: 1px solid $color-ccc;
+      background-color: transparent;
+      //&:active{
+      //  background-color: #eee;
+      //}
+      &:after{
+        content: '\20';
+        @extend %block;
+        border-bottom: 1px solid $color-ccc;
+      }
+      a{
+        color: $color-333;
+      }
+      b{
+        font-weight: normal;
+      }
+      &.select{
+        span{
+          color: $red-base;
+        }
+        i{
+          &.iconUserGou2{
+            @extend %block;
+          }
+          &.iconCircleSelect{
+            @extend %block;
+          }
+          &.iconCircle{
+            display: none;
+          }
+        }
+      }
+      &:first-of-type{
+        &:after{
+          border-bottom: 1px solid $color-ccc;
+        }
+      }
+      &:last-of-type{
+        &:after{
+          border-bottom: none;
+        }
+      }
+    }
+    i{
+      margin-right: pxTorem(15px);
+      margin-top: pxTorem(-5px);
+      &.iconUserleft,&.iconUserGou2,&.iconCircleSelect,&.iconCircle{
+        margin-right: 0;
+        margin-top: pxTorem(30px);
+        @extend %fr;
+      }
+    }
+    input{
+      width: 100%;
+      border:none;
+    }
+    //高度自适应布局
+    .heightAutoLayout{
+      height: auto;
+      line-height: pxTorem(40px);
+      padding-top: pxTorem(25px);
+      padding-bottom: pxTorem(25px);
+    }
+    .btn{
+      margin-top: 0;
+      &:before{
+        content: "\20";
+        display: inline-block;
+        width: pxTorem(24px);
+        height: pxTorem(33px);
+        background-image: url("../images/iconTel.png");
+        @extend %ico_rem;
+        vertical-align: middle;
+        margin-right: pxTorem(5px);
+      }
+    }
+    //红边白底按钮
+    .btnRedBorder{
+      background-color: #fff;
+      border: 1px solid $red-base;
+      color: $red-base;
+      &:active{
+        background-color: $red-hover-base;
+        color: #fff;
+      }
+    }
+  }
+  //收货地址列表
+  .userAdressList{
+    padding-top: pxTorem(25px);
+    padding-bottom: pxTorem(25px);
+    li{
+      &.adressInfo{
+        padding-top: pxTorem(30px);
+        padding-bottom: pxTorem(30px);
+        border-bottom: 1px solid $color-ccc;
+      }
+      &.adressEdit{
+        @include display-flex();
+        -webkit-align-items: center;
+        align-items: center;
+        margin-top: pxTorem(20px);
+        span{
+          @include flex(1);
+          margin-left: pxTorem(10px);
+        }
+        span:after{
+          content: '选择地址';
+        }
+        b{
+          font-weight: normal;
+          margin-left: pxTorem(10px);
+          &:first-of-type{
+            margin-right: pxTorem(50px);
+          }
+        }
+      }
+      &.select{
+        span{
+          color: $red-base;
+        }
+        .iconCircle{
+          display: none;
+        }
+        .iconCircleSelect{
+          @extend %block;
+        }
+      }
+      //收货地址第一个版本
+      &.defaultAdress{
+        span:after{
+          //content: "默认地址";
+          content: "选择地址";
+        }
+      }
+      //收货地址第二个版本
+      &.defaultAdress2{
+        &:before{
+          content: "[默认地址]";
+          color: $red-base;
+        }
+        .iconCircleSelect{
+          @extend %block;
+        }
+      }
+    }
+  }
+  //左右两边对齐布局
+  .justifyLayout{
+    @include display-flex();
+    -webkit-justify-content: space-around;
+    justify-content: space-between;
+    span{
+      @include flex(1);
+      &:last-of-type{
+        @extend %tr;
+      }
+    }
+  }
+  //中间内容flex(1)布局
+  .centerFlexLayout{
+    @extend .display-flex;
+    align-items: center;
+    -webkit-align-items:center;
+    span,.flex{
+      @include flex(1);
+    }
+    i{
+      @extend %block;
+    }
+    i.iconUserWallet{
+      margin-top: pxTorem(1px);
+    }
+    i.iconUserleft{
+      margin-top: 0;
+    }
+  }
+  //更改日期提示
+  .userChangeTip{
+    @include font-dpr(28px);
+    color: $red-base;
+    margin-top: pxTorem(25px);
+    margin-left: pxTorem(30px);
+  }
+  //关于我们
+  .aboutMe{
+    @extend %block;
+    margin: pxTorem(65px) auto pxTorem(35px) auto;
+  }
+  .aboutMeText{
+    @extend %tc;
+    margin-bottom: pxTorem(75px);
+    @include font-dpr(32px);
+    color: $blue-base;
+  }
+  //切换
+  //.wayTab{
+  //  background: #fff;
+  //  @include display-flex();
+  //  $height:pxTorem(88px);
+  //  box-sizing: border-box;
+  //  width: 100%;
+  //  height: $height;
+  //  border-bottom: 1px solid $color-ccc;
+  //  li{
+  //    @include flex(1);
+  //    @extend %tc;
+  //  }
+  //  a{
+  //    @extend %ib;
+  //    color: $color-333;
+  //    font-size: pxTorem(28px);
+  //    height: $height - pxTorem(4px);
+  //    line-height: $height - pxTorem(4px);
+  //    &:hover{
+  //      border-bottom: pxTorem(4px) solid $blue-base;
+  //    }
+  //  }
+  //  li.active a{
+  //    border-bottom: pxTorem(4px) solid $blue-base;
+  //  }
+  //}
+  //自己送货
+  .MyDelivery{
+    li{
+      height: auto;
+      padding:pxTorem(30px) 0;
+      line-height:pxTorem(40px);
+      &.deliveryTime{
+        border: none;
+        padding: pxTorem(15px) 0;
+        input{
+          @include flex(1);
+          @extend %block;
+          height: pxTorem(60px);
+          border: 1px solid $color-ccc;
+          margin-left: pxTorem(20px);
+        }
+      }
+    }
+  }
+  //.deliveryTime{
+  //  @include display-flex();
+  //  align-items: center;
+  //  input{
+  //    @include flex(1);
+  //    width: pxTorem(250px);
+  //    height: pxTorem(60px);
+  //    border:1px solid $color-ccc;
+  //    margin: 0 pxTorem(20px);
+  //  }
+  //}
+  //按钮
+  a{
+    &.btn{
+      @extend %block;
+      //width: pxTorem(690px);
+      height: pxTorem(90px);
+      line-height: pxTorem(90px);
+      @extend %tc;
+      margin: pxTorem(40px) pxTorem(30px) 0 pxTorem(30px);
+      color: #fff;
+      @include font-dpr(32px);
+      background-color: $color-999;
+      outline: none;
+      border: none;
+    }
+    &.bgRed{
+      background-color: $red-base;
+      color: #fff;
+      &:active{
+        background-color: $red-hover-base;
+      }
+    }
+    &.select{
+      background-color: $blue-base;
+      &:active{
+        background-color: $blue-hover-base;
+      }
+    }
+  }
+  div.btn{
+    width: 100%;
+    @include display-flex();
+    border: none;
+    @include font-dpr(32px);
+    margin: 0;
+    a{
+      @extend %block;
+      @include flex(1);
+      border: none;
+      &.white{
+        background-color: #fff;
+        color: $color-333;
+      }
+      &.blue{
+        background-color: $blue-base;
+        color:#fff;
+        &:active{
+          background-color: $blue-hover-base;
+        }
+      }
+      &.bgRed{
+        background-color: $red-base;
+        color: #fff;
+        &:active{
+          background-color: $red-hover-base;
+        }
+      }
+    }
+  }
+
+  //左侧边框标题
+  .lBorTitle{
+    border-left: pxTorem(7px) solid $blue-base;
+    padding-left: pxTorem(10px);
+    @include font-dpr(28px);
+    margin: pxTorem(30px);
+    letter-spacing: 0;
+  }
+  //退货凭证列表
+  .returnProofList{
+    //@include display-flex();
+    //align-items: center;
+    //flex-wrap: wrap;
+    //justify-content: space-around;
+    margin-left: pxTorem(30px);
+    margin-right:0;
+    li{
+      @extend %fl;
+      //@include flex(s1);
+      width: 30%;
+      height: pxTorem(215px);
+      border: 1px dashed #aaa;
+      background-image: url("../images/iconUserproof.png");
+      @extend %ico_rem;
+      background-size:pxTorem(86px) pxTorem(86px) !important;
+      margin-bottom: pxTorem(10px);
+      margin-right:1%;
+      //&:nth-child(2n+3), &:nth-child(2){
+      //  margin-left: pxTorem(10px);
+      //
+      //}
+      //img:nth-of-type(odd){
+      //  width: pxTorem(213px);
+      //  height: pxTorem(215px);
+      //}
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  //退货图片上传要求信息
+  .returnProofInfo{
+    text-align: center;
+    @include font-dpr(20px);
+    color:#999;
+    clear: both;
+    height:pxTo750(85px);
+    line-height:pxTo750(85px);
+    padding-bottom: pxTo750(50px);
+  }
+
+  //用户中心订单详情item
+  .userOrderDetailList{
+    background-color: #fff;
+  }
+  //.userOrderDetail{
+  //  @include display-flex();
+  //  padding-top: pxTorem(20px);
+  //  padding-bottom: pxTorem(20px);
+  //  @include font-dpr(28px);
+  //  .box{
+  //    @include flex(1);
+  //  }
+  //  img{
+  //    @extend %block;
+  //    width: pxTorem(182px);
+  //    height: pxTorem(182px);
+  //    margin-left: pxTorem(30px);
+  //  }
+  //  .box{
+  //    position: relative;
+  //    //@include display-flex();
+  //    -webkit-flex-direction: column;
+  //    flex-direction: column;
+  //    margin-left: pxTorem(25px);
+  //    margin-right: pxTorem(30px);
+  //    span{
+  //      @extend %block;
+  //      height: pxTorem(40px);
+  //      overflow: hidden;
+  //      margin-bottom: pxTorem(35px);
+  //      &:last-of-type{
+  //        margin-bottom: 0;
+  //      }
+  //    }
+  //    .positionTop,.positionBottom,del{
+  //      position: absolute;
+  //      right: 0;
+  //      top:pxTorem(72px);
+  //    }
+  //    .positionBottom{
+  //      top:pxTorem(130px);
+  //    }
+  //    del{
+  //      top: pxTorem(72px);
+  //      //right: pxTorem(90px);
+  //      right: 0;
+  //    }
+  //  }
+  //}
+
+  //退货商品-购物车样式
+  .shoppingCart{
+    padding-bottom:0;
+    li{
+      margin-bottom:0;
+    }
+  }
+  //合计
+  .returnTotal{
+    $h:99px;
+    height:pxTorem($h);
+    background: #fff;
+    padding:0 pxTorem(30px) 0 pxTorem(28px);
+    label,span,b{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      @include font-dpr(32px);
+    }
+    label{
+      @extend %fl;
+    }
+    span{
+      @extend %fr;
+    }
+    b{
+      color:$red-base;
+      font-weight: normal;
+    }
+    //购物车藏品选中
+    i.shoppingSelect{
+      display: inline-block;
+      font-style: normal;
+      width:pxTorem(36px);
+      margin-right:pxTorem(15px);
+      &.select{
+        &:after{
+          background-color: $red-base;
+          width:pxTorem(36px);
+          height:pxTorem(36px);
+          border:0;
+          background-image: url("../images/iconHook.png");
+          @extend %ico_rem;
+          background-size:50% 50% !important;
+        }
+      }
+      &:after{
+        vertical-align: top;
+        content: "\20";
+        display: inline-block;
+        width:pxTorem(36px - 4);
+        height:pxTorem(36px - 4);
+        border:1px solid #333;
+        @include border-radius(50%);
+      }
+    }
+  }
+}
+
+
+
+//帮助
+.help{
+  padding:0 pxTorem(20px);
+  h1,h2{
+    @include font-dpr(28px);
+    padding-top:pxTorem(15px);
+  }
+  p{
+    margin-top:pxTorem(10px);
+    line-height:pxTorem(40px);
+  }
+  .cen{
+    text-align:center;
+    img{
+      max-width:100%;
+    }
+  }
+  .indent{
+    text-indent:2em;
+  }
+  .red{
+    color:$red_c;
+  }
+}
+
+//鉴赏收藏和用户中心切换
+.wayTab{
+  background: #fff;
+  @include display-flex();
+  $height:pxTorem(88px);
+  box-sizing: border-box;
+  width: 100%;
+  height: $height;
+  border-bottom: 1px solid $color-ccc;
+  li{
+    @include flex(1);
+    @extend %tc;
+  }
+  a{
+    @extend %ib;
+    color: $color-333;
+    @include font-dpr(28px);
+    height: $height - pxTorem(4px);
+    line-height: $height - pxTorem(4px);
+    &:hover{
+      border-bottom: pxTorem(4px) solid $blue-base;
+    }
+  }
+  li.select a{
+    border-bottom: pxTorem(4px) solid $blue-base;
+  }
+}
+
+
+//订单下拉列表
+.dropDownList{
+  position: absolute;
+  left:0;
+  top:0;
+  //@if $wxTop {
+  //  top:pxTorem(90px);
+  //} @else {
+  //  top:pxTorem(90px + 40px);
+  //}
+  right:0;
+  bottom:0;
+  z-index:99;
+  background:#fff;
+  li{
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    margin:0 pxTorem(30px);
+    height:pxTorem(90px);
+    line-height:pxTorem(90px);
+    @include font-dpr(28px);
+    &.select{
+      position: relative;
+      color:$red-base;
+      .iconUserGou2{
+        position: absolute;
+        right:0;
+        top:50%;
+        width: pxTorem(28px);
+        height: pxTorem(21px);
+        margin-top:pxTorem(-10px);
+        background-image: url("../images/iconUserGou2.png");
+        @extend %ico_rem;
+      }
+    }
+    .iconUserleft,.iconUserBottom{
+      position: absolute;
+      right:0;
+      top:50%;
+    }
+    .iconUserleft{
+      @extend %ib;
+      width: pxTorem(16px);
+      height: pxTorem(30px);
+      background-image: url("../images/iconArrowR.png");
+      margin-top:pxTorem(-10px);
+      @extend %ico_rem;
+    }
+    .iconUserBottom{
+      @extend %ib;
+      width: pxTorem(30px);
+      height: pxTorem(16px);
+      background-image: url("../images/iconArrowB.png");
+      margin-top:pxTorem(-10px);
+      @extend %ico_rem;
+    }
+  }
+}
+
+//退货注意事项
+.returnAttention{
+  background: #fff;
+  padding:pxTorem(20px) pxTorem(30px) pxTorem(30px) pxTorem(30px);
+  h3{
+    @include font-dpr(32px);
+    text-align: center;
+    margin-bottom: pxTorem(10px);
+  }
+  p{
+    @include font-dpr(28px);
+    line-height:pxTorem(50px);
+  }
+}

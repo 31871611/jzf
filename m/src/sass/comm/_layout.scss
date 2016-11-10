@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@import "css3";
+@import "common";
+
+
+//基础布局，版面
+.wrap{
+  @extend .display-flex;
+  -webkit-box-orient:vertical;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+}
+article.mainOutter{
+  @extend .display-flex;
+  -webkit-box-orient:vertical;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  @extend .flex;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+article.main{
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+  @extend .flex;
+  width:100%;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+//article.main::-webkit-scrollbar,
+//article.main::-webkit-scrollbar{
+//  -webkit-opacity: 0;
+//  opacity: 0;
+//}
+article.scrollHide{
+  overflow:hidden;
+}
+header{
+  //position: relative;
+  //z-index: 2;
+}
+footer{
+  position: relative;
+  z-index: 2;
+  //透明边框
+  //border:1px solid transparent;
+}
+
+//vue
+[v-cloak]{
+  visibility: hidden;
+}
+.v-cloak--block,.v-cloak--inline,.v-cloak--inlineBlock{
+  display: none;
+}
+
+
+//定位
+.fullPosition{
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+//清除定位
+.noPosition{
+  position: static;
+}
+
+
+//全屏弹窗，使用.wrap
+.posAlert{
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 28;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"新增/修改地址"
+})
+<body>
+
+<!--新增/修改地址-->
+<div class="wrap bgWhite">
+    <header>
+        @@include('include/title.html',{
+            "title":"新增/修改地址"
+        })
+    </header>
+
+    <article class="main">
+        <div class="user">
+            <div class="lBorTitle">收货人信息</div>
+            <div class="dashedBorder"></div>
+            <ul class="userList">
+                <li>
+                    <input type="text" placeholder="收货人姓名">
+                </li>
+                <li class="haveBorder">
+                    <input type="tel" placeholder="手机号">
+                </li>
+            </ul>
+            <div class="lBorTitle">收货人地址信息</div>
+            <div class="dashedBorder"></div>
+            <ul class="userList">
+                <li class="selectAddress">
+                    <div>
+                        <select>
+                            <option>省</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option>市</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option>区</option>
+                        </select>
+                    </div>
+                    <!--<input type="text" placeholder="省、市、区">-->
+                </li>
+                <li>
+                    <input type="tel" placeholder="街道、小区、门牌号等详细地址">
+                </li>
+                <li class="haveBorder">
+                    <b>设置为默认地址</b>
+                    <i class="iconCircle"></i>
+                    <i class="iconCircleSelect"></i>
+                </li>
+                <li class="haveBorder select">
+                    <b>设置为默认地址</b>
+                    <i class="iconCircle"></i>
+                    <i class="iconCircleSelect"></i>
+                </li>
+            </ul>
+            <a href="" class="btn select">保存地址</a>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

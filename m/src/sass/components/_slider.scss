@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//轮播
+.sliderX{
+  $h:360px;
+  height:pxTorem($h);
+  width: 100%;
+  text-align: center;
+  overflow:hidden;
+  position: relative;
+  ul{
+    width: 100%;
+    height:pxTorem($h);
+    overflow: hidden;
+    li{
+      position: absolute;
+    }
+    a{
+      display: block;
+    }
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .indexAdTab{
+    position: absolute;
+    left:0;
+    bottom:pxTorem(22px);
+    width:100%;
+    height:pxTorem(12px + 2);
+    text-align:center;
+    span{
+      margin-left:pxTorem(10px);
+      vertical-align: top;
+      @include border-radius(50%);
+      display: inline-block;
+      width:pxTorem(12px - 4);
+      height:pxTorem(12px - 4);
+      border:pxTorem(2px) solid #fff;
+      &.select{
+        border:0;
+        background:#fff;
+        width:pxTorem(12px);
+        height:pxTorem(12px);
+      }
+    }
+  }
+}

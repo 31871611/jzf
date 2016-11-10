@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//用户中心订单列表
+.order_list{
+  //width: pxTorem(600px);
+  //margin: pxTorem(20px) auto 0;
+  li{
+    margin-bottom: pxTorem(20px);
+  }
+  //.number,.goods_num{
+  //  border-bottom: 1px solid #cccccc;
+  //}
+  a{
+    color:#333333;
+  }
+  strong{
+    color:$red_c;
+    @include font-dpr(28px);
+    font-weight:bold;
+  }
+  em,b{
+    font-style: normal;
+    font-weight: normal;
+  }
+  //退货.订单号
+  .orderNum{
+    padding:0 pxTorem(20px);
+    height:pxTorem(65px);
+    line-height:pxTorem(65px);
+    margin-bottom:pxTorem(10px);
+    background: #fff;
+  }
+  .number{
+    padding:0 pxTorem(20px);
+    height: pxTorem(66px);
+    background:#fff;
+    &:after{
+      content: "\20";
+      height:1px;
+      display: block;
+      background: #ccc;
+      clear: both;
+    }
+    em,b{
+      line-height: pxTorem(65px);
+    }
+    em{
+      @extend %fl;
+    }
+    b{
+      @extend %fr;
+      font-weight: normal;
+      @include font-dpr(28px);
+      color:$red_c;
+    }
+    .close{
+      color:#333333;
+    }
+  }
+  .goodsListRow{
+    padding:0 pxTorem(20px);
+  }
+  .price{
+    background:#fff;
+    position: relative;
+    height:pxTorem(75px);
+    padding:pxTorem(5px) pxTorem(20px) 0 pxTorem(20px);
+    .btn{
+      margin:0;
+      position: absolute;
+      right:pxTorem(20px);
+      top:pxTorem(10px);
+      width:pxTorem(190px);
+      text-align:center;
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      background:$red_c;
+      @include font-dpr(28px);
+      color:#fff;
+      &:active{
+        background-color: $red-hover-base;
+      }
+    }
+  }
+  //产品信息
+  .goodsListRow{
+    .row{
+      margin:0;
+    }
+  }
+}
+
+
+/**已修改为统一列表goodsListRow goodsListRowBorder
+
+//订单列表产品信息
+.goods_num{
+  position: relative;
+  padding: pxTorem(15px) 0;
+  display:-webkit-box;
+  display:box;
+  .con{
+    -webkit-box-flex:1;
+    box-flex:1;
+    width:100%;
+  }
+  img{
+    width:pxTorem(200px);
+    height:pxTorem(200px);
+    vertical-align: middle;
+  }
+  h3,strong{
+    margin-left:pxTorem(20px);
+  }
+  h3{
+    @include font-dpr(28px);
+    margin-bottom: pxTorem(16px);
+    width:pxTorem(300px);
+    height:pxTorem(80px);
+    overflow: hidden;
+  }
+  strong{
+    color:$red_c;
+    @include font-dpr(28px);
+    font-weight:bold;
+  }
+  span{
+    display: block;
+    position: absolute;
+    left:pxTorem(220px);
+    bottom:pxTorem(12px);
+    color:#666666;
+  }
+  span.spec{
+    bottom: pxTorem(32px + 12);
+  }
+  em{
+    position: absolute;
+    right:0;
+    top:pxTorem(105px);
+  }
+  //申请退货连接
+  .applyreturn{
+    color:#3366cc;
+    position: absolute;
+    bottom:pxTorem(10px);
+    right:0;
+  }
+}
+
+**/

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//关注公众号页面
+.weixinMp{
+  $img_w:pxTorem(454px / 0.85);
+  //background-image: url("../../../static/images/mpbg.jpg");
+  background-image: url("../images/mpbg.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size:100% 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  .img{
+    padding-top:pxTorem(80px / 0.85);
+    width: $img_w;
+    height: $img_w;
+    margin:0 auto;
+    img{
+      pointer-events:auto;
+      width: $img_w;
+      height: $img_w;
+      display: block;
+    }
+  }
+  .mb{
+    margin-bottom: pxTorem(20px / 0.85);
+  }
+  .btn{
+    margin-left:0;
+    margin-right:0;
+    a{
+      @include font-dpr(28px);
+      font-weight:bold;
+      height:pxTorem(72px / 0.85);
+      line-height:pxTorem(72px / 0.85);
+      color:#333;
+    }
+  }
+  strong{
+    display: block;
+    text-align:center;
+    @include font-dpr(32px);
+    color:$red-base;
+    font-weight: bold;
+  }
+  footer{
+    @include font-dpr(28px);
+    position: absolute;
+    left:0;
+    bottom:pxTorem(20px / 0.85);
+    width:100%;
+    text-align: center;
+    color: #999;
+  }
+}

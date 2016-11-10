@@ -1,0 +1,558 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//选择按钮
+%selectBtn{
+  vertical-align: top;
+  margin-top:pxTorem(25px);
+  margin-right:pxTorem(10px);
+  border:0;
+  -webkit-appearance:none;
+  outline:none;
+  position: relative;
+  width:pxTorem(36px);
+  height:pxTorem(36px);
+  @include border-radius(50%);
+  &:before{
+    position: absolute;
+    left:0;
+    top:0;
+    content: "\20";
+    display: inline-block;
+    width:pxTorem(36px - 4);
+    height:pxTorem(36px - 4);
+    border:1px solid #333;
+    @include border-radius(50%);
+    margin-right:pxTorem(10px);
+  }
+  &:checked{
+    &:before {
+      background-color: $red-base;
+      width: pxTorem(36px);
+      height: pxTorem(36px);
+      border: 0;
+      background-image: url("../images/iconHook.png");
+      @extend %ico_rem;
+      background-size: 50% 50% !important;
+    }
+  }
+}
+
+
+
+
+//结算中心
+.clearingpay{
+  $ml:30px;
+  h2{
+    height:pxTorem(80px);
+    line-height:pxTorem(80px);
+    padding-left:pxTorem($ml);
+    @include font-dpr(28px);
+    color:#333;
+  }
+
+  //选择tab
+  .clearingTab{
+    background: #fff;
+    padding:pxTorem(30px) 0;
+    b{
+      display: inline-block;
+      position: relative;
+      height:pxTorem(36px);
+      line-height:pxTorem(36px);
+      font-weight: normal;
+      width:pxTorem(180px);
+      margin-left:pxTorem($ml);
+      padding-left:pxTorem(46px);
+      &.select{
+        &:before{
+          background-color: $red-base;
+          width:pxTorem(36px);
+          height:pxTorem(36px);
+          border:0;
+          background-image: url("../images/iconHook.png");
+          @extend %ico_rem;
+          background-size:50% 50% !important;
+        }
+      }
+      &:before{
+        position: absolute;
+        left:0;
+        top:0;
+        content: "\20";
+        display: inline-block;
+        width:pxTorem(36px - 4);
+        height:pxTorem(36px - 4);
+        border:1px solid #333;
+        @include border-radius(50%);
+        margin-right:pxTorem(10px);
+      }
+    }
+  }
+
+  //信息展示
+  .clearingInfo{
+    background:#fff;
+    padding:pxTorem(30px);
+    p{
+      color:#999999;
+      @include font-dpr(24px);
+    }
+  }
+
+  //藏品物流报价
+  .clearingEms{
+    display: block;
+    @include font-dpr(32px);
+    color:#333333;
+    margin-bottom: pxTorem(20px);
+  }
+  //配送地址
+  //自提地址
+  .address{
+    background: #fff;
+    padding:pxTorem(38px) 0;
+    position: relative;
+
+    p{
+      margin:0 pxTorem(35px);
+      line-height:pxTorem(35px);
+    }
+
+    //地图
+    .map{
+      padding-right:pxTorem(135px);
+      display: block;
+      margin:0 pxTorem($ml);
+      border-bottom: 1px solid #d2d2d2;
+      padding-bottom: pxTorem(20px);
+      position: relative;
+      color:#333333;
+      line-height:pxTorem(36px);
+      &:after{
+        content: "\20";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: pxTorem(-15px);
+        width: pxTorem(16px);
+        height: pxTorem(30px);
+        background-image: url("../images/iconArrowR.png");
+        @extend %ico_rem;
+      }
+    }
+
+    //选择时间
+    .time{
+      position: relative;
+      @extend .display-flex;
+      margin:pxTorem(20px) pxTorem($ml) 0;
+    }
+    label{
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      padding-right:pxTorem(45px);
+      @include font-dpr(32px);
+    }
+    input[type='text']{
+      @extend .flex;
+      display: block;
+      border:1px solid #333333;
+      width:100%;
+      text-indent: pxTorem(28px);
+      height:pxTorem(58px);
+      color:#333;
+      background: #fff;
+      @include font-dpr(32px);
+    }
+    em,i{
+      display: inline-block;
+    }
+    i.arrowB{
+      width:pxTorem(30px);
+      height:pxTorem(16px);
+      background-image:url("../images/iconArrowB.png");
+      @extend %ico_rem;
+      position: absolute;
+      right:pxTorem(20px);
+      top:pxTorem(24px);
+    }
+
+
+    //请添加地址
+    .add{
+      display: block;
+      text-align: right;
+      color:#333;
+      &:after{
+        display: inline-block;
+        content: "\20";
+        vertical-align: middle;
+        margin:0 pxTorem(40px) 0 pxTorem(25px);
+        width: pxTorem(14px);
+        height: pxTorem(24px);
+        background-image: url("../images/iconArrowR.png");
+        @extend %ico_rem;
+      }
+    }
+  }
+
+
+
+  //预定信息
+  .reserveInfo{
+    //margin-top:pxTorem(20px);
+    background: #fff;
+    padding:pxTorem(30px) 0 0;
+    position: relative;
+    strong,.selectMoney,p,.contract{
+      margin:0 pxTorem(20px) pxTorem(20px);
+      color:#999;
+    }
+    strong{
+      @include font-dpr(28px);
+      display: block;
+      b{
+        margin-left:0;
+        width:auto;
+        color:$red-base;
+        font-weight:bold;
+      }
+    }
+    .contract{
+      margin-bottom:0;
+      position: relative;
+      i,a{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i{
+        position: absolute;
+        left:0;
+        top:0;
+        width:pxTorem(120px);
+        height:pxTorem(50px);
+        &:after{
+          content: "\20";
+          display: block;
+          border:1px solid #22232d;
+          width:pxTorem(28px);
+          height:pxTorem(28px);
+        }
+        &.select{
+          &:after{
+            border:1px solid $red-base;
+            background-image: url("../images/yes_sel.png");
+            @extend %ico_rem;
+          }
+        }
+      }
+      a{
+        @extend %url;
+        margin-left:pxTorem(38px);
+      }
+    }
+    span.percent{
+      position: absolute;
+      top:pxTorem(36px);
+      right:pxTorem(20px);
+      color:$red-base;
+    }
+  }
+
+  //身份信息
+  .idInfo{
+    overflow: hidden;
+    background: #fff;
+    .time{
+      position: relative;
+      @extend .display-flex;
+      margin:pxTorem(20px) pxTorem($ml) 0;
+    }
+    label{
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      width:pxTorem(170px);
+      @include font-dpr(32px);
+    }
+    input[type='text'],input[type='tel']{
+      @extend .flex;
+      display: block;
+      border:1px solid #333333;
+      width:100%;
+      text-indent: pxTorem(28px);
+      height:pxTorem(58px);
+      color:#333;
+      background: #fff;
+      @include font-dpr(32px);
+    }
+    p{
+      margin:pxTorem(20px) pxTorem($ml) 0;
+      color:#999999;
+      line-height:pxTorem(36px);
+      padding-bottom: pxTorem(20px);
+    }
+  }
+
+  //是否阅读售后条款
+  .isService{
+    $h:90px;
+    height:pxTorem($h);
+    margin-top:pxTorem(20px);
+    margin-bottom:pxTorem(20px);
+    background:#fff;
+    text-align:center;
+    input[type='checkbox']{
+      @extend %selectBtn;
+    }
+    a{
+      color:$link-color;
+      display: inline-block;
+      line-height: pxTorem($h);
+    }
+  }
+
+
+  //按钮
+  .btn{
+    margin-bottom: pxTorem(10px);
+    text-align:left;
+    text-indent: 43%;
+    a{
+      @include border-radius(pxTorem(3px));
+      background: #fff;
+      height:pxTorem(99px);
+      line-height: normal;
+      border:1px solid #999999;
+      color:#333;
+      @include font-dpr(32px);
+      position: relative;
+      &.balance,&.alipay,&.wx,&.bank,&.giro{
+        &:before {
+          content: "\20";
+          position: absolute;
+          left: 34%;
+          top: pxTorem(30px);
+          width: pxTorem(44px);
+          height: pxTorem(35px);
+          @extend %ico_rem;
+        }
+      }
+      //余额支付
+      &.balance{
+        height:pxTorem(99px - 10);
+        padding-top:pxTorem(10px);
+        &:before{
+          background-image: url("../images/iconbalance.png");
+        }
+      }
+      &.select{
+        color:#999999;
+        &:before{
+          background-image: url("../images/iconbalanceC.png");
+        }
+      }
+      //微信
+      &.wx{
+        line-height:pxTorem(99px);
+        &:before{
+          background-image: url("../images/iconWeiXin.png");
+        }
+      }
+      //支付宝
+      &.alipay{
+        line-height:pxTorem(99px);
+        &:before{
+          background-image: url("../images/iconalipay.png");
+        }
+      }
+      //在线支付
+      &.bank{
+        line-height:pxTorem(99px);
+        &:before {
+          background-image: url("../images/iconBank.png");
+        }
+      }
+      //转帐
+      &.giro{
+        height:pxTorem(99px - 10);
+        padding-top:pxTorem(10px);
+        &:before{
+          background-image: url("../images/icongiro.png");
+        }
+      }
+    }
+    em{
+      display: block;
+      font-style: normal;
+      @include font-dpr(20px);
+    }
+    input[type='radio']{
+      position: absolute;
+      left:2.5%;
+      top:0;
+      @extend %selectBtn;
+      margin-top:pxTorem(28px);
+    }
+  }
+
+  //查看支付限额
+  .morepay{
+    text-align:right;
+    a{
+      color:#3366cc;
+      display: block;
+      padding:pxTorem(15px) pxTorem(20px) pxTorem(20px);
+    }
+  }
+
+  //优惠卷
+  .orderCoupons{
+    $h:pxTorem(88px);
+    margin-top:pxTorem(20px);
+    background:#fff;
+    height:$h;
+    line-height: $h;
+    position: relative;
+    span,b{
+      @include font-dpr(32px);
+    }
+    em{
+      font-style: normal;
+      padding-left:pxTorem(20px +46px);
+      float:left;
+      &.select{
+        &:before{
+          background-color: $red-base;
+          width:pxTorem(36px);
+          height:pxTorem(36px);
+          border:0;
+          background-image: url("../images/iconHook.png");
+          @extend %ico_rem;
+          background-size:50% 50% !important;
+        }
+      }
+      &:before{
+        position: absolute;
+        left:pxTorem(20px);
+        top:pxTorem(26px);
+        content: "\20";
+        display: inline-block;
+        width:pxTorem(36px - 4);
+        height:pxTorem(36px - 4);
+        border:pxTorem(2px) solid #333;
+        @include border-radius(50%);
+        margin-right:pxTorem(10px);
+      }
+    }
+    //无优惠卷
+    span.wu{
+      float:right;
+      padding-right:pxTorem(20px);
+      color:#999;
+      @include font-dpr(24px);
+    }
+    b{
+      color:$red-base;
+      font-weight:normal;
+      position: absolute;
+      right:pxTorem(250px);
+      top:0;
+    }
+    a{
+      float:right;
+      display: inline-block;
+      padding-right:pxTorem(20px);
+      color:#333333;
+      span{
+        @include font-dpr(24px);
+      }
+    }
+    i.arrowR{
+      display: inline-block;
+      vertical-align: top;
+      margin-top:pxTorem(32px);
+      width: pxTorem(14px);
+      height: pxTorem(24px);
+      background-image: url("../images/iconArrowR.png");
+      @extend %ico_rem;
+      margin-left:pxTorem(12px);
+    }
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+.orderDetails{
+  margin-top:pxTorem(20px);
+  background: #fff;
+  ul{
+    padding:pxTorem(10px) 0;
+    li{
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      padding:0 pxTorem(20px);
+    }
+    span{
+      @include font-dpr(32px);
+      color:#333333;
+    }
+    .left{
+      @extend %fl;
+    }
+    .right{
+      @extend %fr;
+    }
+  }
+}
+
+
+//我的地址信息
+.myaddress{
+  background: #fff;
+  padding:pxTorem(38px) 0;
+  position: relative;
+  .replace{
+    @include font-dpr(30px);
+    position: absolute;
+    right:pxTorem(35px);
+    top:pxTorem(-58px);
+  }
+  p{
+    @include font-dpr(30px);
+    margin-left:pxTorem(35px);
+    margin-right:pxTorem(70px);
+    line-height:pxTorem(35px);
+  }
+  strong{
+    margin-left:pxTorem(35px);
+    margin-bottom:pxTorem(20px);
+    display: block;
+    width:pxTorem(320px);
+    @extend %ellipsis;
+    @include font-dpr(32px);
+  }
+  b{
+    position: absolute;
+    right: pxTorem(70px);
+    top:pxTorem(44px);
+    font-weight: normal;
+    @include font-dpr(36px);
+  }
+  .arrowR{
+    width: pxTorem(14px);
+    height:pxTorem(24px);
+    background-image: url("../images/iconArrowR.png");
+    @extend %ico_rem;
+    position: absolute;
+    right:pxTorem(40px);
+    top:43%;
+  }
+}
+
+
+

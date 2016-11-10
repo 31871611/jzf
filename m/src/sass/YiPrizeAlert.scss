@@ -1,0 +1,91 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  一元购.中奖提示弹窗
+
+*/
+
+
+//中奖提示弹窗
+.YiPrizeAlert{
+  z-index: 100;
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  @include display-flex();
+  @include align-items();
+  @include justify-content(center);
+  .box{
+    @extend %ico_rem;
+    background-image: url("../images/YiPrizeAlertBg.png");
+    width:pxTorem(504px);
+    height:pxTorem(808px);
+    position: relative;
+  }
+  h3{
+    @include font-dpr(28px);
+    color:#fdde46;
+    text-align: center;
+    padding-top:pxTorem(305px);
+    margin-bottom: pxTorem(25px);
+  }
+  .text{
+    margin-bottom: pxTorem(100px);
+    padding-left:pxTorem(168px);
+    span{
+      display: block;
+      height: pxTorem(45px);
+      color:#fff;
+    }
+  }
+  .btn{
+    $h:84px;
+    a{
+      margin:0 auto;
+      color:#f50404;
+      display: block;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      width:pxTorem(286px);
+      text-align: center;
+      @extend %ico_rem;
+      background-image: url("../images/YiPrizeAlertBtn.png");
+    }
+  }
+  .exit{
+    @include border-radius(50%);
+    position: absolute;
+    right:pxTorem(25px);
+    top:pxTorem(105px);
+    width:pxTorem(40px);
+    height:pxTorem(40px);
+    border:2px solid #fff;
+    @include rotate(45deg);
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      background:#fff;
+      left:50%;
+      top:50%;
+    }
+    &:before{
+      margin:-1px 0 0 pxTorem(-13px);
+      width:pxTorem(26px);
+      height:2px;
+    }
+    &:after{
+      margin:pxTorem(-13px) 0 0 -1px;
+      width:2px;
+      height:pxTorem(26px);
+    }
+  }
+}
+
+

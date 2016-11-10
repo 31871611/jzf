@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*进入*/
+.opacity-transition{
+  @include translate3D(0,0,0);
+}
+.opacity-enter, .opacity-leave {
+  @include translate3D(-73%,0,0);
+}
+
+//首页分类-从左往右滑动显示
+//从动画到原来的地方
+//从哪里到原来的地方
+@include keyframes(indexClassify){
+  0%{
+    @include translate3D(-73%,0,0);
+  }
+  100%{
+    @include translate3D(0,0,0);
+  }
+}
+@include keyframes(indexClassifyExit){
+  0%{
+    @include translate3D(0,0,0);
+  }
+  100%{
+    @include translate3D(-73%,0,0);
+  }
+}
+
+
+
+//360度旋转
+@include keyframes(rotate){
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+//从小至大
+@include keyframes(scaleSmallTobig){
+  0%{
+    @include scale(0);
+    //@include opacity(50);
+  }
+  100%{
+    @include scale(1);
+    //@include opacity(100);
+  }
+}
+//从大至小
+@include keyframes(scalebigToSmall){
+  0%{
+    @include scale(1);
+    //@include opacity(50);
+  }
+  100%{
+    @include scale(0);
+    //@include opacity(100);
+  }
+}
+
+
+//集珍坊app首页缩小关闭.启动页缩小关闭
+.narrow-leave{
+  @include animation(narrowExit 400ms);
+}
+
+//过渡.放大关闭
+//.enlarge-enter{
+//  @include animation(enlargeExit 400ms);
+//}
+//.enlarge-leave{
+//  @include animation(enlargeExit 400ms);
+//}
+
+//放大关闭
+@include keyframes(enlargeExit){
+  0%{
+    @include scale(1);
+    @include opacity(100);
+  }
+  100%{
+    @include scale(2);
+    @include opacity(10);
+  }
+}
+
+//缩小关闭
+@include keyframes(narrowExit){
+  0%{
+    bottom:pxTorem(99px);
+    @include opacity(100);
+  }
+  100%{
+    bottom:0;
+    @include opacity(30);
+  }
+}
+
+
+//从下往上滑动显示
+@include keyframes(SlideBottomToTop){
+  0%{
+    @include translate3D(0,100%,0);
+    @include opacity(50);
+  }
+  100%{
+    @include translate3D(0,0,0);
+    @include opacity(100);
+  }
+}
+//过渡.从下往上滑动
+.SlideTopBottom-enter{
+  @include animation(SlideBottomToTop 400ms);
+}
+.SlideTopBottom-leave{
+  @include animation(SlideTopToBottom 400ms);
+}
+//从上往下滑动显示
+@include keyframes(SlideTopToBottom){
+  0%{
+    @include translate3D(0,0,0);
+    @include opacity(100);
+  }
+  100%{
+    @include translate3D(0,100%,0);
+    @include opacity(50);
+  }
+}
+
+//从右往左滑动显示
+@include keyframes(SlideRightToLeft){
+  0%{
+    @include translate3D(100%,0,0);
+    //@include opacity(100);
+  }
+  100%{
+    @include translate3D(0,0,0);
+    //@include opacity(80);
+  }
+}
+
+
+
+//抖动
+//@include keyframes(shake){
+//  0%,100%{
+//    @include translateX(0);
+//  }
+//  //如果需要抖动久点就增加30%、50%、70%反之抖动少
+//  10%,30%,50%{
+//    @include translateX(-10px);
+//  }
+//  20%,40%,60%{
+//    @include translateX(10px);
+//  }
+//}
+
+//改变透明度
+@include keyframes(opacity){
+  0%{
+    @include opacity(30);
+  }
+  100%{
+    @include opacity(100);
+  }
+}

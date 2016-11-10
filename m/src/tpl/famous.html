@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"名家"
+})
+<body id="app">
+
+    <!-- 固定高度切掉多余内容 -->
+    <div class="famous" :style="{height:height+'px'}">
+        <div class="famousScroll" :style="{height:height*3+'px',transform:'translate3d(0px,-'+ height * index +'px, 0px)'}">
+
+            <!-- 第一屏.名家信息 -->
+            <div class="famousInfo" id="famousInfo" :style="{height:height+'px',marginTop:-mainLoadHeight+'px'}" @scroll="slideScroll($event)" @touchstart="infoStart($event)" @touchmove="infoMove($event)" @touchend="infoEnd($event)">
+                <a href="javascript:;" @click="back" class="iconBackTop"></a>
+                <a href="javascript:;" class="iconShareTop"></a>
+                <div class="nameImg" @click="toogleList">
+                    <img src="images/famous1.jpg" alt="">
+                </div>
+                <div class="famousArt" id="articleShort" @click="toogleArticle">
+                    <h3>潘惊石</h3>
+                    <h4>职业：中国工艺美术大师</h4>
+                    <h4>祖籍：福建省福州市</h4>
+                    <p>1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师...</p>
+                    <p>1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师...</p>
+                    <p>1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师...</p>
+                </div>
+                <p class="moreDetails">[查看详情]</p>
+                <div class="DragBottom" @click="this.index=1"><span>继续拖动或点击，查看在售藏品</span></div>
+            </div>
+
+            <!-- 拖起 -->
+            <div :style="{height:mainLoadHeight+'px'}"></div>
+
+            <!-- 加载中... -->
+            <div class="loadmoreIng" v-show="isLoadArticle" :style="{height:loadArticleHeight+'px'}"><span></span>{{loadArticleText}}</div>
+            <!-- 第二屏.名家介绍 -->
+            <div class="famousInfo" id="famousArticle" v-show="isArticle" :style="{height:height+'px'}" @scroll="slideScroll($event)" @touchstart="articleStart($event)" @touchmove="articleMove($event)" @touchend="articleEnd($event)">
+                <a href="javascript:;" @click="toogleOne" class="iconBackTop"></a>
+                <a href="javascript:;" class="iconShareTop"></a>
+                <i class="topArrow"></i>
+                <div class="famousArt" id="articleDetail">
+                    <h3 class="pt">潘惊石</h3>
+                    <h4>职业：中国工艺美术大师</h4>
+                    <h4>祖籍：福建省福州市</h4>
+                    <p>1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                        1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师
+                    </p>
+                </div>
+                <a href="javascript:;" @click="this.index=2" class="bthMore">查看作品</a>
+                <!-- 内容多时使用定位，会出现重叠文字 -->
+                <!-- 内容少时需要使用定位在最底部 -->
+                <!--<div class="DragBottom"><span>继续拖动或点击，查看在售藏品</span></div>-->
+            </div>
+
+            <!-- 第三屏.藏品列表 -->
+            <div class="wrap" :style="{height:height+'px'}">
+                <header>
+                    @@include('include/title.html',{
+                        "title":"百兽图谱——潘惊石专场"
+                    })
+
+                    <div class="tabShow">
+                        <a href="" class="select"><span>寿山石</span></a>
+                        <a href=""><span>珠宝</span></a>
+                        <a href=""><span>文玩</span></a>
+                        <a href=""><span>字画</span></a>
+                        <a href=""><span>瓷器</span></a>
+                    </div>
+                    <div class="goodsRtrieval">
+                        <a href="javascript:;" class="select">排序</a>
+                        <a href="javascript:;">价格</a>
+                        <a href="javascript:;">分类</a>
+                        <a href="javascript:;">状态</a>
+                    </div>
+                    <!-- 加载中... -->
+                    <div class="loadmoreIng" v-show="isLoadList" :style="{height:loadListHeight+'px'}"><span></span>{{loadListText}}</div>
+                </header>
+
+                <article class="main wrap scrollHide">
+                    <article class="main" id="famousList" @scroll="slideScroll($event)" @touchstart="listStart($event)" @touchmove="listMove($event)" @touchend="listEnd($event)">
+
+                        <div class="listEndTime borderBDashed">
+                            04月11日 星期六开售  距新品开售 1天 00:45:00
+                        </div>
+
+                        <ul>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                        </ul>
+
+                    </article>
+
+                    <!-- 检索弹窗 -->
+                    <div class="retrievalSplit">
+                        <ul class="hot hide">
+                            <li><a href="javascript:;" class="select">默认</a></li>
+                            <li><a href="javascript:;">价格<i class="up"></i></a></li>
+                            <li><a href="javascript:;">价格<i class="down"></i></a></li>
+                        </ul>
+
+                        <ul class="hot hide">
+                            <li><a href="" class="select">￥1000以下</a></li>
+                            <li><a href="" class="">￥1001-3000</a></li>
+                            <li><a href="" class="">￥3001-5000</a></li>
+                            <li><a href="" class="">￥5001-8000</a></li>
+                            <li><a href="" class="">￥8001-15000</a></li>
+                            <li><a href="" class="">￥15000以上</a></li>
+                        </ul>
+
+                        <div class="filter hide">
+                            <div class="con">
+                                <div class="box">
+                                    <h2>材质</h2>
+                                    <div class="category_list">
+                                        <a class="select" href="">全部材质</a>
+                                        <a href="">田黄石</a>
+                                        <a href="">荔枝洞石</a>
+                                        <a href="">芙蓉石</a>
+                                        <a href="">汶洋石</a>
+                                        <a href="">高山石</a>
+                                        <a href="">都成坑石</a>
+                                        <a href="">善伯洞石</a>
+                                        <a href="">旗降石</a>
+                                        <a href="">二号矿石</a>
+                                        <a href="">寿山掘性石</a>
+                                        <a href="">其他寿山石</a>
+                                    </div>
+                                    <h2>形式</h2>
+                                    <div class="category_list">
+                                        <a class="" href="">全部形式</a>
+                                        <a class="" href="">文玩</a>
+                                        <a class="" href="">摆件</a>
+                                        <a class="" href="">手件</a>
+                                        <a class="" href="">印章</a>
+                                        <a class="" href="">挂件</a>
+                                    </div>
+                                </div>
+                                <div class="btn">
+                                    <a href="">清除</a>
+                                    <a href="">确认</a>
+                                </div>
+                            </div>
+                            <div class="con hide">
+                                <div class="box">
+                                    <h2>材质</h2>
+                                    <div class="category_list">
+                                        <a class="select" href="">全部材质</a>
+                                        <a href="">琥珀</a>
+                                        <a href="">蜜蜡</a>
+                                        <a href="">翡翠</a>
+                                        <a href="">珊瑚</a>
+                                    </div>
+                                    <h2>形式</h2>
+                                    <div class="category_list">
+                                        <a class="" href="">全部形式</a>
+                                        <a class="" href="">挂坠</a>
+                                        <a class="" href="">戒指</a>
+                                        <a class="" href="">耳坠</a>
+                                        <a class="" href="">手镯</a>
+                                    </div>
+                                </div>
+                                <div class="btn">
+                                    <a href="javascript:;">清除</a>
+                                    <a href="javascript:;">确认</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="hot hide">
+                            <li><a href="javascript:;">在售</a></li>
+                            <li><a href="javascript:;">即将开售</a></li>
+                            <li><a href="javascript:;">可预订</a></li>
+                            <li><a href="javascript:;">已售</a></li>
+                            <li><a href="javascript:;" class="select">全部状态</a></li>
+                        </ul>
+                    </div>
+
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            height:"",
+            //屏数
+            index:0,
+            //名家介绍
+            isArticle:false,
+            //滚动值
+            scrollTop:0,
+            //内容高度
+            scrollHeight:0,
+            //可视高度
+            mainHeight:0,
+            mainLoadHeight:0,       //拖起
+            //第一屏.名家信息
+            info:{
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            },
+            //第二屏.上方.加载中
+            isLoadArticle:false,
+            loadArticleHeight:0,
+            loadArticleText:"继续拖动",
+            //第二屏.名家介绍
+            article:{
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            },
+            //第三屏.上方.加载中
+            isLoadList:false,
+            loadListHeight:0,
+            loadListText:"继续拖动",
+            //第三屏.藏品列表
+            list:{
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            }
+        },
+        ready:function(){
+            this.height=document.body.clientHeight;
+        },
+        methods: {
+            back:function(){
+                window.history.back();
+            },
+            backInfo:function(){
+                var _this=this;
+                //从第一屏进入还是第二屏进入，需要回到对应屏
+                if(this.isArticle){
+                    this.index=1;
+                }else{
+                    this.index=0;
+                    setTimeout(function(){
+                        _this.isArticle=false;
+                    },500);
+                }
+            },
+            //返回.第一屏.名家信息
+            toogleOne:function(){
+                this.isArticle=false;
+                this.index=0;
+            },
+            //返回.第二屏.名家介绍
+            toogleArticle:function(){
+                this.isArticle=true;
+                this.index=1;
+            },
+            //返回.第三屏.藏品列表
+            toogleList:function(){
+                this.isArticle=false;
+                this.index=1;
+            },
+            slideScroll:function(event){
+                //滚动值
+                this.scrollTop=event.target.scrollTop;
+                //页面高度
+                this.scrollHeight=event.target.scrollHeight;
+                //窗口可视高度
+                this.mainHeight=event.target.clientHeight;
+            },
+            //第一屏
+            infoStart:function(event){
+                var touch=event.changedTouches[0];
+                this.info.startX=touch.clientX;
+                this.info.startY=touch.clientY;
+                //触摸时获取滚动相关值
+                var self=document.querySelector("#famousInfo");
+                //滚动值
+                this.scrollTop=self.scrollTop;
+                //页面高度
+                this.scrollHeight=self.scrollHeight;
+                //窗口可视高度
+                this.mainHeight=self.clientHeight;
+            },
+            infoMove:function(event){
+                var touch=event.changedTouches[0];
+                this.info.moveX=touch.clientX - this.info.startX;
+                this.info.moveY=touch.clientY - this.info.startY;
+                //到底部禁止下滑
+                if(this.info.moveY < 0 && this.scrollTop+this.mainHeight >= this.scrollHeight){
+                    event.preventDefault();
+                    //拖起
+                    //this.mainLoadHeight=Math.abs(this.info.moveY);
+                }
+                //禁止上拉，出现刷新页面
+                if(this.info.moveY > 0 && this.scrollTop <= 0){
+                    //禁止上滑
+                    event.preventDefault();
+                }
+            },
+            infoEnd:function(event){
+                var touch=event.changedTouches[0];
+                this.info.endX=touch.clientX - this.info.startX;
+                this.info.endY=touch.clientY - this.info.startY;
+
+                if(Math.abs(this.info.endX) < Math.abs(this.info.endY)){
+                    //向下滑动,进入第二屏
+                    if(this.info.endY < -30 && this.scrollTop+this.mainHeight >= this.scrollHeight){
+                        this.index=1;
+                        //把拖起值清0
+                        //this.mainLoadHeight=0;
+                    }
+                }
+            },
+            //第二屏
+            articleStart:function(event){
+                var touch=event.changedTouches[0];
+                this.article.startX=touch.clientX;
+                this.article.startY=touch.clientY;
+                //触摸时获取滚动相关值
+                var self=document.querySelector("#famousArticle");
+                //滚动值
+                this.scrollTop=self.scrollTop;
+                //页面高度
+                this.scrollHeight=self.scrollHeight;
+                //窗口可视高度
+                this.mainHeight=self.clientHeight;
+            },
+            articleMove:function(event){
+                var touch=event.changedTouches[0];
+                this.article.moveX=touch.clientX - this.article.startX;
+                this.article.moveY=touch.clientY - this.article.startY;
+                //返回上一页
+                if(this.article.moveY > 0 && this.scrollTop <= 0){
+                    //禁止上滑
+                    event.preventDefault();
+                    //显示加载中...
+                    this.isLoadArticle=true;
+                    this.loadArticleHeight=this.article.moveY;
+                    //大于某值
+                    if(this.article.moveY > 50){
+                        this.loadArticleText="释放，返回名家专题";
+                    }else{
+                        this.loadArticleText="继续拖动";
+                    }
+                }
+                //到底部禁止下滑 this.article.moveY < -30 && 还要有下滑的动作
+                if(this.article.moveY < 0 && this.scrollTop+this.mainHeight >= this.scrollHeight){
+                    event.preventDefault();
+                }
+            },
+            articleEnd:function(event){
+                var touch=event.changedTouches[0];
+                this.article.endX=touch.clientX - this.article.startX;
+                this.article.endY=touch.clientY - this.article.startY;
+                //大于多少返回第一屏
+                if(this.article.endY > 50 && this.scrollTop <= 0){
+                    var _this=this;
+                    this.index=0;
+                    setTimeout(function(){
+                        _this.isArticle=false;
+                    },500);
+                }
+                //隐藏加载中...
+                this.isLoadArticle=false;
+                this.loadArticleHeight=0;
+                this.loadArticleText="继续拖动";
+
+                //到底进入藏品列表
+                if(this.article.endY < -30 && this.scrollTop+this.mainHeight >= this.scrollHeight){
+                    this.index=2;
+                }
+            },
+            //第三屏
+            listStart:function(event){
+                var touch=event.changedTouches[0];
+                this.list.startX=touch.clientX;
+                this.list.startY=touch.clientY;
+                //触摸时获取滚动相关值
+                var self=document.querySelector("#famousList");
+                //滚动值
+                this.scrollTop=self.scrollTop;
+                //页面高度
+                this.scrollHeight=self.scrollHeight;
+                //窗口可视高度
+                this.mainHeight=self.clientHeight;
+            },
+            listMove:function(event){
+                var touch=event.changedTouches[0];
+                this.list.moveX=touch.clientX - this.list.startX;
+                this.list.moveY=touch.clientY - this.list.startY;
+                //返回上一页
+                if(this.list.moveY > 0 && this.scrollTop <= 0){
+                    //禁止上滑
+                    event.preventDefault();
+                    //显示加载中...
+                    this.isLoadList=true;
+                    this.loadListHeight=this.list.moveY;
+                    //大于某值
+                    if(this.list.moveY > 50){
+                        this.loadListText="释放，返回名家专题";
+                    }else{
+                        this.loadListText="继续拖动";
+                    }
+                }
+            },
+            listEnd:function(event){
+                var touch=event.changedTouches[0];
+                this.list.endX=touch.clientX - this.list.startX;
+                this.list.endY=touch.clientY - this.list.startY;
+                //大于多少返回上一页
+                /********************/
+                if(this.list.endY > 50 && this.scrollTop <= 0){
+                    //从第一屏进入还是第二屏进入，需要回到对应屏
+                    if(this.isArticle){
+                        this.index=1;
+                    }else{
+                        this.index=0;
+                    }
+                }
+                //隐藏加载中...
+                this.isLoadList=false;
+                this.loadListHeight=0;
+                this.loadListText="继续拖动";
+            }
+        }
+    });
+
+</script>
+</html>

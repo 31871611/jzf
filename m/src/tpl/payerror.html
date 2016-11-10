@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"支付失败"
+})
+<link rel="stylesheet" href="css/user.css"/>
+<body>
+
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"支付失败"
+        })
+    </header>
+
+    <article class="main bgWhite">
+
+        <div class="paysuccess">
+            <div class="shoppingEmpty">
+                <i class="iconPayError"></i>
+                <b class="red">对不起支付失败！</b>
+            </div>
+
+            <ul class="orderList">
+                <li><span>交易时间：</span><b>2016-04-08 20:02:31</b></li>
+                <li><span>支付方式：</span><b>微信支付</b></li>
+                <li><span>订单号：</span><b>JZ8977979696976</b></li>
+            </ul>
+
+            <div class="helpInfo">
+                <p>在支付过程中如果存在任何疑问</p>
+                <p>请拨打客服热线</p>
+                <a href="tel:0591-88212636">0591-88212636</a>
+            </div>
+
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="btn paySuccessBtn">
+            <a href="">继续支付</a>
+        </div>
+    </footer>
+</div>
+
+</body>
+
+</html>

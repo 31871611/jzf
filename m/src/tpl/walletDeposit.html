@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"提现"
+})
+<body>
+
+<!--提现-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"提现"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20 depositList">
+                <li class="justifyLayout noBorder">
+                    <span>钱包总额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+                <li class="justifyLayout noBorder mt-20">
+                    <span>冻结金额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+                <li class="justifyLayout mt-20">
+                    <span>可提现金额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span>金额（元）</span>
+                    <input type="text" placeholder="请输入提现金额(需在10元以上）" class="flex">
+                </li>
+                <li class="justifyLayout noBorder">
+                    <span class="flex"><span>提现服务费：</span>¥18</span>
+                </li>
+                <li class="justifyLayout mt-40">
+                    <span class="flex"><span>实际到账金额：</span><em class="colorRed">￥2982</em></span>
+                </li>
+            </ul>
+            <div class="tip mt20 mb20">
+                提现服务费按提现金额的6‰收取，单笔业务服务费最低1元
+            </div>
+            <!--提现银行卡选择-->
+            <div class="depositBankSelect centerFlexLayout">
+                <i class="wayIcon mr20"><img src="images/iconBank01.png" alt=""></i>
+                <div class="flex">
+                    <div>中国建设银行</div>
+                    <span class="colorGray">尾号1370</span>
+                </div>
+                <i class="wayIcon iconUserleft"></i>
+            </div>
+            <div class="tip colorRed mt20 textRight">银行卡选择</div>
+            <a href="" class="btn bgBlue">提交提现申请</a>
+            <div class="tip mt40">
+                <p><i class="wayIcon iconUserChangeTip"></i>温馨提示:</p>
+                <p>1、每个工作日我们都会集中处理用户的提现申请，提现成功后将会发送短信到您银行卡绑定的手机上。</p>
+                <p>2、申请提现后，钱包中对应的款项将暂时冻结，直至提现处理完成。</p>
+                <p>3、请如实填写银行卡账户及相关信息（仅支持储蓄卡提现）；提现金额将于3-5个工作日退回到您所填写的储蓄卡账户。</p>
+            </div>
+        </div>
+    </article>
+</div>
+
+<!--银行卡弹窗-->
+<div class="wayBankAlert hide" style="overflow: hidden;">
+    <div class="opacity" style="overflow: hidden;"></div>
+    <div class="title">
+        <span>选择银行卡</span>
+        <i class="iconDeleteRound"></i>
+    </div>
+    <ul class="box">
+        <li class="select">
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+        <li>
+            <img src="images/iconBank01.png" alt="">
+            <div>
+                <span>中国建设银行</span>
+                <span class="colorGray">存蓄卡尾号1370</span>
+            </div>
+            <i class="iconCircle"></i>
+            <i class="iconCircleSelect"></i>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

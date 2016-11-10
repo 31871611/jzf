@@ -1,0 +1,256 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+
+  一元购
+
+*/
+
+
+
+/***************************************************************************************/
+
+.yiTabShow{
+  @import "inc/tabShow";
+  @include tabShow($h:81px);
+}
+
+//无.夺宝订单。获奖列表内容
+.noYiPrizeList{
+  padding-top: pxTorem(120px);
+  i{
+    display: block;
+    margin:0 auto;
+    width:pxTorem(348px);
+    height:pxTorem(284px);
+    @extend %ico_rem;
+    background-image: url("../images/iconNoYiPrize.png");
+  }
+  span{
+    margin-top:pxTorem(35px);
+    display: block;
+    text-align: center;
+    @include font-dpr(36px);
+    color:#b6b4b4;
+  }
+}
+
+//夺宝订单。获奖列表
+.yiPrizeList{
+  $imgW:216px;
+  ul{
+    margin:0 pxTorem(38px);
+    padding-top:pxTorem(20px);
+  }
+  li{
+    @include box-shadow(0 0 pxTorem(13px) rgba(218,215,215,.9));
+    @include border-radius(pxTorem(8px));
+    margin-bottom: pxTorem(20px);
+  }
+  .topSun{
+    border-bottom: 1px solid #ddd;
+    $h:108px;
+    height:pxTorem($h - 10);
+    margin:0 pxTorem(20px);
+    padding-top:pxTorem(10px);
+    div{
+      height:pxTorem($h / 2 - 10);
+    }
+    span{
+      height:pxTorem($h / 2 - 10);
+      line-height:pxTorem($h / 2 - 10);
+      &.num,&.title{
+        @extend %fl;
+      }
+      &.date,&.tel{
+        @extend %fr;
+      }
+      &.title{
+        width: 75%;
+        overflow: hidden;
+      }
+    }
+  }
+  .top{
+    border-bottom: 1px solid #ddd;
+    $h:59px;
+    height:pxTorem($h);
+    margin:0 pxTorem(20px);
+    span{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      &.num{
+        @extend %fl;
+      }
+      &.state{
+        @extend %fr;
+      }
+    }
+  }
+  .content{
+    margin:0 pxTorem(20px) 0 pxTorem(28px);
+    height: pxTorem($imgW);
+    padding:pxTorem(25px) 0;
+    a{
+      display: block;
+    }
+  }
+  .photo{
+    height: pxTorem($imgW);
+    width: pxTorem($imgW);
+    @extend %fl;
+    img{
+      height: pxTorem($imgW);
+      width: pxTorem($imgW);
+      vertical-align: middle;
+    }
+  }
+  .box{
+    position: relative;
+    height: pxTorem($imgW);
+    margin-left:pxTorem($imgW + 35px);
+    a{
+      height: pxTorem($imgW);
+      //确认收货地址
+      &.ok{
+        position: absolute;
+        left:0;
+        bottom: 0;
+        @include border-radius(pxTorem(4px));
+        padding:0 pxTorem(22px);
+        height:pxTorem(44px);
+        line-height:pxTorem(44px);
+        text-align: center;
+        color:#fff;
+        background: $red-yi;
+        @include font-dpr(26px);
+      }
+    }
+    h3{
+      @include font-dpr(28px);
+      color:#333;
+      height:pxTorem(36px * 2);
+      line-height:pxTorem(36px);
+      overflow: hidden;
+      padding-top: pxTorem(10px);
+    }
+    //开奖时间
+    .date{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      @include font-dpr(24px);
+      color:#999;
+    }
+  }
+  .text,.text2{
+    position: absolute;
+    left:0;
+    @include font-dpr(24px);
+    color:#999;
+    span{
+      display: block;
+      margin-top:pxTorem(10px);
+    }
+  }
+  .text{
+    bottom: 0;
+  }
+  //有收货按钮是上移.44px按钮高度
+  .text2{
+    bottom: pxTorem(44px + 15);
+  }
+  .bottom{
+    $h:75px;
+    height: pxTorem($h);
+    border-top: 1px solid #ddd;
+    margin:0 pxTorem(20px) 0 pxTorem(20px);
+    .num{
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @extend %fl;
+      color:#999;
+    }
+    .ok{
+      margin-top:pxTorem(9px);
+      @extend %fr;
+      @include border-radius(pxTorem(4px));
+      padding:0 pxTorem(22px);
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+      text-align: center;
+      color:#fff;
+      background: $red-yi;
+      @include font-dpr(26px);
+    }
+  }
+  //我的晒单
+  .comment{
+    margin:0 pxTorem(20px) 0 pxTorem(28px);
+  }
+  .commentText{
+    padding:pxTorem(15px) 0;
+    @include display-flex();
+    span{
+      display: block;
+      //width:pxTorem(146px);
+    }
+    p{
+      @include flex(1);
+      @include font-dpr(28px);
+    }
+  }
+  .PhotoList{
+    $imgW:153px;
+    @extend %clearfix;
+    .list{
+      width:pxTorem($imgW);
+      height:pxTorem($imgW);
+      @extend %fl;
+      margin-right: pxTorem(18px);
+      margin-bottom: pxTorem(18px);
+    }
+    img{
+      width:pxTorem($imgW);
+      height:pxTorem($imgW);
+      vertical-align: middle;
+    }
+  }
+}
+
+//往期中奖页面
+.yiPastPrizeList{
+  li{
+    border-bottom: 1px solid #ddd;
+    padding:pxTorem(35px) pxTorem(76px) pxTorem(10px) pxTorem(42px);
+  }
+  h3{
+    line-height: pxTorem(40px);
+    @include font-dpr(28px);
+    margin-bottom: pxTorem(25px);
+    span{
+      color:$red-yi;
+    }
+  }
+  .bottom{
+    height: pxTorem(50px);
+    span{
+
+      &.num{
+        @extend %fl;
+      }
+      &.date{
+        @extend %fr;
+      }
+    }
+  }
+}
+
+
+
+

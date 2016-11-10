@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  入驻商家列表页
+*/
+
+
+//入驻商家列表
+.businessEntranceList{
+  padding-bottom: pxTorem(30px);
+  .list{
+    background: #fff;
+    margin-top: pxTorem(10px);
+    padding:pxTorem(10px) 0 pxTorem(20px) pxTorem(20px);
+  }
+  .title{
+    height: pxTorem(115px);
+    position: relative;
+    padding-right: pxTorem(20px);
+    .img{
+      $h:86px;
+      position: absolute;
+      left:0;
+      top:0;
+      width: pxTorem($h);
+      height: pxTorem($h - 5);
+      border:1px solid #ccc;
+      background: #fff;
+      @include border-radius(50%);
+      text-align: center;
+      padding-top:pxTorem(5px);
+    }
+    img{
+      $h:74px;
+      width: pxTorem($h);
+      height: pxTorem($h);
+      vertical-align: middle;
+      @include border-radius(50%);
+    }
+    h2{
+      margin-top:pxTorem(15px);
+      @include font-dpr(32px);
+      padding-left:pxTorem(105px);
+      float: left;
+    }
+    i{
+      margin:pxTorem(6px) 0 0 pxTorem(10px);
+      vertical-align: top;
+      display: inline-block;
+      width:pxTorem(26px);
+      height:pxTorem(26px);
+      @extend %ico_rem;
+      background-image: url("../images/iconMerchant.png");
+    }
+    a{
+      &.enter{
+        float:right;
+        padding-top:pxTorem(18px);
+        color:#999;
+        &:after{
+          display: inline-block;
+          @extend %iconfont;
+          content: "\e61f";
+          @include font-dpr(20px);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .scroll{
+    //overflow-x: scroll;
+    $h:230px;
+    height: pxTorem($h);
+    ul{
+      height: pxTorem($h);
+    }
+    li{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      padding-right: pxTorem(10px);
+      float: left;
+    }
+    a{
+      display: block;
+    }
+    img{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      vertical-align: middle;
+    }
+  }
+}
+
+
+

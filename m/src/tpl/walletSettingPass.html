@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"设置支付密码"
+})
+<body>
+
+<!--设置支付密码-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"设置支付密码"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w150">手机号码</span>
+                    <input type="text" value="188***8888" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w150">验证码</span>
+                    <input type="text" placeholder="请输入验证码" class="flex">
+                    <span class="code bgGray">获取验证码</span>
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w150">登录密码</span>
+                    <input type="text" placeholder="请输入登录密码" class="flex">
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w220">设置支付密码</span>
+                    <input type="text" placeholder="请输入6位数字密码" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w220">确认支付密码</span>
+                    <input type="text" placeholder="请重新输入支付密码" class="flex">
+                </li>
+            </ul>
+            <a href="" class="btn bgBlue">确定</a>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

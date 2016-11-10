@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模版</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/video.css"/>
+    <link rel="stylesheet" href="http://www.artjzf.com/js/lib/videojs/video-js.css" />
+    <script src="http://www.artjzf.com/js/lib/videojs/video.js"></script>
+</head>
+<body id="app">
+
+
+<div class="video" :style="{height:height+'px'}" @scroll="sliderScroll($event)" @touchstart="sliderStart($event)" @touchmove="sliderMove($event)" @touchend="sliderEnd($event)">
+    <ul :style="{height:height*length+'px',transform:'translate3d(0px,-'+ height * index +'px, 0px)'}">
+        <li :style="{height:height+'px'}">
+            <video class="video_play edui-upload-video vjs-default-skin video-js vjs-big-play-centered" poster="picture/a1.jpg" controls="" preload="none" width="100%" height="100%" data-setup="{}">
+                <source src="1/_20160930171750.mp4" type='video/mp4' />
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+            </video>
+        </li>
+        <li :style="{height:height+'px'}">
+            <video class="video_play edui-upload-video vjs-default-skin video-js vjs-big-play-centered" poster="picture/a2.jpg" controls="" preload="none" width="100%" height="100%" data-setup="{}">
+                <source src="1/_20160930171752.mp4" type='video/mp4' />
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+            </video>
+        </li>
+        <li :style="{height:height+'px'}">
+            <video class="video_play edui-upload-video vjs-default-skin video-js vjs-big-play-centered" poster="picture/a3.jpg" controls="" preload="none" width="100%" height="100%" data-setup="{}">
+                <source src="1/_20160930171752.mp4" type='video/mp4' />
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+            </video>
+        </li>
+        <li :style="{height:height+'px'}">
+            <video class="video_play edui-upload-video vjs-default-skin video-js vjs-big-play-centered" poster="picture/a4.jpg" controls="" preload="none" width="100%" height="100%" data-setup="{}">
+                <source src="1/_20160930171752.mp4" type='video/mp4' />
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+            </video>
+        </li>
+        <li :style="{height:height+'px'}">
+            <video class="video_play edui-upload-video vjs-default-skin video-js vjs-big-play-centered" poster="picture/a5.jpg" controls="" preload="none" width="100%" height="100%" data-setup="{}">
+                <source src="1/_20160930171752.mp4" type='video/mp4' />
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+            </video>
+        </li>
+    </ul>
+</div>
+<div class="page">
+    <div :style="{width:page+'%'}"></div>
+</div>
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            height:"",
+            //屏数
+            index:0,
+            //列表长度
+            length:5,
+            //分页比例计算
+            page:1,
+            slider:{
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            },
+            //滚动值
+            scrollTop:0,
+            //内容高度
+            scrollHeight:0,
+            //可视高度
+            mainHeight:0
+
+        },
+        ready:function(){
+            this.height=window.innerHeight;
+            //分布进度
+            this.page=(this.index+1) / this.length * 100;
+        },
+        methods: {
+            sliderScroll:function(event){
+                //滚动值
+                this.scrollTop=event.target.scrollTop;
+                //页面高度
+                this.scrollHeight=event.target.scrollHeight;
+                //窗口可视高度
+                this.mainHeight=event.target.clientHeight;
+            },
+            sliderStart:function(event){
+                var touch=event.changedTouches[0];
+                this.slider.startX=touch.clientX;
+                this.slider.startY=touch.clientY;
+//                //触摸时获取滚动相关值
+//                var self=document.querySelector("#famousInfo");
+//                //滚动值
+//                this.scrollTop=self.scrollTop;
+//                //页面高度
+//                this.scrollHeight=self.scrollHeight;
+//                //窗口可视高度
+//                this.mainHeight=self.clientHeight;
+            },
+            sliderMove:function(event){
+                var touch=event.changedTouches[0];
+                this.slider.moveX=touch.clientX - this.slider.startX;
+                this.slider.moveY=touch.clientY - this.slider.startY;
+
+                //禁止上下滑动
+                event.preventDefault();
+
+//                //到底部禁止下滑
+//                if(this.slider.moveY < 0 && this.scrollTop+this.mainHeight >= this.scrollHeight){
+//                    event.preventDefault();
+//                    //拖起
+//                    //this.mainLoadHeight=Math.abs(this.info.moveY);
+//                }
+//                //禁止上拉，出现刷新页面
+//                if(this.info.moveY > 0 && this.scrollTop <= 0){
+//                    //禁止上滑
+//                    event.preventDefault();
+//                }
+            },
+            sliderEnd:function(event){
+                var touch=event.changedTouches[0];
+                this.slider.endX=touch.clientX - this.slider.startX;
+                this.slider.endY=touch.clientY - this.slider.startY;
+                //滑动
+                if(Math.abs(this.slider.endX) < Math.abs(this.slider.endY)){
+                    if(this.slider.endY < -30){         //向下滑动
+                        var len=(this.length-1);
+                        //alert(this.index + '|' + len);
+                        if(this.index != len){
+                            this.index++;
+                            this.page=(this.index+1) / this.length * 100;
+                        }
+                    }else if(this.slider.endY > 30){    //向上滑动
+                        //this.index == 0 第一张
+                        if(this.index != 0){
+                            this.index--;
+                            this.page=(this.index+1) / this.length * 100;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</html>

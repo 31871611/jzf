@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"编辑银行卡"
+})
+<body>
+
+<!--编辑银行卡-->
+<div class="wrap">
+    <header>
+        <div class="header">
+            <div class="left">
+                <a href="javascript:;" class="return"></a>
+            </div>
+            <h2>编辑银行卡</h2>
+            <div class="right">
+                <a href="javascript:;" class="iconShare"></a>
+                <a href="javascript:;" class="iconSearch"></a>
+            </div>
+        </div>
+        @@include('include/title.html',{
+            "title":"编辑银行卡"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w170">开户人姓名</span>
+                    <input type="text" placeholder="请输入姓名" class="flex" value="某某某">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">身份证号</span>
+                    <input type="text" placeholder="请输入身份证号" class="flex">
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w170">开户银行</span>
+                    <i class="wayIcon"><img src="images/iconBank01.png" alt=""></i>
+                    <span class="flex">中国建设银行</span>
+                    <i class="wayIcon iconUserleft"></i>
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">银行账号</span>
+                    <input type="text" placeholder="请输入银行卡号" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">开户城市</span>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">省</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">市</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">区</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropDown fr">
+                        <select>
+                            <option value="0">支行</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            <a href="user.html" class="btn bgBlue">保存</a>
+            <a href="user.html" class="btn borBlue">删除</a>
+        </div>
+    </article>
+</div>
+
+
+<!--弹窗-->
+<div class="myalert hide">
+    <div class="opacity"></div>
+    <div class="content">
+        <div class="myalert-box">
+            <p class="cen">确认要删除银行卡？</p>
+        </div>
+        <div class="myalert-btn">
+            <a href="javascript:;">取消</a>
+            <a href="javascript:;">确定</a>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    document.body.addEventListener('touchstart', function () {});
+</script>
+</html>

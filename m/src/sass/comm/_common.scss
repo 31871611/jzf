@@ -1,0 +1,384 @@
+@charset "UTF-8";
+@import "css3";
+
+//蓝色
+$blue-base:#003347;
+//触屏蓝色
+$blue-hover-base:#002443;
+//红色
+$red-base:#ea3a38;
+//触屏红色
+$red-hover-base:#a32827;
+//一元购
+$red-yi:#ed4343;
+//灰色
+$gray-base:#e5e5e5;
+//触屏灰色
+$gray-hover-base:#999;
+$color-333:#333;
+$color-666:#666;
+$color-999:#999;
+$color-ccc:#ccc;
+$color-eee:#eee;
+//绿色
+$green-base:#009944;
+//背景
+$bg-color:#eee;
+//次背景
+$sub-color:#f7f7f7;
+//a连接
+$link-color:#3366cc;
+//下划线
+$link-hover-color:#fff;
+
+//如果是app上方多一栏高40像素
+//非微信就显示分享
+//$wxTop:false;
+$wxTop:true;
+
+//是否显示分享
+//$isShare:inline-block;
+//$isShare:none;
+
+
+//红色主色
+$red_c:#cd0817;
+//背景
+$body_bg:#f2f2f2;
+
+
+//页面居中
+@mixin bc-auto($width:1024px){
+  width:$width;margin:0 auto;
+}
+
+//px转为rem;
+$browser-default-font-size: 75px;
+@function pxTorem($px){//$px为需要转换的字号
+  @return $px / $browser-default-font-size * 1rem;
+}
+
+/**
+
+@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+.px2rem(@name, @px){
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+**/
+
+//psd宽750除以2
+@function pxTo750($px){//$px为需要转换的字号
+  @return $px / 2;
+}
+
+//dpr字体转换
+@mixin font-dpr($font-size){
+  font-size: $font-size / 2;
+
+  [data-dpr="2"] & {
+    font-size: $font-size;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3 / 2;
+  }
+}
+
+//文字排版
+%f12{font-size:pxTorem(12px * 2);}
+%f14{font-size:pxTorem(14px * 2);}
+%f16{font-size:pxTorem(16px * 2);}
+%f18{font-size:pxTorem(18px * 2);}
+%f20{font-size:pxTorem(20px * 2);}
+%fb{font-weight:bold;}
+%fn{font-weight:normal;}
+%t2{text-indent:2em;}
+%lh200{line-height:200%;}
+%unl{text-decoration:underline;}
+%nounl{text-decoration:none;}
+
+//定位
+%tl{text-align:left;}
+%tc{text-align:center;}
+%tr{text-align:right;}
+%bc{margin-left:auto;margin-right:auto;}
+%fl{float:left;}
+%fr{float:right;}
+%cb{clear:both;}
+%clear{clear:both;height:0;line-height:0;font-size:0;}
+%clearfix:after{visibility:hidden;display:block;font-size:0;content:"\20";clear:both;height:0;}
+%clearfix{*zoom:1;}
+%zoom{zoom:1;}
+%pr{position:relative;}
+%pa{position:absolute;}
+%pf{position:fixed;}
+%hidden{visibility:hidden;}
+%hide{display:none;}
+%ov{overflow:hidden;}
+%block{display:block;}
+%inline{display:inline;}
+%ib{display:inline-block;}
+
+//长度高度
+%w{width:100%;}
+%h{width:100%;}
+%wauto{width:auto;}
+%hauto{height:auto;}
+%w100{width:100px;}
+%h100{height:100px;}
+
+//边距
+%m10{margin:10px;}
+%ml5{margin-left:5px;}
+%ml10{margin-left:10px;}
+%ml15{margin-left:15px;}
+%ml20{margin-left:20px;}
+%ml25{margin-left:25px;}
+%ml30{margin-left:30px;}
+%mt5{margin-top:5px;}
+%mt10{margin-top:10px;}
+%mt15{margin-top:15px;}
+%mt20{margin-top:20px;}
+%mt25{margin-top:25px;}
+%mt30{margin-top:30px;}
+%mr5{margin-right:5px;}
+%mr10{margin-right:10px;}
+%mr15{margin-right:15px;}
+%mr20{margin-right:20px;}
+%mr25{margin-right:25px;}
+%mr30{margin-right:30px;}
+%mb5{margin-bottom:5px;}
+%mb10{margin-bottom:10px;}
+%mb15{margin-bottom:15px;}
+%mb20{margin-bottom:20px;}
+%mb25{margin-bottom:25px;}
+%mb30{margin-bottom:30px;}
+%mn{margin:0;}
+%p10{padding:10px;}
+%pt5{padding-top:5px;}
+%pt10{padding-top:10px;}
+%pt15{padding-top:15px;}
+%pt20{padding-top:20px;}
+%pt25{padding-top:25px;}
+%pt30{padding-top:30px;}
+%pr5{padding-right:5px;}
+%pr10{padding-right:10px;}
+%pr15{padding-right:15px;}
+%pr20{padding-right:20px;}
+%pr25{padding-right:25px;}
+%pr30{padding-right:30px;}
+%pb5{padding-bottom:5px;}
+%pb10{padding-bottom:10px;}
+%pb15{padding-bottom:15px;}
+%pb20{padding-bottom:20px;}
+%pb25{padding-bottom:25px;}
+%pb30{padding-bottom:30px;}
+%pl5{padding-left:5px;}
+%pl10{padding-left:10px;}
+%pl15{padding-left:15px;}
+%pl20{padding-left:20px;}
+%pl25{padding-left:25px;}
+%pl30{padding-left:30px;}
+%pn{padding:0;}
+
+//颜色
+%red{color:red;}
+%t333{color:#333;}
+%t666{color:#666;}
+%t999{color:#999;}
+%b333{background:#333;}
+
+//css文字截取
+%nowrap{white-space:nowrap;word-break:keep-all}
+%wrap{white-space:normal;word-break:break-all}
+%ellipsis{overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;word-break:keep-all;word-wrap:normal}
+
+//css精灵图片
+@mixin pic($png,$repeat:null){
+  @if $repeat == null {
+    background:url($png);
+    //ie6支持png32
+    //background:url($png) no-repeat;
+    //_background: transparent;
+    //_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='$png',sizingMethod='scale');
+  }@else {
+    @if $repeat == x {
+      background:url($png) repeat-x;
+    }@else if $repeat == y {
+      background:url($png) repeat-y;
+    }
+  }
+}
+
+//css三角形
+@mixin arrow($type,$w:5px,$c:#ccc){
+  width:0;
+  height:0;
+  overflow:hidden;
+  @if $type == top {
+    border-width:$w;
+    border-style:dashed dashed solid dashed;
+    border-color:transparent transparent $c transparent;
+  } @else if $type == right {
+    border-width:$w;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent $c;
+  } @else if $type == bottom {
+    border-width:$w;
+    border-style:solid dashed dashed dashed;
+    border-color:$c transparent transparent transparent;
+  } @else if $type == left {
+    border-width:$w;
+    border-style:dashed solid dashed dashed;
+    border-color:transparent $c transparent transparent;
+  }
+}
+
+//窗体居中
+@mixin center($width,$height){
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -($height) / 2;
+  margin-left: -($width) / 2;
+}
+
+//css3剧中
+%boxcen{
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  //  display: -webkit-flex;
+  //  display: -moz-flex;
+  //  display: -ms-flexbox;
+  //  display: flex;
+  -webkit-box-pack:center;
+  box-pack:center;
+  -webkit-box-align:center;
+  box-align:center;
+}
+
+//透明度
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//移除input type="number"时上下箭头
+%numberArrow{
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+}
+
+//单选
+%radio{
+  border:0;
+  -webkit-appearance:none;
+  outline:none;
+  //position: relative;
+  background: none;
+  &:before,&:after{
+    content: "\20";
+    display: inline-block;
+    @include border-radius(50%);
+  }
+  &:before{
+    border:1px solid #ccc;
+    width:pxTorem(30px);
+    height:pxTorem(30px);
+  }
+  &:checked{
+    &:after{
+      position: absolute;
+      left:pxTorem(7px);
+      top:pxTorem(7px);
+      background: #cc0816;
+      width:pxTorem(20px);
+      height:pxTorem(20px);
+    }
+  }
+}
+
+//开关按钮
+%switch-open{
+  border:0;
+  -webkit-appearance:none;
+  outline:none;
+  &:before,&:after{
+    display: block;
+    content: "\20";
+    background-color:#fff;
+  }
+  &:before{
+    width:pxTorem(76px);
+    height: pxTorem(40px);
+    border:1px solid #dfdfdf;
+    @include border-radius(20px);
+    position: relative;
+    @include box-shadow(inset 0 0 0 #dfdfdf);
+    @include transition(border .4s,box-shadow .4s);
+    background-clip:content-box;
+  }
+  &:after{
+    position: absolute;
+    left:0;
+    top:0;
+    @include border-radius(50%);
+    width:pxTorem(40px);
+    height:pxTorem(40px);
+    @include translate3D(0,0,0);
+    @include transition(transform 1s);
+    @include box-shadow(0 1px 3px rgba(0,0,0,.4));
+  }
+  &:checked{
+    background: none;
+    &:before{
+      border-color:#2f64ce;
+      background-color:#2f64ce;
+      @include box-shadow(inset 0 0 0 pxTorem(12px) #2f64ce);
+      @include transition(border .4s,-webkit-box-shadow .4s,background-color 1.2s);
+    }
+    &:after{
+      @include translate3D(pxTorem(76 - 38px),0,0);
+    }
+  }
+}
+
+//下拉箭头-webkit-appearance: none;
+%bottomArrow{
+  content: "\20";
+  position: absolute;
+  right:pxTorem(20px);
+  top:50%;
+  //margin-top:pxTorem(-8px);
+  width:pxTorem(13px);
+  height:pxTorem(24px);
+  background-image: url("../images/arrowR.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+
+//ico图标
+%ico_rem{
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+
+//字体图标
+%iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

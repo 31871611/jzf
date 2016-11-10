@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"马上退货"
+})
+<body>
+
+<!--快递配送/马上退货-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"马上退货"
+        })
+    </header>
+
+    <article class="main">
+        <div class="user">
+            <ul class="wayTab">
+                <li class="active"><a href="">快递配送</a></li>
+                <li><a href="">我自己送</a></li>
+            </ul>
+            <!--快递配送-->
+            <div class="">
+                <ul class="userList mt20">
+                    <li class="select">
+                        <b>顺丰快递</b>
+                        <i class="iconCircle"></i>
+                        <i class="iconCircleSelect"></i>
+                    </li>
+                    <li>
+                        <b>圆通快递</b>
+                        <i class="iconCircleSelect"></i>
+                        <i class="iconCircle"></i>
+                    </li>
+                </ul>
+                <ul class="userList mt20">
+                    <li class="select noBorder">
+                        <input type="text" placeholder="请输入快递单号">
+                    </li>
+                </ul>
+                <a href="" class="btn select">确定</a>
+            </div>
+            <!--我自己送-->
+            <div class="MyDelivery">
+                <ul class="userList mt20">
+                    <li class="noBorder">
+                        公司地址：福建省福州市鼓楼区杨桥东路19号雅道巷水
+                        流湾院落（福建省集珍艺术馆正对面）
+                    </li>
+                </ul>
+                <ul class="userList mt20 ">
+                    <li class="select deliveryTime centerFlexLayout">
+                        送件时间
+                        <input type="text">
+                    </li>
+                </ul>
+                <a href="" class="btn select">确定</a>
+            </div>
+
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  品类选择列表
+*/
+
+//品类
+.categoryChoice{
+  position: relative;
+  @include display-flex();
+  .categoryTab{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:26.8%;
+    background-color: #fff;
+    a{
+      display: block;
+      text-align:center;
+      height:pxTorem(120px);
+      line-height:pxTorem(120px);
+      color:#333333;
+      font-size:pxTorem(32px);
+      border-bottom: 1px solid #e5e5e5;
+      &.select,&:active{
+        color:$blue-base;
+        font-weight: bold;
+        border-left: pxTorem(10px) solid $blue-base;
+        background-color: $bg-color;
+      }
+    }
+  }
+  .categoryCon{
+    background:$bg-color;
+    @include flex(1);
+    min-height:pxTorem(1120px);
+    padding-left: 26.8%;
+    //padding-right: 2.8%;
+    .categoryTitle{
+      width: 100%;
+      height: pxTorem(80px);
+      line-height: pxTorem(80px);
+      span{
+        float: left;
+        @include font-dpr(32px);
+        margin-left: 5.6%;
+      }
+      a{
+        float: right;
+        @include font-dpr(24px);
+        color: $color-999;
+        margin-right: 5.6%;
+      }
+    }
+    .list{
+      overflow: hidden;
+    }
+    li{
+      @extend %fl;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      width: 44.5%;
+      height: pxTorem(90px);
+      line-height: pxTorem(90px);
+      background-color: #fff;
+      margin-bottom: 4%;
+      margin-left: 3.6%;
+      a{
+        padding-left: 13%;
+        display: block;
+        @include font-dpr(24px);
+        color: $color-333;
+        &:active{
+          background:$blue-base;
+          color:#fff;
+        }
+      }
+    }
+  }
+}

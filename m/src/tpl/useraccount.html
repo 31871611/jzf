@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"我的账户"
+})
+<body>
+
+<!--我的账户-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"我的账户"
+        })
+    </header>
+
+    <article class="main">
+        <div class="user">
+            <ul class="userList mt20">
+                <li class="justifyLayout">
+                    <span>用户名</span>
+                    <span>1330529794</span>
+                </li>
+                <li class="justifyLayout">
+                    <span>性别</span>
+                    <span>男</span>
+                </li>
+                <li class="justifyLayout">
+                    <span>出生日期</span>
+                    <span>1990-05-20</span>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+
+<!--弹窗-->
+<div class="alertUserSex">
+    <div class="opacity"></div>
+    <div class="box">
+        <h2>请选择性别</h2>
+        <ul>
+            <li>男</li>
+            <li>女</li>
+        </ul>
+        <div class="btn">
+            <a href="">取消</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

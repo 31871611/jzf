@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+
+/*************************************
+
+//品类类型列表
+h2{
+  margin:0 0 0 pxTorem(30px);
+  &:nth-of-type(1){
+    margin-top: pxTorem(30px);;
+  }
+  a{
+    color:#333333;
+    @include font-dpr(32px);
+    display: block;
+  }
+}
+.list{
+  margin-left:pxTorem(30px);
+  padding-top:pxTorem(30px);
+  @extend %clearfix;
+  a{
+    float:left;
+    @include font-dpr(28px);
+    height:pxTorem(60px);
+    line-height:pxTorem(60px);
+    padding:0 pxTorem(20px);
+    margin-right:pxTorem(20px);
+    margin-bottom:pxTorem(20px);
+    display: inline-block;
+    background: #fff;
+    color:#333;
+    &:hover,&.select{
+      background: $blue-base;
+      color:#fff;
+      //font-weight: bold;
+    }
+  }
+}
+
+
+**/

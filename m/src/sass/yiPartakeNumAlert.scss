@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+
+  一元购.参与号码弹窗
+
+*/
+
+
+
+//参与号码弹窗
+.yiPartakeNumAlert{
+  z-index: 100;
+  background:#fff;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  right: 0;
+  .title{
+    $h:72px;
+    height: pxTorem($h);
+    border-bottom: 1px solid #d2d2d2;
+    padding:0 pxTorem(15px) 0 pxTorem(30px);
+    span{
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @extend %fl;
+    }
+    .exit{
+      position: relative;
+      margin-top:pxTorem(12px);
+      @extend %fr;
+      width:pxTorem(42px);
+      height: pxTorem(42px);
+      border:2px solid #a0a0a0;
+      @include border-radius(50%);
+      @include rotate(45deg);
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        background:#a0a0a0;
+        left:50%;
+        top:50%;
+      }
+      &:before{
+        margin:-1px 0 0 pxTorem(-14px);
+        width:pxTorem(28px);
+        height:2px;
+      }
+      &:after{
+        margin:pxTorem(-14px) 0 0 -1px;
+        width:2px;
+        height:pxTorem(28px);
+      }
+    }
+    b{
+      font-weight: normal;
+      color: $red-yi;
+    }
+  }
+  .box{
+    height: pxTorem(588px);
+    overflow-x: auto;
+    padding:pxTorem(20px) pxTorem(25px);
+    span{
+      display: inline-block;
+      margin-right: pxTorem(20px);
+      margin-bottom: pxTorem(20px);
+    }
+  }
+}
+

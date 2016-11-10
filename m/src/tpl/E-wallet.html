@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"电子钱包"
+})
+<body>
+<!--电子钱包首页-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"我的钱包"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="wayAmount">
+                <div class="amountAll">
+                    <span>￥5,000.00</span>
+                    <em>账户总额(元)</em>
+                </div>
+                <div class="amountPart centerFlexLayout">
+                    <div>
+                        <span>￥5,000.00</span>
+                        <em>账户总额(元)</em>
+                    </div>
+                    <div>
+                        <span>￥5,000.00</span>
+                        <em>账户总额(元)</em>
+                    </div>
+                </div>
+            </div>
+            <ul class="wayList mt20">
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">银行卡管理</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">查看资金流水明细</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">修改支付密码</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="btn mt20 bgRed">充值</a>
+            <a href="#" class="btn mt20 bgBlue">提现</a>
+        </div>
+    </article>
+</div>
+<!--充值-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"充值"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span>充值账号</span>
+                    <input type="tel" placeholder="请输入充值账号" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span>金额(元)</span>
+                    <input type="tel" placeholder="请输入充值金额" class="flex">
+                </li>
+            </ul>
+            <a href="#" class="btn mt20 bgRed">充值</a>
+            <div class="tip mt40">
+                <p><i class="wayIcon iconUserChangeTip"></i>温馨提示:</p>
+                <p>1. 充值成功后，余额可能存在延迟现象，一般1到5分钟内到账，如有问题，请咨询客服；</p>
+                <p>2. 充值金额输入值必须是不小于10且不大于100万的正整数；</p>
+                <p>3. 您有多种方式进行充值，如遇到任何支付问题可以查看在线支付帮助；</p>
+                <p>4. 充值完成后，您可以进入账户充值记录页面进行查看余额充值状态.</p>
+            </div>
+        </div>
+    </article>
+</div>
+<!--充值成功-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"充值成功"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="reChange">
+               <i class="wayIcon iconPaySuccess"></i>
+               <p>充值成功！</p>
+            </div>
+            <ul class="wayList">
+                <li class="justifyLayout noBorder">
+                    <span>充值金额</span>
+                    <span>￥5000</span>
+                </li>
+                <li class="justifyLayout mt-20">
+                    <span>可用金额</span>
+                    <span>￥5000</span>
+                </li>
+            </ul>
+            <div class="tip mt40">
+                <p>为了您的账户安全，请设置钱包支付密码，该密码在您使用钱包支付或提现时使用</p>
+            </div>
+            <div class="btn">
+                <a href="" class="blue">设置支付密码</a>
+                <a href="" class="blue">查看资金明细</a>
+            </div>
+        </div>
+    </article>
+</div>
+<!--充值失败-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"充值失败"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="reChange">
+                <i class="wayIcon iconPayError"></i>
+                <p>充值失败！</p>
+            </div>
+            <div class="tip mt-20">
+                <p>如您在充值期间遇到任何问题，可拨打客服热线0591-88212636</p>
+                <p>上班时间：  周一至周六   9：00~17：30</p>
+            </div>
+            <div class="btn">
+                <a href="" class="blue">继续充值</a>
+                <a href="" class="blue">拨打客服热线</a>
+            </div>
+
+        </div>
+    </article>
+</div>
+<!--编辑银行卡-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"编辑银行卡"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w170">开户人姓名</span>
+                    <input type="text" placeholder="请输入姓名" class="flex" value="某某某">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">身份证号</span>
+                    <input type="text" placeholder="请输入身份证号" class="flex">
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w170">开户银行</span>
+                    <i class="wayIcon iconBank01"></i>
+                    <span class="flex">中国建设银行</span>
+                    <i class="wayIcon iconUserleft"></i>
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">银行账号</span>
+                    <input type="text" placeholder="请输入银行卡号" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w170">开户城市</span>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">省</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">市</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                    <div class="flex dropDown">
+                        <select>
+                            <option value="0">区</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropDown fr">
+                        <select>
+                            <option value="0">支行</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            <a href="" class="btn bgBlue">保存</a>
+            <a href="" class="btn borBlue">删除</a>
+        </div>
+    </article>
+</div>
+<!--银行卡管理-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"银行卡管理"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="bankManage centerFlexLayout bgBlue mt20">
+                <div class="icon">
+                    <i class="wayIcon iconBank01"></i>
+                </div>
+                <div>
+                    <span>中国建设银行</span>
+                    <em>储蓄卡</em>
+                    <b>****  ****  ****  9876</b>
+                </div>
+            </div>
+            <div class="bankManage centerFlexLayout bgRed mt20">
+                <div class="icon">
+                    <i class="wayIcon iconBank01"></i>
+                </div>
+                <div>
+                    <span>中国建设银行</span>
+                    <em>储蓄卡</em>
+                    <b>****  ****  ****  9876</b>
+                </div>
+            </div>
+            <a href="" class="btn bgBlue">添加银行卡</a>
+        </div>
+    </article>
+</div>
+<!--流水明细列表-->
+<div class="wrap bgWhite">
+    <header>
+        @@include('include/title.html',{
+            "title":"流水明细"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayTab">
+                <li class="select">
+                    <a href="">全部明细</a>
+                </li>
+                <li>
+                    <a href="">消费记录</a>
+                </li>
+                <li>
+                    <a href="">充值记录</a>
+                </li>
+                <li>
+                    <a href="">提现记录</a>
+                </li>
+            </ul>
+            <!--全部明细-->
+            <ul class="wayList waterList">
+                <li>
+                    <div>
+                        <span>提现</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>充值</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorRed">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>支付尾款</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>支付定金</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>购买</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>退款</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorRed">￥5,000.00</em>
+                </li>
+            </ul>
+            <!--充值明细-->
+            <ul class="wayList waterList">
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorGreen">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">充值成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorGreen">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">充值成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorGreen">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">充值成功</span>
+                    </div>
+                </li>
+            </ul>
+            <!--消费记录-->
+            <ul class="wayList waterList">
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+            </ul>
+            <!--提现记录-->
+            <ul class="wayList waterList">
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">提现成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">审核中</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">提现失败</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+<!--流水详情-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"流水详情"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="waterDetailTitle">
+                <span class="colorGray">支出金额</span>
+                <b>5,000.00</b>
+            </div>
+            <ul class="wayList mt20">
+                <li>
+                    <span class="colorGray">资金类型：</span>
+                    <span>提现</span>
+                </li>
+                <li>
+                    <span class="colorGray">资金明细：</span>
+                    <span>冻结</span>
+                </li>
+                <li>
+                    <span class="colorGray">时间：</span>
+                    <span>2016－04-09 12:30:45</span>
+                </li>
+                <li>
+                    <span class="colorGray">交易单号：</span>
+                    <span>JZ20160329171633749</span>
+                </li>
+                <li>
+                    <span class="colorGray">备注：</span>
+                    <span>提现审核中</span>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+<!--流水详情入账-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"流水详情-入账"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <div class="waterDetailTitle">
+                <span class="colorGray">收入金额</span>
+                <b class="colorRed">5,000.00</b>
+            </div>
+            <ul class="wayList mt20">
+                <li>
+                    <span class="colorGray">资金类型：</span>
+                    <span>充值</span>
+                </li>
+                <li>
+                    <span class="colorGray">资金明细：</span>
+                    <span>收入</span>
+                </li>
+                <li>
+                    <span class="colorGray">时间：</span>
+                    <span>2016－04-09 12:30:45</span>
+                </li>
+                <li>
+                    <span class="colorGray">交易单号：</span>
+                    <span>JZ20160329171633749</span>
+                </li>
+                <li>
+                    <span class="colorGray">备注：</span>
+                    <span>支付预定金</span>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+<!--设置支付密码-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"设置支付密码"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w150">手机号码</span>
+                    <input type="text" value="188***8888" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w150">验证码</span>
+                    <input type="text" placeholder="请输入验证码" class="flex">
+                    <span class="code">获取验证码</span>
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w150">登录密码</span>
+                    <input type="text" placeholder="请输入登录密码" class="flex">
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span class="w220">设置支付密码</span>
+                    <input type="text" placeholder="请输入6位数字密码" class="flex">
+                </li>
+                <li class="centerFlexLayout">
+                    <span class="w220">确认支付密码</span>
+                    <input type="text" placeholder="请重新输入支付密码" class="flex">
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+<!--提现-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"设置支付密码"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+            <ul class="wayList mt20">
+                <li class="justifyLayout noBorder">
+                    <span>钱包总额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+                <li class="justifyLayout noBorder mt-20">
+                    <span>冻结金额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+                <li class="justifyLayout mt-20">
+                    <span>可提现金额 </span>
+                    <span>￥5,000.00</span>
+                </li>
+            </ul>
+            <ul class="wayList mt20">
+                <li class="centerFlexLayout">
+                    <span>金额（元）</span>
+                    <input type="text" placeholder="请输入提现金额(需在10元以上）" class="flex">
+                </li>
+                <li class="justifyLayout noBorder">
+                    <span class="flex"><span>提现服务费：</span>¥18</span>
+                </li>
+                <li class="justifyLayout mt-40">
+                    <span class="flex"><span>实际到账金额：</span><em class="colorRed">￥2982</em></span>
+                </li>
+            </ul>
+            <div class="tip mt20 mb20">
+                提现服务费按提现金额的6‰收取，单笔业务服务费最低1元
+            </div>
+            <!--提现银行卡选择-->
+            <div class="depositBankSelect centerFlexLayout">
+                <i class="wayIcon iconBank01 mr20"></i>
+                <div class="flex">
+                    <div>中国建设银行</div>
+                    <span class="colorGray">尾号1370</span>
+                </div>
+                <i class="wayIcon iconUserleft"></i>
+            </div>
+            <div class="tip colorRed mt20 textRight">银行卡选择</div>
+            <a href="" class="btn bgBlue">提交提现申请</a>
+            <div class="tip mt40">
+                <p><i class="wayIcon iconUserChangeTip"></i>温馨提示:</p>
+                <p>1、每个工作日我们都会集中处理用户的提现申请，提现成功后将会发送短信到您银行卡绑定的手机上。</p>
+                <p>2、申请提现后，钱包中对应的款项将暂时冻结，直至提现处理完成。</p>
+                <p>3、请如实填写银行卡账户及相关信息（仅支持储蓄卡提现）；提现金额将于3-5个工作日退回到您所填写的储蓄卡账户。</p>
+            </div>
+        </div>
+    </article>
+</div>
+</body>
+</html>

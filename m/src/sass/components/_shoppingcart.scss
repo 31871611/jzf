@@ -1,0 +1,204 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//购物车与关注为空时
+.shoppingEmpty{
+  text-align:center;
+  padding-top: pxTorem(285px);
+  i,b,em,a{
+    display: block;
+  }
+  i,a{
+    margin:0 auto;
+  }
+  i{
+    @extend %ico_rem;
+    margin-bottom: pxTorem(25px);
+    //无地址
+    &.iconAddressEmpty{
+      width:pxTorem(140px);
+      height:pxTorem(161px);
+      background-image: url("../images/iconAddressEmpty.png");
+    }
+    //无订单
+    &.iconOrderEmpty{
+      width:pxTorem(121px);
+      height:pxTorem(139px);
+      background-image: url("../images/iconOrderEmpty.png");
+    }
+    //无商品
+    &.iconSearchEmpty{
+      //margin-left:pxTorem(214px);
+      width:pxTorem(84px);
+      height:pxTorem(84px);
+      background-image: url("../images/iconSearchEmpty.png");
+    }
+    //无购物车
+    &.iconShoppingEmpty{
+      //margin-left:pxTorem(214px);
+      width:pxTorem(129px);
+      height:pxTorem(112px);
+      background-image: url("../images/iconShoppingEmpty.png");
+    }
+    //无关注
+    &.iconLoveEmpty{
+      width:pxTorem(137px);
+      height: pxTorem(112px);
+      //background-image: url("../images/love_empty.png");
+    }
+    //无优惠卷
+    &.iconDiscountEmpty{
+      width:pxTorem(147px);
+      height: pxTorem(111px);
+      background-image: url("../images/iconDiscountEmpty.png");
+    }
+    //支付成功
+    &.iconPaySuccess{
+      width:pxTorem(110px);
+      height: pxTorem(112px);
+      background-image: url("../images/iconPaySuccess.png");
+    }
+    //支付失败
+    &.iconPayError{
+      width:pxTorem(112px);
+      height: pxTorem(84px);
+      background-image: url("../images/iconPayError.png");
+    }
+    //无钱包
+    &.iconWalletEmpty{
+      width:pxTorem(148px);
+      height: pxTorem(121px);
+      background-image: url("../images/iconWalletEmpty.png");
+    }
+    //无流水
+    &.iconWaterEmpty{
+      width:pxTorem(145px);
+      height:pxTorem(111px);
+      background-image: url("../images/iconWaterEmpty.png");
+    }
+  }
+  b{
+    font-weight: normal;
+    @include font-dpr(28px);
+    color:#333333;
+  }
+  em{
+    font-style: normal;
+  }
+  .btn{
+    margin-top: pxTorem(40px);
+    width:pxTorem(168px);
+    height:pxTorem(74px);
+    line-height:pxTorem(74px);
+    color:#fff;
+    text-align:center;
+    background:$blue-base;
+    @include font-dpr(32px);
+    &.w{
+      width:auto;
+      margin-left:pxTorem(30px);
+      margin-right:pxTorem(30px);
+    }
+  }
+}
+
+
+
+//购物车
+.shoppingCart{
+  padding-bottom: pxTorem(20px);
+  .row {
+    h3{
+      height: pxTorem(40px);
+    }
+    .img{
+      margin-left:pxTorem(25px);
+    }
+    strong{
+      bottom:pxTorem(10px + 40px);
+    }
+    //.box{
+    //  margin-left:0;
+    //}
+    //.info h3{
+    //  height: pxTorem(122px);
+    //  padding-right: 0;
+    //  overflow: hidden;
+    //}
+    //.info h3,.info strong{
+    //  margin-left: pxTorem(35px);
+    //}
+    //.shoppingRA{
+    //  left: pxTorem(42px);
+    //}
+    //.garbage{
+    //  bottom: 0;
+    //}
+  }
+}
+
+.shoppingCartSet{
+  $h:100px;
+  height:pxTorem($h);
+  background:#fff;
+  @extend .display-flex;
+  i,.box,.btn{
+    display: block;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+  }
+  i{
+    font-style: normal;
+    margin-left:pxTorem(30px);
+    padding-left:pxTorem(45px);
+    @include font-dpr(28px);
+    &.select{
+      &:after{
+        background-color: $red-base;
+        width:pxTorem(36px);
+        height:pxTorem(36px);
+        border:0;
+        background-image: url("../images/iconHook.png");
+        @extend %ico_rem;
+        background-size:50% 50% !important;
+      }
+    }
+    &:after{
+      position: absolute;
+      left:pxTorem(30px);
+      top:pxTorem(30px);
+      content: "\20";
+      display: inline-block;
+      width:pxTorem(36px - 4);
+      height:pxTorem(36px - 4);
+      border:1px solid #333;
+      @include border-radius(50%);
+      margin-right:pxTorem(10px);
+    }
+  }
+  .box{
+    @extend .flex;
+    text-align:right;
+    padding-right:pxTorem(30px);
+    @include font-dpr(32px);
+    color:#333333;
+    b{
+      color:$red-base;
+      margin-left:pxTorem(10px);
+      font-weight:normal;
+    }
+  }
+  .btn{
+    margin:0;
+    width:pxTorem(189px);
+    background:$red-base;
+    display: block;
+    text-align:center;
+    color:#fff;
+    &:active{
+      background-color: $red-hover-base;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>集珍坊app下载</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    window.onload=function() {
+        checkPlatform();
+    };
+
+    function checkPlatform(){
+        if(/android/i.test(navigator.userAgent)){//这是android平台下浏览器
+            window.location.href="http://fusion.qq.com/app_download?appid=1104975891&platform=qzone&via=QZ.MOBILEDETAIL.QRCODE";
+        }else if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){//这是iOS平台下浏览器
+            window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jizhenfang.jizhenfang";
+        }else {
+            window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jizhenfang.jizhenfang";//这是iOS平台下浏览器
+        }
+//     	  if(/Linux/i.test(navigator.userAgent)){//这是Linux平台下浏览器
+//     	  }
+//     	  if(/Linux/i.test(navigator.platform)){//这是Linux操作系统平台
+//     	  }
+//     	  if(/MicroMessenger/i.test(navigator.userAgent)){//这是微信平台下浏览器
+//     	  }
+    }
+</script>
+</html>

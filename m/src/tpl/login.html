@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('include/head.html',{
+    "title":"登录注册"
+})
+<body>
+
+<div class="wrap" id="app">
+    <header>
+        @@include('include/title.html',{
+            "title":"注册有礼"
+        })
+    </header>
+
+    <article class="main bgWhite">
+
+        <!--注册有礼-->
+        <div class="loginCeremony hide">
+            <h2>新人专享988元优惠券</h2>
+            <h3>优惠券大礼包明细：</h3>
+            <p>88元优惠券：满1000元可使用优惠券</p>
+            <p>200元优惠券：满2000元可使用优惠券</p>
+            <p>500元优惠券：满5000元可使用优惠券</p>
+            <span>若产生退换货，优惠券不能退回</span>
+            <span>本次活动解释权归集珍坊所有</span>
+            <a href="">注册</a>
+        </div>
+
+        <!--登录-->
+        <div class="loginRegister">
+            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
+                <i class="user">请输入手机号</i>
+                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
+                <i class="delete hide"></i>
+            </div>
+            <div class="formGroup" @click="toggleFocus('password')" :class="{select:isAnimate.password}">
+                <i class="passC">请输入密码</i>
+                <input type="password" placeholder="" v-model="passwordValue" @focus="toggleFocus('password')" @blur="toggleBlur('password',passwordValue)" />
+                <i class="delete hide"></i>
+            </div>
+            <div class="formGroupTip"><a href="#">忘记密码？马上找回</a></div>
+            <div class="btn select">
+                <a v-link="{path:'/user/'}">登录</a>
+            </div>
+            <div class="notLoginText"><a href="#">还没有集珍坊账号？去<b>注册</b></a></div>
+
+        </div>
+
+        <!--注册获取验证码-->
+        <div class="loginRegister hide">
+            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
+                <i class="user">请输入手机号</i>
+                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
+                <i class="delete"></i>
+            </div>
+            <div class="formGroup" @click="toggleFocus('code')" :class="{select:isAnimate.code}">
+                <i class="openPassC">验证码</i>
+                <input type="number" placeholder="" v-model="codeValue" @focus="toggleFocus('code')" @blur="toggleBlur('code',codeValue)" />
+                <div class="code">获取短信验证码</div>
+                <i class="delete"></i>
+            </div>
+            <div class="btn">
+                <a href="">下一步</a>
+            </div>
+        </div>
+
+        <!--注册设置密码-->
+        <div class="loginRegister hide">
+            <div class="formGroup" @click="toggleFocus('password')" :class="{select:isAnimate.password}">
+                <i class="passC">请输入8-20位英文数字组合密码</i>
+                <input type="password" placeholder="" v-model="passwordValue" @focus="toggleFocus('password')" @blur="toggleBlur('password',passwordValue)" />
+                <i class="delete"></i>
+            </div>
+            <div class="formGroup" @click="toggleFocus('nptPassword')" :class="{select:isAnimate.nptPassword}">
+                <i class="passC">请再次输入密码</i>
+                <input type="password" placeholder="" v-model="notPasswordValue" @focus="toggleFocus('nptPassword')" @blur="toggleBlur('nptPassword',notPasswordValue)" />
+                <i class="delete"></i>
+            </div>
+            <div class="btn">
+                <a href="">注册</a>
+            </div>
+        </div>
+
+        <!--找回密码-->
+        <div class="loginRegister hide">
+            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
+                <i class="user">请输入手机号</i>
+                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
+                <i class="delete"></i>
+            </div>
+            <div class="formGroup" @click="toggleFocus('code')" :class="{select:isAnimate.code}">
+                <i class="openPassC">验证码</i>
+
+                <input type="number" placeholder="" v-model="codeValue" @focus="toggleFocus('code')" @blur="toggleBlur('code',codeValue)" />
+                <div class="code">获取短信验证码</div>
+                <i class="delete"></i>
+            </div>
+            <div class="btn">
+                <a href="">验证</a>
+            </div>
+        </div>
+
+        <!-- 第三方登录 -->
+        <div class="cooperationLogin ">
+            <h2>快速登录</h2>
+            <div class="list">
+                <a href="" class="iconLoginWeibo">微博登录</a>
+                <a href="" class="iconLoginQq">qq登录</a>
+                <a href="" class="iconLoginWx">微信登录</a>
+            </div>
+        </div>
+
+
+    </article>
+
+</div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+<script>
+
+var vue=new Vue({
+    el:"#app",
+    data:{
+        isAnimate:{
+            tel:false,
+            password:false,
+            nptPassword:false,
+            code:false
+        },
+        telValue:"",
+        passwordValue:"",
+        notPasswordValue:"",
+        codeValue:""
+    },
+    ready:function(){
+
+    },
+    methods: {
+        toggleFocus:function(value){
+            this.isAnimate[value]=true;
+        },
+        toggleBlur:function(value,model){
+            if(model == ""){
+                this.isAnimate[value]=false;
+            }
+        }
+    }
+});
+
+
+</script>
+</html>

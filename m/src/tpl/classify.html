@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"分类"
+})
+<link rel="stylesheet" href="css/category.css"/>
+<body id="app">
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"分类"
+        })
+    </header>
+
+    <article class="main bgWhite">
+        <div class="categoryChoice">
+            <div class="categoryTab">
+                <a href="javascript:;" :class="{'select':(isShow == 0)}" @click="tab(0)">寿山石</a>
+                <a href="javascript:;" :class="{'select':(isShow == 1)}" @click="tab(1)">珠宝</a>
+                <a href="javascript:;" :class="{'select':(isShow == 2)}" @click="tab(2)">文玩</a>
+                <a href="javascript:;" :class="{'select':(isShow == 3)}" @click="tab(3)">字画</a>
+            </div>
+            <div class="categoryCon" :class="{'hide':(isShow != 0)}">
+                <button type="button" v-on:click="phoneCall" >预约热线：110</button>
+                <button type="button" @click="showAlertConfirmBuy">漆器弹窗</button>
+
+                <div class="categoryTitle">
+                    <span>材质</span>
+                    <a href="javascript:;">查看全部</a>
+                </div>
+                <ul class="list">
+                    <li><a v-link="{name:'list',params: { id: 1,pid:1 }}">田黄石</a></li>
+                    <li><a href="">荔枝洞石</a></li>
+                    <li><a href="">芙蓉石</a></li>
+                    <li><a href="">汶洋石</a></li>
+                    <li><a href="">高山石</a></li>
+                    <li><a href="">旗降石</a></li>
+                    <li><a href="">都城坑石</a></li>
+                    <li><a href="">善伯洞石</a></li>
+                    <li><a href="">二号矿石</a></li>
+                    <li><a href="">寿山掘性石</a></li>
+                    <li><a href="">其他寿山石</a></li>
+                </ul>
+                <div class="categoryTitle">
+                    <span>形式</span>
+                    <a href="javascript:;">查看全部</a>
+                </div>
+                <ul class="list">
+                    <li><a href="">文玩</a></li>
+                    <li><a href="">摆件</a></li>
+                    <li><a href="">手件</a></li>
+                    <li><a href="">印章</a></li>
+                    <li><a href="">挂件</a></li>
+                </ul>
+                <div class="categoryTitle">
+                    <span>形式</span>
+                    <a href="javascript:;">查看全部</a>
+                </div>
+                <ul class="list">
+                    <li><a href="">文玩</a></li>
+                    <li><a href="">摆件</a></li>
+                    <li><a href="">手件</a></li>
+                    <li><a href="">印章</a></li>
+                    <li><a href="">挂件</a></li>
+                </ul>
+            </div>
+            <div class="categoryCon" :class="{'hide':(isShow != 1)}">
+                2
+            </div>
+            <div class="categoryCon" :class="{'hide':(isShow != 2)}">
+                3
+            </div>
+            <div class="categoryCon" :class="{'hide':(isShow != 3)}">
+                4
+            </div>
+        </div>
+
+    </article>
+
+    <footer>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavReg">注册有礼</a>
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <!--<a href="" class="iconNavYi">体验购买</a>-->
+            <a href="" class="appNavUser">个人<i></i></a>
+        </nav>
+    </footer>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="wayShare hide">
+    <div class="box">
+        <h5>分享到</h5>
+        <div class="shareBox clearfix">
+            <div class="icon">
+                <i class="weiFriend"></i>
+                <span>微信好友</span>
+            </div>
+            <div class="icon">
+                <i class="friend"></i>
+                <span>朋友圈</span>
+            </div>
+        </div>
+        <div class="btn">取消</div>
+    </div>
+</div>
+
+<!-- 购买弹窗 -->
+<div class="alertConfirmBuy hide" transition="SlideTopBottom">
+    <ul class="goodsListRow">
+        <li class="follow">
+            <div class="box">
+                <a href="" class="img">
+                    <img :src="'/html/picture/index6.jpg'" alt="" />
+                </a>
+                <div class="info">
+                    <a href="">
+                        <h3>手工大漆手镯</h3>
+                        <strong>18500</strong>
+                    </a>
+                    <span class="num">数量：10</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="scrollBox">
+        <h4>颜色款式</h4>
+        <ul class="type">
+            <li class="select"><a href="">黑红</a></li>
+            <li class="no"><a href="">红黑</a></li>
+            <li><a href="">黑金</a></li>
+            <li><a href="">红黑金</a></li>
+        </ul>
+        <h4>规格尺寸</h4>
+        <ul class="type">
+            <li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <!--<li><a href="">高:7cm,口径:12cm,足径:4.5cm</a></li>-->
+            <li><a href="">5cm-5.5cm之间</a></li>
+            <li><a href="">5cm-6cm之间</a></li>
+            <li><a href="">6cm以上</a></li>
+        </ul>
+        <h4>购买数量</h4>
+        <div class="number">
+            <div class="reduce select"><span></span></div>
+            <input type="number" value="1" />
+            <div class="add"><span></span></div>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+
+    <a href="javascript:;" class="exit"></a>
+</div>
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script>
+
+var vue=new Vue({
+    el:"#app",
+    data:{
+        isShow:0,
+        isSharing:false,
+        isAlertConfirmBuy:false         //漆器弹窗
+    },
+    ready:function(){
+
+    },
+    methods: {
+        tab:function(index){
+            this.isShow=index;
+        }
+    }
+});
+
+</script>
+</html>

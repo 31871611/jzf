@@ -1,0 +1,352 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//头部.一元购
+.header,.yiHeader{
+  $h:87px;
+  min-height:pxTorem($h);
+  background:#fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+  //ios头部反黑
+  .headerTop{
+    height:pxTorem(40px);
+    background: #333;
+  }
+  .headerTitle{
+    position: relative;
+    min-height:pxTorem($h);
+    overflow: hidden;
+  }
+  h2{
+    width:58%;
+    margin:0 auto;
+    overflow: hidden;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    @include font-dpr(36px);
+    text-align:center;
+    color:#333333;
+  }
+  a{
+    position: relative;
+    height:pxTorem($h);
+    display: inline-block;
+  }
+  //左右按钮图标区域
+  .left,.right{
+    position: absolute;
+    top:0;
+    height:pxTorem($h);
+  }
+  .left{
+    left:0;
+  }
+  //右边
+  .right{
+    right:0;
+  }
+  //icon图标
+  .return,.iconSearch,.iconShare,.iconShopping{
+    height:pxTorem($h);
+    &:after{
+      content: "\20";
+      display: block;
+      margin-top:pxTorem(26px);
+      @extend %ico_rem;
+    }
+  }
+  //返回
+  .return{
+    padding:0 pxTorem(30px);
+    width:pxTorem(22px);
+    &:after{
+      margin-top:pxTorem(20px);
+      width:pxTorem(22px);
+      height:pxTorem(42px);
+      background-image: url("../images/iconArrowLT.png");     /*base64:skip*/
+    }
+  }
+  //搜索
+  .iconSearch{
+    padding:0 pxTorem(30px) 0 pxTorem(15px);
+    width:pxTorem(40px);
+    &:after{
+      width:pxTorem(40px);
+      height:pxTorem(40px);
+      background-image: url("../images/iconSearchT.png");
+    }
+  }
+  //分享
+  .iconShare{
+    //微信隐藏分享
+    @if $wxTop {
+      display: none;
+    } @else {
+      display: inline-block;
+    }
+    padding:0 pxTorem(30px) 0 pxTorem(15px);
+    width:pxTorem(40px);
+    &:after{
+      width:pxTorem(40px);
+      height:pxTorem(40px);
+      background-image: url("../images/iconShareT.png");
+    }
+  }
+  //文字
+  .txt{
+    vertical-align: top;
+    line-height:pxTorem($h);
+    padding:0 pxTorem(15px);
+    color:#333;
+    @include font-dpr(28px);
+  }
+  //关闭x
+  .close{
+    width: pxTorem(80px);
+    position: relative;
+    &:before,&:after{
+      content: "\20";
+      position: absolute;
+      left:50%;
+      top:50%;
+      background: #333;
+      @include rotate(45deg);
+    }
+    &:before{
+      width: pxTorem(40px);
+      height:2px;
+      margin:-1px 0 0 pxTorem(-20px);
+    }
+    &:after{
+      width: 2px;
+      height: pxTorem(40px);
+      margin:pxTorem(-20px) 0 0 -1px;
+    }
+  }
+  //购物车
+  .iconShopping{
+    padding:0 pxTorem(20px) 0 pxTorem(15px);
+    width:pxTorem(49px);
+    &:after{
+      width:pxTorem(49px);
+      height:pxTorem(43px);
+      background-image: url("../images/iconShoppingT.png");
+    }
+  }
+  //搜索栏
+  .inputSearch{
+    $h:58px;
+    margin-left:pxTorem(30px);
+    @extend .flex;
+    background:#ffffff;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    margin-top:pxTorem(16px);
+    @include border-radius(3px);
+    position: relative;
+    &:before{
+      position: absolute;
+      left:pxTorem(12px);
+      top:pxTorem(12px);
+      content: "\20";
+      display: block;
+      width:pxTorem(40px);
+      height:pxTorem(36px);
+      background-image: url("../images/iconSearchC.png");
+      @extend %ico_rem;
+    }
+    input[type='search']{
+      @include border-radius(3px);
+      display: block;
+      padding-left:12%;
+      width:87%;
+      border:0;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      @include font-dpr(26px);
+      color:#999999;
+    }
+    span{
+      color:#999999;
+      @include font-dpr(26px);
+      padding-left:12%;
+      display: block;
+    }
+    //退出
+    .exit{
+      padding:0 pxTorem(30px) 0 pxTorem(15px);
+      color:#666666;
+      @include font-dpr(26px);
+      line-height: pxTorem($h);
+    }
+  }
+  //全部订单
+  .order{
+    position: relative;
+    &:after{
+      content: "\20";
+      position: absolute;
+      right:pxTorem(-30px);
+      top:pxTorem(16px);
+      @include arrow(bottom,pxTorem(15px),#333);
+    }
+    &.select{
+      &:after{
+        top:pxTorem(0px);
+        @include arrow(top,pxTorem(15px),#333);
+      }
+    }
+  }
+
+  //.edit{
+  //
+  //}
+  //.save{
+  //  @extend %t333;
+  //}
+}
+
+//无底边框头部
+.noBBHeader{
+  border-bottom: 0;
+}
+
+//一元购头部
+.yiHeader{
+  background-color: $red-yi;
+  border-bottom:0;
+  overflow: hidden;
+  //ios头部反红
+  .headerTop{
+    background: $red-yi;
+  }
+  .return{
+    &:after{
+      background-image: url("../images/iconArrowLWhite.png");
+    }
+  }
+  h2{
+    color:#fff;
+  }
+  .iconYiHeaderTitle{
+    width:pxTorem(112px);
+    height: pxTorem(55px);
+    display: block;
+    margin:pxTorem(16px) auto 0;
+    @extend %ico_rem;
+    background-image: url("../images/iconYiHeaderTitle.png");
+  }
+  .txt{
+    color:#fff;
+  }
+}
+
+.headerSearch{
+  //占位栏颜色
+  .androidTop{
+    background:#e5e5e5;
+  }
+}
+
+//顶部搜索
+.topSearch{
+  @extend .header;
+  background:#e5e5e5;
+  border-bottom: 1px solid #999999;
+  @include display-flex();
+  .left,.right{
+    position: static;
+  }
+  .return{
+    padding-right: 0;
+  }
+}
+
+
+//新顶部搜索
+.indexsSearch{
+  @extend .header;
+  border-bottom: 0;
+  overflow: hidden;
+  @include display-flex();
+  padding-left:pxTorem(20px);
+  .left,.right{
+    position: static;
+  }
+  .iconShare{
+    padding-left:0;
+  }
+  .goSearch{
+    $h:52px;
+    background: #ebebeb;
+    width: 100%;
+    height: pxTorem($h);
+    @include border-radius(10px);
+    @include flex(1);
+    margin:pxTorem(20px) auto 0;
+    i{
+      float: left;
+      margin:pxTorem(10px) pxTorem(10px) 0 pxTorem(20px);
+      width:pxTorem(32px);
+      height: pxTorem(32px);
+      @extend %ico_rem;
+      background-image: url("../images/iconSearchC.png");
+    }
+    input{
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      float: left;
+      display: block;
+      border: 0;
+      background: transparent;
+    }
+  }
+}
+
+
+//在warp里的返回
+.iconBackTop,.iconShareTop{
+  z-index: 99;
+  position: fixed;
+  //iso上面有40的时间栏
+  @if $wxTop {
+    top:pxTorem(20px);
+  } @else {
+    top:pxTorem(10px + 40px);
+  }
+  width:pxTorem(88px);
+  height:pxTorem(88px);
+  &:after{
+    display: block;
+    content: "\20";
+    width:pxTorem(58px);
+    height:pxTorem(58px);
+    @extend %ico_rem;
+    background-size:pxTorem(58px) pxTorem(58px);
+    background-color: rgba(204,204,204,.3);
+    @include border-radius(50%);
+  }
+}
+.iconBackTop{
+  left:2%;
+  &:after{
+    background-image: url("../images/iconBack.png");
+  }
+}
+//在warp里的分享
+.iconShareTop{
+  //微信隐藏分享
+  @if $wxTop {
+    display: none;
+  } @else {
+    display: inline-block;
+  }
+  right:2%;
+  &:after{
+    margin-left:auto;
+    background-image: url("../images/iconShare.png");
+  }
+}

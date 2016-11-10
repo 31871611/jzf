@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import "css3";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  //pc端
+  //font-family: "Microsoft YaHei", Arial, "\5B8B\4F53", Helvetica, sans-serif;
+  //手机端
+  font-family: Helvetica, sans-serif;
+  //当用户点击iOS的Safari浏览器中的链接或JavaScript的可点击的元素时，覆盖显示的高亮颜色。
+  -webkit-tap-highlight-color:transparent;
+}
+
+html {
+  color: #333;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+  //竖屏转横屏字体自动变大的问题
+  //-webkit-text-size-adjust: none;
+  //-moz-text-size-adjust:none;
+  //-ms-text-size-adjust: none;
+  //text-size-adjust: none;
+}
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img, abbr, acronym {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: ''
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+select{
+  //去除下拉三角
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input {
+  outline: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+
+}
+input[type="submit"],input[type="reset"],input[type="number"]{
+  //safari浏览器上submit按钮圆角bug
+  -webkit-appearance: none;
+  appearance: none;
+}
+a {
+  text-decoration: none;
+  //当你触摸并按住触摸目标时候，禁止或显示系统默认菜单。
+  -webkit-touch-callout: none;
+}
+img{
+  //取消长按图片出现收藏或保存图片提醒
+  pointer-events: none;
+}
+
+//body{
+//  //在移动端禁用长按选中文本功能
+//  @include user-select(none);
+//}
+
+
+
+//关闭Input键盘默认首字母大写：autocapitalize=”off”
+//.container 类用于固定宽度
+//图片水平居中，请使用 .center-block 类
+
+
+//position: fixed;top:0;right:0;bottom:0;left:0;    全屏
+//position: absolute;   不全屏
+
+//.a{
+//  @import "css3";
+//}
+
+//滚动条::-webkit-scrollbar{}

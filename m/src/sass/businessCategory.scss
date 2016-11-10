@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  市集
+*/
+
+//多品类导航
+.businessCategoryNav{
+  background: #fff;
+  margin:pxTorem(10px) 0;
+  padding:pxTorem(20px) 0;
+  $imgW:80px;
+  nav{
+    @extend %clearfix;
+    &:nth-child(2){
+      margin-top:pxTorem(35px);
+    }
+    a{
+      display: block;
+      width: 25%;
+      float:left;
+    }
+    .icon{
+      width: pxTorem($imgW);
+      height: pxTorem($imgW);
+      margin:0 auto pxTorem(25px);
+      @include border-radius(50%);
+    }
+    img{
+      display: block;
+      width: pxTorem($imgW);
+      height: pxTorem($imgW);
+      vertical-align: middle;
+    }
+    span{
+      color:#333;
+      text-align: center;
+      display: block;
+    }
+  }
+}
+
+
+
+//入驻商家
+.businessEntrance{
+  //height: pxTorem(340px);
+  background: #fff;
+  .title{
+    $h:80px;
+    height:pxTorem($h);
+    padding:0 pxTorem(20px);
+    h2{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      float: left;
+      @include font-dpr(32px);
+      color:#999;
+    }
+    a{
+      &.more{
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+        color:#999;
+        float: right;
+        &:after{
+          display: inline-block;
+          @extend %iconfont;
+          content: "\e61f";
+          @include font-dpr(20px);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .scroll{
+    $h:260px;
+    //height:pxTorem($h);
+    overflow-x: auto;
+    ul{
+      //height:pxTorem($h);
+    }
+    li{
+      width: pxTorem(250px);
+      float: left;
+      padding-top:pxTorem(10px);
+      padding-bottom:pxTorem(10px);
+    }
+    a{
+      display: block;
+    }
+    .photo{
+      margin:0 auto;
+      width: pxTorem(160px);
+      height: pxTorem(160px);
+      border:1px solid #ddd;
+      @include border-radius(50%);
+      @include display-flex();
+      @include align-items();
+      @include justify-content(center);
+      position: relative;
+    }
+    img{
+      width: pxTorem(138px);
+      height: pxTorem(138px);
+      @include border-radius(50%);
+    }
+    i{
+      position: absolute;
+      right:0;
+      bottom:0;
+      width:pxTorem(40px);
+      height: pxTorem(40px);
+      @extend %ico_rem;
+      background-image: url('../images/iconMerchant.png');
+    }
+    h3{
+      text-align: center;
+      color:#333;
+      height: 30px;
+      line-height: 15px;
+      overflow: hidden;
+      margin:pxTorem(20px) pxTorem(10px) 0;
+    }
+  }
+}
+
+
+//精品推荐标题
+.recommendTitle{
+  $h:90px;
+  height:pxTorem($h);
+  line-height:pxTorem($h);
+  text-align:center;
+  @include font-dpr(32px);
+  strong{
+    position: relative;
+    color:#333333;
+    &:before,&:after{
+      content: "\20";
+      position: absolute;
+      top:50%;
+      height:1px;
+      width:pxTorem(60px);
+      background:#999999;
+    }
+    &:before{
+      left:pxTorem(-70px);
+    }
+    &:after{
+      right:pxTorem(-70px);
+    }
+  }
+}
+
+

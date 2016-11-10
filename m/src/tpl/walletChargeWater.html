@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"流水明细"
+})
+<body>
+
+<!--流水明细列表-->
+<div class="wrap bgWhite">
+    <header>
+        <div class="left">
+            <a href="javascript:;" class="return"></a>
+        </div>
+        <h2>流水明细</h2>
+        <div class="right">
+            <a href="javascript:;" class="txt">筛选</a>
+        </div>
+        <ul class="wayTab">
+            <li class="select">
+                <a href="">全部明细</a>
+            </li>
+            <li>
+                <a href="">消费记录</a>
+            </li>
+            <li>
+                <a href="">充值记录</a>
+            </li>
+            <li>
+                <a href="">提现记录</a>
+            </li>
+        </ul>
+    </header>
+
+    <article class="main">
+        <div class="eWallet">
+
+            <!--全部明细-->
+            <ul class="wayList waterList waterListHeiAuto">
+                <li>
+                    <div>
+                        <span>提现</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>充值</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorRed">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>支付尾款</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>支付定金</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li>
+                    <div>
+                        <span>购买</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorGreen">￥5,000.00</em>
+                </li>
+                <li class="noBorder">
+                    <div>
+                        <span>退款</span>
+                    </div>
+                    <div>
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                    </div>
+                    <em class="num colorRed">￥5,000.00</em>
+                </li>
+            </ul>
+            <!--充值明细-->
+            <ul class="wayList waterList waterListHeiAuto">
+                <li>
+                    <div class="centerFlexLayout">
+                        <span class="flex">WXPAY123456789988WXPAY123456789988WXPAY123456</span>
+                        <em class="colorGreen">￥5,000.00</em>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <em class="colorGray f24">充值成功</em>
+                    </div>
+                </li>
+                <li>
+                    <div class="centerFlexLayout">
+                        <span class="flex">WXPAY123456789988WXPAY123456789988WXPAY123456</span>
+                        <em class="colorGreen">￥5,000.00</em>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <em class="colorGray f24">充值成功</em>
+                    </div>
+                </li>
+                <li>
+                    <div class="centerFlexLayout">
+                        <span class="flex">WXPAY123456789988WXPAY123456789988WXPAY123456</span>
+                        <span class="colorGreen">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">充值成功</span>
+                    </div>
+                </li>
+            </ul>
+            <!--消费记录-->
+            <ul class="wayList waterList">
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>JZ123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">支付成功</span>
+                    </div>
+                </li>
+            </ul>
+            <!--提现记录-->
+            <ul class="wayList waterList">
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">提现成功</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">审核中</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="justifyLayout">
+                        <span>WXPAY123456789988</span>
+                        <span class="colorRed">￥5,000.00</span>
+                    </div>
+                    <div class="justifyLayout">
+                        <span class="colorGray f24">2016-04-09 12:30:32</span>
+                        <span class="colorGray f24">提现失败</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+
+<!--订单筛选-->
+<ul class="dropDownList hide">
+    <li>
+        <span>2016</span>
+        <i class="iconUserleft"></i>
+    </li>
+    <li><span>4月</span></li>
+    <li><span>5月</span></li>
+    <li><span>6月</span></li>
+    <li><span>7月</span></li>
+    <li><span>8月</span></li>
+    <li>
+        <span>2015</span>
+        <i class="iconUserBottom"></i>
+    </li>
+</ul>
+</body>
+</html>

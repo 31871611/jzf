@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//图录
+.catalogueBgTop{
+  height:pxTorem(80px);
+  background-image: url("../images/cataloguetop.jpg");
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.catalogueBgBottom{
+  clear: both;
+  height:pxTorem(48px);
+  background-image: url("../images/cataloguebottom.jpg");
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.catalogue{
+  li{
+    //height:pxTorem(402px);
+    width:50%;
+    float:left;
+    img{
+      width:100%;
+      //height:pxTorem(402px);
+      vertical-align: middle;
+    }
+    a{
+      display: block;
+    }
+  }
+}
+
+//列表
+.catalogueList{
+  li{
+    strong.price{
+      @include font-dpr(28px);
+      span{
+        @include font-dpr(24px);
+        color:#333;
+      }
+    }
+    //&.row{
+    //  .size{
+    //    height: pxTorem(70px);
+    //    word-break: break-all;
+    //    word-wrap: break-word;
+    //    overflow: hidden;
+    //  }
+    //}
+  }
+}
+
+
+//拍品价格
+.catalogueTitle{
+  h3.price{
+    @include font-dpr(24px);
+    color:#666;
+  }
+  strong{
+    @include font-dpr(32px);
+    color:$red-base;
+  }
+  //状态
+  .state{
+    position: absolute;
+    right:pxTorem(30px);
+    bottom: pxTorem(20px);
+    b{
+      color:$red-base;
+      font-weight:normal;
+    }
+  }
+}
+
+//拍品信息
+.catalogueInfo{
+  ul{
+    li{
+      width: auto;
+      float: none;
+    }
+  }
+}
+
+//按钮
+div.catalogueBtn{
+  border-top:1px solid #999999;
+  padding:pxTorem(10px) pxTorem(30px);
+  margin:0;
+  @extend .display-flex;
+  background: #fff;
+  a{
+    @extend .flex;
+    color:#fff;
+    background:#999999;
+    height:pxTorem(100px);
+    line-height:pxTorem(100px);
+    &.select{
+      background: $blue-base;
+    }
+    &:nth-child(2){
+      margin-left:pxTorem(10px);
+    }
+  }
+}
+
+
+
+

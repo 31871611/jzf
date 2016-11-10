@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*
+
+  //一元购时间倒记时
+
+*/
+
+
+@mixin yiDate(){
+  $h:48px;
+  height: pxTorem($h);
+  text-align: center;
+  span,b{
+    display: inline-block;
+    height: pxTorem($h);
+    line-height: pxTorem($h);
+    text-align: center;
+  }
+  span{
+    width: pxTorem(35px);
+    color:#fff;
+    @include font-dpr(36px);
+    position: relative;
+    z-index: 1;
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      left:0;
+      background: $red-yi;
+      width: 100%;
+      z-index: -1;
+    }
+    &:before{
+      @include border-radius(pxTorem(6px) pxTorem(6px) pxTorem(2px) pxTorem(2px));
+      top:0;
+      height:pxTorem(23px);
+      border-bottom: 1px solid #f9b9b9;
+    }
+    &:after{
+      @include border-radius(pxTorem(2px) pxTorem(2px) pxTorem(6px) pxTorem(6px));
+      top:pxTorem(24px);
+      height:pxTorem(24px);
+      @include gradient-vertical(#f15858 80%, #d71f16 90%);
+    }
+  }
+  b{
+    color:$red-yi;
+    @include font-dpr(36px);
+  }
+}

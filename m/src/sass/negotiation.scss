@@ -1,0 +1,332 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  私洽页面
+
+*/
+
+
+.negotiationBox{
+  position: absolute;
+  @include transition(all .5s);
+  width:999em;
+  height:100%;
+}
+
+//洽购
+.negotiation{
+  overflow:hidden;
+  @include transition(all 1s);
+  @include border-radius(pxTorem(16px));
+  float:left;
+  width:pxTorem(662px);
+  margin-top:.3%;
+  margin-left:2%;
+  height: 100%;
+  background:#fff;
+  .item{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top-left-radius:pxTorem(20px);
+    border-top-right-radius:pxTorem(20px);
+    background-color: #fff;
+    padding-bottom: 1px;
+  }
+  .negotList{
+    @include transition(all 1s);
+    strong{
+      border-bottom: 1px solid #e5e5e5;
+      display: block;
+      height:pxTorem(70px);
+      line-height:pxTorem(70px);
+      margin:0 pxTorem(20px);
+      @include font-dpr(26px);
+    }
+    .red{
+      @include font-dpr(32px);
+      font-weight: bold;
+    }
+    h4{
+      height: pxTorem(80px);
+      line-height: pxTorem(80px);
+      text-align:center;
+      @include font-dpr(32px);
+      overflow:hidden;
+      padding:0 2%;
+    }
+    .imgList{
+      width: 100%;
+      //height: pxTorem(520px);
+      overflow: hidden;
+      position: relative;
+      img{
+        display: block;
+        width:100%;
+        height:100%;
+        pointer-events:auto;
+        @include user-select(none);
+      }
+    }
+    //360度按钮
+    .detailDegree360Btn{
+      top:auto;
+      bottom:pxTorem(20px);
+    }
+    ul{
+      width: 100%;
+      margin-top:pxTorem(20px);
+      //margin: pxTorem(20px) 0 0 pxTorem(20px);
+      li{
+        width: 50%;
+        height:pxTorem(50px);
+        float: left;
+        @include font-dpr(26px);
+        @extend %nowrap;
+        overflow: hidden;
+        &:nth-child(odd){
+          text-indent: pxTorem(20px);
+        }
+        //备注
+        &.remark{
+          width:100%;
+        }
+      }
+    }
+    .btn{
+      @extend %block;
+      width: pxTorem(480px);
+      height:pxTorem(80px);
+      margin: 0 auto;
+      line-height: pxTorem(80px);
+      border: 1px solid #999;
+      background:#999;
+      @include font-dpr(32px);
+      color:#fff;
+      margin-bottom: pxTorem(30px);
+      &.my{
+        background:none;
+        position: relative;
+        border: 1px solid $red-base;
+        color: $red-base;
+        &:before{
+          position: absolute;
+          top: pxTorem(25px);
+          left: pxTorem(145px);
+          content: "";
+          @extend %ico_rem;
+          width:pxTorem(24px);
+          height: pxTorem(33px);
+          background-image: url("../images/iconTel.png");
+        }
+      }
+    }
+
+    .more{
+      @extend %tc;
+      padding-bottom: pxTorem(40px);
+      span{
+        @include font-dpr(24px);
+        color: $color-999;
+        position: relative;
+        &:before,&:after{
+          content: "\20";
+          height:1px;
+          width:pxTorem(20px);
+          background:#e5e5e5;
+          position: absolute;
+          top:pxTorem(16px);
+        }
+        &:before{
+          left:pxTorem(-30px);
+        }
+        &:after{
+          right:pxTorem(-30px);
+        }
+      }
+    }
+  }
+  .thumbnail{
+    img{
+      width: pxTorem(210px);
+      height: pxTorem(210px);
+      padding: pxTorem(30px) 0 pxTorem(20px) 0;
+      margin: 0 auto;
+      border-radius: 100%;
+    }
+    h3{
+      padding-top: 0;
+    }
+    h4{
+      padding-left: 33%;
+    }
+  }
+}
+//当前
+.negotiationSelect{
+  width:pxTorem(615px);
+  margin-top:.2%;
+  @include box-shadow(pxTorem(4px) pxTorem(4px) pxTorem(24px) rgba(16,5,10,.15))
+}
+//图表详情
+.thumbnail{
+  padding-bottom: 30%;
+  img{
+    display: block;
+    width: 100%;
+    height: 65%;
+  }
+  h3{
+    padding-top: pxTorem(40px);
+    padding-bottom: pxTorem(30px);
+    @include font-dpr(42px);
+    @extend %tc;
+  }
+  h4{
+    @include font-dpr(24px);
+    padding-left: pxTorem(240px);
+    margin-bottom: pxTorem(10px);
+  }
+  p{
+    text-indent: 2em;
+    @include font-dpr(26px);
+    color: $color-666;
+    margin: pxTorem(30px) pxTorem(30px) 0 pxTorem(30px);
+    line-height: pxTorem(50px);
+  }
+  span{
+    display: block;
+    @include font-dpr(26px);
+    color: $color-666;
+    @extend %tc;
+    margin-top: pxTorem(40px);
+    margin-bottom: pxTorem(55px);
+    &:before,&:after{
+      content: "-";
+    }
+  }
+}
+
+//按钮
+.negotiationBtn{
+  border-top:1px solid #999999;
+  a{
+    margin:pxTorem(10px) pxTorem(30px);
+    display: block;
+    background:$red-base;
+    color:#fff;
+    text-align:center;
+    height:pxTorem(100px);
+    line-height:pxTorem(100px);
+    @include font-dpr(32px);
+    vertical-align: middle;
+    &.active{
+      background:$red-hover-base;
+    }
+    &:before{
+      position: relative;
+      top:pxTorem(3px);
+      content: "\20";
+      width:pxTorem(30px);
+      height:pxTorem(30px);
+      background-image: url("../images/iconTelNT.png");
+      margin-right:pxTorem(10px);
+      @extend %ico_rem;
+      display:inline-block;
+    }
+  }
+}
+
+
+
+
+//全屏显示图片
+.sendinfoImgShow{
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index:27;
+  .opacity{
+    background:rgba(0,0,0,.98);
+  }
+  //图片列表
+  ul{
+    //transform: translate3d(-200px, 0px, 0px);
+    font-size:0;  //...和这个有关...
+    height:100%;
+    z-index:29;
+    position:relative;
+    white-space:nowrap;
+    //滑动
+    //@include transition(all .5s);
+    //@include transition-property(all);
+    //@include transition-duration(800ms);
+    //@include transition-delay(800ms);
+    //transition:none;
+  }
+  li{
+    //font-size:14px;
+    position:relative;
+    display:inline-block;
+    width:100%;
+    height:100%;
+    vertical-align:top;
+    white-space:normal;
+    div{
+      position:absolute;
+      left:0;
+      top:0;
+      right:0;
+      bottom:0;
+      width:100%;
+      height:100%;
+      -webkit-backface-visibility:hidden;
+      @include display-flex();
+      @include align-items();
+      @include justify-content(center);
+    }
+    img{
+      max-height:100%;
+      max-width:100%;
+      height:auto;
+      width:auto;
+      pointer-events:auto;
+      @include user-select(none);
+    }
+  }
+  //.scale{
+    //@include animation(scalebigToSmall .5s);
+  //}
+  .tab{ //与首页轮播.indexAdTab样式一样
+    $w:15px;
+    z-index:30;
+    position: absolute;
+    left:0;
+    bottom:pxTorem(30px);
+    width:100%;
+    height:pxTorem($w + 4);
+    text-align:center;
+    span{
+      margin-left:pxTorem(15px);
+      vertical-align: top;
+      @include border-radius(50%);
+      display: inline-block;
+      width:pxTorem($w - 4);
+      height:pxTorem($w - 4);
+      border:pxTorem(2px) solid #fff;
+      &.select{
+        border:0;
+        background:#fff;
+        width:pxTorem($w);
+        height:pxTorem($w);
+      }
+    }
+  }
+}
+
+
+

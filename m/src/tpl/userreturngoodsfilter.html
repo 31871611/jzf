@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"退货申请"
+})
+<body>
+
+<!--退货申请-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"退货申请"
+        })
+    </header>
+
+    <article class="main">
+        <div class="user">
+            <div class="returnAttention">
+                <h3>注意事项</h3>
+                <p>1、使用快递配送的订单，退货成功后将不退回该订单缴纳的物流保价费；</p>
+                <p>2、通过预定方式购买的订单，包括预定金购买、全额购买的订单，退货成功后将不退回预定金；</p>
+                <p>3、使用优惠券的订单退货成功将不退回优惠券，多藏品订单中优惠券金额将按比例分摊到每个藏品中；</p>
+                <p>4、退货发生的退款将退回您的电子钱包；</p>
+                <p>如有疑问请咨询客服，客服电话：0591-88212636；</p>
+            </div>
+            <div class="lBorTitle">退货商品</div>
+            <div class="shoppingCart">
+                <ul class="order_list">
+                    <li>
+                        <div class="number">
+                            <em>订单号：JZ20160330173417511</em>
+                        </div>
+                        <div class="goodsListRow goodsListRowBorder">
+                            <div class="row">
+                                <div class="box">
+                                    <!-- 是否选中按钮 -->
+                                    <i class="shoppingSelect"></i>
+                                    <a href="" class="img">
+                                        <img alt="" src="http://192.168.1.165/jzf2/html/picture/index6.jpg">
+                                    </a>
+                                    <div class="info">
+                                        <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                        <!-- 尺寸与颜色 -->
+                                        <div class="parameter">
+                                            <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                            <span class="color">颜色:颜色颜色</span>
+                                        </div>
+                                        <!-- 价格 -->
+                                        <strong>￥18,500</strong>
+                                        <div class="shoppingRA">
+                                            <div class="reduce select"><i>-</i></div>
+                                            <input type="number" value="1">
+                                            <div class="add"><i>+</i></div>
+                                        </div>
+                                        <!-- 提示购物车数量 -->
+                                        <div class="infoNum">
+                                            最多可退1件
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goodsListRow goodsListRowBorder">
+                            <div class="row">
+                                <div class="box">
+                                    <!-- 是否选中按钮 -->
+                                    <i class="shoppingSelect"></i>
+                                    <a href="" class="img">
+                                        <img alt="" src="http://192.168.1.165/jzf2/html/picture/index6.jpg">
+                                    </a>
+                                    <div class="info">
+                                        <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                        <!-- 尺寸与颜色 -->
+                                        <div class="parameter">
+                                            <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                            <span class="color">颜色:颜色颜色</span>
+                                        </div>
+                                        <!-- 价格 -->
+                                        <strong>￥18,500</strong>
+                                        <div class="shoppingRA">
+                                            <div class="reduce select"><i>-</i></div>
+                                            <input type="number" value="1">
+                                            <div class="add"><i>+</i></div>
+                                        </div>
+                                        <!-- 提示购物车数量 -->
+                                        <div class="infoNum">
+                                            最多可退1件
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="returnTotal">
+                <label for=""><i class="shoppingSelect"></i>合计</label>
+                <span>共计 <b>1</b> 件，应退总额：<b>¥5900.00</b></span>
+            </div>
+            <div class="lBorTitle">请说明退货原因</div>
+            <ul class="userList">
+                <li class="select">
+                    <b>藏品作者与描述不符</b>
+                    <i class="iconCircle"></i>
+                    <i class="iconCircleSelect"></i>
+                </li>
+                <li>
+                    <b>藏品材质与描述不符</b>
+                    <i class="iconCircleSelect"></i>
+                    <i class="iconCircle"></i>
+                </li>
+            </ul>
+            <div class="lBorTitle">上传退货凭证</div>
+            <ul class="returnProofList">
+                <li><img src="images/iconUserBg.jpg" alt=""></li>
+                <li><img src="images/iconUserBg.jpg" alt=""></li>
+                <li><img src="images/iconUserBg.jpg" alt=""></li>
+                <li><img src="images/iconUserBg.jpg" alt=""></li>
+                <li><img src="images/iconUserBg.jpg" alt=""></li>
+                <li></li>
+            </ul>
+            <div class="returnProofInfo">
+                (必填，支持JPG、PNG、GIF格式，最大2M,最多支持3张)
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="user">
+            <div class="btn">
+                <a href="" class="white">取消申请</a>
+                <a href="" class="blue">提交申请</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!--弹窗-->
+<div class="myalert hide">
+    <div class="opacity"></div>
+    <div class="content">
+        <div class="myalert-box">
+            <p class="cen">您的退货申请已提交成功我们将在24小时内审核完成</p>
+        </div>
+        <div class="myalert-btn">
+            <a href="javascript:;">确定</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

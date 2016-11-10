@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*
+
+  参考个人中心首页
+
+  ——————————————————————————————————
+   图标 文字                    图标
+   分隔边框下划线
+  ——————————————————————————————————
+
+*/
+@mixin itemInfo(){
+  background: #fff;
+  &:active{
+    //background-color: #eee;
+    background-color: #e5e5e5;
+  }
+  a{
+    margin:0 pxTorem(30px);
+    height: pxTorem(90px);
+    display: block;
+    color:#333;
+    @include display-flex();
+    @include align-items();
+  }
+  .text{
+    @include flex(1);
+    @include font-dpr(28px);
+    .fr{
+      float:right;
+    }
+    em{
+      font-style: normal;
+    }
+  }
+  i{
+    display: block;
+    @extend %ico_rem;
+    /* 左边图标 */
+    //详情页-线下门店
+    &.iconDetailMap{
+      margin-right: pxTorem(15px);
+      width:pxTorem(40px);
+      height:pxTorem(39px);
+      background-image: url("../images/iconMap.png");
+    }
+    //详情页-客服热线
+    &.iconDetailTel{
+      margin-right: pxTorem(15px);
+      width:pxTorem(40px);
+      height:pxTorem(40px);
+      background-image: url("../images/iconTelC.png");
+    }
+    //详情页-购买须知
+    &.iconDetailArticle{
+      margin-right: pxTorem(15px);
+      width:pxTorem(35px);
+      height:pxTorem(40px);
+      background-image: url("../images/iconArticle.png");
+    }
+    //个人中心首页-我的钱包
+    &.iconUserHomeWallet{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserWallet.png");
+    }
+    //个人中心首页-全部订单
+    &.iconUserHomeOrder{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserOrder.png");
+    }
+    //个人中心首页-我的退货
+    &.iconUserHomeReturn{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserReturn.png");
+    }
+    //个人中心首页-我的关注
+    &.iconUserHomeLike{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserLike.png");
+    }
+    //个人中心首页-我的优惠卷
+    &.iconUserHomePoup{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserPoup.png");
+    }
+    //个人中心首页-我的一元购
+    &.iconUserHomeYi{
+      margin-right: pxTorem(15px);
+      width: pxTorem(37px);
+      height: pxTorem(38px);
+      background-image: url("../images/iconUserYi.png");
+    }
+    //个人中心首页-我的地址
+    &.iconUserHomeAddress{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserAddress.png");
+    }
+    //个人中心首页-我的帮助
+    &.iconUserHomeHelp{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserHelp.png");
+    }
+    //个人中心首页-我是商家
+    &.iconUserHomeSeller{
+      margin-right: pxTorem(15px);
+      width: pxTorem(36px);
+      height: pxTorem(34px);
+      background-image: url("../images/iconUserSeller.png");
+    }
+    //个人中心首页-绑定手机
+    &.iconUserHomeTel{
+      margin-right: pxTorem(15px);
+      width: pxTorem(30px);
+      height: pxTorem(48px);
+      background-image: url("../images/iconUserHomeTel.png");
+    }
+    //个人中心首页-设置
+    &.iconUserHomeSetting{
+      margin-right: pxTorem(15px);
+      width: pxTorem(41px);
+      height: pxTorem(40px);
+      background-image: url("../images/iconUserSetting.png");
+    }
+    /* 右边图标 */
+    //右箭头
+    &.iconArrowRight{
+      margin-left: pxTorem(15px);
+      width: pxTorem(16px);
+      height: pxTorem(30px);
+      background-image: url("../images/iconArrowR.png");
+    }
+    //下箭头
+    &.iconArrowBottom{
+      margin-left: pxTorem(15px);
+      width:pxTorem(30px);
+      height:pxTorem(16px);
+      background-image: url("../images/iconArrowB.png");
+    }
+  }
+  //下分隔边框线
+  .line{
+    height: 1px;
+    background-color: #ccc;
+    margin:0 pxTorem(30px);
+  }
+}

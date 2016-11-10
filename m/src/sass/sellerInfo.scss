@@ -1,0 +1,214 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  商家绑定页面
+
+*/
+
+.sellerInfo{
+  padding-bottom: pxTorem(20px);
+  h3{
+    @include font-dpr(36px);
+    text-align:center;
+    margin:pxTorem(75px) 0 pxTorem(50px);
+  }
+  p{
+    @include font-dpr(32px);
+    line-height:pxTorem(48px);
+    text-indent: 2em;
+    margin:0 pxTorem(30px);
+  }
+  .btn{
+    margin-top:pxTorem(40px);
+    a{
+      background: $blue-base;
+      color:#fff;
+      height:pxTorem(90px);
+      line-height:pxTorem(90px);
+      &.select{
+        background:#e5e5e5;
+        color:#999;
+      }
+      //红色白字
+      &.bgRed{
+        background: $red-base;
+        color:#fff;
+      }
+    }
+  }
+  .mt75{
+    margin-top:pxTorem(75px);
+  }
+  //地址
+  .address{
+    background:#fff;
+    padding:pxTorem(25px) pxTorem(30px);
+    label,span{
+      display: block;
+      @include font-dpr(28px);
+      color:#333;
+    }
+    label{
+      height:pxTorem(89px - 4);
+      padding-top: 2px;
+      width:pxTorem(185px);
+    }
+    span{
+      line-height:pxTorem(48px);
+    }
+  }
+  //编辑
+  .edit{
+    height:pxTorem(90px);
+    background:#fff;
+    //@include font-dpr(24px);
+    text-align:right;
+    .iconEdit,span{
+      display: inline-block;
+    }
+    .iconEdit{
+      background-image: url("../images/iconUserAdressEdit.png");
+      width:pxTorem(26px);
+      height:pxTorem(26px);
+      @extend %ico_rem;
+      vertical-align: middle;
+    }
+    span{
+      line-height:pxTorem(90px);
+      padding:0 pxTorem(30px) 0 pxTorem(10px);
+    }
+  }
+  //绑定银行卡提示
+  .bankInfo{
+    background: #fff;
+    @include font-dpr(28px);
+    color:#999;
+    line-height:pxTorem(48px);
+    padding:pxTorem(10px) pxTorem(30px);
+  }
+}
+
+//信息输入列表
+.sellerInput{
+  $h:89px;
+  background:#fff;
+  li{
+    border-bottom: 1px solid #cccccc;
+    margin:0 pxTorem(30px);
+    @include font-dpr(28px);
+    //最后一条不显示边框
+    &:last-child{
+      border-bottom:0;
+    }
+    //如果需要边框
+    &.borderB{
+      border-bottom: 1px solid #cccccc;
+    }
+  }
+  label,.flex,.code,span{
+    height:pxTorem($h);
+  }
+  label{
+    line-height:pxTorem($h);
+    color:#333;
+    width:pxTorem(185px);
+  }
+  input,select,span{
+    border:none;
+    display: block;
+    background:#fff;
+  }
+  input[type='text'],input[type='tel'],input[type='number'],input[type='email'],select,span{
+    width:100%;
+    height:100%;
+  }
+  select{
+    color:#999;
+  }
+  option,span{
+    color:#333;
+  }
+  span{
+    line-height:pxTorem($h);
+  }
+  //小三角
+  .dropDown{
+    position: relative;
+    &:after{
+      content:"\20";
+      position:absolute;
+      left:pxTorem(140px);
+      top:pxTorem(50px);
+      transform: rotate(315deg);
+      @include arrow(bottom,pxTorem(10px),#333);
+    }
+  }
+  //开户银行
+  .morePull{
+    color:#333;
+    line-height:pxTorem($h);
+    position: relative;
+    display: block;
+    width:100%;
+    height:100%;
+    &:after{
+      content: "\20";
+      position: absolute;
+      right:0;
+      top:50%;
+      background-image: url("../images/iconArrowR.png");
+      @extend %ico_rem;
+      width:pxTorem(16px);
+      height:pxTorem(30px);
+      margin-top:pxTorem(-15px);
+    }
+  }
+  //验证码
+  .code{
+    background:$red-base;
+    display: block;
+    color:#fff;
+    text-align:center;
+    width:pxTorem(180px);
+    height:pxTorem(70px);
+    line-height:pxTorem(70px);
+    margin-left:auto;
+    margin-top:pxTorem(10px);
+    &.select{
+      color:#fff;
+      background:#ccc;
+    }
+  }
+  .dropDownL150{
+    &:after{
+      left:pxTorem(160px);
+    }
+  }
+}
+
+
+
+
+
+//弹性
+.rowGroup{
+  $h:88px;
+  //@include align-items();
+  //@include justify-content(center);
+  @include display-flex();
+  label,.icon{
+    display: block;
+  }
+  .flex{
+
+  }
+  //三角、下、右
+  .icon{
+    font-style: normal;
+  }
+
+}
+

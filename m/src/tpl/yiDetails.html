@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"一元购详情"
+})
+<link rel="stylesheet" href="css/yiDetails.css"/>
+<link rel="stylesheet" href="css/YiPrizeAlert.css"/>
+<link rel="stylesheet" href="css/yiPartakeNumAlert.css"/>
+<link rel="stylesheet" href="css/yiPartakeBuyAlert.css"/>
+<body>
+
+<div class="wrap">
+    <header>
+
+    </header>
+
+    <article class="main">
+
+
+        <!-- 详情 -->
+        <a href="javascript:;" @click="back" class="iconBackTop"></a>
+        <a href="javascript:;" class="iconShareTop"></a>
+        <div class="yiDetails">
+
+            <div class="indexAd">
+                轮播
+            </div>
+
+            <!-- 未登录-点击夺宝 -->
+            <div class="yiDetailsTitle">
+                <h1>林清卿作田黄石山居邱名博弈章博一张</h1>
+                <span class="num">期号：801810</span>
+
+                <div class="scheduleBox">
+                    <div class="schedule"></div>
+
+                    <div class="total">
+                        <span>3000</span>
+                        <span>总需</span>
+                    </div>
+
+                    <div class="surplus">
+                        <span class="red">1900</span>
+                        <span>剩余</span>
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+                    <a href="">登录</a>查看我的夺宝
+                </div>
+
+            </div>
+
+            <!-- 已登录.共参与了几次 -->
+            <div class="yiDetailsTitle">
+                <h1>林清卿作田黄石山居邱名博弈章博一张</h1>
+                <span class="num">期号：801810</span>
+
+                <div class="scheduleBox">
+                    <div class="schedule"></div>
+
+                    <div class="total">
+                        <span>3000</span>
+                        <span>总需</span>
+                    </div>
+
+                    <div class="surplus">
+                        <span class="red">1900</span>
+                        <span>剩余</span>
+                    </div>
+
+                </div>
+
+                <div class="totalPartake">
+                    <a href="">本期您共参与<b>5</b>次</a>
+                </div>
+
+                <div class="notPartake">
+                    <a href="">本期您共参与<b>5</b>次</a>
+                </div>
+
+            </div>
+
+            <!-- 商品详情-正在揭晓 -->
+            <div class="yiDetailsTitle">
+                <h1>林清卿作田黄石山居邱名博弈章博一张</h1>
+                <span class="num">期号：801810</span>
+
+                <div class="scheduleBox">
+                    <div class="schedule"></div>
+
+                    <div class="total">
+                        <span>3000</span>
+                        <span>总需</span>
+                    </div>
+
+                    <div class="surplus">
+                        <span class="red">已满</span>
+                    </div>
+
+                </div>
+
+                <div class="totalPartake">
+                    <a href="">本期您共参与<b>5</b>次</a>
+                </div>
+
+                <div class="titleRed">正在揭晓</div>
+                <div class="date">
+                    <span>0</span>
+                    <span>1</span>
+                    <b>:</b>
+                    <span>5</span>
+                    <span>5</span>
+                    <b>:</b>
+                    <span>5</span>
+                    <span>5</span>
+                </div>
+            </div>
+
+            <!-- 商品详情-已经揭晓 -->
+            <div class="yiDetailsTitle">
+                <h1>林清卿作田黄石山居邱名博弈章博一张</h1>
+                <span class="num">期号：801810</span>
+
+                <div class="scheduleBox">
+                    <div class="schedule" style="width: 5%"></div>
+
+                    <div class="total">
+                        <span>3000</span>
+                        <span>总需</span>
+                    </div>
+
+                    <div class="surplus">
+                        <span class="red">已满</span>
+                    </div>
+
+                </div>
+
+                <div class="totalPartake">
+                    <a href="">本期您共参与<b>5</b>次</a>
+                </div>
+
+                <div class="titleRed">未中奖</div>
+
+                <div class="lucky">
+                    <div class="title">
+                        <span class="text">幸运号码：</span>
+                        <strong>214124</strong>
+                    </div>
+                    <p>中奖用户：186*****133</p>
+                    <p>2016-09-01 15:44:32 参与5人次</p>
+                </div>
+
+            </div>
+
+
+            <div class="yiDetailsSubTitle">
+                <a href="">
+                    <i class="iconYiInfo"></i>
+                    <span>藏品详情</span>
+                </a>
+            </div>
+            <div class="detailInfo">
+                <ul>
+                    <li><span>编号：</span><em>A501</em></li>
+                    <li><span>数量：</span><em>1</em></li>
+                    <li><span>作者：</span><em>郭懋介</em></li>
+                    <li><span>形式：</span><em>印章</em></li>
+                    <li><span>品类：</span><em>寿山石</em></li>
+                    <li><span>尺寸：</span><em>4.60x4.40x4.60cm</em></li>
+                    <li><span>材质：</span><em>芙蓉石</em></li>
+                    <li><span>重量：</span><em>100g</em></li>
+                    <li><span>款识：</span><em>正大光明</em></li>
+                    <li><span>备注：</span><em>底部有瑕疵底部有瑕疵</em></li>
+                </ul>
+            </div>
+            <div class="yiDetailsSubTitle">
+                <a href="">
+                    <i class="iconYiPast"></i>
+                    <span>往期中奖</span>
+                    <i class="iconArrowR"></i>
+                </a>
+            </div>
+
+            <div class="yiDetailsPartake">
+                <div class="title">
+                    <h3>本期参与记录</h3>
+                    <span class="date">本期开始于2016-09-08 20:05:00</span>
+                </div>
+                <ul>
+                    <li>
+                        <div class="text">
+                            <span class="tel">184*****123</span>
+                            <span class="num">参与<b>5</b>人次</span>
+                        </div>
+                        <span class="date">2016-09-08 20:05:00</span>
+                    </li>
+                    <li>
+                        <div class="text">
+                            <span class="tel">184*****123</span>
+                            <span class="num">参与<b>5</b>人次</span>
+                        </div>
+                        <span class="date">2016-09-08 20:05:00</span>
+                    </li>
+                    <li>
+                        <div class="text">
+                            <span class="tel">184*****123</span>
+                            <span class="num">参与<b>5</b>人次</span>
+                        </div>
+                        <span class="date">2016-09-08 20:05:00</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </article>
+
+    <footer>
+        <div class="yiDetailsBtn">
+            <a href="">立即参与</a>
+        </div>
+    </footer>
+</div>
+
+
+<div class="opacity hide"></div>
+
+<!-- 未登录 -->
+<div class="couponAlert hide">
+    <div class="box">
+        <header class="title2">
+            <div>
+                <h3>参与夺宝需要先登录哦！</h3>
+            </div>
+        </header>
+
+        <div class="text">
+
+        </div>
+
+        <footer>
+            <a href="" class="">立即登录</a>
+            <a href="" class="whiteBg">不急，再逛逛</a>
+        </footer>
+    </div>
+
+</div>
+
+<!-- 中奖提示弹窗 -->
+<div class="YiPrizeAlert hide">
+    <div class="box">
+
+        <h3>林清卿作田黄石山居邱名博弈章</h3>
+        <div class="text">
+            <span>期号：110314</span>
+            <span>幸运号：189891</span>
+        </div>
+
+        <div class="btn">
+            <a href="">确认收货地址</a>
+        </div>
+
+        <a href="" class="exit"></a>
+    </div>
+</div>
+
+<!-- 参与号码弹窗 -->
+<div class="yiPartakeNumAlert hide" transition="SlideTopBottom">
+    <div class="title">
+        <span>参与号码（<b>9</b>人次）</span>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+        <span>10114</span>
+    </div>
+</div>
+
+<!-- 立即参与弹窗 -->
+<div class="yiPartakeBuyAlert hide" transition="SlideTopBottom">
+    <div class="details">
+        <div class="Photo">
+            <a href=""><img src="picture/a1.jpg" alt=""></a>
+        </div>
+        <div class="content">
+            <h3><a href="">林清卿作田黄石山居邱名博弈章博一张林清卿作田黄石山居邱名博弈章博一张林清卿作田黄石山居邱名博弈章博一张</a></h3>
+            <span class="currentNum">期号：131441</span>
+        </div>
+    </div>
+    <p class="info">
+        请选择购买数量（剩余<b>70</b>次）
+    </p>
+
+    <div class="selectNum">
+        <a href="" class="select">10次</a>
+        <a href="">20次</a>
+        <a href="">50次</a>
+        <a href="" class="no">100次</a>
+    </div>
+
+    <div class="customNum">
+        <i class="reduce no"></i>
+        <input type="number" value="10" />
+        <i class="add"></i>
+    </div>
+
+    <div class="total">
+        合计: <b>￥10.00</b>
+    </div>
+    <div class="btn">
+        <a href="">立即参与</a>
+    </div>
+
+    <a href="" class="exit"></a>
+</div>
+
+
+
+</body>
+
+</html>

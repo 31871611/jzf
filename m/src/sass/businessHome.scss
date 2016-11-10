@@ -1,0 +1,353 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  商家主页
+*/
+
+
+//店铺商品
+.indexsShop{
+  $titleH:80px;
+  $photoH:360px;
+  margin-bottom: pxTorem(10px);
+  .title{
+    $imgH:74px;
+    height:pxTorem($titleH);
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    .img{
+      position: absolute;
+      left:pxTorem(20px);
+      top:pxTorem(10px);
+      $h:74px;
+      width: pxTorem($imgH);
+      height: pxTorem($imgH);
+      border:1px solid #ccc;
+      background: #fff;
+      @include border-radius(50%);
+      padding:pxTorem(5px);
+    }
+    img{
+      width: pxTorem($imgH);
+      height: pxTorem($imgH);
+      vertical-align: middle;
+      @include border-radius(50%);
+    }
+    h2{
+      height:pxTorem($titleH);
+      line-height:pxTorem($titleH);
+      @include font-dpr(32px);
+      padding-left:pxTorem(125px);
+      float: left;
+    }
+    i{
+      margin:pxTorem(29px) 0 0 pxTorem(10px);
+      vertical-align: top;
+      display: inline-block;
+      width:pxTorem(26px);
+      height:pxTorem(26px);
+      @extend %ico_rem;
+      background-image: url("../images/iconMerchant.png");
+    }
+    a{
+      &.enter{
+        float:right;
+        height: pxTorem($titleH);
+        line-height: pxTorem($titleH);
+        margin-right: pxTorem(20px);
+        color:#999;
+        &:after{
+          display: inline-block;
+          @extend %iconfont;
+          content: "\e61f";
+          @include font-dpr(20px);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .photo{
+    height:pxTorem($photoH);
+    position: relative;
+    z-index: 1;
+    a{
+      display: block;
+      height:pxTorem($photoH);
+    }
+    img{
+      height:pxTorem($photoH);
+      width: 100%;
+      vertical-align: middle;
+    }
+    p{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      width: 100%;
+      height: pxTorem(68px);
+      line-height: pxTorem(68px);
+      color:#fff;
+      @include font-dpr(28px);
+      padding-left:10px;
+    }
+  }
+}
+
+
+//商家主页
+.businessHome{
+  .photo{
+    $h:360px;
+    height: pxTorem($h);
+    position: relative;
+    img{
+      height: pxTorem($h);
+      width: 100%;
+      vertical-align: middle;
+    }
+    .code{
+      position: absolute;
+      right:pxTorem(30px);
+      bottom: pxTorem(15px);
+      width: pxTorem(69px);
+      height:pxTorem(69px);
+      @extend %ico_rem;
+      background-image: url("../images/iconBusinessHomeCode.png");
+    }
+  }
+  .info{
+    position: relative;
+    background: #fff;
+    height: pxTorem(180px - 70);
+    padding-top:pxTorem(70px);
+    h1{
+      text-align: center;
+      @include font-dpr(36px);
+      margin-bottom: pxTorem(10px);
+    }
+    p{
+      text-align: center;
+      color:#666;
+      margin:0 pxTorem(20px);
+    }
+  }
+  .face{
+    width: pxTorem(160px);
+    height: pxTorem(160px - 10);
+    padding-top:pxTorem(10px);
+    @include border-radius(50%);
+    position: absolute;
+    left:50%;
+    top:pxTorem(-120px);
+    margin-left:pxTorem(-80px);
+    background: #fff;
+    text-align: center;
+    border:1px solid #ddd;
+    img{
+      width: pxTorem(138px);
+      height: pxTorem(138px);
+      @include border-radius(50%);
+    }
+    i{
+      position: absolute;
+      right:0;
+      bottom:0;
+      width:pxTorem(40px);
+      height: pxTorem(40px);
+      @extend %ico_rem;
+      background-image: url('../images/iconMerchant.png');
+    }
+  }
+  .tab{
+    $h:78px;
+    background: #fff;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    height: pxTorem($h);
+    @include display-flex();
+    a{
+      @include flex(1);
+      text-align:center;
+      height: pxTorem($h);
+      line-height:pxTorem($h);
+      width:100%;
+      display: block;
+      @include font-dpr(28px);
+      color:#999;
+      position: relative;
+      &.select{
+        color:$red-base;
+      }
+      &:after{
+        content: "\20";
+        position: absolute;
+        right:0;
+        top:pxTorem(14px);
+        width:1px;
+        height:pxTorem(50px);
+        background:#dddddd;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//商家主页-分享弹窗
+.businessHomeAlert{
+  @include display-flex();
+  @include align-items();
+  @include justify-content(center);
+  position: fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  .box{
+    position: relative;
+    width:pxTorem(606px);
+    //height: pxTorem(920px);
+  }
+  .center{
+    background: #fff;
+  }
+  .photo{
+    position: relative;
+    img{
+      vertical-align: middle;
+      &.bg{
+        width: 100%;
+        height: pxTorem(536px);
+      }
+    }
+    h2,p{
+      position: absolute;
+      width: 100%;
+      left:0;
+      color:#fff;
+      text-align: center;
+    }
+    h2{
+      top:pxTorem(410px);
+      @include font-dpr(36px);
+    }
+    p{
+      top:pxTorem(465px);
+    }
+  }
+  .logo{
+    $h:135px;
+    position: absolute;
+    left:0;
+    top:pxTorem(23px);
+    width:100%;
+    text-align: center;
+    height: pxTorem($h);
+    img{
+      width:pxTorem(59px);
+      height: pxTorem($h);
+    }
+  }
+  .face{
+    position: absolute;
+    left:50%;
+    top:pxTorem(220px);
+    width: pxTorem(160px);
+    height: pxTorem(160px - 10);
+    margin-left:pxTorem(-80px);
+    padding-top:pxTorem(10px);
+    background: #fff;
+    @include border-radius(50%);
+    text-align: center;
+    img{
+      vertical-align: middle;
+      width: pxTorem(138px);
+      height: pxTorem(138px);
+      @include border-radius(50%);
+    }
+    i{
+      position: absolute;
+      right:0;
+      bottom:0;
+      width:pxTorem(40px);
+      height: pxTorem(40px);
+      @extend %ico_rem;
+      background-image: url('../images/iconMerchant.png');
+    }
+  }
+  .info{
+    text-align: center;
+    padding-top: pxTorem(48px);
+    padding-bottom: pxTorem(50px);
+    img{
+      vertical-align: middle;
+      &.code{
+        width: pxTorem(240px);
+        height: pxTorem(240px);
+      }
+    }
+    p{
+      margin-top:pxTorem(20px);
+    }
+  }
+  .exit{
+    width:pxTorem(58px);
+    height:pxTorem(58px);
+    background: rgba(255,255,255,.3);
+    position: absolute;
+    right:pxTorem(20px);
+    top:pxTorem(20px);
+    @include border-radius(50%);
+    &:before,&:after{
+      content: '\20';
+      background: #fff;
+      position: absolute;
+      left:50%;
+      top:50%;
+      @include rotate(45deg);
+    }
+    &:before{
+      width:1px;
+      height: pxTorem(46px);
+      margin-top:pxTorem(-23px);
+    }
+    &:after{
+      width:pxTorem(46px);
+      height: 1px;
+      margin-left:pxTorem(-23px);
+    }
+  }
+  .btn{
+    margin-top:pxTorem(30px);
+    $h:74px;
+    //position: absolute;
+    //left:0;
+    //bottom: pxTorem(-36px);
+    //width: 100%;
+    height: pxTorem($h);
+    @include display-flex();
+    a{
+      color:#fff;
+      @include font-dpr(32px);
+      text-align: center;
+      width: pxTorem(236px);
+      height: pxTorem($h - 4);
+      line-height: pxTorem($h - 4);
+      display: block;
+      @include flex(1);
+      border:2px solid #fff;
+      @include border-radius(pxTorem(10px));
+      &:nth-child(2){
+        margin-left: pxTorem(65px);
+      }
+    }
+  }
+}
+

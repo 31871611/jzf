@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  双11秒杀
+*/
+
+
+.secKillPhoto{
+  $h:480px;
+  height: pxTorem($h);
+  img{
+    vertical-align: middle;
+    width: 100%;
+    height: pxTorem($h);
+  }
+}
+
+.secKillTitle{
+  $h:80px;
+  height: pxTorem($h);
+  margin:pxTorem(30px) 0 pxTorem(30px) pxTorem(10px);
+  .num{
+    float: left;
+    height: pxTorem($h);
+    line-height: pxTorem($h);
+    display: block;
+    @include font-dpr(50px);
+    color:$red-base;
+  }
+  .time{
+    float: right;
+    height: pxTorem($h);
+    background: $red-base;
+    position: relative;
+    @include border-radius(pxTorem(38px) 0 0 pxTorem(38px));
+    @include display-flex();
+    @include align-items();
+    padding-right: pxTorem(5px);
+    i{
+      display: block;
+      margin-left:pxTorem(20px);
+      margin-right:pxTorem(10px);
+      width:pxTorem(37px);
+      height: pxTorem(37px);
+      @extend %ico_rem;
+      background-image: url("../images/iconSecKillTime.png");
+    }
+    b{
+      display: block;
+      font-weight: normal;
+      color: #fff;
+      margin-right:pxTorem(20px);
+      &.go{
+        @include font-dpr(28px);
+      }
+      &.distance{
+        @include font-dpr(22px);
+      }
+    }
+    em{
+      display: block;
+      @include font-dpr(22px);
+      margin-right:pxTorem(5px);
+      color: #f9fd44;
+    }
+    span{
+      display: block;
+      //text-align: center;
+      margin-right:pxTorem(5px);
+      @include font-dpr(28px);
+      color: #fff;
+    }
+  }
+}
+
+//秒杀商品
+.goodsListNormal{
+  li{
+    h3{
+      height:pxTorem(40px);
+    }
+    span{
+      &.original{
+        background: #fff;
+        text-align: left;
+        @include font-dpr(28px);
+        color:#cbcbcb !important;
+        text-decoration:line-through;
+      }
+    }
+    b{
+      @include font-dpr(32px);
+    }
+  }
+}

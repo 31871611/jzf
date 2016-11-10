@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"购物车"
+})
+<body>
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"购物车"
+        })
+    </header>
+
+    <article class="main">
+
+        <!--购物车为空时-->
+        <div class="shoppingEmpty">
+            <!-- 无地址 -->
+            <i class="iconAddressEmpty"></i>
+            <!-- 无订单 -->
+            <i class="iconOrderEmpty"></i>
+            <!-- 无购物车记录 -->
+            <i class="iconShoppingEmpty"></i>
+            <!-- 无商品 -->
+            <i class="iconSearchEmpty"></i>
+            <!-- 支付成功 -->
+            <i class="iconPaySuccess"></i>
+            <!-- 支付失败 -->
+            <i class="iconPayError"></i>
+            <!-- 无关注 -->
+            <!-- 无优惠卷 -->
+            <b>购物车空空如也</b>
+            <b>赶紧去添加您喜欢的藏品</b>
+            <a href="" class="btn">去看看</a>
+        </div>
+
+        <div class="goodsListRow goodsListRowBorder">
+            <div class="row">
+                <div class="box">
+                    <a href="" class="img">
+                        <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                        <!-- 爱心 -->
+                        <div class="love select">1</div>
+                        <!-- 已出售 -->
+                        <i class="out"></i>
+                        <!-- 已预定 -->
+                        <!--<i class="booked"></i>-->
+                        <!-- 360图标 -->
+                        <!--<i class="degree360"></i>-->
+                        <!-- 视频播放图标 -->
+                        <i class="video"></i>
+                    </a>
+                    <div class="info">
+                        <a href="http://www.163.com">
+                            <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <!--<span class="costPrice">原价:¥17500</span>-->
+                            <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+
+                            <!-- 尺寸与颜色 -->
+                            <div class="parameter">
+                                <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                <span class="color">颜色:颜色颜色</span>
+                            </div>
+
+                            <!-- 原价 -->
+                            <div class="primeCost">
+                                <b>￥18,500</b>
+                                <span>原价:¥17500</span>
+                            </div>
+                        </a>
+                        <!--<span class="btnPreview">即将开抢</span>-->
+                        <!-- 购物袋图标 -->
+                        <!--<a href="" class="buy"></a>-->
+                        <!-- 数量 -->
+                        <span class="num">x1</span>
+                        <!-- 申请退货 -->
+                        <a href="http://www.baidu.com" class="return">申请退货</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <ul class="goodsListRow goodsListRowBorder">
+
+            <li class="row">
+                <div class="box">
+                    <a href="" class="img">
+                        <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                        <!-- 爱心 -->
+                        <div class="love select">1</div>
+                        <!-- 已出售 -->
+                        <i class="out"></i>
+                        <!-- 已预定 -->
+                        <!--<i class="booked"></i>-->
+                        <!-- 360图标 -->
+                        <!--<i class="degree360"></i>-->
+                        <!-- 视频播放图标 -->
+                        <i class="video"></i>
+                    </a>
+                    <div class="info">
+                        <a href="">
+                            <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <!--<span class="costPrice">原价:¥17500</span>-->
+                            <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+
+                            <!-- 尺寸与颜色 -->
+                            <div class="parameter">
+                                <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                <span class="color">颜色:颜色颜色</span>
+                            </div>
+
+                            <!-- 原价 -->
+                            <div class="primeCost">
+                                <b>￥18,500</b>
+                                <span>原价:¥17500</span>
+                            </div>
+                        </a>
+                        <!--<span class="btnPreview">即将开抢</span>-->
+                        <!-- 购物袋图标 -->
+                        <!--<a href="" class="buy"></a>-->
+                        <!-- 数量 -->
+                        <span class="num">x1</span>
+                        <!-- 申请退货 -->
+                        <a href="" class="return">申请退货</a>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <ul class="goodsListRow">
+
+            <li class="row">
+                <div class="box">
+                    <a href="" class="img">
+                        <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                        <!-- 爱心 -->
+                        <div class="love">1</div>
+                        <!-- 已出售 -->
+                        <i class="out"></i>
+                        <!-- 已预定 -->
+                        <!--<i class="booked"></i>-->
+                        <!-- 360图标 -->
+                        <!--<i class="degree360"></i>-->
+                        <!-- 视频播放图标 -->
+                        <i class="video"></i>
+                    </a>
+                    <div class="info">
+                        <a href="">
+                            <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <span class="costPrice">原价:¥17500</span>
+                            <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+                            <strong>￥18,500</strong>
+                        </a>
+                        <span class="btnPreview">即将开抢</span>
+                        <!-- 购物袋图标 -->
+                        <!--<a href="" class="buy"></a>-->
+                    </div>
+                </div>
+            </li>
+
+            <li class="row">
+                <div class="box">
+                    <a href="" class="img">
+                        <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                        <!-- 爱心 -->
+                        <div class="love select">1</div>
+                        <!-- 已出售 -->
+                        <!--<i class="out"></i>-->
+                        <!-- 已预定 -->
+                        <i class="booked"></i>
+                        <!-- 360图标 -->
+                        <!--<i class="degree360"></i>-->
+                        <!-- 视频播放图标 -->
+                        <i class="video"></i>
+                    </a>
+                    <div class="info">
+                        <a href="">
+                            <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <!--<span class="costPrice">原价:¥17500</span>-->
+                            <span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>
+                            <strong>￥18,500</strong>
+                        </a>
+                        <!--<span class="btnPreview">即将开抢</span>-->
+                        <!-- 购物袋图标 -->
+                        <a href="" class="buy"></a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="row">
+                <div class="box">
+                    <a href="" class="img">
+                        <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                        <!-- 爱心 -->
+                        <div class="love select">1</div>
+                        <!-- 已出售 -->
+                        <i class="out"></i>
+                        <!-- 已预定 -->
+                        <!--<i class="booked"></i>-->
+                        <!-- 360图标 -->
+                        <!--<i class="degree360"></i>-->
+                        <!-- 视频播放图标 -->
+                        <i class="video"></i>
+                    </a>
+                    <div class="info">
+                        <a href="">
+                            <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <!--<span class="costPrice">原价:¥17500</span>-->
+                            <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+                            <strong>￥18,500</strong>
+                        </a>
+                        <!--<span class="btnPreview">即将开抢</span>-->
+                        <!-- 购物袋图标 -->
+                        <a href="" class="buy"></a>
+                    </div>
+                </div>
+            </li>
+
+
+
+        </ul>
+
+
+        <!--有藏品-->
+        <div class="shoppingCart">
+            <ul class="goodsListRow">
+                <li class="row">
+                    <div class="box">
+                        <!-- 是否选中按钮 -->
+                        <i class="shoppingSelect"></i>
+                        <a href="" class="img uq">
+                            <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                        </a>
+                        <div class="info">
+                            <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                            <!--<h3>残荷听雨系列套件章</h3>-->
+                            <!--<span class="size">尺寸：11.5X4.2X3.9cm</span>-->
+                            <!-- 尺寸与颜色 -->
+                            <div class="parameter">
+                                <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                <span class="color">颜色:颜色颜色</span>
+                            </div>
+                            <!-- 价格 -->
+                            <strong>￥18,500</strong>
+                            <!--<a href="" class="btnGo">立即购买</a>-->
+                            <!-- 删除图标 -->
+                            <i class="garbage"></i>
+                            <!--<div class="love select">1</div>-->
+                            <div class="shoppingRA">
+                                <div class="reduce select"><i>-</i></div>
+                                <input type="number" value="1" />
+                                <div class="add"><i>+</i></div>
+                            </div>
+                            <!-- 提示购物车数量 -->
+                            <div class="infoNum">
+                                最多可退1件
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="box">
+                        <i class="shoppingSelect select"></i>
+                        <a href="" class="img sl">
+                            <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                        </a>
+                        <div class="info">
+                            <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                            <strong>￥18,500</strong>
+                            <i class="garbage"></i>
+                            <div class="shoppingRA">
+                                <div class="reduce"><i>-</i></div>
+                                <input type="number" value="1" />
+                                <div class="add"><i>+</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="box">
+                        <i class="shoppingSelect"></i>
+                        <a href="" class="img us">
+                            <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                        </a>
+                        <div class="info">
+                            <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                            <strong>￥18,500</strong>
+                            <i class="garbage"></i>
+                            <div class="shoppingRA">
+                                <div class="reduce"><i>-</i></div>
+                                <input type="number" value="1" />
+                                <div class="add"><i>+</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="box">
+                        <i class="shoppingSelect"></i>
+                        <a href="" class="img">
+                            <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                        </a>
+                        <div class="info">
+                            <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                            <strong>￥18,500</strong>
+                            <i class="garbage"></i>
+                            <div class="shoppingRA">
+                                <div class="reduce"><i>-</i></div>
+                                <input type="number" value="1" />
+                                <div class="add"><i>+</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="shoppingCartSet">
+            <i>全选</i>
+            <div class="box">
+                合计:<b>¥5900.00</b>
+            </div>
+            <a href="clearing.html" class="btn">去结算</a>
+        </div>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavReg">注册有礼</a>
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <a href="" class="appNavUser">个人</a>
+        </nav>
+    </footer>
+</div>
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+
+</html>

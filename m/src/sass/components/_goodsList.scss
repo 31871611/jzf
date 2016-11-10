@@ -1,0 +1,1014 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+/**************************************************************/
+
+//商品列表
+%goodsList{
+  @extend %clearfix;
+  padding-right:pxTorem(10px);
+  //列
+  li{
+    width:50%;
+    float:left;
+    margin-bottom:pxTorem(10px);
+    //内容
+    .box{
+      margin-left:pxTorem(10px);
+      position: relative;
+      background:#fff;
+      padding-bottom: pxTorem(10px);
+    }
+    //图片
+    .img{
+      display: block;
+      padding-bottom: 100%;
+      height:0;
+      position: relative;
+      img{
+        @extend %img;
+      }
+      //图标
+      i.out,i.booked,i.degree360,i.video{
+        @extend %ico_rem;
+        position: absolute;
+        //图标下还有连接？
+        a{
+          display: block;
+          width:100%;
+          height:100%;
+        }
+      }
+      i.out,i.booked{
+        bottom:pxTorem(4px);
+        right:pxTorem(5px);
+      }
+      //已售图标
+      i.out{
+        background-image:url("../images/iconOut.png");
+        width:pxTorem(141px);
+        height:pxTorem(126px);
+      }
+      //已预定图图标
+      i.booked{
+        background-image:url("../images/iconBooked.png");
+        width:pxTorem(156px);
+        height:pxTorem(140px);
+      }
+      //360度图标
+      //i.degree360{
+      //  left:pxTorem(15px);
+      //  top:pxTorem(15px);
+      //  background-color: $bg-color;
+      //  background-image:url("../images/icon360DegreeRed.png");
+      //  background-size:pxTorem(49px) pxTorem(39px) !important;
+      //  width:pxTorem(55px);
+      //  height:pxTorem(55px);
+      //  @include border-radius(pxTorem(6px));
+      //}
+      //视频播放
+      i.video{
+          left:pxTorem(15px);
+          top:pxTorem(15px);
+          width:pxTorem(34px);
+          height:pxTorem(34px);
+          background-image:url("../images/iconListVideo.png");
+      }
+    }
+    //爱心图标
+    .love{
+      position: absolute;
+      right:0;
+      top:0;
+      text-align:center;
+      padding:pxTorem(15px) pxTorem(15px);
+      color:#fff;
+      @include font-dpr(24px);
+      &:before{
+        content: "\20";
+        width:pxTorem(36px);
+        height:pxTorem(32px);
+        //background-image:url("../images/iconLove.png");
+        background-image:url("../images/iconLoveC.png");
+        @extend %ico_rem;
+        display:block;
+        margin:0 auto;
+      }
+      &.select{
+        &:before{
+          background-image:url("../images/iconLoveS.png");
+        }
+      }
+    }
+    //标题、价格、购物袋图标
+    .bottom{
+      @extend .display-flex;
+      @include align-items(center);
+      margin:0 pxTorem(10px);
+      height:pxTorem(56px);
+    }
+    //标题
+    h3{
+      margin:pxTorem(15px) pxTorem(15px) 0;
+      height:pxTorem(32px * 2);
+      line-height:pxTorem(32px);
+      overflow: hidden;
+      @include font-dpr(26px);
+    }
+    //价格
+    strong{
+      @extend .flex;
+      display: block;
+      color:$red-base;
+      font-weight:bold;
+      @include font-dpr(28px);
+    }
+    //预览、已下架等
+    span{
+      display: block;
+      padding:0 pxTorem(15px);
+      text-align:center;
+      height:pxTorem(40px);
+      line-height:pxTorem(40px);
+      color:#fff !important;
+      background:#e5e5e5;
+      @include font-dpr(24px);
+      @include border-radius(2px);
+    }
+    //即将开售红底白字
+    .red{
+      background:$red-base;
+    }
+    //单项
+    //&:nth-child(odd){
+    //  .box{
+    //    margin-right:pxTorem(10px);
+    //  }
+    //}
+    //双项
+    //&:nth-child(even){
+    //  .box{
+    //    margin-right:pxTorem(10px);
+    //  }
+    //}
+  }
+  //购物袋图标
+  .buy{
+    display: block;
+    width:pxTorem(44px);
+    height:pxTorem(56px);
+    background-image: url("../images/iconBuy.png");
+    @extend %ico_rem;
+    background-size: pxTorem(44px) pxTorem(56px);
+  }
+  //马上开抢按钮
+  //.btnGo{
+  //  padding:0 pxTorem(20px);
+  //  height:pxTorem(42px);
+  //  line-height:pxTorem(42px);
+  //  border:1px solid $red-base;
+  //  color:$red-base;
+  //  font-size:pxTorem(24px);
+  //  &:active{
+  //    background-color: $red-hover-base;
+  //    color: #fff;
+  //  }
+  //}
+}
+
+//下划线
+.borderBDashed{
+  border-bottom: 1px dashed #999999;
+}
+//横版热度标签
+.goodsRowHotTab{
+  margin: pxTorem(20px) pxTorem(20px) 0 pxTorem(20px);
+  a{
+    @include border-radius(2px);
+    display: inline-block;
+    height:pxTorem(50px);
+    line-height:pxTorem(50px);
+    padding:0 pxTorem(15px);
+    margin: 0 pxTorem(20px) pxTorem(20px) 0;
+    background:$gray-base;
+    color:#fff;
+    &.select{
+      background:$blue-base;
+    }
+  }
+}
+
+//开售倒记时|不在ul列表里
+.listEndTime{
+  margin: 0 pxTorem(10px);
+  height:pxTorem(80px);
+  line-height:pxTorem(80px);
+  @include font-dpr(28px);
+  text-align:center;
+  color:#999;
+}
+
+//横版 [ 田黄石  摆件 ]
+.goodsRowType{
+  margin: 0 pxTorem(10px);
+  height: pxTorem(85px);
+  line-height: pxTorem(85px);
+  @include font-dpr(36px);
+  text-align:center;
+  color:#999;
+}
+
+
+//行row
+.goodsListRow{
+  margin-bottom: pxTorem(20px);
+  //列row
+  .row,.follow{
+    background: #fff;
+    margin: pxTorem(20px) 0 0 0;
+    height:pxTorem(280px - 20);
+    padding:pxTorem(20px) pxTorem(40px) 0 pxTorem(30px);
+    .box{
+      position: relative; //好像不需要，购物车？
+      @extend .display-flex;
+    }
+    //马上开抢按钮
+    //.btnGo{
+    //  position: absolute;
+    //  bottom:pxTorem(10px);
+    //  right:pxTorem(10px);
+    //  //display: inline-block;
+    //  padding:0 pxTorem(20px);
+    //  height:pxTorem(54px);
+    //  line-height:pxTorem(54px);
+    //  border:1px solid $red-base;
+    //  color:$red-base;
+    //  font-size:pxTorem(26px);
+    //  &:active{
+    //    background-color: $red-hover-base;
+    //    color: #fff;
+    //  }
+    //}
+    //灰色即将开抢
+    //.btnGoC{
+    //  border-color: #999;
+    //  color:#999;
+    //}
+  }
+  //一样
+  .img{
+    display: block;
+    width:pxTorem(240px);   //修改大小
+    height:pxTorem(240px);  //
+    position: relative;
+    img{
+      @extend .img-auto;
+    }
+    //图标
+    i.out,i.booked,i.degree360,i.video{
+      @extend %ico_rem;
+      position: absolute;
+      a{
+        display: block;
+        width:100%;
+        height:100%;
+      }
+    }
+    i.out,i.booked{
+      bottom:pxTorem(4px);
+      right:pxTorem(5px);
+    }
+    //已售图标
+    i.out{
+      background-image:url("../images/iconOut.png");
+      width:pxTorem(141px);
+      height:pxTorem(126px);
+    }
+    //已预定图图标
+    i.booked{
+      background-image:url("../images/iconBooked.png");
+      width:pxTorem(156px);
+      height:pxTorem(140px);
+    }
+    //360度图标
+    //i.degree360{
+    //  left:pxTorem(15px);
+    //  top:pxTorem(15px);
+    //  background-color: $bg-color;
+    //  background-image:url("../images/icon360DegreeRed.png");
+    //  background-size:pxTorem(49px) pxTorem(39px) !important;
+    //  width:pxTorem(55px);
+    //  height:pxTorem(55px);
+    //  @include border-radius(pxTorem(6px));
+    //}
+    //视频播放
+    i.video{
+      left:pxTorem(15px);
+      top:pxTorem(15px);
+      width:pxTorem(34px);
+      height:pxTorem(34px);
+      background-image:url("../images/iconListVideo.png");
+    }
+  }
+  //白色爱心、灰色爱心
+  .love,.loveC{
+    position: absolute;
+    right:0;
+    top:0;
+    text-align:center;
+    padding:pxTorem(15px) pxTorem(15px);
+    color:#999;
+    @include font-dpr(24px);
+    &:before{
+      content: "\20";
+      width:pxTorem(36px);
+      height:pxTorem(32px);
+      //background-image:url("../images/iconLove.png");
+      background-image:url("../images/iconLoveC.png");
+      @extend %ico_rem;
+      display:block;
+      margin:0 auto;
+    }
+    &.select{
+      &:before{
+        background-image:url("../images/iconLoveS.png");
+      }
+    }
+  }
+  //购物车已售|购物车已下架|购物车交易中
+  .sl,.us,.uq{
+    &:before,&:after{
+      position: absolute;
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+    }
+    &:before{
+      content: "\20";
+      background: rgba(153,153,153,.8);
+    }
+    &:after{
+      content: "正在交易中";
+      color:#eee;
+      text-align:center;
+      @include font-dpr(28px);
+      line-height:pxTorem(240px);
+    }
+  }
+  //购物车已售
+  .sl{
+    &:after{
+      content: "已售";
+    }
+  }
+  //购物车已下架
+  .us{
+    &:after{
+      content: "已下架";
+    }
+  }
+  //购物车交易中
+  .uq{
+    &:after{
+      content: "正在交易中";
+    }
+  }
+  //购物车藏品选中
+  i.shoppingSelect{
+    display: block;
+    font-style: normal;
+    //padding-left:pxTorem(30px);
+    //padding-right:pxTorem(25px);
+    width:pxTorem(36px);
+    @include font-dpr(28px);
+    &.select{
+      &:after{
+        background-color: $red-base;
+        width:pxTorem(36px);
+        height:pxTorem(36px);
+        border:0;
+        background-image: url("../images/iconHook.png");
+        @extend %ico_rem;
+        background-size:50% 50% !important;
+      }
+    }
+    &:after{
+      position: absolute;
+      left:0;
+      top:40%;
+      content: "\20";
+      display: inline-block;
+      width:pxTorem(36px - 4);
+      height:pxTorem(36px - 4);
+      border:1px solid #333;
+      @include border-radius(50%);
+      //margin-right:pxTorem(10px);
+    }
+  }
+  //购物车删除按钮
+  .garbage{
+    position: absolute;
+    right:pxTorem(10px);
+    //bottom:pxTorem(10px);
+    bottom:0;
+    background-image: url("../images/iconGarbage.png");
+    @extend %ico_rem;
+    width:pxTorem(37px);
+    height:pxTorem(36px);
+  }
+  //购物车添加与减藏品
+  .shoppingRA{
+    $h:30px;
+    position: absolute;
+    //left:pxTorem(60px);
+    left: pxTorem(42px - 40);
+    bottom:pxTorem(-10px);
+    height: pxTorem($h + 40);
+    div,input[type='number'],span{
+      float:left;
+    }
+    i,input[type='number'],span{
+      display: inline-block;
+      vertical-align: middle;
+      text-align:center;
+      margin-top:pxTorem(40px - 10);
+    }
+    div{
+      width: pxTorem($h + 40);
+      height: pxTorem($h + 40);
+      &:nth-child(1){
+        text-align:right;
+      }
+      &.select{
+        i{
+          background:#eee;
+          color:#fff;
+        }
+      }
+    }
+    i{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      background: #e4e4e4;
+      color:#999999;
+      font-style: normal;
+    }
+    input[type='number'],span{
+      width:pxTorem(40px);
+      height: pxTorem($h);
+      border:0;
+    }
+    @extend %numberArrow;
+  }
+  //购物车加、减按钮
+  .reduce{
+
+  }
+  .add{
+
+  }
+  //提示购物车数量
+  .infoNum{
+    position: absolute;
+    left: pxTorem(142px + 10);
+    bottom:pxTorem(-5px);
+    //border:1px solid #e4e4e4;
+    color:#333;
+    @include font-dpr(20px);
+    height: pxTorem(28px);
+    line-height: pxTorem(28px);
+    padding:pxTorem(5px);
+  }
+  /**************************************************/
+  //内容
+  .info{
+    @extend .flex;
+    position: relative;
+    top:0;    //与.img一样高
+    bottom:0; //与.img一样高
+    //h3{
+    //  color:#333333;
+    //  @include font-dpr(32px);
+    //  //padding-right:pxTorem(40px);
+    //}
+  }
+  //左边间距
+  h3,.costPrice,.size,.parameter{
+    margin-left:pxTorem(40px);
+  }
+  h3{
+    margin-top:pxTorem(10px);
+    @include font-dpr(32px);
+    color:#333;
+    overflow: hidden;
+    line-height:pxTorem(40px);
+    height:pxTorem(80px);
+    //&:nth-of-type(2){
+    //  margin-top:pxTorem(10px);
+    //}
+  }
+  //原价
+  .costPrice{
+    display: block;
+    margin-top:pxTorem(20px);
+    height: pxTorem(70px);
+    line-height: pxTorem(70px);
+    text-decoration:line-through;
+    color:#666;
+    @include font-dpr(24px);
+  }
+  //尺寸
+  .size{
+    display: block;
+    margin-top:pxTorem(20px);
+    height: pxTorem(70px);
+    line-height:pxTorem(35px);
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    color:#333;
+  }
+  //尺寸与颜色div
+  .parameter{
+    margin-top:pxTorem(20px);
+    height: pxTorem(70px);
+    color:#333;
+  }
+  //尺寸与颜色span
+  .color{
+    display: block;
+    height:pxTorem(35px);
+    line-height:pxTorem(35px);
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+  //价格
+  strong{
+    position: absolute;
+    left:pxTorem(35px);
+    bottom:0;
+    //margin-top:pxTorem(10px);
+    //margin-left:pxTorem(35px);
+    display: block;
+    @include font-dpr(32px);
+    color:$red-base;
+  }
+  //数量......
+  .num{
+    position: absolute;
+    right:0;
+    top:pxTorem(116px);
+    @include font-dpr(28px);
+    color:#999;
+  }
+  //购物袋图标、预览、已下架，定位于右下角
+  .buy,.btnPreview{
+    position: absolute;
+    bottom:pxTorem(10px);
+    right:pxTorem(5px);
+  }
+  //购物袋图标
+  .buy{
+    width:pxTorem(44px);
+    height:pxTorem(56px);
+    background-image: url("../images/iconBuy.png");
+    @extend %ico_rem;
+    background-size: pxTorem(44px) pxTorem(56px);
+  }
+  //预览、已下架等
+  .btnPreview{
+    display: block;
+    padding:0 pxTorem(15px);
+    text-align:center;
+    height:pxTorem(40px);
+    line-height:pxTorem(40px);
+    color:#fff !important;
+    background:#e5e5e5;
+    @include font-dpr(24px);
+    @include border-radius(2px);
+  }
+  //即将开售红底白字
+  .red{
+    background:$red-base;
+  }
+  //申请退货
+  .return{
+    position: absolute;
+    right:0;
+    bottom:pxTorem(12px);
+    color:#3366cc;
+  }
+  //申请退货按钮.需要定位到下方
+  .returnBtn{
+    z-index: 2;
+    position: absolute;
+    right:0;
+    bottom:pxTorem(-90px);
+    width:pxTorem(190px);
+    text-align:center;
+    height:pxTorem(60px);
+    line-height:pxTorem(60px);
+    background:$red_c;
+    @include font-dpr(28px);
+    color:#fff;
+    &:active{
+      background-color: $red-hover-base;
+    }
+  }
+  //价格与原价
+  .primeCost{
+    position: absolute;
+    left:pxTorem(35px);
+    bottom:0;
+    b{
+      @include font-dpr(32px);
+      color:$red-base;
+      font-weight: normal;
+      margin-right:pxTorem(10px);
+    }
+    span{
+      color:#666;
+      text-decoration:line-through;
+    }
+  }
+
+
+  //用户中心-我的关注
+  //li.follow{
+  //  margin: 0 pxTorem(30px);
+  //  border-bottom: 1px solid #cccccc;
+  //  .box{
+  //    margin:0;
+  //  }
+  //  .info{
+  //    position: static;
+  //    h3{
+  //      margin-top:0;
+  //    }
+  //  }
+  //  strong{
+  //    margin:0;
+  //    position: absolute;
+  //    left:pxTorem(270px);
+  //    bottom:0;
+  //  }
+  //  .size{
+  //    color:#999;
+  //    font-size:pxTorem(28px);
+  //  }
+  //  //.love,.loveC{
+  //    //right:0;
+  //    //top:0;
+  //    //right:auto;
+  //  //}
+  //}
+}
+
+
+//行row，li没有间隔、有点状边框
+.goodsListRowBorder{
+  background:#fff;
+  margin-bottom:0;
+  .row{
+    margin: 0 pxTorem(40px) 0 pxTorem(30px);
+    padding: pxTorem(20px) 0 0 0;
+    border-bottom: 1px solid $color-ccc;
+  }
+}
+
+
+////边框线
+//.dashedBorder,.solidBorder{
+//  margin-left: pxTorem(30px);
+//  margin-right: pxTorem(30px);
+//}
+////虚线边框
+//.dashedBorder{
+//  border-bottom: 1px dashed $color-ccc;
+//}
+////实绩边框
+//.solidBorder{
+//  border-bottom: 1px solid $color-ccc;
+//}
+
+
+
+//列col
+//.goodsListCol{
+//
+//}
+
+//正常
+.goodsListNormal{
+  @extend %goodsList;
+}
+
+//不规则
+//.goodsListNorule{
+//  @extend %goodsList;
+//  li{
+//    &:nth-child(1){
+//      width:50%;
+//      float:left;
+//      margin-bottom:pxTorem(20px);
+//    }
+//  }
+//  //分类商品开售倒记时
+//  li.goodsEndTime{
+//    text-align:center;
+//    color:#666666;
+//    .box{
+//      padding-top:pxTorem(30px);
+//      padding-bottom:pxTorem(40px);
+//      margin-right:pxTorem(10px);
+//      border-bottom: 1px dashed #999999;
+//      background: none;
+//    }
+//    h3{
+//      font-size:pxTorem(28px);
+//    }
+//    .timeCount{
+//      font-size:pxTorem(24px);
+//      margin-top:pxTorem(5px);
+//    }
+//    b{
+//      font-weight: normal;
+//      margin-right:pxTorem(16px);
+//    }
+//  }
+//  //hot分类
+//  li.goodsHotTab{
+//    .box{
+//      margin-right:pxTorem(10px);
+//      border-bottom: 1px dashed #999999;
+//      background: none;
+//    }
+//    a{
+//      background:#fff;
+//      color:#333;
+//      display: inline-block;
+//      padding:0 pxTorem(20px);
+//      height:pxTorem(50px);
+//      line-height:pxTorem(50px);
+//      margin:0 pxTorem(20px) pxTorem(20px) 0;
+//      &.select{
+//        background:$blue-base;
+//        color:#fff;
+//      }
+//    }
+//  }
+//  //类型|材质、形式
+//  .goodsType{
+//    .box{
+//      text-align:center;
+//      height:pxTorem(140px);
+//      line-height:pxTorem(140px);
+//      border:1px solid #666666;
+//      margin-right:pxTorem(10px);
+//      background: none;
+//      color:#666666;
+//      font-size:pxTorem(42px);
+//      position: relative;
+//      z-index:1;
+//      &:before,&:after{
+//        content: "\20";
+//        position: absolute;
+//        background:#e5e5e5;
+//        z-index:-1;
+//      }
+//      &:before{
+//        width:80%;
+//        height:104%;
+//        left:pxTorem(36px);
+//        top:-1px;
+//      }
+//      &:after{
+//        width:102%;
+//        height:50%;
+//        left:-1px;
+//        top:pxTorem(36px);
+//      }
+//    }
+//  }
+//  li.col{
+//    &:nth-child(2n+2){
+//      float:right;
+//    }
+//    &:nth-child(even){
+//      .box{
+//        margin-left:pxTorem(10px);
+//        margin-right:0;
+//      }
+//    }
+//  }
+//}
+
+
+/**************************************************************/
+
+
+//进行时间tab
+.goodsGoDay{
+  height:pxTorem(90px);
+  @extend .display-flex;
+  section{
+    @extend .flex;
+    background:#f7f7f7;
+    color:#333;
+    @include font-dpr(24px);
+    text-align:center;
+    padding-top:pxTorem(14px);
+    &.select{
+      background: $blue-base;
+      color:#fff;
+    }
+  }
+}
+
+.waygoodsGoDay{
+  width: 100%;
+  //height:pxTorem(90px);
+  //box-sizing: border-box;
+  background-color: #fff;
+  padding-top: pxTorem(10px);
+  padding-bottom: pxTorem(10px);
+  @extend %tc;
+  h5{
+    margin-bottom: pxTorem(10px);
+  }
+}
+
+//autoImg
+.autoImg{
+  img{
+    @extend .img-auto;
+    display: block;
+  }
+}
+
+//图片广告
+.goodsAd{
+  height: pxTorem(320px);
+  a{
+    display: block;
+  }
+  img{
+    vertical-align: middle;
+    width:100%;
+    height:pxTorem(320px);
+  }
+}
+
+//检索  排序|价格|分类|状态
+.goodsRtrieval{
+  $h:89px;
+  height:pxTorem($h);
+  width:100%;
+  background:#fff;
+  border-bottom: 1px solid #dddddd;
+  @include display-flex();
+  a{
+    text-align:center;
+    @include flex(1);
+    line-height:pxTorem($h);
+    width:100%;
+    display: block;
+    @include font-dpr(28px);
+    color:#333333;
+    position: relative;
+    &.select{
+      color:$red-base;
+      i{
+        &.filter{
+          background-image: url("../images/iconFilterRed.png");
+        }
+      }
+    }
+    &:after{
+      content: "\20";
+      position: absolute;
+      right:0;
+      top:pxTorem(24px);
+      width:1px;
+      height:pxTorem(42px);
+      background:#dddddd;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+  i{
+    position: absolute;
+    left:50%;
+    &.price{
+      margin-left:pxTorem(30px);
+      top:pxTorem(14px);
+      &:before,&:after{
+        content: "\20";
+        position: absolute;
+        left:0;
+      }
+      &:before{
+        top:pxTorem(10px);
+        @include arrow(top,pxTorem(10px),#333333);
+      }
+      &:after{
+        top:pxTorem(34px);
+        @include arrow(bottom,pxTorem(10px),#333333);
+      }
+    }
+    &.up{
+      &:before {
+        border-color: transparent transparent $red-base transparent;
+      }
+    }
+    &.down{
+      &:after {
+        border-color: $red-base transparent transparent transparent;
+      }
+    }
+
+    &.filter{
+      margin-left:pxTorem(30px);
+      top:pxTorem(34px);
+      width:pxTorem(21px);
+      height:pxTorem(21px);
+      @extend %ico_rem;
+      background-image: url("../images/iconFilter.png");
+    }
+  }
+}
+
+//当天商品开售倒记时
+.goodsDayEndTime{
+  text-align:center;
+  padding-top:pxTorem(20px);
+  h3{
+    color:#333333;
+    @include font-dpr(28px);
+  }
+  .timeCount{
+    @include font-dpr(28px);
+    color:$red-base;
+  }
+}
+
+
+/////////////////////////////////////////////////////////
+
+//列表区
+.goodsListBox{
+  //注释后在页面上使用.mt20
+  margin-top:pxTorem(10px);
+}
+
+
+
+
+
+//开售倒记时
+.rowGoodsEndTime{
+  height:pxTorem(90px - 28);
+  padding-top:pxTorem(28px);
+  color:#333333;
+  .timeCount{
+    @include font-dpr(24px);
+    margin-top:pxTorem(5px);
+    border-left:pxTorem(4px) solid $blue-base;
+    padding-left:pxTorem(15px);
+    margin-left:pxTorem(20px);
+  }
+  b{
+    font-weight: normal;
+    margin-right:pxTorem(10px);
+  }
+  strong{
+    margin-right:pxTorem(10px);
+  }
+}
+
+
+//tab 寿山石|珠宝|文玩|字画|瓷器
+.tabShow{
+  @import "../inc/tabShow";
+  @include tabShow();
+}
+/*
+.mb80{
+  margin-bottom: pxTorem(80px + 90);
+}
+
+.ppp{
+  position: fixed;
+  left:0;
+  //header高87+1
+  //goodsAd高320
+  top:pxTorem(87px + 1 + 320);
+  width:100%;
+}
+*/

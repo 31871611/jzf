@@ -1,0 +1,156 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+nav.appNav{
+  $h:98px;
+  @extend .display-flex;
+  background: #fff;
+  //height: pxTo750($h);
+  border-top:1px solid #999999;
+  a{
+    display: block;
+    @extend .flex;
+    @include font-dpr(20px);
+    color:#333333;
+    text-align:center;
+    height: pxTorem($h - 12);
+    padding-top:pxTorem(12px);
+    &:before{
+      content: "\20";
+      display: block;
+      margin:0 auto pxTorem(6px);
+      width: pxTorem(44px);
+      height: pxTorem(46px);
+      @extend %ico_rem;
+    }
+    //首页
+    &.appNavHome{
+      &:before {
+        background-image: url("../images/iconNavHome.png");
+      }
+    }
+    //分类
+    &.appNavClassify{
+      &:before {
+        background-image: url("../images/iconNavClassify.png");
+      }
+    }
+    //购物车
+    &.appNavShopping{
+      &:before {
+        background-image: url("../images/iconNavShopping.png");
+      }
+    }
+    //注册有礼
+    &.appNavReg{
+      &:before {
+        background-image: url("../images/iconNavReg.png");
+      }
+    }
+    //我的订单
+    &.appNavOrder{
+      &:before {
+        background-image: url("../images/iconNavOrder.png");
+      }
+    }
+    //一分钱体验
+    &.iconNavYi{
+      &:before {
+        background-image: url("../images/iconNavYi.png");
+      }
+    }
+    //个人
+    &.appNavUser{
+      //小圆点
+      position: relative;
+      i{
+        position: absolute;
+        left:58%;
+        top:6%;
+        width:pxTorem(16px);
+        height:pxTorem(16px);
+        background:$red-base;
+        @include border-radius(50%);
+      }
+      //
+      &:before {
+        background-image: url("../images/iconNavUser.png");
+      }
+    }
+    //一元购
+    &.appNavYi{
+      position: relative;
+      &:before {
+        background-image: url("../images/iconNavYiGo.png");
+      }
+      //i{
+      //  position: absolute;
+      //  left:50%;
+      //  top:pxTorem(-25px);
+      //  width:pxTorem(80px);
+      //  margin-left:pxTorem(-40px);
+      //  height:pxTorem(80px);
+      //  @extend %ico_rem;
+      //  background-image: url("../images/iconNavYiGo.png");
+      //}
+    }
+
+    //当前页
+    &.select{
+      color:$blue-base;
+      //首页
+      &.appNavHome {
+        &:before {
+          background-image: url("../images/iconNavHomeS.png");
+        }
+      }
+      //分类
+      &.appNavClassify{
+        &:before {
+          background-image: url("../images/iconNavClassifyS.png");
+        }
+      }
+      //购物车
+      &.appNavShopping{
+        &:before {
+          background-image: url("../images/iconNavShoppingS.png");
+        }
+      }
+      //注册有礼
+      &.appNavReg{
+        &:before {
+          background-image: url("../images/iconNavRegS.png");
+        }
+      }
+      //我的订单
+      &.appNavOrder{
+        &:before {
+          background-image: url("../images/iconNavOrderS.png");
+        }
+      }
+      //一分钱体验
+      &.iconNavYi{
+        &:before {
+          background-image: url("../images/iconNavYiS.png");
+        }
+      }
+      //一元购
+      &.appNavYi{
+        &:before {
+          background-image: url("../images/iconNavYiGoS.png");
+        }
+        //i{
+        //  background-image: url("../images/iconNavYiGoS.png");
+        //}
+      }
+      //个人
+      &.appNavUser{
+        &:before {
+          background-image: url("../images/iconNavUserS.png");
+        }
+      }
+    }
+  }
+}

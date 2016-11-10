@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"个人中心"
+})
+<link rel="stylesheet" href="css/userHome.css"/>
+<body>
+
+
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"用户中心"
+        })
+    </header>
+
+    <article class="main">
+        <div class="userHome">
+            <div class="photo">
+                <div class="newTip">
+                    <i class="iconUserTip"></i>
+                    <span>消息</span>
+                </div>
+                <div class="photoImgTel">
+                    <!--<img src="" alt="">-->
+                    <i></i>
+                    <span>13305029794</span>
+                </div>
+            </div>
+
+            <div class="itemInfo mb20">
+                <a href="">
+                    <i class="iconUserHomeWallet"></i>
+                    <div class="text">
+                        我的钱包
+                        <span class="fr">可用余额<em class="red">￥5000</em></span>
+                    </div>
+                    <i class="iconArrowRight"></i>
+                </a>
+            </div>
+
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomeOrder"></i>
+                    <div class="text">
+                        全部订单
+                    </div>
+                    <i class="iconArrowRight"></i>
+                </a>
+                <div class="line"></div>
+            </div>
+            <ul class="orderState mb20">
+                <li>
+                    <a href="">
+                        <i class="iconUserNoPay"></i>
+                        待付款
+                        <span class="num">1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="iconUserPay"></i>
+                        已付款
+                        <span class="num">10</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="iconUserAccept"></i>
+                        待收货
+                    </a>
+                </li>
+            </ul>
+
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomeReturn"></i>
+                    <div class="text">
+                        我的退货
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomeLike"></i>
+                    <div class="text">
+                        我的关注
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomePoup"></i>
+                    <div class="text">
+                        我的优惠劵
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo mb20">
+                <a href="">
+                    <i class="iconUserHomeYi"></i>
+                    <div class="text">
+                        我的一元购
+                    </div>
+                </a>
+            </div>
+
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomeAddress"></i>
+                    <div class="text">
+                        我的地址
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo">
+                <a href="">
+                    <i class="iconUserHomeHelp"></i>
+                    <div class="text">
+                        我的帮助
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo mb20">
+                <a href="">
+                    <i class="iconUserHomeSeller"></i>
+                    <div class="text">
+                        我是商家
+                    </div>
+                </a>
+            </div>
+
+            <div class="itemInfo mb20">
+                <a href="">
+                    <i class="iconUserHomeSetting"></i>
+                    <div class="text">
+                        设置
+                    </div>
+                </a>
+            </div>
+
+            <div class="itemInfo mb20">
+                <a href="">
+                    <i class="iconUserHomeTel"></i>
+                    <div class="text">
+                        绑定手机
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </article>
+
+    <footer>
+        <nav class="appNav">
+            <a class="appNavHome" href="#!/home/">首页</a>
+            <a class="appNavClassify" href="#!/classify/">分类</a>
+            <a class="appNavShopping" href="#!/shopping/">购物车</a>
+            <!--<a href="loginReister.html" class="appNavReg">注册有礼</a>-->
+            <a href="" class="iconNavYi">体验购买</a>
+            <a class="appNavUser" href="#!/login/">
+                个人
+                <i></i>
+            </a>
+        </nav>
+    </footer>
+</div>
+
+
+</body>
+</html>

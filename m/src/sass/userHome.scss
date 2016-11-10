@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+
+/**
+
+  个人中心首页
+
+**/
+
+
+.userHome{
+  //个人中心
+  .photo{
+    position: relative;
+    //width: pxTorem(750px);
+    height: pxTorem(300px);
+    background-image: url("../images/iconUserBg.jpg");
+    @extend %ico_rem;
+    background-size:100% 100% !important;
+  }
+  //消息
+  .newTip{
+    position: absolute;
+    top: pxTorem(58px);
+    right: pxTorem(30px);
+    i.iconUserTip{
+      width: pxTorem(37px);
+      height: pxTorem(37px);
+      display: block;
+      margin:0 auto;
+      @extend %ico_rem;
+      background-image: url("../images/iconUserTip.png");
+    }
+    span{
+      @include font-dpr(18px);
+    }
+  }
+  //头像
+  .photoImgTel{
+    @include display-flex();
+    @include align-items();
+    position: absolute;
+    left:pxTorem(30px);
+    bottom: pxTorem(35px);
+    //img{
+    //  width:pxTorem(100px);
+    //  height: pxTorem(100px);
+    //  @include border-radius(50%);
+    //}
+    i{
+      display: block;
+      width:pxTorem(100px);
+      height: pxTorem(100px);
+      @include border-radius(50%);
+      background-image: url("../images/userhead.png");
+      @extend %ico_rem;
+      background-color: #fff;
+    }
+    span{
+      margin-left: pxTorem(15px);
+      @include font-dpr(32px);
+    }
+  }
+  //订单状态
+  .orderState{
+    @include display-flex();
+    background-color: #fff;
+    li{
+      position: relative;
+      @include flex(1);
+      padding-top: pxTorem(20px);
+      padding-bottom: pxTorem(25px);
+      text-align: center;
+      a{
+        color: #333;
+      }
+      .num{
+        position: absolute;
+        top:pxTorem(16px);
+        left: 52%;
+        padding:0 pxTorem(10px);
+        border-radius: pxTorem(15px);
+        background-color: $red-base;
+        color: #fff;
+      }
+    }
+    i{
+      display: block;
+      margin: 0 auto pxTorem(20px) auto;
+      width: pxTorem(41px);
+      height: pxTorem(41px);
+      @extend %ico_rem;
+      vertical-align: middle;
+      //待付款
+      &.iconUserNoPay{
+        background-image: url("../images/iconUserNoPay.png");
+      }
+      //已付款
+      &.iconUserPay{
+        background-image: url("../images/iconUserPay.png");
+      }
+      //待收货
+      &.iconUserAccept{
+        background-image: url("../images/iconUserAccept.png");
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,235 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+.discoun{
+
+}
+
+//优惠卷
+.couponsList{
+  padding-top:pxTorem(20px);
+  padding-bottom:pxTorem(50px);
+  $h:144px;
+  $ml:180px;
+  margin:0 pxTorem(30px);
+  li{
+    padding-bottom: pxTorem(10px);
+    position: relative;
+    background:#fff;
+    margin-bottom: pxTorem(10px);
+    //height:pxTorem($h);
+    overflow: hidden;
+    h2,p{
+      margin-left:pxTorem($ml + 20);
+    }
+    h2{
+      @include font-dpr(28px);
+      color:#333333;
+      padding-top:pxTorem(18px);
+      margin-bottom:pxTorem(14px);
+      //&.lineR{
+      //  margin-right:pxTorem(120px);
+      //}
+    }
+    p{
+      @include font-dpr(20px);
+      position: relative;
+      padding-left:pxTorem(16px);
+      color:#999999;
+      //line-height:pxTorem(48px);
+      &:after{
+        position: absolute;
+        left:0;
+        top:pxTorem(10px);
+        display:block;
+        content:"\20";
+        width:pxTorem(8px);
+        height:pxTorem(8px);
+        @include border-radius(50%);
+        background:#999999;
+      }
+    }
+    //即将开始/已使用/已过期
+    //&.soon:after,&.used:after,&.overdue:after{
+    //  content: "\20";
+    //  position: absolute;
+    //  right:pxTorem(10px);
+    //  top:pxTorem(6px);
+    //  width:pxTorem(106px);
+    //  height:pxTorem(86px);
+    //  @extend %ico_rem;
+    //}
+    //即将开始
+    //&.soon{
+    //  &:after{
+    //    background-image: url("../images/couponsSoon.png");
+    //  }
+    //}
+    //已使用
+    //&.used{
+    //  .money{
+    //    background:#ccc;
+    //  }
+    //  .use{
+    //    color:#ccc;
+    //  }
+    //  &:after{
+    //    background-image: url("../images/couponsUsed.png");
+    //  }
+    //}
+    //已过期
+    //&.overdue{
+    //  .money{
+    //    background:#ccc;
+    //  }
+    //  .use{
+    //    color:#ccc;
+    //  }
+    //  &:after{
+    //    background-image: url("../images/couponsOverdue.png");
+    //  }
+    //}
+
+    //不可用
+    &.select{
+      .money{
+        background:#cccccc;
+      }
+    }
+    //选中优惠卷按钮
+    .selectBtn{
+      @extend %selectBtn;
+      position: absolute;
+      right:pxTorem(20px);
+      top:50%;
+      margin:pxTorem(-16px) 0 0 0;
+    }
+    //已使用|已过期
+    .expire{
+      width:pxTorem(120px);
+      height:pxTorem(60px);
+      line-height:pxTorem(80px);
+      position: absolute;
+      right:pxTorem(- 38px);
+      top:pxTorem(- 8px);
+      background:#cccccc;
+      color:#fff;
+      //font-size:pxTorem(32px);
+      font-style:normal;
+      text-align:center;
+      //rotation:180deg;
+      @include rotate(45deg);
+    }
+  }
+  .money{
+    //height:pxTorem($h);
+    position: absolute;
+    left:0;
+    top:0;
+    height:100%;
+    background:$red-base;
+    width:pxTorem($ml);
+    float:left;
+    text-align:center;
+    strong{
+      display: block;
+      color:#fff;
+      @include font-dpr(48px);
+      margin-top: pxTorem(20px);
+    }
+    b{
+      @include font-dpr(48px);
+      position: relative;
+      &:after{
+        content: "￥";
+        font-style: normal;
+        position: absolute;
+        left:pxTorem(-20px);
+        top:0;
+        @include font-dpr(24px);
+      }
+    }
+    .use{
+      display:block;
+      color:#fff;
+      @include font-dpr(36px);
+      text-align:center;
+    }
+    .lineRight{
+      position: absolute;
+      right:pxTorem(-8px);
+      top:pxTorem(-8px);
+      width:pxTorem(14px);
+      height:pxTorem(14px);
+      span{
+        display: block;
+        width:pxTorem(14px);
+        height:pxTorem(14px);
+        @include border-radius(50%);
+        background-color: #eee;
+        margin-bottom:pxTorem(10px);
+      }
+    }
+    //&:after{
+    //  content: "\20";
+    //  position: absolute;
+    //  right:1px;
+    //  top:0;
+    //  height:100%;
+    //  border-right: 1px dashed #fff;
+    //}
+  }
+  //按钮
+  //.couponsUseBtn{
+  //  position: absolute;
+  //  right:pxTorem(10px);
+  //  top:pxTorem(15px);
+  //  border-left:1px dashed #333;
+  //  padding-left:pxTorem(10px);
+  //  overflow:hidden;
+  //  height: pxTorem(154px);
+  //  display: -webkit-box;
+  //  display: box;
+  //  -webkit-box-align:center;
+  //  box-align:center;
+  //  div{
+  //    display: block;
+  //  }
+  //  a{
+  //    display: block;
+  //    width:pxTorem(80px);
+  //    height:pxTorem(40px);
+  //    line-height:pxTorem(40px);
+  //    text-align:center;
+  //    margin-bottom: pxTorem(10px);
+  //    &.use{
+  //      border:1px solid $red_c;
+  //      background:$red_c;
+  //      color:#fff;
+  //    }
+  //    &.select{
+  //      border:1px solid #cccccc;
+  //      color:#cccccc;
+  //    }
+  //    &.no{
+  //      border:1px solid #999;
+  //      color:$red_c;
+  //    }
+  //  }
+  //}
+}
+//使用优惠卷按钮
+.couponsBtn{
+  margin:0 pxTorem(30px);
+  a{
+    text-align:center;
+    display: block;
+    height:pxTorem(90px);
+    line-height:pxTorem(90px);
+    color:#fff;
+    background:$blue-base;
+    @include font-dpr(32px);
+  }
+}

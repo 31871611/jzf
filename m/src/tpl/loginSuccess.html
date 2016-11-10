@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"注册有奖"
+})
+<body>
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"购物车"
+        })
+    </header>
+
+    <article class="main">
+
+
+        <!--购物车为空时-->
+        <div class="shoppingEmpty">
+            <i class="iconPaySuccess"></i>
+            <b>注册成功</b>
+            <b class="red">恭喜你获得集珍坊100元购物券</b>
+            <a href="" class="btn w">我的优惠券</a>
+        </div>
+
+
+
+    </article>
+
+    <footer>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavReg">注册有礼</a>
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <a href="" class="appNavUser">个人</a>
+        </nav>
+    </footer>
+</div>
+
+<!--弹窗-->
+<div class="myalert hide">
+    <div class="opacity"></div>
+    <div class="content">
+        <div class="myalert-box">
+            <p class="cen">确认要删除该商品吗？</p>
+        </div>
+        <div class="myalert-btn">
+            <a href="javascript:;">取消</a>
+            <a href="javascript:;">确定</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

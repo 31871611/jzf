@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"待付款"
+})
+<body>
+
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"待付款"
+        })
+    </header>
+
+    <article class="main bgWhite">
+
+        <div class="paysuccess">
+
+            <ul class="orderList">
+                <li><span>订单号：</span><b>JZ8977979696976</b></li>
+                <li><span>总金额：</span><b class="red">￥0.1</b></li>
+                <li><span>订单状态：</span><b>未付款</b></li>
+                <li><span>下单时间：</span><b>2016 04-13 17:00:09</b></li>
+            </ul>
+            <div class="paySuccessBtn">
+                <a href="">取消订单</a>
+                <a href="">确认汇款</a>
+            </div>
+        </div>
+        <div class="paysubmit">
+            <h2>付款须知</h2>
+            <h3>转账时您需要做这些事：</h3>
+            <p class="red">1、请务必在1个小时之内完成银行转账</p>
+            <p class="red">2、请在汇款时将藏品编号填到备注中</p>
+            <p class="red">3、保留汇款凭证，手机或电脑转账请截图</p>
+
+            <h3>转账完成后您需要做这些事：</h3>
+            <p class="red">1、转账完成后请第一时间拨打电话0591-88212636，通知客服！</p>
+            <p class="red">2、将转账凭证提供至客服</p>
+            <p>转账银行卡信息：</p>
+            <p>账户名称：集珍坊（福建）网络科技有限公司</p>
+            <p>账号：<span class="red">11014832697005</span></p>
+            <p>开户行：平安银行福州分行</p>
+        </div>
+
+    </article>
+</div>
+
+
+<!--取消原因-->
+<div class="alertExitList alertPayInfo">
+    <div class="opacity"></div>
+    <div class="box">
+        <div class="alertTitle">
+            <h2>请说明取消原因</h2>
+            <a href="" class="exit"></a>
+        </div>
+        <div class="alertContent">
+            <ul class="exitList">
+                <li>现在不想买</li>
+                <li>想添加商品</li>
+                <li>价格波动</li>
+                <li>想删除商品</li>
+                <li>商品价格偏贵</li>
+                <li>无法支付</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

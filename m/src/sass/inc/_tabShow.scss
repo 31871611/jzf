@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*
+
+  //tab 寿山石|珠宝|文玩|字画|瓷器
+  $sharing是否平均分
+
+*/
+
+
+@mixin tabShow($h:58px,$select:$blue-base,$sharing:true){
+  height:pxTorem($h);
+  border-bottom:1px solid #dddddd;
+  @if($sharing) {
+    @include display-flex();
+  }
+  background:#fff;
+  a{
+    display: inline-block;
+    @if($sharing) {
+      display: block;
+      @include flex(1);
+    }
+    @include font-dpr(28px);
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    color:#999;
+    text-align:center;
+    position: relative;
+    &.select{
+      span,b{
+        position: relative;
+        border-bottom: pxTorem(4px) solid $select;
+        height:pxTorem($h - 3);
+        line-height:pxTorem($h - 3);
+        color:$select;
+        font-weight: bold;
+        vertical-align: top;
+      }
+      //选中区域为字体宽度
+      span{
+        display: inline-block;
+      }
+      //选中区域为连接区域
+      b{
+        display: block;
+      }
+    }
+
+  }
+  i{
+    position: absolute;
+    left:50%;
+    &.price{
+      margin-left:pxTorem(56px);
+      top:pxTorem(8px);
+      &:before,&:after{
+        content: "\20";
+        position: absolute;
+        left:0;
+      }
+      &:before{
+        top:pxTorem(10px);
+        @include arrow(top,pxTorem(10px),#333333);
+      }
+      &:after{
+        top:pxTorem(34px);
+        @include arrow(bottom,pxTorem(10px),#333333);
+      }
+    }
+    &.up{
+      &:before {
+        border-color: transparent transparent $red-base transparent;
+      }
+    }
+    &.down{
+      &:after {
+        border-color: $red-base transparent transparent transparent;
+      }
+    }
+
+    //&.filter{
+    //  margin-left:pxTorem(30px);
+    //  top:pxTorem(34px);
+    //  width:pxTorem(21px);
+    //  height:pxTorem(21px);
+    //  @extend %ico_rem;
+    //  background-image: url("../images/iconFilter.png");
+    //}
+  }
+}

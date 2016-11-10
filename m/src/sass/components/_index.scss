@@ -1,0 +1,731 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+//搜索
+.indexSearch{
+  $h:58px;
+  height:pxTorem($h);
+  @if $wxTop {
+    padding-top:pxTorem(20px);
+  } @else {
+    padding-top:pxTorem(40px + 5);
+  }
+  padding-bottom:pxTorem(25px);
+  background:rgba(0,0,0,.9);
+  position: fixed;
+  left:0;
+  top:0;
+  width:100%;
+  z-index:35;
+  //@include transition(all .5ms);
+  @extend .display-flex;
+  .inputSearch{
+    $h:58px;
+    @extend .flex;
+    width:100%;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    margin:0 3%;
+    background:rgba(255,255,255,.4);
+    @include font-dpr(26px);
+    //text-indent: pxTorem(65px);
+    @include border-radius(10px);
+    text-align:center;
+    a{
+      //line-height:pxTorem($h);
+      color:#fff;
+      display: inline-block;
+      position: relative;
+      &:before{
+        position: absolute;
+        left:pxTorem(-42px);
+        top:pxTorem(12px);
+        vertical-align: top;
+        //margin-top:pxTorem(12px);
+        //margin-right:pxTorem(10px);
+        content: "\20";
+        display: inline-block;
+        width:pxTorem(32px);
+        height:pxTorem(32px);
+        background-image: url("../images/iconSearchF.png");
+        @extend %ico_rem;
+      }
+    }
+  }
+  .testClassify,.indexNotice{
+    color:#fff;
+    width:pxTorem(50px);
+    @include font-dpr(18px);
+    text-align:center;
+    &:before{
+      margin:0 auto;
+      content: "\20";
+      display: block;
+      @extend %ico_rem;
+    }
+    a{
+      color:#fff;
+    }
+  }
+  .testClassify{
+    padding-left:4%;
+    &:before{
+      width:pxTorem(40px);
+      height:pxTorem(36px);
+      background-image: url("../images/iconIndexClassify.png");
+    }
+  }
+  .indexNotice{
+    padding-right:4%;
+    &:before{
+      width:pxTorem(33px);
+      height:pxTorem(36px);
+      background-image: url("../images/iconNotice.png");
+    }
+  }
+}
+
+//#onePage{
+//  position: relative;
+//  .lotteryIcon{
+//    z-index: 100;
+//    position: absolute;
+//    left:pxTorem(20px);
+//    top:pxTorem(240px);
+//    $w:130px;
+//    $h:118px;
+//    width:pxTorem($w);
+//    height: pxTorem($h);
+//    img{
+//      width:pxTorem($w);
+//      height: pxTorem($h);
+//      vertical-align: middle;
+//    }
+//  }
+//}
+
+//导航
+.indexNav{
+  $h:139px;
+  height:pxTorem($h);
+  border-bottom: 1px solid #dddddd;
+  background:#fff;
+  @extend .display-flex;
+  text-align:center;
+  a{
+    display: block;
+    @extend .flex;
+    color:#333333;
+    padding-top:pxTorem(28px);
+  }
+  .img{
+    text-align: center;
+    height:pxTorem(56px);
+    margin-bottom: pxTorem(14px);
+    img{
+      vertical-align: middle;
+      height:100%;
+    }
+  }
+  span{
+    display: block;
+    text-align:center;
+    @include font-dpr(24px);
+  }
+}
+
+//分类.精品汇.乐淘.20160929
+.indexList{
+  @include display-flex();
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  background: #fff;
+  margin-top: pxTorem(8px);
+  margin-bottom: pxTorem(8px);
+  padding:0 pxTorem(10px) pxTorem(18px) pxTorem(18px);
+  .title{
+    $h:30px;
+    height:pxTorem($h);
+    padding:pxTorem(15px) 0;
+    h2,span{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+    h2{
+      @extend %fl;
+      @include font-dpr(28px);
+      border-left:pxTorem(4px) solid #333;
+      padding-left:pxTorem(10px);
+    }
+    span{
+      @extend %fr;
+      @include font-dpr(20px);
+      color:#333;
+    }
+  }
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//精品汇
+.indexBoutique{
+  $h:430px;
+  $w:280px;
+  width:pxTorem($w);
+  margin-right: pxTorem(16px);
+  .box{
+    height:pxTorem($h);
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+//乐淘
+.indexHappy{
+  $h:430px;
+  @include flex(1);
+  .title{
+    span{
+      padding-right: pxTorem(10px);
+    }
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .box{
+    height:pxTorem($h);
+  }
+  section{
+    display: block;
+    @include display-flex();
+    width: 100%;
+  }
+  .flex{
+    width: 100%;
+    margin:0 pxTorem(10px) pxTorem(10px) 0;
+    height:pxTorem(210px);
+  }
+}
+
+/*
+//分类.精品汇.乐淘
+.indexBuying{
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  background: #fff;
+  //padding-bottom: pxTorem(18px);
+  margin-top: pxTorem(8px);
+  margin-bottom: pxTorem(8px);
+  .title{
+    $h:30px;
+    height:pxTorem($h);
+    padding:pxTorem(15px) pxTorem(20px);
+    h2,span{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+    h2{
+      @extend %fl;
+      @include font-dpr(28px);
+      border-left:pxTorem(4px) solid #333;
+      padding-left:pxTorem(10px);
+    }
+    span{
+      @extend %fr;
+      @include font-dpr(20px);
+      color:#333;
+    }
+  }
+  .box{
+    padding:0 pxTorem(9px) 0 pxTorem(18px);
+    @extend .display-flex;
+  }
+  section{
+    display: block;
+    width:100%;
+    .flex{
+      margin-bottom: pxTorem(18px);
+      margin-right:pxTorem(9px);
+    }
+    a{
+      display: block;
+      width:100%;
+      height:100%;
+    }
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+*/
+
+//专场
+.special{
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  background: #fff;
+  margin-top: pxTorem(8px);
+  margin-bottom: pxTorem(8px);
+  padding-bottom: pxTorem(9px);
+  .title{
+    $h:30px;
+    height:pxTorem($h);
+    padding:pxTorem(15px) pxTorem(20px);
+    h2,span{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+    h2{
+      @extend %fl;
+      @include font-dpr(28px);
+      border-left:pxTorem(4px) solid #333;
+      padding-left:pxTorem(10px);
+    }
+    span{
+      @extend %fr;
+      @include font-dpr(20px);
+      color:#333;
+    }
+  }
+}
+
+
+//专场图片
+.indexStruck,.indexSpecial{
+  a{
+    display: block;
+  }
+  img{
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+//私洽
+.indexStruck{
+  $h:340px;
+  height:pxTorem($h);
+  margin:0 pxTorem(18px) pxTorem(8px);
+  //padding-bottom: pxTorem(8px);
+  img{
+    height:pxTorem($h);
+  }
+}
+
+
+//专场
+.indexSpecial{
+  $h:340px;
+  height:pxTorem($h);
+  position: relative;
+  margin:0 pxTorem(18px) pxTorem(8px);
+  .opacity{
+    position: absolute;
+    background:rgba(0,0,0,.3);
+  }
+  img{
+    height:pxTorem($h);
+  }
+  section{
+    z-index: 29;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    text-align: center;
+    @extend .display-flex;
+    @include align-items();
+    @include justify-content(center);
+    h3{
+      @include font-dpr(42px);
+      font-weight: bold;
+      color:#fff;
+    }
+    h4{
+      @include font-dpr(28px);
+      color:#fff;
+      margin-top:pxTorem(5px);
+    }
+  }
+}
+
+
+//专场标题
+.indexTitle{
+  $h:90px;
+  height:pxTorem($h);
+  line-height:pxTorem($h);
+  text-align:center;
+  @include font-dpr(32px);
+  strong{
+    position: relative;
+    color:#333333;
+    &:before,&:after{
+      content: "\20";
+      position: absolute;
+      top:50%;
+      height:1px;
+      width:pxTorem(60px);
+      background:#999999;
+    }
+    &:before{
+      left:pxTorem(-70px);
+    }
+    &:after{
+      right:pxTorem(-70px);
+    }
+  }
+}
+
+
+//专场相关列表
+.indexSpecialList{
+  $w:200px;
+  $h:36px;
+  overflow-x:auto;
+  width:100%;
+  margin-top:pxTorem(20px);
+  section{
+    //width + margin-left * length + 20
+    width:999em;
+  }
+  a{
+    display: inline-block;
+    width:pxTorem($w);
+    height:pxTorem($w + $h * 2);
+    padding-left:pxTorem(20px);
+  }
+  img{
+    vertical-align: middle;
+    display: block;
+    width:pxTorem($w);
+    height:pxTorem($w);
+  }
+  h3,span{
+    display: block;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    overflow:hidden;
+    text-align:center;
+    color:#333;
+  }
+}
+
+
+
+/*******************************************************************/
+
+
+
+
+//珍石惠
+.indexRush{
+  $h:50px + 200px + 5 + 35 + 35;
+  $listH:200px + 5 + 35 + 35;
+  $imgW:200px;
+  height:pxTorem($h);
+  background: #fff;
+  overflow: hidden;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  padding-bottom: pxTorem(18px);
+  //标题
+  .rushTitle{
+    $h:30px;
+    height:pxTorem($h);
+    padding:pxTorem(15px) 0;
+    h2,.more{
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+    h2{
+      border-left:pxTorem(4px) solid #333;
+      @include font-dpr(28px);
+      float:left;
+      padding-left:pxTorem(12px);
+      margin:0 pxTorem(20px);
+    }
+    .more{
+      float:right;
+      @include font-dpr(20px);
+      color:#333;
+      margin-right:pxTorem(30px);
+    }
+  }
+  //内容h:340
+  section{
+    overflow-x:auto;
+    width:100%;
+    height:pxTorem($listH);
+  }
+  ul.list{
+    //li宽 + marginLeft * 长度 +后面空个18
+    width:pxTorem((200px + 18) * 7 + 18);
+    height:pxTorem($listH);
+    li{
+      height:pxTorem($listH);
+      width:pxTorem($imgW);
+      margin-left:pxTorem(18px);
+      float:left;
+      position: relative;
+      overflow:hidden;
+    }
+    a{
+      display: block;
+    }
+    img{
+      width:pxTorem($imgW);
+      height:pxTorem($imgW);
+      vertical-align: middle;
+    }
+    .box{
+      h3,span{
+        @include font-dpr(20px);
+        color:#000;
+        height:pxTorem(35px);
+        line-height:pxTorem(35px);
+        overflow: hidden;
+        text-align: center;
+      }
+      h3{
+        margin:pxToRem(5px) pxTorem(10px) 0;
+      }
+      span{
+        display: block;
+      }
+    }
+
+  }
+}
+
+
+//倒记时
+.indexTime{
+  float:left;
+  $h:15px;
+  $w:30px;
+  height:pxTorem($h * 2);
+  @include font-dpr(24px);
+  span{
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width:pxTorem($w);
+    height:pxTorem($h * 2);
+    line-height:pxTorem($h * 2);
+    color:#fff;
+    text-align:center;
+    @include font-dpr(20px);
+    z-index:1;
+    &:before,&:after{
+      width:pxTorem($w);
+      height:pxTorem($h);
+      content: "\20";
+      position: absolute;
+      left:0;
+      @extend %ico_rem;
+      z-index:-1;
+    }
+    &:before{
+      top:0;
+      @include gradient-vertical(#333333, #434343);
+    }
+    &:after{
+      bottom:0;
+      @include gradient-vertical(#434343,#333333);
+    }
+  }
+}
+
+
+
+
+
+@if $wxTop {
+
+
+
+
+  //集珍坊app首页添加下载广告
+  .appDownBottom{
+    z-index:-1;
+    position: fixed;
+    left:0;
+    bottom:pxTorem(99px);
+    width:100%;
+    height:pxTorem(120px);
+    background: rgba(234,58,56,.98);
+    @extend .display-flex;
+    @include align-items();
+    //@include justify-content(space-between);
+    border-top:1px solid #e5e5e5;
+    a,.exit{
+      display: block;
+    }
+    .exit{
+      margin:0 2% 0 3%;
+      width:pxTorem(54px);
+      height:pxTorem(54px);
+      position: relative;
+      @include rotate(45deg);
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        background:#fff;
+      }
+      &:before{
+        left:18%;
+        top:48%;
+        width:pxTorem(34px);
+        height:1px;
+      }
+      &:after{
+        left:48%;
+        top:18%;
+        width:1px;
+        height:pxTorem(34px);
+      }
+    }
+    .img{
+      width:pxTorem(92px);
+      height:pxTorem(92px);
+      background-image: url("../images/iconUserAboutMe.png");
+      @extend %ico_rem;
+      margin-right:3%;
+    }
+    h3{
+      @include font-dpr(32px);
+      font-weight: bold;
+      line-height:pxTorem(46px);
+      color:#fff;
+    }
+    p{
+      @include font-dpr(28px);
+      line-height:pxTorem(42px);
+      color:#fff;
+    }
+    a{
+      position: absolute;
+      right:4%;
+      top:pxTorem(35px);
+      text-align:center;
+      width:pxTorem(138px);
+      height:pxTorem(48px);
+      line-height:pxTorem(48px);
+      border:1px solid #fff;
+      color:#fff;
+    }
+  }
+
+} @else {
+
+  //引导页
+  .appGuidePage{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    z-index: 999;
+    background:#fff;
+    ul{
+      font-size:0;
+      height:100%;
+      z-index:29;
+      position:relative;
+      white-space:nowrap;
+    }
+    li{
+      position:relative;
+      display:inline-block;
+      width:100%;
+      height:100%;
+      vertical-align:top;
+      white-space:normal;
+      .box{
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        -webkit-backface-visibility:hidden;
+        @include display-flex();
+        @include align-items();
+        @include justify-content(center);
+      }
+      img{
+        max-width:100%;
+        height:auto;
+      }
+    }
+    //按钮
+    .btn{
+      position: absolute;
+      left:0;
+      //top:80%;
+      top:pxTorem(1070px);
+      width:100%;
+      margin:0;
+      a{
+        margin:0 auto;
+        width:pxTorem(286px);
+        height:pxTorem(80px);
+        line-height:pxTorem(80px);
+        text-align:center;
+        color:#fff;
+        @include font-dpr(32px);
+        background: $red-base;
+        @include border-radius(2px);
+      }
+    }
+    //小圆圈
+    .tab{ //与首页轮播.indexAdTab样式一样
+      $w:15px;
+      z-index:30;
+      position: absolute;
+      left:0;
+      bottom:pxTorem(30px);
+      width:100%;
+      height:pxTorem($w + 4);
+      text-align:center;
+      span{
+        margin-left:pxTorem(15px);
+        vertical-align: top;
+        @include border-radius(50%);
+        display: inline-block;
+        width:pxTorem($w - 4);
+        height:pxTorem($w - 4);
+        border:pxTorem(2px) solid #fff;
+        &.select{
+          border:0;
+          background:#fff;
+          width:pxTorem($w);
+          height:pxTorem($w);
+        }
+        &:nth-child(1){
+          margin-left:0;
+        }
+      }
+    }
+  }
+
+  /* 引导页放大关闭 */
+  .enlarge-leave{
+    @include animation(enlargeExit 400ms);
+  }
+
+}

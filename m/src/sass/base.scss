@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+html,body{
+  height:100%;
+  //overflow-x: hidden;
+}
+html {
+  font-size: $browser-default-font-size;
+}
+body{
+  @include font-dpr(24px);
+  background-color:$bg-color;
+}
+
+
+//内容居中
+//.mw{
+//  width:pxTorem(640px);
+//  margin:0 auto;
+//  min-width:320px;
+//}
+.hide{
+  display: none !important;
+}
+.mt20{
+  margin-top: pxTorem(20px) !important;
+}
+.mt25{
+  margin-top: pxTorem(25px) !important;
+}
+.mt80{
+  margin-top: pxTorem(80px) !important;
+}
+.mb10{
+  margin-bottom: pxTorem(10px) !important;
+}
+.mb20{
+  margin-bottom: pxTorem(20px) !important;
+}
+.mb30{
+  margin-bottom: pxTorem(30px) !important;
+}
+
+.red{
+  color:$red-base !important;
+}
+
+.url{
+  color:#3366cc !important;
+}
+
+//错误提示
+.error{
+  color:$red_c;
+}
+.bgWhite{
+  background:#fff;
+}
+.clearfix{
+  @extend %clearfix;
+}
+
+//弹性
+.display-flex{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+.flex{
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+}
+
+
+
+//继续下滑
+.goMove{
+  text-align:center;
+  color:#333;
+  height:pxTorem(60px);
+  line-height:pxTorem(60px);
+}
+
+/****************************************************/
+
+//基础布局，版面|.wrap|article.main|.scrollHide
+@import "comm/layout";
+
+//头部|.header|.topSearch
+@import "components/header";
+
+//底部导航|.appNav
+@import "components/navapp";
+
+//登录注册|.loginRegister
+@import "components/loginRegister";
+
+//引入字体图标
+@include font-face('iconfont','font/iconfont');
+
+//搜索|.searchInfoList
+@import "components/search";
+
+//检索|
+@import "components/retrieval";
+
+//公告|.bulletinList
+//@import "components/bulletin";
+
+//轮播|.sliderX
+@import "components/slider";
+
+//首页|.index*+|.guessLike
+@import "components/index";
+
+//图录
+@import "components/catalogue";
+
+//商品列表|.goodsList
+@import "components/goodsList";
+
+//品类选择列表|.categoryChoice...已分离
+//@import "components/category";
+
+//商品详情页|.detail*+
+@import "components/detail";
+
+//购物车|.shoppingCart|可以分离
+@import "components/shoppingcart";
+
+//结算中心
+@import "components/clearing";
+
+//用户中心物流信息|.logisticsInfo|.logisticsPath.已分离
+//@import "components/logistics";
+
+//私洽|.negotiation|.thumbnail...已分离
+//@import "components/negotiation";
+
+//珍大师文章|.lBorTitle|.collectDetail|.collectList|.collectTip|.collectItem
+//@import "components/article";
+
+//名家|.famous...已分离
+//@import "components/famous";
+
+//订单列表
+@import "components/orderList";
+
+//支付成功
+@import "components/paysuccess";
+
+//用户中心
+@import "components/user";
+
+//电子钱包
+@import "components/E-wallet";
+
+//商家绑定.已分离
+//@import "components/sellerInfo";
+
+//优惠卷
+@import "components/coupons";
+
+//支付成功或失败
+@import "components/paysuccess";
+
+//动画keyframes
+@import "components/keyframes";
+
+//银行卡
+@import "components/credit";
+
+//按钮|.btn|.btnRow
+@import "components/btn";
+
+//页面失踪404|no404
+//@import "components/404";
+
+//弹窗
+@import "components/alert";
+
+
+//关注公众号页面
+//@import "components/mp";
+
+/****************************************************/
+
+
+
+/*
+
+  参考个人中心首页
+
+  ——————————————————————————————————
+   图标 文字                    图标
+   分隔边框下划线
+  ——————————————————————————————————
+
+
+    <div class="itemInfo mb20">
+      <a href="">
+          <i class="iconUserHomeWallet"></i>
+          <div class="text">
+              我的钱包
+              <span class="fr">可用余额<em class="red">￥5000</em></span>
+          </div>
+          <i class="iconArrowRight"></i>
+      </a>
+      <div class="line"></div>
+  </div>
+
+*/
+.itemInfo{
+  @import "inc/itemInfo";
+  @include itemInfo();
+}
+
+
+
+/********************************************************/
+
+
+//弹窗遮罩
+#opacity{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  background:#000;
+  @include opacity(50);
+  z-index:98;
+}
+
+//维护提示
+#opacity2{
+  z-index:98;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  background: rgba(0,0,0,0.5);
+  @extend %boxcen;
+  color: #fff;
+  ul{
+    text-align:center;
+    line-height:pxTorem(35px);
+  }
+}
+
+
+//加载
+.buffering{
+  background:#fff;
+  position:fixed;
+  z-index: 1000;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  @extend %boxcen;
+  img{
+    @include animation(rotate 1s 0 linear infinite);
+  }
+}
+
+//等待中|圆圈在行的中间
+.loadmore,.loadmoreIng{
+  z-index:100;
+  text-align:center;
+  color:#333;
+  @include font-dpr(28px);
+  @include transition(all 1ms);
+  //overflow:hidden;
+  span {
+    height: pxTorem(40px);
+    width: pxTorem(40px);
+    border-radius: 100%;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid #003247;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    @include animation(rotate 0.75s 0 linear infinite);
+  }
+  img{
+    @include animation(rotate 1s 0 linear infinite);
+  }
+}
+
+//结算等待中|圆圈在屏幕中间
+.waitingfor{
+  background:rgba(0,0,0,.5);
+  position:fixed;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  @extend %boxcen;
+}
+
+
+
+//无商品显示
+.noproduct{
+  @include font-dpr(28px);
+  text-align:center;
+  padding:pxTorem(10px) 0;
+}
+
+
+
+
+//上拉按钮
+.slideTopBtn{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom: 0;
+  left:0;
+  background:rgba(0,0,0,.5);
+  z-index:65;
+  .box{
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    background:$body_bg;
+    @include animation(SlideBottomToTop .5s);
+    ul{
+
+    }
+    li,a{
+      @extend %f16;
+      color:#333;
+      height:pxTorem(48px * 2);
+      line-height:pxTorem(48px * 2);
+      text-align:center;
+      display: block;
+      background-color:#fff;
+    }
+    li{
+      border-bottom: 1px solid #eee;
+    }
+    a.exit{
+      margin-top:pxTorem(10px);
+    }
+  }
+}
+
+
+
+//url连接
+%url{
+  color:#3366cc;
+}
+
+//正方形图片
+%img{
+  position: absolute;
+  width:100%;
+  //height:100%;
+  height:auto;
+  vertical-align: middle;
+}
+.img-auto{
+  width:100%;
+  //height:100%;
+  vertical-align: middle;
+}
+//让图片支持响应式布局
+.img-responsive{
+  max-width: 100%;
+  height: auto;
+  //display: block;
+}
+
+

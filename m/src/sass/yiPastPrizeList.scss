@@ -1,0 +1,71 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+
+  一元购
+
+*/
+
+
+
+
+
+
+/***************************************************************************************/
+
+
+//无.夺宝订单。获奖列表内容
+.noYiPrizeList{
+  padding-top: pxTorem(120px);
+  i{
+    display: block;
+    margin:0 auto;
+    width:pxTorem(348px);
+    height:pxTorem(284px);
+    @extend %ico_rem;
+    background-image: url("../images/iconNoYiPrize.png");
+  }
+  span{
+    margin-top:pxTorem(35px);
+    display: block;
+    text-align: center;
+    @include font-dpr(36px);
+    color:#b6b4b4;
+  }
+}
+
+
+//往期中奖页面
+.yiPastPrizeList{
+  li{
+    border-bottom: 1px solid #ddd;
+    padding:pxTorem(35px) pxTorem(76px) pxTorem(10px) pxTorem(42px);
+  }
+  h3{
+    line-height: pxTorem(40px);
+    @include font-dpr(28px);
+    margin-bottom: pxTorem(25px);
+    span{
+      color:$red-yi;
+    }
+  }
+  .bottom{
+    height: pxTorem(50px);
+    span{
+
+      &.num{
+        @extend %fl;
+      }
+      &.date{
+        @extend %fr;
+      }
+    }
+  }
+}
+
+

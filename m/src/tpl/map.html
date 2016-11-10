@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+  "title":"集珍艺术馆"
+})
+<style type="text/css">
+  body,html,#allmap{width: 100%;height: 100%;overflow: hidden;margin:0;padding:0;font-family:"Microsoft YaHei";}
+  #btn{position: absolute;left:10px;bottom:10px;}
+  .iconBackTop{
+    z-index:99;
+    position:fixed;
+    top:.66667rem;
+    left:2%;
+    width:1.17333rem;
+    height:1.17333rem;
+  }
+  .iconBackTop:after{
+    background-image:url("../images/iconBack.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    display:block;
+    content:"\20";
+    width:.77333rem;
+    height:.77333rem;
+    background-color:rgba(204,204,204,.3);
+    border-radius:50%;
+  }
+</style>
+<body>
+<div id="allmap"></div>
+<select id="btn">
+  <option value="0">去集珍坊</option>
+  <option value="1">走路</option>
+  <option value="2">开车</option>
+</select>
+<a href="javascript:;" onclick="window.history.back();" class="iconBackTop"></a>
+</body>
+</html>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VCvfcYgx837aCVlT4LkFuGAs&callback=init"></script>
+<script type="text/javascript">
+  //百度地图API功能
+  //    function loadJScript() {
+  //        var script = document.createElement("script");
+  //        script.type = "text/javascript";
+  //        script.src = "http://api.map.baidu.com/api?v=2.0&ak=VCvfcYgx837aCVlT4LkFuGAs&callback=init";
+  //        document.body.appendChild(script);
+  //    }
+  //    window.onload = loadJScript;  //异步加载地图
+
+  function init() {
+    var map = new BMap.Map("allmap");                   // 创建Map实例
+    var point = new BMap.Point(119.30204,26.090364);    // 创建点坐标
+    var marker = new BMap.Marker(point);                // 创建标注
+    map.addOverlay(marker);                             // 将标注添加到地图中
+    map.centerAndZoom(point,100);                       //放大倍数
+    //窗口信息
+    var opts = {
+      width : 200,                              // 信息窗口宽度
+      height: 100,                              // 信息窗口高度
+      title : "集珍坊（福建）网络科技有限公司 " ,   // 信息窗口标题
+      enableMessage:true,                       //设置允许信息窗发送短息
+      message:"没用?"
+    };
+    var infoWindow = new BMap.InfoWindow("<p>地址：福建省福州市鼓楼区杨桥东路19号雅道巷水流湾院落海峡文交所1楼展厅</p><p>电话：<a href='tel:0591-88212636'>0591-88212636</a></p>", opts);  // 创建信息窗口对象
+    map.openInfoWindow(infoWindow,point);   //开启信息窗口
+    //窗口信息end
+
+    var local = new BMap.LocalSearch(map, {
+      renderOptions:{map: map}
+    });
+    //local.search("福建海峡文化产权交易所");      //默认定位信息
+    //map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+    //显示标尺
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT,offset: new BMap.Size(10, 10)});
+    map.addControl(top_left_control);
+    //步行
+    var btn=document.getElementById("btn");
+    btn.onchange=function(){
+      if(this.value == 1){
+        //步行
+        t=setInterval(function(){
+          if(geolocation.x){
+            clearInterval(t);
+            var p1 = new BMap.Point(geolocation.x,geolocation.y);
+            var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+            walking.search(p1, point);
+          }else{
+            getGeolocation();
+          }
+        },1000);
+      }else if(this.value == 2){
+        //驾车
+        t=setInterval(function(){
+          if(geolocation.x){
+            clearInterval(t);
+            var p1 = new BMap.Point(geolocation.x,geolocation.y);
+            var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, autoViewport: true}});
+            driving.search(p1, point);
+            driving.search(p1, point);
+          }else{
+            getGeolocation();
+          }
+        },1000);
+      }
+    };
+
+    //保存经纬度
+    var geolocation={};
+    //定位经纬度
+    function getGeolocation(){
+      new BMap.Geolocation().getCurrentPosition(function (r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+          var mk = new BMap.Marker(r.point);
+          //显示标点
+//                    map.addOverlay(mk);
+          //panTo()方法将让地图平滑移动至新中心点，如果移动距离超过了当前地图区域大小，则地图会直跳到该点
+          map.panTo(r.point);
+          geolocation.x=r.point.lng;
+          geolocation.y=r.point.lat;
+        }
+        else {
+          alert('failed' + this.getStatus());
+        }
+      }, {enableHighAccuracy: true});
+    }
+
+  }
+
+  window.onload = init;  //异步加载地图
+
+
+</script>

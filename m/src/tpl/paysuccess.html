@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"支付成功"
+})
+<body>
+
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"支付成功"
+        })
+    </header>
+
+    <article class="main bgWhite">
+
+        <div class="paysuccess">
+            <div class="shoppingEmpty">
+                <i class="iconPaySuccess"></i>
+                <b class="red">恭喜您支付成功！</b>
+            </div>
+
+            <ul class="orderList">
+                <li><span>交易时间：</span><b>2016-04-08 20:02:31</b></li>
+                <li><span>支付方式：</span><b>微信支付</b></li>
+                <li><span>订单号：</span><b>JZ8977979696976</b></li>
+            </ul>
+
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="btn paySuccessBtn">
+            <a href="">继续购物</a>
+            <a href="">查看订单</a>
+        </div>
+    </footer>
+</div>
+
+<!--领取优惠卷弹窗-->
+<div class="getCoupons">
+    <div class="box">
+        <h2>恭喜您！</h2>
+        <h2>获得 1 张优惠劵</h2>
+        <div class="showInfo">
+            <ul class="couponsList">
+                <li>
+                    <div class="money">
+                        <strong><b>500</b></strong>
+                        <span class="use">满100可用</span>
+                        <div class="lineLeft">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <h2>集珍坊优惠劵</h2>
+                    <p>非特价商品</p>
+                    <p>2016.01.04 - 2016.01.15</p>
+                </li>
+            </ul>
+            <div class="setBtn">
+                <a href="">使用优惠券</a>
+                <a href="">我的优惠券</a>
+            </div>
+        </div>
+        <div class="exit">x</div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//公告
+.bulletinList{
+  li{
+    background: #fff;
+    margin-top:pxTorem(20px);
+    position: relative;
+    padding:pxTorem(30px) 0 pxTorem(20px);
+    h3,p,span{
+      margin-left:pxTorem(30px);
+      margin-right:pxTorem(70px);
+      display: block;
+    }
+    h3{
+      @include font-dpr(32px);
+      color:#1d1d1d;
+      margin-bottom: pxTorem(10px);
+    }
+    em{
+      margin-right:pxTorem(10px);
+    }
+    p{
+      color:#333333;
+      @include font-dpr(28px);
+      line-height:pxTorem(42px);
+      display: none;
+    }
+    span{
+      margin-top: pxTorem(10px);
+      color:#999999;
+      @include font-dpr(24px);
+    }
+    &:after{
+      content: "\20";
+      position: absolute;
+      right:pxTorem(32px);
+      top:pxTorem(46px);
+      width: pxTorem(27px);
+      height: pxTorem(15px);
+      background-image: url("../images/iconArrowB.png");
+      @extend %ico_rem;
+    }
+    &.select{
+      h3{
+        color:#999999;
+      }
+      p{
+        display: block;
+      }
+      &:after{
+        background-image: url("../images/iconArrowT.png");
+      }
+    }
+  }
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"详情页"
+})
+<body id="app">
+<div class="wrap">
+    <header>
+        <div class="header" v-show="!isPage">
+            <div class="left">
+                <a href="javascript:;" @click="back" class="return"></a>
+            </div>
+            <h2>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件</h2>
+            <div class="right">
+                <a href="javascript:;" class="iconShare"></a>
+                <!--<a href="javascript:;" class="iconSearch"></a>-->
+                <!--<a href="" class="txt">取消</a>-->
+            </div>
+        </div>
+        <div class="showTab" v-show="!isPage">
+            <a href="javascript:;" @click="toggleTab(0)" :class="{select:isTab == 0}">藏品展示</a>
+            <a href="javascript:;" @click="toggleTab(1)" :class="{select:isTab == 1}">作者介绍</a>
+        </div>
+    </header>
+    <!-- :class="{scrollHide:noScroll}" -->
+    <article class="main" @touchstart="detailStart($event)" @touchmove="detailMove($event)" @touchend="detailEnd($event)">
+        <div v-show="isPage" :style="{transform:'translate3d(0px,-'+loadHeight+'px, 0px)',transition: 'transform 1ms'}">
+            <a href="javascript:;" @click="back" class="iconBackTop"></a>
+            <a href="javascript:;" class="iconShareTop"></a>
+            <!--轮播-->
+            <div class="indexAd detailAd" style="height: 375px;">
+
+            </div>
+
+            <div class="detailTitle">
+                <h1>A891 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件</h1>
+                <h3 class="price"><i>￥</i>18,500</h3>
+                <!--寿山石基本信息-->
+                <p><span>数量：1</span><span>重量：12.1g</span></p>
+                <!--珠宝基本信息-->
+                <p><span>数量：3</span><span>主石尺寸：10x8.9 mm</span></p>
+                <p><span>总重：15g</span><span>主石重量：10g</span></p>
+                <div class="love" @click="back">105</div>
+                <a href="tel:0591-88212636" class="tel">电话预定</a>
+            </div>
+
+            <!--珍大师详情-->
+            <div class="detailZshEnd">
+                <h3 class="price"><i>￥</i>18,500</h3>
+                <s class="costPrice">原价：¥18500</s>
+                <div class="indexTime hide">
+                    距结束
+                    <b>03天</b>
+                    <span>00</span>
+                    <em>:</em>
+                    <span>00</span>
+                    <em>:</em>
+                    <span>00</span>
+                </div>
+            </div>
+
+            <div class="detailTitle">
+                <h1>A891 郭懋介残荷听雨系列套件章郭</h1>
+                <!--寿山石基本信息-->
+                <p><span>数量：1</span><span>重量：12.1g</span></p>
+                <!--珠宝基本信息-->
+                <p><span>数量：3</span><span>主石尺寸：10x8.9 mm</span></p>
+                <p><span>总重：15g</span><span>主石重量：10g</span></p>
+                <div class="love">105</div>
+                <a href="tel:0591-88212636" class="tel">电话预定</a>
+            </div>
+
+            <div class="detailInfo">
+                <h2>藏品详情</h2>
+                <ul>
+                    <li><span>编号：</span><em>A501</em></li>
+                    <li><span>数量：</span><em>1</em></li>
+                    <li><span>作者：</span><em>郭懋介</em></li>
+                    <li><span>形式：</span><em>印章</em></li>
+                    <li><span>品类：</span><em>寿山石</em></li>
+                    <li><span>尺寸：</span><em>4.60x4.40x4.60cm</em></li>
+                    <li><span>材质：</span><em>芙蓉石</em></li>
+                    <li><span>重量：</span><em>100g</em></li>
+                    <li><span>款识：</span><em>正大光明</em></li>
+                    <li><span>备注：</span><em>底部有瑕疵底部有瑕疵</em></li>
+                </ul>
+            </div>
+
+            <ul class="detailList">
+                <li class=""><a href="map.html">
+                    <i class="iconMap"></i>
+                    <p>线下门店</p>
+                    <!--<p>线下门店：福建省福州市鼓楼区杨桥东路19号雅道巷水流湾院落海峡文交所1楼展厅</p>-->
+                    <i class="iconArrowR"></i>
+                </a></li>
+                <li class=""><a href="tel:0591-88212636">
+                    <i class="iconTelC"></i>
+                    <p>客服电话：0591-88212636</p>
+                    <i class="iconArrowR"></i>
+                </a></li>
+            </ul>
+
+            <div class="detailExplain">
+                <!--<h2>成交记录</h2>-->
+                <p class="f12">成交时间：2015-12-12 12:12:12</p>
+            </div>
+
+            <ul class="detailList">
+                <li class="" @click="toggleInfo"><a href="javascipr:;">
+                    <i class="iconArticle"></i>
+                    <p>购买须知</p>
+                    <i class="iconArrowB"></i>
+                </a></li>
+            </ul>
+
+            <!--<div class="detailExplain" >-->
+                <!--<h2 class="borderBNo iconArrowB">购买须知</h2>-->
+            <!--</div>-->
+
+            <div class="detailExplain" v-show="isInfo">
+                <h2>承诺保证</h2>
+                <p class=""><img src="images/help_assure.jpg" alt=""/></p>
+            </div>
+            <div class="detailExplain" v-show="isInfo">
+                <h2>购买流程</h2>
+                <p><img src="images/notice.jpg" alt=""/></p>
+            </div>
+            <div class="detailExplain" v-show="isInfo">
+                <h2>售后服务</h2>
+                <p>集珍坊提供的寿山石藏品，均由专家把关，材质、作者均由藏品介绍所示，如有发现材质、作者与所示不符，在确认收货后7天内提供相关证明，可向集珍坊提出退货申请。</p>
+                <p>集珍坊确认并通过申请后的七天内，将藏品保持原样退回集珍坊指定收货地点，集珍坊在确认藏品原质原貌后将藏品金额全额退回。</p>
+            </div>
+
+            <!--更多详情-->
+            <div class="detailMore">
+                <span>{{loadText}}，查看更多详情</span>
+            </div>
+
+        </div>
+        <div class="loadmore" v-show="isPageLoad" :style="{height:loadHeight+'px',transition: 'height 1ms'}"><span class="loading"></span>{{isPageText}}，返回藏品详情</div>
+        <div v-show="!isPage" class="detailBox" :style="{transform:'translate3d(0px,'+loadHeight+'px, 0px)',transition: 'transform 1ms'}">
+            <!--图片列表-->
+            <div class="detailImg" v-show="isTab == 0" >
+                <p><a href=""><img src="picture/detail_1.jpg"/></a></p>
+                <p><a href=""><img src="picture/detail_1.jpg"/></a></p>
+                <p><a href=""><img src="picture/detail_1.jpg"/></a></p>
+                <p><a href=""><img src="picture/detail_1.jpg"/></a></p>
+                <p><a href=""><img src="picture/detail_1.jpg"/></a></p>
+            </div>
+
+            <!--作者介绍-->
+            <div class="detailAuthor" v-show="isTab == 1">
+                <img class="face" src="picture/detailAuthor.jpg" alt=""/>
+                <h2>林飞</h2>
+                <h3>祖籍：福建省福州市</h3>
+                <h3>职业：中国工艺美术大师</h3>
+                <img src="picture/detailAuthor.jpg" alt=""/>
+                <p>林飞，1954年生，福建省福州市人。现为中国工艺美术大师、中国寿山石雕刻大师、高级工艺美术师。现任福建省民协寿山石专业委员会主任、中国工艺美术学会会员、中国玉石协会会员、福建省寿山石文化艺术研究会常务理事、罗源县工艺美术学会会长、福州市寿山石行业协会副会长兼秘书长。自幼随父林亨云学习寿山石雕刻，1981年毕业于福建工艺美术学校，师从周荷生、王则坚。擅长人物圆雕，其作品题材广泛，将现代美术与传统工艺融为一体，富有现代感。其在创作中大量以中国文学作品和历史典故为题材，开创了寿山石雕新的艺术领域。作品多次参加国内外重要展览，屡获各类大奖。1990年寿山石雕作品《独钓寒江雪》荣获福州市工艺美术品“百花奖”一等奖；1996年《贵妃出浴》获福州市工艺美术“如意杯”特等奖；2002年《女娲造人》获第三届福建省工艺美术精品“争艳杯”金奖；2003年《四大美女》获第四届工艺美术大师作品暨国际艺术精品博览会金奖；2010年获第十届中华技能大奖并享有国务院津贴。</p>
+            </div>
+        </div>
+
+        <!-- 360提示按钮 -->
+        <!--<div class="detailDegree360Btn">-->
+            <!--<a href=""></a>-->
+        <!--</div>-->
+
+        <!-- 视频播放按钮 -->
+        <div class="detailVideoBtn">
+            <a href=""></a>
+        </div>
+
+    </article>
+
+    <footer>
+        <p>开始：{{startNum}}移动：{{moveNum}}结束：{{endNum}}</p>
+        <p>开始时间：{{startTime}}</p>
+        <p>移动时间：{{moveTime}}</p>
+        <p>结束时间：{{endTime}}</p>
+    </footer>
+
+    <footer v-if="false">
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="addCar telReserve">电话预定</a>
+            <a href="" class="myBuy">线上预定</a>
+        </div>
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="notP">预定中</a>
+        </div>
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="notP">已预定</a>
+        </div>
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="balance">即将开售</a>
+        </div>
+        <div class="detailBtn">
+            <a href="" class="addCar">加入购物车</a>
+            <a href="" class="myBuy">立即购买</a>
+        </div>
+        <div class="detailBtn">
+            <a href="" class="balance">立即购买</a>
+        </div>
+
+        <div class="detailBtn">
+            <a href="" class="balance">立即支付</a>
+        </div>
+        <div class="detailBtn">
+            <a href="" class="notP">该藏品正在交易中</a>
+        </div>
+        <div class="detailBtn">
+            <a href="" class="notP">该藏品已售出</a>
+        </div>
+        <div class="detailBtn">
+            <a href="" class="notP">该藏品已下架</a>
+        </div>
+
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="balance">马上抢购</a>
+        </div>
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="notP">该藏品正在交易中</a>
+        </div>
+
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="balance">立即支付</a>
+        </div>
+        <div class="detailBtn">
+            <div class="time">
+                <h3>开售倒计时</h3>
+                <h3><b>1天</b><span>12</span><em>:</em><span>00</span><em>:</em><span>00</span></h3>
+            </div>
+            <a href="" class="notP">该藏品已售出</a>
+        </div>
+
+    </footer>
+</div>
+
+<!--购物车数量-->
+<div class="detailCar" style="/*display: none;*/">
+    <em>3</em>
+</div>
+
+<!--确认购买弹窗-->
+<div class="detailConfirmBuy hide">
+    <div class="box">
+        <div class="infoShow">
+            <div class="img"><img src="images/2.jpg" alt=""/></div>
+            <div class="con">
+                <h2>A114 翡翠观音女性挂坠观音女性挂坠挂坠</h2>
+                <p><span>数量：3</span><span>主石尺寸：10x8.9x2mm</span></p>
+                <p><span>总重：150g</span><span>主石重量：10g</span></p>
+                <strong>￥18,500</strong>
+            </div>
+        </div>
+        <div class="productNum">
+            <b>请选择商品数量</b>
+            <span class="reduce select" ontouchstart="alert('测试');">-</span>
+            <input type="number" value="2" />
+            <span class="add" ontouchstart="alert('测试');">+</span>
+        </div>
+        <a href="" class="btn">确认购买</a>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+</div>
+
+<!--  -->
+<div class="opacity hide"></div>
+<!-- 确认购买弹窗 多品类 漆器 -->
+<div class="alertConfirmBuy hide">
+
+    <ul class="goodsListRow">
+        <li class="follow">
+            <div class="box">
+                <a href="" class="img">
+                    <img src="picture/index6.jpg" alt="">
+                </a>
+                <div class="info">
+                    <a href="">
+                        <h3>手工大漆手镯</h3>
+                        <strong>18500</strong>
+                    </a>
+                    <span class="num">数量：10</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <h4>颜色款式</h4>
+    <ul class="type">
+        <li class="select"><a href="">黑红</a></li>
+        <li><a href="">红黑</a></li>
+        <li><a href="">黑金</a></li>
+        <li><a href="">红黑金</a></li>
+    </ul>
+    <h4>规格尺寸</h4>
+    <ul class="type">
+        <li><a href="">5cm以下</a></li>
+        <li><a href="">5cm-5.5cm之间</a></li>
+        <li><a href="">5cm-6cm之间</a></li>
+        <li><a href="">6cm以上</a></li>
+    </ul>
+    <h4>购买数量</h4>
+    <div class="number">
+        <span class="reduce select"></span>
+        <input type="number" value="1" />
+        <span class="add"></span>
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+
+    <a href="" class="exit"></a>
+</div>
+
+<!-- 分享成功弹窗 -->
+<div class="wayShare hide">
+    <div class="box">
+        <h5>分享到</h5>
+        <div class="shareBox clearfix">
+            <div class="icon">
+                <i class="weiFriend"></i>
+                <span>微信好友</span>
+            </div>
+            <div class="icon">
+                <i class="friend"></i>
+                <span>朋友圈</span>
+            </div>
+            <div class="icon">
+                <i class="weibo"></i>
+                <span>微博</span>
+            </div>
+            <div class="icon">
+                <i class="qq"></i>
+                <span>qq</span>
+            </div>
+            <div class="icon">
+                <i class="qqSpace"></i>
+                <span>qq空间</span>
+            </div>
+            <div class="icon">
+                <i class="tengweibo"></i>
+                <span>腾讯微博</span>
+            </div>
+            <div class="icon">
+                <i class="zhifubao"></i>
+                <span>支付宝好友</span>
+            </div>
+            <div class="icon">
+                <i class="douban"></i>
+                <span>豆瓣空间</span>
+            </div>
+        </div>
+        <div class="btn">取消</div>
+    </div>
+</div>
+<!--分享成功提示-->
+<div class="wayShareTip hide">
+    <i></i>
+    <span>分享成功</span>
+</div>
+
+<!-- 视频播放提示操作 -->
+<div class="detailVideo hide">
+    <div class="opacity"></div>
+    <div class="box">
+        <a href=""></a>
+        <div class="seeDegree"></div>
+    </div>
+    <div class="btn">
+        <a href="">我知道了</a>
+    </div>
+</div>
+
+
+<!-- 360全屏页引导提示
+<div class="fullDegree360 hide">
+    <div class="opacity"></div>
+    <div class="box"></div>
+</div>
+-->
+
+
+
+
+</body>
+<script src="http://wx.artjzf.com/js/jquery-1.8.3.min.js"></script>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script src="/html/js/vue-resource.min.js"></script>
+
+<!--<script src="/html/js/mui.min.js"></script>-->
+<!--<script src="/html/js/mui.zoom.js"></script>-->
+<!--<script src="/html/js/mui.previewimage.js"></script>-->
+<script>
+    //mui.previewImage();
+</script>
+
+<script src="js/detail.js"></script>
+</html>

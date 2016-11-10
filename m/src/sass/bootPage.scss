@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  启动页
+*/
+
+
+//启动页
+.bootPage{
+  position: fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  a{
+    display: block;
+  }
+  img{
+    vertical-align: middle;
+    width: 100%;
+  }
+  .time{
+    position: absolute;
+    right:pxTorem(45px);
+    top:pxTorem(45px);
+    height: pxTorem(53px);
+    line-height: pxTorem(53px);
+    padding:0 pxTorem(20px);
+    background: rgba(255,255,255,.7);
+    color:#333;
+    @include font-dpr(28px);
+    @include border-radius(pxTorem(18px));
+  }
+}

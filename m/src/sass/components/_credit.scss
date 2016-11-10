@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//银行卡
+.credit{
+  h3{
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    color:#333;
+    margin-left:30px;
+  }
+  .infoList{
+    background:#fff;
+    padding:pxTorem(10px) 0;
+    li{
+      margin-left:30px;
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+    }
+  }
+  .imgList{
+    padding:0 4% 2% 4%;
+    background:#fff;
+    overflow:hidden;
+    li{
+      width:49%;
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      float:left;
+      margin-top:pxTorem(20px);
+      text-align:center;
+      overflow: hidden;
+      &:nth-child(even){
+        margin-left:2%;
+      }
+    }
+    a{
+      height:100%;
+      display: block;
+      border:1px solid #e5e5e5;
+      @include font-dpr(26px);
+      color:#333;
+    }
+    img{
+      vertical-align: middle;
+      width:pxTorem(51px);
+      height:pxTorem(51px);
+      margin-right:pxTorem(10px);
+    }
+  }
+}
+
+.creditFoonter{
+  height:pxTorem(120px);
+  line-height:pxTorem(120px);
+  color:#999999;
+  text-align:center;
+}

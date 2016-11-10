@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  404页面
+
+*/
+
+
+.no404{
+  //@extend .display-flex;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background:#fff;
+  text-align:center;
+  background-image: url("../images/404.jpg");
+  @extend %ico_rem;
+  background-size:100% !important;
+  .btn{
+    position: absolute;
+    left:0;
+    top:72%;
+    width:92%;
+    padding:0 4%;
+    margin:0;
+    height:pxTorem(80px);
+    @include display-flex();
+    a{
+      @include flex(1);
+      width:100%;
+      text-align:center;
+      display: block;
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      background: $blue-base;
+      color:#fff;
+      &:nth-child(2){
+        margin-left:pxTorem(10px);
+      }
+      &:active{
+        background-color: $blue-hover-base;
+      }
+    }
+  }
+}

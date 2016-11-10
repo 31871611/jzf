@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"电子钱包首页"
+})
+<body>
+
+<!--电子钱包首页-->
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"电子钱包首页"
+        })
+    </header>
+
+    <article class="main">
+        <div class="eWallet user">
+            <div class="wayAmount">
+                <div class="amountAll">
+                    <span>￥5,000.00</span>
+                    <em>账户总额(元)</em>
+                </div>
+                <div class="amountPart centerFlexLayout">
+                    <div>
+                        <span>￥5,000.00</span>
+                        <em>账户总额(元)</em>
+                    </div>
+                    <div>
+                        <span>￥5,000.00</span>
+                        <em>账户总额(元)</em>
+                    </div>
+                </div>
+            </div>
+            <ul class="userList mt20">
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">银行卡管理</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">查看资金流水明细</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="centerFlexLayout">
+                        <span class="flex">修改支付密码</span>
+                        <i class="wayIcon iconUserleft"></i>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="btn mt20 bgRed">充值</a>
+            <a href="#" class="btn mt20 bgBlue">提现</a>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

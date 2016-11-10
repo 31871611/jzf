@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+//支付成功
+.paysuccess{
+  .shoppingEmpty{
+    padding-top: 10%;
+  }
+  .orderList{
+    color:#333;
+    font-size:pxTorem(32px);
+    margin: pxTorem(110px) pxTorem(30px) 0;
+    li{
+      height:pxTorem(60px);
+    }
+    span{
+      float:left;
+    }
+    b{
+      float:right;
+      font-weight:normal;
+    }
+  }
+  .helpInfo{
+    margin: pxTorem(20px) pxTorem(30px) 0;
+    border-top:1px solid #d2d2d2;
+    padding-top:7%;
+    text-align:center;
+    color:#999999;
+    p{
+      line-height:pxTorem(45px);
+    }
+    a{
+      color:$link-color;
+      @include font-dpr(32px);
+      display: inline-block;
+      margin-top:pxTorem(40px);
+    }
+  }
+}
+
+.paySuccessBtn{
+  @extend .display-flex;
+  padding: 0 pxTorem(20px) pxTorem(20px) pxTorem(20px);
+  background: #fff;
+  margin:0 !important;
+  a{
+    @extend .flex;
+    display: block;
+    width:pxTorem(340px);
+    height:pxTorem(100px);
+    line-height:pxTorem(100px);
+    background: $blue-base;
+    color:#fff;
+    text-align:center;
+    &:nth-child(2){
+      margin-left:pxTorem(10px);
+    }
+    &:active{
+      background-color: $blue-hover-base;
+    }
+  }
+}
+
+
+//订单提交成功---转账
+.paysubmit{
+  padding-bottom: pxTorem(50px);
+  background:#fff;
+  h2{
+    padding-left:pxTorem(20px);
+    @include font-dpr(32px);
+    height:pxTorem(35px * 2);
+    line-height:pxTorem(35px * 2);
+    background: #eeeeee;
+    margin-bottom: pxTorem(10px);
+  }
+  h3,p{
+    @include font-dpr(29px);
+    margin:0 pxTorem(20px);
+    line-height: pxTorem(50px);
+  }
+  h3{
+    &:nth-of-type(2){
+      margin-top:pxTorem(10px);
+    }
+  }
+}
+
+
+//支付成功领取优惠卷
+.getCoupons{
+  @extend %boxcen;
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  z-index:50;
+  .box{
+    position: relative;
+    width:pxTorem(564px);
+    padding-bottom: pxTorem(10px);
+    padding-top:pxTorem(10px);
+    background-color:$red_c;
+    background-image: url("../images/getcouponsbg.png");
+    @extend %ico_rem;
+    @include box-shadow(pxTorem(2px) pxTorem(2px) pxTorem(20px) rgba(169,90,110,.75));
+  }
+  h2{
+    color:#fff;
+    text-align:center;
+    @include font-dpr(48px);
+    padding-bottom:pxTorem(10px);
+    &:nth-of-type(2){
+      padding-bottom:pxTorem(20px);
+    }
+  }
+  .showInfo{
+    width:pxTorem(535px);
+    padding-bottom: pxTorem(10px);
+    background:#f5ba5d;
+    margin:0 auto;
+    @include box-shadow(inset pxTorem(5px) pxTorem(5px) pxTorem(20px) rgba(241,201,139,.75));
+  }
+  //共用优惠卷面样式
+  .couponsList{
+    padding-top:pxTorem(10px);
+    padding-bottom:0;
+    h2{
+      text-align:left;
+    }
+    .money{
+      .lineLeft{
+        span{
+          background:#f5ba5d;
+        }
+      }
+    }
+  }
+  //按钮
+  .setBtn{
+    a{
+      display: block;
+      margin:0 auto;
+      width:pxTorem(491px);
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      @include font-dpr(36px);
+      color:#fff;
+      text-align:center;
+      margin-top: pxTorem(20px);
+      &:nth-of-type(1){
+        background:$red_c;
+        border:1px solid $red_c;
+      }
+      &:nth-of-type(2){
+        border:1px solid #fff;
+      }
+    }
+  }
+  //关闭按钮
+  .exit{
+    width:pxTorem(40px);
+    height:pxTorem(40px);
+    line-height:pxTorem(35px);
+    text-align:center;
+    @include border-radius(50%);
+    border:2px solid #fff;
+    position: absolute;
+    right:0;
+    top:pxTorem(-60px);
+    color:#fff;
+    @include font-dpr(36px);
+  }
+}

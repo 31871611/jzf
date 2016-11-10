@@ -1,0 +1,267 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  一元购
+
+*/
+
+
+
+/*
+
+  一元购首页
+
+*/
+.yiHome{
+  background: #eee;
+  nav{
+    background: #fff;
+    height:pxTorem(178px);
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    @include display-flex();
+    a{
+      padding:pxTorem(30px) 0 0 0;
+      display: block;
+      @include flex(1);
+      text-align: center;
+      color:#333;
+      @include font-dpr(28px);
+      &:before{
+        margin:0 auto pxTorem(8px);
+        content: "\20";
+        display: block;
+        width:pxTorem(80px);
+        height:pxTorem(80px);
+        @extend %ico_rem;
+      }
+      &.my{
+        &:before{
+          //我的夺宝
+          background-image: url("../images/iconYiNavMy.png");
+        }
+      }
+      &.share{
+        &:before{
+          //晒单分享
+          background-image: url("../images/iconYiNavShare.png");
+        }
+      }
+      &.past{
+        &:before{
+          //往期中奖
+          background-image: url("../images/iconYiNavPast.png");
+        }
+      }
+      &.help{
+        &:before{
+          //帮助中心
+          background-image: url("../images/iconYiNavHelp.png");
+        }
+      }
+    }
+  }
+  .yiHomeTab{
+    @import "inc/tabShow";
+    @include tabShow($h:75px);
+    a{
+      &.select{
+        span{
+          color: $red-yi;
+          border-color: $red-yi;
+        }
+      }
+    }
+    i{
+      position: absolute;
+      left:50%;
+      &.price{
+        //margin-left:pxTorem(56px);
+        top:pxTorem(8px);
+        &:before,&:after{
+          content: "\20";
+          position: absolute;
+          left:pxTorem(8px);
+          width:4px;
+          height:4px;
+          @include rotate(-45deg);
+          border-width: 1px;
+          border-style: solid;
+        }
+        &:before{
+          top:pxTorem(18px);
+          border-color: #999 #999 #fff #fff;
+        }
+        &:after{
+          top:pxTorem(28px);
+          border-color: #fff #fff #999 #999;
+        }
+      }
+      &.up{
+        &:before {
+          border-color: #f00 #f00 #fff #fff;
+        }
+      }
+      &.down{
+        &:after {
+          border-color: #fff #fff #f00 #f00;
+        }
+      }
+
+    }
+  }
+  .yiNotice{
+    margin-bottom: pxTorem(20px);
+    $h:59px;
+    height: pxTorem($h);
+    padding: 0 pxTorem(40px);
+    @include display-flex();
+    background: #fff;
+    overflow: hidden;
+    i{
+      margin-top:pxTorem(13px);
+      margin-right: pxTorem(24px);
+      width:pxTorem(35px);
+      height: pxTorem(32px);
+      display: block;
+      @extend %ico_rem;
+      background-image: url("../images/iconYiNotice.png");
+    }
+    ul{
+      @include flex(1);
+      //@include transition(margin 1s);
+    }
+    li{
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      overflow: hidden;
+    }
+    b{
+      color:$red-yi;
+      font-weight: normal;
+    }
+  }
+  .date{
+    $h:48px;
+    border-bottom:1px solid #ddd;
+    background: #fff;
+    padding:pxTorem(20px) 0;
+    i{
+      background: $red-yi;
+      display: inline-block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      text-align: center;
+      //width:pxTorem(280px);
+      padding:0 pxTorem(15px);
+      color:#fff;
+      @include font-dpr(36px);
+      font-weight: bold;
+      font-style: normal;
+      margin-right: pxTorem(15px);
+      @include border-radius(pxTorem(8px));
+    }
+    @import "inc/yiDate";
+    @include yiDate();
+  }
+
+  @at-root &List{
+    padding-top:pxTorem(20px);
+    ul{
+      @extend %clearfix;
+      padding-left:pxTorem(10px);
+    }
+    li{
+      @extend %fl;
+      width:50%;
+      margin-bottom: pxTorem(18px);
+    }
+    .box{
+      background: #fff;
+      margin-right: pxTorem(10px);
+      padding: pxTorem(12px) pxTorem(12px) pxTorem(10px) pxTorem(12px);
+      position: relative;
+      @include box-shadow(0 0 pxTorem(13px) rgba(218,215,215,1));
+    }
+    .Photo{
+      display: block;
+      padding-bottom: 100%;
+      height:0;
+      position: relative;
+      img{
+        position: absolute;
+        width:100%;
+        height:auto;
+        vertical-align: middle;
+      }
+    }
+    h3{
+      margin:pxTorem(15px) 0 pxTorem(8px) 0;
+      @include font-dpr(28px);
+      height: pxTorem(32px * 2);
+      line-height: pxTorem(32px);
+      overflow: hidden;
+    }
+    //进度
+    .scheduleBox{
+      @import "inc/yiSchedule";
+      @include yiSchedule();
+      width:100%;
+    }
+    .bottom{
+      @include display-flex();
+      padding-top:pxTorem(10px);
+    }
+    .total{
+      @include flex(1);
+      color:#999;
+      @include font-dpr(20px);
+    }
+    .btn{
+      $h:54px;
+      @include font-dpr(20px);
+      margin: 0;
+      //margin: pxTorem(8px) 0 0 pxTorem(18px);
+      display: block;
+      width:pxTorem(116px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      background: $red-yi;
+      color:#fff;
+      text-align: center;
+      @include border-radius(pxTorem(4px));
+    }
+    i{
+      //5元商品、10元商品图标
+      &.iconYi5,&.iconYi10{
+        position: absolute;
+        left:pxTorem(12px);
+        top:pxTorem(12px);
+        padding:0 pxTorem(8px) 0 pxTorem(8px);
+        width:pxTorem(68px - 8 - 8);
+        height: pxTorem(68px);
+        line-height: pxTorem(68px / 2);
+        font-style: normal;
+        color:#fff;
+        @include font-dpr(20px);
+        text-align: center;
+        //@extend %ico_rem;
+      }
+      &.iconYi5{
+        //background-image: url("../images/iconYi5.png");
+        background-color: #f8a141;
+      }
+      &.iconYi10{
+        //background-image: url("../images/iconYi10.png");
+        background-color: #f93738;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+html,body{
+  height:100%;
+  overflow: hidden;
+}
+html {
+  font-size: $browser-default-font-size;
+}
+body{
+  @include font-dpr(24px);
+  background-color:$bg-color;
+}
+
+.video{
+  width:100%;
+  overflow: hidden;
+  ul{
+    @include transition(all .5s);
+    width:100%;
+    overflow: hidden;
+  }
+  //li,.video_play,video{
+  //  position: absolute;
+  //  left:0;
+  //  top:0;
+  //  right: 0;
+  //  bottom: 0;
+  //}
+  video{
+    //@include opacity(0);
+  }
+}
+
+.page{
+  $h:10px;
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:pxTorem($h);
+  z-index: 99;
+  div{
+    @include transition(width .5s);
+    width:0;
+    height:pxTorem($h);
+    background: #0C7823;
+  }
+}
+
+

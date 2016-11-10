@@ -1,0 +1,259 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  东南拍卖直播
+
+*/
+
+
+.dnLive{
+
+  .photo{
+    $h:300px;
+    height: pxTorem($h);
+    text-align: center;
+    padding:pxTorem(10px) 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: pxTorem(20px);
+    img{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      vertical-align: middle;
+    }
+  }
+
+  .info{
+    padding:0 pxTorem(20px);
+    @include font-dpr(28px);
+    margin-bottom: pxTorem(20px);
+    h2{
+      @include font-dpr(32px);
+      font-weight: bold;
+    }
+    p{
+      margin-top:pxTorem(10px);
+      //估价
+      &.appraisal{
+        font-weight: bold;
+      }
+    }
+    b{
+      color: $red-base;
+      //font-weight: normal;
+    }
+    span{
+      &.num{
+        color: $red-base;
+        @include font-dpr(32px);
+        font-weight: bold;
+      }
+    }
+  }
+
+  .title{
+    $h:60px;
+    height: pxTorem($h);
+    background: $blue-base;
+    padding:0 pxTorem(20px);
+    span{
+      color:#fff;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @include font-dpr(28px);
+      &.fl{
+        float:left;
+      }
+      &.fr{
+        float:right;
+      }
+    }
+  }
+
+  .list{
+    $h:50px;
+    padding:0 pxTorem(20px) pxTorem(20px) pxTorem(20px);
+    @include font-dpr(28px);
+    table{
+      width: 100%;
+    }
+    thead{
+      tr{
+
+      }
+      th{
+        font-weight: bold;
+        height: pxTorem($h);
+        line-height: pxTorem($h);
+      }
+    }
+    tbody{
+      tr{
+
+      }
+      td{
+        line-height: pxTorem($h);
+      }
+    }
+  }
+
+}
+
+
+.dnLiveHome{
+  .type{
+    $h:336px;
+    @include display-flex();
+    margin-top: pxTorem(10px);
+    a{
+      color: #333;
+      @include font-dpr(42px);
+      text-align: center;
+      background: #fff;
+      display: block;
+      @include flex(1);
+      &:nth-child(1){
+        margin-right: pxTorem(10px);
+      }
+      &.schedule,&.preview,&.live,&.about{
+        &:before{
+          display: block;
+          margin:0 auto;
+          @extend %ico_rem;
+          content: "\20";
+        }
+      }
+      &.schedule{
+        height: pxTorem($h - 23);
+        padding-top:pxTorem(23px);
+        &:before{
+          margin-bottom:pxTorem(65px);
+          width: pxTorem(173px);
+          height: pxTorem(175px);
+          background-image: url("../images/iconDnLiveHome1.png");
+        }
+      }
+      &.preview{
+        height: pxTorem($h - 73);
+        padding-top:pxTorem(73px);
+        &:before{
+          margin-bottom:pxTorem(50px);
+          width: pxTorem(198px);
+          height: pxTorem(136px);
+          background-image: url("../images/iconDnLiveHome2.png");
+        }
+      }
+      &.live{
+        height: pxTorem($h - 70);
+        padding-top:pxTorem(70px);
+        &:before{
+          margin-bottom:pxTorem(43px);
+          width: pxTorem(176px);
+          height: pxTorem(149px);
+          background-image: url("../images/iconDnLiveHome3.png");
+        }
+      }
+      &.about{
+        height: pxTorem($h - 85);
+        padding-top:pxTorem(85px);
+        &:before{
+          margin-bottom:pxTorem(80px);
+          width: pxTorem(184px);
+          height: pxTorem(96px);
+          background-image: url("../images/iconDnLiveHome4.png");
+        }
+      }
+    }
+  }
+}
+
+
+.dnLiveAbout{
+  padding:pxTorem(20px);
+  h2,h3{
+    @include font-dpr(32px);
+    color: $red-base;
+    text-align: center;
+    margin-bottom: pxTorem(5px);
+  }
+  h3{
+    margin-top: pxTorem(20px);
+  }
+  p{
+    @include font-dpr(24px);
+    line-height: pxTorem(50px);
+    margin-bottom: pxTorem(10px);
+    text-indent: 2em;
+  }
+}
+
+
+.dnLiveShow{
+  .info{
+    padding: pxTorem(10px) pxTorem(20px);
+    border-bottom: 1px solid #d1d1d1;
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    p{
+      @include display-flex();
+      line-height: pxTorem(50px);
+      @include font-dpr(28px);
+    }
+    b{
+      display: block;
+    }
+    span{
+      display: block;
+      @include flex(1);
+    }
+    a{
+      color: #333;
+    }
+  }
+  ul{
+    li{
+      margin-bottom: pxTorem(20px);
+      border-top: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
+    }
+    a{
+      position: relative;
+      background: #fff;
+      display: block;
+      padding: pxTorem(20px);
+      color: #333;
+      &:active{
+        background: #f2f2f2;
+      }
+    }
+    h2{
+      @include font-dpr(32px);
+      font-weight: bold;
+    }
+    p{
+      @include font-dpr(28px);
+      margin-top: pxTorem(10px);
+      color:#666;
+    }
+    em{
+      position: absolute;
+      right:pxTorem(50px);
+      top:pxTorem(20px);
+      font-weight: bold;
+    }
+    i{
+      position: absolute;
+      right:pxTorem(20px);
+      top:50%;
+      width: pxTorem(16px);
+      height:pxTorem(30px);
+      margin-top:pxTorem(-15px);
+      @extend %ico_rem;
+      background-image: url("../images/iconArrowR.png");
+    }
+  }
+}

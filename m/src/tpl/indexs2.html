@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"公告"
+})
+<link rel="stylesheet" href="css/indexs.css"/>
+<body>
+<div class="wrap">
+    <header>
+        <div class="header noBBHeader">
+            <div class="indexsSearch">
+                <div class="left">
+                    <a href="javascript:;" class="iconShare"></a>
+                </div>
+                <div class="goSearch">
+                    <i></i>
+                    <input type="text" placeholder="输入关键词查找相关藏品" />
+                </div>
+                <div class="right">
+                    <a href="javascript:;" class="iconShopping"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="main">
+
+        <div class="indexsTab">
+            <div class="scroll" style="width: 99rem">
+                <a href="" class="select"><span>首页</span></a>
+                <a href=""><span>寿山石</span></a>
+                <a href=""><span>茶器</span></a>
+                <a href=""><span>香器</span></a>
+                <a href=""><span>文房</span></a>
+                <a href=""><span>漆艺</span></a>
+                <a href=""><span>摆件</span></a>
+                <a href=""><span>饰品</span></a>
+            </div>
+        </div>
+        <div class="averageTab">
+            <a href="" class="select"><span>首页</span></a>
+            <a href=""><span>寿山石</span></a>
+            <a href=""><span>茶器</span></a>
+            <a href=""><span>香器</span></a>
+            <a href=""><span>文房</span></a>
+            <a href=""><span>漆艺</span></a>
+            <a href=""><span>摆件</span></a>
+            <a href=""><span>饰品</span></a>
+        </div>
+
+        <div>
+            轮播
+        </div>
+
+        <div class="indexsNotice mbN">
+            <i></i>
+            <div class="box">
+                <ul>
+                    <li>11月01日9:30 叶成基专场 新品预览</li>
+                    <li>11月01日9:30 叶成基专场 新品预览</li>
+                    <li>11月01日9:30 叶成基专场 新品预览</li>
+                    <li>11月01日9:30 叶成基专场 新品预览</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="indexsSelf">
+            <div class="recommendTitle">
+                <strong><a href="">集珍自营</a></strong>
+            </div>
+            <div class="scroll">
+                <ul style="width: 999rem;">
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="picture/210x210.jpg" alt="" />
+                            <span>¥16000</span>
+                        </a>
+                    </li>
+                    <li class="more">
+                        <a href="">查看更多</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="indexsShop">
+            <div class="photo">
+                <a href="">
+                    <img src="picture/750x360.jpg" alt="">
+                    <p>美人佩美物|春天送一颗翡翠给心上人</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="indexsShop">
+            <div class="title">
+                <div class="img">
+                    <img src="picture/74x74.jpg" alt="店铺名" />
+                </div>
+                <h2>店铺名<i></i></h2>
+                <a href="" class="enter">进入商铺</a>
+            </div>
+            <div class="photo">
+                <a href="">
+                    <img src="picture/750x360.jpg" alt="">
+                    <p>美人佩美物|春天送一颗翡翠给心上人</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="indexsShop">
+            <div class="title">
+                <div class="img">
+                    <img src="picture/74x74.jpg" alt="店铺名" />
+                </div>
+                <h2>店铺名<i></i></h2>
+                <a href="" class="enter">进入商铺</a>
+            </div>
+            <div class="photo">
+                <a href="">
+                    <img src="picture/750x360.jpg" alt="">
+                    <p>美人佩美物|春天送一颗翡翠给心上人</p>
+                </a>
+            </div>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="appDownBottom" v-if="is">
+            <i class="exit" @click="exit"></i>
+            <div class="img"></div>
+            <div>
+                <h3>集珍坊APP</h3>
+                <p>集珍双11.全场5折起</p>
+            </div>
+            <a :href="url">下载</a>
+        </div>
+        <nav class="appNav">
+            <a href="" class="appNavHome select">首页</a>
+            <a href="" class="appNavClassify">分类</a>
+            <a href="" class="appNavShopping">购物车</a>
+            <a href="" class="appNavYi" >一元购 <i></i> </a>
+            <!--<a href="" class="appNavReg">注册有礼</a>-->
+            <!--<a href="" class="appNavOrder">我的订单</a>-->
+            <a href="" class="appNavUser">个人</a>
+        </nav>
+    </footer>
+</div>
+
+
+</body>
+
+<script>
+
+</script>
+
+</html>

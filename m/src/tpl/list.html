@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"列表"
+})
+<body>
+<!-- 局部弹窗 -->
+<div class="wrap" id="app">
+    <header>
+        @@include('include/title.html',{
+            "title":"列表"
+        })
+
+        <!-- tab -->
+        <div class="tabShow">
+            <a href="" class="select"><span>寿山石</span></a>
+            <a href=""><span>珠宝</span></a>
+            <a href=""><span>文玩</span></a>
+            <a href=""><span>字画</span></a>
+            <a href="" class="select"><b>瓷器</b></a>
+        </div>
+
+        <div class="goodsRtrieval">
+            <a href="javascript:;" class="select">全部</a>
+            <a href="javascript:;">价格</a>
+            <a href="javascript:;">分类</a>
+            <a href="javascript:;">状态</a>
+        </div>
+        <div class="goodsRtrieval">
+            <a href="javascript:;" class="select">排序</a>
+            <a href="javascript:;">新品</a>
+            <a href="javascript:;" class="select">价格<i class="price down"></i></a>
+            <a href="javascript:;" class="select">筛选<i class="filter"></i></a>
+        </div>
+
+        <div class="goodsFilter" v-show="!isScrollRtrieval">
+            <div href="javascript:;" class="sort"><i class="iconFilter"></i>筛选<i class="arrow"></i></div>
+            <div class="box">
+                <a href="javascript:;" class="select"><b>新品</b></a>
+                <a href="javascript:;"><b>全部</b></a>
+            </div>
+        </div>
+    </header>
+
+    <article class="main wrap scrollHide">
+        <article class="main" @scroll="mainScroll($event)" @touchstart="startScroll($event)" @touchmove="moveScroll($event)" @touchend="endScroll($event)">
+            <!--广告图-->
+            <div class="goodsAd">
+                <img alt="" src="http://njizhenfang.jizhenfang.com/exhibition/20160510/1c9fc4017ecd470a8ad4902bd8eab477.png">
+            </div>
+
+            <div class="goodsFilter" v-show="isScrollRtrieval">
+                <div href="javascript:;" class="sort select"><i class="iconFilter"></i>筛选</div>
+                <div class="box">
+                    <a href="javascript:;" class="select"><b>新品</b></a>
+                    <a href="javascript:;"><b>全部</b></a>
+                </div>
+            </div>
+
+            <div class="goodsFilter" v-show="isScrollRtrieval">
+                <div href="javascript:;" class="sort"><i class="iconFilter"></i>筛选</div>
+                <div class="tab">
+                    <div class="scrollTab">
+                        <a href="" class="select">田黄石</a>
+                        <a href="">荔枝洞石</a>
+                        <a href="">文玩</a>
+                        <a href="">汶洋石</a>
+                        <a href="">高山石</a>
+                        <a href="">印章</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rowGoodsEndTime">
+                <div class="timeCount">
+                    <strong>距开售</strong><b>1天</b><span>00</span><em>：</em><span>45</span><em>：</em><span>00</span>
+                </div>
+            </div>
+            <div class="goodsRowHotTab borderBDashed">
+                <a href="" class="select">田黄石</a>
+                <a href="">荔枝洞石</a>
+                <a href="">文玩</a>
+                <a href="">汶洋石</a>
+                <a href="">高山石</a>
+                <a href="">印章</a>
+            </div>
+
+            <div class="goodsRowType borderBDashed">
+                [ 田黄石  摆件 ]
+            </div>
+
+            <!--倒记时-->
+            <div class="listEndTime borderBDashed">
+                04月11日 星期六开售  距新品开售 1天 00:45:00
+            </div>
+
+            <!--排序条件-->
+            <div class="goodsRtrieval">
+                <a href="javascript:;" class="select">排序</a>
+                <a href="javascript:;">价格</a>
+                <a href="javascript:;">分类</a>
+                <a href="javascript:;">状态</a>
+            </div>
+
+            <!--列表-->
+            <div class="goodsListBox">
+                <ul class="goodsListNormal">
+
+                    <li class="col">
+                        <div class="box">
+                            <a href="" class="img">
+                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <!-- 已出售 -->
+                                <i class="out"></i>
+                                <!-- 已预定 -->
+                                <!--<i class="booked"></i>-->
+                                <!-- 360图标 -->
+                                <!--<i class="degree360"></i>-->
+                                <!-- 视频播放图标 -->
+                                <i class="video"></i>
+                            </a>
+                            <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <div class="bottom">
+                                <strong>￥18,500</strong>
+                                <a href="" class="buy"></a>
+                                <!--<span class="red">可预定</span>-->
+                                <!--<span>可预定</span>-->
+                            </div>
+                            <div class="love">1</div>
+                        </div>
+                    </li>
+
+                    <li class="col">
+                        <div class="box">
+                            <a href="" class="img">
+                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <!--<i class="out"></i>-->
+                                <i class="booked"></i>
+                                <!--<i class="degree360"></i>-->
+                                <!-- 视频播放图标 -->
+                                <i class="video"></i>
+                            </a>
+                            <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <div class="bottom">
+                                <strong>￥18,500</strong>
+                                <!--<a href="" class="buy"></a>-->
+                                <span class="red">可预定</span>
+                                <!--<span>可预定</span>-->
+                            </div>
+                            <div class="love select">1</div>
+                        </div>
+                    </li>
+
+                    <li class="col" v-for="item in 10">
+                        <div class="box">
+                            <a href="" class="img">
+                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <i class="out"></i>
+                                <!--<i class="booked"></i>-->
+                            </a>
+                            <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                            <div class="bottom">
+                                <strong>￥18,500</strong>
+                                <a href="" class="buy"></a>
+
+                                <!--<span class="red">可预定</span>-->
+                                <!--<span>可预定</span>-->
+                            </div>
+                            <div class="love select">1</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- 列表 -->
+            <div class="goodsListRow goodsListRowBorder">
+                <div class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                            <!-- 爱心 -->
+                            <div class="love select">1</div>
+                            <!-- 已出售 -->
+                            <i class="out"></i>
+                            <!-- 已预定 -->
+                            <!--<i class="booked"></i>-->
+                            <!-- 360图标 -->
+                            <!--<i class="degree360"></i>-->
+                            <!-- 视频播放图标 -->
+                            <i class="video"></i>
+                        </a>
+                        <div class="info">
+                            <a href="http://www.163.com">
+                                <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <!--<span class="costPrice">原价:¥17500</span>-->
+                                <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+
+                                <!-- 尺寸与颜色 -->
+                                <div class="parameter">
+                                    <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                    <span class="color">颜色:颜色颜色</span>
+                                </div>
+
+                                <!-- 原价 -->
+                                <div class="primeCost">
+                                    <b>￥18,500</b>
+                                    <span>原价:¥17500</span>
+                                </div>
+                            </a>
+                            <!--<span class="btnPreview">即将开抢</span>-->
+                            <!-- 购物袋图标 -->
+                            <!--<a href="" class="buy"></a>-->
+                            <!-- 数量 -->
+                            <span class="num">x1</span>
+                            <!-- 申请退货 -->
+                            <a href="http://www.baidu.com" class="return">申请退货</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <ul class="goodsListRow goodsListRowBorder">
+
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                            <!-- 爱心 -->
+                            <div class="love select">1</div>
+                            <!-- 已出售 -->
+                            <i class="out"></i>
+                            <!-- 已预定 -->
+                            <!--<i class="booked"></i>-->
+                            <!-- 360图标 -->
+                            <!--<i class="degree360"></i>-->
+                            <!-- 视频播放图标 -->
+                            <i class="video"></i>
+                        </a>
+                        <div class="info">
+                            <a href="">
+                                <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <!--<span class="costPrice">原价:¥17500</span>-->
+                                <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+
+                                <!-- 尺寸与颜色 -->
+                                <div class="parameter">
+                                    <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                    <span class="color">颜色:颜色颜色</span>
+                                </div>
+
+                                <!-- 原价 -->
+                                <div class="primeCost">
+                                    <b>￥18,500</b>
+                                    <span>原价:¥17500</span>
+                                </div>
+                            </a>
+                            <!--<span class="btnPreview">即将开抢</span>-->
+                            <!-- 购物袋图标 -->
+                            <!--<a href="" class="buy"></a>-->
+                            <!-- 数量 -->
+                            <span class="num">x1</span>
+                            <!-- 申请退货 -->
+                            <a href="" class="return">申请退货</a>
+
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <ul class="goodsListRow">
+
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                            <!-- 爱心 -->
+                            <div class="love">1</div>
+                            <!-- 已出售 -->
+                            <i class="out"></i>
+                            <!-- 已预定 -->
+                            <!--<i class="booked"></i>-->
+                            <!-- 360图标 -->
+                            <!--<i class="degree360"></i>-->
+                            <!-- 视频播放图标 -->
+                            <i class="video"></i>
+                        </a>
+                        <div class="info">
+                            <a href="">
+                                <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <span class="costPrice">原价:¥17500</span>
+                                <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+                                <strong>￥18,500</strong>
+                            </a>
+                            <span class="btnPreview">即将开抢</span>
+                            <!-- 购物袋图标 -->
+                            <!--<a href="" class="buy"></a>-->
+                        </div>
+                    </div>
+                </li>
+
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                            <!-- 爱心 -->
+                            <div class="love select">1</div>
+                            <!-- 已出售 -->
+                            <!--<i class="out"></i>-->
+                            <!-- 已预定 -->
+                            <i class="booked"></i>
+                            <!-- 360图标 -->
+                            <!--<i class="degree360"></i>-->
+                            <!-- 视频播放图标 -->
+                            <i class="video"></i>
+                        </a>
+                        <div class="info">
+                            <a href="">
+                                <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <!--<span class="costPrice">原价:¥17500</span>-->
+                                <span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>
+                                <strong>￥18,500</strong>
+                            </a>
+                            <!--<span class="btnPreview">即将开抢</span>-->
+                            <!-- 购物袋图标 -->
+                            <a href="" class="buy"></a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="row">
+                    <div class="box">
+                        <a href="" class="img">
+                            <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                            <!-- 爱心 -->
+                            <div class="love select">1</div>
+                            <!-- 已出售 -->
+                            <i class="out"></i>
+                            <!-- 已预定 -->
+                            <!--<i class="booked"></i>-->
+                            <!-- 360图标 -->
+                            <!--<i class="degree360"></i>-->
+                            <!-- 视频播放图标 -->
+                            <i class="video"></i>
+                        </a>
+                        <div class="info">
+                            <a href="">
+                                <h3>郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <!--<span class="costPrice">原价:¥17500</span>-->
+                                <!--<span class="size">尺寸：11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm11.5X4.2X3.9cm</span>-->
+                                <strong>￥18,500</strong>
+                            </a>
+                            <!--<span class="btnPreview">即将开抢</span>-->
+                            <!-- 购物袋图标 -->
+                            <a href="" class="buy"></a>
+                        </div>
+                    </div>
+                </li>
+
+
+
+            </ul>
+
+
+            <!--有藏品-->
+            <div class="shoppingCart">
+                <ul class="goodsListRow">
+                    <li class="row">
+                        <div class="box">
+                            <!-- 是否选中按钮 -->
+                            <i class="shoppingSelect"></i>
+                            <a href="" class="img uq">
+                                <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                            </a>
+                            <div class="info">
+                                <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                <!--<h3>残荷听雨系列套件章</h3>-->
+                                <!--<span class="size">尺寸：11.5X4.2X3.9cm</span>-->
+                                <!-- 尺寸与颜色 -->
+                                <div class="parameter">
+                                    <span class="color">尺寸:11.5X4.2X3.9cm</span>
+                                    <span class="color">颜色:颜色颜色</span>
+                                </div>
+                                <!-- 价格 -->
+                                <strong>￥18,500</strong>
+                                <!--<a href="" class="btnGo">立即购买</a>-->
+                                <!-- 删除图标 -->
+                                <i class="garbage"></i>
+                                <!--<div class="love select">1</div>-->
+                                <div class="shoppingRA">
+                                    <div class="reduce select"><i>-</i></div>
+                                    <input type="number" value="1" />
+                                    <div class="add"><i>+</i></div>
+                                </div>
+                                <!-- 提示购物车数量 -->
+                                <div class="infoNum">
+                                    最多可退1件
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="box">
+                            <i class="shoppingSelect select"></i>
+                            <a href="" class="img sl">
+                                <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                            </a>
+                            <div class="info">
+                                <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                <strong>￥18,500</strong>
+                                <i class="garbage"></i>
+                                <div class="shoppingRA">
+                                    <div class="reduce"><i>-</i></div>
+                                    <input type="number" value="1" />
+                                    <div class="add"><i>+</i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="box">
+                            <i class="shoppingSelect"></i>
+                            <a href="" class="img us">
+                                <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                            </a>
+                            <div class="info">
+                                <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                <strong>￥18,500</strong>
+                                <i class="garbage"></i>
+                                <div class="shoppingRA">
+                                    <div class="reduce"><i>-</i></div>
+                                    <input type="number" value="1" />
+                                    <div class="add"><i>+</i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="box">
+                            <i class="shoppingSelect"></i>
+                            <a href="" class="img">
+                                <img :src="'http://192.168.1.165/jzf2/html/picture/index6.jpg'" alt=""/>
+                            </a>
+                            <div class="info">
+                                <h3>B204004 18K金镶冰种翡翠戒指</h3>
+                                <strong>￥18,500</strong>
+                                <i class="garbage"></i>
+                                <div class="shoppingRA">
+                                    <div class="reduce"><i>-</i></div>
+                                    <input type="number" value="1" />
+                                    <div class="add"><i>+</i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </article>
+
+        <!-- 局部弹窗 -->
+        <!--检索条件-->
+        <div class="retrievalSplit hide">
+            <ul class="hot hide">
+                <li><a href="javascript:;" class="select">默认</a></li>
+                <li><a href="javascript:;">价格<i class="up"></i></a></li>
+                <li><a href="javascript:;">价格<i class="down"></i></a></li>
+            </ul>
+
+            <ul class="hot hide">
+                <li><a href="" class="select">￥1000以下</a></li>
+                <li><a href="" class="">￥1001-3000</a></li>
+                <li><a href="" class="">￥3001-5000</a></li>
+                <li><a href="" class="">￥5001-8000</a></li>
+                <li><a href="" class="">￥8001-15000</a></li>
+                <li><a href="" class="">￥15000以上</a></li>
+            </ul>
+
+            <div class="filter hide">
+                <div class="con">
+                    <div class="box">
+                        <h2>排序</h2>
+                        <div class="rowPrice">
+                            <a href="javascript:;" class="select">默认</a>
+                            <a href="javascript:;">价格<i class="up"></i></a>
+                            <a href="javascript:;">价格<i class="down"></i></a>
+                        </div>
+                        <h2>价格</h2>
+                        <div class="category_list">
+                            <a class="select" href="">全部价格</a>
+                            <a href="">¥1,000以下</a>
+                            <a href="">¥1,001-5,000</a>
+                            <a href="">¥5,001-10,000</a>
+                            <a href="">¥10,001-30,000</a>
+                            <a href="">¥30,001-50,000</a>
+                            <a href="">¥100,000以上</a>
+                        </div>
+
+                    </div>
+                    <div class="btn">
+                        <a href="">清除</a>
+                        <a href="">确认</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter">
+                <header>
+                    <a href="" class="select">寿山石</a>
+                    <a href="">珠宝</a>
+                </header>
+                <div class="con">
+                    <div class="box">
+                        <h2>材质</h2>
+                        <div class="category_list">
+                            <a class="select" href="">全部材质</a>
+                            <a href="">田黄石</a>
+                            <a href="">荔枝洞石</a>
+                            <a href="">芙蓉石</a>
+                            <a href="">汶洋石</a>
+                            <a href="">高山石</a>
+                            <a href="">都成坑石</a>
+                            <a href="">善伯洞石</a>
+                            <a href="">旗降石</a>
+                            <a href="">二号矿石</a>
+                            <a href="">寿山掘性石</a>
+                            <a href="">其他寿山石</a>
+                        </div>
+                        <h2>形式</h2>
+                        <div class="category_list">
+                            <a class="" href="">全部形式</a>
+                            <a class="" href="">文玩</a>
+                            <a class="" href="">摆件</a>
+                            <a class="" href="">手件</a>
+                            <a class="" href="">印章</a>
+                            <a class="" href="">挂件</a>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="">清除</a>
+                        <a href="">确认</a>
+                    </div>
+                </div>
+                <div class="con hide">
+                    <div class="box">
+                        <h2>材质</h2>
+                        <div class="category_list">
+                            <a class="select" href="">全部材质</a>
+                            <a href="">琥珀</a>
+                            <a href="">蜜蜡</a>
+                            <a href="">翡翠</a>
+                            <a href="">珊瑚</a>
+                        </div>
+                        <h2>形式</h2>
+                        <div class="category_list">
+                            <a class="" href="">全部形式</a>
+                            <a class="" href="">挂坠</a>
+                            <a class="" href="">戒指</a>
+                            <a class="" href="">耳坠</a>
+                            <a class="" href="">手镯</a>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="javascript:;">清除</a>
+                        <a href="javascript:;">确认</a>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="hot hide">
+                <li><a href="javascript:;">在售</a></li>
+                <li><a href="javascript:;">即将开售</a></li>
+                <li><a href="javascript:;">可预订</a></li>
+                <li><a href="javascript:;">已售</a></li>
+                <li><a href="javascript:;" class="select">全部状态</a></li>
+            </ul>
+        </div>
+
+        <!-- 整合版 -->
+        <div class="retrievalJoin hide">
+            <div class="filter">
+                <div class="sort_list">
+                    <h2>排序</h2>
+                    <div class="rowPrice">
+                        <a href="javascript:;" class="select">默认</a>
+                        <a href="javascript:;">价格<i class="up"></i></a>
+                        <a href="javascript:;">价格<i class="down"></i></a>
+                    </div>
+                    <h2>价格</h2>
+                    <div class="category_list">
+                        <a href="javascript:;" class="select">全部价格</a>
+                        <a href="javascript:;">￥1000以下</a>
+                        <a href="javascript:;">￥1001-3000</a>
+                        <a href="javascript:;">￥3001-5000</a>
+                        <a href="javascript:;">￥5001-8000</a>
+                        <a href="javascript:;">￥8001-15000</a>
+                        <a href="javascript:;">￥15000以上</a>
+                    </div>
+                    <h2>材质</h2>
+                    <div class="category_list">
+                        <a href="javascript:;" class="select">全部</a>
+                        <a href="javascript:;">田黄石</a>
+                        <a href="javascript:;">荔枝洞石</a>
+                        <a href="javascript:;">芙蓉石</a>
+                        <a href="javascript:;">汶洋石</a>
+                        <a href="javascript:;">高山石</a>
+                        <a href="javascript:;">都成坑石</a>
+                        <a href="javascript:;">善伯洞石</a>
+                        <a href="javascript:;">旗降石</a>
+                        <a href="javascript:;">二号矿石</a>
+                        <a href="javascript:;">寿山掘性石</a>
+                        <a href="javascript:;">其他寿山石</a>
+                    </div>
+                    <h2>形式</h2>
+                    <div class="category_list">
+                        <a href="javascript:;" class="select">全部</a>
+                        <a href="javascript:;">文玩</a>
+                        <a href="javascript:;">摆件</a>
+                        <a href="javascript:;">手件</a>
+                        <a href="javascript:;">印章</a>
+                        <a href="javascript:;">挂件</a>
+                    </div>
+                    <h2>状态</h2>
+                    <div class="category_list">
+                        <a href="javascript:;" class="select">全部状态</a>
+                        <a href="javascript:;">在售</a>
+                        <a href="javascript:;">即将开售</a>
+                        <a href="javascript:;">可预定</a>
+                        <a href="javascript:;">已售</a>
+                    </div>
+                </div>
+                <div class="btn">
+                    <a href="javascript:;" class="clear">清除</a>
+                    <a href="javascript:;" class="ok">确认</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+</div>
+<!-- 全屏弹窗 -->
+
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+<script>
+var vue=new Vue({
+    el:"#app",
+    data:{
+        isScrollRtrieval:true,
+        adHeight:"",
+        scrollTop:0
+    },
+    ready:function(){
+        this.adHeight=document.querySelector(".goodsAd").clientHeight;
+    },
+    methods: {
+        initScroll:function(){
+            this.scrollTop=event.target.scrollTop;
+            if(this.scrollTop > this.adHeight){
+                this.isScrollRtrieval=false;
+            }else{
+                this.isScrollRtrieval=true;
+            }
+        },
+        mainScroll:function(event){
+            this.scrollTop=event.target.scrollTop;
+            if(this.scrollTop > this.adHeight){
+                this.isScrollRtrieval=false;
+            }else{
+                this.isScrollRtrieval=true;
+            }
+        },
+        startScroll:function(event){
+        },
+        moveScroll:function(event){
+        },
+        endScroll:function(event){
+        }
+    }
+});
+</script>
+
+</html>

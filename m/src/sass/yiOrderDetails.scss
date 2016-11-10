@@ -1,0 +1,335 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  一元购
+
+*/
+
+
+
+
+//body{
+//  background: #eee;
+//}
+
+
+//订单详情页面
+.yiOrderDetails{
+  background: #eee;
+
+  .details{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    border-bottom: 1px solid #ddd;
+    $h:159px;
+    height:pxTorem($h);
+    padding:pxTorem(25px) pxTorem(42px);
+    .Photo,img{
+      height:pxTorem($h);
+      width:pxTorem($h);
+    }
+    .Photo{
+      @extend %fl;
+      a{
+        display: block;
+      }
+    }
+    img{
+      vertical-align: middle;
+    }
+    .content{
+      height:pxTorem($h);
+      margin-left:pxTorem($h + 35px);
+      position: relative;
+    }
+    h3{
+      @include font-dpr(28px);
+      height: pxTorem(40px * 2);
+      line-height: pxTorem(40px);
+      overflow: hidden;
+      a{
+        color: #333;
+      }
+    }
+    span{
+      display: block;
+      &.currentNum{
+        color:#999;
+      }
+      &.luckyNum{
+        position: absolute;
+        left:0;
+        bottom: 0;
+      }
+      &.prize{
+        position: absolute;
+        right:0;
+        bottom: 0;
+      }
+      &.red{
+        color: $red-yi;
+      }
+    }
+  }
+
+  .PrizeName{
+    $h:76px;
+    height:pxTorem($h);
+    background: #fff;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    a{
+      display: block;
+      height:pxTorem($h);
+      padding:0 pxTorem(40px) 0 pxTorem(34px);
+      color:#333;
+    }
+    span{
+      display: inline-block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @include font-dpr(28px);
+      &.name{
+        @extend %fl;
+      }
+      &.num{
+        @extend %fr;
+        padding-right: pxTorem(36px);
+        position: relative;
+        &:after{
+          position: absolute;
+          right: 0;
+          top:pxTorem(26px);
+          content: "\20";
+          width:pxTorem(13px);
+          height:pxTorem(25px);
+          @extend %ico_rem;
+          background-image: url("../images/iconArrowR.png");
+        }
+      }
+    }
+  }
+
+  .info{
+    margin-top: pxTorem(20px);
+    background: #fff;
+    padding:pxTorem(15px) pxTorem(35px);
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    h2{
+      @include font-dpr(28px);
+      height:pxTorem(45px);
+      line-height:pxTorem(45px);
+      margin-bottom: pxTorem(10px);
+    }
+    ul{
+      color:#999;
+    }
+    li{
+      min-height: pxTorem(40px);
+      &.num{
+        @include display-flex();
+      }
+    }
+    label{
+      display: block;
+    }
+    .numList{
+      @extend %clearfix;
+      @include flex(1);
+      //word-wrap:break-word;
+      //word-break:break-all;
+      span{
+        float: left;
+        margin-right: pxTorem(10px);
+        //margin-bottom: pxTorem(10px);
+        height: pxTorem(40px);
+      }
+    }
+    .numListLength{
+      height: pxTorem(40px * 5);
+      overflow: hidden;
+    }
+    //查看更多号码
+    .more{
+      $h:50px;
+      text-align: center;
+      a{
+        display: inline-block;
+        padding:0 pxTorem(15px);
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+        color:#fff;
+        background: $red-yi;
+        @include border-radius(pxTorem(4px));
+        @include transition(all .5s);
+      }
+    }
+  }
+
+  .address{
+    margin-top: pxTorem(20px);
+    background: #fff;
+    padding-top:pxTorem(15px);
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    //物流文字说明
+    .explain{
+      color:$red-base;
+      text-align: center;
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+    }
+    .title{
+      position: relative;
+      height:pxTorem(45px);
+    }
+    h2{
+      @include font-dpr(28px);
+      height:pxTorem(45px);
+      line-height:pxTorem(45px);
+      margin:0 pxTorem(35px);
+    }
+    ul{
+      margin:0 pxTorem(35px);
+    }
+    li{
+      padding: pxTorem(15px) 0;
+      position: relative;
+      color:#999;
+      padding-left:pxTorem(55px);
+    }
+    input[type='radio']{
+      position: absolute;
+      left:0;
+      top:50%;
+      $w:36px;
+      margin-top:pxTorem(- $w / 2);
+      vertical-align: top;
+      border:0;
+      -webkit-appearance:none;
+      outline:none;
+      width:pxTorem($w);
+      height:pxTorem($w);
+      @include border-radius(50%);
+      &:before{
+        position: absolute;
+        left:0;
+        top:0;
+        content: "\20";
+        display: inline-block;
+        width:pxTorem($w - 4);
+        height:pxTorem($w - 4);
+        border:1px solid #333;
+        @include border-radius(50%);
+      }
+      &:checked{
+        &:before {
+          background-color: $red-base;
+          width: pxTorem($w);
+          height: pxTorem($w);
+          border: 0;
+          background-image: url("../images/iconHook.png");
+          @extend %ico_rem;
+          background-size: 50% 50% !important;
+        }
+      }
+    }
+    .text{
+      height:pxTorem(35px);
+    }
+    span{
+
+      &.name{
+        @extend %fl;
+      }
+      &.tel{
+        @extend %fr;
+      }
+    }
+
+    //编辑
+    .edit{
+      $h:28px;
+      height:pxTorem($h);
+      position: absolute;
+      right:pxTorem(50px);
+      top:pxTorem(10px);
+      padding-left:pxTorem(35px);
+      color:#198dd0;
+      &:after{
+        position: absolute;
+        left: 0;
+        top:0;
+        content: "\20";
+        width:pxTorem(28px);
+        height:pxTorem(28px);
+        @extend %ico_rem;
+        background-image: url("../images/iconEdit.png");
+      }
+    }
+  }
+
+}
+
+.yiOrderDetailsBtn{
+  background: #fff;
+  $h:94px;
+  $bthH:60px;
+  border-top:1px solid #ddd;
+  height: pxTorem($h);
+  position: relative;
+  margin:0;
+  text-align: right;
+  a{
+    &.ok,&.service{
+      text-align: center;
+      color:#fff;
+      @include font-dpr(24px);
+      @include border-radius(pxTorem(4px));
+      display: inline-block;
+      $top:($h - $bthH) / 2;
+      margin-top:pxTorem($top);
+      margin-right:pxTorem(30px);
+      height: pxTorem($bthH);
+      line-height: pxTorem($bthH);
+      padding:0 pxTorem(30px);
+      //width:pxTorem(148px);
+    }
+    //确认收货
+    &.ok{
+      background: $red-yi;
+    }
+    //联系客服
+    &.service{
+      background: #bbb;
+    }
+    &.more{
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      position: absolute;
+      right: pxTorem(40px);
+      top:0;
+      @include font-dpr(24px);
+      color:#333;
+      padding-right: pxTorem(35px);
+      &:after{
+        position: absolute;
+        right: 0;
+        top:pxTorem(34px);
+        content: "\20";
+        width:pxTorem(13px);
+        height:pxTorem(25px);
+        @extend %ico_rem;
+        background-image: url("../images/iconArrowR.png");
+      }
+    }
+  }
+}
+
+
