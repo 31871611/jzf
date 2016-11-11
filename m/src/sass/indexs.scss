@@ -13,13 +13,13 @@
   //@include tabShow($h:60px,$select:$red-base);
   padding-top:pxTorem(10px);
   overflow-x: auto;
+  width: 100%;
+  //border-bottom: 0;
   //隐藏滚动条
   &::-webkit-scrollbar{
     width: 0;
     height: 0;
   }
-  width: 100%;
-  border-bottom:0;
   .scroll{
 
   }
@@ -36,6 +36,7 @@
   @import "inc/tabShow";
   @include tabShow($h:60px,$select:$red-base);
   padding-top:pxTorem(10px);
+  border-bottom: 1px solid #eee;
 }
 
 //公告消息
