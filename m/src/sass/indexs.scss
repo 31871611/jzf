@@ -380,4 +380,49 @@
 }
 
 
+@if $wxTop {
+  .sharePagePhoto{
+    display: none;
+  }
+} @else{
 
+  //app上分享页
+  .sharePagePhoto{
+    position: fixed;
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+
+    @extend %ico_rem;
+    background-size: 100%;
+    background-image: url("../picture/sharePagePhoto.jpg");
+
+    //img{
+    //  vertical-align: middle;
+    //  width: 100%;
+    //}
+    .btn{
+      width: 100%;
+      position: absolute;
+      left:0;
+      bottom:pxTorem(142px);
+      $h:70px;
+      height: pxTorem($h);
+      margin:0;
+      a{
+        display: block;
+        margin:0 auto;
+        width:pxTorem(360px);
+        height: pxTorem($h);
+        line-height: pxTorem($h);
+        background: $red-base;
+        color:#fff;
+        @include font-dpr(34px);
+        @include border-radius(pxTorem(30px));
+      }
+    }
+  }
+
+}
