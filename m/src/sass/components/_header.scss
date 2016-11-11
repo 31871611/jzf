@@ -273,6 +273,7 @@
   overflow: hidden;
   @include display-flex();
   padding-left:pxTorem(20px);
+  background: #f9f9f9;
   .left,.right{
     position: static;
   }

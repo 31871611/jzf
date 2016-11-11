@@ -6,8 +6,9 @@
 nav.appNav{
   $h:98px;
   @extend .display-flex;
-  background: #fff;
+  //background: #fff;
   //height: pxTo750($h);
+  background: #f9f9f9;
   border-top:1px solid #999999;
   a{
     display: block;
@@ -81,6 +82,8 @@ nav.appNav{
     }
     //一元购
     &.appNavYi{
+      width: pxTorem(46px);
+      height: pxTorem(46px);
       position: relative;
       &:before {
         background-image: url("../images/iconNavYiGo.png");
@@ -99,7 +102,7 @@ nav.appNav{
 
     //当前页
     &.select{
-      color:$blue-base;
+      //color:$blue-base;
       //首页
       &.appNavHome {
         &:before {

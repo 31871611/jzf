@@ -87,8 +87,8 @@
           content: "\20";
           position: absolute;
           left:pxTorem(8px);
-          width:4px;
-          height:4px;
+          width:pxTorem(8px);
+          height:pxTorem(8px);
           @include rotate(-45deg);
           border-width: 1px;
           border-style: solid;

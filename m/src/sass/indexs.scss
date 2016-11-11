@@ -11,7 +11,8 @@
   @import "inc/tabShow";
   @include tabShow($h:60px,$select:$red-base,$sharing:false);
   //@include tabShow($h:60px,$select:$red-base);
-  padding-top:pxTorem(10px);
+  //padding-top:pxTorem(10px);
+  background: #f9f9f9;
   overflow-x: auto;
   width: 100%;
   //border-bottom: 0;
