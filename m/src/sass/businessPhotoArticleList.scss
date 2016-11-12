@@ -10,11 +10,11 @@
 
 */
 
+$stepLR:20px;   //页面左右间距
+$stepT:35px;    //文字与图片间隔
 
-.photoArticleList{
-  $stepLR:20px;   //页面左右间距
-  $stepT:35px;    //文字与图片间隔
-  padding-bottom: pxTorem(50px);
+.businessPhotoArticle{
+  padding-bottom: pxTorem(80px);
   h1{
     margin:pxTorem(30px) pxTorem($stepLR);
     @include font-dpr(32px);
@@ -72,7 +72,7 @@
         }
         &:before{
           background: rgba(51,51,51,.8);
-          @include animation(to 2s infinite);
+          @include animation(breathing 2s infinite);
         }
         &:after{
           border:1px solid #fff;
@@ -87,19 +87,20 @@
         line-height: pxTorem(40px);
         background: rgba(51,51,51,.8);
         padding-left:pxTorem(10px);
-        margin-left:pxTorem(20px);
+        margin-left:pxTorem(10px);
         padding-right:pxTorem(10px);
-        @include border-radius(pxTorem(18px) pxTorem(8px) pxTorem(8px) pxTorem(18px));
-        position: relative;
+        @include border-radius(pxTorem(8px) pxTorem(8px) pxTorem(8px) pxTorem(8px));
+        //position: relative;
         //三角形
         //&:before{
         //  content: '\20';
         //  position: absolute;
-        //  left:pxTorem(-36px);
+        //  left:-1px;
         //  top:0;
-        //  height: pxTorem(20px);
-        //  @include arrow(left,$w:pxTorem(20px),$c:#333);
-        //  @include opacity(80);
+        //  height: pxTorem(30px);
+        //  width: pxTorem(30px);
+        //  background: rgba(51,51,51,.8);
+        //  @include rotate(45deg);
         //}
       }
     }
@@ -112,7 +113,7 @@
   }
 
   //呼吸动画
-  @include keyframes(to){
+  @include keyframes(breathing){
     0%{
       @include scale(1);
     }
@@ -124,53 +125,132 @@
     }
   }
 
-
-
-
-  //推荐产品列表
-  ul{
-    $h:170px;
-    margin:pxTorem($stepT) pxTorem($stepLR) 0 pxTorem($stepLR);
-    li{
-      border:1px solid #999;
-      height: pxTorem($h);
-      padding:pxTorem(20px);
-      position: relative;
-    }
-    img{
-      width: pxTorem($h);
-      height: pxTorem($h);
-      vertical-align: middle;
-    }
-    h3{
-      @include font-dpr(32px);
-    }
-    strong{
-      @include font-dpr(32px);
-      color:$red-base;
-      font-weight: bold;
-    }
+  //更多美物
+  .moreBtn{
+    $h:46px;
+    height: pxTorem($h + 6);
+    text-align: center;
+    padding-top:pxTorem(10px);
     a{
-
-      //购买按钮
-      &.buyBtn{
-        position: absolute;
-        right:pxTorem(20px);
-        bottom:pxTorem(20px);
-        display: block;
-        @include font-dpr(28px);
-        width:pxTorem(148px);
-        height: pxTorem(54px);
-        line-height: pxTorem(54px);
-        text-align: center;
-        color: #fff;
+      display: inline-block;
+      border:2px solid $red-base;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @include font-dpr(28px);
+      color:$red-base;
+      padding:0 pxTorem(22px);
+      @include border-radius(pxTorem(6px));
+      &:active{
         background: $red-base;
-        @include border-radius(pxTorem(6px));
+        color:#fff;
       }
     }
   }
 
 
+}
 
+
+//推荐产品列表
+.businessPhotoArticleList{
+  $h:170px;
+  margin:pxTorem($stepT) pxTorem($stepLR) 0 pxTorem($stepLR);
+  li{
+    border:1px solid #999;
+    height: pxTorem($h);
+    padding:pxTorem(20px);
+    margin-bottom: pxTorem(30px);
+    @include display-flex();
+  }
+  .img{
+    width: pxTorem($h);
+    height: pxTorem($h);
+    a{
+      display: block;
+    }
+  }
+  img{
+    width: pxTorem($h);
+    height: pxTorem($h);
+    vertical-align: middle;
+  }
+  .box{
+    @include flex(1);
+    height: pxTorem($h);
+    margin-left:pxTorem(20px);
+    position: relative;
+  }
+  h3{
+    @include font-dpr(32px);
+    height: pxTorem(100px);
+    line-height:pxTorem(50px);
+    margin-bottom:pxTorem(35px);
+    overflow: hidden;
+  }
+  strong{
+    display: block;
+    @include font-dpr(32px);
+    color:$red-base;
+    font-weight: bold;
+  }
+  a{
+    //购买按钮
+    &.buyBtn{
+      position: absolute;
+      right:0;
+      bottom:0;
+      display: block;
+      @include font-dpr(28px);
+      width:pxTorem(148px);
+      height: pxTorem(54px);
+      line-height: pxTorem(54px);
+      text-align: center;
+      color: #fff;
+      background: $red-base;
+      @include border-radius(pxTorem(6px));
+    }
+  }
+}
+
+.businessPhotoArticleEntrance{
+  padding-bottom: pxTorem(80px);
+  .face{
+    margin:0 auto 0;
+    width: pxTorem(160px);
+    height: pxTorem(160px);
+    border:1px solid #ddd;
+    @include border-radius(50%);
+    @include display-flex();
+    @include align-items();
+    @include justify-content(center);
+    position: relative;
+    a{
+      display: block;
+    }
+    img{
+      width: pxTorem(138px);
+      height: pxTorem(138px);
+      @include border-radius(50%);
+    }
+    i{
+      position: absolute;
+      right:0;
+      bottom:0;
+      width:pxTorem(40px);
+      height: pxTorem(40px);
+      @extend %ico_rem;
+      background-image: url('../images/iconMerchant.png');
+    }
+  }
+  h2{
+    text-align: center;
+    @include font-dpr(36px);
+    margin-top:pxTorem(20px);
+  }
+  p{
+    margin:pxTorem(15px) pxTorem($stepLR) 0;
+    text-align: center;
+    color:#666;
+  }
 }
 

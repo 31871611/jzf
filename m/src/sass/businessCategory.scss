@@ -119,8 +119,8 @@
     h3{
       text-align: center;
       color:#333;
-      height: 30px;
-      line-height: 15px;
+      height: pxTorem(60px);
+      line-height: pxTorem(30px);
       overflow: hidden;
       margin:pxTorem(20px) pxTorem(10px) 0;
     }
