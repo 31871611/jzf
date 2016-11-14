@@ -154,6 +154,13 @@
       height:pxTorem(16px);
       background-image: url("../images/iconArrowB.png");
     }
+    //用户中心-我的优惠卷提示小原点
+    &.remind{
+      width: pxTorem(15px);
+      height: pxTorem(15px);
+      @include border-radius(50%);
+      background: $red-base;
+    }
   }
   //下分隔边框线
   .line{
