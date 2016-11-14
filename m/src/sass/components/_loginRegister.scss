@@ -54,7 +54,7 @@
       }
       //开锁验证码
       &.openPassC{
-        top:pxTorem(8px);
+        //top:pxTorem(8px);
         padding-left:pxTorem(30px + 10);
         &:before{
           width:pxTorem(30px);
@@ -80,9 +80,9 @@
     }
     //验证码
     .code{
-      display: inline-block;
-      height: pxTorem($h);
-      line-height: pxTorem($h);
+      display: block;
+      //height: pxTorem($h);
+      //line-height: pxTorem($h);
       @include font-dpr(28px);
       color: $red_c;
       &.select{
@@ -90,7 +90,7 @@
       }
       & + i.delete{
         position: absolute;
-        top:pxTorem(16px);
+        top:pxTorem(10px);
         left:50%;
       }
     }
@@ -159,6 +159,14 @@
     b{
       color:$red-base;
       font-weight: normal;
+    }
+  }
+  //点击输入邀请码
+  .clickInvite{
+    text-align: right;
+    margin-top: pxTorem(45px);
+    span{
+      color:$red-base;
     }
   }
   //按钮
