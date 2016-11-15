@@ -4,13 +4,13 @@
     "title":"公告"
 })
 <link rel="stylesheet" href="css/indexs.css"/>
-<body>
+<body id="app">
 <div class="wrap">
     <header>
         <div class="header noBBHeader">
             <div class="indexsSearch">
                 <div class="left">
-                    <a href="javascript:;" class="iconShare"></a>
+                    <a href="javascript:;" class="iconShare" @click="showShare()"></a>
                 </div>
                 <div class="goSearch">
                     <i></i>
@@ -177,8 +177,9 @@
 </div>
 
 <!-- app上分享页 -->
-<div class="sharePagePhoto">
-    <!--<img src="picture/sharePagePhoto.jpg" alt="">-->
+<div class="sharePagePhoto" v-show="isShowShare">
+    <img src="picture/sharePagePhoto.jpg" alt="">
+    <a href="javascript:;" @click="showShare()" class="iconBackTop"></a>
     <div class="btn">
         <a href="">向朋友推荐集珍坊</a>
     </div>
@@ -187,6 +188,21 @@
 </body>
 
 <script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            isShowShare:false
+        },
+        ready:function(){
+
+        },
+        methods: {
+            showShare:function(){
+                this.isShowShare = !this.isShowShare;
+            }
+        }
+    });
 
 </script>
 
