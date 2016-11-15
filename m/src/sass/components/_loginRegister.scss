@@ -62,6 +62,16 @@
           background-image: url("../images/iconPass2.png");
         }
       }
+      //邀请码
+      &.iconInviteC{
+        //top:pxTorem(8px);
+        padding-left:pxTorem(30px + 10);
+        &:before{
+          width:pxTorem(30px);
+          height:pxTorem(31px);
+          background-image: url("../images/iconInviteC.png");
+        }
+      }
       //删除
       &.delete{
         position: static;
@@ -125,13 +135,20 @@
         //蓝色验证码
         &.openPassC{
           @include translate3D(pxTorem(8px),pxTorem(-36px),0);
-          //left:pxTorem(8px);
-          //top:pxTorem(-36px);
           &:before{
             top:pxTorem(2px);
             width:pxTorem(23px);
             height:pxTorem(29px);
             background-image: url("../images/iconPassblue2.png");
+          }
+        }
+        //蓝色邀请码
+        &.iconInviteC{
+          @include translate3D(pxTorem(8px),pxTorem(-36px),0);
+          &:before{
+            width:pxTorem(26px);
+            height:pxTorem(27px);
+            background-image: url("../images/iconInviteblue.png");
           }
         }
       }
