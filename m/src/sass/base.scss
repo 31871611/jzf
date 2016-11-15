@@ -270,6 +270,9 @@ body{
   @extend %boxcen;
   img{
     @include animation(rotate 1s 0 linear infinite);
+    vertical-align: middle;
+    width: pxTorem(60px);
+    height: pxTorem(60px);
   }
 }
 
