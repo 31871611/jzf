@@ -140,18 +140,6 @@
     .red{
       background:$red-base;
     }
-    //单项
-    //&:nth-child(odd){
-    //  .box{
-    //    margin-right:pxTorem(10px);
-    //  }
-    //}
-    //双项
-    //&:nth-child(even){
-    //  .box{
-    //    margin-right:pxTorem(10px);
-    //  }
-    //}
   }
   //购物袋图标
   .buy{
@@ -162,19 +150,6 @@
     @extend %ico_rem;
     background-size: pxTorem(44px) pxTorem(56px);
   }
-  //马上开抢按钮
-  //.btnGo{
-  //  padding:0 pxTorem(20px);
-  //  height:pxTorem(42px);
-  //  line-height:pxTorem(42px);
-  //  border:1px solid $red-base;
-  //  color:$red-base;
-  //  font-size:pxTorem(24px);
-  //  &:active{
-  //    background-color: $red-hover-base;
-  //    color: #fff;
-  //  }
-  //}
 }
 
 //下划线
@@ -233,28 +208,6 @@
       position: relative; //好像不需要，购物车？
       @extend .display-flex;
     }
-    //马上开抢按钮
-    //.btnGo{
-    //  position: absolute;
-    //  bottom:pxTorem(10px);
-    //  right:pxTorem(10px);
-    //  //display: inline-block;
-    //  padding:0 pxTorem(20px);
-    //  height:pxTorem(54px);
-    //  line-height:pxTorem(54px);
-    //  border:1px solid $red-base;
-    //  color:$red-base;
-    //  font-size:pxTorem(26px);
-    //  &:active{
-    //    background-color: $red-hover-base;
-    //    color: #fff;
-    //  }
-    //}
-    //灰色即将开抢
-    //.btnGoC{
-    //  border-color: #999;
-    //  color:#999;
-    //}
   }
   //一样
   .img{
@@ -486,13 +439,6 @@
   .info{
     @extend .flex;
     position: relative;
-    top:0;    //与.img一样高
-    bottom:0; //与.img一样高
-    //h3{
-    //  color:#333333;
-    //  @include font-dpr(32px);
-    //  //padding-right:pxTorem(40px);
-    //}
   }
   //左边间距
   h3,.costPrice,.size,.parameter{
@@ -680,131 +626,10 @@
 }
 
 
-////边框线
-//.dashedBorder,.solidBorder{
-//  margin-left: pxTorem(30px);
-//  margin-right: pxTorem(30px);
-//}
-////虚线边框
-//.dashedBorder{
-//  border-bottom: 1px dashed $color-ccc;
-//}
-////实绩边框
-//.solidBorder{
-//  border-bottom: 1px solid $color-ccc;
-//}
-
-
-
-//列col
-//.goodsListCol{
-//
-//}
-
 //正常
 .goodsListNormal{
   @extend %goodsList;
 }
-
-//不规则
-//.goodsListNorule{
-//  @extend %goodsList;
-//  li{
-//    &:nth-child(1){
-//      width:50%;
-//      float:left;
-//      margin-bottom:pxTorem(20px);
-//    }
-//  }
-//  //分类商品开售倒记时
-//  li.goodsEndTime{
-//    text-align:center;
-//    color:#666666;
-//    .box{
-//      padding-top:pxTorem(30px);
-//      padding-bottom:pxTorem(40px);
-//      margin-right:pxTorem(10px);
-//      border-bottom: 1px dashed #999999;
-//      background: none;
-//    }
-//    h3{
-//      font-size:pxTorem(28px);
-//    }
-//    .timeCount{
-//      font-size:pxTorem(24px);
-//      margin-top:pxTorem(5px);
-//    }
-//    b{
-//      font-weight: normal;
-//      margin-right:pxTorem(16px);
-//    }
-//  }
-//  //hot分类
-//  li.goodsHotTab{
-//    .box{
-//      margin-right:pxTorem(10px);
-//      border-bottom: 1px dashed #999999;
-//      background: none;
-//    }
-//    a{
-//      background:#fff;
-//      color:#333;
-//      display: inline-block;
-//      padding:0 pxTorem(20px);
-//      height:pxTorem(50px);
-//      line-height:pxTorem(50px);
-//      margin:0 pxTorem(20px) pxTorem(20px) 0;
-//      &.select{
-//        background:$blue-base;
-//        color:#fff;
-//      }
-//    }
-//  }
-//  //类型|材质、形式
-//  .goodsType{
-//    .box{
-//      text-align:center;
-//      height:pxTorem(140px);
-//      line-height:pxTorem(140px);
-//      border:1px solid #666666;
-//      margin-right:pxTorem(10px);
-//      background: none;
-//      color:#666666;
-//      font-size:pxTorem(42px);
-//      position: relative;
-//      z-index:1;
-//      &:before,&:after{
-//        content: "\20";
-//        position: absolute;
-//        background:#e5e5e5;
-//        z-index:-1;
-//      }
-//      &:before{
-//        width:80%;
-//        height:104%;
-//        left:pxTorem(36px);
-//        top:-1px;
-//      }
-//      &:after{
-//        width:102%;
-//        height:50%;
-//        left:-1px;
-//        top:pxTorem(36px);
-//      }
-//    }
-//  }
-//  li.col{
-//    &:nth-child(2n+2){
-//      float:right;
-//    }
-//    &:nth-child(even){
-//      .box{
-//        margin-left:pxTorem(10px);
-//        margin-right:0;
-//      }
-//    }
-//  }
-//}
 
 
 /**************************************************************/
@@ -998,17 +823,4 @@
   @import "../inc/tabShow";
   @include tabShow();
 }
-/*
-.mb80{
-  margin-bottom: pxTorem(80px + 90);
-}
 
-.ppp{
-  position: fixed;
-  left:0;
-  //header高87+1
-  //goodsAd高320
-  top:pxTorem(87px + 1 + 320);
-  width:100%;
-}
-*/
