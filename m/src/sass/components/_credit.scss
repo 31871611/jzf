@@ -36,7 +36,9 @@
       }
     }
     a{
-      height:100%;
+      height:pxTorem(80px - 2);
+      line-height:pxTorem(80px - 2);
+      //height:100%;
       display: block;
       border:1px solid #e5e5e5;
       @include font-dpr(26px);
