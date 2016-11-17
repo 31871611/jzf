@@ -44,18 +44,19 @@
     position: absolute;
     left:pxTorem(30px);
     bottom: pxTorem(35px);
-    //img{
-    //  width:pxTorem(100px);
-    //  height: pxTorem(100px);
-    //  @include border-radius(50%);
-    //}
+    img{
+      display: block;
+      width:pxTorem(100px);
+      height: pxTorem(100px);
+      @include border-radius(50%);
+    }
     i{
       display: block;
       width:pxTorem(100px);
       height: pxTorem(100px);
       @include border-radius(50%);
-      background-image: url("../images/userhead.png");
-      @extend %ico_rem;
+      //background-image: url("../images/userhead.png");
+      //@extend %ico_rem;
       background-color: #fff;
     }
     span{
