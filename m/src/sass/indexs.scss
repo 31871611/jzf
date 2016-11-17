@@ -383,80 +383,10 @@
 
 
 @if $wxTop {
+
   //微信隐藏分享页
   .sharePagePhoto{
     display: none;
-  }
-
-  //集珍坊app首页添加下载广告
-  .appDownBottom{
-    z-index:-1;
-    position: fixed;
-    left:0;
-    bottom:pxTorem(99px);
-    width:100%;
-    height:pxTorem(120px);
-    background: rgba(234,58,56,.98);
-    @extend .display-flex;
-    @include align-items();
-    //@include justify-content(space-between);
-    border-top:1px solid #e5e5e5;
-    a,.exit{
-      display: block;
-    }
-    .exit{
-      margin:0 2% 0 3%;
-      width:pxTorem(54px);
-      height:pxTorem(54px);
-      position: relative;
-      @include rotate(45deg);
-      &:after,&:before{
-        content: "\20";
-        position: absolute;
-        background:#fff;
-      }
-      &:before{
-        left:18%;
-        top:48%;
-        width:pxTorem(34px);
-        height:1px;
-      }
-      &:after{
-        left:48%;
-        top:18%;
-        width:1px;
-        height:pxTorem(34px);
-      }
-    }
-    .img{
-      width:pxTorem(92px);
-      height:pxTorem(92px);
-      background-image: url("../images/iconUserAboutMe.png");
-      @extend %ico_rem;
-      margin-right:3%;
-    }
-    h3{
-      @include font-dpr(32px);
-      font-weight: bold;
-      line-height:pxTorem(46px);
-      color:#fff;
-    }
-    p{
-      @include font-dpr(28px);
-      line-height:pxTorem(42px);
-      color:#fff;
-    }
-    a{
-      position: absolute;
-      right:4%;
-      top:pxTorem(35px);
-      text-align:center;
-      width:pxTorem(138px);
-      height:pxTorem(48px);
-      line-height:pxTorem(48px);
-      border:1px solid #fff;
-      color:#fff;
-    }
   }
 
 } @else{

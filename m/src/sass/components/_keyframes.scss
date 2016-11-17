@@ -79,9 +79,10 @@
 //.enlarge-enter{
 //  @include animation(enlargeExit 400ms);
 //}
-//.enlarge-leave{
-//  @include animation(enlargeExit 400ms);
-//}
+//放大关闭.引导页
+.enlarge-leave{
+  @include animation(enlargeExit 400ms);
+}
 
 //放大关闭
 @include keyframes(enlargeExit){
