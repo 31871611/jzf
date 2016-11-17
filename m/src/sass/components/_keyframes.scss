@@ -70,7 +70,7 @@
 }
 
 
-//集珍坊app首页缩小关闭.启动页缩小关闭
+//集珍坊app首页缩小关闭
 .narrow-leave{
   @include animation(narrowExit 400ms);
 }
@@ -79,7 +79,7 @@
 //.enlarge-enter{
 //  @include animation(enlargeExit 400ms);
 //}
-//放大关闭.引导页
+//放大关闭.引导页.启动页
 .enlarge-leave{
   @include animation(enlargeExit 400ms);
 }
