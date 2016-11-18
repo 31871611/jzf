@@ -314,6 +314,24 @@
     }
   }
 
+  //抵用券
+  .voucher{
+    background: #fff;
+    padding:pxTorem(10px) 0;
+    li{
+      padding:0 pxTorem(20px);
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+    }
+    label{
+      display: block;
+    }
+    input[type='radio']{
+      @extend %selectBtn;
+      margin:pxTorem(22px) pxTorem(10px) 0 0;
+    }
+  }
+
 
   //按钮
   .btn{
