@@ -2,6 +2,39 @@
 @import "../comm/css3";
 @import "../comm/common";
 
+
+
+
+//————精品推荐————
+.indexTitle{
+  $h:90px;
+  height:pxTorem($h);
+  line-height:pxTorem($h);
+  text-align:center;
+  @include font-dpr(32px);
+  strong{
+    position: relative;
+    color:#333333;
+    &:before,&:after{
+      content: "\20";
+      position: absolute;
+      top:50%;
+      height:1px;
+      width:pxTorem(60px);
+      background:#999999;
+    }
+    &:before{
+      left:pxTorem(-70px);
+    }
+    &:after{
+      right:pxTorem(-70px);
+    }
+  }
+}
+
+
+
+
 /**************************************************************/
 
 //商品列表
