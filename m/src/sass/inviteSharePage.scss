@@ -1,0 +1,97 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  我的邀请展示页
+
+*/
+
+
+.inviteSharePage{
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom: 0;
+  color: #fff;
+  //背景
+  .bg{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+  }
+  .box{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom: 0;
+  }
+  .logo{
+    display: block;
+    width: pxTorem(59px);
+    height: pxTorem(135px);
+    margin:pxTorem(55px) auto 0;
+  }
+  .face{
+    $w:160px;
+    display: block;
+    width: pxTorem($w);
+    height: pxTorem($w);
+    @include border-radius(50%);
+    margin:pxTorem(72px) auto 0;
+    background: #fff;
+    img{
+      display: block;
+      width: pxTorem($w);
+      height: pxTorem($w);
+      @include border-radius(50%);
+    }
+  }
+  h2{
+    @include font-dpr(36px);
+    text-align: center;
+    margin-top:pxTorem(25px);
+  }
+  span{
+    display: block;
+    @include font-dpr(32px);
+    text-align: center;
+    margin-top:pxTorem(10px);
+    margin-bottom:pxTorem(75px);
+  }
+  .code{
+    width: pxTorem(340px);
+    height: pxTorem(340px);
+    margin: 0 auto pxTorem(75px);
+    position: relative;
+    i{
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin:pxTorem(-58px) 0 0 pxTorem(-58px);
+      width: pxTorem(116px);
+      height: pxTorem(116px);
+      @extend %ico_rem;
+      background-image: url("../images/inviteShareLogo.png");
+    }
+  }
+  p{
+    text-align: center;
+    margin-bottom: pxTorem(15px);
+    b{
+      color:$red-base;
+      @include font-dpr(36px);
+      font-weight: normal;
+      padding:0 pxTorem(15px);
+    }
+  }
+
+
+}

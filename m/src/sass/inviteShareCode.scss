@@ -1,0 +1,87 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  我的邀请分红二维码
+
+*/
+
+
+.inviteShareCode{
+  h2{
+    text-align: center;
+    @include font-dpr(36px);
+    font-weight: bold;
+    margin-top:pxTorem(60px);
+  }
+  //活动规则
+  .rule{
+    color: #333;
+    display: block;
+    text-align: center;
+    @include font-dpr(28px);
+    margin-top:pxTorem(30px);
+    margin-bottom:pxTorem(50px);
+  }
+  .codeBox{
+    margin: 0 auto;
+    background: #fff;
+    width: pxTorem(620px);
+    //height: pxTorem(720px);
+    padding-top:pxTorem(55px);
+    padding-bottom:pxTorem(55px);
+    .code{
+      width: pxTorem(520px);
+      height: pxTorem(520px);
+      margin: 0 auto;
+      position: relative;
+    }
+    i{
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin:pxTorem(-58px) 0 0 pxTorem(-58px);
+      width: pxTorem(116px);
+      height: pxTorem(116px);
+      @extend %ico_rem;
+      background-image: url("../images/inviteShareLogo.png");
+    }
+    p{
+      text-align: center;
+      margin-top:pxTorem(20px);
+      &:nth-of-type(2){
+        margin-top:pxTorem(10px);
+      }
+    }
+    b{
+      color:$red-base;
+      padding:0 pxTorem(10px);
+      font-weight: normal;
+    }
+  }
+
+  .btn{
+    @if $wxTop{
+      display: none;
+    } @else {
+      display: block;
+    }
+    text-align: center;
+    width: pxTorem(236px);
+    height: pxTorem(70px);
+    line-height: pxTorem(70px);
+    margin: pxTorem(74px) auto 0;
+    border:2px solid $red-base;
+    @include font-dpr(32px);
+    color:$red-base;
+    @include border-radius(pxTorem(10px));
+    &:hover{
+      background: $red-hover-base;
+      color:#fff;
+    }
+  }
+}

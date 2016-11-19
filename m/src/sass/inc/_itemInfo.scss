@@ -139,6 +139,13 @@
       height: pxTorem(40px);
       background-image: url("../images/iconUserSetting.png");
     }
+    //个人中心首页-邀请好友
+    &.iconUserHomeInvite{
+      margin-right: pxTorem(15px);
+      width: pxTorem(36px);
+      height: pxTorem(35px);
+      background-image: url("../images/iconUserHomeInvite.png");
+    }
     /* 右边图标 */
     //右箭头
     &.iconArrowRight{
