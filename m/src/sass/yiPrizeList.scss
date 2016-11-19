@@ -252,5 +252,144 @@
 }
 
 
+//抵用券
+.yiVoucher{
+  ul{
+    padding-top:pxTorem(20px);
+    padding-bottom:pxTorem(50px);
+    $h:144px;
+    $ml:180px;
+    margin:0 pxTorem(20px);
+    li{
+      @include box-shadow(0 0 pxTorem(13px) rgba(218,215,215,.9));
+      padding-bottom: pxTorem(10px);
+      position: relative;
+      background:#fff;
+      margin-bottom: pxTorem(10px);
+      overflow: hidden;
+      //不可用
+      &.select{
+        .money{
+          background:#cccccc;
+        }
+      }
 
+      h2,p{
+        margin-left:pxTorem($ml + 20);
+      }
+      h2{
+        @include font-dpr(28px);
+        color:#333333;
+        padding-top:pxTorem(18px);
+        margin-bottom:pxTorem(14px);
+      }
+      p{
+        height: pxTorem(40px);
+        line-height: pxTorem(40px);
+        @include font-dpr(20px);
+        position: relative;
+        padding-left:pxTorem(16px);
+        color:#999999;
+        &:after{
+          position: absolute;
+          left:0;
+          top:50%;
+          display:block;
+          content:"\20";
+          width:pxTorem(8px);
+          height:pxTorem(8px);
+          margin-top:pxTorem(-4px);
+          @include border-radius(50%);
+          background:#999999;
+        }
+      }
+      //选中优惠卷按钮
+      .selectBtn{
+        //@extend %selectBtn;
+        position: absolute;
+        right:pxTorem(20px);
+        top:50%;
+        margin:pxTorem(-16px) 0 0 0;
+      }
+      //已使用|已过期
+      .expire{
+        width:pxTorem(120px);
+        height:pxTorem(60px);
+        line-height:pxTorem(80px);
+        position: absolute;
+        right:pxTorem(- 38px);
+        top:pxTorem(- 8px);
+        background:#cccccc;
+        color:#fff;
+        font-style:normal;
+        text-align:center;
+        //rotation:180deg;
+        @include rotate(45deg);
+      }
+    }
+    .money{
+      position: absolute;
+      left:0;
+      top:0;
+      height:100%;
+      background:$red-base;
+      width:pxTorem($ml);
+      float:left;
+      text-align:center;
+      strong{
+        display: block;
+        color:#fff;
+        @include font-dpr(48px);
+        margin-top: pxTorem(50px);
+      }
+      b{
+        @include font-dpr(48px);
+        position: relative;
+        &:after{
+          content: "￥";
+          font-style: normal;
+          position: absolute;
+          left:pxTorem(-20px);
+          top:0;
+          @include font-dpr(24px);
+        }
+      }
+      .use{
+        display:block;
+        color:#fff;
+        @include font-dpr(36px);
+        text-align:center;
+      }
+      .lineRight{
+        position: absolute;
+        right:pxTorem(-8px);
+        top:pxTorem(-8px);
+        width:pxTorem(14px);
+        height:pxTorem(14px);
+        span{
+          display: block;
+          width:pxTorem(14px);
+          height:pxTorem(14px);
+          @include border-radius(50%);
+          background-color: #eee;
+          margin-bottom:pxTorem(10px);
+        }
+      }
+    }
+  }
+}
 
+.yiVoucherBtn{
+  a{
+    @include font-dpr(28px);
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    text-align: center;
+    display: block;
+    background: $red-yi;
+    color:#fff;
+    &:hover{
+      background: $red-hover-base;
+    }
+  }
+}

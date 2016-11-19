@@ -19,7 +19,6 @@ var clean = require('gulp-clean');
 gulp.task('sass', function () {
     gulp.src('./src/sass/**/*.scss')
         .pipe(sass())
-        .pipe(cssver())             //给css文件里引用文件加版本号（文件MD5）
         .pipe(minifyCss({
             compatibility: 'ie7',   //类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
         }))
@@ -30,7 +29,6 @@ gulp.task('sass', function () {
 //压缩css
 gulp.task('minify-css', function () {
     gulp.src('./css/*.css')
-        .pipe(cssver())             //给css文件里引用文件加版本号（文件MD5）
         .pipe(minifyCss({
             compatibility: 'ie7',   //类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
         })) //压缩css
