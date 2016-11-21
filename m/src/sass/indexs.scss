@@ -10,9 +10,7 @@
 .indexsTab{
   @import "inc/tabShow";
   @include tabShow($h:60px,$select:$red-base,$sharing:false);
-  //@include tabShow($h:60px,$select:$red-base);
-  //padding-top:pxTorem(10px);
-  background: #f9f9f9;
+  background: rgba(0,0,0,.9);
   overflow-x: auto;
   width: 100%;
   //border-bottom: 0;
@@ -25,6 +23,7 @@
 
   }
   a{
+    color: #fff;
     float: left;
     //width:pxTorem(120px);
     padding-left: pxTorem(30px);
@@ -36,51 +35,13 @@
 .averageTab{
   @import "inc/tabShow";
   @include tabShow($h:60px,$select:$red-base);
-  padding-top:pxTorem(10px);
+  //padding-top:pxTorem(10px);
   border-bottom: 1px solid #eee;
 }
 
-//公告消息
-.indexsNotice{
-  margin-bottom: pxTorem(10px);
-  border-bottom: 1px solid #ddd;
-  $h:50px;
-  height: pxTorem($h);
-  padding: pxTorem(16px) pxTorem(20px);
-  @include display-flex();
-  background: #fff;
-  overflow: hidden;
-  i{
-    margin-top:pxTorem(5px);
-    width:pxTorem(41px);
-    height: pxTorem(40px);
-    display: block;
-    @extend %ico_rem;
-    background-image: url("../images/indexsNotice.png");
-  }
-  .box{
-    margin:0 0 0 pxTorem(20px);
-    height: pxTorem($h);
-    border-left:1px solid #ddd;
-    @include flex(1);
-    overflow: hidden;
-    width: 98%;
-  }
-  ul{
 
-  }
-  li{
-    padding-left:pxTorem(20px);
-    height: pxTorem($h);
-    line-height: pxTorem($h);
-    overflow: hidden;
-    color:#999;
-  }
-}
-//公告消息下方无间隔
-.mbN{
-  margin-bottom: 0;
-}
+/*****************************************************************************/
+
 
 //自营
 .indexsSelf{
@@ -165,6 +126,250 @@
     }
   }
 }
+
+
+/*****************************************************************************/
+
+//首页
+//2016-11-21.专场
+
+//承诺保证
+.indexsEnsure{
+  $h:80px;
+  margin-bottom: pxTorem(20px);
+  border-bottom: 1px solid #ddd;
+  height: pxTorem($h - 16 - 16);
+  padding:pxTorem(16px) 0;
+  background: #fff;
+  i{
+    float: left;
+    margin:pxTorem(10px) pxTorem(30px) 0 pxTorem(30px);
+    display: inline-block;
+    width: pxTorem(136px);
+    height: pxTorem(30px);
+    @extend %ico_rem;
+    background-image: url("../images/iconEnsure.png");
+  }
+  span{
+    float: left;
+    display: inline-block;
+    height: pxTorem(50px);
+    line-height: pxTorem(50px);
+    border-left:1px solid #ddd;
+    color:#999;
+    padding-left:pxTorem(29px);
+  }
+}
+
+//秒杀
+.secKillMore{
+  @import "inc/itemInfo";
+  @include itemInfo();
+  a{
+    margin:0 pxTorem(20px);
+  }
+  $h:90px;
+  .box{
+    @include flex(1);
+    b{
+      display: block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      float: left;
+      @include font-dpr(30px);
+      color: #666;
+      font-weight: normal;
+    }
+  }
+  .time{
+    height: pxTorem($h);
+    float: left;
+    padding-left:pxTorem(24px);
+    span{
+      display: inline-block;
+      width: pxTorem(52px);
+      height: pxTorem(52px);
+      line-height: pxTorem(52px);
+      text-align: center;
+      @include font-dpr(32px);
+      border: 1px solid #a0a0a0;
+      @include border-radius(4px);
+    }
+    em{
+      width: pxTorem(26px);
+      text-align: center;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+  }
+}
+
+//秒杀滚动列表
+.secKillScroll{
+  background: #fff;
+  margin-bottom: pxTorem(20px);
+  padding-bottom: pxTorem(20px);
+  $w:560px;
+  $h:320px;
+  $imgW:250px;
+  overflow-x: auto;
+  ul{
+
+  }
+  li{
+    width: pxTorem($w);
+    height: pxTorem($h);
+    overflow: hidden;
+    margin-right: pxTorem(20px);
+    float: left;
+    background: #f3f3f3;
+    a{
+      display: block;
+      width: pxTorem($w - 20);
+      height: pxTorem($h - 35);
+      color: #333;
+      padding:pxTorem(35px) 0 0 pxTorem(20px);
+    }
+    img{
+      display: block;
+      width: pxTorem($imgW);
+      height: pxTorem($imgW);
+      float: left;
+    }
+    h2,em,span{
+      margin-left:pxTorem($imgW + 30px);
+    }
+    h2{
+      @include font-dpr(28px);
+      padding-right: pxTorem(20px);
+      margin-top:pxTorem(40px);
+    }
+    em{
+      margin-top:pxTorem(15px);
+      font-style: normal;
+      text-decoration:line-through;
+      display: block;
+    }
+    span{
+      margin-top:pxTorem(10px);
+      @include font-dpr(32px);
+      font-weight: bold;
+      display: block;
+    }
+  }
+}
+
+//专场滚动
+.specialScroll{
+  $h:210px;
+  height: pxTorem($h);
+  overflow-x:auto;
+  margin-top:pxTorem(10px);
+  margin-bottom:pxTorem(20px);
+  &::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+  }
+  ul{
+    //height: pxTorem($h);
+  }
+  li{
+    width: pxTorem($h);
+    height: pxTorem($h);
+    float: left;
+    padding-right: pxTorem(10px);
+    &.more{
+      width: pxTorem(89px);
+      height: pxTorem(210px);
+      @include font-dpr(28px);
+      padding-right: 0;
+      text-align: center;
+      a{
+        padding:pxTorem(75px) pxTorem(10px) 0 pxTorem(10px);
+        width: pxTorem(89px - 20);
+        height: pxTorem(206px - 75);
+        border:1px solid #d6d6d6;
+        @include font-dpr(28px);
+        color: #999;
+      }
+    }
+  }
+  a{
+    display: block;
+    position: relative;
+    width: pxTorem($h);
+    height: pxTorem($h);
+  }
+  img{
+    width: pxTorem($h);
+    height: pxTorem($h);
+    vertical-align: middle;
+  }
+  span{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    height: pxTorem(48px);
+    line-height: pxTorem(48px);
+    background: rgba(0,0,0,.8);
+  }
+}
+
+.specialMore{
+  @import "inc/itemInfo";
+  @include itemInfo();
+  a{
+    margin:0 pxTorem(20px);
+  }
+  .text{
+    @include font-dpr(30px);
+  }
+}
+
+.specialPhoto{
+  $h:360px;
+  height:pxTorem($h);
+  position: relative;
+  z-index: 1;
+  a{
+    display: block;
+    height:pxTorem($h);
+  }
+  img{
+    height:pxTorem($h);
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+.specialList{
+  @extend %clearfix;
+  $w:186px;
+  padding-bottom: pxTorem(20px);
+  li{
+    height: pxTorem($w);
+    width: pxTorem($w);
+    float: left;
+    margin:pxTorem(2px) pxTorem(2px) 0 0;
+    &:nth-child(4n){
+      margin-right: 0;
+    }
+  }
+  a{
+    display: block;
+    height: pxTorem($w);
+    width: pxTorem($w);
+  }
+  img{
+    vertical-align: middle;
+    height: pxTorem($w);
+    width: pxTorem($w);
+  }
+}
+
 
 //店铺商品
 .indexsShop{
@@ -255,6 +460,54 @@
   }
 }
 
+
+/*****************************************************************************/
+
+
+//寿山石.首页
+
+//公告消息
+.indexsNotice{
+  margin-bottom: pxTorem(10px);
+  border-bottom: 1px solid #ddd;
+  $h:50px;
+  height: pxTorem($h);
+  padding: pxTorem(16px) pxTorem(20px);
+  @include display-flex();
+  background: #fff;
+  overflow: hidden;
+  i{
+    margin-top:pxTorem(5px);
+    width:pxTorem(41px);
+    height: pxTorem(40px);
+    display: block;
+    @extend %ico_rem;
+    background-image: url("../images/indexsNotice.png");
+  }
+  .box{
+    margin:0 0 0 pxTorem(20px);
+    height: pxTorem($h);
+    border-left:1px solid #ddd;
+    @include flex(1);
+    overflow: hidden;
+    width: 98%;
+  }
+  ul{
+
+  }
+  li{
+    padding-left:pxTorem(20px);
+    height: pxTorem($h);
+    line-height: pxTorem($h);
+    overflow: hidden;
+    color:#999;
+  }
+}
+//公告消息下方无间隔
+.mbN{
+  margin-bottom: 0;
+}
+
 //分类入口
 .classifyEntrance{
   $h:240px;
@@ -290,12 +543,11 @@
   }
 }
 
-//专场
+
+//专场.h:320
 .specialEntrance{
   margin-bottom: pxTorem(10px);
 }
-
-
 //专场|私洽
 .specialEntrance,.privateEntrance{
   $h:320px;
@@ -311,37 +563,7 @@
 }
 
 
-//精品推荐标题
-.recommendTitle{
-  $h:90px;
-  height:pxTorem($h);
-  line-height:pxTorem($h);
-  text-align:center;
-  @include font-dpr(32px);
-  strong{
-    position: relative;
-    color:#333333;
-    &:before,&:after{
-      content: "\20";
-      position: absolute;
-      top:50%;
-      height:1px;
-      width:pxTorem(60px);
-      background:#999999;
-    }
-    &:before{
-      left:pxTorem(-70px);
-    }
-    &:after{
-      right:pxTorem(-70px);
-    }
-  }
-  a{
-    color: #333;
-  }
-}
-
-//浮动首页与用户中心入口
+//浮动首页与用户中心入口.不需要了
 .indexPosEntrance{
   $h:90px;
   height: pxTorem($h);
@@ -382,10 +604,52 @@
 }
 
 
+/*****************************************************************************/
+
+
+//精品推荐标题
+.recommendTitle{
+  $h:90px;
+  height:pxTorem($h);
+  line-height:pxTorem($h);
+  text-align:center;
+  @include font-dpr(32px);
+  strong{
+    position: relative;
+    color:#333333;
+    &:before,&:after{
+      content: "\20";
+      position: absolute;
+      top:50%;
+      height:1px;
+      width:pxTorem(60px);
+      background:#999999;
+    }
+    &:before{
+      left:pxTorem(-70px);
+    }
+    &:after{
+      right:pxTorem(-70px);
+    }
+  }
+  a{
+    color: #333;
+  }
+}
+
+
+/*****************************************************************************/
+
+
 @if $wxTop {
 
-  //微信隐藏分享页
+  //分享页.微信隐藏
   .sharePagePhoto{
+    display: none;
+  }
+
+  //引导页.微信隐藏
+  .appGuidePage{
     display: none;
   }
 
