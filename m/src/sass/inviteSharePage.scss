@@ -71,6 +71,9 @@
     height: pxTorem(340px);
     margin: 0 auto pxTorem(75px);
     position: relative;
+    img{
+      pointer-events:auto;
+    }
     //i{
     //  position: absolute;
     //  left:50%;

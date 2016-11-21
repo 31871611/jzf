@@ -39,6 +39,9 @@
       height: pxTorem(520px);
       margin: 0 auto;
       position: relative;
+      img{
+        pointer-events:auto;
+      }
     }
     //i{
     //  position: absolute;
