@@ -65,6 +65,23 @@
 }
 
 
+.detailListTitleBg{
+  height: pxTorem(80px);
+  line-height: pxTorem(80px);
+  text-indent: pxTorem(30px);
+  @extend %ico_rem;
+  background-size: 100% 100% !important;
+  background-image: url("../images/activityDetailTitleBg.jpg");
+  color: #fff;
+  text-align: left;
+  @include font-dpr(32px);
+  b{
+    @include font-dpr(48px);
+    font-weight: normal;
+  }
+}
+
+
 //详情页图片列表
 .detailImg{
   a{
