@@ -1,8 +1,12 @@
 @charset "UTF-8";
-@import "../comm/css3";
-@import "../comm/common";
+@import "comm/css3";
+@import "comm/common";
 
-//公告
+/*
+
+  公告页面
+
+*/
 .bulletinList{
   li{
     background: #fff;
