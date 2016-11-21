@@ -206,12 +206,13 @@
 
 //秒杀滚动列表
 .secKillScroll{
-  background: #fff;
-  margin-bottom: pxTorem(20px);
-  padding-bottom: pxTorem(20px);
   $w:560px;
   $h:320px;
   $imgW:250px;
+  height: pxTorem($h);
+  background: #fff;
+  margin-bottom: pxTorem(20px);
+  padding-bottom: pxTorem(20px);
   overflow-x: auto;
   ul{
 
