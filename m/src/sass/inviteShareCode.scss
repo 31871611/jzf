@@ -40,16 +40,16 @@
       margin: 0 auto;
       position: relative;
     }
-    i{
-      position: absolute;
-      left:50%;
-      top:50%;
-      margin:pxTorem(-58px) 0 0 pxTorem(-58px);
-      width: pxTorem(116px);
-      height: pxTorem(116px);
-      @extend %ico_rem;
-      background-image: url("../images/inviteShareLogo.png");
-    }
+    //i{
+    //  position: absolute;
+    //  left:50%;
+    //  top:50%;
+    //  margin:pxTorem(-58px) 0 0 pxTorem(-58px);
+    //  width: pxTorem(116px);
+    //  height: pxTorem(116px);
+    //  @extend %ico_rem;
+    //  background-image: url("../images/inviteShareLogo.png");
+    //}
     p{
       text-align: center;
       margin-top:pxTorem(20px);
