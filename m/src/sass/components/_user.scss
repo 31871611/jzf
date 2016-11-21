@@ -37,8 +37,17 @@
 .user{
   //添加新地址2016-11-19
   .userChoiceArea{
+    @include display-flex();
+    @include align-items();
+    border-bottom:1px solid #ccc;
+    margin:0 pxTorem(20px);
     input[type='text']{
-
+      display: block;
+      @include flex(1);
+      border:0;
+      height: pxTorem(90px);
+      line-height: pxTorem(90px);
+      @include font-dpr(28px);
     }
   }
   //width: 100%;
