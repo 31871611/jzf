@@ -21,17 +21,37 @@
         </div>
 
         <div class="goodsRtrieval">
-            <a href="javascript:;" class="select">全部</a>
-            <a href="javascript:;">价格</a>
-            <a href="javascript:;">分类</a>
-            <a href="javascript:;">状态</a>
-        </div>
-        <div class="goodsRtrieval">
             <a href="javascript:;" class="select">排序</a>
             <a href="javascript:;">新品</a>
             <a href="javascript:;" class="select">价格<i class="price down"></i></a>
             <a href="javascript:;" class="select">筛选<i class="filter"></i></a>
         </div>
+
+        <div class="tabRetrieve">
+            <div>
+                <a href="javascript:;" class="select">排序</a>
+            </div>
+            <div>
+                <a href="javascript:;">新品</a>
+            </div>
+            <div>
+                <a href="javascript:;" class="select">价格<i class="price down"></i></a>
+            </div>
+            <div>
+                <a href="javascript:;" class="select">
+                    筛选<i class="filter"></i>
+                </a>
+                <ul class="more">
+                    <li><a href="">翡翠</a></li>
+                    <li><a href="">珍珠</a></li>
+                    <li><a href="">琥珀蜜蜡</a></li>
+                    <li><a href="">珊瑚</a></li>
+                    <li><a href="">彩宝</a></li>
+                    <li><a href="">其他</a></li>
+                </ul>
+            </div>
+        </div>
+
 
         <div class="goodsFilter" v-show="!isScrollRtrieval">
             <div href="javascript:;" class="sort"><i class="iconFilter"></i>筛选<i class="arrow"></i></div>
@@ -46,7 +66,12 @@
         <article class="main" @scroll="mainScroll($event)" @touchstart="startScroll($event)" @touchmove="moveScroll($event)" @touchend="endScroll($event)">
             <!--广告图-->
             <div class="goodsAd">
-                <img alt="" src="http://njizhenfang.jizhenfang.com/exhibition/20160510/1c9fc4017ecd470a8ad4902bd8eab477.png">
+                <img alt="" src="picture/750x360.jpg" />
+            </div>
+
+            <!-- 列表信息 -->
+            <div class="listArticle">
+                据说有这样一个故事，梁思成问林徽因：“有一句话，我只问这一次，以后都不会再问，为什么是我？”林徽因答：“答案很长，我得用一生去回答你，准备好听我了吗？”婚后，梁思成曾诙谐地对朋友说：“中国有句俗话：‘文章是自己的好，老婆是人家的好。’
             </div>
 
             <div class="goodsFilter" v-show="isScrollRtrieval">
@@ -109,7 +134,7 @@
                     <li class="col">
                         <div class="box">
                             <a href="" class="img">
-                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <img src="picture/index6.jpg" alt=""/>
                                 <!-- 已出售 -->
                                 <i class="out"></i>
                                 <!-- 已预定 -->
@@ -118,6 +143,10 @@
                                 <!--<i class="degree360"></i>-->
                                 <!-- 视频播放图标 -->
                                 <i class="video"></i>
+                                <!-- 感恩优惠价格： -->
+                                <div class="activityListTitleBg">
+                                    感恩优惠价：<b>2,000</b>
+                                </div>
                             </a>
                             <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
                             <div class="bottom">
@@ -133,7 +162,7 @@
                     <li class="col">
                         <div class="box">
                             <a href="" class="img">
-                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <img src="picture/index6.jpg" alt=""/>
                                 <!--<i class="out"></i>-->
                                 <i class="booked"></i>
                                 <!--<i class="degree360"></i>-->
@@ -154,7 +183,7 @@
                     <li class="col" v-for="item in 10">
                         <div class="box">
                             <a href="" class="img">
-                                <img :src="'../../html/picture/index6.jpg'" alt=""/>
+                                <img src="picture/index6.jpg" alt=""/>
                                 <i class="out"></i>
                                 <!--<i class="booked"></i>-->
                             </a>
@@ -189,6 +218,10 @@
                             <!--<i class="degree360"></i>-->
                             <!-- 视频播放图标 -->
                             <i class="video"></i>
+                            <!-- 感恩优惠价格： -->
+                            <div class="activityListTitleBg">
+                                感恩优惠价：<b>2,000</b>
+                            </div>
                         </a>
                         <div class="info">
                             <a href="http://www.163.com">

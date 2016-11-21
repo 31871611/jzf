@@ -33,6 +33,14 @@
 }
 
 
+//列表信息
+.listArticle{
+  background: #fff;
+  padding:pxTorem(10px) pxTorem(20px);
+  @include font-dpr(26px);
+  color:#666;
+  line-height: pxTorem(36px);
+}
 
 
 /**************************************************************/
@@ -107,6 +115,25 @@
           width:pxTorem(34px);
           height:pxTorem(34px);
           background-image:url("../images/iconListVideo.png");
+      }
+      //感恩优惠价格
+      .activityListTitleBg{
+        position: absolute;
+        left:0;
+        bottom: 0;
+        height: pxTorem(50px);
+        line-height: pxTorem(50px);
+        width: 100%;
+        text-indent: pxTorem(20px);
+        @extend %ico_rem;
+        background-size: 100% 100% !important;
+        background-image: url("../images/activityListTitleBg.jpg");
+        color: #fff;
+        text-align: left;
+        b{
+          @include font-dpr(28px);
+          font-weight: normal;
+        }
       }
     }
     //爱心图标
@@ -295,6 +322,25 @@
       width:pxTorem(34px);
       height:pxTorem(34px);
       background-image:url("../images/iconListVideo.png");
+    }
+    //感恩优惠价格
+    .activityListTitleBg{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      height: pxTorem(50px);
+      line-height: pxTorem(50px);
+      width: 100%;
+      text-indent: pxTorem(20px);
+      @extend %ico_rem;
+      background-size: 100% 100% !important;
+      background-image: url("../images/activityListTitleBg.jpg");
+      color: #fff;
+      text-align: left;
+      b{
+        @include font-dpr(28px);
+        font-weight: normal;
+      }
     }
   }
   //白色爱心、灰色爱心
@@ -709,18 +755,19 @@
 
 //图片广告
 .goodsAd{
-  height: pxTorem(320px);
+  $h:360px;
+  height: pxTorem($h);
   a{
     display: block;
   }
   img{
     vertical-align: middle;
     width:100%;
-    height:pxTorem(320px);
+    height: pxTorem($h);
   }
 }
 
-//检索  排序|价格|分类|状态
+
 .goodsRtrieval{
   $h:89px;
   height:pxTorem($h);
@@ -800,7 +847,120 @@
       background-image: url("../images/iconFilter.png");
     }
   }
+
 }
+
+//检索带下拉  排序|价格|分类|状态
+.tabRetrieve{
+  $h:89px;
+  height:pxTorem($h);
+  width:100%;
+  background:#fff;
+  border-bottom: 1px solid #dddddd;
+  @include display-flex();
+  div{
+    height:pxTorem($h);
+    @include flex(1);
+    position: relative;
+    z-index: 7;
+    a{
+      text-align:center;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      width:100%;
+      display: block;
+      @include font-dpr(28px);
+      color:#333333;
+      &.select{
+        color:$red-base;
+        i{
+          &.filter{
+            background-image: url("../images/iconFilterRed.png");
+          }
+        }
+      }
+      &:after{
+        content: "\20";
+        position: absolute;
+        right:0;
+        top:pxTorem(24px);
+        width:1px;
+        height:pxTorem(42px);
+        background:#dddddd;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+    i{
+      position: absolute;
+      left:50%;
+      &.price{
+        margin-left:pxTorem(30px);
+        top:pxTorem(14px);
+        &:before,&:after{
+          content: "\20";
+          position: absolute;
+          left:0;
+        }
+        &:before{
+          top:pxTorem(10px);
+          @include arrow(top,pxTorem(10px),#333333);
+        }
+        &:after{
+          top:pxTorem(34px);
+          @include arrow(bottom,pxTorem(10px),#333333);
+        }
+      }
+      &.up{
+        &:before {
+          border-color: transparent transparent $red-base transparent;
+        }
+      }
+      &.down{
+        &:after {
+          border-color: $red-base transparent transparent transparent;
+        }
+      }
+
+      &.filter{
+        margin-left:pxTorem(30px);
+        top:pxTorem(34px);
+        width:pxTorem(21px);
+        height:pxTorem(21px);
+        @extend %ico_rem;
+        background-image: url("../images/iconFilter.png");
+      }
+    }
+  }
+
+  //更多下拉
+  .more{
+    $moreH:80px;
+    z-index: 8;
+    position: absolute;
+    left:0;
+    top:pxTorem($h + 1);
+    width: 100%;
+    background: #fff;
+    li{
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      height: pxTorem($moreH);
+    }
+    a{
+      height: pxTorem($moreH);
+      line-height: pxTorem($moreH);
+      &.select{
+        color: $red-base;
+      }
+    }
+  }
+}
+
+
 
 //当天商品开售倒记时
 .goodsDayEndTime{
