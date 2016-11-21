@@ -1,0 +1,55 @@
+@charset "UTF-8";
+//@import "comm/reset";
+@import "comm/css3";
+@import "comm/common";
+
+
+/*
+
+  悦读
+
+*/
+
+
+.happyReadList{
+  $w:140px;
+  background: #fff;
+  li{
+    border-bottom: 1px solid #ccc;
+    //height: pxTorem($w);
+    a{
+      display: block;
+      @include display-flex();
+      padding:pxTorem(20px) pxTorem(20px);
+      &:active{
+        background: #eee;
+      }
+    }
+    .photo{
+      margin-right: pxTorem(20px);
+      width: pxTorem($w);
+      height: pxTorem($w);
+      img{
+        width: pxTorem($w);
+        height: pxTorem($w);
+        vertical-align: middle;
+      }
+    }
+    .text{
+      @include flex(1);
+      h3{
+        @include font-dpr(28px);
+        height: pxTorem(60px);
+        line-height: pxTorem(60px);
+        color:#333;
+        overflow: hidden;
+      }
+      p{
+        color: #999;
+        height: pxTorem(36px * 2);
+        line-height: pxTorem(36px);
+        overflow: hidden;
+      }
+    }
+  }
+}
