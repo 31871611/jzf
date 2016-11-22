@@ -615,6 +615,24 @@
     @include font-dpr(24px);
     @include border-radius(2px);
   }
+  //马上开抢
+  .btnGo{
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: pxTorem(148px);
+    height: pxTorem(54px);
+    line-height: pxTorem(54px);
+    text-align: center;
+    border:1px solid #999;
+    @include font-dpr(26px);
+    color: #999;
+    &:active{
+      border:1px solid $red-base;
+      background: $red-base;
+      color:#fff;
+    }
+  }
   //即将开售红底白字
   .red{
     background:$red-base;
