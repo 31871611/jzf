@@ -68,11 +68,7 @@
   }
 
   .btn{
-    @if $wxTop{
-      display: none;
-    } @else {
-      display: block;
-    }
+    display: block;
     text-align: center;
     width: pxTorem(236px);
     height: pxTorem(70px);
