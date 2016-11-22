@@ -633,6 +633,20 @@
       color:#fff;
     }
   }
+  //立即开抢
+  .btnGoRed{
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: pxTorem(148px);
+    height: pxTorem(54px);
+    line-height: pxTorem(54px);
+    text-align: center;
+    border:1px solid $red-base;
+    @include font-dpr(26px);
+    color: #fff;
+    background: $red-base;
+  }
   //即将开售红底白字
   .red{
     background:$red-base;

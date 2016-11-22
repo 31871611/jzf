@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"感恩活动页"
+})
+<link rel="stylesheet" href="css/thanksgiving.css"/>
+<body>
+
+<div class="wrap" id="app">
+
+    <!-- scrollHide -->
+    <article class="main " @scroll="scroll($event)" @touchstart="scrollStart($event)" @touchmove="scrollMove($event)" @touchend="scrollEnd($event)">
+        <div class="thanksgiving">
+            <a href="javascript:;" class="iconBackTop"></a>
+            <header>
+
+            </header>
+            <!-- 占位 -->
+            <div class="placeholder"></div>
+            <nav>
+                <a href="javascript:;" @click="pos('old')" :class="tab == 'old' ? 'select' : ''"><b>用户福利</b></a>
+                <a href="javascript:;" @click="pos('secKill')" :class="tab == 'secKill' ? 'select' : ''"><b>限时秒杀</b></a>
+                <a href="javascript:;" @click="pos('lucky')" :class="tab == 'lucky' ? 'select' : ''"><b>幸运转盘</b></a>
+                <a href="javascript:;" @click="pos('share')" :class="tab == 'share' ? 'select' : ''"><b>邀请好友</b></a>
+                <a href="javascript:;" @click="pos('discount')" :class="tab == 'discount' ? 'select' : ''"><b>优惠专区</b></a>
+            </nav>
+            <!-- 老 -->
+            <div class="old" id="old">
+                <div class="btn">
+                    <a href="">立即使用</a>
+                </div>
+            </div>
+            <!-- 新 -->
+            <div class="new">
+                <div class="btn">
+                    <a href="">立即使用</a>
+                </div>
+            </div>
+            <!-- 秒杀 -->
+            <div class="secKill" id="secKill">
+                <!--<div class="scroll">-->
+                    <!--<ul>-->
+                        <!--<li><a href=""><img src="picture/210x210.jpg" alt=""><span><em>¥</em>111.11</span></a></li>-->
+                        <!--<li><a href=""><img src="picture/210x210.jpg" alt=""><span><em>¥</em>111.11</span></a></li>-->
+                        <!--<li><a href=""><img src="picture/210x210.jpg" alt=""><span><em>¥</em>111.11</span></a></li>-->
+                        <!--<li><a href=""><img src="picture/210x210.jpg" alt=""><span><em>¥</em>111.11</span></a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <div class="cen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="btn">
+                    <a href="">立即秒杀</a>
+                </div>
+            </div>
+            <!-- 幸运 -->
+            <div class="lucky" id="lucky">
+                <div class="btn">
+                    <a href="">立即抽奖</a>
+                </div>
+            </div>
+            <!-- 分享 -->
+            <div class="share" id="share">
+                <div class="btn">
+                    <a href="">分享活动页</a>
+                    <a href="">分享二维码</a>
+                </div>
+            </div>
+            <!-- 优惠 -->
+            <div class="discount" id="discount">
+                <div class="goodsListBox">
+                    <ul class="goodsListNormal">
+
+                        <li class="col">
+                            <div class="box">
+                                <a href="" class="img">
+                                    <img src="picture/index6.jpg" alt=""/>
+                                    <!-- 已出售 -->
+                                    <i class="out"></i>
+                                    <!-- 已预定 -->
+                                    <!--<i class="booked"></i>-->
+                                    <!-- 360图标 -->
+                                    <!--<i class="degree360"></i>-->
+                                    <!-- 视频播放图标 -->
+                                    <i class="video"></i>
+                                    <!-- 感恩优惠价格： -->
+                                    <div class="activityListTitleBg">
+                                        感恩优惠价：<b>2,000</b>
+                                    </div>
+                                </a>
+                                <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <div class="bottom">
+                                    <strong>￥18,500</strong>
+                                    <a href="" class="buy"></a>
+                                    <!--<span class="red">可预定</span>-->
+                                    <!--<span>可预定</span>-->
+                                </div>
+                                <div class="love">1</div>
+                            </div>
+                        </li>
+
+                        <li class="col">
+                            <div class="box">
+                                <a href="" class="img">
+                                    <img src="picture/index6.jpg" alt=""/>
+                                    <!--<i class="out"></i>-->
+                                    <i class="booked"></i>
+                                    <!--<i class="degree360"></i>-->
+                                    <!-- 视频播放图标 -->
+                                    <i class="video"></i>
+                                </a>
+                                <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <div class="bottom">
+                                    <strong>￥18,500</strong>
+                                    <!--<a href="" class="buy"></a>-->
+                                    <span class="red">可预定</span>
+                                    <!--<span>可预定</span>-->
+                                </div>
+                                <div class="love select">1</div>
+                            </div>
+                        </li>
+
+                        <li class="col" v-for="item in 2">
+                            <div class="box">
+                                <a href="" class="img">
+                                    <img src="picture/index6.jpg" alt=""/>
+                                    <i class="out"></i>
+                                    <!--<i class="booked"></i>-->
+                                </a>
+                                <h3>A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章</h3>
+                                <div class="bottom">
+                                    <strong>￥18,500</strong>
+                                    <a href="" class="buy"></a>
+
+                                    <!--<span class="red">可预定</span>-->
+                                    <!--<span>可预定</span>-->
+                                </div>
+                                <div class="love select">1</div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="btn">
+                    <a href="">更多商品</a>
+                </div>
+            </div>
+
+        </div>
+
+    </article>
+
+
+</div>
+
+<div class="wxShareInfo hide">
+    <i></i>
+</div>
+
+</body>
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            tab:'',
+            headerHeight:0,
+            obj:{
+                nav:''
+            }
+        },
+        ready:function(){
+
+            this.headerHeight = document.getElementsByTagName('header')[0].clientHeight;
+            this.obj.nav=document.getElementsByTagName('nav')[0];
+
+        },
+        methods:{
+            pos:function(id){
+                this.tab=id;
+                var obj=document.getElementById(id);
+                var main=document.getElementsByTagName('article')[0];
+                //定位描点
+                main.scrollTop=obj.offsetTop;
+            },
+            scroll:function(event){
+                var top=event.currentTarget.scrollTop;
+                //滚动浮动
+                if(top > this.headerHeight){
+                    this.obj.nav.style.position = "fixed";
+                    this.obj.nav.style.top = 0 + "px";
+                }else{
+                    this.obj.nav.style.position = "";
+                    this.obj.nav.style.top = this.headerHeight + "px";
+                }
+                //滚动定位tab选中
+                var tabObj={
+                    old:document.getElementById('old').offsetTop,
+                    secKill:document.getElementById('secKill').offsetTop,
+                    lucky:document.getElementById('lucky').offsetTop,
+                    share:document.getElementById('share').offsetTop,
+                    discount:document.getElementById('discount').offsetTop
+                };
+
+                if(top < tabObj.old){
+                    this.tab='';
+                }
+                if(top > tabObj.old && top < tabObj.secKill){
+                    this.tab='old';
+                }
+                if(top > tabObj.secKill && top < tabObj.lucky){
+                    this.tab='secKill';
+                }
+                if(top > tabObj.lucky && top < tabObj.share){
+                    this.tab='lucky';
+                }
+                if(top > tabObj.share && top < tabObj.discount){
+                    this.tab='share';
+                }
+                if(top > tabObj.discount){
+                    this.tab='discount';
+                }
+            },
+            scrollStart:function(){},
+            scrollMove:function(){},
+            scrollEnd:function(){}
+        }
+    });
+
+
+
+
+
+
+</script>
+
+</html>

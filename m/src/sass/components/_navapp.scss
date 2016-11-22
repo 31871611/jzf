@@ -99,6 +99,15 @@ nav.appNav{
       //  background-image: url("../images/iconNavYiGo.png");
       //}
     }
+    //悦读
+    &.appHappyRead{
+      width: pxTorem(40px);
+      position: relative;
+      &:before {
+        background-image: url("../images/iconNavHappyRead.png");
+      }
+    }
+
 
     //当前页
     &.select{
@@ -152,6 +161,12 @@ nav.appNav{
       &.appNavUser{
         &:before {
           background-image: url("../images/iconNavUserS.png");
+        }
+      }
+      //悦读
+      &.appHappyRead{
+        &:before {
+          background-image: url("../images/iconNavHappyReadS.png");
         }
       }
     }

@@ -1272,3 +1272,30 @@
     }
   }
 }
+
+
+@if ($wxTop) {
+  //提示分享
+  .wxShareInfo{
+    z-index: 99;
+    position: fixed;
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    i{
+      position: absolute;
+      right:pxTorem(40px);
+      top:pxTorem(20px);
+      width: pxTorem(592px);
+      height: pxTorem(180px);
+      @extend %ico_rem;
+      background-image: url("../images/wxShareInfo.png");
+    }
+  }
+} @else {
+  .wxShareInfo{
+    display: none;
+  }
+}
