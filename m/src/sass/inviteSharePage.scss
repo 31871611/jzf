@@ -12,7 +12,7 @@
 
 
 .inviteSharePage{
-  position: fixed;
+  position: absolute;
   left:0;
   top:0;
   right:0;
@@ -53,6 +53,7 @@
       height: pxTorem($w);
       @include border-radius(50%);
     }
+
   }
   h2{
     @include font-dpr(36px);
@@ -67,23 +68,27 @@
     margin-bottom:pxTorem(75px);
   }
   .code{
+    border:pxTorem(10px) solid #fff;
     width: pxTorem(340px);
     height: pxTorem(340px);
     margin: 0 auto pxTorem(75px);
     position: relative;
-    img{
+    .codeImg{
       pointer-events:auto;
+      vertical-align: middle;
+      width: pxTorem(340px);
+      height: pxTorem(340px);
     }
-    //i{
-    //  position: absolute;
-    //  left:50%;
-    //  top:50%;
-    //  margin:pxTorem(-58px) 0 0 pxTorem(-58px);
-    //  width: pxTorem(116px);
-    //  height: pxTorem(116px);
-    //  @extend %ico_rem;
-    //  background-image: url("../images/inviteShareLogo.png");
-    //}
+    .codeLogo{
+      @include border-radius(pxTorem(10px));
+      //background: #f00;
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin:pxTorem(-40px) 0 0 pxTorem(-40px);
+      width: pxTorem(80px);
+      height: pxTorem(80px);
+    }
   }
   p{
     text-align: center;
@@ -97,4 +102,14 @@
   }
 
 
+}
+
+
+#codePos{
+  @include opacity(0);
+  pointer-events:auto;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 99;
 }

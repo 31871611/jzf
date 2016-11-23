@@ -3,6 +3,7 @@
 @@include('include/head.html',{
     "title":"我的邀请分红二维码"
 })
+
 <link rel="stylesheet" href="css/inviteShareCode.css"/>
 <body>
 
@@ -27,27 +28,47 @@
             <a href="" class="rule">活动规则></a>
             <div class="codeBox">
                 <div class="code" style="background: #f00;">
-                    520x520
-                    <i></i>
+                    <img src="" class="codeImg" id="codeImg" alt="">
+                    <img src="" class="codeLogo" alt="" />
                 </div>
                 <p>邀请好友扫描二维码，TA可获首单专属优惠</p>
                 <p>您可获订单实付金额的<b>3%</b>作为分红奖励</p>
             </div>
             <a href="" class="btn">分  享</a>
         </div>
-        <div class="wxShareInfo">
-            <i></i>
-        </div>
+
     </article>
 
-    <footer>
-
-    </footer>
 </div>
 
-</body>
+<div class="wxShareInfo hide">
+    <i></i>
+</div>
 
+<img src="picture/inviteSharePageBg.jpg" id="codePos" alt="" />
+
+<a href="" class="ruleUrl"></a>
+
+</body>
+<script src="http://wx.artjzf.com/static/js/jquery-1.8.3.min.js"></script>
 <script>
+    //placeholder
+
+    var drp=$('html').data('dpr');
+    var codeImg=$('#codeImg');
+    var pos={
+        top:codeImg.offset().top,
+        left:codeImg.offset().left
+    };
+    console.log(drp);
+
+    $('#codePos').css({
+        width:codeImg.width() + 'px',
+        height:codeImg.height() + 'px',
+        top:(pos.top / drp) + 'px',
+        left:(pos.left / drp) + 'px'
+    });
+    console.log(pos.top / drp);
 
 
 </script>

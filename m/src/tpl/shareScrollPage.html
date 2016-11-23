@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"分享宣传页"
+})
+<link rel="stylesheet" href="css/shareScrollPage.css"/>
+<body id="app">
+
+
+<div class="shareScrollPage" @scroll="sliderScroll($event)" @touchstart="sliderStart($event)" @touchmove="sliderMove($event)" @touchend="sliderEnd($event)">
+    <div class="box" :style="{transform:'translate3d(0px,'+ num +'px, 0px)'}">
+        <section :class="index == 0 ? 'zCurrent' : ''">
+            <img src="picture/shareScrollPage1.jpg" alt="" />
+            <i class="iconShareScrollPageNext"></i>
+        </section>
+        <section :class="index == 1 ? 'zCurrent' : ''">
+            <img src="picture/shareScrollPage2.jpg" alt="" />
+            <i class="iconShareScrollPageNext"></i>
+        </section>
+        <section :class="index == 2 ? 'zCurrent' : ''">
+            <img src="picture/shareScrollPage3.jpg" alt="" />
+            <i class="iconShareScrollPageNext"></i>
+        </section>
+        <section :class="index == 3 ? 'zCurrent' : ''">
+            <img src="picture/shareScrollPage4.jpg" alt="" />
+            <div class="btn">
+                <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jizhenfang.jizhenfang">下载APP</a><a href="http://wx.artjzf.com/#!/index">进入微商城</a>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+<script>
+
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            //高度
+            height:'',
+            //屏数
+            index:0,
+            //列表长度
+            length:4,
+            num:0,
+            slider:{
+                startX:0,
+                startY:0,
+                moveX:0,
+                moveY:0,
+                endX:0,
+                endY:0
+            },
+            //滚动值
+            scrollTop:0,
+            //内容高度
+            scrollHeight:0,
+            //可视高度
+            mainHeight:0
+
+        },
+        ready:function(){
+            //高度
+            this.height = document.body.clientHeight;
+            //页数
+            this.length = document.getElementsByTagName('section').length;
+
+            console.log( this.height );
+        },
+        methods: {
+            sliderScroll:function(event){
+                //滚动值
+//                this.scrollTop = event.target.scrollTop;
+                //页面高度
+//                this.scrollHeight = event.target.scrollHeight;
+                //窗口可视高度
+//                this.mainHeight = event.target.clientHeight;
+            },
+            sliderStart:function(event){
+                var touch = event.changedTouches[0];
+                this.slider.startX = touch.clientX;
+                this.slider.startY = touch.clientY;
+            },
+            sliderMove:function(event){
+                var touch = event.changedTouches[0];
+                this.slider.moveX = touch.clientX - this.slider.startX;
+                this.slider.moveY = touch.clientY - this.slider.startY;
+                //禁止上下滑动
+                event.preventDefault();
+                //计算拖动值
+                //拖动距离20=true
+
+                console.log(this.slider.moveX + '|' + this.slider.moveY);
+
+                if(Math.abs(this.slider.moveX) < Math.abs(this.slider.moveY) ){
+                    //左右划
+                    event.preventDefault();
+                    //过渡延续时间清空为0
+                    //this.guideSlider.speed=0;
+                    //左右拖动值
+                    this.num = '-' + (this.height * this.index) + Math.abs(this.slider.moveX);
+                    console.log(this.num);
+                }
+
+
+            },
+            sliderEnd:function(event){
+                var touch = event.changedTouches[0];
+                this.slider.endX = touch.clientX - this.slider.startX;
+                this.slider.endY = touch.clientY - this.slider.startY;
+                //滑动
+                if(Math.abs(this.slider.endX) < Math.abs(this.slider.endY)){
+                    if(this.slider.endY < -30){         //向下滑动
+                        var len=(this.length-1);
+                        //alert(this.index + '|' + len);
+                        if(this.index != len){
+                            this.index++;
+                        }
+                    }else if(this.slider.endY > 30){    //向上滑动
+                        //this.index == 0 第一张
+                        if(this.index != 0){
+                            this.index--;
+                        }
+                    }
+                }
+                this.num = '-' + this.height * this.index;
+            }
+        }
+    });
+
+</script>
+</html>

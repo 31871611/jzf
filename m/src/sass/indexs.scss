@@ -8,12 +8,12 @@
 
 //可以滚动
 .indexsTab{
-  @import "inc/tabShow";
-  @include tabShow($h:60px,$select:$red-base,$sharing:false);
+  $h:60px;
   background: rgba(0,0,0,.9);
   overflow-x: auto;
   width: 100%;
-  //border-bottom: 0;
+  height:pxTorem($h);
+  border-bottom:1px solid #dddddd;
   //隐藏滚动条
   &::-webkit-scrollbar{
     width: 0;
@@ -23,21 +23,31 @@
 
   }
   a{
-    color: #fff;
+    @include font-dpr(32px);
     float: left;
     //width:pxTorem(120px);
     padding-left: pxTorem(30px);
     padding-right: pxTorem(30px);
+    height:pxTorem($h - 5);
+    line-height:pxTorem($h - 5);
+    color:#666;
+    text-align:center;
+    position: relative;
+    &.select{
+      span{
+        display: inline-block;
+        position: relative;
+        border-bottom: pxTorem(4px) solid $red-base;
+        height:pxTorem($h - 5 - 4);
+        line-height:pxTorem($h - 5 - 4);
+        color:#fff;
+        font-weight: bold;
+        vertical-align: top;
+      }
+    }
   }
 }
 
-//平均分Tab
-.averageTab{
-  @import "inc/tabShow";
-  @include tabShow($h:60px,$select:$red-base);
-  //padding-top:pxTorem(10px);
-  border-bottom: 1px solid #eee;
-}
 
 
 /*****************************************************************************/
@@ -151,6 +161,7 @@
     background-image: url("../images/iconEnsure.png");
   }
   span{
+    @include font-dpr(28px);
     float: left;
     display: inline-block;
     height: pxTorem(50px);
@@ -280,15 +291,17 @@
     float: left;
     padding-right: pxTorem(10px);
     &.more{
-      width: pxTorem(89px);
+      //padding-right: pxTorem(10px);
+      margin-right: pxTorem(10px);
+      width: pxTorem(160px);
       height: pxTorem(210px);
       @include font-dpr(28px);
-      padding-right: 0;
       text-align: center;
       a{
-        padding:pxTorem(75px) pxTorem(10px) 0 pxTorem(10px);
-        width: pxTorem(89px - 20);
-        height: pxTorem(206px - 75);
+        background: #fff;
+        padding:pxTorem(75px) pxTorem(50px) 0 pxTorem(50px);
+        width: pxTorem(160px - 2 - 50 - 50);
+        height: pxTorem(210px - 2 - 75);
         border:1px solid #d6d6d6;
         @include font-dpr(28px);
         color: #999;
@@ -349,12 +362,15 @@
 .specialList{
   @extend %clearfix;
   $w:186px;
-  padding-bottom: pxTorem(20px);
+  padding-top: pxTorem(2px);
+  padding-bottom: pxTorem(18px);
   li{
+    overflow: hidden;
     height: pxTorem($w);
     width: pxTorem($w);
     float: left;
-    margin:pxTorem(2px) pxTorem(2px) 0 0;
+    padding-bottom:2px;
+    margin:0 pxTorem(2px) 0 0;
     &:nth-child(4n){
       margin-right: 0;
     }

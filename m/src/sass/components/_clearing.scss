@@ -347,7 +347,7 @@
       color:#333;
       @include font-dpr(32px);
       position: relative;
-      &.balance,&.alipay,&.wx,&.bank,&.giro{
+      &.balance,&.alipay,&.wx,&.bank,&.giro,&.okPay{
         &:before {
           content: "\20";
           position: absolute;
@@ -356,6 +356,13 @@
           width: pxTorem(44px);
           height: pxTorem(35px);
           @extend %ico_rem;
+        }
+      }
+      //确认支付.与余额支付使用一样图标
+      &.okPay{
+        line-height:pxTorem(99px);
+        &:before{
+          background-image: url("../images/iconbalance.png");
         }
       }
       //余额支付

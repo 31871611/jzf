@@ -65,30 +65,34 @@ body{
 
   //转盘背景
   .turntableBg{
-    position: relative;
     width:pxTorem(704px - 96px);
     height:pxTorem(646px - 50px);
     padding:pxTorem(50px) 0 0 pxTorem(96px + 8px);
+
+
     //margin:0 auto;
-    //margin-left:pxTorem(8px);
-    background-image: url("../images/couponTurntableBg.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+
+
+
+
+    position: relative;
+    //background-image: url("../images/couponTurntableBg.png");
+    //background-size:contain;
+    //background-repeat: no-repeat;
+    //background-position: 50% 50%;
   }
   //转盘灯
   .lamp{
-    display: none;
     position: absolute;
     left:pxTorem(68px);
     top:pxTorem(20px);
     width:pxTorem(610px);
     height:pxTorem(610px);
-    background-image: url("../images/couponLamp.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    @include animation(lamp 500ms infinite);
+    //background-image: url("../images/couponLamp.png");
+    //background-size:contain;
+    //background-repeat: no-repeat;
+    //background-position: 50% 50%;
+    //@include animation(lamp 500ms infinite);
   }
 
   //灯动画

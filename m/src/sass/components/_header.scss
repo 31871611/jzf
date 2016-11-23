@@ -140,10 +140,22 @@
   .iconMessage{
     padding:0 pxTorem(20px) 0 pxTorem(25px);
     width:pxTorem(49px);
+    position: relative;
     &:after{
       width:pxTorem(48px);
       height:pxTorem(45px);
       background-image: url("../images/iconMessageT.png");
+    }
+    //提示圆点
+    &:before{
+      content: '\20';
+      width: pxTorem(15px);
+      height: pxTorem(15px);
+      background: $red-base;
+      position: absolute;
+      right: pxTorem(20px);
+      top: pxTorem(24px);
+      @include border-radius(50%);
     }
   }
   //搜索栏

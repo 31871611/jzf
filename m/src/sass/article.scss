@@ -12,9 +12,9 @@
 
 #article{
   @include font-dpr(28px);
-  line-height:25px;
+  line-height:pxTorem(50px);
   img{
-    width:100%;
+    max-width:100%;
   }
 }
 

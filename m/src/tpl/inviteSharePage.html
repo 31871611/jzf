@@ -23,7 +23,8 @@
                 <h2>nining</h2>
                 <span>邀请您参加集珍坊感恩节活动</span>
                 <div class="code" style="background: #fff;">
-                    340x340
+                    <img src="picture/74x74.jpg" class="codeImg" id="codeImg" alt="">
+                    <img src="" class="codeLogo" alt="" />
                 </div>
                 <p>常按识别二维码，</p>
                 <p>注册立享<b>50元</b>无门槛优惠券。</p>
@@ -36,9 +37,27 @@
     </footer>
 </div>
 
-</body>
+<img src="picture/1.png" id="codePos" alt="" />
 
+</body>
+<script src="http://wx.artjzf.com/static/js/jquery-1.8.3.min.js"></script>
 <script>
+
+    var drp=$('html').data('dpr');
+    var codeImg=$('#codeImg');
+    var pos={
+        top:codeImg.offset().top,
+        left:codeImg.offset().left
+    };
+    console.log(drp);
+
+    $('#codePos').css({
+        width:codeImg.width() + 'px',
+        height:codeImg.height() + 'px',
+        top:(pos.top / drp) + 'px',
+        left:(pos.left / drp) + 'px'
+    });
+    console.log(pos.top / drp);
 
 
 </script>

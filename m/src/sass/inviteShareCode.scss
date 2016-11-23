@@ -20,6 +20,7 @@
   }
   //活动规则
   .rule{
+    height: pxTorem(35px);
     color: #333;
     display: block;
     text-align: center;
@@ -39,20 +40,23 @@
       height: pxTorem(520px);
       margin: 0 auto;
       position: relative;
-      img{
-        pointer-events:auto;
-      }
     }
-    //i{
-    //  position: absolute;
-    //  left:50%;
-    //  top:50%;
-    //  margin:pxTorem(-58px) 0 0 pxTorem(-58px);
-    //  width: pxTorem(116px);
-    //  height: pxTorem(116px);
-    //  @extend %ico_rem;
-    //  background-image: url("../images/inviteShareLogo.png");
-    //}
+    .codeImg{
+      pointer-events:auto;
+      vertical-align: middle;
+      width: pxTorem(520px);
+      height: pxTorem(520px);
+    }
+    .codeLogo{
+      @include border-radius(pxTorem(10px));
+      //background: #fff;
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin:pxTorem(-50px) 0 0 pxTorem(-50px);
+      width: pxTorem(100px);
+      height: pxTorem(100px);
+    }
     p{
       text-align: center;
       margin-top:pxTorem(20px);
@@ -86,4 +90,27 @@
 }
 
 
+#codePos{
+  @include opacity(0);
+  pointer-events:auto;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 59;
+}
 
+
+//活动规则
+.ruleUrl{
+  //background: #0000C2;
+  position: absolute;
+  left:0;
+  @if ($wxTop){
+    top:pxTorem(220px);
+  } @else {
+    top:pxTorem(220px + 40);
+  }
+  z-index: 60;
+  width: 100%;
+  height: pxTorem(35px);
+}
