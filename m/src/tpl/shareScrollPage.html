@@ -90,7 +90,7 @@
                 //计算拖动值
                 //拖动距离20=true
 
-                console.log(this.slider.moveX + '|' + this.slider.moveY);
+                //console.log(this.slider.moveX + '|' + this.index + '|' + this.height);
 
                 if(Math.abs(this.slider.moveX) < Math.abs(this.slider.moveY) ){
                     //左右划
@@ -98,7 +98,8 @@
                     //过渡延续时间清空为0
                     //this.guideSlider.speed=0;
                     //左右拖动值
-                    this.num = '-' + (this.height * this.index) + Math.abs(this.slider.moveX);
+                    this.num = (this.index * this.height - this.slider.moveX);
+
                     console.log(this.num);
                 }
 

@@ -494,6 +494,9 @@
       span{
         @include font-dpr(24px);
       }
+      b{
+        position: inherit;
+      }
     }
     i.arrowR{
       display: inline-block;

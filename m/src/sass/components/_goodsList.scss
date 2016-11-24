@@ -689,6 +689,9 @@
     span{
       color:#666;
       text-decoration:line-through;
+      &.original{
+        text-decoration:none;
+      }
     }
   }
 
