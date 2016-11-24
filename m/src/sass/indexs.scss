@@ -6,6 +6,16 @@
   集珍坊APP多品类主页
 */
 
+
+//header{
+//  background: rgba(0,0,0,.9);
+//}
+//
+//.indexsSearch,.header,.indexsTab{
+//  background: none;
+//}
+
+
 //可以滚动
 .indexsTab{
   $h:60px;
@@ -13,7 +23,7 @@
   overflow-x: auto;
   width: 100%;
   height:pxTorem($h);
-  border-bottom:1px solid #dddddd;
+  //border-bottom:1px solid #dddddd;
   //隐藏滚动条
   &::-webkit-scrollbar{
     width: 0;
@@ -320,7 +330,7 @@
     vertical-align: middle;
   }
   span{
-    color: #fff;
+    color: #333;
     text-align: center;
     width: 100%;
     position: absolute;
@@ -328,7 +338,7 @@
     bottom: 0;
     height: pxTorem(48px);
     line-height: pxTorem(48px);
-    background: rgba(0,0,0,.8);
+    //background: rgba(0,0,0,.8);
   }
 }
 
@@ -658,148 +668,133 @@
 /*****************************************************************************/
 
 
-@if $wxTop {
-
-  //分享页.微信隐藏
-  .sharePagePhoto{
-    display: none;
-  }
-
-  //引导页.微信隐藏
-  .appGuidePage{
-    display: none;
-  }
-
-} @else{
-
-  //app上分享页
-  .sharePagePhoto{
-    position: fixed;
+//app上分享页
+.sharePagePhoto{
+  position: fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  img{
+    position: absolute;
     left:0;
     top:0;
-    right: 0;
-    bottom: 0;
-    z-index: 1001;
-    img{
-      position: absolute;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+  }
+  .btn{
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom:pxTorem(142px);
+    $h:70px;
+    height: pxTorem($h);
+    margin:0;
+    a{
+      display: block;
+      margin:0 auto;
+      width:pxTorem(360px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      background: $red-base;
+      color:#fff;
+      @include font-dpr(34px);
+      @include border-radius(pxTorem(30px));
+    }
+  }
+}
+
+//引导页
+.appGuidePage{
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  z-index: 999;
+  background:#fff;
+  ul{
+    font-size:0;
+    height:100%;
+    z-index:29;
+    position:relative;
+    white-space:nowrap;
+  }
+  li{
+    position:relative;
+    display:inline-block;
+    width:100%;
+    height:100%;
+    vertical-align:top;
+    white-space:normal;
+    .box{
+      position:absolute;
       left:0;
       top:0;
-      vertical-align: middle;
-      width: 100%;
-      height: 100%;
+      right:0;
+      bottom:0;
+      width:100%;
+      height:100%;
+      -webkit-backface-visibility:hidden;
+      @include display-flex();
+      @include align-items();
+      @include justify-content(center);
     }
-    .btn{
-      width: 100%;
-      position: absolute;
-      left:0;
-      bottom:pxTorem(142px);
-      $h:70px;
-      height: pxTorem($h);
-      margin:0;
-      a{
-        display: block;
-        margin:0 auto;
-        width:pxTorem(360px);
-        height: pxTorem($h);
-        line-height: pxTorem($h);
-        background: $red-base;
-        color:#fff;
-        @include font-dpr(34px);
-        @include border-radius(pxTorem(30px));
-      }
+    img{
+      max-width:100%;
+      height:auto;
     }
   }
-
-  //引导页
-  .appGuidePage{
-    position: fixed;
+  //按钮
+  .btn{
+    position: absolute;
     left:0;
-    top:0;
-    bottom:0;
-    right:0;
-    z-index: 999;
-    background:#fff;
-    ul{
-      font-size:0;
-      height:100%;
-      z-index:29;
-      position:relative;
-      white-space:nowrap;
-    }
-    li{
-      position:relative;
-      display:inline-block;
-      width:100%;
-      height:100%;
-      vertical-align:top;
-      white-space:normal;
-      .box{
-        position:absolute;
-        left:0;
-        top:0;
-        right:0;
-        bottom:0;
-        width:100%;
-        height:100%;
-        -webkit-backface-visibility:hidden;
-        @include display-flex();
-        @include align-items();
-        @include justify-content(center);
-      }
-      img{
-        max-width:100%;
-        height:auto;
-      }
-    }
-    //按钮
-    .btn{
-      position: absolute;
-      left:0;
-      //top:80%;
-      top:pxTorem(1070px);
-      width:100%;
-      margin:0;
-      a{
-        margin:0 auto;
-        width:pxTorem(286px);
-        height:pxTorem(80px);
-        line-height:pxTorem(80px);
-        text-align:center;
-        color:#fff;
-        @include font-dpr(32px);
-        background: $red-base;
-        @include border-radius(2px);
-      }
-    }
-    //小圆圈
-    .tab{ //与首页轮播.indexAdTab样式一样
-      $w:15px;
-      z-index:30;
-      position: absolute;
-      left:0;
-      bottom:pxTorem(30px);
-      width:100%;
-      height:pxTorem($w + 4);
+    //top:80%;
+    top:pxTorem(1070px);
+    width:100%;
+    margin:0;
+    a{
+      margin:0 auto;
+      width:pxTorem(286px);
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
       text-align:center;
-      span{
-        margin-left:pxTorem(15px);
-        vertical-align: top;
-        @include border-radius(50%);
-        display: inline-block;
-        width:pxTorem($w - 4);
-        height:pxTorem($w - 4);
-        border:pxTorem(2px) solid #fff;
-        &.select{
-          border:0;
-          background:#fff;
-          width:pxTorem($w);
-          height:pxTorem($w);
-        }
-        &:nth-child(1){
-          margin-left:0;
-        }
+      color:#fff;
+      @include font-dpr(32px);
+      background: $red-base;
+      @include border-radius(2px);
+    }
+  }
+  //小圆圈
+  .tab{ //与首页轮播.indexAdTab样式一样
+    $w:15px;
+    z-index:30;
+    position: absolute;
+    left:0;
+    bottom:pxTorem(30px);
+    width:100%;
+    height:pxTorem($w + 4);
+    text-align:center;
+    span{
+      margin-left:pxTorem(15px);
+      vertical-align: top;
+      @include border-radius(50%);
+      display: inline-block;
+      width:pxTorem($w - 4);
+      height:pxTorem($w - 4);
+      border:pxTorem(2px) solid #fff;
+      &.select{
+        border:0;
+        background:#fff;
+        width:pxTorem($w);
+        height:pxTorem($w);
+      }
+      &:nth-child(1){
+        margin-left:0;
       }
     }
   }
-
 }
+

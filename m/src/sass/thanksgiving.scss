@@ -180,14 +180,18 @@
 
   //优惠
   .discount{
-    height: pxTorem(1463px);
-    @extend %ico_rem;
-    background-size: 100% 100% !important;
-    background-image: url("../images/thanksgiving/discount.jpg");
-
+    padding-bottom: pxTorem(50px);
+    //height: pxTorem(1463px);
+    background: url("../images/thanksgiving/discountBg.jpg");
+    i.bg{
+      display: block;
+      height: pxTorem(193px);
+      @extend %ico_rem;
+      background-image: url("../images/thanksgiving/discount.jpg");
+    }
     .goodsListBox{
       margin-top:0;
-      padding-top:pxTorem(243px);
+      padding-top:pxTorem(243px - 193);
     }
     .btn{
       margin-top:pxTorem(70px);

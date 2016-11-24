@@ -11,10 +11,10 @@
 
 
 #article{
-  @include font-dpr(28px);
+  @include font-dpr(36px);
   line-height:pxTorem(50px);
   img{
-    max-width:100%;
+    width:100%;
   }
 }
 

@@ -875,7 +875,7 @@
   @include align-items();
   @include justify-content(center);
   .box{
-    @include border-radius(16px);
+    @include border-radius(pxTorem(24px));
     width:pxTorem(560px);
     background: #fff;
     @include box-shadow(0 0 10px rgba(199,0,11,.75));
