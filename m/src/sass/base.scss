@@ -231,6 +231,20 @@ body{
 /********************************************************/
 
 
+//返回顶部
+.returnTop{
+  z-index: 5;
+  position: fixed;
+  right:pxTorem(20px);
+  bottom:pxTorem(110px);
+  width: pxTorem(80px);
+  height: pxTorem(80px);
+  @include border-radius(50%);
+  @extend %ico_rem;
+  background-image: url("../images/iconReturnTop.png");
+}
+
+
 //弹窗遮罩
 #opacity{
   position:fixed;

@@ -180,8 +180,9 @@
   }
   //点击输入邀请码
   .clickInvite{
+    @include font-dpr(28px);
     text-align: right;
-    margin-top: pxTorem(45px);
+    padding-top: pxTorem(45px);
     span{
       color:$red-base;
     }

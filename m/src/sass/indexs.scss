@@ -158,9 +158,13 @@
   $h:80px;
   margin-bottom: pxTorem(20px);
   border-bottom: 1px solid #ddd;
-  height: pxTorem($h - 16 - 16);
-  padding:pxTorem(16px) 0;
+  height: pxTorem($h);
   background: #fff;
+  a{
+    display: block;
+    padding:pxTorem(16px) 0;
+    height: pxTorem($h - 16 - 16);
+  }
   i{
     float: left;
     margin:pxTorem(10px) pxTorem(30px) 0 pxTorem(30px);

@@ -63,8 +63,10 @@
             <!--</div>-->
 
             <div class="indexsEnsure">
-                <i></i>
-                <span>守正求真/7日退换/48小时退款</span>
+                <a href="">
+                    <i></i>
+                    <span>守正求真/7日退换/48小时退款</span>
+                </a>
             </div>
 
             <div class="secKillMore">
@@ -306,6 +308,11 @@
         </div>
     </div>
 
+    <!-- 返回顶部 -->
+    <div class="returnTop" @click="returnTop">
+
+    </div>
+
 </body>
 
 <script>
@@ -321,6 +328,9 @@
         methods: {
             showShare:function(){
                 this.isShowShare = !this.isShowShare;
+            },
+            returnTop:function(){
+                document.getElementsByTagName('article')[0].scrollTop = 0;
             }
         }
     });
