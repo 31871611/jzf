@@ -810,10 +810,11 @@
 .help{
   padding:0 pxTorem(20px);
   h1,h2{
-    @include font-dpr(28px);
+    @include font-dpr(32px);
     padding-top:pxTorem(15px);
   }
   p{
+    @include font-dpr(28px);
     margin-top:pxTorem(10px);
     line-height:pxTorem(40px);
   }

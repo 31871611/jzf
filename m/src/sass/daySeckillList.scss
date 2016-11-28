@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+
+/**
+
+  每日秒杀列表
+
+**/
+
+
+.daySeckillListAd{
+  $h:640px;
+  height: pxTorem($h);
+  position: relative;
+  img{
+    vertical-align: middle;
+    width: 100%;
+    height: pxTorem($h);
+  }
+  .text{
+    width: 100%;
+    position: absolute;
+    left:0;
+    top:pxTorem(495px);
+    a{
+      $h:80px;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      width: pxTorem(320px);
+      display: block;
+      margin: 0 auto pxTorem(20px);
+      text-align: center;
+      @include font-dpr(36px);
+      background: $red-base;
+      color: #fff;
+      @include border-radius(pxTorem(34px));
+    }
+    p{
+      @include font-dpr(20px);
+      text-align: center;
+    }
+  }
+}
+
+
+//秒杀tab|等分
+.goodsGoDay{
+  $h:90px;
+  @include display-flex();
+  background:#f7f7f7;
+  section{
+    @include flex(1);
+    color:#333;
+    text-align:center;
+    height:pxTorem($h - 22);
+    padding-top:pxTorem(22px);
+    &.select{
+      background: $blue-base;
+      color:#fff;
+    }
+  }
+}
+
+.seckillTabScroll{
+  $h:90px;
+  $w:200px;
+  position: relative;
+  overflow-x: auto;
+  background:#f7f7f7;
+  //隐藏滚动条
+  &::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+  }
+  .box{
+
+  }
+  section{
+    height:pxTorem($h - 22);
+    padding-top:pxTorem(22px);
+    float: left;
+    width: pxTorem($w);
+    display: inline-block;
+    color:#333;
+    text-align:center;
+    &.select{
+      background: $blue-base;
+      color:#fff;
+    }
+  }
+  //.bg{
+  //  position: absolute;
+  //  left:50%;
+  //  top:0;
+  //  height:pxTorem($h);
+  //  width: pxTorem($w);
+  //  margin-left: pxTorem(- $w / 2);
+  //  background: $blue-base;
+  //}
+}
+
+
+.waygoodsGoDay{
+  @include font-dpr(28px);
+  background-color: #fff;
+  padding-top: pxTorem(20px);
+  padding-bottom: pxTorem(20px);
+  text-align: center;
+  h5{
+    margin-bottom: pxTorem(10px);
+  }
+}
+

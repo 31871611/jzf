@@ -3,7 +3,8 @@
 @@include('include/head.html',{
     "title":"珍石惠"
 })
-<body>
+<link rel="stylesheet" href="css/daySeckillList.css" />
+<body id="app">
 <div class="wrap">
     <header>
         @@include('include/title.html',{
@@ -12,20 +13,54 @@
     </header>
 
     <article class="main">
-        <div class="goodsGoDay">
-            <section>
-                <h3>4月17日19:00</h3>
-                <h3>正在进行</h3>
-            </section>
-            <section class="select">
-                <h3>4月17日19:00</h3>
-                <h3>正在进行</h3>
-            </section>
-            <section>
-                <h3>4月17日19:00</h3>
-                <h3>正在进行</h3>
-            </section>
+        <div class="daySeckillListAd">
+            <img src="" alt="">
+            <div class="text">
+                <a href="">分享活动页</a>
+                <p>新注册用户需分享活动页面才可参与秒杀活动</p>
+            </div>
         </div>
+        <div class="goodsGoDay">
+            <!--<div class="scroll"></div>-->
+                <section>
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section class="select">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section>
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+
+        </div>
+        <div class="seckillTabScroll">
+            <div class="box" style="width: 99rem;">
+                <section @click="tab($event)">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section @click="tab($event)">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section class="select" @click="tab($event)">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section @click="tab($event)">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+                <section @click="tab($event)">
+                    <h3>4月17日19:00</h3>
+                    <h3>正在进行</h3>
+                </section>
+            </div>
+        </div>
+
         <div class="waygoodsGoDay">
             <h5>4月18日8:00--4月19日22:00</h5>
             <div class="timeCount colorRed">
@@ -200,5 +235,61 @@
     </footer>
 </div>
 
+
+<div class="wxShareInfo hide">
+    <i></i>
+</div>
+
 </body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+
+            /*
+                750 / 2 = 375
+                375 / 2 = 187.5
+                            562
+
+                750 * .7 = 525
+
+                scrollWidth / 2 < left
+                375 < 0
+
+             var left = obj[0].offsetLeft;
+             var screenWidth = screen.width
+             var scrollLeft = document.getElementsByClassName("indexsTab")[0].scrollLeft
+             var scrollWidth = document.getElementsByClassName("indexsTab")[0].scrollWidth
+
+             if(scrollWidth / 2 < left){
+                // document.getElementsByClassName("indexsTab")[0].scrollLeft=left-(screenWidth / 2)
+                $(".indexsTab").animate({"scrollLeft":left-(screenWidth/2)},300);
+             }else if(scrollLeft > 0){
+                $(".indexsTab").animate({"scrollLeft":0},300);
+             }
+
+             滚动一格
+
+             */
+            tab:function(e){
+                var w=document.body.clientWidth;
+                var tab=document.querySelector('.seckillTabScroll');
+                //var boxW=tab.querySelector('.box').clientWidth;
+                var left=tab.scrollLeft;
+                alert(left);
+                if((w * 0.7) < e.clientX && w / 2 < left){
+                    alert(1);
+                }
+                //alert(w + '|' + boxW + '|' + e.clientX);
+            }
+        }
+    });
+
+</script>
+
 </html>

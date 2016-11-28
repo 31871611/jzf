@@ -749,36 +749,6 @@
 /**************************************************************/
 
 
-//进行时间tab
-.goodsGoDay{
-  height:pxTorem(90px);
-  @extend .display-flex;
-  section{
-    @extend .flex;
-    background:#f7f7f7;
-    color:#333;
-    @include font-dpr(24px);
-    text-align:center;
-    padding-top:pxTorem(14px);
-    &.select{
-      background: $blue-base;
-      color:#fff;
-    }
-  }
-}
-
-.waygoodsGoDay{
-  width: 100%;
-  //height:pxTorem(90px);
-  //box-sizing: border-box;
-  background-color: #fff;
-  padding-top: pxTorem(10px);
-  padding-bottom: pxTorem(10px);
-  @extend %tc;
-  h5{
-    margin-bottom: pxTorem(10px);
-  }
-}
 
 //autoImg
 .autoImg{

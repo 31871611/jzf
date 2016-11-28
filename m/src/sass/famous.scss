@@ -35,7 +35,8 @@
   }
   h4{
     @include font-dpr(24px);
-    padding-left:34%;
+    text-align: center;
+    //padding-left:34%;
     &:nth-of-type(1){
       margin-bottom: 1%;
     }

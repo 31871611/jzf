@@ -380,24 +380,24 @@
   padding-bottom: pxTorem(18px);
   li{
     overflow: hidden;
-    height: pxTorem($w);
-    width: pxTorem($w);
+    width: 25%;
     float: left;
-    padding-bottom:2px;
-    margin:0 pxTorem(2px) 0 0;
+    margin-bottom: 2px;
     &:nth-child(4n){
-      margin-right: 0;
+      a{
+        padding-right: 0;
+      }
     }
   }
   a{
     display: block;
-    height: pxTorem($w);
-    width: pxTorem($w);
+    padding-right: 2px;
+    //padding:0 2px 2px 0;
   }
   img{
     vertical-align: middle;
+    width: 100%;
     height: pxTorem($w);
-    width: pxTorem($w);
   }
 }
 
@@ -486,7 +486,7 @@
       line-height: pxTorem(68px);
       color:#fff;
       @include font-dpr(28px);
-      padding-left:10px;
+      text-indent: pxTorem(10px);
     }
   }
 }
