@@ -74,15 +74,17 @@ $browser-default-font-size: 75px;
 
 //dpr字体转换
 @mixin font-dpr($font-size){
-  font-size: $font-size / 2;
+  //font-size: $font-size / 2;
+  //
+  //[data-dpr="2"] & {
+  //  font-size: $font-size;
+  //}
+  //
+  //[data-dpr="3"] & {
+  //  font-size: $font-size * 3 / 2;
+  //}
 
-  [data-dpr="2"] & {
-    font-size: $font-size;
-  }
-
-  [data-dpr="3"] & {
-    font-size: $font-size * 3 / 2;
-  }
+  font-size: $font-size / $browser-default-font-size * 1rem;
 }
 
 //文字排版
