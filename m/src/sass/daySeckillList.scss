@@ -113,3 +113,17 @@
   }
 }
 
+//查看更多按钮
+.moreComplexNaming{
+  $h:80px;
+  height: pxTorem($h);
+  line-height: pxTorem($h);
+  width: pxTorem(320px);
+  display: block;
+  margin: pxTorem(20px) auto;
+  text-align: center;
+  @include font-dpr(36px);
+  background: $red-base;
+  color: #fff;
+  @include border-radius(pxTorem(34px));
+}
