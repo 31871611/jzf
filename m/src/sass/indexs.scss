@@ -499,7 +499,7 @@
 
 //公告消息
 .indexsNotice{
-  margin-bottom: pxTorem(10px);
+  margin-bottom: pxTorem(20px);
   border-bottom: 1px solid #ddd;
   $h:50px;
   height: pxTorem($h);
@@ -531,7 +531,9 @@
     height: pxTorem($h);
     line-height: pxTorem($h);
     overflow: hidden;
-    color:#999;
+    a{
+      color:#999;
+    }
   }
 }
 //公告消息下方无间隔
