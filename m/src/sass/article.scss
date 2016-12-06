@@ -11,8 +11,8 @@
 
 
 #article{
-  @include font-dpr(36px);
-  line-height:pxTorem(50px);
+  @include font-dpr(32px);
+  line-height:pxTorem(60px);
   img{
     width:100%;
   }
