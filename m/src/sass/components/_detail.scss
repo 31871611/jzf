@@ -434,13 +434,10 @@
     margin:0 auto;
   }
   img{
+    width: 100%;
     vertical-align: middle;
     pointer-events:auto;
     @include user-select(none);
-    //width:pxTorem(210px);
-    //height:pxTorem(210px);
-    //display: block;
-    //margin:0 auto;
   }
   h2,h3{
     text-align: center;
@@ -455,8 +452,8 @@
     @include font-dpr(24px);
   }
   p{
+    @include font-dpr(28px);
     padding: pxTorem(20px);
-    @include font-dpr(26px);
     color:#666666;
   }
 }
