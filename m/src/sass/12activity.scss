@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  双12
+*/
+
+.header{
+  .icon12logo{
+    display: block;
+    margin:pxTorem(32px) auto 0;
+    width: pxTorem(193px);
+    height: pxTorem(38px);
+    @extend %ico_rem;
+    background-image: url("../images/12logo.png");
+  }
+}
+
+
+.double12{
+  background: #fdf0de;
+  padding-bottom: pxTorem(145px);
+  header{
+    height: pxTorem(604px);
+    @extend %ico_rem;
+    background-image: url("../images/12header.jpg");
+  }
+  .title{
+    @extend %ico_rem;
+    height: pxTorem(45px);
+    &.ss{
+      background-image: url("../images/12ss.jpg");
+      margin-bottom: pxTorem(38px);
+    }
+    &.many{
+      background-image: url("../images/12many.jpg");
+      margin-bottom: pxTorem(38px);
+    }
+    &.new{
+      height: pxTorem(99px);
+      background-image: url("../images/12new.jpg");
+      margin-bottom: pxTorem(45px);
+    }
+    a{
+      display: block;
+    }
+  }
+  .shareBtn{
+    background: #dd4d45;
+    margin:0 auto;
+    display: block;
+    width:pxTorem(320px);
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    text-align: center;
+    color:#fff;
+    @include font-dpr(36px);
+    @include border-radius(pxTorem(34px));
+  }
+
+  .shareInfo{
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  .moreBtn{
+    display: block;
+    margin:pxTorem(45px) auto pxTorem(85px);
+    padding-left:pxTorem(38px);
+    width: pxTorem(236px - 38);
+    height: pxTorem(66px);
+    line-height: pxTorem(66px);
+    @include font-dpr(30px);
+    color:#dd4d45;
+    @include border-radius(pxTorem(30px));
+    border:2px solid #dd4d45;
+    &:after{
+      display: inline-block;
+      content: '\20';
+      width:pxTorem(26px);
+      height: pxTorem(23px);
+      @extend %ico_rem;
+      background-image: url("../images/12more.png");
+    }
+  }
+
+  //优惠券
+  .discount12{
+    height: pxTorem(271px);
+    @extend %ico_rem;
+    background-image: url("../images/12activity.jpg");
+    margin-bottom: pxTorem(65px);
+  }
+
+  .regBtn{
+    background: #dd4d45;
+    margin:0 auto;
+    display: block;
+    width:pxTorem(410px);
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    text-align: center;
+    color:#fff;
+    @include font-dpr(36px);
+    @include border-radius(pxTorem(6px));
+  }
+}
