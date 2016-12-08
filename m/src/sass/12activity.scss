@@ -63,6 +63,7 @@
     img{
       width: 100%;
       vertical-align: middle;
+      pointer-events:auto;
     }
   }
 
@@ -75,7 +76,7 @@
     line-height: pxTorem(66px);
     @include font-dpr(30px);
     color:#dd4d45;
-    @include border-radius(pxTorem(30px));
+    @include border-radius(pxTorem(34px));
     border:2px solid #dd4d45;
     &:after{
       display: inline-block;
