@@ -13,7 +13,7 @@
     width: pxTorem(193px);
     height: pxTorem(38px);
     @extend %ico_rem;
-    background-image: url("../images/12logo.png");
+    background-image: url("../images/12/12logo.png");
   }
 }
 
@@ -24,22 +24,22 @@
   header{
     height: pxTorem(604px);
     @extend %ico_rem;
-    background-image: url("../images/12header.jpg");
+    background-image: url("../images/12/12header.jpg");
   }
   .title{
     @extend %ico_rem;
     height: pxTorem(45px);
     &.ss{
-      background-image: url("../images/12ss.jpg");
+      background-image: url("../images/12/12ss.jpg");
       margin-bottom: pxTorem(38px);
     }
     &.many{
-      background-image: url("../images/12many.jpg");
+      background-image: url("../images/12/12many.jpg");
       margin-bottom: pxTorem(38px);
     }
     &.new{
       height: pxTorem(99px);
-      background-image: url("../images/12new.jpg");
+      background-image: url("../images/12/12new.jpg");
       margin-bottom: pxTorem(45px);
     }
     a{
@@ -84,7 +84,7 @@
       width:pxTorem(26px);
       height: pxTorem(23px);
       @extend %ico_rem;
-      background-image: url("../images/12more.png");
+      background-image: url("../images/12/12more.png");
     }
   }
 
@@ -92,7 +92,7 @@
   .discount12{
     height: pxTorem(271px);
     @extend %ico_rem;
-    background-image: url("../images/12activity.jpg");
+    background-image: url("../images/12/12activity.jpg");
     margin-bottom: pxTorem(65px);
   }
 
