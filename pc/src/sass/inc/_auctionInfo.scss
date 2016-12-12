@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  拍卖信息表格
+
+*/
+
+
+@mixin auctionInfo(){
+  width:694px;
+  //拍卖名称
+  .titleTD{
+    width:160px;
+  }
+  //拍卖公司
+  .companyTD{
+    width:170px;
+  }
+  //物件总数
+  .totalTD{
+    width:80px;
+  }
+  //成交件数
+  .numTD{
+    width:80px;
+  }
+  //成交金额
+  .moneyTD{
+    width:124px;
+  }
+  //成交占比
+  .proportionTD{
+    width:80px;
+  }
+
+  thead{
+    tr{
+
+    }
+    td{
+      $h:40px;
+      height:$h;
+      background: $blue-base;
+      font-size:14px;
+      text-align: center;
+      color:#fff;
+    }
+  }
+  tbody{
+    $h:80px;
+    tr{
+      background: #fff;
+      &.even,&.select{
+        background: #f1f1f1;
+      }
+    }
+    td{
+      text-align: center;
+      //height:$h;
+      padding:20px 0;
+    }
+    img{
+      width:100px;
+      height: 100px;
+      vertical-align: middle;
+    }
+    b,em{
+      display: block;
+    }
+    b{
+      padding:0 0 5px 0;
+      color:#666;
+      font-weight: normal;
+    }
+    em{
+      color:#999;
+    }
+  }
+  tfoot{
+    tr{
+
+    }
+    td{
+      color: $red-base;
+      //font-weight: bold;
+      $h:40px;
+      height:$h;
+      font-size:14px;
+      text-align: center;
+    }
+  }
+}

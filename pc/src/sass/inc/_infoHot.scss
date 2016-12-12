@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯列表主推文章
+
+*/
+
+
+.infoHot{
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  .main{
+    height:240px - 20;
+    padding:20px 20px 0 19px;
+    $w:360px;
+    $h:200px;
+    .photo{
+      width:$w;
+      height: $h;
+      @extend %fl;
+      img{
+        width:$w;
+        height: $h;
+        vertical-align: middle;
+      }
+    }
+    .content{
+      height: $h;
+      margin-left:$w + 20;
+    }
+    h2{
+      font-size:20px;
+      height:34px * 2;
+      line-height:34px;
+      font-weight: bold;
+      a{
+        &:hover{
+          color:$blue-sub;
+        }
+      }
+    }
+    p{
+      height:28px * 4;
+      line-height:28px;
+      overflow: hidden;
+      a{
+        color:#666;
+      }
+    }
+    .bottom{
+      height:25px;
+    }
+    span{
+      color:#999;
+      &.date{
+        @extend %fl;
+      }
+      &.num{
+        @extend %fr;
+      }
+    }
+  }
+}

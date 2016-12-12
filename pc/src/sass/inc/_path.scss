@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  面包屑
+
+*/
+
+
+.path{
+  height:25px;
+  font-size:0;
+  padding-top:20px;
+  a,span{
+    font-size:14px;
+    color:#333;
+  }
+  a{
+    &:hover,&.select{
+      color:$red-base;
+    }
+  }
+  span{
+    padding:0 5px;
+  }
+}

@@ -1,0 +1,466 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+<div class="user w1200 clearfix">
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <div class="userContent userReturn">
+
+            <!-- 我的订单->查看退货->退货订单->查看退货->退货管理 -->
+            <div class="userTabTitle">
+                <span class="select">退货管理</span>
+            </div>
+
+            <div class="returnFind">
+                <label for="">订单编号</label>
+                <input type="text" class="text" />
+                <label for="">藏品名称</label>
+                <input type="text" class="text" />
+                <label for="">退货状态</label>
+                <div class="dropDown fl">
+                    <span>全部</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>全部</li>
+                        <li>正在审核</li>
+                        <li>审核通过</li>
+                        <li>退货中</li>
+                        <li>退货失败</li>
+                        <li>退货成功</li>
+                    </ul>
+                </div>
+                <a href="" class="btn">查询</a>
+            </div>
+
+            <!-- 退货管理表格 -->
+            <div class="orderContent returnList">
+                <table>
+                    <thead>
+                    <tr>
+                        <td class="titleTd">藏品名称</td>
+                        <td class="costTd">实际支付金额（元）</td>
+                        <td class="categoryTd">品类</td>
+                        <td class="numTd">退货数量</td>
+                        <td class="stateTd">退货状态</td>
+                        <td class="handleTd">交易操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sepRow"><td colspan="6"></td></tr>
+                    <tr class="date">
+                        <td colspan="6">
+                            <div class="dateNum"><b>2016年1月27日</b>订单号：35094535789156871635</div>
+                            <div class="returnPrice">退货总额：<span class="red">8900</span>元</div>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <td>正在申请退货</td>
+                        <td>
+                            <a href="" class="url">订单详情</a>
+                            <a href="" class="url">选择退货方式</a>
+                            <a href="" class="url">取消退货</a>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <td>正在申请退货</td>
+                        <td>
+                            <a href="" class="url">订单详情</a>
+                            <a href="" class="url">查看明细</a>
+                            <a href="" class="url">选择退货方式</a>
+                            <a href="" class="url">取消退货</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="sepRow"><td colspan="6"></td></tr>
+                    <tr class="date">
+                        <td colspan="6">
+                            <div class="dateNum"><b>2016年1月27日</b>订单号：35094535789156871635</div>
+                            <div class="returnPrice">退货总额：<span class="red">8900</span>元</div>
+                        </td>
+                    </tr>
+                        <tr class="success">
+                            <td>
+                                <div class="info">
+                                    <div class="photo">
+                                        <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                    </div>
+                                    <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                    <div class="spec">
+                                        <span>颜色：黑红</span>
+                                        <span>尺寸：4.90×3.00×3.00cm</span>
+                                        <span>重量：10.2g(总重）</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>4450</td>
+                            <td>田黄石田黄石</td>
+                            <td>１</td>
+                            <td>正在申请退货</td>
+                            <td>
+                                <a href="" class="url">订单详情</a>
+                                <a href="">查看明细</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        @@include('include/page.html')
+
+
+        <div class="userContent userReturn">
+
+            <!-- 我的订单->查看退货->退货订单->查看退货->退货管理 -->
+            <div class="userTabTitle">
+                <span class="select">退货订单</span>
+            </div>
+            <div class="returnNum">
+                订单编号：160803121282511329
+            </div>
+
+
+            <!-- 退货表格 -->
+            <div class="orderContent">
+                <table>
+                    <thead>
+                    <tr>
+                        <td class="titleTd">藏品名称</td>
+                        <td class="costTd">实际支付金额（元）</td>
+                        <td class="categoryTd">品类</td>
+                        <td class="numTd">退货数量</td>
+                        <td class="handleTd">交易操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sepRow"><td colspan="5"></td></tr>
+                    <tr class="date">
+                        <td colspan="5">
+                            <div class="dateNum"><b>2016年1月27日</b>订单号：35094535789156871635</div>
+                            <div class="returnPrice">退货总额：<span class="red">8900</span>元</div>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <td rowspan="2" class="borderL">
+                            <a href="">查看退货</a>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <!--<td>-->
+                            <!--<a href="" class="service">申请售后</a>-->
+                        <!--</td>-->
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="sepRow"><td colspan="5"></td></tr>
+                    <tr class="date">
+                        <td colspan="5">
+                            <div class="dateNum"><b>2016年1月27日</b>订单号：35094535789156871635</div>
+                            <div class="returnPrice">退货总额：<span class="red">8900</span>元</div>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <td>
+                            <a href="" class="service">查看退货</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        @@include('include/page.html')
+
+
+        <div class="userContent userReturn">
+            <!-- 我的订单->申请退货->退货申请 -->
+            <div class="userTabTitle">
+                <span class="select">退货申请</span>
+            </div>
+            <div class="returnApplyInfo">
+                <h3>注意事项：</h3>
+                <p>1、使用快递配送的订单，退货成功后将不退回该订单缴纳的物流保价费；</p>
+                <p>2、通过预定方式购买的订单，包括预定金购买、全额购买的订单，退货成功后将不退回预定金；</p>
+                <p>3、使用优惠券的订单退货成功将不退回优惠券，多藏品订单中优惠券金额将按比例分摊到每个藏品中；</p>
+                <p>4、退货发生的退款将退回您的电子钱包；</p>
+                <p>如有疑问请咨询客服，客服电话：0591-88212636；</p>
+            </div>
+
+            <!-- 退货详情表格 -->
+            <div class="returnInfoContent orderContent">
+                <table>
+                    <thead>
+                    <tr class="date">
+                        <td colspan="6">
+                            <div class="dateNum"><b>2016年1月27日</b>订单号：35094535789156871635</div>
+                            <div class="returnPrice">退货总额：<span class="red">8900</span>元</div>
+                        </td>
+                    </tr>
+                    <tr class="title">
+                        <td class="titleTd">藏品名称</td>
+                        <td class="costTd">实付单价（元）</td>
+                        <td class="categoryTd">品类</td>
+                        <td class="numTd">购买数量</td>
+                        <td class="returnNumTd">退货数量</td>
+                        <td class="priceTd">小计（元）</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <i class="select"></i>
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>１</td>
+                        <td>
+                            <div class="number">
+                                <i class="reduce no"></i>
+                                <input type="text" value="1" />
+                                <i class="add"></i>
+                                <!--<span class="limit">限购5件</span>-->
+                            </div>
+                        </td>
+                        <td><b class="red">4450</b></td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <div class="info">
+                                <i class=""></i>
+                                <div class="photo">
+                                    <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                </div>
+                                <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                <div class="spec">
+                                    <span>颜色：黑红</span>
+                                    <span>尺寸：4.90×3.00×3.00cm</span>
+                                    <span>重量：10.2g(总重）</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>4450</td>
+                        <td>田黄石田黄石</td>
+                        <td>2</td>
+                        <td>
+                            <div class="number">
+                                <i class="reduce no"></i>
+                                <input type="text" value="1" />
+                                <i class="add"></i>
+                                <!--<span class="limit">限购5件</span>-->
+                            </div>
+                        </td>
+                        <td><b class="red">4450</b></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="returnTotal">
+                <p><span>共退<b>1</b>件</span><span>退单总额:<b>4450</b>元</span></p>
+                <em>（注：退款金额以实际退款金额为准）</em>
+            </div>
+
+            <!-- 填写退货信息 -->
+            <div class="fillInReturn">
+                <div class="title">
+                    <h2>填写退货信息</h2>
+                    <em>“*”为必选</em>
+                </div>
+                <div class="box">
+                    <p class="info"><em>*</em>退货原因</p>
+                    <div class="problem">
+                        <label for="" class="select">
+                            <input type="radio" class="hide" />
+                            <i><em></em></i>
+                            藏品作者与描述不符
+                        </label>
+                        <label for="">
+                            <input type="radio" class="hide" />
+                            <i><em></em></i>
+                            藏品材质与描述不符
+                        </label>
+                    </div>
+                    <p class="info"><em>*</em>上传退货凭证<span>（支持JPG，PNG，GIF格式，最大2M，最多支持3张）</span></p>
+                    <div class="uploadPhotoList">
+                        <span><img src="picture/115x115.jpg" alt=""><i class="remove"></i></span>
+                        <span><img src="picture/115x115.jpg" alt=""><i class="remove"></i></span>
+                        <span><img src="picture/115x115.jpg" alt=""><i class="remove"></i></span>
+                        <span class="add"><i class="row"></i><i class="col"></i></span>
+                    </div>
+                </div>
+                <div class="fillInReturnBtn">
+                    <a href="">提交申请</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+
+<!-- 选择快递弹窗 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>操作提示</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box returnExpress">
+
+
+
+
+        <div class="tabExpress">
+            <input type="radio" class="radio" id="expressGive" name="tabExpress" value="0">
+            <label for="expressGive" class="cur">快递配送</label>
+        </div>
+
+        <div class="import clearfix mt0">
+            <label for="" class="fl">选择快递公司：</label>
+            <div class="dropDown fl">
+                <span></span>
+                <i></i>
+                <ul class="hide">
+                    <li>顺丰快递</li>
+                    <li>申通快递</li>
+                </ul>
+            </div>
+        </div>
+        <div class="import">
+            <label for="">填写物流号：</label><input type="text" class="text" />
+        </div>
+
+        <div class="tabExpress">
+            <input type="radio" class="radio" id="myGive" name="tabExpress" value="1">
+            <label for="myGive" class="cur">我自己送</label>
+        </div>
+
+        <div class="import mt0">
+            <p>公司地址：福建福州市鼓楼区杨桥东路19号衣锦华庭雅道巷水流湾院落（福建省集珍艺术馆正对面）</p>
+            <label for="" class="date">送件时间：</label>
+            <input type="text" class="date" />
+            <b>至</b>
+            <input type="text" class="date" />
+        </div>
+
+
+<!-- indent -->
+
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+</div>
+
+
+</body>
+</html>

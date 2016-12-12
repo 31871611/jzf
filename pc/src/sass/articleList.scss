@@ -1,0 +1,148 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  资讯首页
+
+*/
+
+
+//分页
+.page{
+  a{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+    &.off{
+      &:hover{
+        background: #e5e5e5;
+      }
+    }
+  }
+  input.btn{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+  }
+}
+
+
+//资讯公共w1200->w1000
+@import "inc/articleComm";
+
+//资讯头部
+@import "inc/artistHeader";
+
+//资讯导航
+@import "inc/articleNav";
+
+
+/************************************************************************/
+
+
+%homeTitle{
+  @import "inc/articleHomeTitle";
+  @include homeTitle();
+}
+
+
+/************************************************************************/
+
+
+.infoLeft{
+  width:690px;
+  @extend %fl;
+}
+
+.infoRight{
+  width:280px;
+  @extend %fr;
+}
+
+//资讯列表主推文章
+@import "inc/infoHot";
+
+@import "inc/articleTab";
+
+//资讯面包屑
+@import "inc/articlePath";
+
+//资讯列表
+@import "inc/articleList";
+
+//点击排行
+@import "inc/newsClickList";
+
+
+//资讯广告
+@import "inc/artistAd";
+
+
+//行业导航.交易市场.合作机构
+.articleIndustryList{
+  li{
+
+  }
+  a{
+    padding-left:5px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    display: block;
+    height:35px;
+    line-height:35px;
+    &:hover{
+      @include transition(padding 1s);
+      color: $blue-sub;
+      padding-left:10px;
+    }
+  }
+}
+
+//行业导航.商家名录
+.articleIndustryTab {
+  $tabW:104px;
+  .tab {
+    float: left;
+    width: $tabW;
+    background-color: #eee;
+    a{
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: #999;
+      &:hover,&.active{
+        color: #333;
+        background-color: #fff;
+      }
+    }
+  }
+  .tab-con {
+    float: right;
+    width: (690px - $tabW - 10);
+    padding-top: 8px;
+    a{
+      font-size: 14px;
+      display: inline-block;
+      padding: 0 15px;
+      line-height: 2;
+      &:hover{
+        color: $blue-sub;
+      }
+    }
+  }
+}
+
+
+

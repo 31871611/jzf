@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珍石惠列表页</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/mallList.css" />
+</head>
+<body>
+
+@@include('include/header.html')
+
+@@include('include/commHeader.html')
+
+@@include('include/mallNav.html')
+
+
+<!-- 珍石惠倒记时 -->
+<div class="zhenEndTime">
+    <b>珍石惠</b><i>1</i>天<i>00</i>:<i>00</i>:<i>00</i>后开始
+</div>
+
+<div class="w1280 mallListContent">
+
+    <!-- 艺交会倒记时 -->
+    <div class="listEndTime">
+        06月29日(周三)20:00～07月01日（周五）00:00  等您来抢购
+    </div>
+
+
+    @@include('include/productsList.html')
+
+    @@include('include/page.html')
+
+</div>
+
+
+@@include('include/boutique.html')
+
+
+@@include('include/footer.html')
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯搜索
+
+*/
+
+
+@mixin searchBox($w:550px,$top:32px){
+  position: absolute;
+  right:0;
+  top:$top;
+  $h:36px;
+  $linkW:100px;
+  $dropDownW:90px;
+  width:$w;
+  height:$h;
+  .box{
+    @extend %fl;
+    position: relative;
+    border:1px solid $blue-base;
+    width:$w - $linkW - 2;
+    height:$h - 2;
+  }
+  input{
+    width:$w - $linkW - 2 - $dropDownW - 10;
+    padding-left:10px;
+    border: 0;
+    font-size:12px;
+    height:$h - 2;
+    line-height:$h - 2;
+    @extend %fl;
+  }
+  .dropDown{
+    width:$dropDownW;
+    height:$h - 2;
+    position: relative;
+    cursor: pointer;
+    span{
+      height:14px;
+      border-left:1px solid #333;
+      padding-left:9px;
+      margin-top:11px;
+      display: block;
+    }
+    i{
+      @include transition(transform .5s);
+      @include rotate(0deg);
+      position: absolute;
+      right:13px;
+      top:15px;
+      width:8px;
+      height:6px;
+      @extend %picComm;
+      background-position: 0 -14px;
+      &.select{
+        @include rotate(180deg);
+      }
+    }
+    ul{
+      z-index: 21;
+      position: absolute;
+      left:0;
+      top:$h - 2;
+      width:$dropDownW - 1;
+      background: #fff;
+      border:1px solid $blue-base;
+      &.length{
+        height:$h * 6;
+        overflow-y: auto;
+      }
+    }
+    li{
+      height:$h;
+      line-height:$h;
+      overflow: hidden;
+      cursor: pointer;
+      padding-left:10px;
+      &:hover{
+        background: $link-color;
+        color:#fff;
+      }
+    }
+  }
+  //搜索按钮
+  .link{
+    @extend %fl;
+    display: inline-block;
+    background: $blue-base;
+    color:#fff;
+    width:$linkW;
+    text-align: center;
+    height:$h;
+    line-height:$h;
+    font-size:14px;
+    &:hover{
+      background: $blue-hover-sub;
+    }
+  }
+  //搜索记录下拉
+  .searchList{
+    z-index: 21;
+    $h:36px;
+    position: absolute;
+    left:-1px;
+    top:$h - 2;
+    border:1px solid $blue-base;
+    width:100%;
+    background: #fff;
+    li{
+      height:$h;
+      line-height:$h;
+    }
+    a{
+      padding-left:10px;
+      height:$h;
+      line-height:$h;
+      display: block;
+      &:hover{
+        background: $link-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  logo区
+
+*/
+
+
+.commHeader{
+  background: #fff;
+  height:100px;
+  .commShow{
+    position: relative;
+    //z-index: 130;
+    height:100px;
+  }
+  .logo{
+    @extend %fl;
+    margin-right:170px;
+    padding:26px 0 0 46px;
+    $imgW:98px;
+    $imgH:56px;
+    width: $imgW;
+    height: $imgH;
+    img{
+      width: $imgW;
+      height: $imgH;
+      vertical-align: middle;
+    }
+  }
+  //搜索栏
+  .mallSearch{
+    @extend %fl;
+    margin-top:36px;
+    $h:36px;
+    height:$h;
+    width:550px;
+    position: relative;
+    //position: absolute;
+    //top:28px + 15;
+    //right:0;
+    font-size:0;
+    input,a{
+      vertical-align:middle;
+      display: inline-block;
+    }
+    input{
+      width:478px - 10;
+      padding-left:10px;
+      border:1px solid $blue-base;
+      border-right:0;
+      height:$h - 2;
+      line-height:$h - 2 \9;
+      font-size:12px;
+    }
+    .link{
+      width:70px;
+      height:$h;
+      line-height:$h;
+      text-align:center;
+      color:#fff;
+      background: $blue-base;
+      font-size:14px;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+    //下拉
+    .searchList{
+      z-index: 131;
+      position: absolute;
+      left:0;
+      top:$h;
+      width:478px;
+      border:1px solid $blue-base;
+      border-top:none;
+      padding:2px 0;
+      background:#fff;
+      li{
+
+      }
+      a{
+        height:28px;
+        line-height:28px;
+        //width:268px - 12 - 12;
+        padding:0 12px;
+        //text-align: left;
+        display: block;
+        background:#fff;
+        color:#333333;
+        font-size:14px;
+        &:hover{
+          background:#f1f1f1;
+          //text-decoration: underline;
+        }
+      }
+    }
+  }
+  //二维码
+  .code{
+    position: absolute;
+    right:0;
+    bottom:-15px;
+    height:70px + 25;
+    .photo{
+      @extend %fl;
+      display: inline;
+      margin-left:20px;
+    }
+    img{
+      width:70px;
+      height:70px;
+      vertical-align: middle;
+    }
+    span{
+      height:25px;
+      line-height:25px;
+      color:#999;
+      display: block;
+      text-align: center;
+    }
+  }
+}

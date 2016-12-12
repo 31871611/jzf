@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯广告
+
+*/
+
+
+.artistAd{
+  $h:133px;
+  height:$h;
+  margin-top:20px;
+  img{
+    height:$h;
+    width: 280px;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  藏品列表
+  藏品排序，默认|价格
+
+*/
+
+
+.shopSort{
+  margin-top:20px;
+  margin-left:40px;
+  margin-right:40px;
+  height:36px;
+  background:#f1f1f1;
+  padding-left:38px;
+  padding-right:20px;
+  .tabSort{
+    @extend %fl;
+    font-size:0;
+    padding-top:5px;
+    a{
+      display: inline-block;
+      height:24px;
+      line-height:24px;
+      font-size:14px;
+      margin-right:10px;
+      background:#fff;
+      text-align:center;
+      padding:0 8px;
+      &:hover,&.select{
+        background:$red-base;
+        color:#fff;
+      }
+    }
+    .price{
+      width:6px;
+      height:14px;
+      display: inline-block;
+      vertical-align: top;
+      margin-top:5px;
+      margin-left:2px;
+      @extend %picComm;
+      background-position: -53px -3px;
+    }
+    .up{
+      background-position: -63px -3px;
+    }
+    .down{
+      background-position: -73px -3px;
+    }
+  }
+  .pageSort{
+    height:36px;
+    line-height:36px;
+    @extend %fr;
+    font-size:14px;
+    color:#999;
+    b{
+      color:$red-base;
+      font-weight: normal;
+    }
+    a{
+      display: inline-block;
+      vertical-align: middle;
+      width:18px;
+      height:18px;
+      line-height:18px;
+      text-align:center;
+      border:1px solid #ccc;
+      background: #fff;
+      &.no{
+        background:#e5e5e5;
+      }
+    }
+  }
+}

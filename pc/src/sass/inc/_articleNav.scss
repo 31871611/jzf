@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯导航
+
+*/
+
+.articleNav,.articleNav5{
+  $h:50px;
+  font-size:0;
+  text-align: center;
+  margin-bottom: 36px;
+  ul{
+    height:$h;
+  }
+  li{
+    @extend %fl;
+    height:$h;
+    position: relative;
+    &:hover{
+      .more{
+        display: block;
+      }
+    }
+  }
+  a{
+    height:$h;
+    line-height:$h;
+    display: block;
+    width:(1000px / 4);
+    background: #e5e5e5;
+    font-size:18px;
+    color:#666;
+    text-align: center;
+    &:hover,&.select{
+      background: $blue-sub;
+      color:#fff;
+    }
+    i{
+      width:2px;
+      height:100%;
+      position: absolute;
+      right:0;
+      top:0;
+      background: #fff;;
+    }
+  }
+  .more{
+    display: none;
+    position: absolute;
+    left:0;
+    top:$h;
+    a{
+      border-top:2px solid #fff;
+    }
+  }
+}
+
+
+.articleNav5{
+  a {
+    width: (1000px / 5);
+  }
+}

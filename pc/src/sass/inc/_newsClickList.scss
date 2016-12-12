@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  点击排行
+
+*/
+
+
+.newsClickList{
+  height:330px;
+  background: #f4f4f4;
+  h2{
+    height: 40px;
+    line-height: 40px;
+    margin:0 20px 5px;
+    font-size:18px;
+    color:$blue-sub;
+  }
+  ul{
+    margin:0 20px;
+    li{
+      height:20px;
+      line-height:20px;
+      margin-bottom: 8px;
+    }
+    a{
+      &:hover{
+        color:$blue-sub;
+      }
+    }
+    i{
+      display: inline-block;
+      text-align: center;
+      width:20px;
+      height:20px;
+      border:1px solid #e5e5e5;
+      background: #fff;
+      font-style: normal;
+      margin-right: 7px;
+      &.select{
+        background: #f47a0a;
+        border-color: #f47a0a;
+        color:#fff;
+      }
+    }
+  }
+}

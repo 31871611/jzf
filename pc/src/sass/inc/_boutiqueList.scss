@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  精品推荐列表
+
+
+*/
+
+
+.boutiqueList{
+  background: #fff;
+  height:350px;
+  margin-top:10px;
+  @import "boutiqueTitle";
+  .content{
+    margin:0 40px;
+    height:224px + 26;
+    width:1280px - 40 - 40;
+    overflow: hidden;
+    overflow-x:auto;
+  }
+  @import "boutiqueBox";
+}
+

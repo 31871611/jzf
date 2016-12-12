@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+.logo{
+  $w:98px;
+  $h:56px;
+  margin:0 auto;
+  padding-top:26px;
+  width: $w;
+  height:$h;
+  img{
+    width: $w;
+    height:$h;
+    vertical-align: middle;
+  }
+}
+
+.indexHeader{
+  height:136px;
+  background: #fff;
+  background: rgba(255,255,255,.96);
+  z-index:99;
+  position: absolute;
+  left:0;
+  top:38px;
+  width:100%;
+  @include box-shadow(0 4px 6px rgba(0,0,0,.5));
+  //@include transition(all .5s);
+  .w1200{
+    position: relative;
+    height:91px;
+  }
+}
+
+//占位块
+.spaceBlock{
+  height:136px;
+  background: #fff;
+}
+
+//搜索
+.indexSearch{
+  @import "inc/artistSearch";
+  @include searchBox($w:402px,$top:37px);
+}
+
+//导航
+.nav{
+  $h:45px;
+  $lineH:17px;
+  height:$h;
+  font-size:0;
+  text-align: center;
+  a,b{
+    display: inline-block;
+  }
+  a{
+    width:165px;
+    text-align: center;
+    height:$h;
+    line-height:$h;
+    font-size:16px;
+    color:$blue-base;
+    &:hover,&.select{
+      color:$red-base;
+    }
+  }
+  b{
+    vertical-align: top;
+    margin-top:14px;
+    height:$lineH;
+    font-weight: normal;
+    width:1px;
+    background: $blue-base;
+  }
+}
+
+//轮播
+@import "inc/mallSlider";
+
+
+//专题活动
+.mallActivity{
+  height:210px - 28;
+  padding-top:28px;
+  background: #fff;
+  margin-bottom: 15px;
+  $h:160px;
+  $w:305px;
+  .box{
+    height:$h;
+    padding-left:140px;
+  }
+  .list{
+    width: $w;
+    height:$h;
+    margin-right:21px;
+    position: relative;
+    @extend %fl;
+    overflow: hidden;
+    img{
+      width: $w;
+      height:$h;
+      vertical-align: middle;
+      @include transition(all .5s);
+    }
+    &:hover{
+      img{
+        @include scale(1.2);
+      }
+    }
+  }
+  .line{
+    @extend %fl;
+    width:1px;
+    height:$h;
+    background: #f1f1f1;
+    margin-right: 21px;
+  }
+  .opacity,a{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+  }
+  .opacity{
+    @include opacity(30);
+    background: #000;
+  }
+  a{
+    color:#fff;
+    text-align:center;
+  }
+  h3,p{
+    margin:0 20px;
+    overflow: hidden;
+  }
+  h3{
+    margin-top:55px;
+    font-size:24px;
+    height:30px;
+  }
+  p{
+    height:20px * 2;
+    line-height:20px;
+  }
+}
+
+//资讯文章
+.indexArticle{
+  background: #fff;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.infoLeft{
+  width:690px;
+  @extend %fl;
+}
+
+.infoRight{
+  width:280px;
+  @extend %fr;
+}
+
+//资讯列表主推文章
+@import "inc/infoHot";
+
+@import "inc/articleTab";
+
+//资讯列表
+@import "inc/articleList";
+
+//点击排行
+@import "inc/newsClickList";
+.newsClickList{
+  display: none;
+}
+
+//资讯广告
+@import "inc/artistAd";
+
+//视频
+.indexVideo{
+  $w:280px;
+  $h:200px;
+  $titleH:40px;
+  width: 280px;
+  height: $h + $titleH + 10 - 20;
+  padding-top:20px;
+  padding-bottom: 6px;
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  //h2{
+  //  height: $titleH;
+  //  line-height: $titleH;
+  //  width:$w - 20px;
+  //  margin:0 auto 5px;
+  //  font-size: 18px;
+  //  color: $blue-sub;
+  //}
+  p{
+    width:$w - 20px;
+    margin:10px auto 0;
+    color:#666;
+  }
+  .box{
+    width:$w - 20px;
+    height:$h;
+    margin:0 auto;
+    background: #0C7823;
+  }
+}
+
+
+//侧边栏
+.sidebar{
+  background: none;
+}

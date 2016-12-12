@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+//邮箱提示
+#AutoComplete{
+  background:#fff;
+  border:1px solid #ccc;
+  border-top:0;
+  display:none;
+  width:229px;
+  left:1055px;
+  top: 282px;
+  li{
+    color:#333;
+    cursor:pointer;
+    text-indent:5px;
+    height:30px;
+    line-height:30px;
+    &:hover,.hover{
+      background:#6eb6fe;
+      color:#fff;
+    }
+  }
+}

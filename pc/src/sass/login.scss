@@ -1,0 +1,392 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+/*
+
+  登录
+  注册
+  页面
+
+*/
+
+
+%loginComm{
+  .title{
+    height:81px;
+    padding-bottom: 10px;
+    h2{
+      background: url("../images/loginTitle.jpg") no-repeat center top;
+      height:81px;
+      line-height:81px;
+      font-size:20px;
+      color:$blue-base;
+      text-align: center;
+    }
+    i{
+      display: inline-block;
+      width: 8px;
+      height:17px;
+      margin-right:8px;
+      @extend %picComm;
+      background-position: 0 -235px;
+      vertical-align:top;
+      margin-top:32px;
+      *margin-top:6px;
+    }
+  }
+  //输入栏
+  .import{
+    $h:38px;
+    margin:15px 30px 0;
+    border:1px solid #ccc;
+    height:$h;
+    input,i,label{
+      vertical-align: middle;
+      display: inline-block;
+      @extend %fl;
+    }
+    input{
+      border:0;
+      height:$h;
+      line-height:$h;
+      padding-left:10px;
+      width:279px - 10;
+      //前面是文字label
+      &.text{
+        width:229px - 10;
+      }
+      //有获取验证码
+      &.getCode{
+        width:128px - 10;
+      }
+    }
+    i{
+      width:$h;
+      height:$h;
+      background-color:#eeeeee;
+      border-right:1px solid #ccc;
+      @extend %picComm;
+      &.user{
+        background-position: -65px -220px;
+      }
+      &.pass{
+        background-position: -65px -268px;
+      }
+    }
+    label{
+      font-size:14px;
+      padding-left:17px;
+      width:88px - 17;
+      height:$h;
+      line-height:$h;
+      background-color:#eeeeee;
+      border-right:1px solid #ccc;
+
+    }
+    //验证码
+    .code{
+      display: inline-block;
+      width:100px;
+      height:$h - 2px;
+      line-height:$h - 2px;
+      margin-top:1px;
+      background: $blue-base;
+      color:#fff;
+      text-align: center;
+      &.select{
+        background:#eee;
+        color:#999;
+      }
+    }
+  }
+  //错误
+  .error{
+    margin-top:2px;
+    padding-left:16px + 30;
+    //i的宽度38
+    //padding-left:38 + 2px + 10 + 30;
+    //&.text{
+    //  //label的宽度88
+    //  padding-left:88px + 2px + 10 + 30;
+    //}
+  }
+  //自动登录、协议
+  .deal{
+    margin:20px 30px 0 30px;
+    height:15px;
+    label{
+      @extend %fl;
+      margin-right:8px;
+      margin-top:2px;
+      display: inline-block;
+      width:12px;
+      height:12px;
+      border:1px solid #cccccc;
+      cursor: pointer;
+      @include border-radius(2px);
+      &.select{
+        @extend %picComm;
+        background-position: -89px -114px;
+        border:0;
+        width:14px;
+        height:14px;
+      }
+    }
+    b{
+      font-weight: normal;
+      @extend %fl;
+    }
+    //忘记密码
+    .forget{
+      @extend %fr;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  //拖动验证
+  .sliderCode{
+    margin-left:30px;
+    margin-top:20px;
+  }
+  //按钮
+  .btn{
+    margin:20px 30px 0 30px;
+    a{
+      display: block;
+      height:40px;
+      line-height:40px;
+      background: $blue-base;
+      color:#fff;
+      text-align: center;
+      font-size: 20px;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+  }
+  //立即注册
+  .bottom{
+    height:20px;
+    margin:20px 30px 0 30px;
+    text-align: right;
+    span{
+      height:16px;
+      line-height:16px;
+    }
+    a{
+      display: inline-block;
+      height:16px;
+      line-height:16px;
+      font-size:14px;
+      color:$red-base;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    i{
+      display: inline-block;
+      width:16px;
+      height:16px;
+      @extend %picComm;
+      background-position: -63px -113px;
+      vertical-align: top;
+      margin-left:10px;
+    }
+  }
+}
+
+.login{
+  height:800px;
+  background:url("../images/loginBg.jpg") no-repeat center top;
+}
+
+
+
+.loginContent{
+  $h:38px;
+  @extend %fr;
+  width:380px;
+  padding:0 0 15px 0;
+  background:#fff;
+  margin-right:100px;
+  margin-top:150px;
+  @include box-shadow(1px 2px 8px rgba(229,229,229,.66));
+  //公共使用
+  @extend %loginComm;
+  //找回密码切换
+  .loginTab{
+    margin:0 30px;
+    height:50px;
+    a{
+      @extend %fl;
+      width:50%;
+      height:50px;
+      line-height:50px;
+      display: inline-block;
+      font-size:20px;
+      border-bottom:2px solid #e6e6e6;
+      text-align:center;
+      &:hover,&.select{
+        color:$red-base;
+        height:50px - 1;
+        line-height:50px - 1;
+        border-bottom:3px solid $red-base;
+      }
+    }
+  }
+  //返回登录
+  .bottom{
+    border-top:1px dashed #bababa;
+    padding-top:10px;
+  }
+  //未注册，去注册.文字
+  .notLoginText{
+    margin:0 30px;
+    border-bottom:1px dashed #bababa;
+    color:#999;
+    height:50px;
+    line-height:50px;
+    a{
+      display: inline-block;
+      height:16px;
+      line-height:16px;
+      //font-size:14px;
+      color:$red-base;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    i{
+      display: inline-block;
+      width:16px;
+      height:16px;
+      @extend %picComm;
+      background-position: -63px -113px;
+      vertical-align: top;
+      margin-left:5px;
+    }
+  }
+}
+
+//第三方登录
+.cooperationLogin{
+  //380-30
+  //margin-left:30px + 28;
+  margin-left:90px;
+  font-size:0;
+  padding-top: 25px;
+  a{
+    color: #999;
+    margin-right:90px;
+    display: inline-block;
+    font-size:14px;
+    &:hover{
+      color: $red-base;
+    }
+  }
+  span{
+    display: block;
+    width:51px;
+    height: 51px;
+    @include border-radius(50%);
+    border:1px solid #cdcdcd;
+    margin-bottom: 10px;
+  }
+  i{
+    display: block;
+    @extend %picComm;
+    height: 26px;
+    margin: 12px auto 0;
+    &.wx{
+      width:33px;
+      background-position: -109px -358px;
+    }
+    &.qq{
+      width:26px;
+      background-position: -160px -359px;
+    }
+    &.weibo{
+      width:34px;
+      background-position: -109px -398px;
+    }
+  }
+}
+
+.loginContentTop{
+  margin-top:100px;
+}
+
+//邮箱提示
+@import "inc/autoemail";
+
+
+//微信登录弹窗
+.wxLoginAlert{
+  z-index: 999;
+  position: fixed;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  .box{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin:-200px 0 0 -150px;
+  }
+  i.exit{
+    cursor: pointer;
+    margin: -245px 0 0 160px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    width: 35px;
+    height: 35px;
+    @extend %picComm;
+    background-position: -198px -474px;
+  }
+}
+
+
+
+/*
+//弹窗忘记密码
+.loginAlaert{
+  position: absolute;
+  left:0;
+  top:0;
+  width:380px;
+  background:#fff;
+  padding:0 0 40px 0;
+  @include box-shadow(6px 6px 8px rgba(160,131,74,.66));
+  //公共使用
+  @extend %loginComm;
+  .title{
+    padding-bottom:0;
+    h2{
+      text-align: left;
+    }
+    i{
+      margin-left:30px;
+    }
+    .exit{
+      position: absolute;
+      right:14px;
+      top:10px;
+      display: inline-block;
+      width:20px;
+      height:20px;
+      @extend %picComm;
+      background-position: -16px -235px;
+    }
+  }
+
+
+}
+*/
+
+

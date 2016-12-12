@@ -1,0 +1,288 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+
+<div class="user w1200 clearfix">
+
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent">
+            <!-- 地址列表 -->
+            <div class="userSecurity">
+                <div class="userTabTitle">
+                    <span class="select">账号安全</span>
+                </div>
+
+                <div class="row">
+                    <span>用户名</span>
+                    <b>13950228541</b>
+                    <span>上次登录</span>
+                    <b>2016年6月23日  16：00</b>
+                </div>
+                <div class="row">
+                    <span>联系电话</span>
+                    <b>139****8541<a href="" class="modify">修改联系电话</a></b>
+                    <span>电子邮箱</span>
+                    <b>22223213@qq.com</b>
+                </div>
+            </div>
+
+            <div class="userSecurityService">
+                <div class="userTabTitle">
+                    <span class="select">安全服务</span>
+                </div>
+
+                <div class="schedule">
+                    <strong>安全等级</strong>
+                    <b class="red">低</b>
+                    <!--<b class="yellow">中</b>-->
+                    <!--<b class="green">高</b>-->
+                    <div class="line"><em></em></div>
+                    <i></i>
+                    <span>安全等级低，建议修改密码！</span>
+                </div>
+
+                <div class="row">
+                    <span>登录密码</span>
+                    <div class="text">
+                        <b class="normal">安全性高的密码可以使账号更安全。建议您定期更换密码，且设置一个包含数字和字母，并长度超过8位以上的密码。</b>
+                        <a href="">修改</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <span>支付密码</span>
+                    <div class="text">
+                        <b>启用支付密码后，在使用账户资产时，需通过支付密码进行身份认证</b>
+                        <a href="">设置</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <span>邮箱绑定</span>
+                    <div class="text">
+                        <b>绑定邮箱后，可让您的账号更加安全和方便，如您可以使用邮箱来找回密码。</b>
+                        <a href="">绑定</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+
+<!-- 帐户安全弹窗 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>修改联系电话</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <p class="text">系统已发送短信验证至139*****1234,请将收到的6位数字验证码填入下方。</p>
+
+        <div class="import code">
+            <label for="">验证码</label><input type="text" class="tel" />
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+</div>
+
+
+<div class="userAlert">
+    <div class="title">
+        <h2>修改联系电话</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <p class="text">验证成功,请输入您的新联系电话！</p>
+
+        <div class="import">
+            <label for="">联系电话</label><input type="text" class="tel" />
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="">修改</a>
+    </div>
+</div>
+
+<!-- 点击修改登录密码 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>修改登录密码</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <div class="import">
+            <label for="">旧密码</label><input type="password" placeholder="请输入原来的密码" />
+        </div>
+        <div class="import">
+            <label for="">新密码</label><input type="password" placeholder="请输入新密码" />
+        </div>
+        <div class="import">
+            <label for="">确认密码</label><input type="password" placeholder="请再次输入新密码" />
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="">确认修改</a>
+    </div>
+</div>
+
+
+<!-- 点击设置支付密码 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>设置支付密码</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+        <div class="import">
+            <label for="">手机号码</label><b>18903482732</b>
+        </div>
+        <div class="import code">
+            <label for="">验证码</label><input type="text" placeholder="" /><a href="" class="code select">获取验证码</a>
+        </div>
+        <div class="import">
+            <label for="">登录密码</label><input type="password" placeholder="请输入您的登录密码" />
+        </div>
+        <div class="import">
+            <label for="">设置支付密码</label><input type="password" placeholder="请输入新的支付密码" />
+        </div>
+        <div class="import step">
+            <label for="">确认支付密码</label><input type="password" placeholder="请再次输入支付密码" />
+        </div>
+    </div>
+    <div class="btn">
+        <a href="">确认设置</a>
+    </div>
+</div>
+
+
+<!-- 点击绑定邮箱 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>绑定邮箱</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <div class="import">
+            <label for="">您的邮箱</label><input type="text" />
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="">确认修改</a>
+    </div>
+</div>
+
+
+<div class="userAlert">
+    <div class="title">
+        <h2>提示</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <p class="text">邮件已发送到该邮箱，请<a href="" class="email">登录邮箱</a>验证！</p>
+        <p class="text">该邮箱已被绑定，请更换其他邮箱</p>
+
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+</div>
+
+
+
+
+<!-- 整合... -->
+<div class="userAlert">
+    <div class="title">
+        <h2>修改联系电话</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+
+        <p class="text">系统已发送短信验证至139*****1234,请将收到的6位数字<a href="" class="email">验证码</a>填入下方。</p>
+
+        <div class="import code">
+            <label for="">验证码</label><input type="text" />
+        </div>
+        <div class="error">
+            错误
+        </div>
+        <div class="import">
+            <label for="">旧密码</label><input type="password" placeholder="请输入原来的密码" />
+        </div>
+        <div class="error">
+            错误
+        </div>
+        <div class="import">
+            <label for="">新密码</label><input type="password" placeholder="请输入新密码" />
+        </div>
+        <div class="error">
+            错误
+        </div>
+        <div class="import">
+            <label for="">确认密码</label><input type="password" placeholder="请再次输入新密码" />
+        </div>
+        <div class="error">
+            错误
+        </div>
+        <div class="import">
+            <label for="">手机号码</label><b>18903482732</b>
+        </div>
+        <div class="error">
+            错误
+        </div>
+        <div class="import code">
+            <label for="">验证码</label><input type="text" placeholder="" /><a href="" class="code select">获取验证码</a>
+        </div>
+        <div class="import code">
+            <label for="">验证码</label><input type="text" placeholder="" /><a href="" class="code select">(56s)后重新发送</a>
+        </div>
+        <div class="import">
+            <label for="">登录密码</label><input type="password" placeholder="请输入您的登录密码" />
+        </div>
+        <div class="import">
+            <label for="">设置支付密码</label><input type="password" placeholder="请输入新的支付密码" />
+        </div>
+        <div class="import step">
+            <label for="">确认支付密码</label><input type="password" placeholder="请再次输入支付密码" />
+        </div>
+    </div>
+    <div class="btn">
+        <a href="">确认设置</a>
+        <!--<a href="" class="step">取消</a>-->
+    </div>
+</div>
+
+</body>
+</html>

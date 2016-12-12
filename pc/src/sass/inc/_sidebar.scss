@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  侧边栏
+
+*/
+
+
+.sidebar{
+  $bg:#22232d;
+  $w:36px;
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: $w;
+  z-index:99;
+  background: $bg;
+  //
+  .side_con{
+    position: absolute;
+    top:40%;
+    right:0;
+    width: 36px;
+    z-index: 9;
+  }
+  //图标
+  i{
+    display:inline-block;
+    @extend %picComm;
+  }
+  //站内信
+  .messages{
+    height: 118px;
+    background: $bg;
+    text-align: center;
+    transition:all .1s linear;
+    margin-bottom: 1px;
+    &:hover{
+      background: $red-base;
+      em{
+        background: #fff;
+        color: $red-base;
+      }
+    }
+    //站内信图标
+    .mailIcon{
+      background-position: -81px -427px;
+      width: 19px;
+      height: 14px;
+      margin: 10px auto 5px;
+    }
+    em,span{
+      font-size: 14px;
+      color: #fff;
+      display: block;
+    }
+    span{
+      width: 13px;
+      line-height: 1.2;
+      height: 50px;
+      margin: 0 auto;
+    }
+    em{
+      width: 28px;
+      height: 20px;
+      line-height: 20px;
+      margin: 5px auto 0;
+      background: $red-base;
+      @include border-radius(7px 7px 7px 0);
+      text-align: center;
+      font-style: normal;
+    }
+  }
+  //
+  .list{
+    position: relative;
+    width: $w;
+    height:$w;
+    margin-bottom: 1px;
+    a{
+      display: block;
+      width: $w;
+      height:$w;
+      &.select,&:hover{
+        i{
+          background-color: $red-base;
+        }
+        span{
+          right:34px;
+        }
+      }
+      &.couponUrl{
+        z-index: 10;
+        position: absolute;
+        left:-175px;
+        top:-112px;
+        width:165px;
+        height: 181px;
+        background: url("../images/couponUrl.png") no-repeat;
+      }
+    }
+    i{
+      position: relative;
+      z-index: 12;
+      background-color: $bg;
+      display: block;
+      width: $w;
+      height:$w;
+      //我的钱包
+      &.walletIcon{
+        background-position:-66px -446px;
+      }
+      //我的关注
+      &.followIcon{
+        background-position:-66px -488px;
+      }
+      //帮助中心
+      &.helpIcon{
+        background-position:-66px -528px;
+      }
+      //返回顶部
+      &.returnIcon{
+        background-position:-66px -569px;
+      }
+      //抽奖
+      &.couponIcon{
+        background-position:-159px -438px;
+      }
+    }
+    span{
+      z-index: 11;
+      @include transition(right 0.5s);
+      background: $red-base;
+      color:#fff;
+      height: $w;
+      line-height: $w;
+      width:83px;
+      text-align: center;
+      font-size:14px;
+      position: absolute;
+      right:-88px;
+      top:0;
+      @include border-radius(2px 0 0 2px);
+    }
+
+  }
+
+
+/*
+  //
+  .bar{
+    height: 35px;
+    margin-bottom: 1px;
+    position: relative;
+    &:hover{
+
+      .i_help{
+        color: #cd0817;
+      }
+    }
+    //
+    i{
+      display:inline-block;
+      background: url("../images/sidebar.png") no-repeat;
+    }
+    .i_mail{ width: 19px; height: 18px; background-position: -7px -373px; margin-top: 9px;}
+    .i_money{ width: 19px; height: 20px; background-position: -38px -374px; margin-top: 9px;}
+    .i_atten{ width: 19px; height: 18px; background-position: -69px -374px; margin-top: 9px;}
+    .i_help{ width: 17px; height: 17px; background-position: -177px -9px; margin-top: 9px; text-align: center; line-height: 17px; font-style: normal; font-weight:bold;}
+    .i_top{ width: 19px; height: 19px; background-position: -98px -374px; margin-top: 9px;}
+    .side_t{z-index:997;border-radius:2px;width: 83px; height: 35px; color: #fff; text-align: center; line-height: 35px; display: inline-block; position: absolute; top: 0; right:-89px; background: #cd0817; font-size: 14px;}
+    .side_i{text-align:center; z-index:998;display: inline-block; width: 36px; height: 35px; background: $bg; position: relative; border-radius: 2px;}
+    .side_i:hover{background: #cd0817;}
+    .side_t b{font-weight: normal; font-size: 14px; color: #fff; padding: 0 3px;}
+  }
+
+
+  //站内信
+  .car{
+    height: 118px;
+    background: $bg;
+    text-align: center;
+    transition:all .1s linear;
+    &:hover{
+      background: #cd0817;
+      em{
+        background: #fff;
+        color: #cd0817;
+      }
+    }
+    //
+    .i_car{
+      background-position: -5px -9px;
+      width: 22px;
+      height: 15px;
+      margin: 10px 0 5px 0;
+    }
+    //
+    em,span{
+      font-size: 14px;
+      color: #fff;
+      display: block;
+    }
+    span{
+      width: 13px;
+      line-height: 1.2;
+      height: 50px;
+      margin-left: 11px;
+      *margin-left: 0;
+    }
+    em{
+      width: 28px;
+      height: 20px;
+      margin-left: 5px;
+      *margin-left: 0;
+      background: #cd0817;
+      border-radius:7px 7px 7px 0;
+      margin-top: 5px;
+      text-align: center;
+      font-style: normal;
+      line-height: 20px;
+    }
+  }
+
+*/
+
+
+  //
+  .side_foot{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width: 36px;
+    z-index: 8;
+  }
+
+}
+

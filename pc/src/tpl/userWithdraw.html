@@ -1,0 +1,70 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+<div class="user w1200 clearfix">
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <div class="userContent userWithdraw">
+            <!-- 提现 -->
+            <div class="userTabTitle">
+                <span class="select">提现</span>
+            </div>
+
+            <div class="import">
+                <label for="">您的账号余额：</label><span>￥0</span>
+            </div>
+            <div class="import">
+                <label for="">不可提现余额：</label><span>￥0</span><span class="f14">（此部分为充值金额）</span>
+            </div>
+            <div class="import">
+                <label for="">可提现余额：</label><span>￥0</span>
+            </div>
+            <div class="import">
+                <label for="">请输入提现金额：</label><span>￥</span><input type="text" /><span>（需在10元以上）</span><span class="num">请填写数字</span>
+            </div>
+            <div class="import">
+                <label for="">提现服务费：</label><span class="mr20">￥1</span><span>提现服务费按提现金额的6‰收取，单笔业务费最低1元</span>
+            </div>
+            <div class="import">
+                <label for="">实际到账金额：</label><span>￥0</span>
+            </div>
+            <div class="import clearfix">
+                <label for="" class="fl">选择银行卡：</label>
+                <div class="dropDown fl">
+                    <span>选择县/区</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <a href="" class="add fl">添加银行卡</a>
+            </div>
+
+            <div class="btn">
+                <a href="">提交提现申请</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+</body>
+</html>

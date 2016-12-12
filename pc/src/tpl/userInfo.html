@@ -1,0 +1,142 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+
+<div class="user w1200 clearfix">
+
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent personal">
+            <div class="userTabTitle">
+                <span class="select">个人信息</span>
+            </div>
+            <div class="import">
+                <label for="">用户名</label>
+                <span>13950228541</span>
+            </div>
+            <div class="import">
+                <label for="">个人昵称</label>
+                <input type="text" class="name" placeholder="" value="13950228541" />
+                <label for="">性别</label>
+                <label for="" class="sex">
+                    <input type="radio" class="hide" name="sex" />
+                    <i class="select"><em></em></i>
+                    <span class="sex">男</span>
+                </label>
+                <label for="" class="sex">
+                    <input type="radio" class="hide" name="sex" />
+                    <i><em></em></i>
+                    <span class="sex">女</span>
+                </label>
+            </div>
+            <div class="error">错误</div>
+            <div class="import">
+                <label for="">真实姓名</label>
+                <input type="text" class="name" placeholder="请输入您的真实姓名" />
+                <label for="">出生日期</label>
+                <input type="text" placeholder="请选择您的出生日期" />
+            </div>
+            <div class="error">错误</div>
+            <div class="import">
+                <label for="" class="fl">所在地</label>
+                <div class="dropDown fl">
+                    <span>未选择未选择未选择未选择未选择</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>未选择</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>未选择</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </div>
+            <input type="text" class="address" placeholder="详细地址" />
+            <div class="error">错误</div>
+            <div class="line"></div>
+            <div class="import">
+                <label for="">联系电话</label>
+                <span>139****8541</span>
+            </div>
+            <div class="import">
+                <label for="">电子邮箱</label>
+                <input type="text" class="email" placeholder="请输入您的电子邮箱" />
+            </div>
+            <div class="explain">请填写有效邮箱地址，以便接收集珍坊的通知及订单信息，建议使用常用邮箱</div>
+            <div class="btn">
+                <a href="">保存</a>
+            </div>
+            <!-- 头像 -->
+            <div class="userFace">
+                <img src="images/face.png" alt="点击更换头像" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+<div class="userAlert uploadFace hide" id="selface" style="position: fixed; left: 646.5px; top: 23px;">
+    <div class="title">
+        <h2>头像上传</h2>
+        <a href="javascript:;" id="reset_exit" class="exit"></a>
+    </div>
+    <div class="faceShowError" id="faceShowError">错误</div>
+    <div class="box">
+        <form id="form" action="http://www.artjzf.com/usercenter/upload_head" method="post" enctype="multipart/form-data">
+            <div class="con_img">
+                <input type="hidden" name="_token" value="pntZqYopUa8In1YPNHNpalxjHg6572X5ui6VLuyf">
+                <input type="hidden" id="img_url" value="head/cut_1018-1450922427.jpg">
+                <a href="javascript:;" id="head_a" class="btn">选择图片</a>
+                <em>可以选择JPG/PNG/JPEG图片文件</em>
+                <input type="file" name="file" id="head" accept="image/*" style="display: none;">
+                <img id="show_img" class="hide" src="" alt="">
+            </div>
+            <input type="hidden" id="img_x" name="img_x">
+            <input type="hidden" id="img_y" name="img_y">
+            <input type="hidden" id="img_w" name="img_w">
+            <input type="hidden" id="img_h" name="img_h">
+            <span id="preview_box" class="side_img"><img id="crop_preview" src="http://www.artjzf.com/images/default_face.jpg" alt=""></span>
+            <b>160px x 160px</b>
+            <a href="javascript:;" class="ok" id="crop_submit">确定</a>
+            <a href="javascript:;" class="out" id="reset">取消</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  列表页
+  寿山石、珠宝、漆艺、文房
+  切换
+
+*/
+
+
+//专场分类导航
+.specialNav{
+  $h:50px;
+  height:$h;
+  text-align:center;
+  font-size:0;
+  margin:20px 0;
+  a{
+    display: inline-block;
+    width:120px;
+    height:$h;
+    line-height:$h;
+    text-align:center;
+    background:#fff;
+    font-size:16px;
+    border-right: 1px solid #ddd;
+    &:hover{
+      background:$blue-base;
+      color:#fff;
+    }
+    &.first{
+      @include border-radius(6px 0 0 6px);
+    }
+    &.last{
+      @include border-radius(0 6px 6px 0);
+      border-right:0;
+    }
+    &.select{
+      background:$blue-base;
+      color:#fff;
+    }
+  }
+}

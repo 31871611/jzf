@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  .header正常头部
+
+
+
+*/
+
+
+//头部
+.header{
+  $h:38px;
+  height:$h;
+  background:#f4f4f4;
+  //左边文字首页
+  .headHome{
+    @extend %fl;
+    a{
+      width:82px;
+      display: block;
+      height:$h;
+      line-height:$h;
+    }
+  }
+  //左边.二维码
+  .headCode{
+    @extend %fl;
+    width:110px;
+    margin-right:5px;
+    position:relative;
+    z-index:140;
+    cursor: pointer;
+    &:hover,&.select{
+      span{
+        background: #fff;
+      }
+      i{
+        //background-position: -89px -2px;
+        @include rotate(180deg);
+      }
+      div{
+        display: block;
+      }
+    }
+    span{
+      display: block;
+      width:104px - 10;
+      height:$h;
+      padding-left:10px;
+      line-height:$h;
+      color:#333;
+    }
+    i{
+      width:10px;
+      height:5px;
+      @extend %picComm;
+      background-position: -89px -13px;
+      position: absolute;
+      right:5px + 6;
+      top:18px;
+      @include rotate(0deg);
+      @include transition(transform .5s);
+    }
+    div{
+      display: none;
+      background: #fff;
+      border:3px solid #f1f1f1;
+      border-top:0;
+      text-align:center;
+      width:104px;
+      position: absolute;
+      left:-3px;
+      top:$h;
+      padding:4px 0;
+    }
+    img{
+      vertical-align: middle;
+      width:85px;
+      height:85px;
+    }
+  }
+
+  //右边。头部导航
+  .headNav{
+    @extend %fr;
+    font-size:0;
+    margin-top:12px;
+    a,b,span,em{
+      display: inline-block;
+     font-size:12px;
+    }
+    a,b,span{
+      height:15px;
+      vertical-align: middle;
+      line-height:normal;
+    }
+    a{
+      color:#333;
+      margin-left:12px;
+      &:hover {
+        color: $red-base;
+      }
+    }
+    //购物车图标
+    .shop{
+      display: inline-block;
+      width: 11px;
+      height:11px;
+      margin-right:10px;
+      margin-top:2px;
+      @extend %picComm;
+      background-position: -17px -28px;
+      vertical-align: top;
+      &.select{
+        background-position: 0 -28px;
+      }
+    }
+    //.user{
+    //  margin-left:0;
+    //}
+    //分隔线
+    b{
+      font-size: 0;
+      line-height:0;
+      width:1px;
+      background:#999;
+      margin-left:12px;
+    }
+    //em{
+    //  color: $red-base;
+    //  font-weight: bold;
+    //  font-style: normal;
+    //  padding-left:5px;
+    //  position: relative;
+    //  top:1px;
+    //}
+  }
+}
+
+
+
+/*
+//个人中心小头部
+.header-top{
+  height:60px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #b7b4b5;
+  background:#f1f1f1;
+  @include box-shadow(0 1px 2px rgba(12,4,7,.75));
+  .logo,.logo img{
+    width:89px;
+    height:43px;
+    display: block;
+  }
+  .logo{
+    padding:8px 0 0 15px;
+    margin-right:50px;
+  }
+  ul{
+    li{
+      float: left;
+      //      margin-right:30px;
+      margin-right:60px;
+    }
+    a{
+      margin-right:0;
+      display: block;
+      height:60px;
+      line-height:60px;
+      text-align:center;
+      &:hover{
+        color:$red-base;
+      }
+    }
+    i.ico{
+      right:-33px;
+      top:5px;
+    }
+    div{
+      top:50px;
+    }
+  }
+  .head-nav{
+    margin-top:24px;
+  }
+}
+*/

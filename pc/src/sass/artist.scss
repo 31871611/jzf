@@ -1,0 +1,325 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  资讯-艺术家
+
+*/
+
+
+//分页
+.page{
+  a{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+    &.off{
+      &:hover{
+        background: #e5e5e5;
+      }
+    }
+  }
+  input.btn{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+  }
+}
+
+//资讯公共w1200->w1000
+@import "inc/articleComm";
+
+//资讯头部
+@import "inc/artistHeader";
+
+//资讯导航
+@import "inc/articleNav";
+
+
+/************************************************************************/
+
+%homeTitle{
+  $h:37px;
+  height:$h;
+  border-top:1px solid #999;
+  a{
+    display: inline-block;
+    height:$h;
+    line-height:$h;
+    padding:0 16px 0 16px;
+    font-size:18px;
+    &.select{
+      color:$blue-base;
+      border-top:2px solid $blue-base;
+      position: relative;
+      top:-1px;
+    }
+  }
+}
+
+
+/************************************************************************/
+
+
+.artistTab{
+  $h:36px;
+  margin-top:40px;
+  margin-bottom:40px;
+  font-size:0;
+  text-align: center;
+  position: relative;
+  a{
+    display: inline-block;
+    height: $h;
+    line-height: $h;
+    padding:0 15px;
+    background: #eeeeee;
+    font-size:16px;
+    margin-right: 1px;
+    &.select,&:hover{
+      background: $blue-sub;
+      color:#fff;
+    }
+    &.first{
+      @include border-radius(6px 0 0 6px);
+    }
+    &.last{
+      @include border-radius(0 6px 6px 0);
+    }
+  }
+  .more{
+    position: absolute;
+    right:0;
+    top:3px;
+    width:88px;
+    height:28px;
+    line-height:28px;
+    border:1px solid $red-base;
+    font-size:12px;
+    background: #fff;
+    @include border-radius(4px);
+    &:hover{
+      color:#fff;
+      background: $red-base;
+    }
+  }
+}
+
+.artistList{
+  $h:150px;
+  ul{
+    margin-right: -20px;
+    overflow: hidden;
+  }
+  li{
+    position: relative;
+    width: $h;
+    height: $h;
+    @extend %fl;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  a{
+    display: block;
+    width: $h;
+    height: $h;
+    &:hover{
+      @include box-shadow(0 3px 10px rgba(0,0,0,.8));
+      //.opacity{
+      //  background: $blue-sub;
+      //}
+    }
+  }
+  img{
+    width: $h;
+    height: $h;
+    vertical-align: middle;
+  }
+  .opacity,h3{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width:100%;
+    height: 24px;
+  }
+  .opacity{
+    @include transition(background 500ms);
+    background: #666666;
+    @include opacity(50);
+  }
+  h3{
+    color:#fff;
+    line-height: 24px;
+    text-indent: 10px;
+    font-size:14px;
+  }
+  .left,.right{
+    position: absolute;
+    top:28px;
+    width:20px;
+    height:60px;
+    @extend %picComm;
+  }
+  .left{
+    background-position: -186px -219px;
+    left:0;
+  }
+  .right{
+    background-position: -212px -219px;
+    right:0;
+  }
+}
+
+.artistNameList{
+  $w:150px;
+  $h:60px;
+  ul{
+    margin-right: -20px;
+    overflow: hidden;
+  }
+  li{
+    width:$w;
+    height: $h;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    @extend %fl;
+    &.select{
+      a{
+        background: $blue-sub;
+        color:#fff;
+      }
+    }
+  }
+  a{
+    width:$w;
+    height: $h;
+    line-height: $h;
+    text-align: center;
+    display: block;
+    background: #eee;
+    font-size:24px;
+    &:hover{
+      background: $blue-sub;
+      color:#fff;
+    }
+  }
+}
+
+
+.artistNameInfo{
+  padding-top: 25px;
+  padding-bottom: 45px;
+  .photo{
+    $w:220px;
+    width:$w;
+    height:$w;
+    overflow: hidden;
+    @extend %fl;
+    margin-right: 45px;
+    img{
+      width:100%;
+      height:auto;
+      vertical-align: middle;
+      //@include border-radius(50%);
+    }
+  }
+  .content{
+    @extend %fl;
+    width:620px;
+    h1{
+      font-size:24px;
+      margin-bottom: 24px;
+      padding-top: 28px;
+    }
+    p{
+      line-height: 24px;
+      text-indent:2em;
+    }
+  }
+}
+
+.artistNameWorks{
+  .title{
+    @extend %homeTitle;
+    margin-bottom: 10px;
+  }
+  .content{
+    $w:184px;
+    $h:235px;
+    height:$h;
+    //width:1014px;
+    ul{
+      height:$h;
+      overflow: hidden;
+      margin-right: -20px;
+    }
+    li{
+      width: $w;
+      height:$h;
+      margin-right: 20px;
+      position: relative;
+      @extend %fl;
+      img{
+        width: $w;
+        height:$h;
+        vertical-align: middle;
+      }
+    }
+    a{
+      &:hover{
+        .opacity{
+          background: $blue-sub;
+        }
+      }
+    }
+    .opacity,h3{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      width:100%;
+      height: 30px;
+    }
+    .opacity{
+      @include transition(background 500ms);
+      background: #666;
+      @include opacity(50);
+    }
+    h3{
+      width:96%;
+      left:2%;
+      text-align: center;
+      color:#fff;
+      line-height: 30px;
+      font-size:14px;
+    }
+  }
+  //在售藏品列表
+  .list2{
+    $w:235px;
+    li{
+      width: $w;
+      height:$w;
+      margin-right: 20px;
+      position: relative;
+      @extend %fl;
+      img{
+        width: $w;
+        height:$w;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+
+

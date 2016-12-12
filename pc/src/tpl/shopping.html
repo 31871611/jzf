@@ -1,0 +1,195 @@
+@@include('include/base.html',{
+"title":"购物车",
+"css":"shopping.css",
+"js":"shopping.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+@@include('include/path.html')
+
+
+
+
+<!-- 购物车为空时 -->
+<div class="shoppingEmpty">
+    <span>您的购物车空空如也！</span>
+    <span>赶紧行动吧！</span>
+    <a href="" class="btn">去购物</a>
+</div>
+
+<!-- 购物车 -->
+<div class="w1200 shopping">
+
+    <div class="shoppingTitle">
+        <div class="chkTd">
+            <input type="hidden" />
+            <label for=""><i></i>全选</label>
+        </div>
+        <div class="infoTd">珍品名称</div>
+
+        <div class="priceTd">单价</div>
+        <div class="numberTd">数量</div>
+        <div class="sumTd">小计</div>
+        <div class="opTd">交易操作</div>
+    </div>
+    <div class="shoppingContent">
+        <ul class="clearfix">
+            <li class="chkTd">
+                <div class="cartCheckbox">
+                    <input type="hidden" />
+                    <label for=""></label>
+                </div>
+            </li>
+            <li class="infoTd">
+                <div class="photo">
+                    <a href="">
+                        <img src="picture/224x224.jpg" alt="">
+                    </a>
+                </div>
+                <div class="info">
+                    <h3>手工大漆手镯</h3>
+                    <p>颜色：黑色</p>
+                    <p>规格尺寸：5cm~6cm之间</p>
+                </div>
+            </li>
+            <li class="priceTd">
+                <span class="price">￥8,900</span>
+                <!-- 原价 -->
+                <span class="originalCost">¥3,800</span>
+            </li>
+            <li class="numberTd">
+                <div class="number">
+                    <i class="reduce no"></i>
+                    <input type="text" value="1" />
+                    <i class="add"></i>
+                    <!--<span class="limit">限购5件</span>-->
+                </div>
+            </li>
+            <li class="sumTd">
+                <span class="subtotal">¥8,900</span>
+            </li>
+            <li class="opTd">
+                <a href="" class="follow">移入我的关注</a>
+                <a href="javascript:;" class="remove" data-removeid="1">删除</a>
+            </li>
+        </ul>
+        <ul class="clearfix select">
+            <li class="chkTd">
+                <div class="cartCheckbox">
+                    <input type="hidden" />
+                    <label for="" class="select"></label>
+                </div>
+            </li>
+            <li class="infoTd">
+                <div class="photo">
+                    <a href="">
+                        <img src="picture/224x224.jpg" alt="">
+                    </a>
+                </div>
+                <div class="info">
+                    <h3>手工大漆手镯</h3>
+                    <p>颜色：黑色</p>
+                    <p>规格尺寸：5cm~6cm之间</p>
+                </div>
+            </li>
+            <li class="priceTd">
+                <span class="price">￥8,900</span>
+                <!-- 原价 -->
+                <span class="originalCost">¥3,800</span>
+            </li>
+            <li class="numberTd">
+                <div class="number">
+                    <i class="reduce"></i>
+                    <input type="text" value="1" />
+                    <i class="add"></i>
+                </div>
+            </li>
+            <li class="sumTd">
+                <span class="subtotal">¥8,900</span>
+            </li>
+            <li class="opTd">
+                <a href="" class="follow">移入我的关注</a>
+                <a href="javascript:;" class="remove" data-removeid="1">删除</a>
+            </li>
+        </ul>
+        <ul class="clearfix out">
+            <li class="chkTd">
+                <div class="cartCheckbox">
+                    <span class="out">已售出</span>
+                </div>
+            </li>
+            <li class="infoTd">
+                <div class="photo">
+                    <a href="">
+                        <img src="picture/224x224.jpg" alt="">
+                    </a>
+                </div>
+                <div class="info">
+                    <h3>手工大漆手镯</h3>
+                    <p>颜色：黑色</p>
+                    <p>规格尺寸：5cm~6cm之间</p>
+                </div>
+            </li>
+            <li class="priceTd">
+                <span class="price">￥8,900</span>
+                <!-- 原价 -->
+                <span class="originalCost">¥3,800</span>
+            </li>
+            <li class="numberTd">
+                <div class="number">
+                    <i class="reduce"></i>
+                    <input type="text" value="1" />
+                    <i class="add"></i>
+                </div>
+            </li>
+            <li class="sumTd">
+                <span class="subtotal">¥8,900</span>
+            </li>
+            <li class="opTd">
+                <a href="" class="follow">移入我的关注</a>
+                <a href="javascript:;" class="remove" data-removeid="1">删除</a>
+            </li>
+        </ul>
+    </div>
+    <div class="shoppingFooter">
+        <div class="text">
+            <input type="hidden" />
+            <label for=""><i></i>全选</label>
+            <a href="javascript:;" class="remove" data-removeid="1">删除</a>
+            <a href="" class="clean">清除失效宝贝</a>
+            <a href="" class="follow">移入我的关注</a>
+            <span class="had">已选藏品：<b>1</b> 件</span>
+        </div>
+        <div class="total">
+            合计（不含运费）：<b>¥9,200</b>
+        </div>
+        <div class="btn">
+            <a href="" class="go">继续购物</a>
+            <a href="" class="buy">立即结算</a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 删除弹窗 -->
+<div class="removeAlert hide" id="removeAlert">
+    <p>确定删除选中藏品吗？</p>
+    <div class="btn">
+        <a href="javascript:;" class="ok">确定</a>
+        <a href="javascript:;" class="exit">取消</a>
+    </div>
+</div>
+
+
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+</body>
+</html>

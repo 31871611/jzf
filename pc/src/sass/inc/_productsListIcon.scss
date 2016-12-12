@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  商品列表页
+  左边图片中的图标
+  已售、爱心、360
+
+*/
+
+.out,.booked{
+  position: absolute;
+  right:6px;
+  bottom:6px;
+  width:156px;
+  height:140px;
+  @include pic("../images/out.png");
+  background-repeat: no-repeat;
+}
+//已售
+.out{
+  background-position: 0 0;
+}
+//已预定
+.booked{
+  background-position: -164px 0;
+}
+//爱心、360、视频播放
+.love,.degree360,.listVideo{
+  position: absolute;
+  top:10px;
+}
+//爱心
+.love{
+  cursor: pointer;
+  width:24px;
+  height:22px + 0;
+  right:10px;
+  i,span{
+    display: block;
+  }
+  i{
+    margin:0 auto;
+    width:24px;
+    height:22px;
+    @extend %picComm;
+    background-position: -29px -45px;
+    &.select{
+      background-position: 0px -45px;
+    }
+  }
+  span{
+    height:20px;
+    line-height:20px;
+    color:#fff;
+    text-align: center;
+  }
+}
+//360图标
+.degree360{
+  width:30px;
+  height:30px;
+  left:10px;
+  @extend %picComm;
+  background-position: -39px -76px;
+}
+//视频播放图标
+.listVideo{
+  width:34px;
+  height:34px;
+  left:10px;
+  @extend %picComm;
+  background-position: -159px -398px;
+}

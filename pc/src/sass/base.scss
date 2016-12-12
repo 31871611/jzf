@@ -1,0 +1,269 @@
+@charset "UTF-8";
+@import "comm/_reset";
+@import "comm/_common";
+@import "comm/_css3";
+
+.w1000{
+  @include bc-auto(1000px);
+}
+.w1200{
+  @include bc-auto(1200px);
+}
+.w1280{
+  @include bc-auto(1280px);
+}
+.clearfix{
+  @extend %clearfix;
+}
+body{
+  min-width: 1200px;
+  background:$sub-color;
+}
+.fl{
+  @extend %fl;
+}
+.fr{
+  @extend %fr;
+}
+.f12{
+  font-size:12px;
+}
+.f14{
+  font-size:14px;
+}
+.f16{
+  font-size:15px;
+}
+.f18{
+  font-size:16px;
+}
+.mt20{
+  margin-top:20px;
+}
+.mb20{
+  margin-bottom:20px;
+}
+.mb40{
+  margin-bottom:40px;
+}
+.blue{
+  color:$blue-base;
+}
+.red{
+  color:$red-base;
+}
+.url{
+  color:$link-color;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.hide{
+  display: none !important;
+}
+.error{
+  color:$red-base;
+}
+//css文字截取
+.ellipsis{
+  @extend %ellipsis;
+  text-overflow:clip;
+}
+
+//隐藏avalon，防止网速慢时将花括号暴露出来
+.ms-controller{visibility: hidden;}
+
+//列表无产品文字提示
+.noProduct{
+  text-align: center;
+  font-size:18px;
+}
+
+//弹窗提示ico
+.pic_alert{
+  @include pic("../images/boxAlert.png");
+}
+/*css精灵图片(修改图片是相关css文件中重置)*/
+//.sprites{background:url(png.png);}
+
+/*************************************************************************************/
+
+
+//头部
+@import "inc/header";
+
+
+//logo区
+@import "inc/commHeader";
+
+
+//导航
+@import "inc/nav";
+
+
+//面包屑
+@import "inc/path";
+
+/*
+//副导航、子导航
+//新闻播报 | 艺海拾珍 | 展览信息 | 市场动态 | 拍卖结果 | 艺术视频 | 评论 | 拍卖知识
+.menu-nav{
+  height:60px;
+  text-align: center;
+  background:#f1f1f1;
+  font-size:0;
+  margin-bottom: 25px;
+  a,b{
+    display: inline-block;
+  }
+  a{
+    color:#333;
+    line-height:60px;
+    font-size:16px;
+    &:hover{
+      color:$red-base;
+    }
+  }
+  .select{
+    color:$red-base;
+  }
+  b{
+    vertical-align:top;
+    margin:21px 13px 0;
+    width:1px;
+    height:19px;
+    background:#333333;
+    border-left:1px solid #747474;
+  }
+}
+*/
+
+/* 尾部 */
+//网站版权信息 报备号
+@import "inc/footer";
+
+
+//侧边栏
+@import "inc/sidebar";
+
+
+//分页
+@import "inc/page";
+
+
+/*
+
+<div class="boxAlert hide" style="z-index: 1001; left: 50px; top: 50px;">
+    <div class="title">
+        <h2>说明</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="content">
+        <div class="infoIco">
+            <i class="ico-warning"></i>
+            <b>需在登录状态下才能关注该藏品需在登录状态下才能关注该藏品需在登录状态下才能关注该藏品</b>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="javascript:;" target="_blank" class="confirm">登录</a>
+        <a href="javascript:;" target="_blank" class="step close">注册</a>
+    </div>
+</div>
+
+*/
+
+//简单弹窗
+.boxAlert {
+  @import "inc/alert";
+  @include alert();
+  @include alertTitle();
+  //内容区
+  .content{
+    @include alertContent();
+    .infoText{
+      margin:20px 28px 0 25px;
+      font-size:14px;
+    }
+  }
+  @include alertBtn();
+}
+
+
+//弹窗遮罩
+#opacity,#opacity2{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  background:#000;
+  @include opacity(50);
+  z-index:998;
+}
+
+
+//关注成功提示
+.followSuccess{
+  position: absolute;
+  //  left:100px;
+  //  top:100px;
+  padding:10px;
+  text-align:center;
+  background:#666;
+  @include opacity(80);
+  color:#fff;
+  @include border-radius(8px);
+}
+
+
+
+/*全屏加载中*/
+.loadingFull{
+  $h:54px;
+  $w:50px;
+  .opacity{
+    z-index: 998;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom: 0;
+    top:0;
+    background:#000;
+    @include opacity(50);
+  }
+  .box{
+    z-index: 999;
+    position: fixed;
+    left:50%;
+    top:50%;
+    width:$w;
+    height:$h;
+    margin-left:-($w / 2) - 5;
+    margin-top:-($h / 2) - 5;
+    padding:5px;
+    img{
+      position: relative;
+      width:$w;
+      height:$h;
+      vertical-align: middle;
+    }
+    i{
+      position: absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      right:0;
+      background: #000;
+      @include opacity(50);
+      @include border-radius(5px);
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+//移动端导航按钮
+//.navbar-toggle{display:none;}
+

@@ -1,0 +1,3021 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  用户中心
+  inset 0 2px 3px rgba(0,0,0,0.1)
+
+*/
+
+
+.user{
+  margin-top:75px;
+}
+
+//左边
+.userSubNav{
+  @extend %fl;
+  background: #fff;
+  width:180px - 20 - 20;
+  padding:0 20px;
+  a{
+    display: block;
+    height:35px;
+    line-height:35px;
+  }
+  h3{
+    padding-top:10px;
+    a{
+      font-size:16px;
+    }
+    i{
+      display: inline-block;
+      margin:15px 18px 0 10px;
+      *margin-top:8px;
+      width:6px;
+      height:6px;
+      background:$blue-base;
+      vertical-align: top;
+    }
+  }
+  ul{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    li{
+
+    }
+    a{
+      padding-left:40px;
+      font-size:14px;
+      &:hover,&.select{
+        color:$red-base;
+      }
+    }
+  }
+  .bbn{
+    border-bottom: none;
+  }
+}
+
+//右边
+.userRight{
+  width:960px;
+  @extend %fr;
+}
+
+
+//用户信息
+.userInfo{
+  $imgW:80px;
+  background: #fff;
+  height:118px - 17;
+  padding:17px 0 0 26px;
+  margin-bottom: 20px;
+  color:$blue-base;
+  .photo{
+    width:$imgW;
+    height:$imgW;
+    @include border-radius(50%);
+    @extend %fl;
+    margin-right:23px;
+    img{
+      @include border-radius(50%);
+      width:$imgW;
+      height:$imgW;
+      vertical-align: middle;
+    }
+  }
+  .text{
+    @extend %fl;
+    padding-top:10px;
+    //margin-left:$imgW + 23;
+    h3{
+      font-size:18px;
+      height:35px;
+      line-height:35px;
+      b{
+        font-size:22px;
+        font-weight: normal;
+        margin-left: 18px;
+      }
+    }
+    p{
+      padding-top: 2px;
+      font-size:14px;
+    }
+  }
+  .state{
+    padding-top:32px;
+    font-size:18px;
+    padding-right:60px;
+    a{
+      color:$blue-base;
+      margin-left:45px;
+    }
+    span{
+      color:$red-base;
+    }
+  }
+}
+
+
+//用户中心
+.userContent{
+  padding-bottom: 35px;
+}
+
+
+.userTabTitle{
+  @import "inc/clearingTitle";
+  @include clearingTitle;
+}
+
+//个人信息
+.personal{
+  //padding-left:60px;
+  $pl:60px;
+  $h:36px;
+  background: #fff;
+  position: relative;
+  label,input,span{
+    display: inline-block;
+    font-size:14px;
+  }
+  label{
+    width:92px;
+    height:$h;
+    line-height:$h;
+    //性别选择
+    &.sex{
+      cursor: pointer;
+      i{
+        display: inline-block;
+        width:15px;
+        height:15px;
+        vertical-align: top;
+        margin-top:10px;
+        border:1px solid #999;
+        @include border-radius(50%);
+        &.select{
+          em{
+            @include border-radius(50%);
+            display: block;
+            width:10px;
+            height:10px;
+            background: $blue-base;
+            margin:2px auto 0;
+          }
+        }
+      }
+    }
+  }
+  input{
+    width:178px - 10;
+    padding-left:10px;
+    height:$h - 2;
+    line-height:$h - 2;
+    border:1px solid #ccc;
+    &.name{
+      margin-right:74px;
+    }
+    &.address{
+      width:524px - 10;
+      display: block;
+      margin:10px 0 0 (92px + $pl);
+    }
+    &.email{
+      width:238px - 10;
+    }
+  }
+  span{
+    height:$h;
+    line-height:$h;
+    padding-left:10px;
+  }
+  .line{
+    height:1px;
+    background: #e6e6e6;
+    margin:40px 100px 0 $pl;
+  }
+  //行
+  .import{
+    margin-top:29px;
+    height:$h;
+    margin-left:$pl;
+    font-size:0;
+  }
+  .error{
+    margin-left:$pl + 92px + 5;
+    margin-top:5px;
+  }
+  .explain{
+    margin-left:$pl + 92px;
+    margin-top:20px;
+    color:$red-base;
+  }
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+  //按钮
+  .btn{
+    margin:60px 0 0 ($pl + 92px);
+    $h:40px;
+    height:$h;
+    a{
+      display: block;
+      width:140px;
+      text-align:center;
+      height:$h;
+      line-height:$h;
+      background: $blue-base;
+      color:#fff;
+      font-size:16px;
+      @include border-radius(6px);
+    }
+  }
+  //头像
+  .userFace{
+    position: absolute;
+    top:90px;
+    right:60px;
+    $imgW:168px;
+    width:$imgW;
+    height:$imgW;
+    cursor: pointer;
+    @include border-radius(50%);
+    img{
+      width:$imgW;
+      height:$imgW;
+      vertical-align: middle;
+    }
+  }
+}
+
+//地址列表
+.userAddressList{
+  margin-bottom: 20px;
+  .userTabTitle{
+    margin-bottom: 10px;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    font-size:12px;
+  }
+  thead{
+    tr,td{
+      height:36px;
+      line-height:36px;
+      background: #e5e5e5;
+      font-size:14px;
+    }
+  }
+  tbody{
+    background: #fff;
+    tr{
+      border-bottom: 1px solid #eee;
+      height:80px;
+    }
+    span{
+      display: block;
+    }
+    em{
+      display: block;
+      font-style: normal;
+      color:#9e9e9e;
+    }
+    a{
+      &.edit{
+        margin-right:15px;
+      }
+      &:hover{
+        color:$red-base;
+      }
+    }
+  }
+  .defaultTd{
+    width:124px;
+    span{
+      padding-left:24px;
+      &.select{
+        color:$red-base;
+      }
+      &.cur{
+        cursor: pointer;
+      }
+    }
+  }
+  .receiptTd{
+    width:64px;
+  }
+  .regionTd{
+    width:165px;
+    text-align: center;
+  }
+  .addressTd{
+    width:280px;
+    text-align: center;
+  }
+  .codeTd{
+    width:76px;
+    text-align: center;
+  }
+  .telTd{
+    width:138px;
+    text-align: center;
+  }
+  .operationTd{
+    width:88px;
+    text-align: center;
+  }
+  //暂无地址
+  .noAddress{
+    text-align: center;
+    font-size:14px;
+  }
+}
+
+
+
+//地址管理
+.userAddress{
+  background: #fff;
+  padding-bottom: 40px;
+  .userTabTitle{
+  }
+  //编辑地址
+  .edit{
+    padding-top:10px;
+    $h:36px;
+    label,input,b{
+      display: inline-block;
+      font-size:14px;
+      vertical-align: top;
+    }
+    label{
+      height:$h;
+      line-height:$h;
+      //width:92px;
+      width:142px - 51;
+      padding-left:51px;
+      position: relative;
+    }
+    i.req{
+      color:$red-base;
+      font-style: normal;
+      position: absolute;
+      left:33px;
+      top:0;
+      font-weight: bold;
+    }
+    b{
+      font-weight: normal;
+      height:$h;
+      line-height:$h;
+      margin:0 10px;
+    }
+    .import{
+      margin-top:20px;
+      height:$h;
+    }
+    input{
+      width:178px - 10;
+      height:$h - 2;
+      padding-left: 10px;
+      border:1px solid #cccccc;
+      //地址
+      &.address{
+        width:518px - 10;
+      }
+      //区号
+      &.area{
+        width:78px - 10;
+      }
+    }
+  }
+  //错误
+  .error{
+    padding-top: 3px;
+    padding-left:150px;
+  }
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+  //按钮
+  .btn{
+    margin-top:30px;
+    margin-left:142px;
+    height:44px;
+    a{
+      width:140px;
+      height:44px;
+      line-height:44px;
+      text-align:center;
+      color:#fff;
+      background:$red-base;
+      display: inline-block;
+      font-size:16px;
+      @include border-radius(4px);
+      &:hover{
+        background: $red-hover-base;
+      }
+    }
+  }
+  //设为默认
+  .default{
+    padding-top:25px;
+    margin-left:142px;
+    label{
+      color:#a1a1a1;
+    }
+    i{
+      margin-top:2px;
+      margin-right:10px;
+      vertical-align: top;
+      display: inline-block;
+      width:10px;
+      height:10px;
+      border:1px solid #bcbcbc;
+      @include border-radius(2px);
+      &.select{
+        @extend %picComm;
+        background-position: -71px -207px;
+      }
+    }
+  }
+}
+
+
+
+//账号安全
+.userSecurity{
+  background: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  .userTabTitle{
+    margin-bottom: 20px;
+  }
+  .row{
+    font-size:0;
+    padding-left:60px;
+    span,b,a{
+      font-size:14px;
+      display: inline-block;
+      height:40px;
+      line-height:40px;
+    }
+    span{
+      width:100px;
+    }
+    b{
+      font-weight: normal;
+      width:300px;
+    }
+    a{
+      margin-left:40px;
+      color:$red-base;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+//安全服务
+.userSecurityService{
+  background: #fff;
+  padding-bottom: 20px;
+  .userTabTitle{
+    margin-bottom: 50px;
+  }
+
+  .schedule{
+    height:70px;
+    margin-left:60px;
+    strong{
+      @extend %fl;
+      font-size:14px;
+    }
+    b{
+      @extend %fl;
+      font-size:14px;
+      font-weight: normal;
+      margin:0 25px;
+      //红
+      &.red{
+        color:$red-base;
+      }
+      //黄
+      &.yellow{
+        color:#edb948;
+      }
+      //绿
+      &.green{
+        color:green;
+      }
+    }
+    .line{
+      margin-top:5px;
+      @extend %fl;
+      width:340px;
+      height:8px;
+      background: #eeeeee;
+      @include border-radius(2px);
+      em{
+        @include border-radius(2px);
+        display: block;
+        height:8px;
+        width:50%;
+        background: #edb948;
+      }
+    }
+    i{
+      margin:0 25px;
+      @extend %fl;
+      width:18px;
+      height:18px;
+      @extend %picComm;
+      background-position: -85px -200px;
+    }
+    span{
+      @extend %fl;
+      font-size:14px;
+      color:$red-base;
+    }
+  }
+
+  .row{
+    height:60px;
+    margin-left:60px;
+    margin-bottom:30px;
+    font-size:14px;
+    span{
+      width:83px;
+      height:60px;
+      line-height:60px;
+      display: inline-block;
+      @extend %fl;
+    }
+    .text{
+      margin-left:83px;
+      background: #eeeeee;
+      width:646px;
+      height:60px;
+      overflow: hidden;
+    }
+    a{
+      @extend %fr;
+      height:60px;
+      line-height:60px;
+      margin-right:30px;
+      color:$red-base;
+      text-decoration: underline;
+    }
+    b{
+      @extend %fl;
+      padding-left:38px;
+      display: inline-block;
+      width:525px;
+      height:60px;
+      line-height:60px;
+      font-weight: normal;
+      &.normal{
+        padding-top:5px;
+        height:auto;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+
+
+//充值
+.userRecharge{
+  background: #fff;
+  padding-bottom: 0;
+  .import{
+    margin-top:20px;
+    margin-left:30px;
+  }
+  label,input,span{
+    display: inline-block;
+    vertical-align: top;
+    font-size:16px;
+  }
+  label{
+    width:95px;
+    height:36px;
+    line-height:36px;
+  }
+  span{
+    height:36px;
+    line-height:36px;
+  }
+  input{
+    height:34px;
+    line-height:34px;
+    border:1px solid #ccc;
+  }
+  .error{
+    margin-left:125px + 5;
+    padding-top:5px;
+  }
+  .btn{
+    margin-top:35px;
+    margin-left:125px;
+    height:40px;
+    a{
+      display: block;
+      font-size:14px;
+      @include border-radius(2px);
+      width:100px;
+      height:40px;
+      line-height:40px;
+      background: $blue-base;
+      color:#fff;
+      text-align:center;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+  }
+
+  //充值信息
+  .rechargeInfo{
+    margin-left:30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    label{
+      text-align: right;
+      margin-right: 5px;
+    }
+  }
+
+  //温馨提醒
+  .remind{
+    padding-bottom: 35px;
+    margin-top:55px;
+    margin-left:30px;
+    li{
+      font-size:14px;
+      line-height:24px;
+    }
+  }
+
+  //选择银行卡
+  .payContent{
+    border-top: 1px solid #dfdfdf;
+    position: relative;
+    .con{
+      //margin-left: 130px;
+    }
+  }
+  .type{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 130px;
+    text-align: center;
+    border-right: 1px solid #dfdfdf;
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      padding-top: 52px;
+    }
+  }
+}
+
+//银行卡列表
+.rechargeBankList{
+  $w:150px;
+  $h:45px;
+  margin-top:30px;
+  margin-left:30px;
+  li{
+    text-align: center;
+    @extend %fl;
+    width:$w;
+    height:$h;
+    margin-right:25px;
+    margin-bottom:25px;
+  }
+  a{
+    position: relative;
+    width:$w - 2;
+    height:$h - 2;
+    line-height:$h - 2;
+    display: block;
+    border:1px solid #ccc;
+    &:hover,&.select{
+      border-color: $blue-base;
+      i{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @extend %picComm;
+        background-position: -44px -446px;
+        width:19px;
+        height:15px;
+      }
+    }
+  }
+  img{
+    width:30px;
+    height:30px;
+    vertical-align: middle;
+  }
+}
+
+//提现
+.userWithdraw{
+  background: #fff;
+  $h:36px;
+  .userTabTitle{
+    margin-bottom: 20px;
+  }
+  .import{
+    margin-top:10px;
+  }
+  label,span,input{
+    display: inline-block;
+    vertical-align: top;
+  }
+  label{
+    width:175px;
+    text-align: right;
+    height:$h;
+    line-height:$h;
+    font-size:16px;
+  }
+  input{
+    font-size:16px;
+    width:118px - 10;
+    padding-left:10px;
+    height:$h - 2;
+    line-height:$h - 2;
+    border:1px solid #ccc;
+  }
+  span{
+    height:$h;
+    line-height:$h;
+    font-size:16px;
+    //提示请添加数字
+    &.num{
+      font-size:12px;
+      color:$red-base;
+      margin-left:15px;
+    }
+    &.f14{
+      font-size:14px;
+    }
+    &.mr20{
+      margin-right:20px;
+    }
+  }
+  .add{
+    height:$h;
+    line-height:$h;
+    font-size:16px;
+    color:$blue-base;
+    text-decoration: underline;
+  }
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+  .btn{
+    margin-top:60px;
+    margin-left:175px;
+    height:40px;
+    a{
+      display: block;
+      @include border-radius(2px);
+      width:200px;
+      height:40px;
+      line-height:40px;
+      text-align: center;
+      color:#fff;
+      background: $blue-base;
+      font-size:16px;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+  }
+}
+
+
+//我的银行卡
+.userBank{
+  background: #fff;
+  margin-bottom: 20px;
+  .bankContent{
+    padding:35px 0 30px 28px;
+  }
+  .bankList,.add{
+    @extend %fl;
+    border:1px solid #ccc;
+    background: #fafafa;
+    @include border-radius(6px);
+    margin:0 30px 30px 0;
+  }
+  .bankList{
+    width:210px - 2 - 14 - 14;
+    height:120px - 2 - 16;
+    padding:16px 14px 0 14px;
+    .line{
+      border-bottom: 1px dotted #a6a6a6;
+      height:20px;
+      padding-bottom: 10px;
+    }
+    strong,img{
+      @extend %fl;
+    }
+    img{
+      width:20px;
+      height:20px;
+      vertical-align: middle;
+    }
+    strong,span{
+      display: inline-block;
+      height:20px;
+      line-height:20px;
+      font-size:14px;
+    }
+    strong{
+      padding-left:5px;
+    }
+    span{
+      @extend %fr;
+    }
+    p{
+      text-align: center;
+      font-size:14px;
+      margin:15px 0 10px 0;
+    }
+    .btn{
+      text-align: right;
+    }
+    a{
+      font-size:14px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .add{
+    width:210px;
+    height:120px;
+    position: relative;
+    cursor: pointer;
+    i{
+      position: absolute;
+      background: #999;
+      left:50%;
+      top:50%;
+      &.row{
+        width:40px;
+        height:4px;
+        margin-left:-20px;
+        margin-top:-2px;
+      }
+      &.col{
+        width:4px;
+        height:40px;
+        margin-left:-2px;
+        margin-top:-20px;
+      }
+    }
+  }
+}
+
+//添加银行卡弹窗
+.addBankAlert{
+  @import "inc/alert";
+  @include alert(500px);
+  @include alertTitle;
+  .box{
+    padding-top:10px;
+  }
+  .import{
+    $h:34px;
+    height:$h;
+    margin-top:13px;
+    font-size:0;
+    label,input,a{
+      display: inline-block;
+      vertical-align: top;
+      font-size:14px;
+    }
+    label{
+      height:$h;
+      line-height:$h;
+      width:148px;
+      text-align: right;
+      margin-right:10px;
+      font-size:16px;
+    }
+    input{
+      height:$h - 2;
+      line-height:$h - 2;
+      border:1px solid #999;
+      width:258px - 10;
+      padding-left:10px;
+    }
+    a{
+      width:120px;
+      height: $h;
+      line-height: $h;
+      text-align:center;
+      background:$blue-base;
+      color:#fff;
+      &.select{
+        background:#ccc;
+        color:#999;
+      }
+    }
+  }
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+  .dropDown{
+    border-color: #999;
+    width: 258px;
+    ul{
+      border-color: #999;
+      width: 258px;
+    }
+  }
+  .code{
+    input{
+      width:138px - 10;
+    }
+  }
+  .error{
+    padding-top:5px;
+    margin-left:148px + 10px + 5;
+  }
+  .btn{
+    margin-top: 20px;
+    padding-bottom: 30px;
+    $h:50px;
+    height:50px;
+    a{
+      display: block;
+      margin:0 auto;
+      width:160px;
+      height:$h;
+      line-height:$h;
+      text-align: center;
+      font-size:20px;
+      background: $blue-base;
+      color:#fff;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+  }
+}
+
+//钱包
+.userWalletInfo{
+  background: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 35px;
+  position: relative;
+  .userTabTitle{
+    margin-bottom: 35px;
+  }
+  .info{
+    width:635px;
+    height: 150px;
+    border-right: 1px solid #e6e6e6;
+  }
+
+  .money{
+    margin-left:50px;
+    li{
+      @extend %fl;
+    }
+    strong,b{
+      height:40px;
+      line-height:40px;
+      //width:(576px / 3);
+      width:195px;
+      overflow: hidden;
+    }
+    strong{
+      color:$red-base;
+      font-size:29px;
+      display: block;
+    }
+    b{
+      font-weight: normal;
+      display: block;
+      font-size:24px;
+      color:#999;
+    }
+    span{
+      font-size:14px;
+      display: block;
+      height:40px;
+      line-height:40px;
+    }
+    em{
+      margin-right: 5px;
+      font-size:18px;
+    }
+  }
+  //按钮
+  .btn{
+    height:30px;
+    margin-top:30px;
+    margin-left:50px;
+    a{
+      font-size:16px;
+      @include border-radius(4px);
+      display: inline-block;
+      text-align: center;
+      &.add{
+        height:30px;
+        line-height:30px;
+        width:74px;
+        background: $blue-base;
+        color:#fff;
+        margin-right:18px;
+        &:hover{
+          background: $blue-hover-sub;
+        }
+      }
+      &.remove{
+        height:30px - 2;
+        line-height:30px - 2;
+        width:74px - 2;
+        border:1px solid $blue-base;
+        color:$blue-base;
+        &:hover{
+          background: $blue-base;
+          color: #fff;
+        }
+      }
+    }
+  }
+  //银行卡大图标
+  .bankBox{
+    position: absolute;
+    right:60px;
+    top:85px;
+    width:210px - 2;
+    height:150px - 2 - 30;
+    padding-top:30px;
+    border:1px solid #ccc;
+    @include border-radius(8px);
+    h3{
+      height:30px;
+      line-height:30px;
+      background: #e6e6e6;
+      font-size:14px;
+      padding-left:13px;
+    }
+    b{
+      color:$red-base;
+      font-weight: normal;
+    }
+    i{
+      width:48px;
+      height:8px;
+      background: #e6e6e6;
+      @include border-radius(4px);
+      position: absolute;
+      left:20px;
+      bottom:18px;
+    }
+    a{
+      margin-top:55px;
+      display: block;
+      text-align: right;
+      padding-right:23px;
+      color: $blue-base;
+      font-size:14px;
+    }
+  }
+}
+
+//钱包明细
+.userWallet{
+  .userTabTitle{
+    margin-bottom: 10px;
+  }
+  .timeTd{
+    width:195px;
+  }
+  .typeTd{
+    width:385px;
+  }
+  .payTd{
+    width:110px;
+  }
+  .sumTd{
+    //width:195px;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    text-align: center;
+    font-size:14px;
+  }
+  thead{
+    tr,td{
+      height:36px;
+      background: #e5e5e5;
+    }
+  }
+  tbody{
+    background: #fff;
+    tr{
+
+    }
+    td{
+      padding:20px 0;
+    }
+  }
+  p{
+    font-size:14px;
+    color:#999;
+    margin-top:20px;
+  }
+}
+
+
+//站内信
+.userMessages{
+  .userTabTitle{
+  }
+  .time{
+    $h:36px;
+    background: #fff;
+    margin-bottom: 10px;
+    font-size:0;
+    padding:30px 0;
+    padding-left:30px;
+    span,input,a,b{
+      display: inline-block;
+      vertical-align: top;
+      font-size:14px;
+    }
+    span{
+      height:$h;
+      line-height:$h;
+      margin-right:20px;
+    }
+    b{
+      font-weight: normal;
+      margin:17px 10px 0;
+      height:2px;
+      width:12px;
+      background: #9e9e9e;
+    }
+    input{
+      height:$h - 2;
+      line-height:$h - 2;
+      width:166px - 10;
+      padding-left:10px;
+      border:1px solid #e4e4e4;
+    }
+    a{
+      margin-left:22px;
+      height:$h;
+      line-height:$h;
+      width:100px;
+      background: $blue-base;
+      text-align: center;
+      color:#fff;
+    }
+  }
+  .content{
+    background: #fff;
+    padding-bottom:30px;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    text-align: center;
+    font-size:12px;
+    .stateTd{
+      width:155px;
+    }
+    .sourceTd{
+      width:85px;
+    }
+    .titleTd{
+      width:230px;
+    }
+    .typeTd{
+      width:115px;
+    }
+    .createTd{
+      width:215px;
+    }
+    .handleTd{
+      width:160px;
+    }
+    .remove{
+      width:12px;
+      height:16px;
+      @extend %picComm;
+      background-position: -49px -143px;
+      display: inline-block;
+    }
+  }
+  thead{
+    tr,td{
+      height:36px;
+      line-height:36px;
+      background: #e5e5e5;
+      font-size:14px;
+    }
+  }
+  tbody{
+    tr,td{
+
+    }
+    tr{
+      border-bottom: 1px solid #ededed;
+      //已读
+      &.read{
+        color:#9e9e9e;
+        background: #ededed;
+        border-bottom:0;
+      }
+      //更多详情
+      &.reply{
+        td{
+          padding:10px 0;
+          @include box-shadow(inset 0 -2px 3px rgba(0,0,0,0.4));
+        }
+        p{
+          padding:0 10px 0 10px;
+          text-align:left;
+          line-height:25px;
+        }
+        a{
+          color: $blue-base;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    td{
+      padding:25px 0;
+    }
+    label{
+      display: inline-block;
+      width:12px;
+      height:12px;
+      border:1px solid $blue-base;
+      @include border-radius(2px);
+      vertical-align: top;
+      &.select{
+        @extend %picComm;
+        background-position: -26px -426px;
+      }
+    }
+  }
+  .all{
+    padding-top:30px;
+    height:30px;
+    padding-left:50px;
+    label,.remove{
+      display: inline-block;
+      vertical-align: top;
+      font-size:14px;
+      @extend %fl;
+    }
+    label{
+      margin-right:25px;
+    }
+    i{
+      margin-top:2px;
+      margin-right:10px;
+      display: inline-block;
+      width:12px;
+      height:12px;
+      border:1px solid $blue-base;
+      @include border-radius(2px);
+      vertical-align: top;
+      &.select{
+        @extend %picComm;
+        background-position: -26px -426px;
+      }
+    }
+    .remove{
+
+    }
+    .page{
+      @extend %fr;
+      padding:0;
+      margin-right:20px;
+    }
+  }
+}
+
+
+//我的关注
+.userFollow{
+  @import "inc/productsList";
+  margin-right:-18px;
+  overflow: hidden;
+  .productsList{
+    $imgW:218px;
+    padding-left:0;
+    padding-top:20px;
+    li{
+      padding:3px;
+      width:$imgW;
+      height:295px;
+      margin-right:18px;
+      margin-bottom:20px;
+    }
+    .photo{
+      height:$imgW;
+      width:$imgW;
+      img{
+        height:$imgW;
+        width:$imgW;
+      }
+    }
+    .out{
+      width:138px;
+      height:124px;
+      background-position: 0 -155px;
+    }
+  }
+}
+
+//我的订单
+.userOrder{
+  .userTabTitle{
+    margin-bottom: 10px;
+  }
+}
+
+//我的订单表格w:960
+.orderContent{
+  //藏品名称
+  .titleTd{
+    width:300px;
+  }
+  //单价（元）
+  .costTd{
+    width:85px;
+  }
+  //品类
+  .categoryTd{
+    width:100px;
+  }
+  //数量
+  .numTd{
+    width:74px;
+  }
+  //藏品售后
+  .serviceTd{
+    width:80px;
+  }
+  //实付
+  .priceTd{
+    width:115px;
+  }
+  //订单状态
+  .stateTd{
+    width:90px;
+  }
+  //交易操作
+  .handleTd{
+    width:114px;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    font-size:12px;
+  }
+  thead{
+    tr{
+      border-left:1px solid #e5e5e5;
+      border-right:1px solid #e5e5e5;
+    }
+    td{
+      text-align: center;
+      background: #e5e5e5;
+      height:36px;
+      font-size:14px;
+    }
+  }
+  tbody{
+    tr{
+
+    }
+    td{
+
+    }
+  }
+  tr{
+    //空白行
+    &.sepRow{
+      height:10px;
+    }
+    //时间与订单号栏
+    &.date{
+      border:1px solid #e5e5e5;
+      //border-left:1px solid #e5e5e5;
+      //border-right:1px solid #e5e5e5;
+      height:32px;
+      //background: #e5e5e5;
+      background: #fff;
+      b{
+        margin:0 10px 0 35px;
+      }
+      //日期-订单编号
+      .dateNum{
+        @extend %fl;
+      }
+      //退货总额
+      .returnPrice{
+        @extend %fr;
+        margin-right:35px;
+      }
+    }
+    &.success{
+      border-left:1px solid #e5e5e5;
+      border-right:1px solid #e5e5e5;
+      //height:115px;
+      text-align: center;
+      td{
+        padding:20px 0;
+        background: #fff;
+        border-bottom:1px solid #e5e5e5;
+        &.borderL{
+          border-left:1px solid #e5e5e5;
+        }
+      }
+    }
+  }
+  td{
+
+  }
+  .info{
+    position: relative;
+    height:80px;
+    padding-left:40px;
+    vertical-align: middle;
+  }
+  //标题
+  h3{
+    overflow: hidden;
+    height:40px;
+    line-height:20px;
+    text-align: left;
+    //图片大小80
+    margin-left:80px + 10px;
+  }
+  .photo{
+    @extend %fl;
+    $imgW:80px;
+    width:$imgW;
+    height:$imgW;
+    img{
+      width:$imgW;
+      height:$imgW;
+      vertical-align: middle;
+    }
+  }
+  //规格
+  .spec{
+    position: absolute;
+    //图片大小80 + pl40
+    left:90px + 40;
+    bottom:0;
+    span{
+      text-align: left;
+      display: block;
+    }
+  }
+  a{
+    display: block;
+    height:25px;
+    line-height:25px;
+    &.url{
+      margin-bottom: 10px;
+      color:$blue-base;
+    }
+    //支付按钮
+    &.pay{
+      width:60px;
+      text-align:center;
+      background: $blue-base;
+      color:#fff;
+      margin-left:auto;
+      margin-right:auto;
+      margin-bottom: 5px;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+    //申请售后
+    &.service{
+
+    }
+  }
+  //待付款
+  em{
+    display: block;
+  }
+  //价格
+  .price{
+    display: block;
+    color:$red-base;
+  }
+}
+
+//我的订单
+.orderTime{
+  $h:36px;
+  background: #fff;
+  height:$h;
+  padding:25px 0 25px 60px;
+  margin-bottom: 20px;
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+  input,.searchBtn,b{
+    display: inline-block;
+    vertical-align:top;
+    @extend %fl;
+  }
+  input{
+    height:$h - 2;
+    line-height:$h - 2;
+    width:246px - 10;
+    border:1px solid #e5e5e5;
+    border-right: 0;
+    padding-left:10px;
+    &.date{
+      width:160px - 10px;
+      margin-right:20px;
+      border-right:1px solid #e5e5e5;
+    }
+  }
+  .searchBtn,b{
+    height:$h;
+    line-height:$h;
+  }
+  .searchBtn{
+    width:53px;
+    text-align: center;
+    background: $blue-base;
+    color:#fff;
+  }
+  b{
+    font-weight: normal;
+    margin:0 10px 0 25px;
+  }
+  .dropDown{
+    border:1px solid #e5e5e5;
+  }
+}
+
+//退货管理
+.returnFind{
+  $h:36px;
+  background: #fff;
+  padding:31px 0 33px;
+  height:$h;
+  margin-bottom: 10px;
+  .btn,label,input.text{
+    display: inline-block;
+    font-size:14px;
+    @extend %fl;
+  }
+  label{
+    width:100px;
+    height:$h;
+    line-height:$h;
+    text-align: center;
+  }
+  input.text{
+    width: 166px - 10;
+    height:$h - 2;
+    line-height:$h - 2;
+    border:1px solid #e4e4e4;
+    padding-left:10px;
+  }
+  .btn{
+    width:100px;
+    height: $h;
+    line-height: $h;
+    text-align: center;
+    color:#fff;
+    background: $blue-base;
+  }
+  //下拉
+  @import "inc/dropDown";
+  @include dropDown();
+}
+
+/*
+//退货管理列表
+.returnList{
+  background: #fff;
+  table{
+    border-collapse:collapse;
+    width:100%;
+    font-size:12px;
+    text-align: center;
+  }
+  thead{
+    tr{
+
+    }
+    td{
+      font-size:14px;
+      height:35px;
+      background: #e5e5e5;
+      &.numTD{
+        width: 178px;
+      }
+      &.infoTd{
+        width: 210px;
+      }
+      &.dateTd{
+        width: 230px;
+      }
+      &.stateTd{
+        width: 162px;
+      }
+      &.handleTd{
+        width: 180px;
+      }
+    }
+  }
+  tbody{
+    tr{}
+    td{
+      padding:30px 0;
+      border-top:1px solid #e5e5e5;
+    }
+    a,b{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    b{
+      width:1px;
+      height:16px;
+      background: #333;
+      margin: 0 10px;
+    }
+    a{
+      height:16px;
+      line-height:16px;
+      &:hover{
+        color:$red-base;
+      }
+    }
+  }
+}
+*/
+
+//我的退货
+.userReturn{
+  .userTabTitle{
+    margin-bottom: 10px;
+  }
+  //退货订单编号
+  .returnNum{
+    background: #fff;
+    font-size:14px;
+    padding:30px 0 30px 36px;
+    margin-bottom: 10px;
+  }
+  //注意事项
+  .returnApplyInfo{
+    margin-bottom: 10px;
+    background: #fff;
+    padding:30px 30px 30px 36px;
+    h3,p{
+      line-height:25px;
+      font-size:14px;
+    }
+  }
+  //退货表格
+  table{
+    //藏品名称
+    .titleTd{
+      width:400px;
+    }
+    //单价（元）
+    .costTd{
+      width:160px;
+    }
+    //品类
+    .categoryTd{
+      width:180px;
+    }
+    //数量
+    .numTd{
+      width:100px;
+    }
+    //交易操作
+    .handleTd{
+      width:118px;
+    }
+  }
+}
+
+//退货管理列表
+.returnList{
+  thead{
+    //藏品名称
+    .titleTd{
+      width:320px;
+    }
+    //实际支付金额（元）
+    .costTd{
+      width:150px;
+    }
+    //品类
+    .categoryTd{
+      width:150px;
+    }
+    //退货数量
+    .numTd{
+      width:70px;
+    }
+    //退货状态
+    .stateTd{
+      width:140px;
+    }
+    //交易操作
+    .handleTd{
+      width:130px;
+    }
+  }
+  tbody{
+    //a,em{
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //}
+    //em{
+    //  font-style: normal;
+    //  width:1px;
+    //  height:16px;
+    //  background: #333;
+    //  margin: 0 10px;
+    //}
+    a{
+      //height:16px;
+      //line-height:16px;
+      //&:hover{
+      //  color:$red-base;
+      //}
+      color:#333;
+      &.url{
+        color:#333;
+        &:hover{
+          color:$blue-base;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+//退货详情表格
+.returnInfoContent{
+  thead{
+    //藏品名称
+    .titleTd{
+      width:320px;
+    }
+    //实付单价（元）
+    .costTd{
+      width:130px;
+    }
+    //品类
+    .categoryTd{
+      width:130px;
+    }
+    //购买数量
+    .numTd{
+      width:80px;
+    }
+    //退货数量
+    .returnNumTd{
+      width:200px;
+    }
+    //小计（元）
+    .priceTd{
+      width:100px;
+    }
+  }
+  tr{
+    &.date{
+      td{
+        font-size:12px;
+      }
+    }
+
+    &.title{
+      td{
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        //height:35px;
+      }
+    }
+  }
+  .info{
+    i{
+      cursor: pointer;
+      position: absolute;
+      left:20px;
+      top:35px;
+      width: 12px;
+      height:12px;
+      display: inline-block;
+      border: 1px solid #005874;
+      @include border-radius(2px);
+      &.select{
+        @extend %picComm;
+        background-position: -26px -426px;
+      }
+    }
+  }
+  //数量加减
+  .number{
+    //不同与详情页
+    margin:0 auto;
+    text-align:center;
+    position: relative;
+    width:110px;
+    //不同与详情页
+    $h:30px;
+    height:$h;
+    //padding-left:5px;
+    //padding-bottom:10px;
+    font-size:0;
+    i,span,input,b{
+      display: inline-block;
+      vertical-align: top;
+    }
+    span,b{
+      height:$h;
+      line-height:$h;
+      font-size:14px;
+    }
+    span{
+      margin-right:48px;
+    }
+    i{
+      width:29px;
+      height:28px;
+      border:1px solid #cccccd;
+      background-color:#ededee;
+      @extend %picComm;
+      cursor: pointer;
+      //不能选择
+      &.no{
+        background-color:#ddd;
+      }
+      &.reduce{
+        background-position: -74px -136px;
+      }
+      &.add{
+        background-position: -74px -169px;
+      }
+    }
+    input{
+      width:48px;
+      height:28px;
+      line-height:28px;
+      border:0;
+      border-top:1px solid #cccccd;
+      border-bottom:1px solid #cccccd;
+      font-size:20px;
+      text-align:center;
+      color:#333;
+    }
+    b{
+      font-weight: normal;
+      margin-left:10px;
+    }
+    //限购<span class="limit">限购5件</span>
+    .limit{
+      position: absolute;
+      left:0;
+      top:30px;
+      height:30px;
+      line-height:30px;
+      width:110px - 2;
+      border:1px solid #cccccd;
+      border-top:0;
+      color: $blue-base;
+      background: #ededee;
+    }
+  }
+}
+//退货详情总合
+.returnTotal{
+  border:1px solid #e5e5e5;
+  border-top:0;
+  background: #fff;
+  padding:15px 20px 15px 0;
+  text-align: right;
+  p{
+
+  }
+  span{
+    font-size:14px;
+    margin-left:40px;
+  }
+  b{
+    font-size: 16px;
+    color:$red-base;
+    font-weight: normal;
+  }
+  em{
+    margin-top:5px;
+    display: block;
+    color: #999;
+    font-style: normal;
+  }
+}
+
+//填写退货信息
+.fillInReturn{
+  margin-top:10px;
+  .title{
+    $h:30px;
+    height:$h;
+    background: #e5e5e5;
+    padding:0 60px 0 35px;
+    h2{
+      height:$h;
+      line-height:$h;
+      @extend %fl;
+      font-weight: bold;
+    }
+    em{
+      height:$h;
+      line-height:$h;
+      @extend %fr;
+      color:$red-base;
+    }
+  }
+  .box{
+    background: #fff;
+    border:1px solid #e5e5e5;
+    padding: 20px 0;
+  }
+  //说明
+  .info{
+    padding:0 0 0 41px;
+    margin-bottom: 15px;
+    em{
+      color:$red-base;
+      font-style: normal;
+      font-size:14px;
+      margin-right:15px;
+      vertical-align: middle;
+    }
+    span{
+      color:#999;
+    }
+  }
+  //选择问题
+  .problem{
+    padding:0 0 0 63px;
+    margin-bottom: 15px;
+    label{
+      margin-right: 25px;
+      font-size:14px;
+      cursor: pointer;
+      &.select{
+        em{
+          display: block;
+          width:5px;
+          height:5px;
+          background: $red-base;
+          @include border-radius(50%);
+          margin: 3px 3px 0;
+        }
+      }
+    }
+    i{
+      margin-top: 4px;
+      //*margin-top: 5px;
+      margin-right: 10px;
+      vertical-align: top;
+      width:11px;
+      height:11px;
+      border:1px solid #9d9d9d;
+      display: inline-block;
+      @include border-radius(50%);
+    }
+  }
+  //上传图片列表
+  .uploadPhotoList{
+    $imgW:120px;
+    padding:0 0 0 41px;
+    font-size:0;
+    span,img{
+      width:$imgW;
+      height:$imgW;
+      vertical-align: middle;
+    }
+    span{
+      position: relative;
+      display: inline-block;
+      margin-right:10px;
+      &.add{
+        cursor: pointer;
+        width:$imgW - 2;
+        height:$imgW - 2;
+        background: #f2f2f2;
+        border:1px solid #ccc;
+      }
+    }
+    i{
+      //删除图标
+      &.remove{
+        cursor: pointer;
+        position: absolute;
+        right:5px;
+        top:5px;
+        width:15px;
+        height:15px;
+        @extend %picComm;
+        background-position: -42px -426px;
+      }
+      //添加图片
+      &.row,&.col{
+        position: absolute;
+        left:50%;
+        top:50%;
+        background: #999;
+      }
+      //添加图片-行
+      &.row{
+        margin:-2px 0 0 -20px;
+        width:40px;
+        height:4px;
+      }
+      ////添加图片-列
+      &.col{
+        margin:-20px 0 0 -2px;
+        width:4px;
+        height:40px;
+      }
+    }
+  }
+  //提交申请按钮
+  .fillInReturnBtn{
+    $h:40px;
+    text-align: center;
+    margin-top:30px;
+    height:$h;
+    a{
+      display: inline-block;
+      width:160px;
+      height:$h;
+      line-height:$h;
+      text-align: center;
+      color:#fff;
+      background: $blue-base;
+      @include border-radius(4px);
+      font-size:16px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+//精品推荐
+.boutique{
+  margin-top:60px;
+  @import "inc/boutiqueList2";
+  @include boutique();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//用户中心弹窗
+.userAlert{
+  @import "inc/alert";
+  @include alert();
+  @include alertTitle;
+  @include alertContent();
+  .box{
+    padding-top: 20px;
+    p{
+      //文字居中
+      &.text{
+        font-size:14px;
+        line-height:25px;
+        width:80%;
+        margin:15px auto 0;
+      }
+      a{
+        &.email{
+          color:$red-base;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  //输入
+  .import{
+    $h:32px;
+    margin-top:15px;
+    //margin-bottom: 50px;
+    label,input,b{
+      vertical-align: top;
+      display: inline-block;
+      font-size:14px;
+    }
+    label{
+      height:$h;
+      line-height:$h;
+      width:116px;
+      text-align: right;
+      margin-right:20px;
+    }
+    input{
+      height:$h - 2;
+      line-height:$h - 2;
+      width:160px - 2 - 10;     //密码160
+      padding-left:10px;
+      border:1px solid #cccccc;
+      &.tel{
+        width:120px - 2 - 10;
+      }
+    }
+    b{
+      font-weight: normal;
+      height:$h - 2;
+      line-height:$h - 2;
+      padding-left:1px;
+    }
+  }
+  //验证码
+  .code{
+    $h:32px;
+    input{
+      width:60px;
+    }
+    a{
+      vertical-align: top;
+      display: inline-block;
+      font-size:14px;
+      padding:0 10px;
+      height: $h;
+      line-height: $h;
+      text-align:center;
+      background:$blue-base;
+      color:#fff;
+      &.select{
+        background:#ccc;
+        color:#999;
+      }
+    }
+  }
+  //错误
+  .error{
+    margin-left:140px;
+    padding-top:5px;
+  }
+
+  //物流进度
+  .logistics{
+    padding-bottom: 10px;
+    h2{
+      padding:0 0 0 10px;
+      height:30px;
+      line-height:30px;
+      b{
+        @extend %f14;
+      }
+    }
+    ul{
+      border-top:1px solid $red-base;
+      padding:0 10px;
+    }
+    li{
+      margin-top:10px;
+      overflow: hidden;
+      &.select{
+        em,p{
+          color: $red-base;
+        }
+      }
+    }
+    em{
+      @extend %fl;
+      line-height:25px;
+      width:150px;
+    }
+    p{
+      @extend %fl;
+      line-height:25px;
+      width:210px;
+    }
+  }
+
+  //汇款信息
+  .transfer{
+    padding:30px 30px 20px 30px;
+    p{
+      font-size:14px;
+      margin-bottom: 10px;
+      &.bold{
+        font-weight: bold;
+      }
+    }
+    em{
+      width:70px;
+      margin-right:5px;
+      display: inline-block;
+      text-align: right;
+      font-style: normal;
+    }
+  }
+
+  //自提信息
+  .translateInfo{
+    font-size:14px;
+    .info{
+      margin:20px 28px 0 25px;
+    }
+    //距离
+    .ml93{
+      margin-left:93px;
+    }
+    //间距
+    .spacing{
+      margin:0 10px;
+    }
+    span,a,.text{
+      display: inline-block;
+      vertical-align: top;
+    }
+    span,a{
+      height:25px;
+      line-height:25px;
+    }
+    a{
+      color:$link-color;
+    }
+    //自提时间
+    .xt{
+      margin:20px 28px 0 25px;
+      height:25px
+    }
+    //错误
+    .error{
+      margin:5px 0 0 98px;
+    }
+    //自提时间输入栏
+    .text{
+      border:1px solid #ccc;
+      height:25px - 2;
+      line-height:25px - 2;
+      width:110px - 10;
+      padding-left:10px;
+    }
+    //注：提示文字
+    .pour{
+      color:$red-base;
+      margin:20px 0 22px;
+      padding:0 15px;
+    }
+    .import{
+      height:36px;
+      margin:20px 0 0 25px;
+      span.fl,.spacing{
+        height:36px;
+        line-height:36px;
+        margin:0;
+      }
+    }
+    //下拉
+    @import "inc/dropDown";
+    @include dropDown();
+    //.dropDown{
+    //  height:23px;
+    //  span{
+    //    height:23px;
+    //    line-height:23px;
+    //  }
+    //  i{
+    //    top:8px;
+    //    right:5px;
+    //  }
+    //  ul{
+    //    top:23px;
+    //  }
+    //}
+  }
+
+  //消息退货操作
+  .returnInfo{
+    font-size:14px;
+    .explain{
+      margin:0 0 10px 24px;
+    }
+    //注：提示文字
+    .pour{
+      color:$red-base;
+      margin:10px 0 24px;
+      padding:0 36px 0 24px;
+    }
+    //下拉
+    @import "inc/dropDown";
+    @include dropDown();
+    .dropDown{
+      margin:0 24px;
+      width:340px;
+      ul{
+        width:340px;
+      }
+    }
+  }
+
+  //退货上传图片
+  .uploadPhoto{
+    margin:10px 0 10px 24px;
+    span,a{
+      display: inline-block;
+      height:26px;
+      line-height:26px;
+      vertical-align: top;
+    }
+    a{
+      padding:0 10px;
+      border:1px solid #cccccc;
+      @include border-radius(2px);
+      &:hover{
+        border:1px solid $blue-base;
+        color:#fff;
+        background: $blue-base;
+      }
+    }
+  }
+  //上传图片列表
+  .uploadPhotoList{
+    margin:0 36px 0 24px;
+    font-size:0;
+    span,img{
+      display: inline-block;
+      width:60px;
+      height:60px;
+      vertical-align: middle;
+    }
+    span{
+      margin-right:5px;
+      position: relative;
+    }
+    i{
+      cursor: pointer;
+      width:15px;
+      height:15px;
+      @extend %picComm;
+      background-position: -42px -426px;
+      position: absolute;
+      right:5px;
+      top:5px;
+    }
+  }
+
+  //订单支付
+  .orderPay{
+    .info{
+      margin-top:10px;
+      &.step{
+        margin-left:145px;
+      }
+    }
+    span,b,i,em,label,input.radio{
+      display: inline-block;
+    }
+    span,b{
+      font-size:14px;
+    }
+    span{
+      width:142px;
+      text-align: right;
+    }
+    b{
+      font-weight: normal;
+    }
+    em{
+      font-style: normal;
+    }
+    i{
+      width:20px;
+      height:20px;
+      @extend %picComm;
+      //支付宝
+      &.alipayIcon{
+        background-position: 0 -494px;
+      }
+      //微信
+      &.wxIcon{
+        background-position: -25px -494px;
+      }
+      //银行卡支付
+      &.bankIcon{
+        height:16px;
+        background-position: 0 -519px;
+      }
+      //转帐
+      &.transferIcon{
+        height:18px;
+        background-position: -25px -519px;
+      }
+      //钱包余额
+      &.walletIcon{
+        height:17px;
+        background-position: 0 -542px;
+      }
+    }
+    input.radio{
+
+    }
+  }
+
+  //退货-选择快递
+  .returnExpress{
+    $h:36px;
+    .tabExpress{
+      margin-left:10px;
+    }
+    .radio{
+
+    }
+    label{
+      font-size:14px;
+      margin-right: 0;
+      height: $h;
+      line-height: $h;
+      &.cur{
+
+      }
+      &.date{
+        width:80px;
+      }
+    }
+    .import{
+      margin-left:10px;
+    }
+    .mt0{
+      margin-top:0;
+    }
+    input{
+
+      &.text,&.date{
+        height:$h - 2;
+        line-height:$h - 2;
+        border: 1px solid #e5e5e5;
+        font-size:14px;
+      }
+      &.text{
+
+      }
+      &.date{
+        width:100px - 10;
+      }
+    }
+    p{
+      font-size:14px;
+      margin:0 20px 20px 0;
+      padding-left:10px;
+    }
+    b{
+      display: inline-block;
+      height:$h;
+      line-height:$h;
+      font-weight: normal;
+      margin:0 5px;
+    }
+    @import "inc/dropDown";
+    @include dropDown();
+    .dropDown{
+      border-color: #e5e5e5;
+      ul{
+        border-color: #e5e5e5;
+      }
+    }
+  }
+
+  @include alertBtn();
+}
+
+
+//上传头像弹窗
+.uploadFace{
+  border: 0;
+  width:15px + 400 + 15 + 165 + 15;
+  background:#fff;
+  $side_w:160px;
+  //错误信息
+  .faceShowError{
+    color:#cd0817;
+    text-align:center;
+    padding:10px 0;
+  }
+  .box{
+    position: relative;
+    padding:0 15px 15px 15px;
+    b{
+      font-weight: normal;
+      position: absolute;
+      right: 15px;
+      top: $side_w + 5;
+      width:$side_w;
+      text-align:center;
+    }
+    a{
+      position: absolute;
+      right:15px;
+      width:$side_w;
+      height:40px;
+      line-height:40px;
+      text-align: center;
+      display:block;
+      @include border-radius(4px);
+    }
+    .ok{
+      bottom: 15px;
+      background: $blue-base;
+      color:#fff;
+    }
+    .out{
+      bottom: 15px + 40 + 15;
+      color: #333;
+      border:1px solid #dbdbdb;
+      width:$side_w - 2;
+      height:40px - 2;
+      line-height:40px - 2;
+    }
+  }
+  .con_img{
+    width:400px;
+    height:400px;
+    background:#f4f4f4;
+    overflow:hidden;
+    img{
+      max-width:400px;
+      //      height:400px;
+      //      display: block;
+    }
+    .btn{
+      background: #fff;
+      padding-bottom: 0;
+      position:inherit;
+      display:block;
+      width:95px;
+      height:35px;
+      line-height:35px;
+      text-align: center;
+      color:#333;
+      border:1px solid #dbdbdb;
+      margin:160px auto 5px;
+      font-size:12px;
+      cursor: pointer;
+    }
+    em{
+      display: block;
+      font-style: normal;
+      text-align:center;
+    }
+  }
+  .side_img{
+    width:$side_w;
+    height:$side_w;
+    position: absolute;
+    top:0;
+    right:15px;
+    overflow:hidden;
+  }
+}
+
+//无优惠卷
+.userCouponListNo{
+  background: #fff;
+  text-align: center;
+  padding:15px;
+}
+
+//优惠卷列表
+.userCouponList{
+  $h:95px;
+  padding:20px 0 0 30px;
+  min-height: 350px;
+  background: #fff;
+  li{
+    //width:213px;
+    margin:0 20px 20px 0;
+    width:438px;
+    height: $h;
+    background: #f9f9f9;
+    float:left;
+    &:hover{
+      @include box-shadow(1px 1px 6px rgba(0,0,0,.5));
+    }
+    //已过期
+    &.overdue{
+      .left{
+        background: #999;
+      }
+      i{
+        &.line{
+          background-position: -209px -372px;
+        }
+      }
+    }
+  }
+  .left{
+    width:110px;
+    height: $h - 10;
+    padding-top:10px;
+    float: left;
+    background: $red-base;
+    color:#fff;
+    text-align: center;
+    em{
+      font-size:18px;
+    }
+    b{
+      font-size:38px;
+    }
+    span{
+      display: block;
+      font-size:20px;
+    }
+  }
+  .right{
+    height: $h;
+    margin-left:110px;
+    position: relative;
+    h3{
+      font-size:14px;
+      margin-left:22px;
+      padding:15px 0 10px;
+    }
+    p{
+      color: #999;
+      margin-left:13px;
+      margin-bottom: 8px;
+    }
+    i{
+      display: inline-block;
+      //点
+      &.dot{
+        width:4px;
+        height: 3px;
+        @include border-radius(50%);
+        vertical-align: middle;
+        margin-right: 5px;
+        background: #999;
+      }
+      &.line{
+        position: absolute;
+        left:-5px;
+        top:0;
+        width:10px;
+        height: $h;
+        @extend %picComm;
+        background-position: -223px -372px;
+      }
+    }
+    a{
+      position: absolute;
+      right:24px;
+      bottom:15px;
+      @include border-radius(8px);
+      text-align: center;
+      width:67px;
+      height:19px;
+      line-height:19px;
+      border:1px solid $red-base;
+      color: $red-base;
+      &:hover{
+        color:#fff;
+        background: $red-base;
+      }
+    }
+  }
+
+}
+
+
+//我的一元购
+.userYiOrder{
+  .titleTd{
+
+  }
+  .totalTd{
+    width: 150px;
+  }
+  .numTd{
+    width: 150px;
+  }
+  .stateTd{
+    width: 300px;
+  }
+  .handleTd{
+    width: 90px;
+  }
+  .infoText{
+    font-size:14px;
+  }
+  .infoBtn{
+    text-align: center;
+    margin-top:5px;
+    a{
+      @include border-radius(2px);
+      background: $red-base;
+      display: inline-block;
+      width:91px;
+      height: 31px;
+      line-height: 31px;
+      font-size:14px;
+      color:#fff;
+      &:hover{
+        background: $red-hover-base;
+      }
+    }
+  }
+}
+
+//一元购弹窗
+.userYiAlert{
+  .box{
+    padding-top:15px;
+  }
+  h3{
+    padding-left:20px;
+    font-size:14px;
+  }
+  .orderDetails{
+    margin-top:10px;
+    margin-bottom:30px;
+    //参与号码
+    .partakeNum{
+      height: auto;
+      span{
+        float: none;
+        position: relative;
+        display: inline-block;
+      }
+      div{
+        background: #f9f9f9;
+        padding:5px;
+        font-size:0;
+      }
+      em{
+        display: inline-block;
+        font-style: normal;
+        height: 25px;
+        line-height: 25px;
+        font-size:14px;
+        margin-right: 5px;
+      }
+      i{
+        position: absolute;
+        right:-15px;
+        top:10px;
+        width:11px;
+        height: 6px;
+        @extend %picComm;
+        background-position: -46px -235px;
+      }
+    }
+  }
+
+}
+
+
+//一元购.收货地址.coupon.scss
+.userYiAddress{
+  @import "inc/alert";
+  @include alert();
+  width: 950px;
+  @include alertTitle;
+  @include alertBtn;
+  //收货人信息
+  .delivery{
+    background: #ffffff;
+    padding:15px 0 15px 20px;
+    h3{
+      font-size:14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size:14px;
+      line-height:28px;
+    }
+    //地址列表
+    .addressList{
+      margin-right:15px;
+      li{
+        height:40px;
+        line-height:40px;
+        padding-left:3px;
+        font-size:14px;
+        margin-bottom: 5px;
+        &:hover{
+          background:#eeeeee;
+        }
+      }
+      i{
+        cursor: pointer;
+        margin-top: 13px;
+        *margin-top: 5px;
+        margin-right: 10px;
+        vertical-align: top;
+        width:11px;
+        height:11px;
+        border:1px solid #9d9d9d;
+        display: inline-block;
+        @include border-radius(50%);
+        &.select{
+          em{
+            display: block;
+            width:5px;
+            height:5px;
+            background: $red-base;
+            @include border-radius(50%);
+            margin: 3px auto 0;
+          }
+        }
+      }
+      b{
+        font-weight: normal;
+        padding-right: 10px;
+      }
+      span{
+        margin-left: 5px;
+      }
+      a{
+        color:#8b5026;
+        margin-left:15px;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    //添加新地址
+    .add{
+      height:40px;
+      line-height:40px;
+      padding-left:27px;
+      font-size:14px;
+      margin-right: 15px;
+      color: #1b84c7;
+      cursor: pointer;
+      &.select{
+        color: #333;
+        background:#eee;
+      }
+    }
+    //编辑地址
+    .edit{
+      $h:36px;
+      label,input,b{
+        display: inline-block;
+        font-size:14px;
+        vertical-align: top;
+      }
+      label{
+        height:$h;
+        line-height:$h;
+        //width:92px;
+        width:142px - 51;
+        padding-left:51px;
+        position: relative;
+      }
+      i.req{
+        color:$red-base;
+        font-style: normal;
+        position: absolute;
+        left:33px;
+        top:0;
+        font-weight: bold;
+      }
+      b{
+        font-weight: normal;
+        height:$h;
+        line-height:$h;
+        margin:0 10px;
+      }
+      .import{
+        margin-top:20px;
+        height:$h;
+      }
+      input{
+        width:178px - 10;
+        height:$h - 2;
+        padding-left: 10px;
+        border:1px solid #cccccc;
+        //地址
+        &.address{
+          width:518px - 10;
+        }
+        //区号
+        &.area{
+          width:78px - 10;
+        }
+      }
+    }
+    //错误
+    .error{
+      padding-top: 3px;
+      padding-left:150px;
+    }
+    //下拉
+    @import "inc/dropDown";
+    @include dropDown();
+
+  }
+
+}
+
+//第三方登录绑定手机号
+.setBindingTel{
+  @import "inc/alert";
+  @include alert();
+  @include alertTitle();
+  @include alertBtn();
+  left:200px;
+  top:200px;
+  .box{
+    $h:36px;
+    .import{
+      font-size:0;
+      margin:10px 0 0 0;
+    }
+    label,input,a{
+      display: inline-block;
+      font-size:14px;
+      vertical-align: top;
+    }
+    label{
+      width:90px;
+      height:$h;
+      line-height:$h;
+      text-align: right;
+      margin-right: 10px;
+    }
+    input{
+      width:158px - 10;
+      padding-left:10px;
+      height:$h - 2;
+      line-height:$h - 2;
+      border:1px solid #ccc;
+      &.tel{
+        margin-right: 10px;
+      }
+      &.code{
+        width: 88px;
+      }
+    }
+    a{
+      height: $h;
+      line-height: $h;
+      color: #fff;
+      font-size:14px;
+      padding:0 10px;
+      background: $red-base;
+      &.select{
+        background: #ccc;
+      }
+    }
+    p{
+      &.infoTxt{
+        font-size:14px;
+        margin:20px 0 0 48px;
+        padding-bottom: 10px;
+      }
+    }
+    .error{
+      padding-top: 5px;
+      color: $red-base;
+      margin-left:90px + 10;
+    }
+  }
+}

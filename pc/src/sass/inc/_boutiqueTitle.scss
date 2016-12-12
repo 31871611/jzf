@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  精品推荐标题
+
+*/
+
+
+
+.title{
+  $h:80px;
+  margin:0 40px;
+  text-align:center;
+  height:$h;
+  position: relative;
+  i{
+    position: absolute;
+    left:0;
+    top:50%;
+    width:100%;
+    height:2px;
+    background:#f1f1f1;
+  }
+  span,h3{
+    position: relative;
+    line-height:$h;
+    font-size:24px;
+    color:#333;
+    display: inline-block;
+    padding:0 20px;
+    background: #fff;
+  }
+}

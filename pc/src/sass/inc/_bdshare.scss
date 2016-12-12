@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  百度分享
+
+*/
+
+
+.bdshare-button-style0-16{
+  a{
+    width:20px;
+    height:20px;
+    margin:0 0 0 10px;
+    padding:0;
+    @include pic("../images/sharebox.png");
+  }
+  //新浪微博
+  .bds_tsina{
+    background-position: 0 0;
+    &:hover{
+      background-position: -30px 0;
+    }
+  }
+  //QQ空间
+  .bds_qzone{
+    background-position: 0 -30px;
+    &:hover{
+      background-position: -30px -30px;
+    }
+  }
+  //腾讯微博
+  .bds_tqq{
+    background-position: 0 -60px;
+    &:hover{
+      background-position: -30px -60px;
+    }
+  }
+  //QQ好友
+  .bds_sqq{
+    background-position: 0 -90px !important;
+    &:hover{
+      background-position: -30px -90px !important;
+    }
+  }
+  //分享到微信
+  .bds_weixin{
+    background-position: 0 -120px;
+    &:hover{
+      background-position: -30px -120px;
+    }
+  }
+}

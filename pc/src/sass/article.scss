@@ -1,0 +1,923 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  资讯首页
+
+*/
+
+
+//分页
+.page{
+  a{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+    &.off{
+      &:hover{
+        background: #e5e5e5;
+      }
+    }
+  }
+  input.btn{
+    background: #eee;
+    &:hover,&.select{
+      border-color:#ccc;
+      background: $blue-sub;
+      color: #fff;
+    }
+  }
+}
+
+
+//资讯公共w1200->w1000
+@import "inc/articleComm";
+
+
+
+//资讯头部
+@import "inc/artistHeader";
+
+//资讯导航
+@import "inc/articleNav";
+
+
+/************************************************************************/
+
+%homeTitle{
+  @import "inc/articleHomeTitle";
+  @include homeTitle();
+}
+
+
+/************************************************************************/
+
+//左边
+.infoLeft{
+  width:690px;
+  @extend %fl;
+}
+
+//右边
+.infoRight{
+  width:280px;
+  @extend %fr;
+}
+
+
+//轮播
+.articleSlider{
+  width:330px;
+  height:350px;
+  @extend %fl;
+  margin-right: 30px;
+  margin-bottom: 33px;
+  position: relative;
+  ul{
+    $w:330px;
+    $h:350px;
+    width: $w;
+    height: $h;
+    overflow: hidden;
+    li{
+      position: relative;
+      width: $w;
+      height: $h;
+    }
+    a{
+      display: block;
+      &:hover{
+        .opacity{
+          background: $blue-sub;
+        }
+      }
+    }
+    img{
+      width: $w;
+      height: $h;
+      vertical-align: middle;
+    }
+    .opacity,.bottom{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      width:100%;
+      height:100px;
+    }
+    .opacity{
+      background: #333;
+      @include opacity(60);
+      @include transition(background 500ms);
+    }
+    .bottom{
+
+    }
+    h2,p{
+      color:#fff;
+      margin:0 15px;
+      overflow: hidden;
+    }
+    h2{
+      font-size:16px;
+      height: 45px;
+      line-height: 45px;
+    }
+    p{
+      height:20px * 2;
+      line-height:20px;
+    }
+  }
+  .tab{
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    height: 6px;
+    text-align: center;
+    font-size:0;
+    padding:6px 0;
+    span{
+      cursor: pointer;
+      display: inline-block;
+      width:6px;
+      height:6px;
+      margin-right: 6px;
+      background:#fff;
+      @include border-radius(50%);
+      &.select{
+        background: $blue-sub;
+      }
+    }
+  }
+}
+
+.articleHotNews{
+  @extend %fl;
+  height:350px;
+  margin-bottom: 33px;
+}
+
+//首页推荐
+.articleHot{
+  width:330px;
+  height:197px;
+  h3{
+    height:40px;
+    line-height:40px;
+    font-size:16px;
+    a{
+      color:$blue-sub;
+    }
+  }
+  p{
+    height:40px;
+    line-height:20px;
+    overflow: hidden;
+  }
+  .line{
+    margin:15px 0 0 0;
+    height:1px;
+    font-size:0;
+    border-top:1px dashed #e5e5e5;
+  }
+}
+
+
+
+//首页推荐列表
+.articleListHot{
+  width:330px;
+  height:316px;
+  .title{
+    @extend %homeTitle;
+  }
+
+  .photo{
+    height:90px;
+    border-bottom: 1px dotted #e5e5e5;
+    margin-bottom: 10px;
+    a{
+      &:hover{
+        color:$blue-sub;
+      }
+    }
+    img{
+      display: block;
+      width: 110px;
+      height:80px;
+      @extend %fl;
+    }
+    h3{
+      overflow: hidden;
+      padding-top:15px;
+      font-size:14px;
+      margin-left:110px + 20;
+      height:28px * 2;
+      line-height:28px;
+    }
+  }
+
+  ul{
+    $h:28px;
+    li{
+      height:$h;
+      line-height:$h;
+    }
+    a{
+      position: relative;
+      display: block;
+      height:$h;
+      line-height:$h;
+      overflow: hidden;
+      padding-left:13px;
+      &:hover{
+        color:$blue-sub;
+        i{
+          background: $blue-sub;
+        }
+      }
+    }
+    i{
+      width:4px;
+      height:4px;
+      background: #999;
+      position: absolute;
+      left:0;
+      top:11px;
+    }
+  }
+}
+
+
+//说石事
+.articleHotStone{
+  //@extend %fr;
+  height:153px;
+}
+//聊文化
+.articleHotCulture{
+  @extend %fl;
+  margin-right: 30px;
+}
+//悦轶事
+.articleHotInfo{
+  @extend %fl;
+}
+//玩雅物
+.articleHotMatter{
+  width: 690px;
+  @extend %fl;
+  height:222px;
+  //margin-right: 30px;
+  .photo{
+    width: 330px;
+    margin-bottom: 18px;
+  }
+  .fl{
+
+  }
+  .fr{
+
+  }
+}
+
+//人文艺术.不需要
+.articleHotHumanity{
+  @extend %fl;
+  height:222px;
+}
+
+
+//首页艺术家
+.artistSliderList{
+  clear: both;
+  width:690px;
+  height:171px;
+  margin-bottom: 50px;
+  .title{
+    @extend %homeTitle;
+  }
+  .content{
+    $h:126px;
+    height:$h;
+    overflow: hidden;
+    position: relative;
+    ul{
+      width: 999em;
+      height:$h;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    li{
+      position: relative;
+      width: $h;
+      height: $h;
+      @extend %fl;
+      margin-right: 15px;
+    }
+    a{
+      &:hover{
+        .opacity{
+          background: $blue-sub;
+
+        }
+      }
+    }
+    img{
+      width: $h;
+      height: $h;
+      vertical-align: middle;
+    }
+    .opacity,h3{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      width:100%;
+      height: 24px;
+    }
+    .opacity{
+      @include transition(background 500ms);
+      background: #666666;
+      @include opacity(50);
+    }
+    h3{
+      color:#fff;
+      line-height: 24px;
+      text-indent: 10px;
+      font-size:14px;
+    }
+    .left,.right{
+      position: absolute;
+      top:28px;
+      width:20px;
+      height:60px;
+      @extend %picComm;
+      cursor: pointer;
+    }
+    .left{
+      background-position: -186px -219px;
+      left:0;
+    }
+    .right{
+      background-position: -212px -219px;
+      right:0;
+    }
+  }
+}
+
+
+
+//石种大全
+.artistStone{
+  height:310px;
+  .title{
+    @extend %homeTitle;
+    width:690px;
+  }
+  .content{
+    overflow: hidden;
+    margin-right: -15px;
+  }
+  .type{
+    $w:220px;
+    width:$w;
+    @extend %fl;
+    margin-right:15px;
+  }
+  .photo{
+    $w:220px;
+    $h:180px;
+    width:$w;
+    height:$h;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    &:hover{
+      img{
+        @include scale(1.2);
+      }
+    }
+    img{
+      width:$w;
+      height:$h;
+      vertical-align: middle;
+      @include transition(transform 1s);
+      @include scale(1);
+    }
+    .opacity,h3{
+      position: absolute;
+    }
+    .opacity{
+      left:0;
+      top:0;
+      right:0;
+      bottom:0;
+      background: #333;
+      @include opacity(50);
+    }
+    h3{
+      left:2%;
+      bottom:0;
+      font-size:24px;
+      height:$h;
+      line-height:$h;
+      color:#fff;
+      width:96%;
+      text-align:center;
+      overflow: hidden;
+    }
+  }
+  .list{
+    font-size:0;
+    a{
+      font-size:12px;
+      display: inline-block;
+      margin-bottom: 5px;
+      margin-right:10px;
+      &:hover{
+        color:$blue-sub;
+      }
+    }
+  }
+}
+
+
+
+//雅物集
+.articleInfo{
+  background: #eee;
+  //height:672px;
+  margin-bottom: 26px;
+  h2{
+    margin:0 20px;
+    font-size:18px;
+    height:40px;
+    line-height:40px;
+    overflow: hidden;
+    a{
+      display: block;
+      color:$blue-base;
+    }
+  }
+  .photo{
+    $w:240px;
+    $h:146px;
+    width:$w;
+    height:$h;
+    margin:0 20px 17px 20px;
+    position: relative;
+    a{
+      &:hover{
+        .opacity{
+          background: $blue-sub;
+        }
+      }
+    }
+    img{
+      width:$w;
+      height:$h;
+      vertical-align: middle;
+    }
+    .opacity,h3{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      height: 29px;
+    }
+    .opacity{
+      @include transition(background 500ms);
+      background: #333;
+      @include opacity(50);
+      width:100%;
+    }
+    h3{
+      width:$w - 10 - 10;
+      color:#fff;
+      height: 29px;
+      line-height: 29px;
+      margin:0 10px;
+      overflow: hidden;
+    }
+  }
+
+  ul{
+    $h:28px;
+    //height:180px;
+    margin:0 20px;
+    padding-bottom: 20px;
+    li{
+      height:$h;
+      line-height:$h;
+    }
+    a{
+      position: relative;
+      display: block;
+      height:$h;
+      line-height:$h;
+      overflow: hidden;
+      padding-left:13px;
+      &:hover{
+        color:$blue-sub;
+        i{
+          background: $blue-sub;
+        }
+      }
+    }
+    i{
+      width:4px;
+      height:4px;
+      background: #999;
+      position: absolute;
+      left:0;
+      top:11px;
+    }
+  }
+  .line{
+    height: 1px;
+    line-height: 0;
+    font-size:0;
+    background: #e5e5e5;
+    margin: 0 20px;
+  }
+  p{
+    margin:0 20px;
+    height:20px * 3;
+    line-height:20px;
+    overflow: hidden;
+    a{
+      color:#666;
+    }
+  }
+}
+
+
+//电子杂志
+.articleMagazine{
+  height:424px;
+  background: #eee;
+  margin-bottom: 20px;
+  h2{
+    margin:0 20px;
+    font-size:18px;
+    height:45px;
+    line-height:45px;
+    overflow: hidden;
+    a{
+      display: block;
+      color:$blue-base;
+    }
+  }
+  ul{
+    margin-left:20px;
+    li{
+      $w:108px;
+      $h:148px;
+      border:1px solid #cdcdcd;
+      width:$w;
+      height:$h;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      @extend %fl;
+      &:hover{
+        border-color: $blue-sub;
+      }
+      img{
+        width:$w;
+        height:$h;
+        vertical-align: middle;
+      }
+      a{
+        display: block;
+      }
+    }
+  }
+  .bottom{
+    text-align: right;
+    margin:0 20px;
+    .more{
+      color:#999;
+      &:hover{
+        color:$blue-sub;
+      }
+    }
+  }
+}
+
+
+//拍场知识
+.articleScene{
+  height:295px;
+  .title{
+    @extend %homeTitle;
+  }
+  .content{
+    border:1px solid #eee;
+    padding:5px 0;
+    ul{
+
+    }
+    li{
+
+    }
+    a{
+      padding:0 7px;
+      overflow: hidden;
+      display: block;
+      height:30px;
+      line-height:30px;
+      &:hover{
+        color: $blue-sub;
+      }
+    }
+  }
+}
+
+
+//图库
+.articleGallery{
+  height:175px;
+  overflow: hidden;
+  .title{
+    @extend %homeTitle;
+  }
+  .content{
+    $w:130px;
+    height:$w;
+    width:1014px;
+    ul{
+      height:$w;
+    }
+    li{
+      width: $w;
+      height:$w;
+      margin-right: 14px;
+      position: relative;
+      @extend %fl;
+      img{
+        width: $w;
+        height:$w;
+        vertical-align: middle;
+      }
+    }
+    a{
+      &:hover{
+        .opacity{
+          background: $blue-sub;
+        }
+      }
+    }
+    .opacity,h3{
+      position: absolute;
+      left:0;
+      bottom: 0;
+      width:100%;
+      height: 24px;
+    }
+    .opacity{
+      @include transition(background 500ms);
+      background: #666;
+      @include opacity(50);
+    }
+    h3{
+      width:96%;
+      left:2%;
+      text-align: center;
+      color:#fff;
+      line-height: 24px;
+      font-size:14px;
+    }
+  }
+}
+
+
+/*
+
+  集珍资讯页面
+
+*/
+
+//资讯-切换tab
+@import "inc/articleTab";
+
+//点击排行
+@import "inc/newsClickList";
+
+
+//资讯广告
+@import "inc/artistAd";
+
+/*
+
+  电子杂志页面
+
+*/
+
+.magazineList{
+  ul{
+    margin-right: -20px;
+    overflow: hidden;
+  }
+  li{
+    width:335px;
+    height:170px;
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    @extend %fl;
+    margin:0 20px 20px 0;
+  }
+  a{
+    height:170px - 20;
+    padding:20px 20px 0 17px;
+    display: block;
+    &:hover{
+      background: #f4f4f4;
+      h2{
+        color:$blue-sub;
+      }
+    }
+  }
+  .photo{
+    @extend %fl;
+    border:1px solid #ccc;
+    $w:94px;
+    $h:129px;
+    width: $w;
+    height:$h;
+    img{
+      width: $w;
+      height:$h;
+      vertical-align: middle;
+    }
+  }
+  .content{
+    margin-left:94px + 10;
+    h2{
+      font-size:14px;
+      height: 28px * 2;
+      line-height: 28px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    p{
+      height:24px;
+      line-height: 24px;
+      color:#999;
+    }
+  }
+
+}
+
+
+
+
+//拍卖信息页面
+.auctionInfo{
+  @import "inc/auctionInfo";
+  @include auctionInfo();
+}
+
+//拍卖预展
+.auctionPreview{
+  width: 100%;
+  text-align: center;
+  thead{
+    tr{
+
+    }
+    td{
+      $h:40px;
+      height:$h;
+      background: $blue-base;
+      font-size:14px;
+      color:#fff;
+    }
+  }
+  tbody{
+    $h:80px;
+    tr{
+      background: #fff;
+      &.even,&.select{
+        background: #f1f1f1;
+      }
+    }
+    td{
+      //height:$h;
+      padding:20px 0;
+    }
+    a{
+      color:#333;
+      &.look,&:hover{
+        color: $red-base;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+//石种大全
+.stoneTypeList{
+  width:690px;
+  border-top:1px solid #e5e5e5;
+  .list{
+    border-bottom:1px solid #e5e5e5;
+    position:relative;
+  }
+  .type{
+    position: absolute;
+    left:0;
+    top:0;
+    background: #f4f4f4;
+    width:160px;
+    height: 100%;
+    font-size:20px;
+    text-align: center;
+    font-weight: bold;
+    span{
+      display: block;
+      padding-top:60px;
+    }
+  }
+  .content{
+    margin-left:160px;
+    font-size:0;
+    padding:15px 0 0 20px;
+    a{
+      margin-right:10px;
+      @extend %ellipsis;
+      text-overflow:clip;
+      display: inline-block;
+      height:25px;
+      line-height:25px;
+      font-size:14px;
+      width:115px;
+      margin-bottom: 10px;
+      &:hover{
+        color:$blue-sub;
+      }
+    }
+  }
+}
+
+
+/*
+
+  图库列表
+
+*/
+.galleryList{
+  ul{
+
+  }
+  li{
+    $w:165px;
+    $h:201px;
+    width:$w;
+    height:$h;
+    @extend %fl;
+    margin-bottom: 10px;
+    a{
+      display: block;
+      width:$w;
+      height:$h - 10;
+      padding-top:10px;
+      &:hover{
+        background: #f4f4f4;
+        h2,p{
+          color:$blue-sub;
+        }
+      }
+    }
+    img{
+      display: block;
+      width:140px;
+      height:140px;
+      margin:0 auto;
+    }
+    h2,p{
+      width:130px;
+      margin:0 auto;
+      text-align: center;
+      height:25px;
+      line-height:25px;
+      overflow: hidden;
+    }
+    h2{
+
+    }
+    p{
+
+    }
+  }
+}
+

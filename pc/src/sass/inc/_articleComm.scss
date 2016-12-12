@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯公共
+  w1200->w1000
+
+*/
+
+body{
+  min-width: 1000px;
+  background: #fff;
+}
+
+.header{
+  .w1200{
+    @include bc-auto(1000px);
+  }
+}
+
+.footer,.copyright{
+  background: #f4f4f4;
+}
+
+.footer{
+  .w1200{
+    @include bc-auto(1000px);
+  }
+  dl{
+    width:150px;
+  }
+}

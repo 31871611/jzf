@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+//蓝色
+$blue-base:#003347;
+$blue-sub:#3a8fb7;
+$blue-hover-sub:#004561;
+//触屏蓝色
+$blue-hover-base:#002443;
+//红色
+$red-base:#ea3a38;
+//触屏红色
+$red-hover-base:#eb5250;
+//灰色
+$gray-base:#e5e5e5;
+//触屏灰色
+$gray-hover-base:#999;
+$color-333:#333;
+$color-666:#666;
+$color-999:#999;
+$color-ccc:#ccc;
+$color-eee:#eee;
+//绿色
+$green-base:#009944;
+//背景
+$bg-color:#f3f3f3;
+//次背景
+$sub-color:#f7f7f7;
+//a连接
+$link-color:#00a0e9;
+//下划线
+$link-hover-color:#fff;
+
+
+@mixin bc-auto($width:1024px){
+  width:$width;
+  min-width:$width;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+//文字排版
+%f12{font-size:12px;}
+%f14{font-size:14px;}
+%f16{font-size:16px;}
+%f18{font-size:18px;}
+%fb{font-weight:bold;}
+%fn{font-weight:normal;}
+%t2{text-indent:2em;}
+%lh200{line-height:200%;}
+%unl{text-decoration:underline;}
+%nounl{text-decoration:none;}
+
+//定位
+%tl{text-align:left;}
+%tc{text-align:center;}
+%tr{text-align:right;}
+%bc{margin-left:auto;margin-right:auto;}
+%fl{float:left;}
+%fr{float:right;}
+%cb{clear:both;}
+%clear{clear:both;height:0;line-height:0;font-size:0;}
+%clearfix:after{visibility:hidden;display:block;font-size:0;content:"\20";clear:both;height:0;}
+%clearfix{*zoom:1;}
+%zoom{zoom:1;}
+%pr{position:relative;}
+%pa{position:absolute;}
+%pf{position:fixed;}
+%hidden{visibility:hidden;}
+%hide{display:none;}
+%ov{overflow:hidden;}
+%block{display:block;}
+%inline{display:inline;}
+%ib{display:inline-block;}
+
+//长度高度
+%w{width:100%;}
+%h{width:100%;}
+%wauto{width:auto;}
+%hauto{height:auto;}
+%w100{width:100px;}
+%h100{height:100px;}
+
+//边距
+%m10{margin:10px;}
+%ml5{margin-left:5px;}
+%ml10{margin-left:10px;}
+%ml15{margin-left:15px;}
+%ml20{margin-left:20px;}
+%ml25{margin-left:25px;}
+%ml30{margin-left:30px;}
+%mt5{margin-top:5px;}
+%mt10{margin-top:10px;}
+%mt15{margin-top:15px;}
+%mt20{margin-top:20px;}
+%mt25{margin-top:25px;}
+%mt30{margin-top:30px;}
+%mr5{margin-right:5px;}
+%mr10{margin-right:10px;}
+%mr15{margin-right:15px;}
+%mr20{margin-right:20px;}
+%mr25{margin-right:25px;}
+%mr30{margin-right:30px;}
+%mb5{margin-bottom:5px;}
+%mb10{margin-bottom:10px;}
+%mb15{margin-bottom:15px;}
+%mb20{margin-bottom:20px;}
+%mb25{margin-bottom:25px;}
+%mb30{margin-bottom:30px;}
+%mn{margin:0;}
+%p10{padding:10px;}
+%pt5{padding-top:5px;}
+%pt10{padding-top:10px;}
+%pt15{padding-top:15px;}
+%pt20{padding-top:20px;}
+%pt25{padding-top:25px;}
+%pt30{padding-top:30px;}
+%pr5{padding-right:5px;}
+%pr10{padding-right:10px;}
+%pr15{padding-right:15px;}
+%pr20{padding-right:20px;}
+%pr25{padding-right:25px;}
+%pr30{padding-right:30px;}
+%pb5{padding-bottom:5px;}
+%pb10{padding-bottom:10px;}
+%pb15{padding-bottom:15px;}
+%pb20{padding-bottom:20px;}
+%pb25{padding-bottom:25px;}
+%pb30{padding-bottom:30px;}
+%pl5{padding-left:5px;}
+%pl10{padding-left:10px;}
+%pl15{padding-left:15px;}
+%pl20{padding-left:20px;}
+%pl25{padding-left:25px;}
+%pl30{padding-left:30px;}
+%pn{padding:0;}
+
+
+//css文字截取
+%nowrap{white-space:nowrap;word-break:keep-all}
+%wrap{white-space:normal;word-break:break-all}
+%ellipsis{overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;word-break:keep-all;word-wrap:normal}
+
+//css精灵图片
+@mixin pic($png,$repeat:null){
+  @if $repeat == null {
+    background-image:url($png);
+    //ie6支持png32
+    //background-repeat:no-repeat;
+    _background: transparent;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src=$png,sizingMethod='scale');
+  }@else {
+    @if $repeat == x {
+      background:url($png) repeat-x;
+    }@else if $repeat == y {
+      background:url($png) repeat-y;
+    }
+  }
+}
+
+//css三角形
+@mixin arrow($type,$w:5px,$c:#ccc){
+  width:0;
+  height:0;
+  overflow:hidden;
+  @if $type == top {
+    border-width:$w;
+    border-style:dashed dashed solid dashed;
+    border-color:transparent transparent $c transparent;
+  } @else if $type == right {
+    border-width:$w;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent $c;
+  } @else if $type == bottom {
+    border-width:$w;
+    border-style:solid dashed dashed dashed;
+    border-color:$c transparent transparent transparent;
+  } @else if $type == left {
+    border-width:$w;
+    border-style:dashed solid dashed dashed;
+    border-color:transparent $c transparent transparent;
+  }
+}
+
+//窗体居中
+@mixin center($width,$height){
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -($height) / 2;
+  margin-left: -($width) / 2;
+}
+
+//透明度
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+
+/******************************************************************************/
+//公共图片精灵
+%picComm{
+  @include pic("../images/comm.png");
+}
+
+

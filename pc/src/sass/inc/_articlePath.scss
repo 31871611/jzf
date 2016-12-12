@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  资讯面包屑
+
+*/
+
+
+.articlePath{
+  font-size:0;
+  width:690px - 20;
+  padding-left:20px;
+  //height: 30px;
+  line-height: 30px;
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  a,span,b{
+    font-size:16px;
+    color:#333;
+  }
+  a{
+    &:hover,&.select{
+      color:$blue-sub;
+    }
+  }
+  span{
+    padding:0 5px;
+  }
+}
+
+

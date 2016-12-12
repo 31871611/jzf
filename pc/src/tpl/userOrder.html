@@ -1,0 +1,417 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+<div class="user w1200 clearfix">
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent userOrder">
+            <div class="userTabTitle">
+                <span class="select">全部订单</span>
+                <span>待付款<b>0</b></span>
+                <span>预定中<b>0</b></span>
+                <span>已付款<b>0</b></span>
+                <span>待收货<b>0</b></span>
+                <span>交易成功<b>0</b></span>
+                <span>交易关闭<b>0</b></span>
+            </div>
+
+            <!-- orderTime -->
+            <div class="orderTime">
+                <input type="text" placeholder="按藏品名称或者订单编号查询" />
+                <a href="" class="searchBtn">搜索</a>
+                <b>下单日期</b>
+                <input type="text" class="date" placeholder="时间" />
+                <div class="dropDown fl hide">
+                    <span>选择县/区</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <b>藏品类型</b>
+                <div class="dropDown fl">
+                    <span>选择县/区</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- orderContent -->
+            <div class="orderContent">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="titleTd">藏品名称</td>
+                            <td class="costTd">单价（元）</td>
+                            <td class="categoryTd">品类</td>
+                            <td class="numTd">数量</td>
+                            <td class="serviceTd">藏品售后</td>
+                            <td class="priceTd">实付</td>
+                            <td class="stateTd">订单状态</td>
+                            <td class="handleTd">交易操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="sepRow"><td colspan="8"></td></tr>
+                        <tr class="date">
+                            <td colspan="8">
+                                <b>2016年1月27日</b>订单号：35094535789156871635
+                            </td>
+                        </tr>
+                        <tr class="success">
+                            <td>
+                                <div class="info">
+                                    <div class="photo">
+                                        <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                    </div>
+                                    <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                    <div class="spec">
+                                        <span>颜色：黑红</span>
+                                        <span>尺寸：4.90×3.00×3.00cm</span>
+                                        <span>重量：10.2g(总重）</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>4450</td>
+                            <td>印度小叶紫檀</td>
+                            <td>１</td>
+                            <td rowspan="2" class="borderL">
+                                <a href="" class="service">申请售后</a>
+                            </td>
+                            <td rowspan="2">
+                                <span class="price">4450</span>
+                                (含运费：0.00)
+                            </td>
+                            <td rowspan="2">
+                                已付款
+                                <em>（待发货）</em>
+                            </td>
+                            <td rowspan="2">
+                                <a href="" class="url">查看详情</a>
+                                <a href="" class="pay">立即支付</a>
+                                <a href="" class="pay">支付尾款</a>
+                                <a href="" class="url">取消订单</a>
+                                <a href="" class="url">自提信息</a>
+                            </td>
+                        </tr>
+                        <tr class="success">
+                            <td>
+                                <div class="info">
+                                    <div class="photo">
+                                        <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                    </div>
+                                    <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                </div>
+                            </td>
+                            <td>4450</td>
+                            <td>印度小叶紫檀</td>
+                            <td>１</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="sepRow"><td colspan="8"></td></tr>
+                        <tr class="date">
+                            <td colspan="8">
+                                <b>2016年1月27日</b>订单号：35094535789156871635
+                            </td>
+                        </tr>
+                        <tr class="success">
+                            <td>
+                                <div class="info">
+                                    <div class="photo">
+                                        <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+                                    </div>
+                                    <h3>郭懋介 田黄兽首把件田黄兽首件田黄兽首</h3>
+                                </div>
+                            </td>
+                            <td>4450</td>
+                            <td>印度小叶紫檀</td>
+                            <td>１</td>
+                            <td>
+                                <a href="" class="service">申请售后</a>
+                            </td>
+                            <td>
+                                <span class="price">4450</span>
+                                (含运费：0.00)
+                            </td>
+                            <td>
+                                已付款
+                                <em>（待发货）</em>
+                            </td>
+                            <td>
+                                <a href="" class="pay">立即支付</a>
+                                <a href="" class="url">查看详情</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        @@include('include/page.html')
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+<!-- 帐户安全弹窗 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>订单详情</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+        <ul class="orderDetails">
+            <li>
+                <span>订单号</span>
+                <b>123453431</b>
+            </li>
+            <li><span>总金额</span><b>￥89000</b></li>
+            <li><span>订单状态</span><b>已支付</b></li>
+            <li><span>实付金额</span><b>￥0.01</b></li>
+            <li><span>订单状态</span><b>已付款</b></li>
+            <li><span>下单时间</span><b>2015-08-08  11:20:15</b></li>
+            <li><span>支付时间</span><b>2015-08-08  11:20:20</b></li>
+            <li><span>支付方式</span><b>在线支付</b></li>
+        </ul>
+
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+</div>
+
+<!-- 物流信息弹窗 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>物流信息</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box logistics">
+        <h2><b>物流公司：</b>顺丰速运（集团）有限公司</h2>
+        <h2><b>运单号码：</b>111</h2>
+        <h2><b>物流状态：</b>111</h2>
+        <ul>
+            <li class="select"><em>20160822</em><p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p></li>
+            <li><em>20160822</em><p>内容</p></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 汇款信息 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>汇款信息</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box transfer">
+        <p>您若已将订单款项转账至指定账户，请及时联系客服，客服电话：<span class="red">0591-88212636</span></p>
+        <p class="bold"><em>账户名称：</em>集珍坊（福建）网络科技有限公司</p>
+        <p class="bold"><em>账号：</em><b class="red">11014832697005</b></p>
+        <p class="bold"><em>开户行：</em>平安银行福州分行</p>
+    </div>
+</div>
+
+<!-- 消息退货 -->
+<div class="userAlert">
+    <!--取消订单弹窗-->
+    <div class="title">
+        <h2>操作提示</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box returnInfo">
+        <div class="infoIco">
+            <i class="ico-warning"></i><b>您正在进行取消订单操作</b>
+        </div>
+        <p class="explain">请说明取消原因</p>
+        <div class="dropDown">
+            <span></span>
+            <i></i>
+            <ul class="hide">
+                <li>现在不想买了</li>
+                <li>想添加商品</li>
+                <li>价格波动</li>
+                <li>想删除商品</li>
+                <li>商品价格偏贵</li>
+                <li>无法支付</li>
+            </ul>
+        </div>
+        <p class="pour">注：订单取消后将关闭订单并无法恢复</p>
+    </div>
+    <div class="btn">
+        <a href="javascript:;" class="affirm">确认取消</a>
+        <a href="javascript:;" class="exit step">暂不取消</a>
+    </div>
+</div>
+
+<!-- 退货申请 -->
+<div class="userAlert">
+    <!--取消订单弹窗-->
+    <div class="title">
+        <h2>操作提示</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box returnInfo">
+        <div class="infoIco">
+            <i class="ico-warning"></i><b>您正在进行取消订单操作</b>
+        </div>
+        <p class="explain">请说明取消原因</p>
+        <div class="dropDown">
+            <span></span>
+            <i></i>
+            <ul class="hide">
+                <li>现在不想买了</li>
+                <li>想添加商品</li>
+                <li>价格波动</li>
+                <li>想删除商品</li>
+                <li>商品价格偏贵</li>
+                <li>无法支付</li>
+            </ul>
+        </div>
+        <div class="uploadPhoto"><span>上传退货凭证：</span><a href="javascript:;">上传图片</a></div>
+        <div class="uploadPhotoList">
+            <span><img src="picture/115x115.jpg" alt=""><i></i></span>
+            <span><img src="picture/115x115.jpg" alt=""><i></i></span>
+            <span><img src="picture/115x115.jpg" alt=""><i></i></span>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="javascript:;" class="affirm">确认取消</a>
+        <a href="javascript:;" class="exit step">暂不取消</a>
+    </div>
+</div>
+
+<!-- 支付 -->
+<div class="userAlert">
+    <!--取消订单弹窗-->
+    <div class="title">
+        <h2>操作提示</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box orderPay">
+
+        <div class="info">
+            <span>订单号：</span>
+            <b>160713181210543258</b>
+        </div>
+        <div class="info">
+            <span>总金额：</span>
+            <b>￥4,824.00</b>
+        </div>
+        <div class="info">
+            <span>实付金额：</span>
+            <b>￥4,824.00</b>
+        </div>
+        <div class="info">
+            <span>选择支付方式：</span>
+            <label for="">
+                <input type="radio" name="pay" class="radio" />
+                <i class="alipayIcon"></i>
+                <em>(支付宝支付)</em>
+            </label>
+        </div>
+        <div class="info step">
+            <label for="">
+                <input type="radio" name="pay" class="radio" />
+                <i class="wxIcon"></i>
+                <em>(微信支付)</em>
+            </label>
+        </div>
+        <div class="info step">
+            <label for="">
+                <input type="radio" name="pay" class="radio" />
+                <i class="bankIcon"></i>
+                <em>(银行卡支付)</em>
+            </label>
+        </div>
+        <div class="info step">
+            <label for="">
+                <input type="radio" name="pay" class="radio" />
+                <i class="transferIcon"></i>
+                <em>(银行卡转账)</em>
+            </label>
+        </div>
+        <div class="info step">
+            <label for="">
+                <input type="radio" name="pay" class="radio" />
+                <i class="walletIcon"></i>
+                <em>(钱包余额)</em>
+            </label>
+        </div>
+        <div class="info">
+            <span>账户名称：</span>
+            <b>集珍坊（福建）网络科技有限公司</b>
+        </div>
+        <div class="info">
+            <span>账号：</span>
+            <b>1101 4832 697 005</b>
+        </div>
+        <div class="info">
+            <span>开户行：</span>
+            <b>平安银行福州分行</b>
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="javascript:;">确认</a>
+    </div>
+</div>
+
+<!-- 自提信息 -->
+<div class="userAlert">
+    <div class="title">
+        <h2>自提信息</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box translateInfo">
+        <p class="info">自提地址：福建福州市鼓楼区杨桥东路19号衣锦华庭雅道巷水流湾院落（福建省集珍艺术馆正对面）</p>
+        <div class="import">
+            <span class="fl">自提时间：</span>
+            <div class="dropDown fl">
+                <span>20160505</span>
+                <i></i>
+                <ul class="hide">
+                    <li>20160505</li>
+                    <li>20160505</li>
+                    <li>20160505</li>
+                </ul>
+            </div>
+            <!--<input type="text" class="text" />-->
+            <a href="javascript:;" class="spacing fl">确定</a>
+        </div>
+        <div class="error">错误</div>
+        <p class="info"><span>自提时间：20160505前</span><a href="javascript:;" class="spacing">修改</a><span>（只可修改一次）</span></p>
+        <p class="info"><span>所需凭证：提货码</span><span><a href="javascript:;" class="spacing">重新获取</a></span></p>
+        <p class="info ml93"><span class="url">下单时已发送至</span><span class="spacing">13599911111</span></p>
+        <p class="info ml93">个人身份证</p>
+        <p class="pour">注：如果您未在自提截止时间前上门取件，我们将关闭交易</p>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+@@include('include/base.html',{
+"title":"展会",
+"css":"exhibition.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/commHeader.html')
+
+@@include('include/mallNav.html')
+
+
+<!-- 展会 -->
+<div class="w1280 exhibition">
+    <div class="showTab">
+        <a href="" class="select">全部<i></i><b></b></a>
+        <a href="">正在进行<i></i><b></b></a>
+        <a href="">马上开始<i></i><b></b></a>
+        <a href="">已经结束<i></i></a>
+    </div>
+
+    <ul>
+        <li>
+            <h3><a href="">携云琢影——2016年林云曦作品专展</a></h3>
+            <span>活动时间：<b>2015-10-24</b> — <b>2015-10-25</b></span>
+            <div class="photo"><a href=""><img src="picture/1180x389.jpg" alt="" /><i></i></a></div>
+        </li>
+        <li>
+            <h3><a href="">携云琢影——2016年林云曦作品专展</a></h3>
+            <span>活动时间：<b>2015-10-24</b> — <b>2015-10-25</b></span>
+            <div class="photo"><a href=""><img src="picture/1180x389.jpg" alt="" /><i class="start"></i></a></div>
+        </li>
+        <li>
+            <h3><a href="">携云琢影——2016年林云曦作品专展</a></h3>
+            <span>活动时间：<b>2015-10-24</b> — <b>2015-10-25</b></span>
+            <div class="photo"><a href=""><img src="picture/1180x389.jpg" alt="" /><i class="end"></i></a></div>
+        </li>
+    </ul>
+</div>
+
+@@include('include/footer.html')
+
+
+
+<div class="boxAlert hide" id="id">
+    <div class="title">
+        <h2>说明</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="content">
+        <div class="infoIco">
+            <i class="ico-warning"></i>
+            <b>需在登录状态下才能关注该藏品需在登录状态下才能关注该藏品需在登录状态下才能关注该藏品</b>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="javascript:;" target="_blank" class="confirm">登录</a>
+        <a href="javascript:;" target="_blank" class="step close">注册</a>
+    </div>
+</div>
+
+
+</body>
+</html>

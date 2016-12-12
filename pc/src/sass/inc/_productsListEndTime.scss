@@ -1,0 +1,38 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  商品列表页
+  新品倒记时
+  珍石惠倒记时
+
+*/
+
+
+
+
+//新品倒记时
+.listEndTime{
+  font-size:20px;
+  text-align: center;
+  color:#333;
+  height:60px;
+  line-height:60px;
+  b{
+    color:$red-base;
+    font-weight: normal;
+  }
+}
+
+
+//珍石惠倒记时
+.zhenEndTime{
+  height:30px;
+  text-align:center;
+  font-size:20px;
+  color:#333;
+  margin:50px 0 30px 0;
+  @import "zhenEndTime";
+}

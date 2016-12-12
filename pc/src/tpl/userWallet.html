@@ -1,0 +1,221 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+<div class="user w1200 clearfix">
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent">
+
+            <div class="userWalletInfo">
+                <div class="userTabTitle">
+                    <span class="select">我的钱包</span>
+                </div>
+
+                <div class="info">
+                    <ul class="money clearfix">
+                        <li>
+                            <strong><em>￥</em>100,000.00</strong>
+                            <span>账号总额（元）</span>
+                        </li>
+                        <li>
+                            <strong><em>￥</em>90,000.00</strong>
+                            <span>可用余额（元）</span>
+                        </li>
+                        <li>
+                            <b><em>￥</em>1,000.00</b>
+                            <span>冻结余额（元）</span>
+                        </li>
+                    </ul>
+
+                    <div class="btn">
+                        <a href="" class="add">充值</a><a href="" class="remove">提现</a>
+                    </div>
+                </div>
+
+                <div class="bankBox">
+                    <h3>已绑定银行卡：<b>0 张</b></h3>
+
+                    <i></i>
+                    <a href="">银行卡管理</a>
+                </div>
+            </div>
+
+            <div class="userBank">
+                <div class="userTabTitle">
+                    <span class="select">我的银行卡</span>
+                </div>
+                <div class="bankContent clearfix">
+                    <div class="bankList">
+                        <div class="line">
+                            <img src="" alt="">
+                            <strong>工商银行</strong>
+                            <span>储蓄卡</span>
+                        </div>
+                        <p>尾号：6922</p>
+                        <div class="btn">
+                            <a href="" class="remove">删除</a>
+                        </div>
+                    </div>
+                    <div class="bankList">
+                        <div class="line">
+                            <img src="" alt="">
+                            <strong>工商银行</strong>
+                            <span>储蓄卡</span>
+                        </div>
+                        <p>尾号：6922</p>
+                        <div class="btn">
+                            <a href="" class="remove">删除</a>
+                        </div>
+                    </div>
+                    <div class="bankList">
+                        <div class="line">
+                            <img src="" alt="">
+                            <strong>工商银行</strong>
+                            <span>储蓄卡</span>
+                        </div>
+                        <p>尾号：6922</p>
+                        <div class="btn">
+                            <a href="" class="remove">删除</a>
+                        </div>
+                    </div>
+                    <div class="bankList">
+                        <div class="line">
+                            <img src="" alt="">
+                            <strong>工商银行</strong>
+                            <span>储蓄卡</span>
+                        </div>
+                        <p>尾号：6922</p>
+                        <div class="btn">
+                            <a href="" class="remove">删除</a>
+                        </div>
+                    </div>
+                    <div class="bankList">
+                        <div class="line">
+                            <img src="" alt="">
+                            <strong>工商银行</strong>
+                            <span>储蓄卡</span>
+                        </div>
+                        <p>尾号：6922</p>
+                        <div class="btn">
+                            <a href="" class="remove">删除</a>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <i class="row"></i>
+                        <i class="col"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="userWallet">
+                <div class="userTabTitle">
+                    <span class="select">全部明细</span>
+                    <span>消费记录</span>
+                    <span>充值记录</span>
+                    <span>提现记录</span>
+                    <div class="time fr">
+                        <div class="dropDown fl">
+                            <span></span>
+                            <i></i>
+                            <ul class="">
+                                <li>2016年</li>
+                            </ul>
+                        </div>
+                        <b class="fl">至</b>
+                        <div class="dropDown fl">
+                            <span></span>
+                            <i></i>
+                            <ul class="">
+                                <li>2月</li>
+                            </ul>
+                        </div>
+                        <a href="" class="btnSearch fl">搜索</a>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="timeTd">时间</td>
+                            <td class="typeTd">资金类型</td>
+                            <td class="payTd">收支</td>
+                            <td class="sumTd">金额</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="no">暂无记录</td>
+                        </tr>
+                        <tr>
+                            <td>时间</td>
+                            <td>资金类型</td>
+                            <td>收支</td>
+                            <td>金额</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>提示：系统仅显示您两年之内的余额明细，更早的余额明细不再显示。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+
+
+<!-- 添加银行卡弹窗 -->
+<div class="addBankAlert">
+    <div class="title">
+        <h2>添加银行卡</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box">
+        <div class="import"><label for="">开户人姓名</label><input type="text" placeholder="请输入您的真实姓名" /></div>
+        <div class="error">错误</div>
+        <div class="import"><label for="">身份证号</label><input type="text" placeholder="请输入您的身份证号" /></div>
+        <div class="error">错误</div>
+        <div class="import"><label for="">开户银行</label><input type="text" placeholder="请输入银行名称" /></div>
+        <div class="error">错误</div>
+
+        <div class="import clearfix">
+            <label for="" class="fl">开户银行</label>
+            <div class="dropDown fl">
+                <span></span>
+                <i></i>
+                <ul class="hide">
+                    <li>银行</li>
+                </ul>
+            </div>
+        </div>
+        <div class="error">错误</div>
+
+        <div class="import"><label for="">银行账号</label><input type="text" placeholder="请输入银行账号" /></div>
+        <div class="error">错误</div>
+        <div class="import"><label for="">预留手机号码</label><input type="text" placeholder="请输入常用的手机号码" /></div>
+        <div class="error">错误</div>
+        <div class="import code"><label for="">短信验证码</label><input type="text" placeholder="请输入验证码" /><a href="" class="select">获取短信验证码</a></div>
+        <div class="error">错误</div>
+        <div class="btn">
+            <a href="">添加</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

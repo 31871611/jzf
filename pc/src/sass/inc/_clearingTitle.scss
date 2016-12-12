@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  clearingTitle
+
+*/
+
+
+@mixin clearingTitle{
+  $h:50px;
+  height:50px;
+  background:#e5e5e5;
+  span{
+    @extend %fl;
+    display: inline-block;
+    width:130px;
+    height:$h;
+    line-height:$h;
+    text-align:center;
+    font-size:16px;
+    cursor: pointer;
+    &.select{
+      background:#fff;
+      border-top:2px solid $blue-base;
+      height:$h - 2;
+      line-height:$h - 2;
+      color:$blue-base;
+    }
+    b{
+      font-weight: normal;
+      color:$red-base;
+      margin-left:5px;
+    }
+  }
+  //结算中心查看支付帮助
+  .see{
+    @extend %fr;
+    height:$h;
+    line-height:$h;
+    margin-right:20px;
+  }
+  //用户中心必填
+  .req{
+    color: $red-base;
+    font-style: normal;
+    @extend %fr;
+    height:$h;
+    line-height:$h;
+    margin-right:40px;
+  }
+  //我的钱包选择时间
+  .time{
+    $h:36px;
+    @extend %fr;
+    height:$h;
+    font-size:0;
+    margin-top:7px;
+    //input{
+    //  width:108px - 10;
+    //  height:$h - 2;
+    //  line-height:$h - 2;
+    //  padding-left:10px;
+    //}
+    b{
+      display: inline-block;
+      font-size:14px;
+      font-weight: normal;
+      margin:0 10px;
+      height:$h;
+      line-height:$h;
+    }
+
+    @import "dropDown";
+    @include dropDown();
+    .dropDown{
+      background: #fff;
+      width:120px;
+      margin-right: 0;
+      span{
+        width:85px;
+      }
+      ul{
+        width:120px;
+      }
+    }
+
+
+    .btnSearch{
+      display: inline-block;
+      font-size:14px;
+      margin:0 20px;
+      width:80px;
+      height:36px;
+      line-height:36px;
+      text-align:center;
+      color:#fff;
+      background: $blue-base;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+  }
+}

@@ -1,0 +1,282 @@
+@@include('include/base.html',{
+"title":"登录",
+"css":"coupon.css",
+"js":"coupon.js"
+})
+<body>
+@@include('include/header.html')
+
+<div class="coupon">
+    <div class="w">
+
+        <!-- 转盘 -->
+        <div class="turntableBg">
+            <!--<div class="lamp"></div>灯-->
+            <img id="turntable" src="images/couponTurntable.png" />
+            <!--<div class="turntable" id="imgs"></div>-->
+            <div class="turntableBtn"></div>
+        </div>
+        <!-- 中奖 -->
+        <div class="winningList">
+            <h2>获奖名单:</h2>
+            <div class="scroll">
+                <ul id="scrollList">
+                    <li><span>1恭喜131****0019</span>获得<b>30元优惠券优惠券</b></li>
+                    <li><span>2恭喜135****1908</span>获得<b>30元优惠券</b></li>
+                    <li><span>3恭喜135****6354</span>获得<b>30元优惠券</b></li>
+                    <li><span>4恭喜139****1106</span>获得<b>30元优惠券</b></li>
+                    <li><span>5恭喜137****0901</span>获得<b>30元优惠券</b></li>
+                    <li><span>6恭喜138****1050</span>获得<b>30元优惠券</b></li>
+                    <li><span>7恭喜180****5501</span>获得<b>30元优惠券</b></li>
+                    <li><span>8恭喜137****5042</span>获得<b>30元优惠券</b></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@@include('include/copyright.html')
+
+
+<!-- 弹窗 -->
+<div class="couponAlert hide">
+    <div class="top">
+        <!-- 一行字 -->
+        <h2>抽奖次数已用完</h2>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <p>请明天再来试试运气吧</p>
+        </div>
+
+        <div class="btn">
+            <a href="">我知道了</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="top">
+        <!-- 二行字-->
+        <h3>哎呀，活动已经结束了</h3>
+        <h3>下次活动再来吧</h3>
+    </div>
+
+    <div class="box">
+        <div class="text">
+        </div>
+
+        <div class="btn">
+            <a href="">去商城逛逛</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="top">
+        <!-- 二行字 -->
+        <h3>恭喜您</h3>
+        <h3>获得 田黄挂坠</h3>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <p>请立刻完善您的收货地址</p>
+            <p>稍后集珍坊客服将与您联系</p>
+        </div>
+
+        <div class="btn">
+            <a href="">填写收货地址</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="top">
+        <!-- 二行字-->
+        <h3>恭喜您</h3>
+        <h3>获得 50元 优惠劵</h3>
+    </div>
+
+    <div class="box">
+
+        <div class="btn">
+            <a href="">立即使用</a>
+            <a href="" class="whiteBg">查看优惠券</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="top">
+        <!-- 一行字
+        <h2>抽奖次数已用完</h2>-->
+        <!-- 二行字-->
+        <h3>活动还没开始哦</h3>
+        <h3>等等再来吧</h3>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <p>反正闲着也是闲着，去商城逛逛吧</p>
+        </div>
+
+        <div class="btn">
+            <a href="">去商城逛逛</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlert hide">
+    <div class="top">
+        <h3>请登陆后</h3>
+        <h3>进行抽奖</h3>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <p>点击登录按钮，进入登录页面</p>
+        </div>
+
+        <div class="btn">
+            <a href="">登录</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="couponAlertInfo hide">
+    <div class="top">
+        <h3>确认地址成功！</h3>
+        <h3>请保持电话通畅，客服将与您取得联系</h3>
+    </div>
+
+    <div class="box">
+
+        <div class="btn">
+            <a href="">去商城逛逛</a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 收货地址 -->
+<div class="userYiAddress hide">
+    <div class="title">
+        <h2>确认收货地址</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="delivery">
+        <h3>收货人信息</h3>
+
+        <ul class="addressList">
+            <li><i class="select"><em></em></i><b>倪宁</b><span>福建省</span><span>福州市</span><span>鼓楼区</span><span>鼓楼区杨桥东路19-1号楼附近（南街）</span><span>13705097484</span><span>默认地址</span><a href="">编辑</a><a href="">删除</a></li>
+            <li><i><em></em></i><b>林建</b><span>福建省</span><span>福州市</span><span>鼓楼区</span><span>鼓楼区杨桥东路19-1号楼附近efsadf （南街）</span><span>13705097484</span><a href="">设为默认地址</a><a href="">编辑</a><a href="">删除</a></li>
+        </ul>
+
+        <!-- 点击添加select，显示添加地址内容 -->
+        <div class="add ">
+            添加新地址
+        </div>
+
+        <div class="edit hide">
+            <div class="import"><label for=""><i class="req">*</i>收货人姓名</label><input type="text" placeholder="长度不超过25个字符"></div>
+            <div class="error">错误</div>
+            <div class="import">
+                <label for="" class="fl"><i class="req">*</i>所在地</label>
+                <div class="dropDown fl">
+                    <span>选择省份</span>
+                    <i></i>
+                    <ul class="length hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>选择省份选择省份选择省份选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>选择城市</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>选择县/区</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="error">错误</div>
+            <div class="import"><label for=""><i class="req">*</i>详细地址</label><input type="text" class="address" placeholder="请输入详细的收获地址"></div>
+            <div class="error">错误</div>
+            <div class="import"><label for=""><i class="req">*</i>手机号码</label><input type="text" placeholder="请输入有效手机号码"></div>
+            <div class="error">错误</div>
+        </div>
+
+    </div>
+    <div class="btn">
+        <a href="">确认</a>
+    </div>
+</div>
+
+<div id="opacity"></div>
+<div class="wxLoginAlert">
+    <i class="exit"></i>
+    <div class="box" style="width: 300px;height: 370px;">
+        <h2>微信登录</h2>
+        <div class="photo">
+            <img src="picture/couponcouponAdd.png" alt="">
+        </div>
+        <div class="text">
+            <p>扫扫二维码去微商城抽大奖吧</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jQueryRotate.2.2.js"></script>
+<script>
+
+    $(function() {
+        $(".turntableBtn").click(function() {
+            for (var i = 0; i <= 10000; i++) {
+                $("#turntable").rotate({
+                    animateTo: i,
+                    duration: 10000
+                });
+                if (i >= 3986) {
+                    break;
+                }
+            }
+        });
+    });
+
+
+</script>
+</html>

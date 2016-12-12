@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+/*
+
+  展会页
+
+*/
+
+
+.exhibition{
+  background:#fff;
+  margin-top:40px;
+  //tab切换
+  @import "inc/showTab";
+
+  ul{
+    margin-left:40px;
+    padding-top: 40px;
+    padding-bottom: 1px;
+    li{
+      margin-bottom: 35px;
+    }
+    h3{
+      font-size:24px;
+      color:#333;
+      margin-bottom:10px;
+    }
+    span{
+      font-size:14px;
+      color:#999;
+      display: block;
+    }
+    b{
+      color:$red-base;
+      font-weight: normal;
+    }
+    .photo{
+      position: relative;
+      margin-top:10px;
+      border:1px solid #e5e5e5;
+      padding:10px;
+      width:1180px;
+      height:389px;
+      &:hover{
+        border:1px solid $red-base;
+      }
+    }
+    img{
+      width:1180px;
+      height:389px;
+      vertical-align: middle;
+    }
+    i{
+      position: absolute;
+      right: 4px;
+      top: 2px;
+      width:213px;
+      height:210px;
+      @include pic("../images/exhibitionIcon.png");
+      background-position:0 -220px;
+      //马上开始
+      &.start{
+        background-position:0 -440px;
+      }
+      //正在进行
+      //&.conduct{
+      //  background-position:0 -220px;
+      //}
+      //已经结束
+      &.end{
+        background-position:0 0;
+      }
+    }
+  }
+}

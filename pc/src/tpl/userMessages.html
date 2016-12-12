@@ -1,0 +1,119 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+
+<div class="user w1200 clearfix">
+
+    @@include('include/userSubNav.html')
+
+    <div class="userRight userMessages">
+
+        @@include('include/userInfo.html')
+
+        <div class="userTabTitle">
+            <span class="select">所有信息</span>
+            <span>购买信息</span>
+            <span>配送信息</span>
+            <span>售后信息</span>
+            <span>其他信息</span>
+        </div>
+
+        <div class="time">
+            <span>时间搜索</span>
+            <input type="text" />
+            <b></b>
+            <input type="text" />
+            <a href="">搜索</a>
+        </div>
+
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="stateTd">状态</td>
+                        <td class="sourceTd">来源</td>
+                        <td class="titleTd">标题</td>
+                        <td class="typeTd">类型</td>
+                        <td class="createTd">创建时间</td>
+                        <td class="handleTd">操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for=""></label>
+                            <input type="checkbox" class="hide" />
+                            配送中
+                        </td>
+                        <td>站内信</td>
+                        <td>芙蓉石螭虎穿环钮章</td>
+                        <td>已购买</td>
+                        <td>2016-04-06  15：50：50</td>
+                        <td><a href="" class="remove"></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""></label>
+                            <input type="checkbox" class="hide" />
+                            配送中
+                        </td>
+                        <td>站内信</td>
+                        <td>芙蓉石螭虎穿环钮章</td>
+                        <td>已购买</td>
+                        <td>2016-04-06  15：50：50</td>
+                        <td><a href="" class="remove"></a></td>
+                    </tr>
+                    <tr class="read">
+                        <td>
+                            <label for="" class="select"></label>
+                            <input type="checkbox" class="hide" />
+                            配送中
+                        </td>
+                        <td>站内信</td>
+                        <td>芙蓉石螭虎穿环钮章</td>
+                        <td>已购买</td>
+                        <td>2016-04-06  15：50：50</td>
+                        <td><a href="" class="remove"></a></td>
+                    </tr>
+                    <tr class="reply">
+                        <td colspan="6">
+                            <p>【集珍坊】您有订单因未在15分钟内完成支付，现已关闭订单，若还想购买马上进入集珍坊抢购吧！<a href="http://www.artjzf.com/usercenter/myOrder">“查看订单”</a>按钮（点击后可直接进入我的订单-交易关闭订单列表进行查看）</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""></label>
+                            <input type="checkbox" class="hide" />
+                            配送中
+                        </td>
+                        <td>站内信</td>
+                        <td>芙蓉石螭虎穿环钮章</td>
+                        <td>已购买</td>
+                        <td>2016-04-06  15：50：50</td>
+                        <td><a href="" class="remove"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="all">
+                <label for=""><input type="checkbox" class="hide" /><i></i>全选</label>
+                <a href="" class="remove">删除</a>
+                @@include('include/page.html')
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+</body>
+</html>

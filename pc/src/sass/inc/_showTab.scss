@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  tab切换
+
+*/
+
+
+.showTab{
+  $h:53px;
+  border-bottom:1px solid #e5e5e5;
+  height:$h;
+  padding-left:40px;
+  font-size:0;
+  a{
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width:180px;
+    height:$h;
+    line-height:$h;
+    font-size:24px;
+    color:#999;
+    text-align:center;
+    &.select{
+      color:$red-base;
+      border-top:2px solid $red-base;
+      height:$h - 2;
+      line-height:$h - 2;
+      i{
+        position: absolute;
+        left:50%;
+        top:0;
+        margin-left:-7px;
+        width:14px;
+        height:6px;
+        @extend %picComm;
+        background-position: -33px -31px;
+      }
+    }
+  }
+  b{
+    position: absolute;
+    right:0;
+    top:13px;
+    width:1px;
+    height:30px;
+    background: #e5e5e5;
+  }
+}

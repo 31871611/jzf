@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  商城首页轮播
+
+           animation:img-move-right 2s;
+         -webkit-animation:img-move-right 2s;
+
+
+*/
+
+
+.mallSlider{
+  $h:436px;
+  height:$h;
+  background:#000;
+  position: relative;
+  overflow: hidden;
+  .sliderBox{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    a{
+      display: block;
+      width:100%;
+      height:$h;
+    }
+    .w1200{
+      display: block;
+      position: relative;
+      height:$h;
+    }
+    .imgSmall{
+      position: absolute;
+      top: 158px;
+      left: 410px;
+      @include animation(imgMoveRight 2s);
+    }
+  }
+  //小圆点
+  .sliderTab{
+    position: absolute;
+    left:0;
+    bottom: 20px;
+    width:100%;
+    text-align: center;
+    span{
+      vertical-align: middle;
+      margin-right:8px;
+      cursor: pointer;
+      @include border-radius(50%);
+      display: inline-block;
+      width:9px;
+      height:9px;
+      border:1px solid #fff;
+      &.select,&:hover{
+        i{
+          @include border-radius(50%);
+          vertical-align: top;
+          background:$red-base;
+          display: block;
+          width:7px;
+          height:7px;
+          margin:1px auto 0;
+        }
+      }
+    }
+  }
+  //左右按钮
+  .leftBtn,.rightBtn{
+    $h:108px;
+    $w:50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:$w;
+    height:$h;
+    margin-top:- ($h / 2);
+    cursor: pointer;
+    span{
+      width:$w;
+      height:$h;
+      display: block;
+      background: #000;
+      @include opacity(50);
+    }
+    i{
+      @extend %picComm;
+      display: inline-block;
+      width:18px;
+      height:36px;
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin-top:- (36px / 2);
+      margin-left:- (18px / 2);
+    }
+  }
+  .leftBtn{
+    // 1200/2 + 50(按钮宽度)
+    margin-left:-650px;
+    i{
+      background-position: 0 -450px;
+    }
+  }
+  .rightBtn{
+    margin-left:650px;
+    i{
+      background-position: -22px -450px;
+    }
+  }
+}
+
+
+
+
+
+@keyframes imgMoveRight{
+  0%{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

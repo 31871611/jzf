@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  帮助
+
+*/
+
+.help{
+  margin-top:76px;
+}
+
+.helpLeft{
+  width:180px;
+  @extend %fl;
+  h3{
+    $h:48px;
+    &.select{
+      a{
+        background: $blue-base;
+        color:#fff;
+      }
+    }
+    a{
+      margin-bottom: 3px;
+      text-align:center;
+      background: #e5e5e5;
+      display: block;
+      height:$h;
+      line-height:$h;
+      font-size:16px;
+    }
+  }
+  ul{
+    background: #fff;
+    text-align: center;
+    li{
+      &.select{
+        a{
+          color:$red-base;
+        }
+      }
+    }
+    a{
+      font-size:14px;
+      height:38px;
+      line-height:38px;
+      &.select,&:hover{
+        color:$red-base;
+      }
+    }
+  }
+
+}
+
+.helpRight{
+  width:960px;
+  @extend %fr;
+  background: #fff;
+  .clearingTitle{
+    @import "inc/clearingTitle";
+    @include clearingTitle();
+    margin-bottom: 20px;
+    span{
+      width: auto;
+      padding:0 15px;
+    }
+  }
+  .content{
+
+  }
+  .list{
+    //padding:30px;
+  }
+  img{
+    max-width: 100%;
+    //max-width: 826px;
+  }
+  h2,h3{
+    font-size:14px;
+    margin:0 30px 25px 30px;
+  }
+  .text{
+    margin:0 30px 50px 30px;
+  }
+  p{
+    line-height:25px;
+
+    //&.photo{
+    //  margin-bottom: 20px;
+    //}
+  }
+
+}
+
+
+
+
+

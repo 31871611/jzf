@@ -1,0 +1,594 @@
+@@include('include/base.html',{
+"title":"结算中心",
+"css":"clearing.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+<!-- 用户中心导航 -->
+<div class="userNav">
+    <div class="w1200">
+        <div class="logo">
+            <a href=""><img src="images/userlogo.png" alt="" /></a>
+        </div>
+        <ul class="hide">
+            <li><a href="">首页</a></li>
+            <li><a href="">集珍视界</a></li>
+            <li><a href="">商城</a></li>
+            <li><a href="">拍卖</a></li>
+            <li><a href="">私洽</a></li>
+            <li><a href="">展会/活动</a></li>
+            <li><a href="">艺术家</a></li>
+            <li><a href="">集珍知道</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="dispatching w1200">
+    <div class="clearingTitle">
+        <span class="select">选择预定方式</span>
+    </div>
+    <div class="reserve clearfix">
+        <div class="tab">
+            <label for="" class="select">
+                <i><em></em></i>全额支付
+            </label>
+            <label for="">
+                <i><em></em></i>预定金支付
+            </label>
+        </div>
+
+
+        <h3>预定金支付</h3>
+        <p>预定金：<b>1350</b>元</p>
+        <p><em>温馨提醒：</em><span>商品定金按商品销售价10%计收，您成功支付预定金后请在开售当天9点前完成剩余尾款的支付，即可获得藏品，若您未在开售当天的9点前完成剩余尾款的支付，我们将不会退回您的预定金，请您慎重下单！ </span></p>
+        <div class="clause">
+            <i class="select"></i>已阅读<a href="help.html#pre_pay_rule" class="url">《集珍坊商品预定条款》</a>
+        </div>
+    </div>
+
+
+    <div class="clearingTitle">
+        <span class="select">选择配送信息</span>
+    </div>
+    <div class="clearingTab">
+        <div class="select"><img src="images/express.jpg" alt="快递发货" /><i></i></div>
+        <div><img src="images/oneself.jpg" alt="自己提货" /><i></i></div>
+    </div>
+    <div class="insurance clearfix">
+        <h3>商品物流保价</h3>
+        <p>商品保价消费：<b>15</b>元</p>
+        <p><em>温馨提醒：</em><span>物流保价是为了保障快件在运输过程中的商品安全，若您不愿意支付物流保价费可以选择配送方式中的“自己提货”；保价费由我司代快递公司按商品总金额的0.5%收取。</span></p>
+    </div>
+    <div class="delivery">
+        <h3>收货人信息</h3>
+
+        <ul class="addressList">
+            <li><i class="select"><em></em></i><b>倪宁</b><span>福建省</span><span>福州市</span><span>鼓楼区</span><span>鼓楼区杨桥东路19-1号楼附近（南街）</span><span>13705097484</span><span>默认地址</span><a href="">编辑</a><a href="">删除</a></li>
+            <li><i><em></em></i><b>林建</b><span>福建省</span><span>福州市</span><span>鼓楼区</span><span>鼓楼区杨桥东路19-1号楼附近efsadf （南街）</span><span>13705097484</span><a href="">设为默认地址</a><a href="">编辑</a><a href="">删除</a></li>
+        </ul>
+
+        <div class="add select">
+            <i><em></em></i>添加新地址
+        </div>
+
+        <div class="edit">
+            <div class="import"><label for=""><i class="req">*</i>收货人姓名</label><input type="text" placeholder="长度不超过25个字符" /></div>
+            <div class="error">错误</div>
+            <div class="import">
+                <label for="" class="fl"><i class="req">*</i>所在地</label>
+                <div class="dropDown fl">
+                    <span>选择省份</span>
+                    <i></i>
+                    <ul class="length hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>选择省份选择省份选择省份选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>选择城市</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="dropDown fl">
+                    <span>选择县/区</span>
+                    <i></i>
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="error">错误</div>
+            <div class="import"><label for=""><i class="req">*</i>详细地址</label><input type="text" class="address" placeholder="请输入详细的收获地址" /></div>
+            <div class="error">错误</div>
+            <div class="import"><label for=""><i class="req">*</i>手机号码</label><input type="text" placeholder="请输入有效手机号码" /><b>或 固定电话</b><input type="text" class="area" placeholder="区号" /><b>-</b><input type="text" placeholder="号码" /></div>
+            <div class="error">错误</div>
+        </div>
+
+        <div class="btn">
+            <a href="">保存收货地址</a>
+        </div>
+
+        <!--
+        <h3>收货人信息<a href="" class="modify">【修改】</a></h3>
+        <p>倪宁 13705097484</p>
+        <p>福建省  福州市  鼓楼区  鼓楼区杨桥东路19-1号楼附近（南街）</p>
+        -->
+    </div>
+
+    <div class="oneself">
+        <h3>自提信息</h3>
+        <p><label for="">自提地址</label><b>福建省 福州市 鼓楼区 杨桥东路19号 雅道巷水流湾院落 海峡文化产权交易所1楼展厅</b></p>
+        <div class="import">
+            <label for="">联系号码</label>
+            <input type="text" />
+            <label for="" class="tr">姓名</label>
+            <input type="text" />
+        </div>
+        <div class="error">错误</div>
+        <div class="import">
+            <label for="" class="fl">自提时间</label>
+            <div class="dropDown fl">
+                <span></span>
+                <i></i>
+                <ul class="hide">
+                    <li>现在不想买了</li>
+                    <li>想添加商品</li>
+                    <li>价格波动</li>
+                    <li>想删除商品</li>
+                    <li>商品价格偏贵</li>
+                    <li>无法支付</li>
+                </ul>
+            </div>
+            <label for="" class="tr fl">身份证</label>
+            <input type="text" class="fl" />
+        </div>
+        <div class="error">错误</div>
+        <p>温馨提醒：支付成功后集珍坊会向您发送自提码，请及时查收。<a href="help.html#delivery" class="url">查看自提流程</a></p>
+    </div>
+
+    <!-- 结算进度 -->
+    <div class="clearingPage">
+        <div class="line">
+            <span></span>
+            <!--<span class="w"></span>-->
+        </div>
+        <div class="round">
+            <span></span>
+            <i></i>
+            <b>查看购物车</b>
+        </div>
+        <div class="round round2">
+            <!--<span></span>-->
+            <i class="p2"></i>
+            <b>确认信息</b>
+        </div>
+        <div class="round round3">
+            <!--<span></span>-->
+            <i class="p3"></i>
+            <b>支付</b>
+        </div>
+    </div>
+
+</div>
+
+<div class="orderInfo w1200">
+    <div class="clearingTitle">
+        <span class="select">选择配送信息</span>
+    </div>
+    <div class="orderTitle">
+        <div class="titleTd">
+            珍品名称
+        </div>
+        <div class="priceTd">
+            单价
+        </div>
+        <div class="numberTd">
+            数量
+        </div>
+        <div class="sumTd">
+            小计
+        </div>
+        <!--<div class="insuredTd">-->
+            <!--保价-->
+        <!--</div>-->
+    </div>
+    <ul class="orderContent clearfix">
+        <li class="titleTd">
+            <div class="photo">
+                <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+            </div>
+            <div class="info">
+                <h3>手工大漆手镯</h3>
+                <p>颜色：黑色</p>
+                <p>规格尺寸：5cm~6cm之间</p>
+            </div>
+        </li>
+        <li class="priceTd">
+            <span class="price">￥4,600</span>
+        </li>
+        <li class="numberTd">
+            2
+        </li>
+        <li class="sumTd">
+            <span class="red">9,200</span>
+        </li>
+        <!--<li class="insuredTd">-->
+            <!--<span class="red">¥15</span>-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<div class="clearingFooter w1200">
+    <div class="coupon">
+        <label for="" class="select"><em></em></label>
+        <div class="dropDown fl">
+            <span>50元优惠券<b>（满500减30）</b></span>
+            <i></i>
+            <ul class="">
+                <li>50元优惠券<b>（满500减30）</b></li>
+                <li>30元优惠券<b>（满500减30）</b></li>
+                <li>200元优惠券<b>（满500减30）</b></li>
+            </ul>
+        </div>
+        <input type="text" class="text" placeholder="无可用优惠券" />
+    </div>
+    <div class="text">已选藏品：<b>1</b>件</div>
+    <div class="total">
+        合计（不含运费）：<b>¥9,200</b>
+    </div>
+    <div class="clause">
+        <input type="hidden" />
+        <label for="" class="select"></label><span>已阅读</span>
+        <a href="help.html#clause" class="url">《售后条款》</a>
+    </div>
+    <div class="btn">
+        <a href="" class="back">返回购物车修改</a><a href="" class="buy">立即结算</a>
+    </div>
+</div>
+
+
+<!-- 一元购 -->
+<div class="orderInfo w1200">
+    <div class="clearingTitle">
+        <span class="select">订单信息</span>
+    </div>
+    <div class="orderTitle">
+        <div class="titleTd">
+            珍品名称
+        </div>
+        <div class="priceTd">
+            总需人次
+        </div>
+        <div class="numberTd">
+            剩余人次
+        </div>
+        <div class="sumTd">
+            参与人次
+        </div>
+    </div>
+    <ul class="orderContent clearfix">
+        <li class="titleTd">
+            <div class="photo">
+                <a href=""><img src="picture/260x260.jpg" alt="" /></a>
+            </div>
+            <div class="info">
+                <h3>手工大漆手镯</h3>
+                <p>颜色：黑色</p>
+                <p>规格尺寸：5cm~6cm之间</p>
+            </div>
+        </li>
+        <li class="priceTd">
+            <span class="price">￥4,600</span>
+        </li>
+        <li class="numberTd">
+            2
+        </li>
+        <li class="sumTd">
+            <div class="number">
+                <i class="reduce no"></i>
+                <input type="text" value="1" />
+                <i class="add"></i>
+                <!--<span class="limit">限购5件</span>-->
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="clearingFooter w1200">
+    <div class="total">
+        应付总额：<b>¥9,200</b>
+    </div>
+    <div class="clause">
+        <input type="hidden" />
+        <label for="" class="select"></label><span>已阅读</span>
+        <a href="help.html#clause" class="url">《集珍一元购用户协议》</a>
+    </div>
+    <div class="btn">
+        <a href="" class="buy">立即结算</a>
+    </div>
+</div>
+
+
+<div class="submitOrder w1200">
+    <div class="submitInfo">
+        <i></i>
+        <h3>订单提交成功，请您尽快付款！</h3>
+        <span>订单号：<b>39875983475493</b>应付金额：<strong>4386.00元</strong></span>
+        <p>请您在<b>15分00秒</b>之内完成支付，否则订单会被自动取消。</p>
+    </div>
+
+    <!-- 结算进度 -->
+    <div class="clearingPage hide">
+        <div class="line">
+            <span class="w"></span>
+        </div>
+        <div class="round">
+            <span></span>
+            <i></i>
+            <b>查看购物车</b>
+        </div>
+        <div class="round round2">
+            <span></span>
+            <i class="p2"></i>
+            <b>确认信息</b>
+        </div>
+        <div class="round round3">
+            <!--<span></span>-->
+            <i class="p3"></i>
+            <b>支付</b>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearingPay w1200">
+    <div class="clearingTitle">
+        <span class="select">选择支付方式</span>
+        <a href="help.html#pay" class="see url">查看支付限额</a>
+    </div>
+    <div class="payContent">
+        <div class="platform">
+            <div class="type">
+                <strong>平台支付</strong>
+            </div>
+            <div class="con">
+                <ul class="clearfix">
+                    <li class="select">
+                        <img src="images/alipayPay.jpg" alt="">
+                        <i class="check"></i>
+                    </li>
+                    <li>
+                        <img src="images/wxPay.jpg" alt="">
+                        <i class="check"></i>
+                    </li>
+                    <li>
+                        <img src="images/balancePay.jpg" alt="">
+                        <i class="check"></i>
+                        <b>余额：438600.00元</b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="online">
+            <div class="type">
+                <strong>网银支付</strong>
+            </div>
+            <div class="con">
+                <ul class="clearfix">
+                    <li>
+                        <img src="images/bankPay.jpg" alt="">
+                        <i class="check"></i>
+                    </li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                    <li><img src="images/bank1.jpg" alt=""><i class="check"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="giro">
+            <div class="type">
+                <strong>线下转账</strong>
+            </div>
+            <div class="con">
+                <ul class="clearfix">
+                    <li><img src="images/giroPay.jpg" alt=""><i class="check"></i></li>
+                </ul>
+                <h2>转账需知</h2>
+                <p>在 9：00-21:00 之间开放银行转账功能，下单后请在 1个小时内将应付金额转入指定账户中。</p>
+                <p>转账时请将订单编号填写到备注中，转账完成后请拨打客服电话 <b>0591-88212636</b> 通知客服人员，并提供转账凭证。</p>
+                <p>账户名称：集珍坊（福建）网络科技有限公司</p>
+                <p>账号编号：11014832697005</p>
+                <p>开户行：平安银行福州分行</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="">确定</a>
+    </div>
+</div>
+
+
+<!-- 汇款信息 -->
+<div class="userAlert hide">
+    <div class="title">
+        <h2>汇款信息</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box transfer">
+        <div class="infoIco">
+            <i class="ico-success"></i>
+            <b>订单提交成功</b>
+        </div>
+        <p>您若已将订单款项转账至指定账户，请及时联系客服，客服电话：<span class="red">0591-88212636</span></p>
+        <p class="bold"><em>账户名称：</em>集珍坊（福建）网络科技有限公司</p>
+        <p class="bold"><em>账号：</em><b class="red">11014832697005</b></p>
+        <p class="bold"><em>开户行：</em>平安银行福州分行</p>
+    </div>
+</div>
+
+
+
+<!-- 支付弹窗 -->
+<div class="userAlert hide">
+    <div class="title">
+        <h2>确认支付</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="box clearingOrder">
+        <div class="import">
+            <label>您的订单编号：</label>
+            <span>JZ20160831112500630</span>
+        </div>
+        <div class="import">
+            <label>您的订单总额：</label>
+            <span>￥3317</span>
+        </div>
+        <div class="import">
+            <label for="payPassword">支付密码：</label>
+            <input class="password" type="password" id="payPassword">
+            <a class="url" href="javascript:;" onclick="update_pay_pass()">忘记支付密码</a>
+        </div>
+        <div class="error">错误</div>
+    </div>
+    <div class="btn">
+        <a href="">确定</a>
+        <a href="" class="step">取消</a>
+    </div>
+</div>
+
+
+<!-- 点击设置支付密码 -->
+<div class="userAlert hide">
+    <div class="title">
+        <h2>设置支付密码</h2>
+        <a href="" class="exit"></a>
+    </div>
+    <div class="box setPayPass">
+        <div class="import">
+            <label for="">手机号码</label><b>18903482732</b>
+        </div>
+        <div class="import code">
+            <label for="">验证码</label><input type="text" placeholder=""><a href="" class="code select">获取验证码</a>
+        </div>
+        <div class="error">错误</div>
+        <div class="import">
+            <label for="">登录密码</label><input type="password" placeholder="请输入您的登录密码">
+        </div>
+        <div class="error">错误</div>
+        <div class="import">
+            <label for="">设置支付密码</label><input type="password" placeholder="请输入新的支付密码">
+        </div>
+        <div class="error">错误</div>
+        <div class="import step">
+            <label for="">确认支付密码</label><input type="password" placeholder="请再次输入支付密码">
+        </div>
+        <div class="error">错误</div>
+    </div>
+    <div class="btn">
+        <a href="">确认设置</a>
+    </div>
+</div>
+
+
+<!-- 帮助弹窗 -->
+<div class="yiHelpAlert hide">
+    <div class="title">
+        <h2>集珍一元购用户协议</h2>
+        <a href="javascript:;" class="exit"></a>
+    </div>
+    <div class="help">
+        <h2>1.什么是集珍一元购？</h2>
+        <p>1）集珍一元购是集珍坊推出的全新业务，每个用户只需1元就有机会获得一件商品。</p>
+        <h2>2.怎么参与集珍一元购？</h2>
+        <p>第1步：用户登录或注册集珍坊账号；</p>
+        <p>第2步：进入集珍一元购界面，选择喜欢的商品参与抢宝；</p>
+        <p>第3步：等待揭晓，幸运用户获得商品；</p>
+        <p>第4步：夺宝成功用户等待发货，未抢中用户订单完结。</p>
+        <h2>3.幸运号码的计算方法是什么？</h2>
+        <p>（1）每个商品分配对应数量的号码，并且这些号码都是唯一的，用户支付1元，可以获得其中1个号码；</p>
+        <p>（2）当商品的所有号码都被分配完毕后，系统根据公式计算出1个幸运号码，持有该号码的用户，直接获得该件商品。</p>
+        <h2>4、怎么确定是否已抢中宝贝？</h2>
+        <p>是否抢中宝贝并获得商品是以您夺宝订单状态为准的，您可以登录集珍坊商城查看个人中心我的一元购订单查看是否抢中。</p>
+         
+        <h2>5、如何领取抢中商品？</h2>
+        <p>若您成功抢得商品，您会收到提示完善收货地址的短信，您需要进入我的一元购页面，找到已抢中订单，确认填写收货地址及联系电话。</p>
+         
+        <h2>6、若是忘了填写收货地址怎么办？</h2>
+        <p>当您抢宝成功后，我们会短信通知您尽快确认填写收货地址，并提示您地址填写确认期限，确认收货地址的时间为七天，若逾期未填写，则视为用户自动放弃当期商品，集珍一元购保留该商品的所有权。</p>
+
+        <h2>7、抢中商品后多久能发货？</h2>
+        <p>夺宝成功后集珍坊平台会在3 个工作日内安排发货。</p>
+         
+        <h2>8、关于售后服务</h2>
+        <p> 一元购商品由集珍坊平台进行发货。抢中商品不支持退货。如果发现运输途中造成了商品的损坏，请不要签收，并第一时间联系客服进行相关的售后服务。如遇商品质量问题并已签收，请在签收24小时之内反馈集珍坊客服，超时反馈，集珍坊商城不承担责任，仅做协调处理。</p>
+         
+        <h2>9、我参与了集珍一元购能取消订单吗？</h2>
+        <p>集珍一元购参与成功后不能取消订单。</p>
+               
+        <h2>10、为什么我参与很多次都没有抢中？</h2>
+        <p>一元购具有很大的随机性，扩大支持金额可以增加抢中概率，并非参与就能抢到宝贝，建议用户理性参与。</p>
+         
+        <h2>11、订单状态说明</h2>
+        <p>(1)待付款：等待用户付款；</p>
+        <p>(2)已付款：已获取夺宝号码等待揭晓。</p>
+        <p>(3)订单关闭：15分钟内未支付会自动取消订单；未能成功参与当期夺宝，系统会自动取消订单，订单完结；</p>
+        <p>(4)恭喜中奖：幸运用户获得商品；</p>
+        <p>(5)未抢中：此状态为参与成功，但用户持有号码与幸运号码不相同，不能获得本期商品，支付款项将用于为幸运用户购买当期商品，款项不予以退还，订单完结；</p>
+        <p>(6)待发货：等待商家将货物发出；</p>
+        <p>(7)待收货：等待幸运用户收取抢中商品；</p>
+        <p>(8)交易完成：用户收到抢中商品，订单完结。</p>
+         
+        <h2>12、如何查看抢宝订单？</h2>
+        <p>（1）用户进入集珍坊客户端——点击首页底部导航栏个人——下滑至中间位置即可看见我的一元购入口——点击进入即可查看自己的一元购订单；</p>
+        <p>（2）用户进入集珍坊微商城——点击首页底部导航栏个人——下滑至中间位置即可看见我的一元购入口——点击进入即可查看自己的一元购订单；</p>
+
+        <h2>13、用户账号显示</h2>
+        <p>（1）集珍一元购展示的是集珍坊用户的账号，是用户在注册集珍坊账号的时候唯一的身份证明；</p>
+        <p>（2）集珍坊账号分为手机号和邮箱账号，展示时集珍一元购会隐藏其中一部分关键信息；</p>
+        <p>（3）所有抢宝用户均为真实存在。</p>
+         
+        <h2>14、温馨提示</h2>
+        <p>（1）一旦抢中不需要支付其他任何费用；</p>
+        <p>（2）是否抢中宝贝并获得商品是以您一元购订单状态为准；</p>
+        <p>（3）有问题可以咨询集珍坊客服，客服热线0591-88212636；</p>
+        <p>（5）如有任何非集珍坊官方短信或电话，请不要将个人信息泄露给对方，谨防上当受骗。</p>
+        <p>（6）集珍一元购仅为该频道名称，每人次参与价格可能根据商品调整，请以实际为准。 </p>
+
+        <h2>15、意见反馈</h2>
+        <p>如果您有任何意见或建议，请发送邮件至service@jizhenfang.com反馈，十分感谢！</p>
+    </div>
+</div>
+
+
+</body>
+</html>

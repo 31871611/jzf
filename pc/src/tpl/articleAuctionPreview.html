@@ -1,0 +1,79 @@
+@@include('include/base.html',{
+"title":"拍卖预展",
+"css":"article.css",
+"js":"base.js"
+})
+<body>
+@@include('include/header.html')
+
+
+@@include('include/artistHeader.html')
+
+
+@@include('include/articleNav.html')
+
+
+<div class="w1000 clearfix">
+    <div class="infoLeft">
+
+        <div class="articleTab">
+            <a href="">拍卖知识</a>
+            <a href="">拍卖结果</a>
+            <a href="" class="select">拍卖预展</a>
+        </div>
+
+        <table class="auctionPreview">
+            <thead>
+                <tr>
+                    <td class="">场次名称</td>
+                    <td class="">开始时间</td>
+                    <td class="">结束时间</td>
+                    <td class="">拍卖物品</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="">文房专场</a></td>
+                    <td>10:00:00</td>
+                    <td>11:00:00</td>
+                    <td><a href="" class="look">查看</a>[102件]</td>
+                </tr>
+                <tr class="even">
+                    <td><a href="">篆刻专场</a></td>
+                    <td>11:00:00</td>
+                    <td>12:00:00</td>
+                    <td><a href="" class="look">查看</a>[92件]</td>
+                </tr>
+                <tr>
+                    <td><a href="">寿山石无底价专场</a></td>
+                    <td>13:30:00</td>
+                    <td>14:30:00</td>
+                    <td><a href="" class="look">查看</a>[0件]</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="infoRight">
+
+        @@include('include/newsClickList.html')
+
+
+        @@include('include/artistAd.html')
+
+        @@include('include/artistAd.html')
+
+
+    </div>
+
+</div>
+
+
+
+@@include('include/footer.html')
+
+
+</body>
+</html>

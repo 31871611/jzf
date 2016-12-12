@@ -1,0 +1,88 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  尾部
+  网站版权信息 报备号
+
+*/
+
+
+.footer{
+  margin-top:50px;
+  padding-top:20px;
+  dl{
+    @extend %fl;
+    //752 / 4 = 188
+    width: 188px;
+    dt{
+      line-height:28px;
+      text-align:left;
+      font-size:14px;
+      color: #000;
+    }
+    dd{
+      line-height:28px;
+    }
+    a{
+      color:#b3b3b3;
+      &:hover{
+        color:#333;
+        text-decoration: underline;
+      }
+    }
+  }
+  .step{
+    //margin-left: 30px;
+  }
+  .server{
+    @extend %fr;
+    .logo{
+      margin-top:28px;
+      width:99px;
+      height:57px;
+      @extend %fl;
+    }
+  }
+  .code{
+    @extend %fr;
+    margin-left:25px;
+    $imgW:120px;
+    width:$imgW;
+    img{
+      display: block;
+      width:$imgW;
+      height:$imgW;
+    }
+    span{
+      display: block;
+      text-align:center;
+      margin-top:15px;
+    }
+  }
+}
+
+
+.copyright{
+  text-align:center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color:#b3b3b3;
+  p{
+    margin-bottom: 5px;
+  }
+  .contact{
+    color:#333;
+    font-size:14px;
+    margin-bottom: 10px;
+  }
+  img{
+    vertical-align: middle;
+  }
+  a{
+    color:#b3b3b3;
+  }
+}

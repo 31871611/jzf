@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="http://wx.artjzf.com/static/js/jquery-1.8.3.min.js"></script>
+    <script src="js/base.js"></script>
+    <!-- 视频播放插件 -->
+    <link href="js/videojs/video-js.css" rel="stylesheet" type="text/css">
+    <script src="js/videojs/video.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+
+        //视频播放
+        videojs.options.flash.swf = "js/videojs/video-js.swf";
+
+        //视频播放
+        var myPlayer = videojs('example_video_1');
+        //宽度
+        //myPlayer.width(720);
+        ////高度
+        //myPlayer.height(480);
+        // 开始或恢复播放
+        myPlayer.on('play', function() {
+            $(".vjs-default-skin.vjs-has-started .vjs-big-play-button").hide();
+        });
+        // 暂停播放
+        myPlayer.on('pause', function() {
+            $(".vjs-default-skin.vjs-has-started .vjs-big-play-button").show();
+        });
+
+    </script>
+</head>
+<body>
+
+@@include('include/header.html')
+
+<div class="indexHeader">
+    <div class="w1200">
+        <div class="logo">
+            <a href="">
+                <img src="images/logo.png" alt="">
+            </a>
+        </div>
+
+        <div class="indexSearch">
+            <div class="box">
+                <input type="text" placeholder="输入搜索关键字" />
+                <div class="dropDown fl">
+                    <span>集珍原创</span>
+                    <i class="select"></i>
+                    <!-- length -->
+                    <ul class="hide">
+                        <li>选择省份选择省份选择省份</li>
+                        <li>选择省份选择省份选择省份选择省份选择省份选择省份</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <ul class="searchList hide">
+                    <li><a href="">测试</a></li>
+                    <li><a href="">测试</a></li>
+                    <li><a href="">测试</a></li>
+                </ul>
+            </div>
+            <a href="" class="link">搜索</a>
+        </div>
+    </div>
+    <div class="nav">
+        <a href="index2.html" class="select">首页</a>
+        <b></b>
+        <a href="mallindex.html">集珍商城</a>
+        <b></b>
+        <a href="">集珍视界</a>
+        <b></b>
+        <a href="">集珍百科</a>
+    </div>
+</div>
+<div class="spaceBlock"></div>
+
+
+
+@@include('include/mallSlider.html')
+
+
+<div class="mallActivity w1280">
+    <div class="box">
+        <div class="list">
+            <img src="picture/320x140.jpg" alt="">
+            <div class="opacity"></div>
+            <a href="">
+                <h3>精品汇</h3>
+                <p>每周五上新预览，每周六9:30开售</p>
+            </a>
+        </div>
+        <div class="line"></div>
+        <div class="list">
+            <img src="picture/320x140.jpg" alt="">
+            <div class="opacity"></div>
+            <a href="">
+                <h3>乐淘</h3>
+                <p>每周二9：30上新开售</p>
+            </a>
+        </div>
+        <div class="line"></div>
+        <div class="list">
+            <img src="picture/320x140.jpg" alt="">
+            <div class="opacity"></div>
+            <a href="">
+                <h3>私洽</h3>
+                <p>VIP服务，高品收藏</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="indexArticle w1280">
+    <div class="w1000 clearfix">
+        <div class="infoLeft">
+
+            <div class="infoHot">
+                <div class="main">
+                    <div class="photo">
+                        <img src="picture/386x226.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h2><a href="">福建省工艺美术大师林飞谈裸女创作</a></h2>
+                        <p><a href="">寿山石，中国传统“四大印章石“之一。分布在福州市北郊晋安区与连江县罗源县交界处的福州市北郊晋安区与连江县罗源县交界处的“金三角”地带。在福州市北郊晋...</a></p>
+                        <div class="bottom">
+                            <span class="date">2016-3-28</span>
+                            <span class="num">阅读数：21</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="articleList">
+                    <ul>
+                        <li><a href="">
+                            <div class="photo">
+                                <img src="picture/386x226.jpg" alt="">
+                            </div>
+                            <div class="content">
+                                <h2>福建省工艺美术大师林飞裸女创造之美</h2>
+                                <p>寿山石，中国传统“四大印章石“之一。分布在福州市北郊晋安区与连江县罗源县交界处的“金三角”地带。旧说的“田坑、水坑寿山石，中国传统“四大印章石</p>
+                                <div class="bottom">
+                                    <span class="date">2016-3-28</span>
+                                    <span class="num">阅读数：21</span>
+                                </div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="articleTab">
+                <a href="" class="select">聊石事</a>
+                <a href="">说文化</a>
+                <a href="">赏美图</a>
+                <a href="">玩雅物</a>
+                <a href="">悦轶事</a>
+                <a href="">传艺人</a>
+                <a href="">人文艺术</a>
+            </div>
+
+            <!-- 资讯列表 -->
+            @@include('include/articleList.html')
+
+
+        </div>
+
+        <div class="infoRight">
+
+            <div class="indexVideo">
+                <!--<h2>集珍坊宣传视频</h2>-->
+                <div class="box">
+                    <video id="example_video_1" class="edui-upload-video vjs-default-skin video-js vjs-big-play-centered" controls="" preload="none" width="260" height="200"
+                           poster="http://video-js.zencoder.com/oceans-clip.png"
+                           data-setup="{}">
+                        <source src="http://test.jzfc.jizhenfang.com:8077/shipin/jzf518.mp4" type='video/mp4' />
+                        <!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+                        <!--<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />-->
+                        <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                        <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                    </video>
+                </div>
+                <p>集珍坊——值得托付的艺术品购藏平台</p>
+            </div>
+
+            @@include('include/newsClickList.html')
+
+
+            @@include('include/artistAd.html')
+
+            @@include('include/artistAd.html')
+
+
+        </div>
+    </div>
+</div>
+
+@@include('include/footer.html')
+
+<!-- 侧边栏 -->
+<div class="sidebar" style="display: block;">
+
+    <div class="side_foot">
+
+        <div class="list">
+            <a href="javascript:;" class="select" target="_blank">
+                <i class="couponIcon"></i>
+                <!--<span>抽奖</span>-->
+            </a>
+            <a href="" class="couponUrl"></a>
+        </div>
+
+        <div class="list" onclick="toTop()">
+            <a href="javascript:;">
+                <i class="returnIcon"></i>
+                <span>返回顶部</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

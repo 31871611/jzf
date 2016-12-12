@@ -1,0 +1,125 @@
+@@include('include/base.html',{
+"title":"支付成功",
+"css":"paySuccess.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+<div class="w1200 paySuccess">
+    <div class="paySuccessTitle">
+        <i class=""></i><span class="">恭喜您购买成功！</span>
+        <!--<i class="error"></i><span class="error">恭喜您购买成功！</span>-->
+    </div>
+
+    <div class="paySuccessCon">
+        <div class="title">
+            <span>订单信息</span>
+        </div>
+        <div class="det_con">
+            <span>订单号 : <em>JZ20160831153140651</em></span>
+            <span>下单时间 : <em>2016-08-31 15:31:40</em></span>
+        </div>
+        <em class="line"></em>
+        <div class="det_con">
+            <span class="info">
+                 温馨提示：成功参与抢宝后，所支付款项将用于为当期幸运用户购买商品，不能退回！若成功抢到商品，会有短信通知您完善收货地址，感谢您的支持！
+            </span>
+        </div>
+    </div>
+
+    <div class="paySuccessBtn">
+        <a href="">参与其它夺宝</a>
+        <a href="">查看订单</a>
+    </div>
+
+    <div class="paySuccessCon">
+        <div class="title">
+            <span>订单信息</span>
+        </div>
+        <div class="det_con">
+            <span>订单号 : <em>JZ20160831153140651</em></span>
+            <span>下单时间 : <em>2016-08-31 15:31:40</em></span>
+            <span>订单状态 :<em>待自提</em></span>
+        </div>
+        <em class="line"></em>
+        <div class="det_con ch_delive">
+            <span>配送方式 :<em>自己提货</em></span>
+            <span class="address">自提信息 : <em>测试 350121199010100001</em></span>
+            <span class="address"><em>自提地址：</em>福建省福州市鼓楼区杨桥东路19好雅道巷水流湾院落海峡文交所1楼展厅</span>
+        </div>
+    </div>
+
+    <div class="paySuccessCon">
+        <div class="title">
+            <span>藏品信息</span>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <td>藏品快照</td>
+                <td>藏品名称</td>
+                <td>数量</td>
+                <td>价格</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img src="//test.jzfc.jizhenfang.com:8077/commodity/20160826/49bf4c4fd0c84b4e9699d4c0e9a7c908.jpg" alt=""></td>
+                <td>
+                    <p>B108094 高山太极石瑞兽方章</p>
+                    <div class="type">
+                        <span>颜色：黑色</span>
+                        <span>规格尺寸：5cm~6cm之间</span>
+                    </div>
+                </td>
+                <td>1</td>
+                <td>￥ 2,500</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+
+@@include('include/loadingFull.html')
+
+
+<!-- 获取优惠卷 -->
+<div class="getCoupon">
+    <div class="box">
+        <h2>恭喜您！</h2>
+        <h2>获得 1 张优惠劵</h2>
+        <div class="couponInfo">
+            <div class="left">
+                <em>￥</em><b>500</b>
+                <div class="t">
+                    <span>满5000可用</span>
+                </div>
+            </div>
+            <div class="right">
+                <h3>集珍坊优惠劵</h3>
+                <p>使用条件：满5000立减50</p>
+                <p>有限时间：2016-01-04 至 2016-01-15</p>
+                <i class="line"></i>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="">查看优惠劵</a>
+            <a href="" class="ml">使用优惠劵</a>
+        </div>
+    </div>
+    <i class="remove"></i>
+</div>
+
+</body>
+</html>

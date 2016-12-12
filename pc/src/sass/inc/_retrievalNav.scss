@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  检索导航
+
+*/
+
+
+.retrievalNav{
+  margin-top:15px;
+  background:#fff;
+  margin-bottom: 10px;
+  padding:0 0 20px 0;
+  overflow: hidden;
+  .box{
+    position: relative;
+    margin: 20px 40px 0 40px;
+    @include box-shadow(1px 2px 15px rgba(0,0,0,.2));
+  }
+  .item{
+    background: #f1f1f1;
+    border-bottom: 1px dotted #d5d5d5;
+    padding-right:3px;
+    position: relative;
+  }
+  .nnb{
+    border-bottom: none;
+  }
+  strong,ul{
+    min-height:40px;
+  }
+  strong,ul a{
+    font-size:14px;
+    color:#333;
+    display:inline-block;
+    line-height:40px;
+  }
+  strong{
+    width:140px;
+    text-indent:38px;
+    @extend %fl;
+  }
+  ul{
+    padding-right:90px;
+    background:#fff;
+    margin-left:140px;
+    overflow:hidden;
+    padding-left:35px;
+    li{
+      @extend %fl;
+      margin-right:45px;
+      white-space:nowrap;
+      word-break:keep-all;
+    }
+    b{
+      color:#999999;
+      font-weight:normal;
+    }
+  }
+  //选中颜色
+  .select a,a:hover,.select b,a:hover b{
+    color:$red-base;
+  }
+  //已选择
+  .have{
+    li{
+      margin-right:15px;
+      border:1px solid $red-base;
+      margin-top:4px;
+    }
+    li,a{
+      height:30px;
+      line-height:30px;
+    }
+    a{
+      display: block;
+      padding:0 27px 0 7px;
+      position:relative;
+    }
+    i{
+      position:absolute;
+      right:0;
+      top:0;
+      width:27px;
+      height:30px;
+      @extend %picComm;
+      background-position: 0 -107px;
+      cursor: pointer;
+    }
+  }
+  //
+  .letter{
+    li{
+      margin-right:0;
+    }
+    a{
+      padding-right:15px;
+    }
+  }
+  //清除所有
+  .all{
+    position:absolute;
+    right:20px;
+    top:14px;
+    font-size:14px;
+    &:hover{
+      color:$link-color;
+      i{
+        @include rotate(360deg);
+        @include transition(transform .5s);
+      }
+    }
+    i{
+      display: inline-block;
+      width:16px;
+      height:16px;
+      @extend %picComm;
+      background-position: -36px -112px;
+      vertical-align: top;
+      margin:3px 3px 0 0;
+    }
+  }
+  //艺术家显示更多
+  .more{
+    position: absolute;
+    right:25px;
+    top:0;
+    a{
+      display: block;
+      font-size:14px;
+      line-height:40px;
+      &:hover{
+        color:$link-color;
+      }
+    }
+  }
+  //更多选项
+  .retrievalNavMore{
+    $h:30px;
+    @include box-shadow(1px 2px 15px rgba(0,0,0,.2));
+    background: #fff;
+    height:$h;
+    line-height:$h;
+    width:80px;
+    margin:1px auto 0;
+    cursor: pointer;
+    text-align: center;
+    span,i{
+      display: inline-block;
+      vertical-align: top;
+    }
+    span{
+      height:$h;
+      line-height:$h;
+    }
+    i{
+      display: inline-block;
+      width: 10px;
+      height: 5px;
+      @extend %picComm;
+      margin:13px 0 0 5px;
+      background-position: -89px -13px;
+      @include rotate(0deg);
+      @include transition(transform .5s);
+      &.select{
+        @include rotate(180deg);
+      }
+    }
+  }
+}

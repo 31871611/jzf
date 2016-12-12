@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  珍石惠倒记时
+
+*/
+
+
+b{
+  font-size:24px;
+  font-weight: normal;
+  padding-right:15px;
+}
+i{
+  margin:0 5px;
+  display: inline-block;
+  width:30px;
+  height:30px;
+  line-height:30px;
+  @extend %picComm;
+  background-position: 0 -75px;
+  color:#fff;
+  text-align:center;
+  font-style: normal;
+}
+
+
+
+

@@ -1,0 +1,103 @@
+@@include('include/base.html',{
+"title":"资讯",
+"css":"article.css",
+"js":"base.js"
+})
+<body>
+@@include('include/header.html')
+
+
+@@include('include/artistHeader.html')
+
+
+@@include('include/articleNav.html')
+
+
+<div class="w1000 clearfix">
+    <div class="infoLeft">
+
+        <div class="articleTab">
+            <a href="">拍卖知识</a>
+            <a href="" class="select">拍卖结果</a>
+        </div>
+
+        <table class="auctionInfo">
+            <thead>
+                <tr>
+                    <td class="titleTD">拍卖名称</td>
+                    <td class="companyTD">拍卖公司</td>
+                    <td class="totalTD">物件总数</td>
+                    <td class="numTD">成交件数</td>
+                    <td class="moneyTD">成交金额</td>
+                    <td class="proportionTD">成交占比</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>福建东南2016春季拍卖会</td>
+                    <td>
+                        <b>福建东南拍卖有限公司</b>
+                        <em>2016-05-21</em>
+                    </td>
+                    <td>720</td>
+                    <td>612</td>
+                    <td>48,924,220(RMB)</td>
+                    <td>85%</td>
+                </tr>
+                <tr class="even">
+                    <td>福建东南2016春季拍卖会</td>
+                    <td>
+                        <b>福建东南拍卖有限公司</b>
+                        <em>2016-05-21</em>
+                    </td>
+                    <td>720</td>
+                    <td>612</td>
+                    <td>48,924,220(RMB)</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>
+                        <img src="http://www.ssswh.com/attachments/2016/05/37511_2016050117034118Wpa.thumb.jpg" alt="高山石古兽把玩件" data-bd-imgshare-binded="1">
+                    </td>
+                    <td>高山石古兽把玩件</td>
+                    <td>无底价</td>
+                    <td>6,900</td>
+                    <td><span class="red">成交</span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><span class="red">合计</span></td>
+                    <td>720</td>
+                    <td>613</td>
+                    <td>49,248,520</td>
+                    <td>85.14%</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+    </div>
+
+    <div class="infoRight">
+
+        @@include('include/newsClickList.html')
+
+
+        @@include('include/artistAd.html')
+
+        @@include('include/artistAd.html')
+
+
+    </div>
+
+</div>
+
+
+
+@@include('include/footer.html')
+
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+
+<div class="user w1200 clearfix">
+
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent">
+            <!-- 地址列表 -->
+            <div class="userAddressList">
+                <div class="userTabTitle">
+                    <span class="select">个人信息</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="defaultTd"><span>默认</span></td>
+                            <td class="receiptTd">收货人</td>
+                            <td class="regionTd">所在地区</td>
+                            <td class="addressTd">详细地址</td>
+                            <td class="codeTd">邮编</td>
+                            <td class="telTd">联系电话</td>
+                            <td class="operationTd">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="7" class="noAddress">暂无地址信息</td>
+                    </tr>
+                        <tr>
+                            <td class="defaultTd">
+                                <span class="cur">默认地址</span>
+                            </td>
+                            <td class="receiptTd">李某某</td>
+                            <td class="regionTd">福建省  福州市  鼓楼区</td>
+                            <td class="addressTd">杨桥东路XX号武夷大厦5层501室</td>
+                            <td class="codeTd">350000</td>
+                            <td class="telTd">
+                                <span>18088888888</span>
+                                <em>0591-56747897</em>
+                            </td>
+                            <td class="operationTd">
+                                <a href="" class="edit">编辑</a><a href="" class="remove">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="defaultTd">
+                                <span class="cur">设置为默认地址</span>
+                            </td>
+                            <td class="receiptTd">李某某</td>
+                            <td class="regionTd">福建省  福州市  鼓楼区</td>
+                            <td class="addressTd">杨桥东路XX号武夷大厦5层501室</td>
+                            <td class="codeTd">350000</td>
+                            <td class="telTd">
+                                <span>18088888888</span>
+                                <em>0591-56747897</em>
+                            </td>
+                            <td class="operationTd">
+                                <a href="" class="edit">编辑</a><a href="" class="remove">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 编辑地址 -->
+            <div class="userAddress">
+                <div class="userTabTitle">
+                    <span class="select">新增地址</span>
+                    <em class="req">“*”为必填选项</em>
+                </div>
+
+                <div class="edit">
+                    <div class="import"><label for=""><i class="req">*</i>收货人姓名</label><input type="text" placeholder="长度不超过25个字符" /></div>
+                    <div class="error">错误</div>
+                    <div class="import">
+                        <label for="" class="fl"><i class="req">*</i>所在地</label>
+                        <div class="dropDown fl">
+                            <span>选择省份</span>
+                            <i></i>
+                            <ul class="hide">
+                                <li>选择省份选择省份选择省份</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="dropDown fl">
+                            <span>选择城市</span>
+                            <i></i>
+                            <ul class="hide">
+                                <li>选择省份选择省份选择省份</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="dropDown fl">
+                            <span>选择县/区</span>
+                            <i></i>
+                            <ul class="hide">
+                                <li>选择省份选择省份选择省份</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="error">错误</div>
+                    <div class="import"><label for=""><i class="req">*</i>详细地址</label><input type="text" class="address" placeholder="请输入详细的收获地址" /></div>
+                    <div class="error">错误</div>
+                    <div class="import"><label for=""><i class="req">*</i>手机号码</label><input type="text" placeholder="请输入有效手机号码" /><b>或 固定电话</b><input type="text" class="area" placeholder="区号" /><b>-</b><input type="text" placeholder="号码" /></div>
+                    <div class="error">错误</div>
+                    <div class="import"><label for="">邮政编码</label><input type="text" placeholder="如果不清楚邮编可不填" /></div>
+                </div>
+                <div class="default">
+                    <label for="">
+                        <input type="checkbox" class="hide" />
+                        <i class="select"></i>设置为默认收货地址
+                    </label>
+                </div>
+                <div class="btn">
+                    <a href="">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+</body>
+</html>

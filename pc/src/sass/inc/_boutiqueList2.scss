@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  精品推荐列表版本2
+
+
+*/
+
+
+@mixin boutique($w:1200px){
+  @include bc-auto($w);
+  background: #fff;
+  .title{
+    $h:50px;
+    height:$h;
+    background: #e5e5e5;
+    margin-bottom: 1px;
+    h3{
+      height:$h;
+      line-height:$h;
+      font-size:14px;
+      padding-left:60px;
+    }
+    i{
+      display: none;
+    }
+  }
+  .content{
+    @if $w == 1200px {
+      height:318px;
+    } @else {
+      height:285px;
+    }
+    background: #fff;
+    border:1px solid #e5e5e5;
+    position: relative;
+    .box{
+      position: relative;
+      overflow: hidden;
+      @if $w == 1200px {
+        //1200
+        margin:40px 0 0 58px;
+        width:190px * 5 + 33 * 4;
+        height:245px;
+      } @else {
+        //1280
+        width: 1200px;
+        margin:10px 0 0 45px;
+        height:285px;
+      }
+    }
+    .left,.right{
+      position: absolute;
+      @if $w == 1200px {
+        top: 116px;
+      } @else {
+        top: 100px;
+      }
+      width:15px;
+      height:37px;
+      cursor: pointer;
+      @extend %picComm;
+    }
+    .left{
+      left:14px;
+      background-position: 0 -275px;
+    }
+    .right{
+      right:13px;
+      background-position: -36px -275px;
+    }
+    ul{
+      position: absolute;
+      left:0;
+      top:0;
+      width: 999em;
+    }
+    li{
+      margin-right: 33px;
+      @extend %fl;
+      @if $w == 1200px {
+        height:245px;
+        width:190px;
+      } @else {
+        height:285px;
+        width:211px;
+      }
+    }
+    img{
+      @if $w == 1200px {
+        width: 190px;
+        height: 190px;
+      } @else {
+        height:211px;
+        width:211px;
+      }
+      vertical-align: middle;
+    }
+    h3,b{
+      text-align: center;
+      margin:0 10px;
+      overflow: hidden;
+    }
+    h3{
+      margin-top:10px;
+      height:25px;
+      line-height:25px;
+    }
+    b{
+      display: block;
+      font-weight: normal;
+    }
+  }
+}
+
+
+
+
+
+

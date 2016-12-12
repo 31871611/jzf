@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+/*
+
+  东南拍卖
+
+*/
+
+body{
+  background: #fff;
+}
+
+
+.dnHeader{
+  $h:90px;
+  height: $h;
+  margin-bottom: 15px;
+  .w1200{
+    //height: $h;
+    position: relative;
+  }
+  .logo{
+    position: absolute;
+    left:0;
+    top:20px;
+  }
+  //导航
+  .nav{
+    padding-top:30px;
+
+    $h:45px;
+    $lineH:17px;
+    height:$h;
+    font-size:0;
+    text-align: center;
+    a,b{
+      display: inline-block;
+    }
+    a{
+      width:165px;
+      text-align: center;
+      height:$h;
+      line-height:$h;
+      font-size:16px;
+      color:$blue-base;
+      &:hover,&.select{
+        color:$red-base;
+      }
+    }
+    b{
+      vertical-align: top;
+      margin-top:14px;
+      height:$lineH;
+      font-weight: normal;
+      width:1px;
+      background: $blue-base;
+    }
+  }
+}
+
+
+
+
+.dnLiveTitle{
+  text-align: center;
+  font-size:28px;
+  padding:10px 0 10px;
+  background: $blue-base;
+  color: #fff;
+}
+
+
+
+/********************************************************************************/
+
+.dnLive{
+  margin-top:15px;
+  padding-bottom: 50px;
+  $img_W:465px;
+  .photo{
+    float: left;
+    width: $img_W;
+    height: $img_W + 25px + 10 + 40;
+    img{
+      width: $img_W;
+      height: $img_W;
+      vertical-align: middle;
+    }
+  }
+
+  .info{
+    $h:25px;
+    height: $h;
+    padding-left:10px;
+    margin-top: 5px;
+    //margin-bottom: 5px;
+    a{
+      height: $h;
+      line-height: $h;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+
+  .total{
+    font-size:14px;
+    height:40px;
+    padding-top:10px;
+    padding-left:10px;
+    span{
+      color: $red-base;
+      padding:0 5px;
+    }
+  }
+
+  .box{
+    margin-left:$img_W + 30px;
+    h2{
+      color: $red-base;
+      font-weight: bold;
+      font-size:24px;
+      height: 35px * 2;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+    p{
+      font-size:16px;
+      padding-bottom: 5px;
+    }
+    label{
+      display: inline-block;
+      margin-right: 10px;
+      color:$blue-base;
+    }
+    span{
+
+      &.num{
+        color: $red-base;
+      }
+    }
+    strong{
+      margin:15px 0 5px;
+      display: block;
+      font-size:18px;
+      color: $red-base;
+    }
+  }
+  table{
+    margin-top:15px;
+    width: 100%;
+    text-align: center;
+    font-size:14px;
+    thead{
+      tr{
+
+      }
+      th{
+        height: 25px;
+        line-height: 25px;
+        background: #eee;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    tbody{
+      tr{
+
+      }
+      td{
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+
+
+  .bottom{
+    clear: both;
+  }
+
+}
+
+
+.copyright{
+  clear: both;
+}

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+/*
+
+  分页
+
+*/
+
+
+.page{
+  font-family:tahoma,arial,\5b8b\4f53,sans-serif;
+  padding:20px 0;
+  text-align:center;
+  $h:25px;
+  height:$h;
+  font-size:0;
+  a,span,input{
+    margin-left:8px;
+    display:inline-block;
+    vertical-align:top;
+  }
+  a,input{
+    font-size:14px;
+    border:1px solid #ccc;
+    height:$h - 2;
+    line-height:$h - 2;
+    background: #fff;
+  }
+  a{
+    padding:0 8px;
+    //选中
+    &.select,&:hover{
+      color:$red-base;
+      border-color:$red-base;
+    }
+    //不可选
+    &.off,&.select{
+      cursor: default;
+    }
+    //没有上一页或下一页
+    &.off{
+      background: #e5e5e5;
+      color:#fff;
+      &:hover{
+        border-color: #ccc;
+      }
+    }
+    //上一页
+    //.prev{
+
+    //}
+    //下一页
+    //.next{
+    //background:$red-base;
+    //border-color:$red-base;
+    //color:#fff;
+    //&:hover{
+    //  background:#d2414d;
+    //  border-color:#d2414d;
+    //}
+    //}
+  }
+  .btn{
+    cursor: pointer;
+    width:44px - 2;
+    padding:0;
+  }
+  input.btn{
+    width:44px;
+    height:$h;
+    line-height:$h;
+    &:hover{
+      border-color: $red-base;
+    }
+  }
+  span{
+    height:$h;
+    line-height:$h;
+    font-size:12px;
+  }
+  input.text{
+    width:41px - 2;
+    text-align:center;
+  }
+  .more{
+    color:#666;
+  }
+}

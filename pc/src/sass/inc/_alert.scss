@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  弹窗头部
+
+*/
+
+
+@mixin alert($w:404px){
+  z-index: 1000;
+  position: fixed;
+  left:0;
+  top:0;
+  width:$w - 2;
+  border: 1px solid #999;
+  background: #fff;
+  @include box-shadow(1px 4px 5px rgba(160,131,74,.66));
+}
+
+@mixin alertTitle{
+  .title{
+    $h:38px;
+    height: $h;
+    border-bottom: 1px solid #999;
+    background: $blue-base;
+    h2{
+      @extend %fl;
+      height: $h;
+      line-height: $h;
+      color:#fff;
+      font-size:14px;
+      padding-left:15px;
+    }
+    .redirect,.exit{
+      @extend %fr;
+      margin-top:10px;
+      margin-right:15px;
+      width:20px;
+      height:20px;
+      @extend %picComm;
+      background-position: 0 -426px;
+    }
+  }
+}
+
+
+@mixin alertBtn(){
+  .btn{
+    margin-top:35px;
+    $h:40px;
+    height: $h;
+    text-align:center;
+    font-size: 0;
+    padding-bottom: 20px;
+    a{
+      padding:0 30px;
+      color:#fff;
+      display:inline-block;
+      width: auto;
+      height:$h;
+      line-height:$h;
+      text-align:center;
+      font-size:18px;
+      @include border-radius(4px);
+      background: $blue-base;
+      &:hover{
+        background: $blue-hover-sub;
+      }
+    }
+    .step{
+      margin-left:60px;
+    }
+  }
+}
+
+
+//弹窗内容区
+@mixin alertContent(){
+  //.step{
+    //margin-left:65px;
+    //margin-right: 60px;
+  //}
+
+  //icon提示操作图标
+  .infoIco{
+    margin:24px 0 30px;
+    padding:0 25px;
+    //height:40px;
+    i,b{
+      vertical-align: top;
+      display:inline-block;
+    }
+    i{
+      float:left;
+      width:40px;
+      height:40px;
+      @include pic("../images/boxAlert.png");
+      background-position: 0px -50px;
+    }
+    //成功
+    .ico-success{
+      background-position: 0px -50px;
+    }
+    //警告
+    .ico-warning{
+      background-position: 0 0;
+    }
+    //通知
+    .ico-info{
+      background-position: 0px -150px;
+    }
+    //错误
+    .ico-error{
+      background-position: 0px -100px;
+    }
+    b{
+      display: block;
+      //height:40px;
+      line-height:25px;
+      font-size:14px;
+      margin-left:55px;
+      font-weight: normal;
+    }
+  }
+
+  //订单详情 ul.orderDetails>li>span+b
+  .orderDetails{
+    $h:25px;
+    margin:30px 50px 40px 50px;
+    li{
+      height:$h;
+      font-size:14px;
+    }
+    span,b{
+      height:$h;
+      line-height:$h;
+    }
+    span{
+      @extend %fl;
+    }
+    b{
+      font-weight: normal;
+      @extend %fr;
+    }
+  }
+
+}
+
+
+

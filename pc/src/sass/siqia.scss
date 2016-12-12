@@ -1,0 +1,296 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+//私洽
+.siQia{
+  //大背景
+  background: url("../images/siqiabg.jpg") center top #f3f3f3 no-repeat;
+  min-height:830px;
+  padding-top:535px;
+}
+
+.siQia2{
+  //大背景
+  background: url("../images/siqiabg2.jpg") center top #f3f3f3 no-repeat;
+  min-height:830px;
+  padding-top:535px;
+}
+
+
+//一元购
+.yiHome{
+  //大背景
+  background: url("../images/yiBg.jpg") center top #f3f3f3 no-repeat;
+  min-height:830px;
+  padding-top:475px;
+}
+
+
+//藏品排序，默认|价格
+@import "inc/shopSort";
+.shopSort {
+  margin-top: 0;
+}
+
+
+//一元购滚动信息区
+.yiContent{
+  height: 138px;
+  position: relative;
+  .winningList{
+    $h:90px;
+    position: absolute;
+    left:463px;
+    top:0;
+    width: 460px;
+    height: $h;
+    overflow: hidden;
+    ul{
+
+    }
+    li{
+      height: $h;
+      line-height: $h;
+      font-size:18px;
+    }
+    b{
+      font-weight: normal;
+      color: $red-base;
+    }
+  }
+}
+
+
+//图标
+.iconList{
+  position: absolute;
+  right: -90px;
+  top:0;
+  $w:80px;
+  a{
+    display: block;
+    width: $w;
+    height: $w - 4;
+    padding-top:4px;
+    background: #fff;
+    margin-bottom: 2px;
+    text-align: center;
+    font-size:14px;
+  }
+  i{
+    width: 46px;
+    height: 46px;
+    display: block;
+    margin:0 auto 8px;
+    @extend %picComm;
+    &.all{
+      background-position: -187px -514px;
+    }
+    &.help{
+      background-position: -187px -565px;
+    }
+  }
+
+
+
+}
+
+.siQiaContent{
+  //overflow: hidden;
+  padding-top:20px;
+  background:#fff;
+  margin-bottom: 10px;
+  position: relative;
+  //列表
+  ul{
+    $w:260px;
+    padding:20px 0 0 40px;
+    li{
+      @extend %fl;
+      border:1px solid #cccccc;
+      width:578px - 4 - 4;
+      height:268px - 4 - 4;
+      padding:4px;
+      margin-right:40px;
+      margin-bottom:40px;
+      &:hover{
+        border-color:$red-base;
+      }
+    }
+    //左边图片
+    .photo{
+      @extend %fl;
+      width:$w;
+      height:$w;
+      position: relative;
+      img{
+        width:$w;
+        height:$w;
+        vertical-align: middle;
+      }
+    }
+    /************************************************************/
+    //已售、爱心、360图标
+    @import "inc/productsListIcon";
+    /************************************************************/
+    //右边内容
+    .content{
+      height:$w;
+      margin-left:$w + 20;
+      margin-right: 20px;
+    }
+    h3{
+      height:32px * 2;
+      line-height: 32px;
+      //80-64=16/2=8
+      margin: 8px 0;
+      font-size:16px;
+      color:#333;
+    }
+    //价格
+    .price{
+      height:66px;
+      line-height:66px;
+      background: #f9f9f9;
+      font-size:14px;
+      color:#333;
+      padding-left:5px;
+      margin-bottom: 20px;
+      strong{
+        font-size:18px;
+        color:$red-base;
+      }
+    }
+    .type{
+
+    }
+    p{
+      font-size:14px;
+      color:#666;
+      height:28px;
+      line-height:28px;
+    }
+    //一元购.进度条
+    .scheduleBox{
+      @import "inc/yiSchedule";
+      @include yiSchedule();
+      margin:45px 0 95px;
+    }
+    //一元购.立即参与
+    .partake{
+      display: block;
+      margin:0 auto;
+      @include border-radius(3px);
+      color:#fff;
+      text-align: center;
+      font-size:14px;
+      width:101px;
+      height: 27px;
+      line-height: 27px;
+      background: $red-base;
+      &:hover{
+        background: $red-hover-base;
+      }
+    }
+  }
+}
+
+
+//精品推荐
+.boutique{
+  @import "inc/boutiqueList2";
+  @include boutique($w:1280px);
+  @import "inc/boutiqueTitle";
+  .title{
+    background: #fff;
+    i{
+      display: block;
+    }
+  }
+  .content{
+    border: 0;
+  }
+}
+
+
+//全部中奖弹窗
+.yiAllWinningAlert{
+  @import "inc/alert";
+  @include alert($w:530px);
+  @include alertTitle();
+  ul{
+    $h:40px;
+    margin:0 30px;
+    padding-top:10px;
+    li{
+      height: $h;
+      padding:5px 0;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+    p{
+      font-size:14px;
+      height: $h;
+      padding-right: 150px;
+    }
+    b{
+      font-weight: normal;
+      color: $red-base;
+    }
+    .right{
+      position: absolute;
+      right: 0;
+      top:5px;
+    }
+    span{
+      display: block;
+      height: $h / 2;
+      line-height: $h / 2;
+    }
+  }
+}
+
+//帮助中心
+.yiHelpAlert{
+  background: #fff;
+  @import "inc/alert";
+  @include alert($w:650px);
+  @include alertTitle();
+  //@include animation(SmallTolarge 1s);
+  .help{
+    padding:0 15px 15px 15px;
+    height: 400px;
+    overflow: auto;
+    h2{
+      font-size:14px;
+      margin:15px 0 0 0;
+    }
+    p{
+      line-height: 25px;
+    }
+  }
+}
+
+
+
+//放大关闭
+//@include keyframes(SmallTolarge){
+//  0%{
+//    @include scale(.3);
+//    @include opacity(50);
+//  }
+//  70%{
+//    @include scale(1.15);
+//    @include opacity(80);
+//  }
+//  95%{
+//    @include scale(1.1);
+//    @include opacity(80);
+//  }
+//  100%{
+//    @include scale(1);
+//    @include opacity(100);
+//  }
+//}

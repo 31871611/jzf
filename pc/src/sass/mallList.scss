@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+/*
+
+  藏品列表页
+
+  没有新品倒记时的需要在藏品排序下mb40
+
+*/
+
+
+//专场切换
+@import "inc/productsListTab";
+
+
+//列表内容
+.mallListContent{
+  overflow:hidden;
+  background:#fff;
+  //padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+
+//检索导航
+@import "inc/retrievalNav";
+
+
+//新品、往期切换
+@import "inc/showTab";
+.showTab{
+  border-bottom: 0;
+}
+
+
+//藏品排序，默认|价格
+@import "inc/shopSort";
+
+
+//倒记时
+@import "inc/productsListEndTime";
+
+//藏品列表
+@import "inc/productsList";
+
+
+
+
+//精品推荐
+.boutique{
+  @import "inc/boutiqueList2";
+  @include boutique($w:1280px);
+  @import "inc/boutiqueTitle";
+  .title{
+    background: #fff;
+    i{
+      display: block;
+    }
+  }
+  .content{
+    border: 0;
+  }
+}

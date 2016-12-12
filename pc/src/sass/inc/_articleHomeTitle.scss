@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "../comm/_common";
+@import "../comm/_css3";
+
+
+/*
+
+  资讯标题
+
+*/
+
+
+@mixin homeTitle(){
+  $h:37px;
+  height:$h;
+  border-top:1px solid #999;
+  a{
+    display: inline-block;
+    height:$h;
+    line-height:$h;
+    padding:0 16px 0 16px;
+    font-size:18px;
+    &.select{
+      color:$blue-base;
+      border-top:2px solid $blue-base;
+      position: relative;
+      top:-1px;
+    }
+  }
+}

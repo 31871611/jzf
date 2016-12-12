@@ -1,0 +1,274 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+
+/*
+
+  支付成功
+
+*/
+
+
+.paySuccess{
+
+}
+
+.paySuccessTitle{
+  height:130px;
+  padding:60px 0 0;
+  text-align: center;
+  i{
+    display:inline-block;
+    vertical-align:middle;
+    width:92px;
+    height:71px;
+    @extend %picComm;
+    background-position:-141px -55px;
+    &.error{
+      width:72px;
+      height:71px;
+      background-position:-161px -140px;
+    }
+  }
+  span{
+    font-size:32px;
+    font-weight:bold;
+    color:$red-base;
+    margin-left:55px;
+    &.error{
+      color:#999;
+    }
+  }
+}
+
+
+.paySuccessCon{
+  position:relative;
+  border:1px solid #e5e5e5;
+  background: #fff;
+  margin-bottom: 30px;
+  .title{
+    height: 50px;
+    background: #e5e5e5;
+    margin-bottom: 1px;
+    span{
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      padding-left: 60px;
+    }
+  }
+  .det_con{
+    margin:20px 60px;
+    span{
+      width:300px;
+      vertical-align:top;
+      font-size:14px;
+      display:inline-block;
+      &.info{
+        width:100%;
+      }
+    }
+  }
+  .line{
+    display:block;
+    height: 1px;
+    border-bottom: 1px dashed #666;
+    margin: 0 60px;
+  }
+  .ch_delive{
+    margin-bottom: 10px;
+    //&.address {
+    //  width: 100%;
+    //  display: block;
+    //}
+  }
+
+  table{
+    width: 100%;
+    text-align: center;
+    thead {
+      font-size: 18px;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    tbody {
+      td{
+        height: 140px;
+      }
+      img {
+        width: 76px;
+        height: 76px;
+        vertical-align: middle;
+      }
+      p{
+        font-size:14px;
+        margin-bottom: 5px;
+      }
+      p,.type{
+        width:250px;
+        margin:0 auto;
+        text-align: left;
+      }
+    }
+  }
+  .type{
+    span{
+      display: block;
+
+    }
+  }
+}
+
+
+
+.paySuccessBtn{
+  $h:35px;
+  text-align: right;
+  font-size: 0;
+  height: $h;
+  margin-bottom: 20px;
+  a{
+    display: inline-block;
+    margin-left:20px;
+    font-size:14px;
+    padding:0 20px;
+    height: $h;
+    line-height: $h;
+    color: #fff;
+    background: $blue-base;
+    &:hover{background: $blue-hover-base}
+  }
+}
+
+
+//精品推荐
+.boutique{
+  @import "inc/boutiqueList2";
+  @include boutique();
+}
+
+
+//获取优惠卷弹窗
+.getCoupon{
+  position: fixed;
+  left:0;
+  top:0;
+  width:376px;
+  $h:348px;
+  $btnH:35px;
+  height: $h;
+  .box{
+    height: $h - 20;
+    padding-top:20px;
+    background: url("../images/getCouponBg.png") no-repeat;
+  }
+  h2{
+    text-align: center;
+    font-size:24px;
+    color: #fff;
+    font-weight: bold;
+  }
+  //优惠卷
+  .couponInfo{
+    $h:91px;
+    margin:60px auto 33px;
+    width:320px;
+    height: $h;
+    background: #fff;
+    @include box-shadow(1px 1px 2px rgba(0,0,0,.8));
+    .left{
+      width:95px;
+      height: $h - 15;
+      padding-top:15px;
+      float: left;
+      background: #c7000a;
+      color:#fff;
+      text-align: center;
+      em{
+        font-size:18px;
+      }
+      b{
+        font-size:28px;
+      }
+      .t{
+        text-align: center;
+      }
+      span{
+        height: 20px;
+        line-height: 20px;
+        background: #fff;
+        display: inline-block;
+        font-size:12px;
+        color: #c7000a;
+        padding:0 5px;
+      }
+    }
+    .right{
+      height: $h;
+      margin-left:95px;
+      position: relative;
+      h3{
+        font-size:14px;
+        margin-left:8px;
+        padding:10px 0 10px;
+      }
+      p{
+        font-size:12px;
+        color: #999;
+        margin-left:8px;
+        margin-bottom: 8px;
+      }
+      i{
+        display: inline-block;
+        &.line{
+          position: absolute;
+          left:-5px;
+          top:0;
+          width:10px;
+          height: $h;
+          @extend %picComm;
+          background-position: -198px -373px;
+        }
+      }
+    }
+  }
+  .btn{
+    height: $btnH;
+    font-size: 0;
+    text-align: center;
+    a{
+      display: inline-block;
+      width: 126px - 2;
+      text-align: center;
+      font-size:18px;
+      color:#c91421;
+      height: $btnH - 2;
+      line-height: $btnH - 2;
+      border:1px solid #c91421;
+      background: #fff;
+      @include border-radius(4px);
+      &:hover{
+        color:#fff;
+        background: #c91421;
+      }
+      &.ml{
+        margin-left:38px;
+      }
+    }
+  }
+  .remove{
+    cursor: pointer;
+    position: absolute;
+    right:0;
+    top:0;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+
+

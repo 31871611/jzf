@@ -1,0 +1,160 @@
+@@include('include/base.html',{
+"title":"用户中心",
+"css":"user.css",
+"js":"base.js"
+})
+<body>
+
+@@include('include/header.html')
+
+@@include('include/userNav.html')
+
+
+<div class="user w1200 clearfix">
+    @@include('include/userSubNav.html')
+
+    <div class="userRight">
+
+        @@include('include/userInfo.html')
+
+        <!-- 个人信息 -->
+        <div class="userContent userRecharge">
+            <!-- 充值 -->
+            <div class="userTabTitle">
+                <span class="select">充值</span>
+            </div>
+
+            <div class="import">
+                <label>充值账号：</label><span>13960512836</span>
+            </div>
+            <div class="import">
+                <label>充值金额：</label><input type="text" />
+            </div>
+            <div class="error">
+                错误
+            </div>
+            <div class="btn">
+                <a href="">充值</a>
+            </div>
+
+            <ul class="remind">
+                <li>温馨提醒：</li>
+                <li>1、充值成功后，余额可能存在延迟现象，一般1到5分钟内到账。如有问题，请咨询客服；</li>
+                <li>2、充值金额输入值必须是不小于10且不大于100万的正整数；</li>
+                <li>3、您有多种方式进行充值，如遇到任何支付问题可以查看在线支付帮助；</li>
+                <li>4、充值完成后，您可以进入账户充值记录页面进行查看余额充值状态。</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 选择充值银行卡页面 -->
+        <div class="userContent userRecharge mb20">
+
+            <div class="userTabTitle">
+                <span class="select">充值信息</span>
+            </div>
+            <ul class="rechargeInfo">
+                <li>
+                    <label>充值号：</label><span>13960512836</span>
+                </li>
+                <li>
+                    <label>充值日期：</label><span>13960512836</span>
+                </li>
+                <li>
+                    <label>充值金额：</label><span class="red">13960512836</span>
+                </li>
+                <li>
+                    <label>备注：</label><span>13960512836</span>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="userContent userRecharge">
+
+            <div class="userTabTitle">
+                <span class="select">选择充值方式</span>
+            </div>
+
+            <div class="payContent">
+                <!--<div class="type">-->
+                    <!--<strong>储蓄卡</strong>-->
+                <!--</div>-->
+                <div class="con">
+                    <ul class="rechargeBankList clearfix">
+                        <li><a class="select" href="javascript:;">
+                            <img alt="" src="http://njizhenfang.jizhenfang.com/category/343b7c8432524df59d82bbe43cde7772.png">工商银行
+                            <i></i>
+                        </a></li>
+                        <li><a href="javascript:;">
+                            <img alt="" src="http://njizhenfang.jizhenfang.com/category/be732c5117ca4638a699f74162e66693.png">光大银行
+                            <i></i>
+                        </a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/86edf0de698046ee9dbdffefb4f2b021.png">华夏银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/716d53b9d5b84d92be23c1dad4c53262.png">建设银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/59a4c588d7074a4f88833a1c78203235.png">交通银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/4bec5ef9fbf5456e865c754ccf6d391d.png">民生银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/b4a97c5d63a44698ad85b9aa5833fa0f.png">农业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/45cb07c080da40e297a925a182465f94.png">平安银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/716765d358db4a66a1f31cf2ac56690f.png">浦发银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/cfbd3b5626604c6c95a9d13b3398459e.png">上海银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/0169ae0e76f747ccbf11db71e88adeea.png">兴业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/106ecf93e30c4ae2bd1bbed7667c4675.png">中国银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/10dbaad838ae4ba291513a509d8b1731.png">中国邮政储蓄银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/be61b7303ba84686a4a758cc6e4fa459.png">中信银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/12e8ea433f4648eeab14ec163c9e8a6c.png">广东农村信用社<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/79819901be6d4fa8b0bf9ca1c23fcc00.png">杭州银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/71ffc7afc76a4591bce2e2e26c25a065.png">江苏银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/361528841dcf45e38f29295ba0f290f8.png">深圳农村商业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/85d177c61a2b47178ccabfe5bfe4c8f8.png">渤海银行<i></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="payContent">
+                <!--<div class="type">-->
+                    <!--<strong>信用卡</strong>-->
+                <!--</div>-->
+                <div class="con">
+                    <ul class="rechargeBankList clearfix">
+                        <li><a href="javascript:;">
+                            <img alt="" src="http://njizhenfang.jizhenfang.com/category/343b7c8432524df59d82bbe43cde7772.png">工商银行
+                            <i></i>
+                        </a></li>
+                        <li><a href="javascript:;">
+                            <img alt="" src="http://njizhenfang.jizhenfang.com/category/be732c5117ca4638a699f74162e66693.png">光大银行
+                            <i></i>
+                        </a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/86edf0de698046ee9dbdffefb4f2b021.png">华夏银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/716d53b9d5b84d92be23c1dad4c53262.png">建设银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/59a4c588d7074a4f88833a1c78203235.png">交通银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/4bec5ef9fbf5456e865c754ccf6d391d.png">民生银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/b4a97c5d63a44698ad85b9aa5833fa0f.png">农业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/45cb07c080da40e297a925a182465f94.png">平安银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/716765d358db4a66a1f31cf2ac56690f.png">浦发银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/cfbd3b5626604c6c95a9d13b3398459e.png">上海银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/0169ae0e76f747ccbf11db71e88adeea.png">兴业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/106ecf93e30c4ae2bd1bbed7667c4675.png">中国银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/10dbaad838ae4ba291513a509d8b1731.png">中国邮政储蓄银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/be61b7303ba84686a4a758cc6e4fa459.png">中信银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/12e8ea433f4648eeab14ec163c9e8a6c.png">广东农村信用社<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/79819901be6d4fa8b0bf9ca1c23fcc00.png">杭州银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/71ffc7afc76a4591bce2e2e26c25a065.png">江苏银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/361528841dcf45e38f29295ba0f290f8.png">深圳农村商业银行<i></i></a></li>
+                        <li><a href="javascript:;"><img alt="" src="http://njizhenfang.jizhenfang.com/category/85d177c61a2b47178ccabfe5bfe4c8f8.png">渤海银行<i></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@@include('include/boutique.html')
+
+@@include('include/footer.html')
+
+</body>
+</html>

@@ -1,0 +1,1023 @@
+@charset "UTF-8";
+@import "comm/_common";
+@import "comm/_css3";
+
+/*
+
+  详情页
+
+  商品详情
+  漆器详情
+
+*/
+
+
+//藏品信息
+.detailShow{
+  @extend %clearfix;
+  //height:570px - 40;
+  background:#fff;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding:40px 0 40px 0;
+}
+
+//藏品图片
+.detailPhoto{
+  position: relative;
+  width:615px;
+  height:490px;
+  margin-left:40px;
+  margin-right:30px;
+  @extend %fl;
+  .photoList{
+    $imgW:115px;
+    @extend %fl;
+    height:490px;
+    width:115px;
+    margin-right:10px;
+    overflow: hidden;
+    li{
+      width:$imgW;
+      height:$imgW;
+      margin-bottom: 10px;
+      cursor: pointer;
+      &:hover,&.select{
+        position: relative;
+        i{
+          position: absolute;
+          left:0;
+          top:0;
+          border:2px solid $red-base;
+          width:$imgW - 4;
+          height:$imgW - 4;
+        }
+      }
+    }
+    img{
+      width:$imgW;
+      height:$imgW;
+      vertical-align: middle;
+    }
+  }
+  .photo{
+    @extend %fl;
+    width:490px;
+    height:490px;
+    position:relative;
+    overflow: hidden;
+    z-index: 2;
+    img{
+      width:490px;
+      height:490px;
+      vertical-align: middle;
+    }
+  }
+  //播放图标
+  .iconDetailVideo{
+    z-index: 99;
+    width:60px;
+    height: 60px;
+    position: absolute;
+    left:135px;
+    bottom:10px;
+    @extend %picComm;
+    background-position: -103px -488px;
+  }
+}
+
+//藏品信息
+.detailInfo{
+  @extend %fl;
+  width:500px;
+  //height:490px;
+  h1{
+    width:403px;
+    margin-bottom: 94px - 70;
+    height:70px;
+    line-height:35px;
+    font-size:24px;
+    overflow: hidden;
+    &.yiTitle{
+      width: 100%;
+      //margin-bottom: 10px;
+    }
+  }
+  //价格
+  .price{
+    width:403px - 7;
+    height:66px;
+    line-height:66px;
+    background: #f9f9f9;
+    font-size:14px;
+    color:#666;
+    padding-left:7px;
+    margin-bottom: 20px;
+    strong{
+      margin-left:23px;
+      font-size:24px;
+      color:$red-base;
+    }
+  }
+  //类型.寿山石
+  .type{
+    width: 400px;
+    background:#f9f9f9;
+    font-size:0;
+    height:80px - 3;
+    padding-top: 3px;
+    padding-right: 3px;
+    .list{
+      height:36px;
+      margin-bottom: 3px;
+    }
+    span,b{
+      display: inline-block;
+      height:36px;
+      line-height:36px;
+      font-size:14px;
+      color:#666;
+      vertical-align: middle;
+    }
+    span{
+      width:53px - 7;
+      padding-left:7px;
+    }
+    b{
+      width:145px - 35;
+      padding-left:35px;
+      background:#fff;
+      font-weight: normal;
+      &.w{
+        width:344px - 35;
+        @extend %ellipsis;
+        text-overflow:clip;
+      }
+    }
+  }
+  //详情页向下49
+  .mb49{
+    margin-bottom: 49px;
+  }
+  //类型.漆器
+  .selectType{
+    font-size:0;
+    $h:26px;
+    .list{
+      position: relative;
+      padding-left:80px;
+      padding-bottom: 10px;
+    }
+    span,a{
+      display: inline-block;
+      font-size:14px;
+      color:#666;
+    }
+    span{
+      position: absolute;
+      left:0;
+      top:0;
+      height:$h;
+      line-height:$h;
+    }
+    a{
+      margin:0 10px 10px 0;
+      height:$h - 2;
+      line-height:$h - 2;
+      border:1px solid #e5e5e5;
+      padding:0 6px;
+      &:hover,&.select{
+        border-color:$red-base;
+      }
+      //无货
+      &.no{
+        color:#ccc;
+        &:hover{
+          border-color:#e5e5e5;
+        }
+      }
+    }
+  }
+  //数量加减
+  .number{
+    $h:30px;
+    height:$h;
+    padding-left:5px;
+    padding-bottom:10px;
+    font-size:0;
+    i,span,input,b{
+      display: inline-block;
+      vertical-align: top;
+    }
+    span,b{
+      height:$h;
+      line-height:$h;
+      font-size:14px;
+    }
+    span{
+      margin-right:48px;
+    }
+    i{
+      width:29px;
+      height:28px;
+      border:1px solid #cccccd;
+      background-color:#ededee;
+      @extend %picComm;
+      cursor: pointer;
+      //不能选择
+      &.no{
+        background-color:#ddd;
+      }
+      &.reduce{
+        background-position: -74px -136px;
+      }
+      &.add{
+        background-position: -74px -169px;
+      }
+    }
+    input{
+      width:48px;
+      height:28px;
+      line-height:28px;
+      border:0;
+      border-top:1px solid #cccccd;
+      border-bottom:1px solid #cccccd;
+      font-size:20px;
+      text-align:center;
+      color:#333;
+    }
+    b{
+      font-weight: normal;
+      margin-left:10px;
+    }
+  }
+  //倒记时
+  .zhenEndTime{
+    @import "inc/zhenEndTime";
+    margin:10px 0 20px 0;
+    font-size:14px;
+    i{
+      font-size:24px;
+    }
+  }
+  //提示文字
+  .text{
+    font-size:14px;
+    padding-left:5px;
+    //margin-top:18px;
+  }
+  //洽购热线
+  .tel{
+    width:403px - 31;
+    background:#f9f9f9;
+    height:50px;
+    line-height:50px;
+    //padding:14px 0 12px 0;
+    font-size:24px;
+    padding-left:31px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+    i{
+      margin:14px 4px 0 0;
+      display: inline-block;
+      width:24px;
+      height:24px;
+      @extend %picComm;
+      background-position: -77px -77px;
+      vertical-align: top;
+    }
+  }
+  //购买按钮等
+  .btn{
+    $h:50px;
+    $w:190px;
+    height:50px;
+    font-size:0;
+    margin-bottom: 24px;
+    margin-top: 10px;
+    a{
+      display: inline-block;
+      @include border-radius(2px);
+      text-align:center;
+      font-size:24px;
+      width:$w;
+      height:$h;
+      line-height:$h;
+      //立即购买
+      &.buy{
+        background: $red-base;
+        color:#fff;
+        margin-right:18px;
+        &:hover{
+          background: $red-hover-base;
+        }
+      }
+      //加入购物车
+      &.add{
+        width:$w - 4;
+        height:$h - 4;
+        line-height:$h - 4;
+        border:2px solid $red-base;
+        color:$red-base;
+        &:hover{
+          background: $red-base;
+          color: #fff;
+        }
+      }
+      //马上抢购。灰色
+      &.go{
+        background:#cccccc;
+        color:#fff;
+        margin-right:18px;
+      }
+      //不能购买的加入购物车。灰色
+      &.noAdd{
+        width:$w - 4;
+        height:$h - 4;
+        line-height:$h - 4;
+        border:2px solid #ccc;
+        color:#ccc;
+      }
+    }
+
+  }
+  //分享
+  .shareBox{
+    height:20px;
+    padding-left:5px;
+    a,i{
+      display: inline-block;
+    }
+    a{
+      height:20px;
+      line-height:20px;
+      &:hover{
+        color: $red-base;
+      }
+      //分享
+      &.share{
+        @extend %fl;
+        i{
+          background-position: 0 -144px;
+        }
+      }
+      //关注
+      &.follow{
+        margin-left:30px;
+        @extend %fl;
+        i{
+          background-position: -85px -24px;
+          &.select{
+            background-position: -64px -50px;
+          }
+        }
+      }
+    }
+    i{
+      vertical-align: top;
+      margin-top:4px;
+      width:16px;
+      height:14px;
+      @extend %picComm;
+      margin-right:10px;
+    }
+
+  }
+  //分享图标按钮
+  @import "inc/bdshare";
+  /**************************************/
+  //期号
+  .yiTitleNum{
+    font-size:16px;
+    display: block;
+    color:#666;
+  }
+  //蓝色提示文字
+  .blue{
+    color:#3b95b9;
+  }
+  //一元购.进度条
+  .scheduleBox{
+    //overflow: hidden;
+    @import "inc/yiSchedule";
+    @include yiSchedule($h:9px);
+    margin-top: 10px;
+    .total,.surplus{
+      top:15px;
+      font-size:16px;
+    }
+  }
+  //正在揭晓
+  .now{
+    margin-top: 55px;
+    //margin-bottom: 20px;
+    height: 150px;
+    $h:48px;
+    b{
+      text-align: center;
+      font-size:28px;
+      color:$red-base;
+      display: block;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    .date{
+      font-size:0;
+      text-align: center;
+      height: $h;
+    }
+    span{
+      margin-right: 9px;
+      display: inline-block;
+      width: 35px;
+      text-align: center;
+      height: $h;
+      line-height: $h;
+      font-size:36px;
+      font-family: Arial;
+      color:#fff;
+      @extend %picComm;
+      background-position: -109px -438px;
+      vertical-align: top;
+    }
+    em{
+      margin-right: 9px;
+      display: inline-block;
+      width: 6px;
+      height: $h;
+      @extend %picComm;
+      background-position: -151px -438px;
+      vertical-align: top;
+    }
+  }
+
+  //幸运号码
+  .lucky{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    height: 137px;
+    background: #f2f2f2;
+    position: relative;
+    $h:34px;
+    .title{
+      height:$h;
+      background: $red-base;
+      color:#fff;
+      margin-bottom: 15px;
+    }
+    span{
+      font-size:16px;
+      position: absolute;
+      left:34px;
+      top:0;
+      height:$h;
+      line-height:$h;
+    }
+    strong{
+      font-size:24px;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      height:$h;
+      line-height:$h;
+    }
+    p{
+      font-size:16px;
+      text-align: center;
+      color:#686868;
+      height:25px;
+    }
+    b{
+      color:$red-base;
+      font-weight: normal;
+    }
+  }
+  .mt55{
+    margin-top:55px;
+  }
+  //共参与
+  .totalPartake{
+    $h:105px;
+    margin-bottom: 10px;
+    height: $h;
+    background: #f9f9f9;
+    font-size:16px;
+    p{
+      &.info{
+        text-align: center;
+        line-height: $h;
+      }
+      &.infoT{
+        text-align: center;
+      }
+    }
+    strong{
+      font-weight: bold;
+      font-size:18px;
+      display: block;
+      text-align: center;
+      color:$red-base;
+      padding:20px 0 15px 0;
+    }
+    b{
+      font-weight: normal;
+      color:$red-base;
+    }
+    a{
+      padding:0 5px;
+      color:#3b95b9;
+    }
+  }
+  //另一件产品标题
+  .yiSubTitle{
+    border-top:1px solid #e5e5e5;
+    $h:28px;
+    height: $h;
+    font-size:16px;
+    padding:10px 0 15px 0;
+    h3{
+      height: $h;
+      line-height: $h;
+      float: left;
+      margin-right: 5px;
+    }
+    b{
+      height: $h;
+      line-height: $h;
+      float: left;
+      color: $red-base;
+      font-weight: normal;
+    }
+    a{
+      float: right;
+      @include border-radius(2px);
+      display: block;
+      width:108px;
+      text-align: center;
+      height: $h;
+      line-height: $h;
+      color: #fff;
+      background: $red-base;
+      &:hover{
+        background: $red-hover-base;
+      }
+    }
+  }
+  /**************************************/
+}
+
+
+
+
+
+//精品推荐
+.detailBoutique,.yiDetailBoutique{
+  @extend %fl;
+  width:260px - 40 - 40;
+  padding:20px 40px 0 40px;
+  background:#fff;
+  .title{
+    position: relative;
+    h2{
+      position: relative;
+      background:#fff;
+      width:80px;
+      margin:0 auto;
+      text-align:center;
+      font-size:14px;
+    }
+    i{
+      position: absolute;
+      left:0;
+      top:50%;
+      width:100%;
+      height:1px;
+      background: #999999;
+    }
+  }
+  ul{
+    li{
+      border-bottom: 1px solid #e5e5e5;
+      height:66px;
+      padding:15px 0;
+      overflow: hidden;
+      position: relative;
+      &.last{
+        border-bottom: 0;
+      }
+    }
+    img{
+      width:66px;
+      height:66px;
+      vertical-align: middle;
+      @extend %fl;
+    }
+    .box{
+      height:66px;
+      margin-left:66px + 6;
+    }
+    h4{
+      margin-bottom: 8px;
+      color:#666;
+      height:20px * 2;
+      line-height:20px;
+      overflow: hidden;
+    }
+    strong{
+      display: block;
+      color:#333;
+      font-weight: bold;
+    }
+  }
+}
+
+//一元购精品推荐
+.yiDetailBoutique{
+  ul{
+    li{
+      padding-bottom: 25px;
+    }
+    //一元购.进度条
+    .scheduleBox{
+      @import "inc/yiSchedule";
+      @include yiSchedule();
+      position: absolute;
+      left:0;
+      width: 100%;
+      top:66px + 15 + 5;
+      .surplus{
+        top:-20px;
+      }
+    }
+  }
+}
+
+
+//内容
+.detailContent{
+  background:#fff;
+  margin-left: 260px + 30;
+  position: relative;
+}
+
+
+//切换
+.detailTab{
+  height:40px;
+  width:100%;
+  z-index: 98;
+  position: absolute;
+  left:0;
+  top:0;
+
+  a{
+    @include transition(width 500ms);
+  }
+
+  //position: fixed;
+  //left:0;
+  //top:0;
+  //margin-bottom: 20px;
+
+  //商品详情、门店地址、作者介绍、小编赏析、售后服务、购买须知
+  .showTab{
+    @extend %fl;
+    background: #fff;
+    padding-left:0;
+    $h:39px;
+    height:$h;
+    border-left:1px solid #e5e5e5;
+    border-right:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    font-size:0;
+    a{
+      border-top:1px solid #e5e5e5;
+      position: relative;
+      vertical-align: top;
+      display: inline-block;
+      //width: 202px;
+      width: 134px;
+      height:$h;
+      line-height:$h;
+      font-size:14px;
+      color:#999;
+      text-align:center;
+      &.select{
+        color:$red-base;
+        border-top:2px solid $red-base;
+        height:$h - 2;
+        line-height:$h - 2;
+        i{
+          position: absolute;
+          left:50%;
+          top:0;
+          margin-left:-7px;
+          width:14px;
+          height:6px;
+          @extend %picComm;
+          background-position: -33px -31px;
+        }
+      }
+    }
+    b{
+      position: absolute;
+      right:0;
+      top:4px;
+      width:1px;
+      height:30px;
+      background: #e5e5e5;
+    }
+  }
+  //购买按钮
+  .buy{
+    @extend %fl;
+    display: block;
+    width:180px;
+    text-align:center;
+    height:40px;
+    line-height:40px;
+    color:#fff;
+    background:$red-base;
+    font-size:18px;
+    &:hover{
+      background: $red-hover-base;
+    }
+    &.select{
+      background:#cccccc;
+    }
+  }
+}
+
+
+//填充内容
+.contentBox{
+  margin:0 40px;
+  //detailTab高40px
+  padding-top: 40px + 20px;
+  padding-bottom: 20px;
+  .photo{
+    img{
+      max-width:100%;
+      height:auto;
+      margin-bottom:10px;
+    }
+  }
+}
+
+//
+.detailContentInfo{
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+  padding:10px 0 15px 0;
+  font-size:16px;
+  color:#666;
+  ul{
+    li{
+
+    }
+    span{
+      display: inline-block;
+      width:240px;
+      height:30px;
+      line-height:30px;
+      @extend %ellipsis;
+      text-overflow:clip;
+      overflow:hidden;
+      &.w{
+        width:430px;
+      }
+    }
+  }
+}
+
+/*购买须知 售后服务 文字说明*/
+.buyinfo{
+  img{
+    max-width:100%;
+    height:auto;
+    margin-bottom:10px;
+  }
+  h3{
+    margin:15px 0;
+    font-size:16px;
+    color:#333;
+  }
+  p{
+    line-height:30px;
+    font-size:14px;
+    color:#333;
+    &.cen{
+      text-align: center;
+    }
+  }
+}
+
+
+//查看所有参与记录
+.seePartake{
+  padding-top:35px;
+  padding-left:68px;
+  li{
+    width: 695px - 30 - 28;
+    padding:5px 30px 2px 28px;
+    &.select{
+      position: relative;
+      background: #f9f9f9;
+      .bottom,i.remove{
+        display: block;
+      }
+    }
+  }
+  .info{
+    font-size:0;
+    a{
+      color: #2b90c9;
+      font-size:12px;
+    }
+    span{
+      display: inline-block;
+      font-size:12px;
+      height: 30px;
+      line-height: 30px;
+      &.tel{
+        color: #999;
+        width: 155px;
+      }
+      &.num{
+        width: 155px;
+      }
+      &.date{
+        color: #999;
+        width: 250px;
+      }
+    }
+    b{
+      font-weight: normal;
+      color:$red-base;
+    }
+  }
+  .bottom{
+    display: none;
+    span{
+      margin:0 30px 0 0;
+      height: 25px;
+      line-height: 25px;
+    }
+  }
+  i{
+    &.remove{
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width:15px;
+      height: 15px;
+      @extend %picComm;
+      background-position: -47px -467px;
+    }
+  }
+}
+
+
+//参与号码弹窗
+.yiPartakeNumAlert{
+  @import "inc/alert";
+  @include alert();
+  @include alertTitle;
+  .box{
+    padding:15px 0 5px 15px;
+    font-size:0;
+    span{
+      display: inline-block;
+      margin:0 10px 10px 0;
+      font-size:14px;
+    }
+  }
+}
+
+
+//视频播放提示操作
+.detailVideo{
+  z-index:199;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  .opacity{
+    z-index:200;
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background: #000;
+    @include opacity(50);
+  }
+  .w1280{
+    position: relative;
+  }
+  .box{
+    z-index: 200;
+    width:60px;
+    height:60px;
+    @extend %picComm;
+    background-position: -103px -488px;
+    position: absolute;
+    left:175px;
+    top:649px;
+  }
+  //a{
+  //  display: block;
+  //  width:pxTorem(60px);
+  //  height:pxTorem(60px);
+  //}
+  //视频文字提示
+  .seeDegree{
+    position: absolute;
+    left:75px;
+    top:20px;
+    width:359px;
+    height:30px;
+    background-image: url("../images/iconDetailTextVideo.png");
+  }
+  //按钮
+  .btn{
+    z-index: 200;
+    $h:45px;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:480px;
+    margin: 0;
+    a{
+      display: block;
+      font-size:16px;
+      @include border-radius(8px);
+      margin:0 auto;
+      width: 120px;
+      text-align: center;
+      height: $h;
+      line-height: $h;
+      background: $red-base;
+      color: #fff;
+      &:hover{
+        background: $red-hover-base;
+      }
+    }
+  }
+}
+
+
+//视频
+#commodity-video{
+  overflow: hidden;
+}
+
+
+/*图片放大镜样式*/
+/*放大镜*/
+.magnifier-lens{
+  position: absolute;
+  border: solid 1px #ccc;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+/*绽放区*/
+.magnifier-preview {
+  z-index: 888;
+  position: absolute;
+  right:-490px;
+  top:0;
+  width: 490px;
+  height: 490px;
+  overflow: hidden;
+}
+.magnifier-preview img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*背景*/
+.opaque{opacity: .5;filter: alpha(opacity=50);}
+
+.magnifier-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 1px #ccc;
+  color: #fff;
+  text-align: center;
+  background: transparent;
+  background: rgba(50, 50, 50, 0.5);
+  z-index: 888;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)
+}
+.hidden {
+  display: none;
+}
+/*放大镜end*/
