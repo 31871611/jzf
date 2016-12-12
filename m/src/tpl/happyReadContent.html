@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"悦读内容页"
+})
+<link rel="stylesheet" href="css/article.css" />
+<body id="app">
+<div class="wrap">
+    <header>
+        @@include('include/title.html',{
+            "title":"悦读内容页"
+        })
+    </header>
+
+    <article class="main bgWhite">
+
+        <!--鉴赏收藏详情页-->
+        <div class="collectDetail">
+            <div class="mainTitle">
+                <b>粗犷中体味浑厚之美粗犷中体味浑厚之美粗犷中体味浑厚之美粗犷中体味浑厚之美</b>
+                <span>教你鉴赏牛蛋石</span>
+            </div>
+            <div class="collectTip">
+                <span>珍大师</span>
+                <span>鉴赏手册</span>
+                <span>NO.2</span>
+            </div>
+
+
+            <div id="article">{{article}}</div>
+
+            <!--<div class="thumbnail">-->
+            <!--<div class="img">-->
+            <!--<img :src="'html/picture/index6.jpg'" alt="">-->
+            <!--</div>-->
+            <!--<p>牛蛋石，又称牛蛋黄、牛蛋田，前者的称呼是对寿山溪与大洋溪的溪涧中所产的独石而言，后者的称谓是为了对应极少数品质更佳的田产石。此类石头大多数质地太普通，给人留下质色特征，用“牛蛋”的形容更加准确，以致业界越来越接受了这个统称。</p>-->
+            <!--</div>-->
+            <!--<div class="lBorTitle">质色</div>-->
+            <!--<div class="thumbnail">-->
+            <!--<div class="img">-->
+            <!--<img :src="'html/picture/index6.jpg'" alt="">-->
+            <!--</div>-->
+            <!--<p>牛蛋石，又称牛蛋黄、牛蛋田，前者的称呼是对寿山溪与大洋溪的溪涧中所产的独石而言，后者的称谓是为了对应极少数品质更佳的田产石。此类石头大多数质地太普通，给人留下质色特征，用“牛蛋”的形容更加准确，以致业界越来越接受了这个统称。</p>-->
+            <!--</div>-->
+
+
+            <div class="collectTitle">
+                珍大师推荐
+            </div>
+            <!--列表-->
+            <div class="goodsListBox">
+                <ul class="goodsListNormal">
+                    <li class="col">
+                        <div class="box">
+                            <a href="" class="img">
+                                <img :src="'html/picture/index6.jpg'" alt=""/>
+                            </a>
+                            <h3>A859 郭懋介残荷听雨系列套件章</h3>
+                            <strong>￥18,500</strong>
+                            <a href="" class="buy"></a>
+                            <div class="love select">1</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="collectTitle">
+                热门推荐
+            </div>
+            <div class="collectItem">
+                <a href="#" class="img"><img :src="'html/picture/index5.jpg'" alt=""></a>
+                <div class="collectDetailItem">
+                    <h4>晚霞蒸郁，柴焰稍侵</h4>
+                    <h5>名品天蓝冻真异观也</h5>
+                    <h6>鉴赏手册 NO.3</h6>
+                </div>
+            </div>
+            <div class="collectItem">
+                <a href="#" class="img"><img :src="'html/picture/index5.jpg'" alt=""></a>
+                <div class="collectDetailItem">
+                    <h4>晚霞蒸郁，柴焰稍侵</h4>
+                    <h5>名品天蓝冻真异观也</h5>
+                    <h6>鉴赏手册 NO.3</h6>
+                </div>
+            </div>
+            <div class="collectItem">
+                <a href="#" class="img"><img :src="'html/picture/index5.jpg'" alt=""></a>
+                <div class="collectDetailItem">
+                    <h4>晚霞蒸郁，柴焰稍侵</h4>
+                    <h5>名品天蓝冻真异观也</h5>
+                    <h6>鉴赏手册 NO.3</h6>
+                </div>
+            </div>
+            <a class="btn">查看更多手册</a>
+        </div>
+
+    </article>
+
+    <footer>
+
+    </footer>
+</div>
+
+
+</body>
+
+</html>
