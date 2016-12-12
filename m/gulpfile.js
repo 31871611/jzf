@@ -50,7 +50,7 @@ gulp.task("clean", function(){
 
 
 gulp.task('build', ['clean'],function(){
-    gulp.start("icon:dev","photo:dev","js:dev","tpl:dev",'sass');
+    gulp.start('font:dev',"icon:dev","photo:dev","js:dev","tpl:dev",'sass');
 });
 
 
@@ -81,9 +81,16 @@ gulp.on("error",function(err){
 */
 
 
+//字体
+gulp.task("font:dev",function(){
+    gulp.src(["./src/font/*.eot","./src/font/*.svg","./src/font/*.ttf","./src/font/*.woff"])
+        .pipe(gulp.dest("./dist/font"));
+});
+
+
 //图标
 gulp.task("icon:dev",function(){
-    gulp.src(["./src/images/*.png","./src/images/*.jpg","./src/images/*.gif"])
+    gulp.src(["./src/images/**/*.png","./src/images/**/*.jpg","./src/images/**/*.gif"])
         .pipe(gulp.dest("./dist/images"));
 });
 
@@ -125,7 +132,7 @@ gulp.task('tpl:dev', function () {
 
 //先执行js:dev、sass:dev和tpl:dev三个任务，然后再执行回调里的内容，我们的本地服务器就是要在回调里去定义并且启动
 //Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面
-gulp.task('dev', ['icon:dev','photo:dev','js:dev', 'sass:dev', 'tpl:dev'], function () {
+gulp.task('dev', ['font:dev','icon:dev','photo:dev','js:dev', 'sass:dev', 'tpl:dev'], function () {
     livereload.listen();
 
     // 我们使用gulp的文件监听功能，来实时编译修改过后的文件

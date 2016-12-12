@@ -104,7 +104,7 @@ body{
 @import "components/loginRegister";
 
 //引入字体图标
-@include font-face('iconfont','font/iconfont');
+@include font-face('iconfont','../font/iconfont');
 
 //搜索|.searchInfoList
 @import "components/search";
