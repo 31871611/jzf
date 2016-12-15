@@ -11,24 +11,14 @@
   position: absolute;
   left: 0;
   top: 0;
-  .box{
-    @include transition(transform .6s ease-in-out);
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    position: relative;
-  }
+  //  @include transition(transform .6s ease-in-out);
   section{
-    //position: absolute;
-    //left: 0;
-    //top: 0;
-    //z-index:1;
-
-
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
     width:100%;
     height:100%;
-    position: relative;
     overflow: hidden;
     img{
       position: absolute;
@@ -91,18 +81,10 @@
     }
   }
   //选中项
-  .zCurrent{
+  .zCurr{
     z-index: 2;
-    //.btn{
-    //  a{
-    //    @include animation(RightToleft 1s);
-    //    &:nth-child(1){
-    //      @include animation(leftToRight 1s);
-    //    }
-    //  }
-    //}
   }
-  .zActive{
+  .zAct{
     z-index: 3;
   }
 

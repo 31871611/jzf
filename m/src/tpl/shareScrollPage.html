@@ -6,28 +6,23 @@
 <link rel="stylesheet" href="css/shareScrollPage.css"/>
 <body id="app">
 
-
-<div class="shareScrollPage" @scroll="sliderScroll($event)" @touchstart="sliderStart($event)" @touchmove="sliderMove($event)" @touchend="sliderEnd($event)">
-    <div class="box" :style="{transform:'translate3d(0px,'+ num +'px, 0px)'}">
-        <section :class="index == 0 ? 'zCurrent' : ''">
-            <img src="picture/shareScrollPage1.jpg" alt="" />
-            <i class="iconShareScrollPageNext"></i>
-        </section>
-        <section :class="index == 1 ? 'zCurrent' : ''">
-            <img src="picture/shareScrollPage2.jpg" alt="" />
-            <i class="iconShareScrollPageNext"></i>
-        </section>
-        <section :class="index == 2 ? 'zCurrent' : ''">
-            <img src="picture/shareScrollPage3.jpg" alt="" />
-            <i class="iconShareScrollPageNext"></i>
-        </section>
-        <section :class="index == 3 ? 'zCurrent' : ''">
-            <img src="picture/shareScrollPage4.jpg" alt="" />
-            <div class="btn">
-                <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jizhenfang.jizhenfang">下载APP</a><a href="http://wx.artjzf.com/#!/index">进入微商城</a>
-            </div>
-        </section>
-    </div>
+<!--
+    @scroll="sliderScroll($event)" @touchstart="sliderStart($event)" @touchmove="sliderMove($event)" @touchend="sliderEnd($event)"
+ -->
+<div class="shareScrollPage" >
+    <section :class="index == 0 ? 'zCurr' : ''" @touchstart="page($event)" @touchmove="page($event)" @touchend="page($event)">
+        <h2>h2</h2>
+        <span>span</span>
+    </section>
+    <section :class="index == 1 ? 'zCurr' : ''" @touchstart="page($event)" @touchmove="page($event)" @touchend="page($event)">
+        2
+    </section>
+    <section :class="index == 2 ? 'zCurr' : ''" @touchstart="page($event)" @touchmove="page($event)" @touchend="page($event)">
+        3
+    </section>
+    <section :class="index == 3 ? 'zCurr' : ''" @touchstart="page($event)" @touchmove="page($event)" @touchend="page($event)">
+        4
+    </section>
 </div>
 
 </body>
@@ -36,13 +31,12 @@
     var vue=new Vue({
         el:"#app",
         data:{
-            //高度
+            // 高度
             height:'',
-            //屏数
+            // 屏数
             index:0,
-            //列表长度
-            length:4,
-            num:0,
+            // 列表长度
+            length:'',
             slider:{
                 startX:0,
                 startY:0,
@@ -50,6 +44,16 @@
                 moveY:0,
                 endX:0,
                 endY:0
+            },
+            dom:{
+                ele:'',
+                parent:'',
+                prev:'',
+                next:''
+            },
+            num:{
+                prev:0,
+                next:0
             },
             //滚动值
             scrollTop:0,
@@ -64,10 +68,68 @@
             this.height = document.body.clientHeight;
             //页数
             this.length = document.getElementsByTagName('section').length;
-
-            console.log( this.height );
         },
         methods: {
+            page:function(event){
+
+                var touch = event.changedTouches[0];
+                if(event.type == 'touchstart'){
+                    this.slider.startX = touch.clientX;
+                    this.slider.startY = touch.clientY;
+
+                    // 上一个节点数组索引
+                    this.num.prev = this.index == 0 ? this.length-1 : this.index - 1;
+                    // 下一个节点数组索引
+                    this.num.next = this.index == this.length ? 0 : this.index + 1;
+                    // 获取当前节点
+                    this.ele = event.currentTarget;
+                    // 父节点
+                    this.parent = this.ele.parentNode;
+                    // 上一个节点
+                    this.prev = this.parent.getElementsByTagName("section")[this.num.prev];
+                    // 下一个节点
+                    this.next = this.parent.getElementsByTagName("section")[this.num.next];
+
+                }else if(event.type == 'touchmove'){
+                    event.preventDefault();
+                    this.slider.moveX = touch.clientX - this.slider.startX;
+                    this.slider.moveY = touch.clientY - this.slider.startY;
+
+                    // 上下划
+                    if(Math.abs(this.slider.moveX) < Math.abs(this.slider.moveY)){
+                        if(this.slider.moveY < 0){
+                            // console.log('下');
+                            // next
+                            this.index++;   //一直运行
+                            console.log(this.index);
+                            this.next.style.WebkitTransitionDuration = 0+'ms';
+                            this.next.style.WebkitTransform = 'translate3d(0,'+ this.slider.moveY +'px, 0)';
+
+                        }else{
+                            // console.log('上');
+                            this.index--;
+                        }
+                    }
+                }else if(event.type == 'touchend'){
+                    this.slider.endX = touch.clientX - this.slider.startX;
+                    this.slider.endY = touch.clientY - this.slider.startY;
+                }
+
+
+                /*
+                console.log('上:' + numPrev);
+                console.log('下:' + numNext);
+
+                // 根据滑动是判断是上还下来确定index++、index--
+                this.index++;
+                // 移动时修改上、下一页的值
+                eleNext.style.WebkitTransitionDuration = 0+'ms';
+                eleNext.style.WebkitTransform = 'translate3d(0,'+ this.slider.moveY +'px, 0)';
+                // 离开时判断滑动是否大于某个值
+
+                 */
+
+            },
             sliderScroll:function(event){
                 //滚动值
 //                this.scrollTop = event.target.scrollTop;
@@ -100,7 +162,7 @@
                     //左右拖动值
                     this.num = (this.index * this.height - this.slider.moveX);
 
-                    console.log(this.num);
+                    //console.log(this.num);
                 }
 
 
