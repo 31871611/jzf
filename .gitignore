@@ -1,0 +1,17 @@
+/m/wx.html
+/m/app.html
+/m/node_modules/*
+/m/dist/*
+/m/src/picture/*
+/m/src/images/1/*
+/m/src/images/11/*
+/m/src/images/12/*
+/m/src/images/thanksgiving/*
+
+/pc/dist/
+/pc/node_modules/
+/pc/src/images/help/
+/pc/src/images/siqiabg2.jpg
+/pc/src/images/yiBg.jpg
+/pc/src/js/videojs/
+/pc/src/picture/
