@@ -205,6 +205,31 @@
       line-height: pxTorem($h);
     }
   }
+  //寿山石、多器类、选择搜索
+  .classifySearch{
+    $h:58px;
+    position: absolute;
+    //right:pxTorem(10px);
+    right:pxTorem(20px);
+    top:0;
+    &:before{
+      position: absolute;
+      //left:pxTorem(-6px);
+      right:pxTorem(-6px);
+      top:pxTorem(25px);
+      content: '\20';
+      display: inline-block;
+      @include arrow(bottom,pxTorem(8px),#333);
+    }
+    select{
+      height: pxTorem($h);
+      border:none;
+      background: none;
+    }
+    option{
+
+    }
+  }
   //全部订单
   .order{
     position: relative;
