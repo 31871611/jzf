@@ -106,8 +106,8 @@ body{
 //引入字体图标
 @include font-face('iconfont','../font/iconfont');
 
-//搜索|.searchInfoList
-@import "components/search";
+//搜索|.searchInfoList.分离
+//@import "components/search";
 
 //检索|
 @import "components/retrieval";
