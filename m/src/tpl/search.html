@@ -3,24 +3,23 @@
 @@include('include/head.html',{
     "title":"搜索"
 })
+<link rel="stylesheet" href="css/search.css">
 <body>
 <div class="wrap">
     <header>
-        <div class="header headerSearch">
-            <div class="androidTop"></div>
-            <div class="topSearch">
+        <div class="search">
+            <div class="headerTop"></div>
+            <div class="tab">
+                <span class="select">好物</span>
+                <span>寿山石</span>
+            </div>
+            <div class="searchInput">
                 <div class="left">
                     <a href="javascript:;" class="return"></a>
                 </div>
-                <div class="inputSearch">
+                <div class="box">
                     <!--<form action=""></form>-->
                     <input type="search" placeholder="输入关键词查找藏品" />
-                    <div class="classifySearch">
-                        <select>
-                            <option>寿山石</option>
-                            <option>多品类</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="right">
                     <a href="" class="txt">取消</a>
@@ -30,6 +29,7 @@
     </header>
 
     <article class="main bgWhite">
+        <div class='ti'></div>
 
         <div class="searchInfoList">
             <h2>历史搜索</h2>
