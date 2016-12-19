@@ -3,74 +3,45 @@
 @import "comm/common";
 
 
-
-.ti {
-  $h:30px;
-  position: relative;
-  background-color: #4ca037;
-  //width: 30px;
-  height: 30px;
-  &:after {
-    content: "\20";
-    font-size:16px;
-    display:block;
-    color:#fff;
-    height: 0;
-    //width: 100px;
-    //line-height:30px;
-    padding-left:5px;
-    border-width: 0 30px 30px 30px;
-    border-style: none solid solid;
-    border-color: transparent transparent #111;
-    @include border-radius(10% 10% 0 0);
-  }
-}
-
-/*******************************************************************************************/
-
-
 .search{
-  padding-bottom: pxTorem(10px);
+  background: rgba(0,0,0,.9);
+  //padding-top: pxTorem(16px);
+  padding-bottom: pxTorem(16px);
   border-bottom: 1px solid #999999;
-  background:#e5e5e5;
   //ios头部反黑
   .headerTop{
     height:pxTorem(40px);
-    background: rgba(0,0,0,.9);
   }
   //寿山石、多品类切换
   .tab{
-    $h:50px;
+    $h:54px;
+    width: pxTorem(340px);
     height: pxTorem($h);
-    padding: pxTorem(10px) 0 0 pxTorem(100px);
-    //padding: pxTorem(10px) 0 0 pxTorem(80px);
+    margin:pxTorem(16px) auto 0;
+    text-align: center;
+    //border:1px solid #666;
+    @include box-shadow(0 0 2px #666);
+    @include border-radius(pxTorem(4px));
+    @include display-flex();
     span{
-      @include skewX(-35deg);
-      @include font-dpr(28px);
-      float: left;
-      display: inline-block;
+      @include flex(1);
+      display: block;
+      width: pxTorem(170px);
+      @include font-dpr(26px);
       text-align: center;
       color:#fff;
-      width: pxTorem(175px);
       height: pxTorem($h);
       line-height: pxTorem($h);
-      background: #C7C7C7;
       &.select{
-        //background: #A8A8A8;
-        background: #fff;
-        color:#333;
+        background: rgba(102,102,102,.4);
       }
-    }
-    b{
-      display: block;
-      font-weight: normal;
-      @include skewX(35deg);
     }
   }
 
   //搜索区
   .searchInput{
-    $h:58px;
+    margin-top:pxTorem(16px);
+    $h:70px;
     //@extend .header;
     @include display-flex();
     .left,.right{
@@ -80,7 +51,7 @@
     .return{
       $w:20px;
       display: inline-block;
-      padding:0 pxTorem(30px);
+      padding:0 pxTorem(40px) 0 pxTorem(30px);
       width:pxTorem($w);
       height: pxTorem($h);
       &:after{
@@ -90,7 +61,7 @@
         margin-top:pxTorem(10px);
         width:pxTorem($w);
         height:pxTorem(40px);
-        background-image: url("../images/iconArrowLT.png");
+        background-image: url("../images/iconArrowLWhite.png");
       }
     }
     .txt{
@@ -98,26 +69,23 @@
       vertical-align: top;
       height:pxTorem($h);
       line-height:pxTorem($h);
-      padding:0 pxTorem(15px);
-      color:#333;
+      padding:0 pxTorem(30px) 0 pxTorem(15px);
+      color:#fff;
       @include font-dpr(28px);
     }
 
 
     //搜索输入栏
     .box{
-      //margin-top:pxTorem(16px);
-      //margin-left:pxTorem(30px);
       @include flex(1);
-      background:#ffffff;
       height:pxTorem($h);
       line-height:pxTorem($h);
       @include border-radius(3px);
-      position: relative;
+      @include display-flex();
+      @include box-shadow(inset 0 0 2px #666);
+      color:#666;
       &:before{
-        position: absolute;
-        left:pxTorem(12px);
-        top:pxTorem(12px);
+        margin:pxTorem(18px) pxTorem(18px) 0 pxTorem(10px);
         content: "\20";
         display: block;
         width:pxTorem(40px);
@@ -126,15 +94,16 @@
         @extend %ico_rem;
       }
       input[type='search']{
+        @include flex(1);
         @include border-radius(3px);
         display: block;
-        padding-left:12%;
-        width:87%;
-        border:0;
+        //padding-left:12%;
+        width:100%;
         height:pxTorem($h);
         line-height:pxTorem($h);
         @include font-dpr(26px);
-        color:#999999;
+        border:0;
+        background: transparent;
       }
     }
   }
