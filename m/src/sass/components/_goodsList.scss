@@ -965,6 +965,28 @@
   }
 }
 
+//全部筛选项
+.retrieveAllOption{
+  z-index: 47;
+  position: absolute;
+  left:0;
+  top:pxTorem(90px);
+  background: #fff;
+  width: 100%;
+  padding:pxTorem(25px) 0 0 pxTorem(35px);
+  a{
+    width: auto;
+    padding-right: pxTorem(80px);
+    padding-bottom: pxTorem(40px);
+    display: inline-block;
+    @include font-dpr(28px);
+    color:#333;
+    &.select{
+      color: $red-base;
+    }
+  }
+}
+
 
 
 //当天商品开售倒记时
