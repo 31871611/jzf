@@ -275,9 +275,10 @@
     height: pxTorem($h);
     @include border-radius(pxTorem(40px));
     @include flex(1);
+    @include display-flex();
     margin:pxTorem(20px) auto 0;
     i{
-      float: left;
+      display: block;
       margin:pxTorem(10px) pxTorem(10px) 0 pxTorem(20px);
       width:pxTorem(32px);
       height: pxTorem(32px);
@@ -285,11 +286,11 @@
       background-image: url("../images/iconSearchC.png");
     }
     input{
+      @include flex(1);
       @include font-dpr(26px);
       color:#666;
       height: pxTorem($h);
       line-height: pxTorem($h);
-      float: left;
       display: block;
       border: 0;
       background: transparent;
