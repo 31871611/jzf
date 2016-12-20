@@ -39,27 +39,45 @@
     <article class="main wrap scrollHide">
         <article class="main" @scroll="mainScroll($event)" @touchstart="startScroll($event)" @touchmove="moveScroll($event)" @touchend="endScroll($event)">
             <div class="tabRetrieve ">
-                <div>
-                    <a href="javascript:;" class="select">排序</a>
+                <div class="con">
+                    <div>
+                        <a href="javascript:;" class="select">排序</a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">新品</a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" class="select">价格<i class="price down"></i></a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" class="select">
+                            筛选<i class="filter"></i>
+                        </a>
+                        <ul class="more">
+                            <li><a href="">翡翠</a></li>
+                            <li><a href="">珍珠</a></li>
+                            <li><a href="">琥珀蜜蜡</a></li>
+                            <li><a href="">珊瑚</a></li>
+                            <li><a href="">彩宝</a></li>
+                            <li><a href="">其他</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <a href="javascript:;">新品</a>
-                </div>
-                <div>
-                    <a href="javascript:;" class="select">价格<i class="price down"></i></a>
-                </div>
-                <div>
-                    <a href="javascript:;" class="select">
-                        筛选<i class="filter"></i>
-                    </a>
-                    <ul class="more">
-                        <li><a href="">翡翠</a></li>
-                        <li><a href="">珍珠</a></li>
-                        <li><a href="">琥珀蜜蜡</a></li>
-                        <li><a href="">珊瑚</a></li>
-                        <li><a href="">彩宝</a></li>
-                        <li><a href="">其他</a></li>
-                    </ul>
+
+                <!-- 筛选分类 -->
+                <div class="retrieveAllOption ">
+                    <a href="" class="select">印度小叶紫檀</a>
+                    <a href="">黄花梨</a>
+                    <a href="">沉香</a>
+                    <a href="">檀香</a>
+                    <a href="">黄杨木</a>
+                    <a href="">竹</a>
+                    <a href="">陶瓷</a>
+                    <a href="">铜</a>
+                    <a href="">金</a>
+                    <a href="">银</a>
+                    <a href="">和田玉</a>
+                    <a href="">其他</a>
                 </div>
             </div>
 
@@ -571,21 +589,7 @@
         </article>
 
 
-        <!-- 筛选分类 -->
-        <div class="retrieveAllOption ">
-            <a href="" class="select">印度小叶紫檀</a>
-            <a href="">黄花梨</a>
-            <a href="">沉香</a>
-            <a href="">檀香</a>
-            <a href="">黄杨木</a>
-            <a href="">竹</a>
-            <a href="">陶瓷</a>
-            <a href="">铜</a>
-            <a href="">金</a>
-            <a href="">银</a>
-            <a href="">和田玉</a>
-            <a href="">其他</a>
-        </div>
+
 
         <!-- 局部弹窗 -->
         <!--检索条件-->

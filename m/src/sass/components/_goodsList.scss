@@ -772,7 +772,7 @@
   }
 }
 
-
+// 好像已不用，需要去搜索项目确定
 .goodsRtrieval{
   $h:89px;
   height:pxTorem($h);
@@ -862,28 +862,15 @@
   width:100%;
   background:#fff;
   border-bottom: 1px solid #dddddd;
-  @include display-flex();
-  div{
+  position: relative;
+  .con{
     height:pxTorem($h);
-    @include flex(1);
-    position: relative;
-    z-index: 7;
-    a{
-      text-align:center;
+    @include display-flex();
+    > div{
       height:pxTorem($h);
-      line-height:pxTorem($h);
-      width:100%;
-      display: block;
-      @include font-dpr(28px);
-      color:#333333;
-      &.select{
-        color:$red-base;
-        i{
-          &.filter{
-            background-image: url("../images/iconFilterRed.png");
-          }
-        }
-      }
+      @include flex(1);
+      position: relative;
+      z-index: 7;
       &:after{
         content: "\20";
         position: absolute;
@@ -898,45 +885,62 @@
           display: none;
         }
       }
-    }
-    i{
-      position: absolute;
-      left:50%;
-      &.price{
-        margin-left:pxTorem(30px);
-        top:pxTorem(14px);
-        &:before,&:after{
-          content: "\20";
-          position: absolute;
-          left:0;
-        }
-        &:before{
-          top:pxTorem(10px);
-          @include arrow(top,pxTorem(10px),#333333);
-        }
-        &:after{
-          top:pxTorem(34px);
-          @include arrow(bottom,pxTorem(10px),#333333);
+      a{
+        text-align:center;
+        height:pxTorem($h);
+        line-height:pxTorem($h);
+        width:100%;
+        display: block;
+        @include font-dpr(28px);
+        color:#333333;
+        &.select{
+          color:$red-base;
+          i{
+            &.filter{
+              background-image: url("../images/iconFilterRed.png");
+            }
+          }
         }
       }
-      &.up{
-        &:before {
-          border-color: transparent transparent $red-base transparent;
+      i{
+        position: absolute;
+        left:50%;
+        &.price{
+          margin-left:pxTorem(30px);
+          top:pxTorem(14px);
+          &:before,&:after{
+            content: "\20";
+            position: absolute;
+            left:0;
+          }
+          &:before{
+            top:pxTorem(10px);
+            @include arrow(top,pxTorem(10px),#333333);
+          }
+          &:after{
+            top:pxTorem(34px);
+            @include arrow(bottom,pxTorem(10px),#333333);
+          }
         }
-      }
-      &.down{
-        &:after {
-          border-color: $red-base transparent transparent transparent;
+        &.up{
+          &:before {
+            border-color: transparent transparent $red-base transparent;
+          }
         }
-      }
+        &.down{
+          &:after {
+            border-color: $red-base transparent transparent transparent;
+          }
+        }
 
-      &.filter{
-        margin-left:pxTorem(30px);
-        top:pxTorem(34px);
-        width:pxTorem(21px);
-        height:pxTorem(21px);
-        @extend %ico_rem;
-        background-image: url("../images/iconFilter.png");
+        &.filter{
+          margin-left:pxTorem(30px);
+          top:pxTorem(34px);
+          width:pxTorem(21px);
+          height:pxTorem(21px);
+          @extend %ico_rem;
+          background-image: url("../images/iconFilter.png");
+        }
       }
     }
   }
@@ -963,29 +967,43 @@
       }
     }
   }
-}
 
-//全部筛选项
-.retrieveAllOption{
-  z-index: 47;
-  position: absolute;
-  left:0;
-  top:pxTorem(90px);
-  background: #fff;
-  width: 100%;
-  padding:pxTorem(25px) 0 0 pxTorem(35px);
-  a{
-    width: auto;
-    padding-right: pxTorem(80px);
-    padding-bottom: pxTorem(40px);
-    display: inline-block;
-    @include font-dpr(28px);
-    color:#333;
-    &.select{
-      color: $red-base;
+  //全部筛选项
+  .retrieveAllOption{
+    z-index: 47;
+    position: absolute;
+    left:0;
+    top:pxTorem(90px);
+    background: #fff;
+    width: 100%;
+    padding:pxTorem(25px) 0 0 pxTorem(35px);
+    @include animation(top 1s);
+    a{
+      width: auto;
+      padding-right: pxTorem(80px);
+      padding-bottom: pxTorem(40px);
+      display: inline-block;
+      @include font-dpr(28px);
+      color:#333;
+      &.select{
+        color: $red-base;
+      }
     }
+    @include keyframes(top){
+      0%{
+        @include translate3D(0,20px,0);
+        @include opacity(50);
+      }
+      100%{
+        @include translate3D(0,0,0);
+        @include opacity(100);
+      }
+    }
+
   }
 }
+
+
 
 
 
