@@ -977,7 +977,7 @@
     background: #fff;
     width: 100%;
     padding:pxTorem(25px) 0 0 pxTorem(35px);
-    @include animation(top 1s);
+    @include animation(top 500ms);
     a{
       width: auto;
       padding-right: pxTorem(80px);
