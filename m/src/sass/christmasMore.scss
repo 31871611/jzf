@@ -1,0 +1,125 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  圣诞-更多
+*/
+
+.christmasMore{
+  background: #ffe5c9;
+  padding-bottom: pxTorem(150px);
+  padding-top:pxTorem(13px);
+  .hot{
+    overflow: hidden;
+    position: relative;
+    width: pxTorem(730px);
+    height: pxTorem(696px);
+    margin:0 pxTorem(10px) 0 pxTorem(10px);
+    @extend %ico_rem;
+    i{
+      position: absolute;
+      @extend %ico_rem;
+      &.tag{
+        left:0;
+        top:0;
+        width: pxTorem(126px);
+        height: pxTorem(126px);
+        background-image: url("../images/christmas/tag.png");
+      }
+      &.bag{
+
+      }
+    }
+    .bthBuy{
+      display: block;
+      width: pxTorem(290px);
+      height: pxTorem(78px);
+      position: absolute;
+      top:pxTorem(255px);
+      left:pxTorem(42px);
+      @extend %ico_rem;
+      background-image: url("../images/christmas/hotBuy.png");
+    }
+  }
+  .hot_399{
+    background-image: url("../images/christmas/hot_399.jpg");
+  }
+  .hot_699{
+    background-image: url("../images/christmas/hot_699.jpg");
+  }
+  .hot_999{
+    background-image: url("../images/christmas/hot_999.jpg");
+  }
+
+  .title{
+    $c:#e02a26;
+    padding-top: pxTorem(45px);
+    height: pxTorem(155px - 45);
+    text-align: center;
+    position: relative;
+    h2{
+      color:$c;
+      @include font-dpr(32px);
+      height: pxTorem(46px);
+    }
+    &:before,&:after{
+      content: '\20';
+      width: 24%;
+      height: 2px;
+      position: absolute;
+      top:pxTorem(104px);
+      background: $c;
+    }
+    &:before{
+      left:4%;
+    }
+    &:after{
+      right:4%;
+    }
+  }
+
+  .list{
+    @extend %clearfix;
+    margin:0 pxTorem(10px);
+    $h:335px;
+    li{
+      float: left;
+      width: 33%;
+      height: pxTorem($h);
+      &:nth-child(3n){
+        a{
+          margin-right: 0;
+        }
+      }
+    }
+    a{
+      display: block;
+      margin-right: 3%;
+      height: pxTorem($h);
+    }
+    img{
+      width: 100%;
+      height: pxTorem(228px);
+      vertical-align: middle;
+    }
+    span{
+      display: block;
+      color:#333;
+      @include font-dpr(26px);
+      &:nth-of-type(1){
+        margin-top:pxTorem(10px);
+      }
+    }
+  }
+
+  footer{
+    margin-top:pxTorem(130px);
+    color:#e02a26;
+    @include font-dpr(28px);
+    text-align: right;
+    padding-right:pxTorem(10px);
+  }
+}
+
+

@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  圣诞
+*/
+
+.christmas{
+  width: pxTorem(750px);
+  margin:0 auto;
+  header{
+    height: pxTorem(1034px);
+    @extend %ico_rem;
+    background-image:url("../images/christmas/christmasBg.jpg");
+    .line{
+      height: pxTorem(140px);
+      @extend %ico_rem;
+      background-image:url("../images/christmas/line.png");
+    }
+    span{
+      display: block;
+      height: pxTorem(140px);
+      @extend %ico_rem;
+      background-image:url("../images/christmas/an1.png");
+      @include animation(an 1s infinite);
+    }
+
+    @include keyframes(an){
+      0%{
+        background-image:url("../images/christmas/an1.png");
+      }
+      100%{
+        background-image:url("../images/christmas/an2.png");
+      }
+    }
+    // 大星星
+    .xing{
+      margin:pxTorem(10px) auto 0;
+      height: pxTorem(77px);
+      width: pxTorem(77px);
+      @extend %ico_rem;
+      background-image:url("../images/christmas/xing1.png");
+      @include animation(x 1s infinite);
+      //@include transition(all);
+    }
+    @include keyframes(x){
+      0%{
+        background-image:url("../images/christmas/xing1.png");
+      }
+      100%{
+        background-image:url("../images/christmas/xing2.png");
+      }
+    }
+  }
+  .list{
+    padding-top:pxTorem(596px);
+    height: pxTorem(757px - 596);
+    @extend %ico_rem;
+    position: relative;
+    .btnBuy{
+      position: absolute;
+      left:0;
+      top:0;
+      width: pxTorem(227px);
+      height: pxTorem(89px);
+      @extend %ico_rem;
+      background-image:url("../images/christmas/buy.png");
+    }
+    .btnMore{
+      $h:70px;
+      a{
+        @include font-dpr(30px);
+        display: block;
+        padding-left:pxTorem(35px);
+        width: pxTorem(346px - 35);
+        height: pxTorem($h);
+        line-height: pxTorem($h);
+        margin: 0 auto;
+        //border:1px solid #fff;
+        @include border-radius(pxTorem(20px));
+      }
+    }
+  }
+  .list1{
+    background-image:url("../images/christmas/christmas1.jpg");
+    .btnBuy{
+      left:58%;
+      top:pxTorem(414px);
+    }
+    .btnMore{
+      a{
+        color: #bb021e;
+        border-color: #bb021e;
+      }
+    }
+  }
+  .list2{
+    background-image:url("../images/christmas/christmas2.jpg");
+    .btnBuy{
+      left:12%;
+      top:pxTorem(414px);
+    }
+    .btnMore{
+      a{
+        color: #e80a7e;
+        border-color: #e80a7e;
+      }
+    }
+  }
+  .list3{
+    background-image:url("../images/christmas/christmas3.jpg");
+    .btnBuy{
+      left:58%;
+      top:pxTorem(420px);
+    }
+    .btnMore{
+      a{
+        color: #f19e00;
+        border-color: #f19e00;
+      }
+    }
+  }
+  .info{
+    height: pxTorem(781px);
+    @extend %ico_rem;
+    background-image:url("../images/christmas/christmasInfo.jpg") ;
+  }
+}
+
+
