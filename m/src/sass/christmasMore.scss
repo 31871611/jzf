@@ -6,7 +6,13 @@
   圣诞-更多
 */
 
+.christmasMoreBg{
+  background: #ffe5c9;
+}
+
 .christmasMore{
+  width: pxTorem(750px);
+  margin:0 auto;
   background: #ffe5c9;
   padding-bottom: pxTorem(150px);
   padding-top:pxTorem(13px);

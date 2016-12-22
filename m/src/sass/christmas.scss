@@ -10,6 +10,7 @@
   width: pxTorem(750px);
   margin:0 auto;
   header{
+    position: relative;
     height: pxTorem(1034px);
     @extend %ico_rem;
     background-image:url("../images/christmas/christmasBg.jpg");
@@ -23,7 +24,7 @@
       height: pxTorem(140px);
       @extend %ico_rem;
       background-image:url("../images/christmas/an1.png");
-      @include animation(an 1s infinite);
+      @include animation(an 1s linear infinite);
     }
 
     @include keyframes(an){
@@ -41,8 +42,7 @@
       width: pxTorem(77px);
       @extend %ico_rem;
       background-image:url("../images/christmas/xing1.png");
-      @include animation(x 1s infinite);
-      //@include transition(all);
+      @include animation(x 1s linear infinite);
     }
     @include keyframes(x){
       0%{
@@ -50,6 +50,37 @@
       }
       100%{
         background-image:url("../images/christmas/xing2.png");
+      }
+    }
+    i{
+      //雪花
+      &.snowflake{
+        position: absolute;
+        width: pxTorem(47px);
+        height: pxTorem(49px);
+        @extend %ico_rem;
+        background-image: url("../images/christmas/snowflake.png");
+        @include animation(rotate 2s linear infinite);
+      }
+      &.snowflake1{
+        left:pxTorem(60px);
+        top:pxTorem(570px);
+      }
+      &.snowflake2{
+        right: 0;
+        top:pxTorem(295px);
+      }
+    }
+
+    @include keyframes(rotate){
+      0%{
+        @include rotate(0deg);
+      }
+      50%{
+        @include rotate(180deg);
+      }
+      100%{
+        @include rotate(360deg);
       }
     }
   }
