@@ -245,3 +245,19 @@
     }
   }
 }
+
+
+
+//文章内容页-浮动返回主页
+.returnHome{
+  $w:80px;
+  z-index: 5;
+  position: fixed;
+  right:pxTorem(20px + $w + 20px);
+  bottom:pxTorem(110px);
+  width: pxTorem($w);
+  height: pxTorem($w);
+  @include border-radius(50%);
+  @extend %ico_rem;
+  background-image: url("../images/iconReturnHome.png");
+}
