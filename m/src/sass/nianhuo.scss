@@ -23,7 +23,7 @@
     @include box-shadow(0 3px 3px rgba(150,30,29,.75));
   }
   nav{
-    $h:137px;
+    $h:154px;
     height: pxTorem($h);
     z-index: 20;
     position: absolute;
@@ -35,10 +35,25 @@
       @include flex(1);
       display: block;
       height: pxTorem($h);
-      width: pxTorem(152px);
+      width: pxTorem(137px);
       @extend %ico_rem;
-      background-image: url("../images/nianhuo/scroll.png");
+      //background-image: url("../images/nianhuo/scroll.png");
       text-align: center;
+      &.use{
+        background-image: url("../images/nianhuo/navuse.png");
+      }
+      &.food{
+        background-image: url("../images/nianhuo/navfood.png");
+      }
+      &.lucky{
+        background-image: url("../images/nianhuo/navlucky.png");
+      }
+      &.safety{
+        background-image: url("../images/nianhuo/navsafety.png");
+      }
+      &.tea{
+        background-image: url("../images/nianhuo/navtea.png");
+      }
     }
     b{
       font-weight: normal;
@@ -52,7 +67,7 @@
   }
   //点位
   .scrollPlace{
-    $h:137px;
+    $h:154px;
     height: pxTorem($h - 73 + 5);
   }
   .list{
