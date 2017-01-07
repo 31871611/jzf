@@ -11,11 +11,49 @@
   background-color: #b42625;
   background-image: url("../images/nianhuo/bg.jpg");
   padding-bottom: pxTorem(135px);
+  .iconBackTop,.iconShareTop{
+    position: absolute;
+  }
+
   header{
     height: pxTorem(986px);
     @extend %ico_rem;
     background-size: 100% 100%;
     background-image: url("../images/nianhuo/headerBg.jpg");
+    @include box-shadow(0 3px 3px rgba(150,30,29,.75));
+  }
+  nav{
+    $h:137px;
+    height: pxTorem($h);
+    z-index: 20;
+    position: absolute;
+    left:0;
+    top:pxTorem(986px);
+    width: 100%;
+    @include display-flex();
+    a{
+      @include flex(1);
+      display: block;
+      height: pxTorem($h);
+      width: pxTorem(152px);
+      @extend %ico_rem;
+      background-image: url("../images/nianhuo/scroll.png");
+      text-align: center;
+    }
+    b{
+      font-weight: normal;
+      color: #fff;
+      border-bottom: 2px solid #b42625;
+    }
+    span{
+      display: block;
+      color: #fff100;
+    }
+  }
+  //点位
+  .scrollPlace{
+    $h:137px;
+    height: pxTorem($h - 73 + 5);
   }
   .list{
     width: pxTorem(750px);
@@ -32,10 +70,26 @@
       background-image: url("../images/nianhuo/top.png");
     }
     h3{
-      width: pxTorem(155px);
-      height: pxTorem(40px);
+      width: pxTorem(156px);
+      height: pxTorem(42px);
       margin: 0 auto;
-      background: #0000C2;
+      color: #fff;
+      @extend %ico_rem;
+      &#use{
+        background-image: url("../images/nianhuo/use.png");
+      }
+      &#food{
+        background-image: url("../images/nianhuo/food.png");
+      }
+      &#lucky{
+        background-image: url("../images/nianhuo/lucky.png");
+      }
+      &#safety{
+        background-image: url("../images/nianhuo/safety.png");
+      }
+      &#tea{
+        background-image: url("../images/nianhuo/tea.png");
+      }
     }
 
     //灯
@@ -87,14 +141,13 @@
 
     ul{
       padding-left: pxTorem(20px + 18px);
-      padding-bottom: pxTorem(30px);
       @extend %clearfix;
       li{
         margin-right: pxTorem(4px);
         margin-bottom: pxTorem(4px);
         float: left;
         width: pxTorem(296px);
-        height: pxTorem(444px);
+        height: pxTorem(446px);
         border: 2px solid #cb0712;
       }
       .photo{
@@ -107,9 +160,12 @@
         width: 100%;
       }
       .text{
-        padding-top: pxTorem(10px);
-        height: pxTorem(96px - 10);
-        margin-left:pxTorem(14px);
+        //width: pxTorem(296px - 14);
+        padding-left:pxTorem(10px);
+        padding-top: pxTorem(5px);
+        height: pxTorem(96px - 5);
+        @extend %ico_rem;
+        background-image: url("../images/nianhuo/textBg.jpg");
       }
       h2{
         @include font-dpr(22px);
@@ -150,7 +206,7 @@
     .moreBtn{
       width: pxTorem(273px);
       height: pxTorem(53px);
-      margin:0 auto;
+      margin:pxTorem(30px) auto 0;
       @extend %ico_rem;
       background-image: url("../images/nianhuo/moreBtn.jpg");
     }

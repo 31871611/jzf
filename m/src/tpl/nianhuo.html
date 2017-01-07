@@ -8,26 +8,44 @@
 <body id="app">
 
 <div class="wrap">
-    <header>
 
-    </header>
-
-    <article class="main">
-        <a href="javascript:;" class="iconBackTop"></a>
-        <a href="javascript:;" class="iconShareTop"></a>
+    <article class="main" @scroll="scroll($event)">
 
         <div class="nianhuo">
+            <a v-link="'/index'" class="iconBackTop"></a>
+            <a href="javascript:;" class="iconShareTop"></a>
             <header>
 
             </header>
 
-            <div class="scroll">
+            <nav>
+                <a href="javascript:;" @click="pos('use')">
+                    <b>民俗用品</b>
+                    <span>书画</span>
+                </a>
+                <a href="javascript:;" @click="pos('food')">
+                    果盘食盒
+                    文房/漆器
+                </a>
+                <a href="javascript:;" @click="pos('lucky')">
+                    吉祥摆件
+                    漆器
+                </a>
+                <a href="javascript:;" @click="pos('safety')">
+                    平安挂件
+                    文房/漆器
+                </a>
+                <a href="javascript:;" @click="pos('tea')">
+                    茶香器具
+                    漆器
+                </a>
+            </nav>
 
-            </div>
+            <div class="scrollPlace"></div>
 
             <div class="list">
                 <div class="top">
-                    <h3></h3>
+                    <h3 id="use" title="民俗用品"></h3>
                 </div>
                 <i class="lampLeft"></i>
                 <i class="lampRight"></i>
@@ -44,32 +62,192 @@
                             </div>
                         </li>
                         <li>111</li>
-                        <li>111</li>
-                        <li>111</li>
+                    </ul>
+                    <ul v-if="is.use">
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>use</li>
                     </ul>
 
-                    <div class="moreBtn"></div>
+                    <div class="moreBtn" v-if="!is.use" @click="showMore('use')"></div>
                 </div>
 
                 <div class="bottom"></div>
 
             </div>
 
+            <div class="list">
+                <div class="top">
+                    <h3 id="food" title="果盘食盒"></h3>
+                </div>
+                <i class="lampLeft"></i>
+                <i class="lampRight"></i>
 
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>111</li>
+                    </ul>
+                    <ul v-if="is.food">
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>food</li>
+                    </ul>
 
+                    <div class="moreBtn" v-if="!is.food" @click="showMore('food')"></div>
+                </div>
+
+                <div class="bottom"></div>
+
+            </div>
+
+            <div class="list">
+                <div class="top">
+                    <h3 id="lucky" title="吉祥摆件"></h3>
+                </div>
+                <i class="lampLeft"></i>
+                <i class="lampRight"></i>
+
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>111</li>
+                    </ul>
+                    <ul v-if="is.lucky">
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>lucky</li>
+                    </ul>
+
+                    <div class="moreBtn" v-if="!is.lucky" @click="showMore('lucky')"></div>
+                </div>
+
+                <div class="bottom"></div>
+
+            </div>
+
+            <div class="list">
+                <div class="top">
+                    <h3 id="safety" title="平安挂件"></h3>
+                </div>
+                <i class="lampLeft"></i>
+                <i class="lampRight"></i>
+
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>111</li>
+                    </ul>
+                    <ul v-if="is.safety">
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>safety</li>
+                    </ul>
+
+                    <div class="moreBtn" v-if="!is.safety" @click="showMore('safety')"></div>
+                </div>
+
+                <div class="bottom"></div>
+
+            </div>
+
+            <div class="list">
+                <div class="top">
+                    <h3 id="tea" title="茶香器具"></h3>
+                </div>
+                <i class="lampLeft"></i>
+                <i class="lampRight"></i>
+
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>111</li>
+                    </ul>
+                    <ul v-if="is.tea">
+                        <li>
+                            <a href="" class="photo"><img src="" alt="296x346"></a>
+                            <div class="text">
+                                <h2>宣纸（鸡翅木相框）</h2>
+                                <span>年货价￥</span>
+                                <strong>288</strong>
+                                <a href="" class="buyBtn">立即购买</a>
+                            </div>
+                        </li>
+                        <li>tea</li>
+                    </ul>
+
+                    <div class="moreBtn" v-if="!is.tea" @click="showMore('tea')"></div>
+                </div>
+
+                <div class="bottom"></div>
+
+            </div>
 
         </div>
     </article>
 
-    <footer>
-
-    </footer>
 </div>
 
-
-<div class="wxShareInfo hide">
-    <i></i>
-</div>
 
 </body>
 
@@ -78,10 +256,56 @@
     var app=new Vue({
         el:"#app",
         data:{
-
+            headerHeight:0,
+            obj:{
+                nav:''
+            },
+            is:{
+                use:false,
+                food:false,
+                lucky:false,
+                safety:false,
+                tea:false
+            }
+        },
+        ready:function(){
+            var main = document.querySelector('.nianhuo');
+            this.headerHeight = main.getElementsByTagName('header')[0].clientHeight;
+            this.obj.nav = main.getElementsByTagName('nav')[0];
         },
         methods:{
+            showMore:function(id){
+                this.is[id] = true;
+            },
+            pos:function(id){
+                var obj = document.getElementById(id);
+                var main = document.getElementsByTagName('article')[0];
+                //定位描点
+                main.scrollTop = offsetTop(obj) - this.obj.nav.clientHeight;
 
+                function offsetTop(element){
+                    var top=element.offsetTop;
+                    var parent=element.offsetParent;
+
+                    while (parent !== null){
+                        top += parent.offsetTop;
+                        parent = parent.offsetParent;
+                    }
+
+                    return top;
+                }
+            },
+            scroll:function(event){
+                var top=event.currentTarget.scrollTop;
+                //滚动浮动
+                if(top > this.headerHeight){
+                    this.obj.nav.style.position = "fixed";
+                    this.obj.nav.style.top = 0 + "px";
+                }else{
+                    this.obj.nav.style.position = "";
+                    this.obj.nav.style.top = this.headerHeight + "px";
+                }
+            }
         }
     });
 
