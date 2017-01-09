@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 @@include('include/head.html',{
-    "title":"集珍双12"
+    "title":"抢年货，过大年"
 })
 <link rel="stylesheet" href="css/nianhuo.css"/>
 
 <body id="app">
-
+<img :src="'../../static/images/nianhuo/shareIcon.jpg'" style="position:absolute;width:0;height:0;" alt=""/>
 <div class="wrap">
 
-    <article class="main" @scroll="scroll($event)">
+    <article class="main" id="wrapper">
 
-        <div class="nianhuo">
+        <div class="nianhuo" id="scroller">
             <a v-link="'/index'" class="iconBackTop"></a>
             <a href="javascript:;" class="iconShareTop"></a>
             <header>
@@ -19,11 +19,11 @@
             </header>
 
             <nav>
-                <a class="use" href="javascript:;" @click="pos('use')" title="民俗用品"></a>
-                <a class="food" href="javascript:;" @click="pos('food')" title="果盘食盒"></a>
-                <a class="lucky" href="javascript:;" @click="pos('lucky')" title="吉祥摆件"></a>
-                <a class="safety" href="javascript:;" @click="pos('safety')" title="平安挂件"></a>
-                <a class="tea" href="javascript:;" @click="pos('tea')" title="茶香器具"></a>
+                <a class="use" href="javascript:;" @touchstart="pos('use')" :class="tab == 'use' ? 'select' : ''" title="民俗用品"></a>
+                <a class="food" href="javascript:;" @touchstart="pos('food')" :class="tab == 'food' ? 'select' : ''" title="果盘食盒"></a>
+                <a class="lucky" href="javascript:;" @touchstart="pos('lucky')" :class="tab == 'lucky' ? 'select' : ''" title="吉祥摆件"></a>
+                <a class="safety" href="javascript:;" @touchstart="pos('safety')" :class="tab == 'safety' ? 'select' : ''" title="平安挂件"></a>
+                <a class="tea" href="javascript:;" @touchstart="pos('tea')" :class="tab == 'tea' ? 'select' : ''" title="茶香器具"></a>
             </nav>
 
             <div class="scrollPlace"></div>
@@ -38,27 +38,97 @@
                 <div class="box">
                     <ul>
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/use1.jpg" alt="296x346"></a>
                         </li>
-                        <li>111</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use2.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use3.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use4.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use5.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use6.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use7.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use8.jpg" alt="296x346"></a>
+                        </li>
                     </ul>
                     <ul v-if="is.use">
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/use9.jpg" alt="296x346"></a>
                         </li>
-                        <li>use</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use10.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use11.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use12.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use13.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use14.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use15.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use16.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use17.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use18.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use19.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use20.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use21.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use22.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use23.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use24.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use25.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use26.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use27.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use28.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use29.jpg" alt="296x346"></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/use30.jpg" alt="296x346"></a>
+                        </li>
                     </ul>
 
                     <div class="moreBtn" v-if="!is.use" @click="showMore('use')"></div>
@@ -78,27 +148,52 @@
                 <div class="box">
                     <ul>
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/food1.jpg" alt=""></a>
                         </li>
-                        <li>111</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food2.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food8.jpg" alt=""></a>
+                        </li>
                     </ul>
                     <ul v-if="is.food">
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/food9.jpg" alt=""></a>
                         </li>
-                        <li>food</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food10.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food11.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food12.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food13.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food14.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/food15.jpg" alt=""></a>
+                        </li>
                     </ul>
 
                     <div class="moreBtn" v-if="!is.food" @click="showMore('food')"></div>
@@ -118,27 +213,55 @@
                 <div class="box">
                     <ul>
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky1.jpg" alt=""></a>
                         </li>
-                        <li>111</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky2.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky8.jpg" alt=""></a>
+                        </li>
                     </ul>
                     <ul v-if="is.lucky">
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky9.jpg" alt=""></a>
                         </li>
-                        <li>lucky</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky10.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky11.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky12.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky13.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky14.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky15.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/lucky16.jpg" alt=""></a>
+                        </li>
                     </ul>
 
                     <div class="moreBtn" v-if="!is.lucky" @click="showMore('lucky')"></div>
@@ -158,27 +281,58 @@
                 <div class="box">
                     <ul>
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/safety1.jpg" alt=""></a>
                         </li>
-                        <li>111</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety2.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety8.jpg" alt=""></a>
+                        </li>
                     </ul>
                     <ul v-if="is.safety">
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/safety9.jpg" alt=""></a>
                         </li>
-                        <li>safety</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety10.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety11.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety12.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety13.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety14.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety15.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety16.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/safety17.jpg" alt=""></a>
+                        </li>
                     </ul>
 
                     <div class="moreBtn" v-if="!is.safety" @click="showMore('safety')"></div>
@@ -198,30 +352,35 @@
                 <div class="box">
                     <ul>
                         <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
+                            <a href="" class="photo"><img src="images/nianhuo/tea1.jpg" alt=""></a>
                         </li>
-                        <li>111</li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea2.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="photo"><img src="images/nianhuo/tea8.jpg" alt=""></a>
+                        </li>
                     </ul>
                     <ul v-if="is.tea">
-                        <li>
-                            <a href="" class="photo"><img src="" alt="296x346"></a>
-                            <div class="text">
-                                <h2>宣纸（鸡翅木相框）</h2>
-                                <span>年货价￥</span>
-                                <strong>288</strong>
-                                <a href="" class="buyBtn">立即购买</a>
-                            </div>
-                        </li>
-                        <li>tea</li>
+
                     </ul>
 
-                    <div class="moreBtn" v-if="!is.tea" @click="showMore('tea')"></div>
+                    <!--<div class="moreBtn" v-if="!is.tea" @click="showMore('tea')"></div>-->
                 </div>
 
                 <div class="bottom"></div>
@@ -235,12 +394,21 @@
 
 
 </body>
-
+<script type="text/javascript" src="js/iscroll-probe.js"></script>
 <script>
+/*
 
+    http://www.mamicode.com/info-detail-331827.html
+
+ 抢年货，过大年
+ 内容：集珍坊年货节1月9日零点开抢！
+
+*/
+    var myScroll;
     var app=new Vue({
         el:"#app",
         data:{
+            tab:'',
             headerHeight:0,
             obj:{
                 nav:''
@@ -254,31 +422,92 @@
             }
         },
         ready:function(){
+            var _this = this;
             var main = document.querySelector('.nianhuo');
             this.headerHeight = main.getElementsByTagName('header')[0].clientHeight;
             this.obj.nav = main.getElementsByTagName('nav')[0];
+
+            //滚动
+
+            var position;
+
+            position = document.getElementById('position');
+
+            myScroll = new IScroll('#wrapper', {
+                //bounce : false,
+                click : true,
+                checkDOMChanges : true,
+                probeType: 3,
+                mouseWheel: true
+            });
+
+            myScroll.on('scroll', updatePosition);
+            myScroll.on('scrollEnd', updatePosition);
+            function updatePosition () {
+                if(Math.abs(this.y) > _this.headerHeight){
+                    _this.obj.nav.style.top = Math.abs(this.y) + "px";
+                }else{
+                    _this.obj.nav.style.top = _this.headerHeight + "px";
+                }
+                //滚动定位tab选中
+                var tabObj={
+                    use : _this.offsetTop(document.getElementById('use')) - _this.obj.nav.clientHeight,
+                    food : _this.offsetTop(document.getElementById('food')) - _this.obj.nav.clientHeight,
+                    lucky : _this.offsetTop(document.getElementById('lucky')) - _this.obj.nav.clientHeight,
+                    safety : _this.offsetTop(document.getElementById('safety')) - _this.obj.nav.clientHeight,
+                    tea : _this.offsetTop(document.getElementById('tea')) - _this.obj.nav.clientHeight
+                };
+                var top = Math.abs(this.y);
+
+                if(top < tabObj.use){
+                    _this.tab='';
+                }
+                if(top > tabObj.use && top < tabObj.food){
+                    _this.tab='use';
+                }
+                if(top > tabObj.food && top < tabObj.lucky){
+                    _this.tab='food';
+                }
+                if(top > tabObj.lucky && top < tabObj.safety){
+                    _this.tab='lucky';
+                }
+                if(top > tabObj.safety && top < tabObj.tea){
+                    _this.tab='safety';
+                }
+                if(top > tabObj.tea){
+                    _this.tab='tea';
+                }
+            }
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         },
         methods:{
             showMore:function(id){
                 this.is[id] = true;
+                //高度发生变化
+                setTimeout(function () {
+                    myScroll.refresh();
+                }, 0);
             },
             pos:function(id){
                 var obj = document.getElementById(id);
-                var main = document.getElementsByTagName('article')[0];
-                //定位描点
-                main.scrollTop = offsetTop(obj) - this.obj.nav.clientHeight;
+                // 修改nav浮动的值
+                this.obj.nav.style.top = (this.offsetTop(obj) - this.obj.nav.clientHeight) + "px";
+                // 修改滚动值
+                myScroll.scrollTo(0, -(this.offsetTop(obj) - this.obj.nav.clientHeight));
+                // 选中状态
+                this.tab=id;
 
-                function offsetTop(element){
-                    var top=element.offsetTop;
-                    var parent=element.offsetParent;
+                return false;
+            },
+            offsetTop:function(element){
+                var top=element.offsetTop;
+                var parent=element.offsetParent;
 
-                    while (parent !== null){
-                        top += parent.offsetTop;
-                        parent = parent.offsetParent;
-                    }
-
-                    return top;
+                while (parent !== null){
+                    top += parent.offsetTop;
+                    parent = parent.offsetParent;
                 }
+                return top;
             },
             scroll:function(event){
                 var top=event.currentTarget.scrollTop;

@@ -54,6 +54,23 @@
       &.tea{
         background-image: url("../images/nianhuo/navtea.png");
       }
+      &.select{
+        &.use{
+          background-image: url("../images/nianhuo/navuseS.png");
+        }
+        &.food{
+          background-image: url("../images/nianhuo/navfoodS.png");
+        }
+        &.lucky{
+          background-image: url("../images/nianhuo/navluckyS.png");
+        }
+        &.safety{
+          background-image: url("../images/nianhuo/navsafetyS.png");
+        }
+        &.tea{
+          background-image: url("../images/nianhuo/navteaS.png");
+        }
+      }
     }
     b{
       font-weight: normal;
@@ -157,65 +174,71 @@
     ul{
       padding-left: pxTorem(20px + 18px);
       @extend %clearfix;
+      $w:300px;
+      $h:448px;
       li{
         margin-right: pxTorem(4px);
         margin-bottom: pxTorem(4px);
         float: left;
-        width: pxTorem(296px);
-        height: pxTorem(446px);
-        border: 2px solid #cb0712;
+        //width: pxTorem(296px);
+        //height: pxTorem(446px);
+        //border: 2px solid #cb0712;
+
+        width: pxTorem($w);
+        height: pxTorem($h);
       }
       .photo{
         display: block;
-        height: pxTorem(346px);
-        border-bottom: 2px solid #cb0712;
+        //height: pxTorem(346px);
+        //border-bottom: 2px solid #cb0712;
       }
       img{
         vertical-align: middle;
         width: 100%;
       }
-      .text{
-        //width: pxTorem(296px - 14);
-        padding-left:pxTorem(10px);
-        padding-top: pxTorem(5px);
-        height: pxTorem(96px - 5);
-        @extend %ico_rem;
-        background-image: url("../images/nianhuo/textBg.jpg");
-      }
-      h2{
-        @include font-dpr(22px);
-        color: #79352c;
-        height: pxTorem(40px);
-        line-height: pxTorem(40px);
-        overflow: hidden;
-        margin-right:pxTorem(14px);
-      }
-
-      span{
-        vertical-align: middle;
-        display: inline-block;
-        color: #c8031f;
-        @include font-dpr(22px);
-      }
-      strong{
-        vertical-align: middle;
-        display: inline-block;
-        color: #c8031f;
-        @include font-dpr(44px);
-        font-family: Arial;
-      }
-      .buyBtn{
-        vertical-align: middle;
-        display: inline-block;
-        text-align: center;
-        color: #fff100;
-        @include font-dpr(22px);
-        width: pxTorem(100px);
-        height: pxTorem(30px);
-        line-height: pxTorem(30px);
-        background: #cb0712;
-        @include border-radius(2px);
-      }
+      //.text{
+      //  display: none;
+      //  //width: pxTorem(296px - 14);
+      //  padding-left:pxTorem(10px);
+      //  padding-top: pxTorem(5px);
+      //  height: pxTorem(96px - 5);
+      //  @extend %ico_rem;
+      //  background-image: url("../images/nianhuo/textBg.jpg");
+      //}
+      //h2{
+      //  @include font-dpr(22px);
+      //  color: #79352c;
+      //  height: pxTorem(40px);
+      //  line-height: pxTorem(40px);
+      //  overflow: hidden;
+      //  margin-right:pxTorem(14px);
+      //}
+      //
+      //span{
+      //  vertical-align: middle;
+      //  display: inline-block;
+      //  color: #c8031f;
+      //  @include font-dpr(22px);
+      //}
+      //strong{
+      //  vertical-align: middle;
+      //  display: inline-block;
+      //  color: #c8031f;
+      //  @include font-dpr(44px);
+      //  font-family: Arial;
+      //}
+      //.buyBtn{
+      //  vertical-align: middle;
+      //  display: inline-block;
+      //  text-align: center;
+      //  color: #fff100;
+      //  @include font-dpr(22px);
+      //  width: pxTorem(100px);
+      //  height: pxTorem(30px);
+      //  line-height: pxTorem(30px);
+      //  background: #cb0712;
+      //  @include border-radius(2px);
+      //}
     }
 
     .moreBtn{
