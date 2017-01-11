@@ -11,5 +11,6 @@
     <navigator url="../list/list">列表</navigator>
     <navigator url="../detail/detail">详情</navigator>
     <navigator url="../clearing/clearing">结算中心</navigator>
+    <navigator url="../paystate/paystate">支付成功-失败</navigator>
   </view>
 </view>

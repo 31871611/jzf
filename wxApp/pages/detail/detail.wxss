@@ -69,37 +69,6 @@
     padding: 20rpx 0 20rpx 0;
 }
 
-/* 图标按钮栏 */
-.itemInfo{
-   background: #fff; 
-}
-.itemInfo .content{
-    display: flex;
-    align-items: center;
-    color: #333;
-    margin:0 20rpx;
-    height: 90rpx;
-}
-.itemInfo .txt{
-    flex: 1;
-    font-size:28rpx;
-}
-.itemInfo .line{
-    height: 1rpx;
-    background-color: #d2d2d2;
-    margin:0 20rpx;
-}
-/* 打电话 */
-.itemInfo .iconDetailTel{
-    margin-right: 15rpx;
-    width:40rpx;
-    height:40rpx;
-    background-image: url("../../public/icon/iconTelC.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
 /* 售后服务说明 */
 .detailExplain{
     background: #fff;
@@ -142,6 +111,7 @@
     height:100rpx;
     line-height:100rpx;
     color: #fff;
+    font-size:32rpx;
 }
 .detailBtn .buy{
     background: #ea3a38;

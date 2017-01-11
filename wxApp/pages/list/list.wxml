@@ -14,6 +14,11 @@
         </view>
     </view>
 </view>
+<!-- 搜索无商品 -->
+<view class="iconPromptInfo">
+    <image src="../../public/icon/iconSearchEmpty.png" class="searchEmpty"></image>
+    <text>没有符合条件的藏品</text>
+</view>
 
 <!-- 列表 -->
 <view class="list">
