@@ -180,21 +180,18 @@
         margin-right: pxTorem(4px);
         margin-bottom: pxTorem(4px);
         float: left;
-        //width: pxTorem(296px);
-        //height: pxTorem(446px);
-        //border: 2px solid #cb0712;
-
         width: pxTorem($w);
         height: pxTorem($h);
       }
       .photo{
         display: block;
-        //height: pxTorem(346px);
-        //border-bottom: 2px solid #cb0712;
+        width: pxTorem($w);
+        height: pxTorem($h);
       }
       img{
         vertical-align: middle;
         width: 100%;
+        height: 100%;
       }
       //.text{
       //  display: none;
