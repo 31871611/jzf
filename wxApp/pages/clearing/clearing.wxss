@@ -1,0 +1,47 @@
+
+/* 标题 */
+.clearingTitle{
+    height:80rpx;
+    line-height:80rpx;
+    margin-left:20rpx;
+    font-size:28rpx;
+    color:#333;
+}
+
+/* 商品列表-行 */
+.listRow{
+    background: #fff;
+    display: flex;
+}
+.listRow .url{
+    width:240rpx;
+    height: 240rpx;
+}
+.listRow .url .photo{
+    width:100%;
+    height:100%;
+    vertical-align: middle;
+}
+.listRow .info{
+    flex: 1;
+}
+
+/* 订单信息 */
+.clearingOrderInfo{
+    background: #fff;
+    padding:10rpx 20rpx;
+}
+.clearingOrderInfo .list{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.clearingOrderInfo .list view{
+    height:50rpx;
+    line-height:50rpx;
+    color:#333;
+    font-size:32rpx;
+}
+.clearingOrderInfo .list .red{
+    color:#ea3a38;
+}

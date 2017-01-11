@@ -1,0 +1,72 @@
+详情页
+<!-- 轮播 -->
+<swiper class="detailSideslip" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+    <block wx:for="{{swiper.imgUrls}}">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="detailTitle">
+    A891 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件
+</view>
+
+<view class="detaiSubTitle">
+    <view class="price">
+        ￥18,500
+    </view>
+    <view class="love select">
+        111
+    </view>
+</view>
+
+<view class="detailInfo">
+    <view class="title">藏品详情</view>
+    <view>编号：A501</view>
+    <view>数量：1</view>
+    <view>作者：郭懋介</view>
+    <view>形式：印章</view>
+    <view>品类：寿山石</view>
+    <view>尺寸：4.60x4.40x4.60cm</view>
+    <view>材质：芙蓉石</view>
+    <view>重量：100g</view>
+    <view>款识：正大光明</view>
+    <view>备注：底部有瑕疵底部有瑕疵</view>
+</view>
+
+<view class="itemInfo">
+    <view class="content">
+        <view class="iconDetailTel"></view>
+        <view class="txt">客服电话：0591-88212636</view>
+    </view>
+    <!--<view class="line"></view>-->
+</view>
+
+<view class="detailExplain">
+    <view class="title">
+        售后服务
+    </view>
+    <view class="contnte">
+        集珍坊提供的寿山石藏品，均由专家把关，材质、作者均由藏品介绍所示，如有发现材质、作者与所示不符，在确认收货后7天内提供相关证明，可向集珍坊提出退货申请。
+    </view>
+    <view class="contnte">
+        集珍坊确认并通过申请后的七天内，将藏品保持原样退回集珍坊指定收货地点，集珍坊在确认藏品原质原貌后将藏品金额全额退回。
+    </view>
+    <view class="contnte">
+        注：当您完成支付后我们将在72小时之内为您发货，由顺丰速递为您配送，在您收到藏品时务必拆开包装当面验收， 如有发现藏品损坏请拒绝签收， 并及时联系本商城客服人员，我们将及时配合处理。再次申明：若您签收快件即表明您承认藏品的完整性， 一旦签收不因藏品损坏或缺失给予退货。
+    </view>
+</view>
+
+<!-- 购买按钮 -->
+<view class="detailBtnPlaceholder"></view>
+<view class="detailBtn">
+    <view class="buy" bindtap='goBuy'>
+        立即购买
+    </view>
+</view>
+<view class="detailBtn">
+    <view class="not" bindtap='goBuy'>
+        该藏品已售出
+    </view>
+</view>

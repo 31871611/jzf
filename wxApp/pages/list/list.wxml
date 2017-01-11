@@ -1,0 +1,58 @@
+{{msg}}
+<!-- 搜索 -->
+<view class="search">
+    <view class="tab">
+        <view class="select">好物</view>
+        <view>寿山石</view>
+    </view>
+    <view class="content">
+        <view class="box">
+            <input type="text" maxlength="10" placeholder="输入关键词查找藏品" />
+        </view>
+        <view class="txt">
+            取消
+        </view>
+    </view>
+</view>
+
+<!-- 列表 -->
+<view class="list">
+    <view class="listContent">
+        <navigator url="../detail/detail" class='listUrl'>
+            <image src="{{list.photo}}" class='listPhoto'></image>
+            <view class="listLove select">
+                123
+            </view>
+        </navigator>
+        <view class='listTitle'>
+            A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章
+        </view>
+        <view class="listBottom">
+            <view class='listPrice'>
+                ￥18,500
+            </view>
+        </view>
+    </view>
+    <view class="listContent" wx:for="{{data}}">
+        <navigator url="../detail/detail" class='listUrl'>
+            <image src="{{list.photo}}" class='listPhoto'></image>
+            <view class="listLove">
+                123
+            </view>
+        </navigator>
+        <view class='listTitle'>
+            A859 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章
+        </view>
+        <view class="listBottom">
+            <view class='listPrice'>
+                ￥18,500
+            </view>
+            <navigator url="url" class="listBuy"></navigator>
+        </view>
+    </view>
+</view>
+
+
+
+
+

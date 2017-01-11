@@ -1,0 +1,58 @@
+
+<view class="clearingTitle">
+    商品信息
+</view>
+
+<!-- 商品信息 -->
+<view class="listRow">
+    <navigator url="url" class="url">
+        <image class="photo" src="../../public/images/230x230.jpg"></image>
+    </navigator>
+    <view class="info">
+        <view class="title">
+            郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章
+        </view>
+        <view class="type">
+            尺寸:11.5X4.2X3.9cm
+            颜色:颜色颜色
+        </view>
+        <view class="bottom">
+            ￥18,500
+        </view>
+        <view class="num">
+            x1
+        </view>
+        <navigator url="url" class="return">
+            申请退货
+        </navigator>
+    </view>
+</view>
+
+<!-- 订单信息 -->
+<view class="clearingOrderInfo">
+    <view class="list">
+        <view>
+            商品金额：
+        </view>
+        <view>
+            ￥12000
+        </view>
+    </view>
+    <view class="list">
+        <view>
+            运费：
+        </view>
+        <view class="red">
+            ￥20
+        </view>
+    </view>
+    <view class="list">
+        <view>
+            应付总额：
+        </view>
+        <view>
+            ￥12100
+        </view>
+    </view>
+
+</view>
