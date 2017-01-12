@@ -10,7 +10,7 @@
     物流信息
 </view>
 
-<view class="state">
+<view class="userInfo">
     <view><text>收货人：</text><text class="info">姓名</text></view>
     <view><text>收货地址：</text><text class="info">福州市鼓楼区杨桥东路19号海峡文化产权交易所</text></view>
     <view><text>联系方式：</text><text class="info">0123456789</text></view>
