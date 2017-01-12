@@ -8,7 +8,7 @@
 </view>
 
 <!-- 列表 -->
-<view class="list">
+<view class="listCol">
     <view class="listContent">
         <navigator url="../detail/detail" class='listUrl'>
             <image src="{{list.photo}}" class='listPhoto'></image>

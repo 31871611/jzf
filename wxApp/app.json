@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/orderDetail/orderDetail",
+    
     "pages/index/index",
     "pages/search/search",
     "pages/list/list",
@@ -10,7 +10,7 @@
     "pages/paystate/paystate",
     "pages/user/user",
     "pages/order/order",
-    
+    "pages/orderDetail/orderDetail",
     "pages/follow/follow"
   ],
   "window":{
