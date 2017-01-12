@@ -8,9 +8,14 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <view>
+    <navigator url="../search/search">搜索</navigator>
     <navigator url="../list/list">列表</navigator>
     <navigator url="../detail/detail">详情</navigator>
     <navigator url="../clearing/clearing">结算中心</navigator>
     <navigator url="../paystate/paystate">支付成功-失败</navigator>
+    <navigator url="../user/user">用户中心</navigator>
+    <navigator url="../order/order">我的订单</navigator>
+    <navigator url="../orderDetail/orderDetail">订单详情</navigator>
+    <navigator url="../follow/follow">我的关注</navigator>
   </view>
 </view>

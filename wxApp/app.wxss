@@ -49,7 +49,7 @@ page{
     font-size:28rpx;
 }
 .itemInfo .line{
-    height: 1rpx;
+    height: 1px;
     background-color: #d2d2d2;
     margin:0 20rpx;
 }
@@ -63,3 +63,55 @@ page{
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+/* 用户中心主页-全部订单 */
+.itemInfo .iconUserHomeOrder{
+  margin-right: 15rpx;
+  width: 41rpx;
+  height: 40rpx;
+  background-image: url("../../public/icon/iconUserOrder.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* 用户中心主页-待付款 */
+.itemInfo .iconUserNoPay{
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserNoPay.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+/* 用户中心主页-已付款 */
+.itemInfo .iconUserPay{
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserPay.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+/* 用户中心主页-待收货 */
+.itemInfo .iconUserAccept{
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserAccept.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+/* 用户中心主页-我的关注 */
+.itemInfo .iconUserHomeLike{
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserLike.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+

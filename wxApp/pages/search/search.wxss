@@ -1,0 +1,102 @@
+.search{
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    padding-bottom: 16rpx;
+    margin-bottom: 10rpx;
+}
+.search .tab{
+    width: 340rpx;
+    height: 54rpx;
+    margin: 16rpx auto 0;
+    text-align: center;
+    box-shadow: 0 0 2rpx #666;
+    border-radius: 4rpx;
+    display: flex;
+}
+.search .tab view{
+    flex: 1;
+    display: block;
+    width: 170rpx;
+    font-size:26rpx;
+    text-align: center;
+    color:#fff;
+    height: 54rpx;
+    line-height: 54rpx;
+}
+.search .tab view.select{
+    background: rgba(102,102,102,.4);
+}
+.search .content{
+    margin-top:16rpx;
+    display: flex;
+}
+.search .box{
+    flex: 1;
+    display: flex;
+    box-shadow: inset 0 0 2rpx #666;
+    height:70rpx;
+    margin-left:20rpx;
+    margin-right:20rpx;
+}
+.search .box:before{
+    margin:18rpx 18rpx 0 10rpx;
+    content: "\20";
+    display: block;
+    width:40rpx;
+    height:36rpx;
+    background-image: url("../../public/icon/iconSearchC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.search .box input{
+    flex: 1;
+    border-radius: 3rpx;
+    display: block;
+    width:100%;
+    height:70rpx;
+    line-height:70rpx;
+    font-size:26rpx;
+    border:0;
+    background: transparent;
+    color:#fff;
+}
+.search .txt{
+    display: block;
+    height:70rpx;
+    line-height:70rpx;
+    padding:0 20rpx 0 0 ;
+    color:#fff;
+    font-size:28rpx;
+}
+/* 搜索记录 */
+.searchRecord{
+    margin:0 20rpx;
+
+}
+.searchRecordTitle{
+    font-size:28rpx;
+    color:#333;
+    height:80rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.searchRecordTitle view{
+    height:80rpx;
+    line-height:80rpx;
+}
+.searchRecordTitle .red{
+    color: #ea3a38;
+}
+.searchRecordList{
+    margin-bottom: 100rpx;
+}
+.searchRecordList text{
+    font-size:24rpx;
+    padding:15rpx 25rpx;
+    background: #ddd;
+    color:#333;
+    border-radius: 4rpx;
+    margin-right:20rpx;
+    margin-bottom:20rpx;
+}

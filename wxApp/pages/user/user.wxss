@@ -1,0 +1,44 @@
+.mt20{
+    margin-top:20rpx;
+}
+.user{}
+
+.user .photo{
+    position: relative;
+    height: 300rpx;
+}
+.user .photo .bg{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 300rpx;
+    filter: blur(2px);
+}
+.user .userInfo{
+    position: relative;
+    padding-top:80rpx;
+}
+.user .userInfo .face{
+    width:128rpx;
+    height:128rpx;
+    display: block;
+    margin:0 auto;
+    border-radius: 50%;
+}
+.user .userInfo .text{
+    line-height:2;
+    font-size:28rpx;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+

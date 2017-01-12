@@ -1,0 +1,6 @@
+/* 商品列表-行 */
+@import "../../public/wxss/listRow.wxss";
+
+.listRow{
+    margin-top:20rpx;
+}

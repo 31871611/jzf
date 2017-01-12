@@ -1,0 +1,112 @@
+/* 商品列表-行 */
+.listRow{
+    background: #fff;
+    display: flex;
+    padding:20rpx 20rpx;
+}
+.listRow .url{
+    width:240rpx;
+    height: 240rpx;
+    position: relative;
+}
+.listRow .url .photo{
+    width:100%;
+    height:100%;
+    vertical-align: middle;
+}
+.listRow .url .love{
+    position: absolute;
+    right:0;
+    top:0;
+    width:36rpx;
+    height:36rpx;
+    color:#fff;
+    font-size:24rpx;
+    text-align:center;
+    padding:15rpx 15rpx;
+}
+.listRow .url .love:before{
+    content: "\20";
+    width:36rpx;
+    height:36rpx;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image:url("../../public/icon/iconLoveC.png");
+    display:block;
+    margin:0 auto;
+}
+.listRow .url .love.select:before{
+    background-image:url("../../public/icon/iconLoveS.png");
+}
+.listRow .info{
+    flex: 1;
+    padding-left:20rpx;
+    position: relative;
+}
+.listRow .info .title{
+    margin-top:10rpx;
+    font-size:32rpx;
+    color:#333;
+    overflow: hidden;
+    line-height:40rpx;
+    height:80rpx;
+}
+.listRow .type{
+    font-size:24rpx;
+    color:#333;
+    margin-top:10rpx;
+    height:80rpx;
+    overflow:hidden;
+}
+.listRow .type text{
+    display: block;
+    height:40rpx;
+    line-height:40rpx;
+}
+.listRow .bottom{
+    height:60rpx;
+}
+.listRow .price{
+    color:#ea3a38;
+    font-size:32rpx;
+    height:60rpx;
+    line-height:60rpx;
+    display: inline-block;
+}
+.listRow .original{
+    height:60rpx;
+    line-height:60rpx;
+    color: #666;
+    text-decoration: line-through;
+    font-size:24rpx;
+    display: inline-block;
+    margin-left:20rpx;
+}
+.listRow .num{
+    position: absolute;
+    right:0;
+    top:49%;
+    color: #999;
+    font-size:24rpx;
+}
+.listRow .return{
+    height:60rpx;
+    line-height:60rpx;
+    position: absolute;
+    right:0;
+    bottom:0;
+    color:#3366cc;
+    font-size:24rpx;
+}
+.line{
+    background: #fff;
+    height:1px;
+}
+.line:before{
+    content: "\20";
+    display: block;
+    height:1px;
+    background:#d2d2d2;
+    margin:0 20rpx;
+}

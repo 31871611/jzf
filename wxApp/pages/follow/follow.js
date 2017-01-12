@@ -1,11 +1,6 @@
-// pages/list/list.js
+// pages/follow/follow.js
 Page({
-  data:{
-    data : 10,
-    list:{
-      photo : '../../public/images/230x230.jpg'
-    }
-  },
+  data:{},
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },

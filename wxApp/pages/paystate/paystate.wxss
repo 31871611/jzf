@@ -34,7 +34,7 @@ page{
 .helpInfo{
     margin:50rpx 20rpx 0;
     padding-top:50rpx;
-    border-top: 1rpx solid #d2d2d2;
+    border-top: 1px solid #d2d2d2;
     text-align: center;
 }
 .helpInfo text{

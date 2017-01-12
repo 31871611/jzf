@@ -64,7 +64,7 @@
     line-height:normal;
     font-size:24rpx;
     color:#666;
-    border-bottom:1rpx solid #d2d2d2;
+    border-bottom:1px solid #d2d2d2;
     margin:0 0 5rpx 0;
     padding: 20rpx 0 20rpx 0;
 }
@@ -81,7 +81,7 @@
 .detailExplain .title{
     padding-top: 20rpx;
     padding-bottom: 20rpx;
-    border-bottom: 1rpx solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
     margin: auto 20rpx;
     color:#666;
 }

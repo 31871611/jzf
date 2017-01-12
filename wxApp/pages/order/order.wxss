@@ -1,0 +1,80 @@
+.orderTab{
+    display: flex;
+    background: #fff;
+    border-top:1rpx solid #d2d2d2;
+}
+.orderTab navigator{
+    flex: 1;
+    text-align: center;
+    font-size:28rpx;
+    height:80rpx;
+    line-height:80rpx;
+    border-bottom:1rpx solid #d2d2d2;
+}
+.orderTab navigator.select{
+    color:#ea3a38;
+    border-bottom:2rpx solid #ea3a38;
+}
+
+.orderNum{
+    padding:0 20rpx;
+    margin-top:20rpx;
+    background: #fff;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content:space-between;*/
+}
+.orderNum:after{
+    content: "\20";
+    height: 1px;
+    display: block;
+    background: #d2d2d2;
+    clear: both;
+}
+.orderNum view{
+    float:left;
+    height:65rpx;
+    line-height:65rpx;
+    font-size:24rpx;
+    color:#333;
+}
+.orderNum text{
+    float:right;
+    height:65rpx;
+    line-height:65rpx;
+    font-size:28rpx;
+    color: #ea3a38;
+}
+
+/* 商品列表-行 */
+@import "../../public/wxss/listRow.wxss";
+
+.orderBottom{
+    padding:0 20rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.orderBottom .type{
+    font-size:24rpx;
+    color:#333;
+}
+.orderBottom .type view{
+    height:40rpx;
+    line-height:40rpx;
+}
+.orderBottom .type .red{
+    color:#ea3a38;
+    font-size:28rpx;
+    font-weight: bold;
+}
+.orderBottom .btn{
+    width:190rpx;
+    text-align:center;
+    height:60rpx;
+    line-height:60rpx;
+    background:#ea3a38;
+    font-size:28rpx;
+    color:#fff;
+}

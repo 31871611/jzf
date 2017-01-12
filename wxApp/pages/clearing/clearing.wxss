@@ -9,25 +9,11 @@
 }
 
 /* 商品列表-行 */
-.listRow{
-    background: #fff;
-    display: flex;
-}
-.listRow .url{
-    width:240rpx;
-    height: 240rpx;
-}
-.listRow .url .photo{
-    width:100%;
-    height:100%;
-    vertical-align: middle;
-}
-.listRow .info{
-    flex: 1;
-}
+@import "../../public/wxss/listRow.wxss";
 
 /* 订单信息 */
 .clearingOrderInfo{
+    margin-top:20rpx;
     background: #fff;
     padding:10rpx 20rpx;
 }
@@ -44,4 +30,62 @@
 }
 .clearingOrderInfo .list .red{
     color:#ea3a38;
+}
+/* 售后条款 */
+.isService{
+    height:90rpx;
+    margin-top:20rpx;
+    margin-bottom:20rpx;
+    background:#fff;
+    text-align:center;
+}
+.isService label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.isService checkbox{
+    display: block;
+    border-radius: 50%;
+}
+.isService text{
+    display: block;
+    height:90rpx;
+    line-height:90rpx;
+    color:#333;
+    font-size:24rpx;
+}
+.isService navigator{
+    display: block;
+    height:90rpx;
+    line-height:90rpx;
+    color:#3366cc;
+    font-size:24rpx;
+}
+
+/* 支付按钮 */
+.btn{
+    margin:10rpx 20rpx 0;
+    border-radius: 4rpx;
+    border:1px solid #d2d2d2;
+    background: #fff;
+    height:99rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn text{
+    display: block;
+    color:#333;
+    font-size:32rpx;
+    position: relative;
+}
+.btn .wx{
+    margin-right:20rpx;
+    width: 44rpx;
+    height: 36rpx;
+    background-image: url("../../public/icon/iconWeiXin.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }

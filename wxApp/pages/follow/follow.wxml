@@ -1,8 +1,3 @@
-
-<view class="clearingTitle">
-    商品信息
-</view>
-
 <!-- 商品信息 -->
 <view class="listRow">
     <navigator url="url" class="url">
@@ -32,7 +27,7 @@
         </navigator>
     </view>
 </view>
-<view class="line"></view>
+
 <view class="listRow">
     <navigator url="url" class="url">
         <image class="photo" src="../../public/images/230x230.jpg"></image>
@@ -51,7 +46,6 @@
             </view>
             <view class="bottom">
                 <view class="price">￥18,500</view>
-                <view class="original">原价：110</view>
             </view>
             <view class="num">
                 x1
@@ -62,48 +56,3 @@
         </navigator>
     </view>
 </view>
-
-<!-- 订单信息 -->
-<view class="clearingOrderInfo">
-    <view class="list">
-        <view>
-            商品金额：
-        </view>
-        <view>
-            ￥12000
-        </view>
-    </view>
-    <view class="list">
-        <view>
-            运费：
-        </view>
-        <view class="red">
-            ￥20
-        </view>
-    </view>
-    <view class="list">
-        <view>
-            应付总额：
-        </view>
-        <view>
-            ￥12100
-        </view>
-    </view>
-</view>
-
-<!-- 售后条款 -->
-<view class="isService">
-    <label>
-        <checkbox></checkbox>
-        <text>已阅读</text>
-        <navigator url="url">《售后条款》</navigator>
-    </label>
-</view>
-
-<!-- 支付按钮 -->
-<view class="btn">
-    <view class="wx"></view>
-    <text>微信支付</text>
-</view>
-
-

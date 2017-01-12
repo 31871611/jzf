@@ -1,23 +1,10 @@
-{{msg}}
 <!-- 搜索 -->
 <view class="search">
-    <view class="tab">
-        <view class="select">好物</view>
-        <view>寿山石</view>
-    </view>
     <view class="content">
-        <view class="box">
+        <navigator url="../search/search" class="box">
             <input type="text" maxlength="10" placeholder="输入关键词查找藏品" />
-        </view>
-        <view class="txt">
-            取消
-        </view>
+        </navigator>
     </view>
-</view>
-<!-- 搜索无商品 -->
-<view class="iconPromptInfo">
-    <image src="../../public/icon/iconSearchEmpty.png" class="searchEmpty"></image>
-    <text>没有符合条件的藏品</text>
 </view>
 
 <!-- 列表 -->

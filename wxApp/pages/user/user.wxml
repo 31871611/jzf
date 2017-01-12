@@ -1,0 +1,46 @@
+<view class="user">
+    <view class="photo">
+        <image src="../../public/images/iconUserBg.jpg" class="bg"></image>
+        <view class="userInfo">
+            <image class="face" src="{{userInfo.avatarUrl}}"></image>
+            <text class="text">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+
+    <view class="itemInfo mt20">
+        <navigator url="../order/order" class="content">
+            <view class="iconUserHomeOrder"></view>
+            <view class="txt">全部订单</view>
+        </navigator>
+        <view class="line"></view>
+    </view>
+    <view class="itemInfo">
+        <navigator url="url" class="content">
+            <view class="iconUserNoPay"></view>
+            <view class="txt">待付款</view>
+        </navigator>
+        <view class="line"></view>
+    </view>
+    <view class="itemInfo">
+        <navigator url="url" class="content">
+            <view class="iconUserPay"></view>
+            <view class="txt">已付款</view>
+        </navigator>
+        <view class="line"></view>
+    </view>
+    <view class="itemInfo">
+        <navigator url="url" class="content">
+            <view class="iconUserAccept"></view>
+            <view class="txt">待收货</view>
+        </navigator>
+        <!--<view class="line"></view>-->
+    </view>
+    <view class="itemInfo mt20">
+        <navigator url="../follow/follow" class="content">
+            <view class="iconUserHomeLike"></view>
+            <view class="txt">我的关注</view>
+        </navigator>
+        <!--<view class="line"></view>-->
+    </view>
+
+</view>

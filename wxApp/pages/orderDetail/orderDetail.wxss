@@ -1,0 +1,134 @@
+.state{
+    border-top:1px solid #d2d2d2;
+    background: #fff;
+    margin-bottom: 20rpx;
+    padding:10rpx 20rpx;
+    font-size:28rpx;
+}
+.state view{
+    line-height:2;
+    display: flex;
+}
+.state text{
+    color:#999;
+}
+.state text.info{
+    color:#333;
+    flex: 1;
+}
+.state text.red{
+    color:#ea3a38;
+}
+.state text.prompt{
+    font-size:24rpx;
+    color:#999;
+}
+
+/* 物流信息 
+.logistics{
+    background:#fff;
+    margin-bottom:20rpx;
+    padding:0 20rpx;
+    font-size:28rpx;
+    color:#333;
+}
+*/
+
+/* 用户信息 */
+.userInfo{
+    background:#fff;
+    margin-bottom:20rpx;
+    padding:10rpx 20rpx;
+    font-size:28rpx;
+    color:#333;
+}
+.userInfo view{
+    line-height:2;
+    display: flex;
+}
+.userInfo text{
+    color:#999;
+}
+.userInfo text.info{
+    color:#333;
+    flex: 1;
+}
+.userInfo text.red{
+    color:#ea3a38;
+}
+.userInfo text.prompt{
+    font-size:24rpx;
+    color:#999;
+}
+
+
+/* 商品列表-行 */
+@import "../../public/wxss/listRow.wxss";
+
+/* 订单付款金款 */
+.orderInfo{
+    background: #fff;
+    margin-top:20rpx;
+    padding:10rpx 20rpx;
+    font-size:28rpx;
+    color:#333;
+}
+.orderInfo view{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.orderInfo text{
+    line-height:2;
+}
+.orderInfo text.red{
+    color:#ea3a38;
+}
+/* 订单总额 */
+.orderTotal{
+    margin-bottom:100rpx;
+    background: #fff;
+    padding:0 20rpx;
+    font-size:28rpx;
+    color:#333;
+    text-align: right;
+    line-height:2;
+}
+.orderTotal text{
+    color:#ea3a38;
+    font-size:32rpx;
+    font-weight: bold;
+}
+
+/* 占位空间 */
+.placeholder{
+    height: 100rpx;
+}
+/* 浮动按钮 */
+.floatBtn{
+    height: 100rpx;
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    display: flex;
+}
+.floatBtn view{
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color:#333; 
+}
+.floatBtn view.exit{
+    background:#fff;
+}
+.floatBtn view.buy{
+    background:#ea3a38;
+    color:#fff;
+}
+
+
+
+
+
