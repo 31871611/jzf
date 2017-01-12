@@ -1,0 +1,55 @@
+<!-- 支付成功 -->
+<view class="payState">
+    <view class="success"></view>
+    <text class="infoText">恭喜您支付成功！</text>
+
+    <view class="orderInfo">
+        <view>
+            <text>交易时间：</text>
+            <text>016-04-08 20:02:31</text>
+        </view>
+        <view>
+            <text>支付方式：</text>
+            <text>微信支付</text>
+        </view>
+        <view>
+            <text>订单号：</text>
+            <text>JZ8977979696976</text>
+        </view>
+    </view>
+
+</view>
+
+<!-- 支付失败 -->
+<view class="payState">
+    <view class="error"></view>
+    <text class="infoText">对不起支付失败！</text>
+
+    <view class="orderInfo">
+        <view>
+            <text>交易时间：</text>
+            <text>016-04-08 20:02:31</text>
+        </view>
+        <view>
+            <text>支付方式：</text>
+            <text>微信支付</text>
+        </view>
+        <view>
+            <text>订单号：</text>
+            <text>JZ8977979696976</text>
+        </view>
+    </view>
+
+    <view class="helpInfo">
+        <text>在支付过程中如果存在任何疑问</text>
+        <text>请拨打客服热线</text>
+        <view>0591-88212636</view>
+    </view>
+</view>
+
+
+<view class="placeholder"><!-- 占位 --></view>
+<view class="payStateBtn">
+    <navigator url="url" class="buy">继续购物</navigator>
+    <navigator url="url" class="see">查看订单</navigator>
+</view>

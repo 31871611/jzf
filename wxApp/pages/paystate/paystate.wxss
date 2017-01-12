@@ -1,0 +1,92 @@
+page{
+    background:#fff;
+}
+.payState{
+    padding-top:10%;
+}
+.payState .success{
+    margin:0 auto;
+    width:110rpx;
+    height: 112rpx;
+    background-image: url("../../public/icon/iconPaySuccess.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.payState .error{
+    margin:0 auto;
+    width:112rpx;
+    height: 84rpx;
+    background-image: url("../../public/icon/iconPayError.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.payState .infoText{
+    color:#cd0817;
+    text-align: center;
+    display: block;
+    font-size:28rpx;
+    padding-top:20rpx;
+}
+
+/* 失败帮助信息 */
+.helpInfo{
+    margin:50rpx 20rpx 0;
+    padding-top:50rpx;
+    border-top: 1rpx solid #d2d2d2;
+    text-align: center;
+}
+.helpInfo text{
+    display: block;
+    font-size:28rpx;
+    color:#999;
+    line-height:1.5;
+}
+.helpInfo view{
+    color:#3366cc;
+    margin-top:20rpx;
+}
+
+/* 订单信息 */
+.orderInfo{
+    margin-top:100rpx;
+    padding:0 20rpx;
+}
+.orderInfo view{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.orderInfo view text{
+    height:60rpx;
+    line-height:60rpx;
+    color:#333;
+    font-size:32rpx;
+}
+/* 浮动占位 */
+.placeholder{
+    height:100rpx;
+}
+/* 按钮 */
+.payStateBtn{
+    display: flex;
+    width:100%;
+    position: fixed;
+    left:0;
+    bottom:0;
+}
+.payStateBtn navigator{
+    flex: 1;
+    text-align: center;
+    height:100rpx;
+    line-height:100rpx;
+    color:#fff;
+    font-size:32rpx;
+}
+.payStateBtn navigator.buy{
+    background: #ea3a38;
+}
+.payStateBtn navigator.see{
+    background: #003347;
+}

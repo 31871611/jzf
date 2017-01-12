@@ -12,3 +12,54 @@ page{
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+
+/* 搜索无商品提示 */
+.iconPromptInfo{
+  padding-top: 285rpx;
+}
+.iconPromptInfo .searchEmpty{
+  width:129rpx;
+  height:112rpx;
+  display: block;
+  margin:0 auto;
+}
+.iconPromptInfo text{
+  font-size:28rpx;
+  color:#333333;
+  display: block;
+  text-align: center;
+  height:50rpx;
+  line-height:50rpx;
+}
+
+/* 图标按钮栏 */
+.itemInfo{
+   background: #fff; 
+}
+.itemInfo .content{
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin:0 20rpx;
+    height: 90rpx;
+}
+.itemInfo .txt{
+    flex: 1;
+    font-size:28rpx;
+}
+.itemInfo .line{
+    height: 1rpx;
+    background-color: #d2d2d2;
+    margin:0 20rpx;
+}
+/* 详情页打电话 */
+.itemInfo .iconDetailTel{
+    margin-right: 15rpx;
+    width:40rpx;
+    height:40rpx;
+    background-image: url("../../public/icon/iconTelC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

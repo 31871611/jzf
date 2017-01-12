@@ -1,10 +1,13 @@
 {
   "pages":[
-    "pages/clearing/clearing",
+    
+    "pages/paystate/paystate",
     "pages/index/index",
     "pages/logs/logs",
     "pages/list/list",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/clearing/clearing"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
