@@ -1,6 +1,9 @@
 // pages/clearing/clearing.js
 Page({
   data:{},
+  radioVoucher: function(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },

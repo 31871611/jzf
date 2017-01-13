@@ -1,3 +1,81 @@
+<view class="clearingTitle">
+    配送方式
+</view>
+<radio-group class="clearingTab" bindchange="">
+    <label>
+        <radio color="#ea3a38" value="快递配送"></radio><text>快递配送</text>
+    </label>
+    <label>
+        <radio color="#ea3a38" value="自己提货"></radio><text>自己提货</text>
+    </label>
+</radio-group>
+
+<view class="clearingTitle">
+    藏品物流保价
+</view>
+<view class="insuredInfo">
+    <view class="subTitle">藏品物流报价费：<text>35元</text></view>
+    <view class="content">商品定金按商品销售价10%计收，您成功支付预定金后请在开售当天9点前完成剩余尾款的支付， 即可获得藏品。如您选择全额支付，那么全额款的10%也视为预定金。请您慎重下单！<text>港澳台地区保价费请咨询客服</text><navigator url="url">为什么要保价？</navigator></view>
+</view>
+
+<view class="clearingTitle">
+    配送地址
+</view>
+<view class="clearingAddress">
+    <!-- 无地址 -->
+    <navigator url="url" class="not">
+        请添加收货地址
+    </navigator>
+    
+    <!-- 有地址 -->
+    <navigator url="url" class="yes">
+        <view class="content">
+            <view class="title">
+                <text class="name">名字</text>
+                <text class="tel">13950088866</text>
+            </view>
+            <view class="addressInfo">
+                福建省福州市鼓楼区杨桥东路衣锦华庭218号#2栋201室
+            </view>
+        </view>
+    </navigator>
+</view>
+
+<!-- 自提信息 -->
+<view class="clearingTitle">
+    自提信息
+</view>
+<view class="clearingCompany">
+    <view>
+        福建福州市鼓楼区杨桥东路19号衣锦华庭雅道巷水流湾院落（福建省集珍文化艺术馆正对面）
+    </view>
+    <navigator url="url">
+        快递配送
+        2015年01月01日
+        >
+    </navigator>
+</view>
+
+<!-- 身份信息 -->
+<view class="clearingTitle">
+    身份信息
+</view>
+<view class="clearingUser">
+    <label>
+        <text>联系号码</text><input type="number" />
+    </label>
+    <label>
+        <text>姓名</text><input type="text" />
+    </label>
+    <label>
+        <text>身份证</text><input type="text" />
+    </label>
+    <view>
+        提示：支付成功后集珍坊会向您发送自提码，请及时查收。
+        <navigator url="url" class="url">查看自提流程</navigator>
+    </view>
+</view>
+
 
 <view class="clearingTitle">
     商品信息
@@ -63,6 +141,21 @@
     </view>
 </view>
 
+<view class="clearingTitle">
+    抵用券
+</view>
+<radio-group class="voucher" bindchange="radioVoucher">
+    <label>
+        <radio color="#ea3a38" value="10元抵用券"></radio>
+        10元抵用券
+    </label>
+    <label>
+        <radio color="#ea3a38" value="100元抵用券"></radio>
+        100元抵用券
+    </label>
+</radio-group>
+
+
 <!-- 订单信息 -->
 <view class="clearingOrderInfo">
     <view class="list">
@@ -94,7 +187,7 @@
 <!-- 售后条款 -->
 <view class="isService">
     <label>
-        <checkbox></checkbox>
+        <checkbox color="#ea3a38"></checkbox>
         <text>已阅读</text>
         <navigator url="url">《售后条款》</navigator>
     </label>
@@ -106,4 +199,4 @@
     <text>微信支付</text>
 </view>
 
-
+<view class="placeholder"></view>

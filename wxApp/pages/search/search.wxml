@@ -8,9 +8,7 @@
         <view class="box">
             <input type="text" maxlength="10" placeholder="输入关键词查找藏品" />
         </view>
-        <view class="txt">
-            取消
-        </view>
+        <button class="txt">取消</button>
     </view>
 </view>
 <!-- 搜索无商品 -->

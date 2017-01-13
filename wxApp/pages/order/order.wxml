@@ -1,7 +1,7 @@
 <view class="orderTab">
-    <navigator url="url" class="select">全部订单</navigator>
-    <navigator url="url">待付款</navigator>
-    <navigator url="url">待收货</navigator>
+    <view class="select">全部订单</view>
+    <view>待付款</view>
+    <view>待收货</view>
 </view>
 
 <view class="orderNum">

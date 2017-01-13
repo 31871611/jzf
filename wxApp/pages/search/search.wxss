@@ -68,6 +68,8 @@
     padding:0 20rpx 0 0 ;
     color:#fff;
     font-size:28rpx;
+    border-radius:0;
+    background: none;
 }
 /* 搜索记录 */
 .searchRecord{

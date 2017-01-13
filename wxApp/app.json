@@ -1,11 +1,11 @@
 {
   "pages":[
     
+    "pages/clearing/clearing",
     "pages/index/index",
+    "pages/logs/logs",
     "pages/search/search",
     "pages/list/list",
-    "pages/clearing/clearing",
-    "pages/logs/logs",
     "pages/detail/detail",
     "pages/paystate/paystate",
     "pages/user/user",
