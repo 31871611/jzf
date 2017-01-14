@@ -112,6 +112,34 @@
     font-size:28rpx;
     color:#333;
 }
+.clearingCompany .info{
+    border-bottom: 1px solid #d2d2d2;
+    line-height:1.5;
+    padding:15rpx 0;
+}
+.clearingCompany .next{
+    padding:20rpx 0;
+    display: flex;
+    align-items: center;
+}
+.clearingCompany .next text{
+    display: block;
+}
+.clearingCompany .next view{
+    text-align: right;
+    flex: 1;
+}
+.clearingCompany .next:after{
+    content: "\20";
+    width:14rpx;
+    height:24rpx;
+    display: block;
+    margin-left:20rpx;
+    background-image: url(../../public/icon/iconArrowR.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
 
 /* 身份信息 */
 .clearingUser{

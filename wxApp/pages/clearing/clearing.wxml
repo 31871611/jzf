@@ -1,3 +1,6 @@
+
+
+
 <view class="clearingTitle">
     配送方式
 </view>
@@ -46,14 +49,15 @@
     自提信息
 </view>
 <view class="clearingCompany">
-    <view>
+    <view class="info">
         福建福州市鼓楼区杨桥东路19号衣锦华庭雅道巷水流湾院落（福建省集珍文化艺术馆正对面）
     </view>
-    <navigator url="url">
-        快递配送
-        2015年01月01日
-        >
-    </navigator>
+    <picker mode="date" value="{{date}}" start="2017-01-01" end="2017-01-31" bindchange="bindDateChange">
+        <view class="next" >
+            <text>快递配送</text>
+            <view>{{date}}</view>
+        </view>
+    </picker>
 </view>
 
 <!-- 身份信息 -->

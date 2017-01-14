@@ -1,4 +1,3 @@
-详情页
 <!-- 轮播 -->
 <swiper class="detailSideslip" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
     <block wx:for="{{swiper.imgUrls}}">
@@ -35,7 +34,7 @@
     <view>备注：底部有瑕疵底部有瑕疵</view>
 </view>
 
-<view class="itemInfo">
+<view class="itemInfo" bindtap="goTel">
     <view class="content">
         <view class="iconDetailTel"></view>
         <view class="txt">客服电话：0591-88212636</view>

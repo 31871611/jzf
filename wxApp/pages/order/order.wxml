@@ -16,7 +16,7 @@
         </view>
     </navigator>
     <view class="info">
-        <navigator url="url" class="next">
+        <navigator url="/pages/orderDetail/orderDetail" class="next">
             <view class="title">
                 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章
             </view>
@@ -60,7 +60,7 @@
         </view>
     </navigator>
     <view class="info">
-        <navigator url="url" class="next">
+        <navigator url="/pages/orderDetail/orderDetail" class="next">
             <view class="title">
                 郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章
             </view>
