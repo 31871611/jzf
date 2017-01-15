@@ -14,28 +14,37 @@ page{
 } 
 
 
-/* 搜索无商品提示 */
+/* 无相关内容提示 */
 .iconPromptInfo{
-  padding-top: 285rpx;
+    padding-top: 285rpx;
 }
+/* 搜索图标 */
 .iconPromptInfo .searchEmpty{
-  width:129rpx;
-  height:112rpx;
-  display: block;
-  margin:0 auto;
+    width:129rpx;
+    height:112rpx;
+    display: block;
+    margin:0 auto;
+}
+/* 无地址图片 */
+.iconPromptInfo .addressEmpty{
+    width:140rpx;
+    height:162rpx;
+    display: block;
+    margin:0 auto;
 }
 .iconPromptInfo text{
-  font-size:28rpx;
-  color:#333333;
-  display: block;
-  text-align: center;
-  height:50rpx;
-  line-height:50rpx;
+    font-size:28rpx;
+    color:#333333;
+    display: block;
+    text-align: center;
+    height:80rpx;
+    line-height:80rpx;
 }
+
 
 /* 图标按钮栏 */
 .itemInfo{
-   background: #fff; 
+    background: #fff; 
 }
 .itemInfo .content{
     display: flex;
@@ -65,13 +74,13 @@ page{
 }
 /* 用户中心主页-全部订单 */
 .itemInfo .iconUserHomeOrder{
-  margin-right: 15rpx;
-  width: 41rpx;
-  height: 40rpx;
-  background-image: url("../../public/icon/iconUserOrder.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserOrder.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 /* 用户中心主页-待付款 */
 .itemInfo .iconUserNoPay{

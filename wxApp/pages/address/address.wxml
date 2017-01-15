@@ -1,0 +1,90 @@
+
+<!-- 搜索无地址 -->
+<view class="iconPromptInfo">
+    <image src="../../public/icon/iconAddressEmpty.png" class="addressEmpty"></image>
+    <text>请添加收获地址</text>
+</view>
+
+<!-- 地址列表 -->
+<view class="list">
+    <label class="content">
+        <view class="radio select"></view>
+        <!--<radio color="#ea3a38"></radio>-->
+        <view class="info">
+            <view class="user"><text class="name">姓名</text><text class="tel">130123456789</text></view>
+            <view class="detailed">福建省福州市鼓楼区杨桥东路衣锦华庭218号#2栋201室218号#2栋201室</view>
+        </view>
+    </label>
+    <view class="bootom">
+        <view class="default select">
+            设为默认
+        </view>
+        <view class="del">
+            删除
+        </view>
+        <view class="edit">
+            编辑
+        </view>
+    </view>
+</view>
+<view class="list">
+    <label class="content">
+        <view class="radio"></view>
+        <view class="info">
+            <view class="user"><text class="name">姓名</text><text class="tel">130123456789</text></view>
+            <view class="detailed">福建省福州市鼓楼区杨桥东路衣锦华庭218号#2栋201室218号#2栋201室</view>
+        </view>
+    </label>
+    <view class="bootom">
+        <view class="default">
+            设为默认
+        </view>
+        <view class="del">
+            删除
+        </view>
+        <view class="edit">
+            编辑
+        </view>
+    </view>
+</view>
+
+<view class="line"></view>
+<!-- 添加、编辑地址 -->
+<view class="addAddress">
+    <view class="name">
+        <text>收货人</text>
+        <input type="text" class="text" />
+    </view>
+    <view class="tel">
+        <text>联系方式</text>
+        <input type="text" class="text" />
+    </view>
+    <view>
+        省
+    </view>
+    <view>
+        市市
+    </view>
+    <view>
+        区/县
+    </view>
+    <view class="info">
+        <text>详细地址</text>
+        <input type="text" class="text" />
+    </view>
+    <view class="default">
+        <text>设为默认</text><switch bindchange=""/>
+    </view>
+    <view class="btn">
+        确定
+    </view>
+</view>
+
+
+<view class="placeholder"></view>
+<view class="addBtn">添加新地址</view>
+
+
+
+
+

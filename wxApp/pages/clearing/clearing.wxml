@@ -26,12 +26,12 @@
 </view>
 <view class="clearingAddress">
     <!-- 无地址 -->
-    <navigator url="url" class="not">
+    <navigator url="/pages/address/address" class="not">
         请添加收货地址
     </navigator>
     
     <!-- 有地址 -->
-    <navigator url="url" class="yes">
+    <navigator url="/pages/address/address" class="yes">
         <view class="content">
             <view class="title">
                 <text class="name">名字</text>
