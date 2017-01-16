@@ -4,6 +4,14 @@
     <view>待收货</view>
 </view>
 
+<!-- 搜索无商品 -->
+<view class="iconPromptInfo">
+    <image src="../../public/icon/iconOrderEmpty.png" class="iconOrderEmpty"></image>
+    <text>您还没有相关的订单</text>
+    <text>赶紧去买喜欢的藏品吧</text>
+    <navigator url="url" class="btn">去看看</navigator>
+</view>
+
 <view class="orderNum">
     <view>订单号:123456789</view>
     <text>待付款</text>

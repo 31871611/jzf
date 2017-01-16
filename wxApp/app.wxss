@@ -32,13 +32,30 @@ page{
     display: block;
     margin:0 auto;
 }
+/* 订单列表-订单 */
+.iconPromptInfo .iconOrderEmpty{
+    width:121rpx;
+    height:139rpx;
+    display: block;
+    margin:0 auto;
+}
+
 .iconPromptInfo text{
+    margin-top:10rpx;
     font-size:28rpx;
     color:#333333;
     display: block;
     text-align: center;
-    height:80rpx;
-    line-height:80rpx;
+}
+.iconPromptInfo .btn{
+    margin:40rpx auto 0;
+    width:168rpx;
+    height:74rpx;
+    line-height:74rpx;
+    color:#fff;
+    text-align:center;
+    background:#003347;
+    font-size:32rpx;
 }
 
 
