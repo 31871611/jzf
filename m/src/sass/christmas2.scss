@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  福袋第二季
+*/
+
+$borderColor:#bfbfbf;
+
+.christmas2{
+  background: #ce2529;
+  padding-bottom: pxTorem(130px);
+  .iconBackTop,.iconShareTop{
+    position: absolute;
+  }
+  header{
+    position: relative;
+    height: pxTorem(1065px);
+    @extend %ico_rem;
+    background-size:100% 100%;
+    background-image:url("../images/christmas2/header.jpg");
+  }
+  .placeholder{
+    height: pxTorem(114px);
+  }
+  nav{
+    $h:114px;
+    background: #ce2529;
+    height: pxTorem($h);
+    @include display-flex();
+    @include justify-content(center);
+    span{
+      @include flex(1);
+      display: block;
+      height: pxTorem($h);
+      width: pxTorem(248px);
+      @extend %ico_rem;
+      background-size:100% 100%;
+      margin-right:1px;
+      &:nth-of-type(1){
+        margin-left:1px;
+        background-image:url("../images/christmas2/tab18.jpg");
+        &.select{
+          background-image:url("../images/christmas2/tab18S.jpg");
+        }
+      }
+      &:nth-of-type(2){
+        background-image:url("../images/christmas2/tab19.jpg");
+        &.select{
+          background-image:url("../images/christmas2/tab19S.jpg");
+        }
+      }
+      &:nth-of-type(3){
+        background-image:url("../images/christmas2/tab20.jpg");
+        &.select{
+          background-image:url("../images/christmas2/tab20S.jpg");
+        }
+      }
+    }
+  }
+
+  .time{
+    text-align: center;
+    color: #fff;
+    margin-top:pxTorem(44px);
+    margin-bottom:pxTorem(25px);
+    div{
+      @include display-flex();
+      @include align-items();
+      @include justify-content(center);
+    }
+    span{
+      display: inline-block;
+      width:pxTorem(58px);
+      height:pxTorem(58px);
+      line-height:pxTorem(58px);
+      @include font-dpr(44px);
+      border:1px solid #fff;
+      @include border-radius(2px);
+      margin-right:pxTorem(4px);
+    }
+    b{
+      width: pxTorem(30px);
+      margin-right:pxTorem(4px);
+    }
+    p{
+      @include font-dpr(24px);
+      height:pxTorem(55px);
+      line-height:pxTorem(55px);
+      color: #b3b3b3;
+      &.select{
+        color: #fff;
+      }
+    }
+  }
+
+  .list{
+    ul{
+      $h:280px;
+      position: relative;
+      z-index:2;
+      background: #f9f5ec;
+      margin:0 pxTorem(20px);
+      @include border-radius(pxTorem(18px) pxTorem(18px) 0 0);
+      li{
+        height:pxTorem($h);
+        border-bottom: 1px solid $borderColor;
+        padding:pxTorem(26px) pxTorem(26px - 14) pxTorem(26px) pxTorem(26px - 14);
+        margin:0 pxTorem(14px);
+        &:last-child{
+          border-bottom:0;
+        }
+      }
+      a{
+        width: 100%;
+        height:pxTorem($h);
+        display: block;
+      }
+      img{
+        vertical-align: middle;
+        height:pxTorem($h);
+        width: 100%;
+      }
+    }
+  }
+
+  .bottom{
+    position: relative;
+    height: pxTorem(200px);
+    border-top: 1px solid $borderColor;
+    margin:0 pxTorem(6px);
+    .box{
+      position: relative;
+      background: #f9f5ec;
+      @include display-flex();
+      height: pxTorem(200px);
+      @include border-radius(0 0 pxTorem(18px) pxTorem(18px));
+    }
+    i{
+      &.fu{
+        margin:pxTorem(30px) 0 0 pxTorem(15px);
+        display: block;
+        float:left;
+        width:pxTorem(134px);
+        height:pxTorem(127px);
+        @extend %ico_rem;
+        background-image:url("../images/christmas2/fu.png");
+      }
+      &.left{
+        width:pxTorem(16px);
+        height:pxTorem(16px);
+        position: absolute;
+        left:2px;
+        top:pxTorem(-10px);
+        background:#d3bfa6;
+        @include rotate(-40deg);
+      }
+      &.right{
+        width:pxTorem(16px);
+        height:pxTorem(16px);
+        position: absolute;
+        right:2px;
+        top:pxTorem(-10px);
+        background:#d3bfa6;
+        @include rotate(40deg);
+      }
+
+    }
+
+    .text{
+      float:left;
+      margin-top:pxTorem(15px);
+      margin-left:pxTorem(15px);
+      height: pxTorem(164px - 10);
+      padding-top:pxTorem(10px);
+      border-left:1px solid $borderColor;
+      padding-left:pxTorem(20px);
+      p{
+        line-height: 1.5;
+        color:#666;
+        @include font-dpr(20px);
+      }
+    }
+  }
+
+  //浮动
+  .pos{
+    z-index: 21;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+  }
+
+  //倒记间
+  .endTime{
+    height:pxTorem(76px);
+    background: #fff;
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+    p{
+      color:#ce2529;
+      margin-left:pxTorem(23px);
+    }
+    .end{
+      @include display-flex();
+      @include align-items();
+      margin-right:pxTorem(23px);
+      p{
+        margin-left:0;
+        margin-right:pxTorem(23px);
+      }
+    }
+    .date{
+      @include display-flex();
+    }
+    span{
+      color:#fff;
+      display:block;
+      width:pxTorem(39px);
+      height:pxTorem(39px);
+      line-height:pxTorem(39px);
+      text-align: center;
+      background:#ce2529;
+      @include border-radius(2px);
+    }
+    b{
+      text-align: center;
+      display: block;
+      color:#ce2529;
+      width:pxTorem(16px);
+      height:pxTorem(39px);
+      line-height:pxTorem(39px);
+    }
+  }
+
+}
+
+

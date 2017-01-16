@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"福袋第二季"
+})
+<link rel="stylesheet" href="css/christmas2.css"/>
+<body id="app">
+<img :src="'../../static/images/christmas2/shareIcon.jpg'" style="position:absolute;width:0;height:0;" alt=""/>
+<div class="wrap">
+
+    <article class="main" id="wrapper">
+        <div class="christmas2" id="scroller">
+            <a href="javascript:;" v-link="'/index'" class="iconBackTop"></a>
+            <a href="javascript:;" class="iconShareTop"></a>
+
+            <header>
+                <div class="line">
+                    <span></span>
+                </div>
+                <div class="xing"></div>
+                <!-- 雪花 -->
+                <i class="snowflake snowflake1"></i>
+                <i class="snowflake snowflake2"></i>
+            </header>
+            <!--<div class="placeholder"></div>-->
+            <nav>
+                <span @touchstart="show('a18')" :class="tab == 'a18' ? 'select' : ''"></span>
+                <span @touchstart="show('a19')" :class="tab == 'a19' ? 'select' : ''"></span>
+                <span @touchstart="show('a20')" :class="tab == 'a20' ? 'select' : ''"></span>
+            </nav>
+
+            <!-- 18号 -->
+            <div v-if="tab == 'a18'">
+                <!-- 10点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="select">限时特价进行中</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/18-10-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-10-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-10-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-10-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-10-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-10-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/18-16-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-16-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-16-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-16-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-16-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-16-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20点-->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/18-20-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-20-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-20-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-20-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-20-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/18-20-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19号 -->
+            <div v-if="tab == 'a19'">
+                <!-- 10点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="select">限时特价进行中</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/19-10-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-10-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-10-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-10-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-10-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-10-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/19-16-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-16-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-16-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-16-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-16-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-16-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20点-->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/19-20-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-20-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-20-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-20-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-20-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/19-20-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20号 -->
+            <div v-if="tab == 'a20'">
+                <!-- 10点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="select">限时特价进行中</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/20-10-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-10-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-10-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-10-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-10-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-10-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16点 -->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/20-16-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-16-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-16-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-16-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-16-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-16-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20点-->
+                <div class="list">
+                    <div class="time">
+                        <div>
+                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
+                        </div>
+                        <p class="">即将开始</p>
+                    </div>
+                    <ul>
+                        <li><a href=""><img src="images/christmas2/20-20-1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-20-2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-20-3.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-20-4.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-20-5.jpg" alt=""></a></li>
+                        <li><a href=""><img src="images/christmas2/20-20-6.jpg" alt=""></a></li>
+                    </ul>
+                    <div class="bottom">
+                        <i class="left"></i>
+                        <i class="right"></i>
+                        <div class="box">
+                            <i class="fu"></i>
+                            <div class="text">
+                                <p>1.针对所有用户开发;</p>
+                                <p>2.福袋不与优惠券同时使用；</p>
+                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
+                                <p>4.福袋不包邮，售出后不接受换货；</p>
+                                <p>5.每个用户限秒3个福袋；</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 倒记时 -->
+            <div class="pos" v-show="is.show">
+                <!--<nav>-->
+                    <!--<span @touchstart="show('a18')" :class="tab == 'a18' ? 'select' : ''"></span>-->
+                    <!--<span @touchstart="show('a19')" :class="tab == 'a19' ? 'select' : ''"></span>-->
+                    <!--<span @touchstart="show('a20')" :class="tab == 'a20' ? 'select' : ''"></span>-->
+                <!--</nav>-->
+                <div class="endTime">
+                    <p>福袋第二季，多件商品限时秒杀</p>
+                    <div class="end">
+                        <p>距离结束仅剩</p>
+                        <div class="date">
+                            <span>01</span>
+                            <b>:</b>
+                            <span>05</span>
+                            <b>:</b>
+                            <span>25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</div>
+
+</body>
+<script type="text/javascript" src="js/iscroll-probe.js"></script>
+<script>
+/**
+
+ 标题：福袋第二季——疯抢三天，给力到底
+ 内容：年底最后一波狂欢，1月18日10点准时开抢
+
+*/
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            myScroll:'',
+            tab:'',
+            obj:{
+                headerHeight:0,
+                nav:'',
+                pos:''
+            },
+            is:{
+                show:false,
+                end:false
+            },
+            date:new Date()
+        },
+        ready:function(){
+            var _this = this;
+            var main = document.querySelector('.christmas2');
+            this.obj.headerHeight = main.getElementsByTagName('header')[0].clientHeight;
+            this.obj.nav = main.querySelector('nav');
+            this.obj.pos = main.querySelector('.pos');
+
+            //滚动
+            this.browser() ? this.iosScroll() : this.androidScroll();
+
+            /*
+
+                18-20,tab颜色高度
+                在每天的某个时间段需要要倒记时.文字改变与切换字体颜色
+
+             */
+            // 不是2017年
+            if(this.date.getFullYear() != 2017) return false;
+            // 不是1月
+            if(this.date.getMonth() != 0) return false;
+            // 18.19.20
+            if(this.date.getDate() <= 18){
+                this.tab = 'a18';
+                //倒记时
+
+            }else if(this.date.getDate() == 19){
+                this.tab = 'a19';
+            }else if(this.date.getDate() == 20){
+                this.tab = 'a20';
+            }
+            //
+            console.log(this.date.getHours());
+
+        },
+        methods:{
+            browser:function(){
+                //这是iOS平台下浏览器
+                if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+                    return true;
+                }else {
+                    return false;
+                }
+            },
+            show:function(str){
+                this.tab = str;
+            },
+            iosScroll:function(){
+                var _this = this;
+                this.myScroll = new IScroll('#wrapper', {
+                    //bounce : false,
+                    click : true,
+                    checkDOMChanges : true,
+                    probeType: 3,
+                    mouseWheel: true
+                });
+
+                this.myScroll.on('scroll', updatePosition);
+                this.myScroll.on('scrollEnd', updatePosition);
+                function updatePosition () {
+                    var top = Math.abs(this.y);
+
+                    // 是否显示倒记时
+                    if(top > _this.obj.headerHeight){
+                        // 显示浮动倒记时
+                        _this.is.show = true;
+                        _this.obj.pos.style.top = top + "px";
+                    }else{
+                        // 隐藏浮动倒记时
+                        _this.is.show = false;
+                    }
+                }
+            },
+            androidScroll:function(){
+                //console.log('android');
+                var _this = this;
+                var main = document.querySelector('.main');
+                main.addEventListener('scroll',function(){
+                    var top = this.scrollTop;
+                    //滚动浮动
+                    if(top > _this.obj.headerHeight){
+                        _this.is.show = true;
+                        _this.obj.pos.style.position = "fixed";
+                        _this.obj.pos.style.top = 0 + "px";
+                    }else{
+                        _this.obj.pos.style.position = "";
+                        _this.is.show = false;
+                    }
+                },false);
+            }
+        }
+    });
+
+
+
+
+
+</script>
+
+</html>
