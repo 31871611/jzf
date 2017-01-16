@@ -1,0 +1,29 @@
+<view class="line"></view>
+<!-- 添加、编辑地址 -->
+<view class="addAddress">
+    <view class="title">收货人</view>
+    <input type="text" class="text" placeholder="姓名" />
+    <input type="text" class="text" placeholder="手机号码" />
+    <view class="title">收货人地址信息</view>
+    <view class="detailed">
+        <picker bindchange="" value="" range="">
+            <view class="picker">省</view>
+        </picker>
+        <picker bindchange="" value="" range="">
+            <view class="picker">市</view>
+        </picker>
+        <picker bindchange="" value="" range="">
+            <view class="picker">区/县</view>
+        </picker>
+    </view>
+    <input type="text" class="text" placeholder="街道、小区、门牌号等详细地址" />
+
+
+
+    <view class="default">
+        <text>设为默认</text><switch bindchange=""/>
+    </view>
+    <view class="btn">
+        确定
+    </view>
+</view>

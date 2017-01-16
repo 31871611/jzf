@@ -1,7 +1,6 @@
 {
   "pages":[
-
-    "pages/address/address",
+    
     "pages/index/index",
     "pages/search/search",
     "pages/list/list",
@@ -9,6 +8,8 @@
     "pages/clearing/clearing",
     "pages/paystate/paystate",
     "pages/user/user",
+    "pages/address/address",
+    "pages/addaddress/addaddress",
     "pages/order/order",
     "pages/orderDetail/orderDetail",
     "pages/follow/follow",

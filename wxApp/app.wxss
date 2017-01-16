@@ -122,5 +122,14 @@ page{
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-
+/* 个人中心首页-我的地址 */
+.itemInfo .iconUserHomeAddress{
+    margin-right: 15rpx;
+    width: 41rpx;
+    height: 40rpx;
+    background-image: url("../../public/icon/iconUserAddress.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
 

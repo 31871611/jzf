@@ -40,6 +40,13 @@
             <view class="iconUserHomeLike"></view>
             <view class="txt">我的关注</view>
         </navigator>
+        <view class="line"></view>
+    </view>
+    <view class="itemInfo">
+        <navigator url="../address/address" class="content">
+            <view class="iconUserHomeAddress"></view>
+            <view class="txt">我的地址</view>
+        </navigator>
         <!--<view class="line"></view>-->
     </view>
 
