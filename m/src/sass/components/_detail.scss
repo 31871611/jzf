@@ -139,7 +139,243 @@
   }
 }
 
-//藏品基本信息
+//可领优惠券
+.detailCoupon{
+  $h:40px;
+  background: #fff;
+  margin-bottom: pxTorem(10px);
+  padding:pxTorem(20px) pxTorem(20px);
+  height:pxTorem($h);
+  @include display-flex();
+  @include align-items();
+  @include justify-content(center);
+  strong{
+    display: block;
+    height:pxTorem($h);
+    line-height:pxTorem($h);
+    @include font-dpr(28px);
+  }
+  .list{
+    @include display-flex();
+    @include flex(1);
+    overflow: hidden;
+    div{
+      position: relative;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+      padding:0 pxTorem(10px);
+      background: $red-base;
+      color:#fff;
+      margin-left:pxTorem(20px);
+      &:before,&:after{
+        content: "\20";
+        width:pxTorem(4px);
+        height:pxTorem($h);
+        @extend %ico_rem;
+        position: absolute;
+        top:0;
+      }
+      &:before{
+        left:pxTorem(-4px);
+        background-image: url("../images/detailCouponLeft.png");
+      }
+      &:after{
+        right:pxTorem(-4px);
+        background-image: url("../images/detailCouponRigth.png");
+      }
+    }
+  }
+  .more{
+    $w:6px;
+    $c:#999;
+    margin-left:pxTorem(15px);
+    position: relative;
+    width:pxTorem($w);
+    height: pxTorem($w);
+    background:$c;
+    @include border-radius(100%);
+    &:before,&:after{
+      content: "\20";
+      width:pxTorem($w);
+      height: pxTorem($w);
+      background:$c;
+      @extend %ico_rem;
+      position: absolute;
+      top:0;
+    }
+    &:before{
+      left:pxTorem(-10px);
+    }
+    &:after{
+      left:pxTorem(10px);
+    }
+  }
+}
+
+//优惠券弹窗
+.detailCouponAlert{
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  $h:144px;
+  .exit{
+    position: absolute;
+    right:pxTorem(20px);
+    top:pxTorem(-65px);
+    width:pxTorem(42px);
+    height: pxTorem(42px);
+    border:2px solid #a0a0a0;
+    @include border-radius(50%);
+    @include rotate(45deg);
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      background:#a0a0a0;
+      left:50%;
+      top:50%;
+    }
+    &:before{
+      margin:-1px 0 0 pxTorem(-14px);
+      width:pxTorem(28px);
+      height:2px;
+    }
+    &:after{
+      margin:pxTorem(-14px) 0 0 -1px;
+      width:2px;
+      height:pxTorem(28px);
+    }
+  }
+  ul{
+    padding:pxTorem(20px) 0;
+    margin:0 pxTorem(20px);
+    li{
+      width:100%;
+      height:pxTorem(160px);
+      @include box-shadow(0 0 pxTorem(13px) rgba(218,215,215,.9));
+      //padding-bottom: pxTorem(10px);
+      position: relative;
+      background:#fff;
+      margin-bottom: pxTorem(10px);
+      overflow: hidden;
+      @include display-flex();
+      @include align-items();
+      @include justify-content(center);
+      //不可用
+      &.select{
+        .money{
+          background:#999;
+        }
+        .use{
+          background:#fff;
+          color:#999;
+        }
+        .setBtn{
+          border-color: #999;
+          color: #999;
+        }
+      }
+    }
+  }
+  //左边价格
+  .money{
+    position: relative;
+    background:$red-base;
+    height:pxTorem(160px);
+    width:pxTorem(170px);
+    text-align:center;
+    strong{
+      display: block;
+      color:#fff;
+      @include font-dpr(48px);
+      margin-top: pxTorem(35px);
+    }
+    b{
+      @include font-dpr(48px);
+      position: relative;
+      &:after{
+        content: "￥";
+        font-style: normal;
+        position: absolute;
+        left:pxTorem(-25px);
+        bottom:pxTorem(10px);
+        @include font-dpr(24px);
+      }
+    }
+    .use{
+      //display:block;
+      height: pxTorem(40px);
+      line-height: pxTorem(40px);
+      background: #fff;
+      color:$red-base;
+      @include font-dpr(20px);
+      text-align:center;
+      padding:0 pxTorem(10px);
+    }
+    .lineRight{
+      position: absolute;
+      right:pxTorem(-8px);
+      top:pxTorem(-8px);
+      width:pxTorem(14px);
+      height:pxTorem(14px);
+      span{
+        display: block;
+        width:pxTorem(14px);
+        height:pxTorem(14px);
+        @include border-radius(50%);
+        background-color: #eee;
+        margin-bottom:pxTorem(10px);
+      }
+    }
+  }
+  //内容
+  .center{
+    @include flex(1);
+    h2,p{
+      margin-left:pxTorem(20px);
+    }
+    h2{
+      @include font-dpr(28px);
+      color:#333333;
+      padding-top:pxTorem(18px);
+      margin-bottom:pxTorem(14px);
+    }
+    p{
+      height: pxTorem(40px);
+      line-height: pxTorem(40px);
+      @include font-dpr(20px);
+      position: relative;
+      padding-left:pxTorem(16px);
+      color:#999999;
+      &:after{
+        position: absolute;
+        left:0;
+        top:50%;
+        display:block;
+        content:"\20";
+        width:pxTorem(8px);
+        height:pxTorem(8px);
+        margin-top:pxTorem(-4px);
+        @include border-radius(50%);
+        background:#999999;
+      }
+    }
+  }
+  //按钮
+  .setBtn{
+    margin:0 pxTorem(10px);
+    @include font-dpr(20px);
+    display: block;
+    border:1px solid $red-base;
+    padding:pxTorem(10px);
+    color:$red-base;
+    @include border-radius(15px);
+  }
+}
+
+  //藏品基本信息
 .detailTitle{
   background:rgba(255,255,255,1);
   position: relative;
