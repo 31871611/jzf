@@ -93,6 +93,9 @@ $borderColor:#bfbfbf;
         color: #fff;
       }
     }
+    em{
+      font-style: normal;
+    }
   }
 
   .list{
@@ -202,15 +205,15 @@ $borderColor:#bfbfbf;
     @include justify-content();
     p{
       color:#ce2529;
-      margin-left:pxTorem(23px);
+      margin-left:pxTorem(20px);
     }
     .end{
       @include display-flex();
       @include align-items();
-      margin-right:pxTorem(23px);
+      margin-right:pxTorem(20px);
       p{
         margin-left:0;
-        margin-right:pxTorem(23px);
+        margin-right:pxTorem(20px);
       }
     }
     .date{

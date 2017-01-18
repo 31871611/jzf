@@ -37,7 +37,14 @@
                         <div>
                             <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="select">限时特价进行中</p>
+
+                        <!-- 用毫秒时间写死 -->
+                        <p v-if="is.falg" :class="is.start == 'a1810' ? 'select' : ''">
+                            <em v-if="is.start == 'a1810'">限时特价进行中</em>
+                            <em v-else>即将开始</em>
+                        </p>
+                        <p v-else>已结束</p>
+
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/18-10-1.jpg" alt=""></a></li>
@@ -69,7 +76,12 @@
                         <div>
                             <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+
+                        <p v-if="is.falg" :class="is.start == 'a1816' ? 'select' : ''">
+                            <em v-if="is.start == 'a1816'">限时特价进行中</em>
+                            <em v-else>即将开始</em>
+                        </p>
+                        <p v-else>已结束</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/18-16-1.jpg" alt=""></a></li>
@@ -101,7 +113,11 @@
                         <div>
                             <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+                        <p v-if="is.falg" :class="is.start == 'a1820' ? 'select' : ''">
+                            <em v-if="is.start == 'a1820'">限时特价进行中</em>
+                            <em v-else>即将开始</em>
+                        </p>
+                        <p v-else>已结束</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/18-20-1.jpg" alt=""></a></li>
@@ -136,7 +152,8 @@
                         <div>
                             <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="select">限时特价进行中</p>
+                        <p :class="is.start == 'a1910' ? 'select' : ''">{{is.a19.a}}</p>
+                        <!--<p class="select">限时特价进行中</p>-->
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/19-10-1.jpg" alt=""></a></li>
@@ -168,7 +185,7 @@
                         <div>
                             <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+                        <p :class="is.start == 'a1916' ? 'select' : ''">{{is.a19.b}}</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/19-16-1.jpg" alt=""></a></li>
@@ -200,7 +217,7 @@
                         <div>
                             <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+                        <p :class="is.start == 'a1920' ? 'select' : ''">{{is.a19.c}}</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/19-20-1.jpg" alt=""></a></li>
@@ -235,7 +252,8 @@
                         <div>
                             <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="select">限时特价进行中</p>
+                        <p :class="is.start == 'a2010' ? 'select' : ''">{{is.a20.a}}</p>
+                        <!--<p class="select">限时特价进行中</p>-->
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/20-10-1.jpg" alt=""></a></li>
@@ -267,7 +285,7 @@
                         <div>
                             <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+                        <p :class="is.start == 'a2016' ? 'select' : ''">{{is.a20.b}}</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/20-16-1.jpg" alt=""></a></li>
@@ -299,7 +317,7 @@
                         <div>
                             <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
                         </div>
-                        <p class="">即将开始</p>
+                        <p :class="is.start == 'a2020' ? 'select' : ''">{{is.a20.c}}</p>
                     </div>
                     <ul>
                         <li><a href=""><img src="images/christmas2/20-20-1.jpg" alt=""></a></li>
@@ -339,11 +357,11 @@
                     <div class="end">
                         <p>距离结束仅剩</p>
                         <div class="date">
-                            <span>01</span>
+                            <span>{{date.h}}</span>
                             <b>:</b>
-                            <span>05</span>
+                            <span>{{date.m}}</span>
                             <b>:</b>
-                            <span>25</span>
+                            <span>{{date.s}}</span>
                         </div>
                     </div>
                 </div>
@@ -369,21 +387,45 @@
             myScroll:'',
             tab:'',
             obj:{
-                headerHeight:0,
-                nav:'',
-                pos:''
+                headerHeight:0,     //广告高度
+                pos:''              //浮动倒记时元素
             },
             is:{
-                show:false,
-                end:false
+                show:false,          //是否显示浮动倒记时
+                notText:'即将开始',
+                startText:'限时特价进行中',  //
+                endText:'已结束',
+                start:'',
+                falg:true,
+//                end:true,
+                text:'即将开始',
+                a18:{
+                    a:'即将开始',
+                    b:'即将开始',
+                    c:'即将开始'
+                },
+                a19:{
+                    a:'即将开始',
+                    b:'即将开始',
+                    c:'即将开始'
+                },
+                a20:{
+                    a:'即将开始',
+                    b:'即将开始',
+                    c:'即将开始'
+                }
             },
-            date:new Date()
+            date:{
+                h:'',
+                m:'',
+                s:''
+            }
+
         },
         ready:function(){
             var _this = this;
             var main = document.querySelector('.christmas2');
             this.obj.headerHeight = main.getElementsByTagName('header')[0].clientHeight;
-            this.obj.nav = main.querySelector('nav');
             this.obj.pos = main.querySelector('.pos');
 
             //滚动
@@ -394,23 +436,47 @@
                 18-20,tab颜色高度
                 在每天的某个时间段需要要倒记时.文字改变与切换字体颜色
 
-             */
+            */
+            var date = new Date();
             // 不是2017年
-            if(this.date.getFullYear() != 2017) return false;
+            if(date.getFullYear() != 2017) return false;
             // 不是1月
-            if(this.date.getMonth() != 0) return false;
-            // 18.19.20
-            if(this.date.getDate() <= 18){
+            if(date.getMonth() != 0) return false;
+            // 是18.19.20
+            if(date.getDate() == 18){
                 this.tab = 'a18';
-                //倒记时
+                // 10点段
+                //倒记时.到了10点开始以下一场时间来计算倒记时.还要切换文字
+                if(date.getHours() >= 10 && date.getHours() < 16){
+                    // 文字修改为白色
+                    this.is.start = 'a1810';
+                    // 修改文字内容
 
-            }else if(this.date.getDate() == 19){
+
+                }
+                // 16点段
+                if(date.getHours() >= 16 && date.getHours() < 20){
+                    // 文字修改为白色
+                    this.is.start = 'a1816';
+                    // 修改文字内容
+
+                }
+                // 20点段
+                if(date.getHours() >= 20){
+                    // 文字修改为白色
+                    this.is.start = 'a1820';
+                }
+
+            }else if(date.getDate() == 19){
                 this.tab = 'a19';
-            }else if(this.date.getDate() == 20){
+            }else if(date.getDate() == 20){
                 this.tab = 'a20';
             }
             //
-            console.log(this.date.getHours());
+            this.endDate('2017/01/16 22:35:00');
+            console.log(date.getDate() + '|' + date.getHours());
+
+
 
         },
         methods:{
@@ -424,6 +490,37 @@
             },
             show:function(str){
                 this.tab = str;
+            },
+            endDate:function(str){
+                var _this = this;
+                var time = setInterval(function(){
+
+                    var now = new Date().getTime();   //当前时间毫秒数
+                    var end = new Date(str).getTime();     //指定时间毫秒数
+                    var c = end - now;
+
+                    if(c<=0){//如果差小于等于0  也就是过期或者正好过期，则推出程序
+                        clearInterval(time);//清除计时器
+                        _this.date = {
+                            h : 0,
+                            m : 0,
+                            s : 0
+                        }
+                        return;//结束执行
+                    }
+                    var ds = 60*60*24*1000,                     //一天共多少毫秒
+                    //d = parseInt(c/ds),                         //总毫秒/一天的毫秒=相差的天数
+                    h = parseInt(c/(3600*1000)),                //总毫数/小时=相差的小时
+                    m = parseInt((c - h*3600*1000)/(60*1000)),   //总毫数-小时数/每分钟的毫秒数=得到分钟数
+                    s = parseInt((c - h*3600*1000 - m*60*1000) / 1000);  //(总毫秒 - 剩余天数 * 每天的毫秒 - 剩余小时 * 3600 * 1000 - 剩余分钟数 * 60 * 1000) / 1000 就是秒数 = 剩余秒数
+                    //console.log(h + '小时' + m + '分' + s + '秒');
+                    _this.date = {
+                        h : h,
+                        m : m,
+                        s : s
+                    }
+
+                },1000)
             },
             iosScroll:function(){
                 var _this = this;
