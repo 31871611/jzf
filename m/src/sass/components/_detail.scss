@@ -227,13 +227,13 @@
     top:pxTorem(-65px);
     width:pxTorem(42px);
     height: pxTorem(42px);
-    border:2px solid #a0a0a0;
+    border:2px solid #fff;
     @include border-radius(50%);
     @include rotate(45deg);
     &:after,&:before{
       content: "\20";
       position: absolute;
-      background:#a0a0a0;
+      background:#fff;
       left:50%;
       top:50%;
     }
