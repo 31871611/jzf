@@ -18,7 +18,7 @@
             </header>
 
             <!-- 10点 -->
-            <div class="list" v-if="list10.show">
+            <div class="list" v-show="list10.show">
                 <div class="time">
                     <div>
                         <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
@@ -53,7 +53,7 @@
             </div>
 
             <!-- 14点 -->
-            <div class="list" v-if="list14.show">
+            <div class="list" v-show="list14.show">
                 <div class="time">
                     <div>
                         <span>1</span><span>4</span><b>:</b><span>0</span><span>0</span>
@@ -88,7 +88,7 @@
             </div>
 
             <!-- 16点 -->
-            <div class="list" v-if="list16.show">
+            <div class="list" v-show="list16.show">
                 <div class="time">
                     <div>
                         <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
@@ -123,7 +123,7 @@
             </div>
 
             <!-- 20点-->
-            <div class="list" v-if="list20.show">
+            <div class="list" v-show="list20.show">
                 <div class="time">
                     <div>
                         <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
@@ -201,6 +201,7 @@
 
 </body>
 <script type="text/javascript" src="js/iscroll-probe.js"></script>
+<!--<script type="text/javascript" src="js/iscroll.js"></script>-->
 <script>
 /**
 
@@ -375,6 +376,11 @@
                 this.list20.show = false;
             }
 
+            //高度发生变化
+//            setTimeout(function () {
+//                _this.myScroll.refresh();
+//            }, 0);
+
             console.log('当前日期：' + date.getDate() + '|' + date.getHours());
 
         },
@@ -446,10 +452,10 @@
                 var _this = this;
                 this.myScroll = new IScroll('#wrapper', {
                     //bounce : false,
-                    click : true,
-                    checkDOMChanges : true,
-                    probeType: 3,
-                    mouseWheel: true
+                    click : true,               //是否响应鼠标的点击事件
+                    //checkDOMChanges : true,   //是否自动检测内容变化
+                    probeType: 2,
+                    //mouseWheel: true      //开启鼠标滚轮支持
                 });
 
                 this.myScroll.on('scroll', updatePosition);
