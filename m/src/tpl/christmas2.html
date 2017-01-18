@@ -11,7 +11,7 @@
     <article class="main" id="wrapper">
         <div class="christmas2" id="scroller">
             <a href="javascript:;" v-link="'/index'" class="iconBackTop"></a>
-            <!--<a href="javascript:;" class="iconShareTop" @touchstart="share(-1)"></a>-->
+            <a href="javascript:;" class="iconShareTop" @touchstart="share(-1)"></a>
 
             <header>
 
@@ -265,9 +265,9 @@
             this.obj.headerHeight = main.getElementsByTagName('header')[0].clientHeight;
             this.obj.pos = main.querySelector('.pos');
 
-            //滚动
-            this.browser() ? this.iosScroll() : this.androidScroll();
 
+            //滚动
+            _this.browser() ? _this.iosScroll() : _this.androidScroll();
 
 
 
@@ -377,11 +377,12 @@
             }
 
             //高度发生变化
-//            setTimeout(function () {
-//                _this.myScroll.refresh();
-//            }, 0);
+            setTimeout(function () {
+                _this.myScroll.refresh();
+            }, 0);
 
             console.log('当前日期：' + date.getDate() + '|' + date.getHours());
+
 
         },
         methods:{
@@ -473,6 +474,11 @@
                         _this.is.show = false;
                     }
                 }
+
+                // 滚动需要
+                var main = document.querySelector('#wrapper');
+                main.style.overflow = 'hidden';
+                main.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
             },
             androidScroll:function(){
                 //console.log('android');
