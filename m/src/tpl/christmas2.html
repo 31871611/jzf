@@ -11,334 +11,147 @@
     <article class="main" id="wrapper">
         <div class="christmas2" id="scroller">
             <a href="javascript:;" v-link="'/index'" class="iconBackTop"></a>
-            <a href="javascript:;" class="iconShareTop"></a>
+            <!--<a href="javascript:;" class="iconShareTop" @touchstart="share(-1)"></a>-->
 
             <header>
-                <div class="line">
-                    <span></span>
-                </div>
-                <div class="xing"></div>
-                <!-- 雪花 -->
-                <i class="snowflake snowflake1"></i>
-                <i class="snowflake snowflake2"></i>
+
             </header>
-            <!--<div class="placeholder"></div>-->
-            <nav>
-                <span @touchstart="show('a18')" :class="tab == 'a18' ? 'select' : ''"></span>
-                <span @touchstart="show('a19')" :class="tab == 'a19' ? 'select' : ''"></span>
-                <span @touchstart="show('a20')" :class="tab == 'a20' ? 'select' : ''"></span>
-            </nav>
 
-            <!-- 18号 -->
-            <div v-if="tab == 'a18'">
-                <!-- 10点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-
-                        <!-- 用毫秒时间写死 -->
-                        <p v-if="is.falg" :class="is.start == 'a1810' ? 'select' : ''">
-                            <em v-if="is.start == 'a1810'">限时特价进行中</em>
-                            <em v-else>即将开始</em>
-                        </p>
-                        <p v-else>已结束</p>
-
+            <!-- 10点 -->
+            <div class="list" v-if="list10.show">
+                <div class="time">
+                    <div>
+                        <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
                     </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/18-10-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-10-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-10-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-10-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-10-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-10-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <p v-if="list10.is" class="select">限时特价进行中</p>
+                    <p v-else>即将开始</p>
+
                 </div>
-
-                <!-- 16点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-
-                        <p v-if="is.falg" :class="is.start == 'a1816' ? 'select' : ''">
-                            <em v-if="is.start == 'a1816'">限时特价进行中</em>
-                            <em v-else>即将开始</em>
-                        </p>
-                        <p v-else>已结束</p>
-                    </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/18-16-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-16-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-16-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-16-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-16-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-16-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 20点-->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p v-if="is.falg" :class="is.start == 'a1820' ? 'select' : ''">
-                            <em v-if="is.start == 'a1820'">限时特价进行中</em>
-                            <em v-else>即将开始</em>
-                        </p>
-                        <p v-else>已结束</p>
-                    </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/18-20-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-20-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-20-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-20-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-20-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/18-20-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
+                <ul>
+                    <li><a href=""><img src="images/christmas2/18-10-1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-4.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-5.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-6.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-10-7.jpg" alt=""></a></li>
+                </ul>
+                <div class="bottom">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                    <div class="box">
+                        <i class="fu"></i>
+                        <div class="text">
+                            <p>1.福袋不与优惠券同时使用；</p>
+                            <p class="red">2.秒杀到福袋的用户，可以得到新春祝“福”字一张；</p>
+                            <p>3.福袋不包邮，售出后不接受换货；</p>
+                            <p>4.每个用户限秒3个福袋；</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 19号 -->
-            <div v-if="tab == 'a19'">
-                <!-- 10点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a1910' ? 'select' : ''">{{is.a19.a}}</p>
-                        <!--<p class="select">限时特价进行中</p>-->
+            <!-- 14点 -->
+            <div class="list" v-if="list14.show">
+                <div class="time">
+                    <div>
+                        <span>1</span><span>4</span><b>:</b><span>0</span><span>0</span>
                     </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/19-10-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-10-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-10-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-10-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-10-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-10-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 16点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a1916' ? 'select' : ''">{{is.a19.b}}</p>
-                    </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/19-16-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-16-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-16-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-16-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-16-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-16-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <p v-if="list14.is" class="select">限时特价进行中</p>
+                    <p v-else>即将开始</p>
 
-                <!-- 20点-->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a1920' ? 'select' : ''">{{is.a19.c}}</p>
-                    </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/19-20-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-20-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-20-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-20-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-20-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/19-20-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
+                </div>
+                <ul>
+                    <li><a href=""><img src="images/christmas2/18-14-1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-4.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-5.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-6.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-14-7.jpg" alt=""></a></li>
+                </ul>
+                <div class="bottom">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                    <div class="box">
+                        <i class="fu"></i>
+                        <div class="text">
+                            <p>1.福袋不与优惠券同时使用；</p>
+                            <p class="red">2.秒杀到福袋的用户，可以得到新春祝“福”字一张；</p>
+                            <p>3.福袋不包邮，售出后不接受换货；</p>
+                            <p>4.每个用户限秒3个福袋；</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 20号 -->
-            <div v-if="tab == 'a20'">
-                <!-- 10点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a2010' ? 'select' : ''">{{is.a20.a}}</p>
-                        <!--<p class="select">限时特价进行中</p>-->
+            <!-- 16点 -->
+            <div class="list" v-if="list16.show">
+                <div class="time">
+                    <div>
+                        <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
                     </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/20-10-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-10-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-10-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-10-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-10-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-10-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
+
+                    <p v-if="list16.is" class="select">限时特价进行中</p>
+                    <p v-else>即将开始</p>
+
+                </div>
+                <ul>
+                    <li><a href=""><img src="images/christmas2/18-16-1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-4.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-5.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-6.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-16-7.jpg" alt=""></a></li>
+                </ul>
+                <div class="bottom">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                    <div class="box">
+                        <i class="fu"></i>
+                        <div class="text">
+                            <p>1.福袋不与优惠券同时使用；</p>
+                            <p class="red">2.秒杀到福袋的用户，可以得到新春祝“福”字一张；</p>
+                            <p>3.福袋不包邮，售出后不接受换货；</p>
+                            <p>4.每个用户限秒3个福袋；</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 16点 -->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>1</span><span>6</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a2016' ? 'select' : ''">{{is.a20.b}}</p>
+            <!-- 20点-->
+            <div class="list" v-if="list20.show">
+                <div class="time">
+                    <div>
+                        <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
                     </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/20-16-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-16-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-16-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-16-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-16-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-16-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <p v-if="list20.is" class="select">限时特价进行中</p>
+                    <p v-else>即将开始</p>
+
                 </div>
-
-                <!-- 20点-->
-                <div class="list">
-                    <div class="time">
-                        <div>
-                            <span>2</span><span>0</span><b>:</b><span>0</span><span>0</span>
-                        </div>
-                        <p :class="is.start == 'a2020' ? 'select' : ''">{{is.a20.c}}</p>
-                    </div>
-                    <ul>
-                        <li><a href=""><img src="images/christmas2/20-20-1.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-20-2.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-20-3.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-20-4.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-20-5.jpg" alt=""></a></li>
-                        <li><a href=""><img src="images/christmas2/20-20-6.jpg" alt=""></a></li>
-                    </ul>
-                    <div class="bottom">
-                        <i class="left"></i>
-                        <i class="right"></i>
-                        <div class="box">
-                            <i class="fu"></i>
-                            <div class="text">
-                                <p>1.针对所有用户开发;</p>
-                                <p>2.福袋不与优惠券同时使用；</p>
-                                <p class="red">3.秒杀购买到福袋的用户，可以得到新春祝“福”字一张；</p>
-                                <p>4.福袋不包邮，售出后不接受换货；</p>
-                                <p>5.每个用户限秒3个福袋；</p>
-                            </div>
+                <ul>
+                    <li><a href=""><img src="images/christmas2/18-20-1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-4.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-5.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-6.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/christmas2/18-20-7.jpg" alt=""></a></li>
+                </ul>
+                <div class="bottom">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                    <div class="box">
+                        <i class="fu"></i>
+                        <div class="text">
+                            <p>1.福袋不与优惠券同时使用；</p>
+                            <p class="red">2.秒杀到福袋的用户，可以得到新春祝“福”字一张；</p>
+                            <p>3.福袋不包邮，售出后不接受换货；</p>
+                            <p>4.每个用户限秒3个福袋；</p>
                         </div>
                     </div>
                 </div>
@@ -347,20 +160,15 @@
 
             <!-- 倒记时 -->
             <div class="pos" v-show="is.show">
-                <!--<nav>-->
-                    <!--<span @touchstart="show('a18')" :class="tab == 'a18' ? 'select' : ''"></span>-->
-                    <!--<span @touchstart="show('a19')" :class="tab == 'a19' ? 'select' : ''"></span>-->
-                    <!--<span @touchstart="show('a20')" :class="tab == 'a20' ? 'select' : ''"></span>-->
-                <!--</nav>-->
                 <div class="endTime">
                     <p>福袋第二季，多件商品限时秒杀</p>
-                    <div class="end">
+                    <div class="end" v-if="date.s > 0">
                         <p>距离结束仅剩</p>
                         <div class="date">
-                            <span>{{date.h}}</span>
-                            <b>:</b>
-                            <span>{{date.m}}</span>
-                            <b>:</b>
+                            <span v-if="date.h > 0">{{date.h}}</span>
+                            <b v-if="date.h > 0">:</b>
+                            <span v-if="date.m > 0">{{date.m}}</span>
+                            <b v-if="date.m > 0">:</b>
                             <span>{{date.s}}</span>
                         </div>
                     </div>
@@ -370,6 +178,26 @@
         </div>
     </article>
 </div>
+
+<!-- 分享成功弹窗
+<div class="wayShare" v-show="sharing">
+    <div class="box">
+        <h5>分享到</h5>
+        <div class="shareBox clearfix">
+            <div class="icon" @touchstart="share(0)" >
+                <i class="weiFriend"></i>
+                <span>微信好友</span>
+            </div>
+            <div class="icon" @touchstart="share(1)" >
+                <i class="friend"></i>
+                <span>朋友圈</span>
+            </div>
+        </div>
+        <div class="btn" @touchstart="share(-2)" >取消</div>
+    </div>
+</div>
+-->
+
 
 </body>
 <script type="text/javascript" src="js/iscroll-probe.js"></script>
@@ -384,37 +212,45 @@
     var app=new Vue({
         el:"#app",
         data:{
+            sharing:false,          //分享
             myScroll:'',
-            tab:'',
             obj:{
                 headerHeight:0,     //广告高度
                 pos:''              //浮动倒记时元素
             },
             is:{
-                show:false,          //是否显示浮动倒记时
-                notText:'即将开始',
-                startText:'限时特价进行中',  //
-                endText:'已结束',
-                start:'',
-                falg:true,
-//                end:true,
-                text:'即将开始',
-                a18:{
-                    a:'即将开始',
-                    b:'即将开始',
-                    c:'即将开始'
-                },
-                a19:{
-                    a:'即将开始',
-                    b:'即将开始',
-                    c:'即将开始'
-                },
-                a20:{
-                    a:'即将开始',
-                    b:'即将开始',
-                    c:'即将开始'
-                }
+                show:false          //是否显示浮动倒记时
             },
+
+            //第一场
+            list10:{
+                show:true,
+                is:false,
+                start:new Date('2017/01/18 10:00:00'),
+                date:new Date('2017/01/18 10:30:00')
+            },
+            //第二场
+            list14:{
+                show:true,
+                is:false,
+                start:new Date('2017/01/18 14:00:00'),
+                date:new Date('2017/01/18 14:30:00')
+            },
+            //第三场
+            list16:{
+                show:true,
+                is:false,
+                start:new Date('2017/01/18 16:00:00'),
+                date:new Date('2017/01/18 16:30:00')
+            },
+            //第四场
+            list20:{
+                show:true,
+                is:false,
+                start:new Date('2017/01/18 20:00:00'),
+                date:new Date('2017/01/18 20:30:00')
+            },
+            //倒记时
             date:{
                 h:'',
                 m:'',
@@ -431,52 +267,115 @@
             //滚动
             this.browser() ? this.iosScroll() : this.androidScroll();
 
+
+
+
             /*
 
-                18-20,tab颜色高度
-                在每天的某个时间段需要要倒记时.文字改变与切换字体颜色
+             定时器
+             如果时间还没到
+             现在时间
+             10:00
+             10: - 现在时间 = 0 ,运行list10
 
-            */
+             */
+
+
+            // 时间
             var date = new Date();
             // 不是2017年
             if(date.getFullYear() != 2017) return false;
             // 不是1月
             if(date.getMonth() != 0) return false;
-            // 是18.19.20
-            if(date.getDate() == 18){
-                this.tab = 'a18';
-                // 10点段
-                //倒记时.到了10点开始以下一场时间来计算倒记时.还要切换文字
-                if(date.getHours() >= 10 && date.getHours() < 16){
-                    // 文字修改为白色
-                    this.is.start = 'a1810';
-                    // 修改文字内容
+            // 不是18号
+            //if(date.getDate() != 18) return false;
 
 
-                }
-                // 16点段
-                if(date.getHours() >= 16 && date.getHours() < 20){
-                    // 文字修改为白色
-                    this.is.start = 'a1816';
-                    // 修改文字内容
-
-                }
-                // 20点段
-                if(date.getHours() >= 20){
-                    // 文字修改为白色
-                    this.is.start = 'a1820';
-                }
-
-            }else if(date.getDate() == 19){
-                this.tab = 'a19';
-            }else if(date.getDate() == 20){
-                this.tab = 'a20';
+            // 当前时间小于指定时间(10点)
+            if(date.getTime() < _this.list10.start.getTime()){
+                this.runDate(_this.list10.start,function(){
+                    // 修改文字状态
+                    _this.list10.is = true;
+                    // 倒记时
+                    _this.endDate(_this.list10.date);
+                });
             }
-            //
-            this.endDate('2017/01/16 22:35:00');
-            console.log(date.getDate() + '|' + date.getHours());
+            // 10点段
+            if(date.getHours() >= 10 && date < this.list10.date){
+                // 修改文字状态
+                this.list10.is = true;
+                // 倒记时
+                this.endDate(this.list10.date);
+            }
+            if(date > this.list10.date){
+                // 隐藏已结束场次
+                this.list10.show = false;
+            }
 
+            // 当前时间小于指定时间(14点)
+            if(date.getTime() < _this.list14.start.getTime()){
+                this.runDate(_this.list14.start,function(){
+                    //修改文字状态
+                    _this.list14.is = true;
+                    //倒记时
+                    _this.endDate(_this.list14.date);
+                });
+            }
+            // 14点段
+            if(date.getHours() >= 14 && date < this.list14.date){
+                //修改文字状态
+                this.list14.is = true;
+                //倒记时
+                this.endDate(this.list14.date);
+            }
+            if(date > this.list14.date){
+                // 隐藏已结束场次
+                this.list14.show = false;
+            }
 
+            // 当前时间小于指定时间(16点)
+            if(date.getTime() < _this.list16.start.getTime()){
+                this.runDate(_this.list16.start,function(){
+                    //修改文字状态
+                    _this.list16.is = true;
+                    //倒记时
+                    _this.endDate(_this.list16.date);
+                });
+            }
+            // 16点段
+            if(date.getHours() >= 16 && date < this.list16.date){
+                //修改文字状态
+                this.list16.is = true;
+                //倒记时
+                this.endDate(this.list16.date);
+            }
+            if(date > this.list16.date){
+                // 隐藏已结束场次
+                this.list16.show = false;
+            }
+
+            // 当前时间小于指定时间(20点)
+            if(date.getTime() < _this.list20.start.getTime()){
+                this.runDate(_this.list20.start,function(){
+                    //修改文字状态
+                    _this.list20.is = true;
+                    //倒记时
+                    _this.endDate(_this.list20.date);
+                });
+            }
+            // 20点段
+            if(date.getHours() >= 20 && date < this.list20.date){
+                //修改文字状态
+                this.list20.is = true;
+                //倒记时
+                this.endDate(this.list20.date);
+            }
+            if(date > this.list20.date){
+                // 隐藏已结束场次
+                this.list20.show = false;
+            }
+
+            console.log('当前日期：' + date.getDate() + '|' + date.getHours());
 
         },
         methods:{
@@ -488,10 +387,26 @@
                     return false;
                 }
             },
-            show:function(str){
-                this.tab = str;
+            runDate:function(str,fn){
+                var _this = this;
+                var time = setInterval(function(){
+
+                    var now = new Date().getTime();   //当前时间毫秒数
+                    var end = new Date(str).getTime();     //指定时间毫秒数
+                    var c = end - now;
+
+                    // 结束时
+                    if(c<=0){//如果差小于等于0  也就是过期或者正好过期，则推出程序
+                        clearInterval(time);//清除计时器
+                        if(fn){
+                            fn();
+                        }
+                        return false;
+                    }
+
+                },1000)
             },
-            endDate:function(str){
+            endDate:function(str,fn){
                 var _this = this;
                 var time = setInterval(function(){
 
@@ -505,7 +420,12 @@
                             h : 0,
                             m : 0,
                             s : 0
+                        };
+                        if(fn){
+                            fn();
                         }
+                        //刷新
+                        location.reload();
                         return;//结束执行
                     }
                     var ds = 60*60*24*1000,                     //一天共多少毫秒
@@ -564,6 +484,22 @@
                         _this.is.show = false;
                     }
                 },false);
+            },
+            share:function(dist){
+                var img =  ctx+"/static/images/nianhuo/shareIcon.jpg";
+                var subTitle="福袋第二季——疯抢三天，给力到底";
+                var shareLink= "http://wx.artjzf.com/"+window.location.hash
+                if(dist===-2){
+                    this.sharing=false;
+                }else if(dist===-1){
+                    this.sharing=true;
+                }else if(dist===0){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'年底最后一波狂欢，1月18日10点准时开抢！',subTitle,0);
+                }else if(dist===1){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'年底最后一波狂欢，1月18日10点准时开抢！',subTitle,1);
+                }
             }
         }
     });
