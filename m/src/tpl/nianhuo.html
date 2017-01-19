@@ -13,7 +13,8 @@
 
         <div class="nianhuo" id="scroller">
             <a v-link="'/index'" class="iconBackTop"></a>
-            <a href="javascript:;" class="iconShareTop"></a>
+            <a href="javascript:;" class="iconShareTop" @touchstart="share(-1)"></a>
+
             <header>
 
             </header>
@@ -393,6 +394,25 @@
 </div>
 
 
+<!-- 分享成功弹窗 -->
+<div class="wayShare" v-show="sharing">
+    <div class="box">
+        <h5>分享到</h5>
+        <div class="shareBox clearfix">
+            <div class="icon" @touchstart="share(0)" >
+                <i class="weiFriend"></i>
+                <span>微信好友</span>
+            </div>
+            <div class="icon" @touchstart="share(1)" >
+                <i class="friend"></i>
+                <span>朋友圈</span>
+            </div>
+        </div>
+        <div class="btn" @touchstart="share(-2)" >取消</div>
+    </div>
+</div>
+
+
 </body>
 <script type="text/javascript" src="js/iscroll-probe.js"></script>
 <script>
@@ -404,10 +424,11 @@
  内容：集珍坊年货节1月10日九点开抢！
 
 */
-    var myScroll;
+
     var app=new Vue({
         el:"#app",
         data:{
+            myScroll:'',
             tab:'',
             headerHeight:0,
             obj:{
@@ -419,7 +440,8 @@
                 lucky:false,
                 safety:false,
                 tea:false
-            }
+            },
+            sharing:false               //分享
         },
         ready:function(){
             var _this = this;
@@ -428,27 +450,113 @@
             this.obj.nav = main.getElementsByTagName('nav')[0];
 
             //滚动
+            _this.browser() ? _this.iosScroll() : _this.androidScroll();
 
-            var position;
-
-            position = document.getElementById('position');
-
-            myScroll = new IScroll('#wrapper', {
-                //bounce : false,
-                click : true,
-                checkDOMChanges : true,
-                probeType: 3,
-                mouseWheel: true
-            });
-
-            myScroll.on('scroll', updatePosition);
-            myScroll.on('scrollEnd', updatePosition);
-            function updatePosition () {
-                if(Math.abs(this.y) > _this.headerHeight){
-                    _this.obj.nav.style.top = Math.abs(this.y) + "px";
-                }else{
-                    _this.obj.nav.style.top = _this.headerHeight + "px";
+        },
+        methods:{
+            browser:function(){
+                //这是iOS平台下浏览器
+                if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+                    return true;
+                }else {
+                    return false;
                 }
+            },
+            showMore:function(id){
+                var _this = this;
+                this.is[id] = true;
+                //高度发生变化
+                if(this.browser()){
+                    setTimeout(function () {
+                        _this.myScroll.refresh();
+                    }, 0);
+                }
+            },
+            pos:function(id){
+                // 选中状态
+                this.tab=id;
+                var obj = document.getElementById(id);
+                if(this.browser()){
+                    // ios
+                    // 修改nav浮动的值
+                    this.obj.nav.style.top = (this.offsetTop(obj) - this.obj.nav.clientHeight) + "px";
+                    // 修改滚动值
+                    this.myScroll.scrollTo(0, -(this.offsetTop(obj) - this.obj.nav.clientHeight));
+                }else{
+                    // 安卓
+                    var main = document.getElementsByTagName('article')[0];
+                    //定位描点
+                    main.scrollTop = this.offsetTop(obj) - this.obj.nav.clientHeight;
+                }
+
+                return false;
+            },
+            offsetTop:function(element){
+                var top=element.offsetTop;
+                var parent=element.offsetParent;
+
+                while (parent !== null){
+                    top += parent.offsetTop;
+                    parent = parent.offsetParent;
+                }
+                return top;
+            },
+            iosScroll:function(){
+                var _this = this;
+
+                this.myScroll = new IScroll('#wrapper', {
+                    //bounce : false,
+                    click : true,                   //是否响应鼠标的点击事件
+                    //checkDOMChanges : true,       //是否自动检测内容变化
+                    probeType: 3,
+                    //mouseWheel: true              //开启鼠标滚轮支持
+                });
+
+                this.myScroll.on('scroll', updatePosition);
+                this.myScroll.on('scrollEnd', updatePosition);
+                function updatePosition () {
+
+                    var top = Math.abs(this.y);
+                    //滚动浮动
+                    if(top > _this.headerHeight){
+                        _this.obj.nav.style.top = Math.abs(this.y) + "px";
+                    }else{
+                        _this.obj.nav.style.top = _this.headerHeight + "px";
+                    }
+
+                    //滚动选中tab
+                    _this.scrollTab(top);
+
+                }
+
+                // 滚动需要
+                var main = document.querySelector('#wrapper');
+                main.style.overflow = 'hidden';
+                main.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+            },
+            androidScroll:function(){
+                var _this = this;
+                var main = document.querySelector('.main');
+                main.addEventListener('scroll',function(){
+                    var top = this.scrollTop;
+                    //滚动浮动
+                    if(top > _this.headerHeight){
+                        _this.obj.nav.style.position = "fixed";
+                        _this.obj.nav.style.top = 0 + "px";
+                    }else{
+                        _this.obj.nav.style.position = "";
+                        _this.obj.nav.style.top = _this.headerHeight + "px";
+                    }
+
+                    //滚动选中tab
+                    _this.scrollTab(top);
+
+
+                },false);
+            },
+            scrollTab:function(top){
+                var _this = this;
                 //滚动定位tab选中
                 var tabObj={
                     use : _this.offsetTop(document.getElementById('use')) - _this.obj.nav.clientHeight,
@@ -457,7 +565,6 @@
                     safety : _this.offsetTop(document.getElementById('safety')) - _this.obj.nav.clientHeight,
                     tea : _this.offsetTop(document.getElementById('tea')) - _this.obj.nav.clientHeight
                 };
-                var top = Math.abs(this.y);
 
                 if(top < tabObj.use){
                     _this.tab='';
@@ -477,47 +584,21 @@
                 if(top > tabObj.tea){
                     _this.tab='tea';
                 }
-            }
-            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-        },
-        methods:{
-            showMore:function(id){
-                this.is[id] = true;
-                //高度发生变化
-                setTimeout(function () {
-                    myScroll.refresh();
-                }, 0);
             },
-            pos:function(id){
-                var obj = document.getElementById(id);
-                // 修改nav浮动的值
-                this.obj.nav.style.top = (this.offsetTop(obj) - this.obj.nav.clientHeight) + "px";
-                // 修改滚动值
-                myScroll.scrollTo(0, -(this.offsetTop(obj) - this.obj.nav.clientHeight));
-                // 选中状态
-                this.tab=id;
-
-                return false;
-            },
-            offsetTop:function(element){
-                var top=element.offsetTop;
-                var parent=element.offsetParent;
-
-                while (parent !== null){
-                    top += parent.offsetTop;
-                    parent = parent.offsetParent;
-                }
-                return top;
-            },
-            scroll:function(event){
-                var top=event.currentTarget.scrollTop;
-                //滚动浮动
-                if(top > this.headerHeight){
-                    this.obj.nav.style.position = "fixed";
-                    this.obj.nav.style.top = 0 + "px";
-                }else{
-                    this.obj.nav.style.position = "";
-                    this.obj.nav.style.top = this.headerHeight + "px";
+            share:function(dist){
+                var img =  ctx+"/static/images/nianhuo/shareIcon.jpg";
+                var subTitle="抢年货，过大年";
+                var shareLink= "http://wx.artjzf.com/"+window.location.hash
+                if(dist===-2){
+                    this.sharing=false;
+                }else if(dist===-1){
+                    this.sharing=true;
+                }else if(dist===0){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'集珍坊年货节1月10日九点开抢！',subTitle,0);
+                }else if(dist===1){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'集珍坊年货节1月10日九点开抢！',subTitle,1);
                 }
             }
         }
