@@ -20,11 +20,11 @@
             </header>
 
             <nav>
-                <a class="use" href="javascript:;" @touchstart="pos('use')" :class="tab == 'use' ? 'select' : ''" title="民俗用品"></a>
-                <a class="food" href="javascript:;" @touchstart="pos('food')" :class="tab == 'food' ? 'select' : ''" title="果盘食盒"></a>
-                <a class="lucky" href="javascript:;" @touchstart="pos('lucky')" :class="tab == 'lucky' ? 'select' : ''" title="吉祥摆件"></a>
-                <a class="safety" href="javascript:;" @touchstart="pos('safety')" :class="tab == 'safety' ? 'select' : ''" title="平安挂件"></a>
-                <a class="tea" href="javascript:;" @touchstart="pos('tea')" :class="tab == 'tea' ? 'select' : ''" title="茶香器具"></a>
+                <a class="use" href="javascript:;" @touchstart="pos($event,'use')" :class="tab == 'use' ? 'select' : ''" title="民俗用品"></a>
+                <a class="food" href="javascript:;" @touchstart="pos($event,'food')" :class="tab == 'food' ? 'select' : ''" title="果盘食盒"></a>
+                <a class="lucky" href="javascript:;" @touchstart="pos($event,'lucky')" :class="tab == 'lucky' ? 'select' : ''" title="吉祥摆件"></a>
+                <a class="safety" href="javascript:;" @touchstart="pos($event,'safety')" :class="tab == 'safety' ? 'select' : ''" title="平安挂件"></a>
+                <a class="tea" href="javascript:;" @touchstart="pos($event,'tea')" :class="tab == 'tea' ? 'select' : ''" title="茶香器具"></a>
             </nav>
 
             <div class="scrollPlace"></div>
@@ -458,9 +458,8 @@
                 //这是iOS平台下浏览器
                 if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                     return true;
-                }else {
-                    return false;
                 }
+                return false;
             },
             showMore:function(id){
                 var _this = this;
@@ -472,7 +471,7 @@
                     }, 0);
                 }
             },
-            pos:function(id){
+            pos:function(event,id){
                 // 选中状态
                 this.tab=id;
                 var obj = document.getElementById(id);
@@ -488,7 +487,7 @@
                     //定位描点
                     main.scrollTop = this.offsetTop(obj) - this.obj.nav.clientHeight;
                 }
-
+                event.preventDefault();
                 return false;
             },
             offsetTop:function(element){
