@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"情人节"
+})
+<link rel="stylesheet" href="css/love.css"/>
+
+<body id="app">
+<img :src="'../../static/images/love/shareIcon.jpg'" style="position:absolute;width:0;height:0;" alt=""/>
+<div class="wrap">
+
+    <article class="main">
+
+        <div class="love">
+            <a v-link="'/index'" class="iconBackTop"></a>
+            <a href="javascript:;" class="iconShareTop" @touchstart="share(-1)"></a>
+
+            <header>
+
+            </header>
+
+            <div class="list">
+                <ul>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/love/1.jpg" alt=""></a></li>
+                </ul>
+                <div class="cloud"></div>
+            </div>
+
+        </div>
+    </article>
+
+</div>
+
+
+<!-- 分享成功弹窗 -->
+<div class="wayShare" v-show="sharing">
+    <div class="box">
+        <h5>分享到</h5>
+        <div class="shareBox clearfix">
+            <div class="icon" @touchstart="share(0)" >
+                <i class="weiFriend"></i>
+                <span>微信好友</span>
+            </div>
+            <div class="icon" @touchstart="share(1)" >
+                <i class="friend"></i>
+                <span>朋友圈</span>
+            </div>
+        </div>
+        <div class="btn" @touchstart="share(-2)" >取消</div>
+    </div>
+</div>
+
+
+</body>
+<script>
+/*
+
+    标题：爱要有礼才完美
+    内容：集珍精选成功俘获心仪的TA的情物，快来选购吧
+
+*/
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            sharing:false               //分享
+        },
+        ready:function(){
+
+        },
+        methods:{
+            share:function(dist){
+                var img =  ctx+"/static/images/nianhuo/shareIcon.jpg";
+                var subTitle="爱要有礼才完美";
+                var shareLink= "http://wx.artjzf.com/"+window.location.hash
+                if(dist===-2){
+                    this.sharing=false;
+                }else if(dist===-1){
+                    this.sharing=true;
+                }else if(dist===0){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'集珍精选成功俘获心仪的TA的情物，快来选购吧',subTitle,0);
+                }else if(dist===1){
+                    this.sharing=false;
+                    weixinShare(shareLink,img,'集珍精选成功俘获心仪的TA的情物，快来选购吧',subTitle,1);
+                }
+            }
+        }
+    });
+
+</script>
+
+</html>
