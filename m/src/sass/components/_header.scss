@@ -302,7 +302,7 @@
 //不在header里的.全屏模式里的返回、分享
 .iconBackTop,.iconShareTop{
   z-index: 99;
-  position: fixed;
+  position: absolute;
   //iso上面有40的时间栏
   @if $wxTop {
     top:pxTorem(20px);
