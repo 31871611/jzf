@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+  开工节
+*/
+
+
+.startwork{
+  background-image: url("../images/startwork/bg.jpg");
+  padding-bottom: pxTorem(100px);
+  .iconBackTop,.iconShareTop{
+    position: absolute;
+  }
+
+  header{
+    margin-bottom: pxTorem(80px);
+    height: pxTorem(915px);
+    @extend %ico_rem;
+    background-size: 100% 100%;
+    background-image: url("../images/startwork/header.jpg");
+  }
+
+  // 优惠券
+  .discount{
+    margin-bottom: pxTorem(104px);
+    height: pxTorem(745px - 665);
+    padding-top:pxTorem(665px);
+    @extend %ico_rem;
+    background-size: 100% 100%;
+    background-image: url("../images/startwork/discount.jpg");
+    a{
+      display: block;
+      width:55%;
+      height: pxTorem(80px);
+      margin:0 auto;
+      @extend %ico_rem;
+      background-size: 100% 100%;
+      background-image: url("../images/startwork/setDiscount.png");
+    }
+  }
+
+  .infoPhoto{
+    margin-bottom: pxTorem(34px);
+    height: pxTorem(633px);
+    @extend %ico_rem;
+    background-size: 100% 100%;
+    background-image: url("../images/startwork/infoPhoto.jpg");
+  }
+
+  .infoPhoto2{
+    background-image: url("../images/startwork/infoPhoto2.jpg");
+  }
+
+  // 列表
+  .list{
+    @extend %clearfix;
+    margin:0 pxTorem(6px) 0 pxTorem(16px);
+    padding-bottom: pxTorem(70px);
+    li{
+      float: left;
+      width: 50%;
+    }
+    a{
+      display: block;
+      margin-right: pxTorem(10px);
+      margin-bottom: pxTorem(10px);
+    }
+    img{
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+
+}
+
