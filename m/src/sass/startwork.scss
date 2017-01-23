@@ -24,21 +24,10 @@
 
   // 优惠券
   .discount{
-    margin-bottom: pxTorem(104px);
-    height: pxTorem(745px - 665);
-    padding-top:pxTorem(665px);
+    height: pxTorem(748px);
     @extend %ico_rem;
     background-size: 100% 100%;
     background-image: url("../images/startwork/discount.jpg");
-    a{
-      display: block;
-      width:55%;
-      height: pxTorem(80px);
-      margin:0 auto;
-      @extend %ico_rem;
-      background-size: 100% 100%;
-      background-image: url("../images/startwork/setDiscount.png");
-    }
   }
 
   .infoPhoto{
