@@ -254,42 +254,6 @@
         },
         methods:{
 
-            /*
-                750 / 2 = 375
-                375 / 2 = 187.5
-                            562
-
-                750 * .7 = 525
-
-                scrollWidth / 2 < left
-                375 < 0
-
-             var left = obj[0].offsetLeft;
-             var screenWidth = screen.width
-             var scrollLeft = document.getElementsByClassName("indexsTab")[0].scrollLeft
-             var scrollWidth = document.getElementsByClassName("indexsTab")[0].scrollWidth
-
-             if(scrollWidth / 2 < left){
-                // document.getElementsByClassName("indexsTab")[0].scrollLeft=left-(screenWidth / 2)
-                $(".indexsTab").animate({"scrollLeft":left-(screenWidth/2)},300);
-             }else if(scrollLeft > 0){
-                $(".indexsTab").animate({"scrollLeft":0},300);
-             }
-
-             滚动一格
-
-             */
-            tab:function(e){
-                var w=document.body.clientWidth;
-                var tab=document.querySelector('.seckillTabScroll');
-                //var boxW=tab.querySelector('.box').clientWidth;
-                var left=tab.scrollLeft;
-                alert(left);
-                if((w * 0.7) < e.clientX && w / 2 < left){
-                    alert(1);
-                }
-                //alert(w + '|' + boxW + '|' + e.clientX);
-            }
         }
     });
 

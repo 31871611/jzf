@@ -388,27 +388,7 @@ export default{
         },1000);
     },
     methods:{
-         当前滚动值-右
-         选中为摆件（最后一个）时，点击前一个会向前滚动
-         3分1
-         3分2
-         滚动值  最大滚动值
-         元素宽(不准确)-屏幕宽
-        getScroll:function(e){
-            var w=window.innerWidth / 2;
-            var scrollNum;
-            var indexsTab;
-            //console.log('点击屏幕中间线与右'+(e.clientX-w)+'|点击屏幕中间线与左'+(w-e.clientX)+'当前滚动：'+$('.indexsTab').scrollLeft());
-            if(e.clientX-w){
-                scrollNum=e.clientX-w;
-            }else{
-                scrollNum=$('.indexsTab').scrollLeft()-e.clientX-w;
-            }
-            setTimeout(function(){
-                indexsTab=$('.indexsTab');
-                indexsTab.animate({scrollLeft:scrollNum},'fast');
-            },500);
-        }
+
     }
 }
 <\/script>
