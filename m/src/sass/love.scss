@@ -59,5 +59,15 @@
     }
   }
 
+  .moreBtn{
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: pxTorem(300px);
+    height: pxTorem(70px);
+    margin:pxTorem(60px) auto 0;
+    @extend %ico_rem;
+    background-image: url("../images/love/btn.png");
+  }
 }
 
