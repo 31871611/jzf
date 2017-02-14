@@ -17,178 +17,109 @@
 
         <div class="loginTab">
             <div class="con">
-                <a href="" class="select">手机号快捷登录</a>
-                <a href="">帐号密码登录</a>
+                <a href="javascript:;" @touchstart="tab($event,0)" class="select">手机号快捷登录</a>
+                <a href="javascript:;" @touchstart="tab($event,width)">帐号密码登录</a>
             </div>
-            <div class="slide"></div>
+            <div class="slide" :style="{transform:'translateX('+tabSlideNum+'px)'}"></div>
         </div>
 
-        <div class="login">
-            <div class="con">
+        <div class="login" :style="{width:width * 2 + 'px',transform:'translateX(-'+contentSlideNum+'px)'}" @touchstart="contentSliderStart($event)" @touchend="contentSliderEnd($event)">
+            <div class="con" :style="{width:width + 'px'}">
                 <div class="import">
                     <span>手机号</span>
                     <input type="tel" placeholder="请输入手机号" >
-                    <a href="" class="getCode">获取验证码</a>
+                    <a href="" class="getCode select">获取验证码</a>
                 </div>
-                <div class="import">
-                    <span>手机号</span>
+                <div class="import last">
+                    <span>验证码</span>
                     <input type="text" placeholder="请输入验证码" />
+                </div>
+                <div class="infoText">未注册的手机号码验证后自动创建集珍帐户</div>
+                <div class="loginBtn">
+                    <a href="">登录</a>
+                </div>
+                <!-- 第三方登录 -->
+                <div class="cooperationLogin ">
+                    <h2>快速登录</h2>
+                    <div class="list">
+                        <a href="" class="iconLoginWeibo">微博登录</a>
+                        <a href="" class="iconLoginQq">qq登录</a>
+                        <a href="" class="iconLoginWx">微信登录</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="con">
+            <div class="con" :style="{width:width + 'px'}">
                 <div class="import">
                     <span>帐号</span>
                     <input type="tel" placeholder="请输入手机号" >
                 </div>
-                <div class="import">
+                <div class="import last">
                     <span>密码</span>
                     <input type="password" placeholder="请输入密码" />
                 </div>
+                <div class="loginBtn">
+                    <a href="">登录</a>
+                </div>
+                <div class="backPass">
+                    <a href="">忘记密码?</a>
+                </div>
             </div>
         </div>
-
-        <div class="infoText">
-            未注册的手机号码验证后自动创建集珍帐户
-        </div>
-
-        <div class="loginBtn">
-            <a href="">登录</a>
-        </div>
-        <div>
-            忘记密码?
-        </div>
-
-
-        <!--登录-->
-        <div class="loginRegister hide">
-            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
-                <i class="user">请输入手机号</i>
-                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
-                <i class="delete hide"></i>
-            </div>
-            <div class="formGroup" @click="toggleFocus('password')" :class="{select:isAnimate.password}">
-                <i class="passC">请输入密码</i>
-                <input type="password" placeholder="" v-model="passwordValue" @focus="toggleFocus('password')" @blur="toggleBlur('password',passwordValue)" />
-                <i class="delete hide"></i>
-            </div>
-            <div class="formGroupTip"><a href="#">忘记密码？马上找回</a></div>
-            <div class="btn select">
-                <a v-link="{path:'/user/'}">登录</a>
-            </div>
-            <div class="notLoginText"><a href="#">还没有集珍坊账号？去<b>注册</b></a></div>
-
-        </div>
-
-        <!--注册获取验证码-->
-        <div class="loginRegister">
-            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
-                <i class="user">请输入手机号</i>
-                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
-                <i class="delete"></i>
-            </div>
-            <div class="formGroup" @click="toggleFocus('code')" :class="{select:isAnimate.code}">
-                <i class="openPassC">验证码</i>
-                <input type="number" placeholder="" v-model="codeValue" @focus="toggleFocus('code')" @blur="toggleBlur('code',codeValue)" />
-                <div class="code">获取短信验证码</div>
-                <i class="delete"></i>
-            </div>
-            <div class="formGroup" @click="toggleFocus('invite')" :class="{select:isAnimate.invite}">
-                <i class="iconInviteC">请输入邀请码</i>
-                <input type="text" placeholder="" v-model="inviteValue" @focus="toggleFocus('invite')" @blur="toggleBlur('invite',inviteValue)" />
-                <i class="delete"></i>
-            </div>
-            <div class="clickInvite">
-                点击<span>输入邀请码</span>
-            </div>
-            <div class="btn">
-                <a href="">下一步</a>
-            </div>
-        </div>
-
-        <!--注册设置密码-->
-        <div class="loginRegister hide">
-            <div class="formGroup" @click="toggleFocus('password')" :class="{select:isAnimate.password}">
-                <i class="passC">请输入8-20位英文数字组合密码</i>
-                <input type="password" placeholder="" v-model="passwordValue" @focus="toggleFocus('password')" @blur="toggleBlur('password',passwordValue)" />
-                <i class="delete"></i>
-            </div>
-            <div class="formGroup" @click="toggleFocus('nptPassword')" :class="{select:isAnimate.nptPassword}">
-                <i class="passC">请再次输入密码</i>
-                <input type="password" placeholder="" v-model="notPasswordValue" @focus="toggleFocus('nptPassword')" @blur="toggleBlur('nptPassword',notPasswordValue)" />
-                <i class="delete"></i>
-            </div>
-            <div class="btn">
-                <a href="">注册</a>
-            </div>
-        </div>
-
-        <!--找回密码-->
-        <div class="loginRegister hide">
-            <div class="formGroup" @click="toggleFocus('tel')" :class="{select:isAnimate.tel}">
-                <i class="user">请输入手机号</i>
-                <input type="tel" placeholder="" v-model="telValue" @focus="toggleFocus('tel')" @blur="toggleBlur('tel',telValue)" />
-                <i class="delete"></i>
-            </div>
-            <div class="formGroup" @click="toggleFocus('code')" :class="{select:isAnimate.code}">
-                <i class="openPassC">验证码</i>
-
-                <input type="number" placeholder="" v-model="codeValue" @focus="toggleFocus('code')" @blur="toggleBlur('code',codeValue)" />
-                <div class="code">获取短信验证码</div>
-                <i class="delete"></i>
-            </div>
-            <div class="btn">
-                <a href="">验证</a>
-            </div>
-        </div>
-
-        <!-- 第三方登录 -->
-        <div class="cooperationLogin ">
-            <h2>快速登录</h2>
-            <div class="list">
-                <a href="" class="iconLoginWeibo">微博登录</a>
-                <a href="" class="iconLoginQq">qq登录</a>
-                <a href="" class="iconLoginWx">微信登录</a>
-            </div>
-        </div>
-
 
     </article>
 
 </div>
 
 </body>
-<script src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
 <script>
 
 var vue=new Vue({
     el:"#app",
     data:{
-        isAnimate:{
-            tel:false,
-            password:false,
-            nptPassword:false,
-            code:false,
-            invite:false
-        },
-        telValue:"",
-        passwordValue:"",
-        notPasswordValue:"",
-        codeValue:"",
-        inviteValue:""
+        width:0,
+        tabSlideNum:0,
+        tabLength:0,
+        contentSlideNum:0,
+        contentSlider:{
+            startX:0,
+            startY:0,
+            endX:0,
+            endY:0
+        }
     },
     ready:function(){
-
+        this.width = document.body.clientWidth;
     },
     methods: {
-        toggleFocus:function(value){
-            this.isAnimate[value]=true;
-            //点击在提示文字上没有得到焦点
+        tab:function(event,num){
+            this.tabSlideNum = event.currentTarget.offsetLeft;
+            this.contentSlideNum = num;
         },
-        toggleBlur:function(value,model){
-            if(model == ""){
-                this.isAnimate[value]=false;
+        contentSliderStart:function(event){
+            var touch = event.changedTouches[0];
+            this.contentSlider.startX = touch.clientX;
+            this.contentSlider.startY = touch.clientY;
+        },
+        contentSliderEnd:function(event){
+            var touch = event.changedTouches[0];
+            this.contentSlider.endX = touch.clientX - this.contentSlider.startX;
+            this.contentSlider.endY = touch.clientY - this.contentSlider.startY;
+            // 左右划到|水平划到
+            if(Math.abs(this.contentSlider.endX) > Math.abs(this.contentSlider.endY)){
+                // console.log(this.contentSlideNum);
+                if(this.contentSlider.endX > 20 && this.contentSlideNum != 0){     //大于20px的差值算划动
+                    // console.log('左');
+                    // 滑动内容-手机号快捷登录
+                    this.tabSlideNum = 0;
+                    this.contentSlideNum = 0;
+                }else if(this.contentSlider.endX < -20 && this.contentSlideNum != this.width) {     //小于20px
+                    // console.log('右');
+                    // 滑动内容-帐号密码登录
+                    this.tabSlideNum = Math.ceil(this.width / 2);
+                    this.contentSlideNum = this.width;
+                }
+
             }
         }
     }
