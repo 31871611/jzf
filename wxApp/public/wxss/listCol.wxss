@@ -45,12 +45,12 @@
     background-size:contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image:url("../../public/icon/iconLoveC.png");
+    background-image:url("/public/icon/iconLoveC.png");
     display:block;
     margin:0 auto;
 }
 .listLove.select:before{
-    background-image:url("../../public/icon/iconLoveS.png");
+    background-image:url("/public/icon/iconLoveS.png");
 }
 
 .listTitle{
@@ -81,7 +81,7 @@
     margin-right:10rpx;
     width:44rpx;
     height:56rpx;
-    background-image: url("../../public/icon/iconBuy.png");
+    background-image: url("/public/icon/iconBuy.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 44rpx 56rpx;

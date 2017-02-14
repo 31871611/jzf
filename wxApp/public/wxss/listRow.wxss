@@ -32,12 +32,12 @@
     background-size:contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image:url("../../public/icon/iconLoveC.png");
+    background-image:url("/public/icon/iconLoveC.png");
     display:block;
     margin:0 auto;
 }
 .listRow .url .love.select:before{
-    background-image:url("../../public/icon/iconLoveS.png");
+    background-image:url("/public/icon/iconLoveS.png");
 }
 .listRow .info{
     flex: 1;
