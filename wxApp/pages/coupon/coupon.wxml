@@ -1,0 +1,95 @@
+
+<view class="coupon">
+
+    <view class="list">
+        <view class="money">
+            <view class="price"><text>500</text></view>
+            <text class="use">满500元可用</text>
+            <view class="lineRight">
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view class="center">
+            <text class="title">集珍坊优惠券</text>
+            <text class="text">使用范围：全品类通用（寿山石除外）</text>
+            <text class="text">有效时间：2016.01.04 - 2016.01.18</text>
+        </view>
+        <view class="getBtn">
+            立即领取
+        </view>
+    </view>
+
+    <view class="list select">
+        <view class="money">
+            <view class="price"><text>500</text></view>
+            <text class="use">满500元可用</text>
+            <view class="lineRight">
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view class="center">
+            <text class="title">集珍坊优惠券</text>
+            <text class="text">使用范围：全品类通用（寿山石除外）</text>
+            <text class="text">有效时间：2016.01.04 - 2016.01.18</text>
+        </view>
+        <view class="getBtn">
+            已领取
+        </view>
+    </view>
+
+</view>
+
+
+<view class="alertConfirmBuy">
+    <view class="product">
+        111
+    </view>
+
+    <view class="titleText">颜色款式</view>
+    <view class="type">
+        <view class="select">黑红</view>
+        <view>红黑</view>
+        <view>黑金</view>
+        <view>红黑金</view>
+    </view>
+
+    <view class="titleText">规格</view>
+    <view class="type">
+        <view class="select">5cm以下</view>
+        <view>5cm-5.5cm之间</view>
+        <view>5cm-6cm之间</view>
+        <view>6cm以上</view>
+    </view>
+
+    <view class="titleText">购买数量</view>
+    <view class="number">
+        <view class="reduce select"><text></text></view>
+        <input type="number" value="1" readonly="readonly" />
+        <view class="add"><text></text></view>
+    </view>
+    <view class="btn">
+        <view>确认</view>
+    </view>
+    <view class="exit"></view>
+</view>
+
+
+
+
+
+
+
+
+
