@@ -17,13 +17,13 @@
 
         <div class="loginTab">
             <div class="con">
-                <a href="javascript:;" @touchstart="tab($event,0)" class="select">手机号快捷登录</a>
+                <a href="javascript:;" @touchstart="tab($event,0)">手机号快捷登录</a>
                 <a href="javascript:;" @touchstart="tab($event,width)">帐号密码登录</a>
             </div>
             <div class="slide" :style="{transform:'translateX('+tabSlideNum+'px)'}"></div>
         </div>
 
-        <div class="login" :style="{width:width * 2 + 'px',transform:'translateX(-'+contentSlideNum+'px)'}" @touchstart="contentSliderStart($event)" @touchend="contentSliderEnd($event)">
+        <div class="login" :style="{width:width * 2 + 'px',transform:'translateX(-'+contentSlideNum+'px)'}" @touchstart="contentSliderStart($event)" @touchmove="contentSliderMove($event)" @touchend="contentSliderEnd($event)">
             <div class="con" :style="{width:width + 'px'}">
                 <div class="import">
                     <span>手机号</span>
@@ -84,6 +84,8 @@ var vue=new Vue({
         contentSlider:{
             startX:0,
             startY:0,
+            moveX:0,
+            moveY:0,
             endX:0,
             endY:0
         }
@@ -100,6 +102,15 @@ var vue=new Vue({
             var touch = event.changedTouches[0];
             this.contentSlider.startX = touch.clientX;
             this.contentSlider.startY = touch.clientY;
+        },
+        contentSliderMove:function(event){
+            var touch = event.changedTouches[0];
+            this.contentSlider.moveX = touch.clientX - this.contentSlider.startX;
+            this.contentSlider.moveY = touch.clientY - this.contentSlider.startY;
+            // 左右划
+            if(Math.abs(this.contentSlider.moveX) > Math.abs(this.contentSlider.moveY) ){
+                event.preventDefault();
+            }
         },
         contentSliderEnd:function(event){
             var touch = event.changedTouches[0];

@@ -26,8 +26,9 @@
     width: 50%;
     height:2px;
     background:$blue-base;
+    position: relative;
     @include translateX(0px);
-    @include transition(transform .5s);
+    @include transition(all .5s);
   }
 }
 
@@ -37,7 +38,7 @@
   margin-top: pxTorem(20px);
   white-space: nowrap;
   @include translateX(0px);
-  @include transition(transform .5s);
+  @include transition(all .5s);
   .con{
     //position: relative;
     display: inline-block;
@@ -128,7 +129,4 @@
 }
 
 
-//第三方登录
-.cooperationLogin{
-  margin-top:pxTorem(400px);
-}
+
