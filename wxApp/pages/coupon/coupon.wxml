@@ -54,7 +54,14 @@
 
 <view class="alertConfirmBuy">
     <view class="product">
-        111
+        <view class="photo">
+            <image src="{{list.photo}}"></image>
+        </view>
+        <view class="info">
+            <view class="title">标题</view>
+            <view class="price">18500</view>
+            <view class="num">数量：10</view>
+        </view>
     </view>
 
     <view class="titleText">颜色款式</view>
