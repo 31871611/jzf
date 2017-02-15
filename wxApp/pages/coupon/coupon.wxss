@@ -136,8 +136,39 @@ page{
     right: 0;
 }
 /* 商品信息 */
-.product{
-    
+.alertConfirmBuy .product{
+    margin:0 30rpx;
+    height:170rpx;
+    display: flex;
+}
+.alertConfirmBuy .photo{
+    width:150rpx;
+    height:150rpx;
+    margin-right:40rpx;
+}
+.alertConfirmBuy .photo image{
+    width:150rpx;
+    height:150rpx;
+}
+.alertConfirmBuy .info{
+    flex: 1;
+    position: relative;
+}
+.alertConfirmBuy .info .title{
+    margin-top:10rpx;
+    font-size:32rpx;
+    color:#333;
+    overflow: hidden;
+    line-height:40rpx;
+    height:80rpx;
+}
+
+.alertConfirmBuy .info .num{
+    font-size:24rpx;
+    color:#666;
+    position: absolute;
+    right:0;
+    bottom: 15rpx;
 }
 
 .alertConfirmBuy .titleText{
