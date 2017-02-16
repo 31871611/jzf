@@ -2,7 +2,7 @@
 Page({
   data:{
     className:'',
-    isAlert:true,
+    isAlert:false,
     list:{
       photo : '../../public/images/230x230.jpg'
     }
