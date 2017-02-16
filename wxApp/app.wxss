@@ -25,6 +25,13 @@ page{
     display: block;
     margin:0 auto;
 }
+/* 无优惠券图标 */
+.iconPromptInfo .couponEmpty{
+    width:147rpx;
+    height: 111rpx;
+    display: block;
+    margin:0 auto;
+}
 /* 无地址图片 */
 .iconPromptInfo .addressEmpty{
     width:140rpx;

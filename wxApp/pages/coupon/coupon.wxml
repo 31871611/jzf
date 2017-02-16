@@ -1,4 +1,9 @@
 
+<view class="iconPromptInfo">
+    <image src="../../public/icon/iconDiscountEmpty.png" class="couponEmpty"></image>
+    <text>无优惠券</text>
+</view>
+
 <view class="coupon">
 
     <view class="list">
@@ -51,15 +56,15 @@
 
 </view>
 
-
+<view class="opacity"></view>
 <view class="alertConfirmBuy">
     <view class="product">
         <view class="photo">
             <image src="{{list.photo}}"></image>
         </view>
         <view class="info">
-            <view class="title">标题</view>
-            <view class="price">18500</view>
+            <view class="title">郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件章郭懋介残荷听雨系列套件</view>
+            <view class="price">￥18500</view>
             <view class="num">数量：10</view>
         </view>
     </view>
