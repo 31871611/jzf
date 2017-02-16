@@ -25,7 +25,7 @@
             <text class="text">使用范围：全品类通用（寿山石除外）</text>
             <text class="text">有效时间：2016.01.04 - 2016.01.18</text>
         </view>
-        <view class="getBtn">
+        <view class="getBtn" bindtap="showAlert">
             立即领取
         </view>
     </view>
@@ -56,8 +56,8 @@
 
 </view>
 
-<view class="opacity"></view>
-<view class="alertConfirmBuy">
+<view class="opacity" hidden="{{isAlert}}"></view>
+<view class="alertConfirmBuy {{className}}" hidden="{{isAlert}}">
     <view class="product">
         <view class="photo">
             <image src="{{list.photo}}"></image>
@@ -94,7 +94,7 @@
     <view class="btn">
         <view>确认</view>
     </view>
-    <view class="exit"></view>
+    <view class="exit" bindtap='exitAlert'></view>
 </view>
 
 

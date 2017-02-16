@@ -124,6 +124,26 @@ page{
     border-radius: 15rpx;
 }
 
-
-
-
+/* 显示与关闭 */
+.SlideTopBottom-enter{
+    animation: SlideTopToBottom 400ms;
+}
+.SlideTopBottom-leave{
+    animation: SlideBottomToTop 400ms;
+}
+@keyframes SlideBottomToTop{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes SlideTopToBottom{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);   
+    }
+}
