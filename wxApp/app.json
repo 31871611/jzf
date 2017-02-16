@@ -1,8 +1,8 @@
 {
   "pages":[
-    
-    "pages/coupon/coupon",
     "pages/index/index",
+    "pages/coupon/coupon",
+    
     "pages/search/search",
     "pages/list/list",
     "pages/detail/detail",
@@ -21,5 +21,27 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#333",
+    "selectedColor": "#003347",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"首页",
+      "iconPath":"public/icon/iconNavHome.png",
+      "selectedIconPath":"public/icon/iconNavHomeS.png"
+    },{
+      "pagePath":"pages/coupon/coupon",
+      "text":"优惠券",
+      "iconPath":"public/icon/iconNavHappyRead.png",
+      "selectedIconPath":"public/icon/iconNavHappyReadS.png"
+    },{
+      "pagePath":"pages/user/user",
+      "text":"我的集珍",
+      "iconPath":"public/icon/iconNavUser.png",
+      "selectedIconPath":"public/icon/iconNavUserS.png"
+    }]
   }
 }
