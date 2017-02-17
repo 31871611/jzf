@@ -79,6 +79,9 @@
     color:#fff;
     background: #ea3a38;
 }
+.alertConfirmBuy .type view.no{
+    color:#ccc;
+}
 
 /* 数量选择 */
 .alertConfirmBuy .number{

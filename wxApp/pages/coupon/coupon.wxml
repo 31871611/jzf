@@ -72,7 +72,7 @@
     <view class="titleText">颜色款式</view>
     <view class="type">
         <view class="select">黑红</view>
-        <view>红黑</view>
+        <view class="no">红黑</view>
         <view>黑金</view>
         <view>红黑金</view>
     </view>
