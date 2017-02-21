@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  鉴定
+
+*/
+
+
+.appraisal{
+
+}
+
+// 鉴定首页展示列表
+.appraisalShowList{
+  li{
+    background: #fff;
+    margin-bottom: pxTorem(8px);
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding-top:pxTorem(25px);
+    padding-bottom:pxTorem(30px);
+    padding-left:pxTorem(30px);
+    padding-right:pxTorem(22px);
+    &:nth-child(1){
+      border-top:0;
+    }
+  }
+  .top{
+    $h:70px;
+    height:pxTorem($h);
+    margin-bottom: pxTorem(25px);
+  }
+  .face{
+    $h:70px;
+    height:pxTorem($h);
+    img{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      vertical-align: middle;
+      @include border-radius(50%);
+      float:left;
+    }
+    span{
+      display: block;
+      margin-left:pxTorem($h + 15);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+  }
+  .photo{
+    margin-bottom: pxTorem(10px);
+    $w:224px;
+    $h:248px;
+    @extend %clearfix;
+    a{
+      float: left;
+      display: inline-block;
+      margin-right:pxTorem(8px);
+      margin-bottom:pxTorem(8px);
+    }
+    img{
+      vertical-align: middle;
+      width: pxTorem($w);
+      height: pxTorem($h);
+    }
+  }
+  .text{
+    p{
+      font-size:pxTorem(28px);
+      line-height:pxTorem(50px);
+    }
+  }
+  .bottom{
+    margin-top: pxTorem(20px);
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+  }
+  .time{
+    font-size:pxTorem(20px);
+    color: #666;
+  }
+  .commentNum{
+    $h:31px;
+    a{
+      color: #333;
+    }
+    i{
+      vertical-align: top;
+      display: inline-block;
+      width: pxTorem(35px);
+      height: pxTorem(31px);
+      margin-right: pxTorem(20px);
+      @extend %ico_rem;
+      background-image: url("../images/iconAppraisalCommentNum.png");
+    }
+    span{
+      vertical-align: top;
+      font-size:pxTorem(22px);
+      display: inline-block;
+      color: #666;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+  }
+}
+
+
+// 选择鉴别类型
+.appraisalSelectList{
+  $h:89px;
+  label{
+    background: #fff;
+    height: pxTorem($h);
+    border-top:2px solid #e5e5e5;
+    padding:0 pxTorem(30px);
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+  }
+  span{
+    display: block;
+    font-size:pxTorem(28px);
+  }
+  input[type='radio']{
+    $h:20px;
+    display: block;
+    border:1px solid #8b8b8b;
+    position: relative;
+    width: pxTorem($h);
+    height: pxTorem($h);
+    @include border-radius(50%);
+    background: #ccc;
+    @include appearance(none);
+    &:checked{
+      background: $blue-base;
+    }
+  }
+}
+.appraisalSelectBtn{
+  $h:90px;
+  height: pxTorem($h);
+  margin-top:pxTorem(430px);
+  margin-bottom:pxTorem(100px);
+  a{
+    display: block;
+    width: 92%;
+    height: pxTorem($h);
+    margin:0 auto;
+    line-height: pxTorem($h);
+    text-align: center;
+    font-size:pxTorem(28px);
+    color:#fff;
+    background: $blue-base;
+    @include border-radius(pxTorem(8px));
+  }
+}
+
+// 普通鉴定
+.appraisalOrdinary{
+  .titleInfo{
+    $h:89px;
+    height: pxTorem($h);
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    padding:0 pxTorem(15px);
+    b,span{
+      display: inline-block;
+      font-size:pxTorem(28px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+    b{
+      margin-right: pxTorem(15px);
+      font-weight: normal;
+    }
+    span{
+      color:#999;
+    }
+  }
+  .photo{
+    @extend %clearfix;
+    padding:pxTorem(35px) pxTorem(30px) pxTorem(15px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    background: #fff;
+    $w:200px;
+    $mr:20px;
+    .add{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      float: left;
+      margin-right: pxTorem($mr);
+      margin-bottom: pxTorem($mr);
+      background: #00a0e9;
+    }
+    .list{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      margin-right: pxTorem($mr);
+      margin-bottom: pxTorem($mr);
+      position: relative;
+      float: left;
+    }
+    img{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      vertical-align: middle;
+    }
+    i{
+      position: absolute;
+      right:0;
+      top:0;
+      width: pxTorem(20px);
+      height:pxTorem(20px);
+      background: #ffcc00;
+    }
+  }
+  .text{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+  }
+}
+

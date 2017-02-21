@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"鉴定"
+})
+<link rel="stylesheet" href="css/appraisal.css"/>
+<body id="app">
+
+<div class="wrap">
+    <header>
+
+    </header>
+
+    <article class="main">
+
+        <!-- 普通鉴定 -->
+        <div class="appraisalOrdinary">
+            <div class="titleInfo">
+                <b>上传图片</b><span>请添加3至6张各角度清晰照</span>
+            </div>
+            <div class="photo">
+                <div class="add"></div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+            </div>
+
+            <div class="titleInfo">
+                <b>藏品描述</b><span>限200字</span>
+            </div>
+            <div class="text">
+                <textarea></textarea>
+            </div>
+
+            所属品类 寿山石
+            材质
+            鉴定类型 普通鉴定（现阶段免费）
+        </div>
+
+        <!-- 选择鉴别类型 -->
+        <div class="appraisalSelectList">
+            <label for="a1">
+                <span>
+                    普通鉴定（现阶段免费）
+                </span>
+                <input type="radio" id="a1" name="appraisal" />
+            </label>
+            <label for="a2">
+                <span>
+                    专家鉴定（收费300元）
+                </span>
+                <input type="radio" id="a2" name="appraisal" />
+            </label>
+        </div>
+        
+        <div class="appraisalSelectBtn">
+            <a href="">下一步</a>
+        </div>
+
+
+
+        <!-- 鉴定首页展示列表 -->
+        <ul class="appraisalShowList">
+            <li>
+                <div class="top">
+                    <div class="face">
+                        <img src="picture/70x70.jpg" alt="">
+                        <span>豆豆</span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                </div>
+                <div class="text">
+                    <p>家族留下来的祖传家宝，说是乾隆皇帝印章亲老师鉴定下是不是真的</p>
+                </div>
+                <div class="bottom">
+                    <div class="time">
+                        10分钟前
+                    </div>
+                    <div class="commentNum">
+                        <a href="">
+                        <i></i><span>123</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                1111
+            </li>
+
+        </ul>
+
+    </article>
+
+    <footer>
+
+    </footer>
+</div>
+
+</body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        ready:function(){
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+
+</html>
