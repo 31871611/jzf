@@ -570,10 +570,11 @@
       border-bottom:0;
     }
     li{
-      height:pxTorem(70px);
+      height:pxTorem(80px);
       border-bottom:1px solid #d1d0d0;
       b{
-        line-height:pxTorem(70px);
+        font-size:pxTorem(26px);
+        line-height:pxTorem(80px);
         padding-left:pxTorem(5px);
         @extend %fl;
         font-weight: normal;

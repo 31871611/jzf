@@ -97,6 +97,13 @@
       height: pxTorem(40px);
       background-image: url("../images/iconUserPoup.png");
     }
+    //个人中心首页-我的鉴定
+    &.iconUserHomeAppraisal{
+      margin-right: pxTorem(15px);
+      width: pxTorem(35px);
+      height: pxTorem(38px);
+      background-image: url("../images/iconUserHomeAppraisal.png");
+    }
     //个人中心首页-我的一元购
     &.iconUserHomeYi{
       margin-right: pxTorem(15px);
