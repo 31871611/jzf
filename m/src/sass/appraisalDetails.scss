@@ -194,11 +194,15 @@
 }
 // 发送评论
 .appraisalCommentSend{
+  //position: fixed;
+  //left:0;
+  //bottom:0;
+  //width: 100%;
   background: #191919;
   @include display-flex();
   @include align-items();
   padding:pxTorem(14px) 0 pxTorem(14px) pxTorem(30px);
-  div{
+  .edit{
     @include flex(1);
     background: #303030;
     @include border-radius(pxTorem(6px));

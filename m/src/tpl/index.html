@@ -7,6 +7,7 @@
 </head>
 <body>
 <ul>
+    <li><a href="123.html">测试</a></li>
     <li><a href="login2.html">新登录</a></li>
     <li><a href="login.html">登录</a></li>
     <li><a href="indexs1.html">寿山石</a></li>
@@ -66,4 +67,39 @@
 
 </ul>
 </body>
+<script type="text/javascript" charset="utf-8">
+    /**
+     * ScrollFix v0.1
+     * http://www.joelambert.co.uk
+     *
+     * Copyright 2011, Joe Lambert.
+     * Free to use under the MIT license.
+     * http://www.opensource.org/licenses/mit-license.php
+     */
+    var ScrollFix = function (elem) {
+        // Variables to track inputs
+        var startY, startTopScroll;
+
+        elem = elem || document.querySelector(elem);
+
+        // If there is no element, then do nothing
+        if (!elem)
+            return;
+
+        // Handle the start of interactions
+        elem.addEventListener('touchstart', function (event) {
+            startY = event.touches[0].pageY;
+            startTopScroll = elem.scrollTop;
+
+            if (startTopScroll <= 0)
+                elem.scrollTop = 1;
+
+            if (startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+                elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+        }, false);
+    };
+
+    var main = document.getElementsByClassName("main")[0];
+    new ScrollFix(main);
+</script>
 </html>

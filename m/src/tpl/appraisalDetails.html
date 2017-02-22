@@ -86,11 +86,13 @@
 
         </div>
 
+
+
     </article>
 
     <footer>
         <div class="appraisalCommentSend">
-            <div contenteditable="true">添加评论</div>
+            <div class="edit" contenteditable="true" @focus="edit()">添加评论</div>
             <span>发送</span>
         </div>
     </footer>
@@ -106,10 +108,17 @@
 
         },
         ready:function(){
-
+            //alert(document.querySelector('.appraisalDetails').clientHeight);
         },
         methods:{
-
+            edit:function(){
+                // 停止向上推，关闭alert后，才继续向上推动页面
+                // 修改滚动值为最大
+                //alert(document.querySelector('.appraisalDetails').clientHeight);
+                setTimeout(function(){
+                    //document.querySelector('.main').scrollTop = 2000;
+                },500)
+            }
         }
     });
 
