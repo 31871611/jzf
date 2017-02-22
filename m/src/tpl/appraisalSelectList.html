@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"选择鉴别类型"
+})
+<link rel="stylesheet" href="css/appraisalSelectList.css"/>
+<body id="app">
+
+<div class="wrap">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" class="return"></a>
+                </div>
+                <h2>选择鉴别类型</h2>
+                <div class="right">
+                    <a href="javascript:;" class="iconShare"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="main">
+
+
+        <!-- 选择鉴别类型 -->
+        <div class="appraisalSelectList">
+            <label for="a1">
+                <span>
+                    网络鉴定（现阶段免费）
+                </span>
+                <input type="radio" id="a1" name="appraisal" />
+            </label>
+            <label for="a2">
+                <span>
+                    专家鉴定（收费300元）
+                </span>
+                <input type="radio" id="a2" name="appraisal" />
+            </label>
+        </div>
+        
+        <div class="appraisalSelectBtn">
+            <a href="">下一步</a>
+        </div>
+
+
+
+    </article>
+
+</div>
+
+
+</body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        ready:function(){
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+
+</html>

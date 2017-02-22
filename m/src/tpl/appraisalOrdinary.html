@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"发布鉴定"
+})
+<link rel="stylesheet" href="css/appraisalOrdinary.css"/>
+<body id="app">
+
+<div class="wrap">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" class="return"></a>
+                </div>
+                <h2>发布鉴定</h2>
+                <div class="right">
+                    <a href="javascript:;" class="iconShare"></a>
+                    <a href="javascript:;" class="txt">帮助</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="main">
+
+        <!-- 普通鉴定 -->
+        <div class="appraisalOrdinary">
+            <div class="titleInfo">
+                <b>上传图片</b><span>请添加3至6张各角度清晰照</span>
+            </div>
+            <div class="photo">
+                <div class="add"></div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+                <div class="list">
+                    <img src="picture/224x228.jpg" alt="">
+                    <i></i>
+                </div>
+            </div>
+
+            <div class="titleInfo">
+                <b>藏品描述</b><span>限200字</span>
+            </div>
+            <div class="textarea">
+                <textarea></textarea>
+            </div>
+
+            <div class="itemInfo">
+                <a href="">
+                    <div class="text">
+                        所属品类
+                        <span class="fr">寿山石</span>
+                    </div>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo">
+                <a href="">
+                    <div class="text">
+                        材质
+                    </div>
+                    <i class="iconArrowRight"></i>
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="itemInfo">
+                <a href="">
+                    <div class="text">
+                        鉴定类型
+                        <span class="fr">普通鉴定<em class="red">（现阶段免费）</em></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="btn">
+                <a href="">下一步</a>
+            </div>
+
+        </div>
+
+        <ul class="appraisalAlertMaterial">
+            <li class="select">田黄石</li>
+            <li>芙蓉石</li>
+            <li>汶洋石</li>
+            <li>荔枝洞石</li>
+            <li>高山石</li>
+            <li>都成坑石</li>
+            <li>善伯洞石</li>
+            <li>旗降石</li>
+            <li>二号矿石</li>
+            <li>寿山掘性石</li>
+            <li>其他掘性石</li>
+            <li>待鉴定</li>
+        </ul>
+
+    </article>
+
+</div>
+
+
+</body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        ready:function(){
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+
+</html>

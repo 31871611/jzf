@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  专业鉴定
+
+*/
+
+
+
+.appraisalMajor{
+  .info{
+    background: #fff;
+    padding:pxTorem(20px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    p{
+      line-height:pxTorem(50px);
+      font-size:pxTorem(28px);
+      text-indent: 2em;
+    }
+  }
+  .appraisalPath{
+    background: #fff;
+    padding:pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    h2{
+      font-size:pxTorem(28px);
+      margin-bottom: pxTorem(20px);
+    }
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .appraisalNotice{
+    background: #fff;
+    padding:pxTorem(30px) pxTorem(30px) pxTorem(20px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    h2{
+      font-size:pxTorem(28px);
+      margin-bottom: pxTorem(10px);
+    }
+    p{
+      font-size:pxTorem(26px);
+      line-height:pxTorem(40px);
+    }
+  }
+  .appraisalMap{
+    a{
+      padding-top:pxTorem(20px);
+      padding-bottom:pxTorem(20px);
+    }
+    b{
+      font-weight: normal;
+      font-size: pxTorem(28px);
+      margin-right: pxTorem(45px);
+    }
+  }
+  .appraisalTime{
+    @include display-flex();
+    @include align-content();
+    @include justify-content();
+    $h:56px;
+    background: #fff;
+    padding:pxTorem(25px) pxTorem(30px) pxTorem(25px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    b{
+      display: block;
+      font-size:pxTorem(28px);
+      font-weight: normal;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+    div{
+      position: relative;
+      border:1px solid #000;
+      width: pxTorem(527px);
+      height: pxTorem($h);
+      text-align: center;
+    }
+    span{
+      display: inline-block;
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      font-size:pxTorem(26px);
+    }
+    i{
+      width:pxTorem(30px);
+      height:pxTorem(16px);
+      background-image:url("../images/iconArrowB.png");
+      @extend %ico_rem;
+      position: absolute;
+      right:pxTorem(18px);
+      top:pxTorem(18px);
+    }
+  }
+}
+
+

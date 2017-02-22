@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"鉴定"
+})
+<link rel="stylesheet" href="css/appraisalDetails.css"/>
+<body id="app">
+
+<div class="wrap">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" class="return"></a>
+                </div>
+                <h2>鉴定</h2>
+                <div class="right">
+                    <a href="javascript:;" class="iconShare"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="main">
+
+        <!-- 鉴定详情页 -->
+        <div class="appraisalDetails">
+            <div class="content">
+                <div class="top">
+                    <div class="face">
+                        <img src="picture/70x70.jpg" alt="">
+                        <span>豆豆</span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="picture/224x228.jpg" alt="">
+                    <img src="picture/224x228.jpg" alt="">
+                    <img src="picture/224x228.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>家族留下来的祖传家宝，说是乾隆皇帝印章亲老师鉴定下是不是真的</p>
+                </div>
+                <div class="bottom">
+                    <div class="time">
+                        10分钟前
+                    </div>
+                    <div class="commentNum">
+                        <a href="">
+                            <i></i><span>123</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="bg">
+                    <div class="con">
+                        <h2>鉴定结果（仅供参考）</h2>
+                        <p>下辈子无忧了下辈子无忧了下辈子无忧了下辈子无忧了下辈子无忧了下辈子无忧了下辈子无忧了</p>
+                        <em>2017/2/15</em>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="showComment">
+                <li>
+                    <div class="face">
+                        <img src="picture/70x70.jpg" alt="">
+                        <span>豆豆</span>
+                    </div>
+                    <div class="time">1分钟前</div>
+                    <p>真的假不了，假的真不了</p>
+                </li>
+                <li>
+                    <div class="face">
+                        <img src="picture/70x70.jpg" alt="">
+                        <span>豆豆</span>
+                    </div>
+                    <div class="time">5分钟前</div>
+                    <p>真的假不了，假的真不了</p>
+                </li>
+            </ul>
+            <div class="moreComment">
+                更多评价
+            </div>
+
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="appraisalCommentSend">
+            <div contenteditable="true">添加评论</div>
+            <span>发送</span>
+        </div>
+    </footer>
+</div>
+
+</body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        ready:function(){
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+
+</html>

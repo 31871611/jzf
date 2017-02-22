@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  鉴定
+
+*/
+
+
+// 我的鉴定-鉴定帖
+.appraisalTab{
+  @import "inc/tabShow";
+  @include tabShow(79px,$red-base);
+  border-bottom-color:#e5e5e5;
+  a{
+    color: #333;
+  }
+  b{
+    font-weight: normal;
+  }
+}
+.appraisalClassify{
+  padding:pxTorem(15px);
+  text-align: center;
+  @include display-flex();
+  @include justify-content(center);
+  a{
+    @include box-shadow(inset 0 -1px 0 #d8d8d8);
+    //padding:0 pxTorem(40px);
+    display: inline-block;
+    color: #333;
+    @include border-radius(pxTorem(4px));
+    font-size:pxTorem(28px);
+    text-align: center;
+    width: pxTorem(135px);
+    height: pxTorem(56px);
+    line-height: pxTorem(56px);
+    background: #e0e0e0;
+    margin-right:pxTorem(45px);
+    &.select{
+      @include box-shadow(inset 0 -1px 0 #b72220);
+      background: $red-base;
+      color: #fff;
+    }
+    &:last-child{
+      margin-right:0;
+    }
+  }
+}
+.appraisalUser{
+  .content{
+    background: #fff;
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    padding: pxTorem(30px) 0 pxTorem(25px) pxTorem(30px);
+    margin-bottom: pxTorem(8px);
+  }
+  .photo{
+    margin-bottom: pxTorem(10px);
+    $w:224px;
+    $h:288px;
+    @extend %clearfix;
+    a{
+      float: left;
+      display: inline-block;
+      margin-right:pxTorem(8px);
+      margin-bottom:pxTorem(8px);
+    }
+    img{
+      vertical-align: middle;
+      width: pxTorem($w);
+      height: pxTorem($h);
+    }
+  }
+  .text{
+    p{
+      font-size:pxTorem(28px);
+      line-height:pxTorem(50px);
+    }
+  }
+  .bottom{
+    margin-top: pxTorem(20px);
+    padding-right:pxTorem(30px);
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+  }
+  .time{
+    font-size:pxTorem(20px);
+    color: #666;
+  }
+  .commentNum{
+    $h:31px;
+    a{
+      color: #333;
+    }
+    i{
+      vertical-align: top;
+      display: inline-block;
+      width: pxTorem(35px);
+      height: pxTorem(31px);
+      margin-right: pxTorem(20px);
+      @extend %ico_rem;
+      background-image: url("../images/iconAppraisalCommentNum.png");
+    }
+    span{
+      vertical-align: top;
+      font-size:pxTorem(22px);
+      display: inline-block;
+      color: #666;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+  }
+
+}
+
+
+// 鉴定订单
+.appraisalOrder{
+  .order_list{
+    li{
+      border-top:1px solid #e5e5e5;
+      border-bottom:1px solid #e5e5e5;
+    }
+  }
+}

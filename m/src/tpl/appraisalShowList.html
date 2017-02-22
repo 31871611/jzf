@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+@@include('include/head.html',{
+    "title":"鉴定"
+})
+<link rel="stylesheet" href="css/appraisalShowList.css"/>
+<body id="app">
+
+<div class="wrap">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" class="return"></a>
+                </div>
+                <h2>鉴定</h2>
+                <div class="right">
+                    <a href="javascript:;" class="iconShare"></a>
+                    <a href="javascript:;" class="txt">发布</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="main">
+
+        <!-- 鉴定首页展示列表 -->
+        <ul class="appraisalShowList">
+            <li>
+                <div class="top">
+                    <div class="face">
+                        <img src="picture/70x70.jpg" alt="">
+                        <span>豆豆</span>
+                    </div>
+                </div>
+                <div class="photo">
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                    <a href=""><img src="picture/224x228.jpg" alt=""></a>
+                </div>
+                <div class="text">
+                    <p>家族留下来的祖传家宝，说是乾隆皇帝印章亲老师鉴定下是不是真的</p>
+                </div>
+                <div class="bottom">
+                    <div class="time">
+                        10分钟前
+                    </div>
+                    <div class="commentNum">
+                        <a href="">
+                        <i></i><span>123</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </article>
+
+</div>
+
+
+</body>
+
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+
+        },
+        ready:function(){
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+
+</html>

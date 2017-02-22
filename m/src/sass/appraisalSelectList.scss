@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  选择鉴别类型
+
+*/
+
+
+.appraisalSelectList{
+  $h:89px;
+  label{
+    background: #fff;
+    height: pxTorem($h);
+    border-top:1px solid #e5e5e5;
+    padding:0 pxTorem(30px);
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+    &:first-child{
+      border-top:0;
+    }
+  }
+  span{
+    display: block;
+    font-size:pxTorem(28px);
+  }
+  input[type='radio']{
+    $h:20px;
+    display: block;
+    border:1px solid #8b8b8b;
+    position: relative;
+    width: pxTorem($h);
+    height: pxTorem($h);
+    @include border-radius(50%);
+    background: #ccc;
+    @include appearance(none);
+    &:checked{
+      background: $blue-base;
+    }
+  }
+}
+.appraisalSelectBtn{
+  $h:90px;
+  height: pxTorem($h);
+  margin-top:pxTorem(430px);
+  margin-bottom:pxTorem(100px);
+  a{
+    display: block;
+    width: 92%;
+    height: pxTorem($h);
+    margin:0 auto;
+    line-height: pxTorem($h);
+    text-align: center;
+    font-size:pxTorem(28px);
+    color:#fff;
+    background: $blue-base;
+    @include border-radius(pxTorem(8px));
+  }
+}

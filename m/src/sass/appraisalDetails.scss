@@ -1,0 +1,217 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  鉴定详情页
+
+*/
+
+
+// 鉴定详情页
+.appraisalDetails{
+  .content{
+    background: #fff;
+    padding: pxTorem(25px) pxTorem(30px) pxTorem(30px) pxTorem(30px);
+  }
+  .top{
+    $h:70px;
+    height:pxTorem($h);
+    margin-bottom: pxTorem(25px);
+  }
+  .face{
+    $h:70px;
+    height:pxTorem($h);
+    img{
+      width: pxTorem($h);
+      height: pxTorem($h);
+      vertical-align: middle;
+      @include border-radius(50%);
+      float:left;
+    }
+    span{
+      display: block;
+      margin-left:pxTorem($h + 15);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+  }
+  .photo{
+    img{
+      display: block;
+      width: 100%;
+      vertical-align: middle;
+      margin-bottom: pxTorem(10px);
+    }
+  }
+  .text{
+    padding-top: pxTorem(10px);
+    p{
+      font-size:pxTorem(28px);
+      line-height:pxTorem(50px);
+    }
+  }
+  .bottom{
+    margin-top: pxTorem(20px);
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+  }
+  .time{
+    font-size:pxTorem(20px);
+    color: #666;
+  }
+  .commentNum{
+    $h:31px;
+    a{
+      color: #333;
+    }
+    i{
+      vertical-align: top;
+      display: inline-block;
+      width: pxTorem(35px);
+      height: pxTorem(31px);
+      margin-right: pxTorem(20px);
+      @extend %ico_rem;
+      background-image: url("../images/iconAppraisalCommentNum.png");
+    }
+    span{
+      vertical-align: top;
+      font-size:pxTorem(22px);
+      display: inline-block;
+      color: #666;
+      height:pxTorem($h);
+      line-height:pxTorem($h);
+    }
+  }
+  .result{
+    background: #fff;
+    padding: pxTorem(30px);
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    margin: pxTorem(8px) 0;
+    .bg{
+      padding:pxTorem(45px) pxTorem(55px) pxTorem(45px) pxTorem(55px);
+      position: relative;
+      z-index: 1;
+      background-color:#fff9ee;
+      @extend %ico_rem;
+      background-repeat: repeat-y;
+      background-image: url("../images/appraisalResultY.jpg");
+      &:after,&:before{
+        content: "\20";
+        width: 100%;
+        height: pxTorem(75px);
+        @extend %ico_rem;
+        background-size: 100% 100%;
+        display: block;
+        position: absolute;
+        left:0;
+        z-index: 1;
+      }
+      &:before{
+        top:0;
+        background-image: url("../images/appraisalResultTop.jpg");
+      }
+      &:after{
+        bottom:0;
+        background-image: url("../images/appraisalResultBottom.jpg");
+      }
+    }
+    .con{
+      position: relative;
+      z-index: 2;
+    }
+    h2{
+      font-size:pxTorem(32px);
+      text-align: center;
+      margin-bottom: pxTorem(10px);
+    }
+    b{
+      font-weight: normal;
+      font-size:pxTorem(24px);
+      color: #666;
+    }
+    p{
+      font-size:pxTorem(26px);
+      line-height: pxTorem(50px);
+    }
+    em{
+      display: block;
+      text-align: right;
+      margin-top:pxTorem(140px);
+      font-style: normal;
+      color: #666;
+    }
+  }
+
+  .showComment{
+    background: #fff;
+    $face_w:50px;
+    li{
+      border-top:1px solid #e5e5e5;
+      padding:pxTorem(20px) pxTorem(30px) pxTorem(20px) pxTorem(30px);
+      position: relative;
+    }
+    .face{
+      height: pxTorem($face_w);
+    }
+    img{
+      vertical-align: middle;
+      height: pxTorem($face_w);
+      width: pxTorem($face_w);
+      @include border-radius(50%);
+      float:left;
+    }
+    span{
+      display: block;
+      font-size: pxTorem(28px);
+      margin-left:pxTorem($face_w + 15);
+      height: pxTorem($face_w);
+      line-height: pxTorem($face_w);
+    }
+    .time{
+      font-size:pxTorem(20px);
+      color: #666;
+      position: absolute;
+      right:pxTorem(30px);
+      top:pxTorem(30px);
+    }
+    p{
+      line-height:pxTorem(50px);
+      margin-left:pxTorem($face_w + 15);
+    }
+  }
+  .moreComment{
+    background: #fff;
+    border-top:1px solid #e5e5e5;
+    color: #666;
+    text-align: center;
+    height: pxTorem(74px);
+    line-height: pxTorem(74px);
+  }
+}
+// 发送评论
+.appraisalCommentSend{
+  background: #191919;
+  @include display-flex();
+  @include align-items();
+  padding:pxTorem(14px) 0 pxTorem(14px) pxTorem(30px);
+  div{
+    @include flex(1);
+    background: #303030;
+    @include border-radius(pxTorem(6px));
+    padding:pxTorem(15px);
+    font-size:pxTorem(32px);
+    color: #fff;
+  }
+  span{
+    display: block;
+    width: pxTorem(100px - 8);
+    height: 100%;
+    padding-left:pxTorem(8px);
+    font-size:pxTorem(32px);
+    color: #fff;
+  }
+}
