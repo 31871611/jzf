@@ -44,8 +44,28 @@
       float: left;
       margin-right: pxTorem($mr);
       margin-bottom: pxTorem($mr);
+      position: relative;
       @extend %ico_rem;
-      background: #00a0e9;
+      //background-color: #e5e5e5;
+      //border:1px dashed #8b8b8b;
+      background-image: url("../images/appraisalPostPhoto.jpg");
+      &:after,&:before{
+        content: '\20';
+        background: #8b8b8b;
+        position: absolute;
+        left:50%;
+        top:50%;
+      }
+      &:before{
+        width: pxTorem(50px);
+        height: pxTorem(6px);
+        margin:pxTorem(- 6px / 2) 0 0 pxTorem(- 50px / 2);
+      }
+      &:after{
+        height: pxTorem(50px);
+        width: pxTorem(6px);
+        margin:pxTorem(- 50px / 2) 0 0 pxTorem(- 6px / 2);
+      }
     }
     .list{
       width: pxTorem($w);
@@ -124,6 +144,11 @@
     }
   }
 }
+
+
+.posAlert{
+  background: #eee;
+}
 // 更多材质弹窗
 .appraisalAlertMaterial{
   $h:89px;
@@ -134,6 +159,9 @@
     line-height:pxTorem($h);
     border-top:1px solid #e5e5e5;
     font-size:pxTorem(28px);
+    &:first-child{
+      border-top:0;
+    }
     &.select{
       background: #f0f0f2;
     }

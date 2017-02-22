@@ -65,8 +65,8 @@
                 </a>
                 <div class="line"></div>
             </div>
-            <div class="itemInfo">
-                <a href="">
+            <div class="itemInfo" @click="showAlert()">
+                <a href="javascript:;">
                     <div class="text">
                         材质
                     </div>
@@ -89,6 +89,26 @@
 
         </div>
 
+
+
+    </article>
+
+</div>
+
+
+<!-- 更多材质弹窗 -->
+<div class="wrap posAlert" v-show="isAlert" transition="SlideRightLeft">
+    <header>
+        <div class="header">
+            <div class="headerTitle">
+                <div class="left">
+                    <a href="javascript:;" class="return"  @click="showAlert()"></a>
+                </div>
+                <h2>选择材质</h2>
+            </div>
+        </div>
+    </header>
+    <article class="main">
         <ul class="appraisalAlertMaterial">
             <li class="select">田黄石</li>
             <li>芙蓉石</li>
@@ -103,9 +123,7 @@
             <li>其他掘性石</li>
             <li>待鉴定</li>
         </ul>
-
     </article>
-
 </div>
 
 
@@ -116,13 +134,15 @@
     var app=new Vue({
         el:"#app",
         data:{
-
+            isAlert:false
         },
         ready:function(){
 
         },
         methods:{
-
+            showAlert:function(){
+                this.isAlert = !this.isAlert;
+            }
         }
     });
 
