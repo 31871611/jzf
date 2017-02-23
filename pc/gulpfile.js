@@ -65,17 +65,6 @@ gulp.on("error",function(err){
 
 
 
-
-/*
-
- 这里的sass:dev任务，我们并没有像sass任务一样配置编译模式为compressed，也就是不使用压缩功能，为什么呢？
- 事实上，我们在开发的时候，并不需要压缩静态资源文件，可以说我们不在意它的体积是大一点还是小一点，
- 我们在意的是样式是否写得符合期望，我们在乎的是功能是否实现，所以不需要启用压缩或者其他的什么优化功能，
- 这样可以减轻编译的负担，加快编译速度。如果你对js或者图片也使用了压缩功能，建议在开发模式下去掉，只在打包模式下使用。
-
- */
-
-
 /*
 
     gulp dev
@@ -125,8 +114,7 @@ gulp.task('tpl:dev', function () {
 });
 
 
-//先执行js:dev、sass:dev和tpl:dev三个任务，然后再执行回调里的内容，我们的本地服务器就是要在回调里去定义并且启动
-//Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面
+
 gulp.task('dev', ['icon:dev','photo:dev','js:dev', 'sass:dev', 'tpl:dev'], function () {
     livereload.listen();
 

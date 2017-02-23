@@ -125,6 +125,20 @@
       background-color: #e5e5e5;
     }
   }
+  .appraisalNotice{
+    background: #fff;
+    padding:pxTorem(30px) pxTorem(30px) pxTorem(20px) pxTorem(30px);
+    margin-top: pxTorem(20px);
+    h2{
+      font-size:pxTorem(28px);
+      margin-bottom: pxTorem(10px);
+      color: $red-base;
+    }
+    p{
+      font-size:pxTorem(24px);
+      line-height:pxTorem(40px);
+    }
+  }
   .btn{
     $h:90px;
     height: pxTorem($h);

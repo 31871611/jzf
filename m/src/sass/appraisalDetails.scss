@@ -199,23 +199,25 @@
   //bottom:0;
   //width: 100%;
   background: #191919;
-  @include display-flex();
-  @include align-items();
-  padding:pxTorem(14px) 0 pxTorem(14px) pxTorem(30px);
+  font-size:pxTorem(32px);
+  color: #fff;
+  padding:pxTorem(14px) 0 pxTorem(14px) 0;
+  position: relative;
   .edit{
-    @include flex(1);
+    width:78%;
+    margin-left:4%;
     background: #303030;
     @include border-radius(pxTorem(6px));
-    padding:pxTorem(15px);
-    font-size:pxTorem(32px);
-    color: #fff;
+    padding:2%;
   }
-  span{
-    display: block;
-    width: pxTorem(100px - 8);
+  .send{
+    @include display-flex();
+    @include align-items();
+    position: absolute;
+    right:0;
+    top:0;
+    width: 12%;
     height: 100%;
-    padding-left:pxTorem(8px);
-    font-size:pxTorem(32px);
-    color: #fff;
+    padding-left:2%;
   }
 }
