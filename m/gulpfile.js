@@ -20,7 +20,7 @@ gulp.task('sass', function () {
     gulp.src('./src/sass/**/*.scss')
         .pipe(sass())
         .pipe(minifyCss({
-            compatibility: 'ie7',   //类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+            level: 2
         }))
         .pipe(gulp.dest('./dist/css'))
 });
@@ -30,7 +30,7 @@ gulp.task('sass', function () {
 gulp.task('minify-css', function () {
     gulp.src('./css/*.css')
         .pipe(minifyCss({
-            compatibility: 'ie7',   //类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+            level: 2
         })) //压缩css
         .pipe(gulp.dest('./css'));
 });
