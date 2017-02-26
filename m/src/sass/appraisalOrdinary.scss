@@ -39,6 +39,7 @@
     $w:200px;
     $mr:20px;
     .add{
+      position: relative;
       width: pxTorem($w);
       height: pxTorem($w);
       float: left;
@@ -66,6 +67,14 @@
         width: pxTorem(6px);
         margin:pxTorem(- 50px / 2) 0 0 pxTorem(- 6px / 2);
       }
+    }
+    input[type='file']{
+      @include opacity(0);
+      position: absolute;
+      left:0;
+      top:0;
+      width: 100%;
+      height: 100%;
     }
     .list{
       width: pxTorem($w);

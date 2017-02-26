@@ -30,22 +30,10 @@
                 <b>上传图片</b><span>请添加至少3张各角度清晰照</span>
             </div>
             <div class="photo">
-                <div class="add"></div>
-                <div class="list">
-                    <img src="picture/224x228.jpg" alt="">
-                    <i></i>
-                </div>
-                <div class="list">
-                    <img src="picture/224x228.jpg" alt="">
-                    <i></i>
-                </div>
-                <div class="list">
-                    <img src="picture/224x228.jpg" alt="">
-                    <i></i>
-                </div>
-                <div class="list">
-                    <img src="picture/224x228.jpg" alt="">
-                    <i></i>
+                <div class="add"><input type="file" capture="camera" accept="image/*" @change="uploadPhotoChange($event)" /></div>
+                <div class="list" v-for="item in uploadPhotoList">
+                    <img :src="item" alt="">
+                    <i @click="removeUploadPhoto($index)"></i>
                 </div>
             </div>
 
@@ -142,7 +130,8 @@
     var app=new Vue({
         el:"#app",
         data:{
-            isAlert:false
+            isAlert:false,
+            uploadPhotoList:[]
         },
         ready:function(){
 
@@ -150,6 +139,26 @@
         methods:{
             showAlert:function(){
                 this.isAlert = !this.isAlert;
+            },
+            uploadPhotoChange:function(event){
+                var _this = this;
+                if (event.target.files.length === 0) { return false; }
+                var file = event.target.files[0];
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (e) {
+                    var dataURL = e.target.result;
+                    // 相同的图片会替换位置
+                    _this.uploadPhotoList.push(dataURL);
+                    //console.log(_this.uploadPhotoList);
+                }
+            },
+            removeUploadPhoto:function(index){
+                var _this = this;
+                if(confirm("是否删除该照片?")){
+                    _this.uploadPhotoList.splice(index,1);
+                }
+                //console.log(_this.uploadPhotoList);
             }
         }
     });
