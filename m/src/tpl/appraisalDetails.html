@@ -84,7 +84,7 @@
                 更多评价
             </div>
             <div class="appraisalCommentSend">
-                <div class="edit" contenteditable="true" @click="edit($event)">添加评论</div>
+                <div class="edit" contenteditable="true" @focus="edit($event)">添加评论</div>
                 <div class="send">发送</div>
             </div>
 
@@ -109,37 +109,25 @@
 
         },
         ready:function(){
-            //alert(document.querySelector('.appraisalDetails').clientHeight);
+            
         },
         methods:{
             edit:function(event){
-                // 根据焦点的位置，向上推动值
-                // 在结算中心，输入密码input被定位在页面（页面高度比较长）的top:350px;
-                //alert(document.querySelector('.appraisalDetails').clientHeight);
-                //alert(1);
-
-                //event.currentTarget.parentNode.style.bottom = 500 + 'px';
 
                 if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){//这是iOS平台下浏览器
-                    return false;
+                    window.setTimeout(function(){
+                        /*
+                            对contenteditable="true"无效
+                            对input、textarea有效
+                         */
+                        document.activeElement.scrollIntoViewIfNeeded();
+                    },0);
                 }
-                setTimeout(function(){
-//                    document.querySelector('.main').scrollTop = 2000;
-                    //$('.main').animate({scrollTop:10000}, 'slow');
-                },50)
 
             }
         }
     });
 
-
-
-/*
-     var canvas = document.createElement('canvas');
-     var ctx = canvas.getContext('2d');
-     ctx.fillStyle='#FF0000';
-     ctx.fillRect(0,0,80,100);
- */
 
 </script>
 
