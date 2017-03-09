@@ -11,6 +11,112 @@
 
 
 .appraisalMajor{
+  .titleInfo{
+    $h:89px;
+    height: pxTorem($h);
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    padding:0 pxTorem(15px);
+    b,span{
+      display: inline-block;
+      font-size:pxTorem(28px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+    }
+    b{
+      margin-right: pxTorem(15px);
+      font-weight: normal;
+    }
+    span{
+      color:#999;
+    }
+  }
+  .photo{
+    @extend %clearfix;
+    padding:pxTorem(35px) pxTorem(30px) pxTorem(15px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    background: #fff;
+    $w:200px;
+    $mr:20px;
+    .add{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      float: left;
+      margin-right: pxTorem($mr);
+      margin-bottom: pxTorem($mr);
+      position: relative;
+      @extend %ico_rem;
+      //background-color: #e5e5e5;
+      //border:1px dashed #8b8b8b;
+      background-image: url("../images/appraisalPostPhoto.jpg");
+      &:after,&:before{
+        content: '\20';
+        background: #8b8b8b;
+        position: absolute;
+        left:50%;
+        top:50%;
+      }
+      &:before{
+        width: pxTorem(50px);
+        height: pxTorem(6px);
+        margin:pxTorem(- 6px / 2) 0 0 pxTorem(- 50px / 2);
+      }
+      &:after{
+        height: pxTorem(50px);
+        width: pxTorem(6px);
+        margin:pxTorem(- 50px / 2) 0 0 pxTorem(- 6px / 2);
+      }
+    }
+    input[type='file']{
+      @include opacity(0);
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+    .list{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      margin-right: pxTorem($mr);
+      margin-bottom: pxTorem($mr);
+      position: relative;
+      float: left;
+    }
+    img{
+      width: pxTorem($w);
+      height: pxTorem($w);
+      vertical-align: middle;
+    }
+    i{
+      position: absolute;
+      right:pxTorem(5px);
+      top:pxTorem(5px);
+      width:pxTorem(42px);
+      height: pxTorem(42px);
+      background: rgba(0,0,0,.3);
+      @include border-radius(50%);
+      @include rotate(45deg);
+      &:after,&:before{
+        content: "\20";
+        position: absolute;
+        background:#fff;
+        left:50%;
+        top:50%;
+      }
+      &:before{
+        margin:0 0 -1px pxTorem(-14px);
+        width:pxTorem(28px);
+        height:1px;
+      }
+      &:after{
+        margin:pxTorem(-14px) -1px 0 0;
+        width:1px;
+        height:pxTorem(28px);
+      }
+    }
+  }
   .info{
     background: #fff;
     padding:pxTorem(20px) pxTorem(30px);
@@ -21,6 +127,24 @@
       text-indent: 2em;
     }
   }
+  .contact{
+    @include display-flex();
+    @include align-items();
+    @include justify-content();
+    background: #fff;
+    padding:pxTorem(30px) pxTorem(30px) pxTorem(20px) pxTorem(30px);
+    margin-bottom: pxTorem(20px);
+    font-size: pxTorem(28px);
+    .phone{
+      padding: pxTorem(12px);
+      border: 1px solid #999;
+      border-radius: pxTorem(8px);
+      width: pxTorem(500px);
+      outline: 0;
+      -webkit-appearance: none;
+    }
+  }
+
   .appraisalPath{
     background: #fff;
     padding:pxTorem(30px);

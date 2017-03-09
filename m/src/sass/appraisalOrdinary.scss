@@ -72,6 +72,7 @@
       position: absolute;
       left:0;
       top:0;
+      z-index: 2;
       width: 100%;
       height: 100%;
     }
@@ -147,11 +148,11 @@
       line-height:pxTorem(40px);
     }
   }
-  .btn{
+  .submitBtn{
     $h:90px;
     height: pxTorem($h);
-    margin-top:pxTorem(110px);
-    margin-bottom:pxTorem(60px);
+    padding: pxTorem(20px);
+    background: #fff;
     a{
       display: block;
       width: 92%;
@@ -166,7 +167,6 @@
     }
   }
 }
-
 
 .posAlert{
   background: #eee;
@@ -188,7 +188,99 @@
       background: #f0f0f2;
     }
   }
-
 }
-
+//新手教学弹窗
+.alertBox{
+  @include display-flex();
+  @include align-items(baseline);
+  @include justify-content(flex-start);
+  @include flex-direction(column);
+  z-index: 100;
+  background:#fff;
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  border-radius:pxTorem(10px);
+  padding:pxTorem(15px);
+  margin:pxTorem(20px) pxTorem(60px);
+  overflow-x: auto;
+  .box{
+    $h:50px;
+    $w:295px;
+    //height: pxTorem(200px);
+    padding:pxTorem(12px) pxTorem(8px);
+    position: relative;
+    text-align: center;
+    .title{
+      @include font-dpr(26px);
+      width: pxTorem($w);
+      border-radius:pxTorem(40px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      background:$blue-base;
+      color:#fff;
+      display: inline-block;
+      margin-bottom: pxTorem(18px);
+      //font-size:pxTorem(28px);
+      //@extend %fl;
+    }
+    .info{
+      font-size:pxTorem(26px);
+      text-align: left;
+      img{
+        display: block;
+        width: 100%;
+        vertical-align: middle;
+        margin-bottom: pxTorem(10px);
+      }
+    }
+  }
+  footer{
+    margin:0 auto;
+    padding-bottom:pxTorem(20px);
+    a{
+      margin:pxTorem(20px) auto 0;
+      display: block;
+      width:pxTorem(480px);
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      text-align: center;
+      @include font-dpr(32px);
+      color:#fff;
+      background: $blue-base;
+      @include border-radius(8px);
+    }
+  }
+  .exit{
+    z-index:20;
+    width:pxTorem(48px);
+    height:pxTorem(48px);
+    //background: rgba(255,255,255,.3);
+    position: absolute;
+    right:pxTorem(20px);
+    top:pxTorem(20px);
+    border:1px solid #333;
+    @include border-radius(50%);
+    &:after,&:before{
+      content: "\20";
+      position: absolute;
+      background:#a0a0a0;
+      left:50%;
+      top:50%;
+      @include rotate(45deg);
+    }
+    &:before{
+      margin:-1px 0 0 pxTorem(-14px);
+      width:pxTorem(28px);
+      height:2px;
+    }
+    &:after{
+      margin:pxTorem(-14px) 0 0 -1px;
+      width:2px;
+      height:pxTorem(28px);
+    }
+  }
+}
 

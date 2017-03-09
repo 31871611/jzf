@@ -67,11 +67,25 @@
       display: inline-block;
       margin-right:pxTorem(8px);
       margin-bottom:pxTorem(8px);
+      width: pxTorem($w);
+      height: pxTorem($h);
+      position: relative;
     }
     img{
       vertical-align: middle;
       width: pxTorem($w);
       height: pxTorem($h);
+    }
+    i{
+      &.already{
+        position: absolute;
+        right:0;
+        bottom:0;
+        width:pxTorem(153px);
+        height:pxTorem(146px);
+        @extend %ico_rem;
+        background-image: url("../images/iconAlreadyAppraisal.png");
+      }
     }
   }
   .text{
@@ -120,10 +134,24 @@
 
 // 鉴定订单
 .appraisalOrder{
+   .order_list{
+     li{
+       border-top:1px solid #e5e5e5;
+       border-bottom:1px solid #e5e5e5;
+     }
+   }
+ }
+
+.appraisalOrder{
   .order_list{
-    li{
-      border-top:1px solid #e5e5e5;
-      border-bottom:1px solid #e5e5e5;
+    .row{
+      .img{
+        img{
+          width:100%;
+          height:100%;
+          vertical-align: middle;
+        }
+      }
     }
   }
 }

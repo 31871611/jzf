@@ -36,6 +36,12 @@
       height: pxTorem($h);
       line-height: pxTorem($h);
     }
+    .time{
+      font-size:pxTorem(20px);
+      color: #666;
+      margin-left:pxTorem($h + 15);
+      line-height: pxTorem(5px);
+    }
   }
   .photo{
     img{
@@ -56,12 +62,9 @@
     margin-top: pxTorem(20px);
     @include display-flex();
     @include align-items();
-    @include justify-content();
+    @include justify-content(flex-end);
   }
-  .time{
-    font-size:pxTorem(20px);
-    color: #666;
-  }
+
   .commentNum{
     $h:31px;
     a{
