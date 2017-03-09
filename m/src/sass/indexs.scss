@@ -186,6 +186,60 @@
   }
 }
 
+
+//多品类导航
+.indexNav{
+  background: #fff;
+  margin-bottom: pxTorem(20px);
+
+  section{
+    @include display-flex();
+    &:nth-of-type(1){
+      border-bottom:2px solid #f3f3f3;
+    }
+  }
+  div{
+    @include flex(1);
+  }
+  a{
+    display: block;
+    @include flex(1);
+    height:pxTorem(190px);
+    //寿山石
+    &.sss{
+      height:pxTorem(190px * 2 + 2);
+      border-right:1px solid #f3f3f3;
+    }
+    //集市
+    &.market{
+      border-left:1px solid #f3f3f3;
+      border-bottom:1px solid #f3f3f3;
+    }
+    //高清博物馆
+    &.museum{
+      border-left:1px solid #f3f3f3;
+      border-top:1px solid #f3f3f3;
+    }
+    //优选
+    &.excellent{
+      border-right:1px solid #f3f3f3;
+    }
+    //资讯鉴定
+    &.info{
+      border-left:1px solid #f3f3f3;
+    }
+  }
+  img{
+    vertical-align: middle;
+    width: 100%;
+    height:100%;
+  }
+
+
+
+}
+
+
 //秒杀
 .secKillMore{
   @import "inc/itemInfo";
@@ -370,6 +424,59 @@
     height:pxTorem($h);
     width: 100%;
     vertical-align: middle;
+  }
+}
+
+//新品首发
+.specialNew{
+  background: #fff;
+  $h:310px;
+  $w:210px;
+  height: pxTorem($h);
+  overflow-x: auto;
+  padding-left:pxTorem(20px);
+  margin-bottom: pxTorem(20px);
+  &::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+  }
+  ul{
+    width: 999rem;
+  }
+  li{
+    height: pxTorem($h);
+    width: pxTorem($w);
+    float: left;
+    margin-right: pxTorem(10px);
+  }
+  a{
+    display: block;
+    height: pxTorem($h);
+    width: pxTorem($w);
+  }
+  img{
+    width: pxTorem($w);
+    height: pxTorem($w);
+    vertical-align: middle;
+  }
+  h2{
+    @include font-dpr(20px);
+    color:#666;
+    text-align: center;
+    height: pxTorem(50px);
+    line-height: pxTorem(50px);
+    margin:pxTorem(5px) pxTorem(10px) 0;
+    overflow: hidden;
+  }
+  p{
+    @include font-dpr(26px);
+    text-align: center;
+    color: #333;
+  }
+  b{
+    font-weight: normal;
+    @include font-dpr(20px);
+    color:#666;
   }
 }
 

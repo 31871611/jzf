@@ -38,6 +38,14 @@ nav.appNav{
         background-image: url("../images/iconNavClassify.png");
       }
     }
+    //鉴定
+    &.appNavAppraisal{
+      &:before {
+        width: pxTorem(41px);
+        height: pxTorem(45px);
+        background-image: url("../images/iconNavAppraisal.png");
+      }
+    }
     //购物车
     &.appNavShopping{
       &:before {
@@ -122,6 +130,12 @@ nav.appNav{
       &.appNavClassify{
         &:before {
           background-image: url("../images/iconNavClassifyS.png");
+        }
+      }
+      //鉴定
+      &.appNavAppraisal{
+        &:before {
+          background-image: url("../images/iconNavAppraisalS.png");
         }
       }
       //购物车
