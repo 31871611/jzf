@@ -46,5 +46,24 @@
   }
 }
 
+.sInfoPersonTitle{
+  $h:88px;
+  margin:pxTorem(55px) pxTorem(10px) pxTorem(20px);
+  border-top:1px solid #d2d2d2;
+  border-bottom:1px solid #d2d2d2;
+  height: pxTorem($h);
+  h2{
+    height: pxTorem($h);
+    line-height: pxTorem($h);
+    padding-left:pxTorem(8px);
+    @include font-dpr(30px);
+    color: #666;
+  }
+}
 
 
+// 资讯-产品列表
+.sInfoProduct{
+  @import "inc/sInfo";
+  @include sInfoProduct();
+}

@@ -8,7 +8,19 @@
 
 <div class="wrap">
     <header>
-
+        <div class="search">
+            <div class="searchInput">
+                <div class="left">
+                    <a href="javascript:;" class="return"></a>
+                </div>
+                <form action="" class="box" @submit="searchSubmit()">
+                    <input type="search" placeholder="搜索好物" />
+                </form>
+                <div class="right">
+                    <a href="" class="txt">取消</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <article class="main">
@@ -20,7 +32,9 @@
         </div>
         <div class="sInfoSearch">
             <h2>作者</h2>
-            <strong>郭懋介</strong>
+            <div class="name">
+                <span>郭懋介</span>
+            </div>
             <div class="line"></div>
             <h2>作品</h2>
             <div class="sInfoProduct">
@@ -65,7 +79,9 @@
 
         },
         methods:{
-
+            searchSubmit:function(){
+                alert('提交');
+            }
         }
     });
 

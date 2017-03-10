@@ -8,6 +8,27 @@
 
 */
 
+// 搜索头部
+.search{
+  overflow:hidden;
+  background: rgba(0,0,0,.9);
+  //padding-top: pxTorem(16px);
+  padding-bottom: pxTorem(16px);
+  border-bottom: 1px solid #999999;
+  //ios头部反黑
+  .headerTop{
+    height:pxTorem(40px);
+  }
+  //搜索区
+  .searchInput{
+    @import "inc/search";
+    @include searchInput();
+    .box{
+      @include border-radius(pxTorem(8px));
+    }
+  }
+}
+
 
 // 资讯-产品列表
 .sInfoProduct{
@@ -23,11 +44,14 @@
     @include font-dpr(26px);
     margin:0 pxTorem(20px) pxTorem(20px);
   }
-  strong{
-    display: block;
-    color:#666;
+  .name{
     @include font-dpr(26px);
     margin:0 pxTorem(20px);
+    span,a{
+      color:#666;
+      display: inline-block;
+      margin-right:pxTorem(20px);
+    }
   }
   .line{
     background: #d2d2d2;
