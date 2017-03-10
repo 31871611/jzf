@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  资讯
+
+*/
+
+
+
+// 资讯详情页
+.sInfoDetails{
+  .title{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    padding:pxTorem(15px) pxTorem(30px) pxTorem(15px);
+    h1{
+      @include font-dpr(32px);
+      line-height:pxTorem(48px);
+    }
+    ul{
+      @extend %clearfix;
+    }
+    li{
+      float:left;
+      width: 50%;
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+    }
+  }
+  .synopsis{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    padding:0 pxTorem(30px) pxTorem(15px);
+    h2{
+      border-bottom: 1px solid #d2d2d2;
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      @include font-dpr(28px);
+    }
+    p{
+      line-height: pxTorem(48px);
+      margin-top: pxTorem(15px);
+    }
+  }
+  .auction{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    padding:0 pxTorem(30px) pxTorem(15px);
+    h2{
+      border-bottom: 1px solid #d2d2d2;
+      height:pxTorem(80px);
+      line-height:pxTorem(80px);
+      @include font-dpr(28px);
+    }
+    ul{
+      margin-top: pxTorem(15px);
+    }
+    li{
+      height:pxTorem(50px);
+      line-height:pxTorem(50px);
+    }
+  }
+}
+
+
+

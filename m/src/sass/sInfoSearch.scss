@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  资讯
+
+*/
+
+
+// 资讯-产品列表
+.sInfoProduct{
+  @import "inc/sInfo";
+  @include sInfoProduct();
+}
+
+
+// 资讯-搜索
+.sInfoSearch{
+  padding-top: pxTorem(40px);
+  h2{
+    @include font-dpr(26px);
+    margin:0 pxTorem(20px) pxTorem(20px);
+  }
+  strong{
+    display: block;
+    color:#666;
+    @include font-dpr(26px);
+    margin:0 pxTorem(20px);
+  }
+  .line{
+    background: #d2d2d2;
+    height: 1px;
+    font-size:0;
+    margin: pxTorem(20px) pxTorem(10px);
+  }
+}
+
+
+

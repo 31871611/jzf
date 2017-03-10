@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@import "comm/css3";
+@import "comm/common";
+
+/*
+
+  资讯
+
+*/
+
+// 资讯-产品列表
+.sInfoProduct{
+  @import "inc/sInfo";
+  @include sInfoProduct();
+}
+
+
+
+// 高清博物馆-筛选
+.sInfoFilter{
+  .tab{
+    $h:89px;
+    background: #fff;
+    border-bottom: 1px solid #d2d2d2;
+    height: pxTorem($h);
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items();
+    a{
+      text-align: center;
+      width: pxTorem(115px);
+      height: pxTorem($h);
+      line-height: pxTorem($h);
+      @include font-dpr(28px);
+      display: block;
+      color: #333;
+      position: relative;
+      &.select{
+        color: $blue-base;
+        font-weight: bold;
+      }
+      &:after{
+        content: '\20';
+        width: 1px;
+        height:pxTorem(42px);
+        position: absolute;
+        right:0;
+        top:pxTorem(24px);
+        background: #999;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  .scroll{
+    h2{
+      @include font-dpr(26px);
+      margin:pxTorem(30px) pxTorem(30px) pxTorem(15px);
+    }
+  }
+  .list{
+    @extend %clearfix;
+    border-bottom: 1px solid #d2d2d2;
+    margin:0 pxTorem(30px);
+    padding-bottom: pxTorem(15px);
+    a{
+      display: block;
+      float:left;
+      width: 33.3%;
+      height:pxTorem(60px);
+      line-height:pxTorem(60px);
+      color: #333;
+      &.select{
+        color: $blue-base;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
