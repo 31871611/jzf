@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import "../comm/css3";
+@import "../comm/common";
+
+
+/*
+
+  资讯
+
+*/
+
+
+// 资讯-产品列表
+@mixin sInfoProduct(){
+
+  $h:360px;
+  ul{
+    @extend %clearfix;
+    padding-left:pxTorem(10px);
+  }
+  li{
+    float:left;
+    width: 50%;
+  }
+  a{
+    display: block;
+    margin-right: pxTorem(10px);
+  }
+  img{
+    width: 100%;
+    height: pxTorem($h);
+    vertical-align: middle;
+  }
+  p{
+    color: #333;
+    @include font-dpr(26px);
+    height:pxTorem(70px);
+    line-height:pxTorem(70px);
+    margin:0 pxTorem(15px);
+    overflow: hidden;
+  }
+
+}
