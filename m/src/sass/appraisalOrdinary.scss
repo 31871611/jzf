@@ -189,6 +189,43 @@
     }
   }
 }
+
+.anonymous{
+  input {
+    vertical-align: top;
+    margin-left: pxTorem(540px);
+    border: 0;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    width: pxTorem(36px);
+    height: pxTorem(36px);
+    @include border-radius(50%);
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "\20";
+      display: inline-block;
+      width: pxTorem(36px - 4);
+      height: pxTorem(36px - 4);
+      border: 1px solid #333;
+      @include border-radius(50%);
+      margin-right: pxTorem(10px);
+    }
+    &:checked {
+      &:before {
+        background-color: $red-base;
+        width: pxTorem(36px);
+        height: pxTorem(36px);
+        border: 0;
+        background-image: url("../images/iconHook.png");
+        @extend %ico_rem;
+        background-size: 50% 50% !important;
+      }
+    }
+  }
+}
 //新手教学弹窗
 .alertBox{
   @include display-flex();

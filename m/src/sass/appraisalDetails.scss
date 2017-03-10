@@ -19,6 +19,9 @@
     $h:70px;
     height:pxTorem($h);
     margin-bottom: pxTorem(25px);
+    @include display-flex();
+    @import "inc/appraisal";
+    @include already();
   }
   .face{
     $h:70px;

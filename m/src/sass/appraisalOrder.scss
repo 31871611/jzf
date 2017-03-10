@@ -56,6 +56,11 @@
     border-bottom:1px solid #e5e5e5;
     padding: pxTorem(30px) 0 pxTorem(25px) pxTorem(30px);
     margin-bottom: pxTorem(8px);
+    @import "inc/appraisal";
+    @include already();
+    .text{
+      padding: pxTorem(25px) 0 pxTorem(20px) 0;
+    }
   }
   .photo{
     margin-bottom: pxTorem(10px);

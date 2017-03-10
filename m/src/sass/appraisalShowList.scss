@@ -26,28 +26,12 @@
     $h:70px;
     height:pxTorem($h);
     margin-bottom: pxTorem(25px);
-  }
-  .label{
-    @extend %clearfix;
-/*
-    display: inline-block;
-    margin-left:pxTorem($w);
-    margin-bottom:pxTorem(8px);
-    width: pxTorem($w);
-    position: relative;*/
+    @include display-flex();
+    @import "inc/appraisal";
+    @include already();
 
-    i{
-      &.already{
-        position: absolute;
-        right:0;
-        //bottom:0;
-        width:pxTorem(153px);
-        height:pxTorem(146px);
-        @extend %ico_rem;
-        background-image: url("../images/iconAlreadyAppraisal.png");
-      }
-    }
   }
+
   .face{
     $h:70px;
     height:pxTorem($h);
