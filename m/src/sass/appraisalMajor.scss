@@ -117,6 +117,17 @@
       }
     }
   }
+  .textarea{
+    background: #fff;
+    margin-bottom: pxTorem(20px);
+    padding: pxTorem(10px);
+    textarea{
+      display: block;
+      width: 100%;
+      height: pxTorem(180px);
+      border:none;
+    }
+  }
   .info{
     background: #fff;
     padding:pxTorem(20px) pxTorem(30px);
