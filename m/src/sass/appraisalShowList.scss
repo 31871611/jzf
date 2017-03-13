@@ -96,6 +96,34 @@
     font-size:pxTorem(20px);
     color: #666;
   }
+  .like{
+    height: pxTorem(38px);
+    //width:pxTorem(60px);
+    position: absolute;
+    //top: pxTorem(15px);
+    right:pxTorem(130px);
+    text-align: center;
+    color: #333;
+    i{
+      height:pxTorem(41px);
+      line-height:pxTorem(41px);
+      &:before{
+        vertical-align: top;
+        display: inline-block;
+        content: "\20";
+        margin:0 pxTorem(20px);
+        width:pxTorem(36px);
+        height: pxTorem(32px);
+        background-image: url("../images/like.png");
+        @extend %ico_rem;
+      }
+      &.select{
+        &:before {
+          background-image: url("../images/liked.png");
+        }
+      }
+    }
+  }
   .commentNum{
     $h:31px;
     a{
