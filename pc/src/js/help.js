@@ -126,5 +126,9 @@ help.init();
 });
 
 
-
+(function($){
+    $(function(){
+        console.log($('#div').length);
+    })
+})(jQuery);
 
